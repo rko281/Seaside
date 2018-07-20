@@ -1,0 +1,445 @@
+﻿| package |
+package := Package name: 'Seaside-Tests-Functional'.
+package paxVersion: 1;
+	basicComment: ''.
+
+
+package classNames
+	add: #WAAllFunctionalTests;
+	add: #WABatchFunctionalTest;
+	add: #WAButtonFunctionalTest;
+	add: #WACallbackFunctionalTest;
+	add: #WACallbackSecurityFunctionalTest;
+	add: #WACanvasTableFunctionalTest;
+	add: #WACanvasTagTest;
+	add: #WAContextFunctionalTest;
+	add: #WACookieFunctionalTest;
+	add: #WADateSelectorFunctionalTest;
+	add: #WADateTimeFunctionalTest;
+	add: #WADelayFunctionalTest;
+	add: #WADelegationFunctionalTest;
+	add: #WADelegationTask;
+	add: #WAEmptyTestTask;
+	add: #WAEncodingFunctionalTest;
+	add: #WAExceptionFunctionalTest;
+	add: #WAExpiryFunctionalTest;
+	add: #WAExpirySession;
+	add: #WAFilterFunctionalTest;
+	add: #WAFunctionalTaskTest;
+	add: #WAFunctionalTest;
+	add: #WAHomeFunctionalTest;
+	add: #WAHtml5ContentTest;
+	add: #WAHtml5ElementsTest;
+	add: #WAHtml5InputTest;
+	add: #WAHtml5MediaElementsTest;
+	add: #WAHtml5MultipleFileUploadTest;
+	add: #WAHtml5MultipleTextInputTest;
+	add: #WAHtml5OrderedListTest;
+	add: #WAIframeFunctionalTest;
+	add: #WAImageMapFunctionalTest;
+	add: #WAInputElementContainer;
+	add: #WAInputGetFunctionalTest;
+	add: #WAInputPostFunctionalTest;
+	add: #WAInputPostMultipartFunctionalTest;
+	add: #WAKeyGeneratorFunctionalTest;
+	add: #WALotsaLinksFunctionalTest;
+	add: #WAManyTasksFunctionalTest;
+	add: #WAMiniCalendarFunctionalTest;
+	add: #WAModelFunctionalTest;
+	add: #WAParameterFunctionalTest;
+	add: #WAParentFunctionalTest;
+	add: #WAPathFunctionalTest;
+	add: #WAPerformanceFunctionalTest;
+	add: #WAPhraseElementsFunctionalTest;
+	add: #WAPopupCloseTestComponent;
+	add: #WAPopupFunctionalTest;
+	add: #WARequestFunctionalTest;
+	add: #WARubyFunctionalTest;
+	add: #WASelectionDateTableFunctionalTest;
+	add: #WASourceSetTest;
+	add: #WASvgFunctionalTest;
+	add: #WATableReportFunctionalTest;
+	add: #WATaskErrorFunctionalTest;
+	add: #WATestsFunctionalPlatformTest;
+	add: #WATrailFunctionalTest;
+	add: #WATrailingSlashFunctionalTest;
+	add: #WATrailTestComponent;
+	add: #WATreeFunctionalTest;
+	add: #WAUploadFunctionalTest;
+	add: #WAUrlEncodingFunctionalTest;
+	add: #WAValidationDecorationFunctionalTest;
+	add: #WAValidationTestComponent;
+	yourself.
+
+package methodNames
+	add: #GRPlatform -> #seasideGarbageCollect;
+	add: 'GRPackage class' -> #seasideTestsFunctional;
+	add: 'WAPresenter class' -> #isFunctionalTest;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: (IdentitySet new
+	add: '..\Core\Object Arts\Dolphin\Base\Dolphin';
+	add: '..\Grease\Grease-Core';
+	add: 'Seaside-Canvas';
+	add: 'Seaside-Component';
+	add: 'Seaside-Core';
+	add: 'Seaside-Session';
+	add: 'Seaside-Tests-Core';
+	add: 'Seaside-Tools-Core';
+	add: 'Seaside-Widgets';
+	add: '..\Core\Contributions\Camp Smalltalk\SUnit\SUnit';
+	yourself).
+
+package!
+
+"Class Definitions"!
+
+WAComponent subclass: #WAAllFunctionalTests
+	instanceVariableNames: 'classes current'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAComponent subclass: #WAFunctionalTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAComponent subclass: #WAInputElementContainer
+	instanceVariableNames: 'textInput textArea singleSelection singleSelectionOptional singleSelectionCustom multiSelection nestedSelection nestedMultiSelection checkbox radio upload hiddenInput radioCustom'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAComponent subclass: #WAPopupCloseTestComponent
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAComponent subclass: #WATrailTestComponent
+	instanceVariableNames: 'count'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAComponent subclass: #WAValidationTestComponent
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WABatchFunctionalTest
+	instanceVariableNames: 'batcher'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WAButtonFunctionalTest
+	instanceVariableNames: 'input'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WACallbackFunctionalTest
+	instanceVariableNames: 'transcript'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WACallbackSecurityFunctionalTest
+	instanceVariableNames: 'letter number'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WACanvasTableFunctionalTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WACanvasTagTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WAContextFunctionalTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WACookieFunctionalTest
+	instanceVariableNames: 'firstKey firstValue firstPath secondKey secondValue secondPath'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WADateSelectorFunctionalTest
+	instanceVariableNames: 'beginDate endDate beginTime endTime beginDAT endDAT'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WADateTimeFunctionalTest
+	instanceVariableNames: 'date time message'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WADelayFunctionalTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WADelegationFunctionalTest
+	instanceVariableNames: 'task'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WAEncodingFunctionalTest
+	instanceVariableNames: 'urlencoded multipart get'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WAExceptionFunctionalTest
+	instanceVariableNames: 'renderError'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WAExpiryFunctionalTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WAFilterFunctionalTest
+	instanceVariableNames: 'child'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WAHomeFunctionalTest
+	instanceVariableNames: 'main'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WAHtml5ContentTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WAHtml5ElementsTest
+	instanceVariableNames: 'output'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WAHtml5InputTest
+	instanceVariableNames: 'required autofocus pattern search range email url number datetimelocal datetime date time month week color telephone'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WAHtml5MediaElementsTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WAHtml5MultipleFileUploadTest
+	instanceVariableNames: 'files'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WAHtml5MultipleTextInputTest
+	instanceVariableNames: 'emails'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WAHtml5OrderedListTest
+	instanceVariableNames: 'reversed start type'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WAIframeFunctionalTest
+	instanceVariableNames: 'batchFunctionalTest'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WAImageMapFunctionalTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WAInputGetFunctionalTest
+	instanceVariableNames: 'inputElements'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WAInputPostFunctionalTest
+	instanceVariableNames: 'inputElements hasBody ran'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WAInputPostMultipartFunctionalTest
+	instanceVariableNames: 'inputElements hasBody ran'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WAKeyGeneratorFunctionalTest
+	instanceVariableNames: 'key'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WALotsaLinksFunctionalTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WAManyTasksFunctionalTest
+	instanceVariableNames: 'tasks selection'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WAMiniCalendarFunctionalTest
+	instanceVariableNames: 'calendar'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WAModelFunctionalTest
+	instanceVariableNames: 'state user pass test'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WAParameterFunctionalTest
+	instanceVariableNames: 'wasExecuted values'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WAParentFunctionalTest
+	instanceVariableNames: 'parent'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WAPathFunctionalTest
+	instanceVariableNames: 'string'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WAPerformanceFunctionalTest
+	instanceVariableNames: 'duration referenceDict builder'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WAPhraseElementsFunctionalTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WAPopupFunctionalTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WARequestFunctionalTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WARubyFunctionalTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WASelectionDateTableFunctionalTest
+	instanceVariableNames: 'table'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WASourceSetTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WASvgFunctionalTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WATableReportFunctionalTest
+	instanceVariableNames: 'report'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WATrailFunctionalTest
+	instanceVariableNames: 'component trail'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WATrailingSlashFunctionalTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WATreeFunctionalTest
+	instanceVariableNames: 'selected tree'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WAUploadFunctionalTest
+	instanceVariableNames: 'file'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WAUrlEncodingFunctionalTest
+	instanceVariableNames: 'input'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WAValidationDecorationFunctionalTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WATask subclass: #WADelegationTask
+	instanceVariableNames: 'component1 component2'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WATask subclass: #WAEmptyTestTask
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WATask subclass: #WAFunctionalTaskTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTaskTest subclass: #WATaskErrorFunctionalTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WASession subclass: #WAExpirySession
+	instanceVariableNames: ''
+	classVariableNames: 'Created Unregistered'
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #WATestsFunctionalPlatformTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+"Global Aliases"!
+
+
+"Loose Methods"!
+
+!GRPackage class methodsFor!
+
+seasideTestsFunctional	^ self new		name: 'Seaside-Tests-Functional';		description: 'Functional Seaside test suite.';		addDependency: 'Seaside-Environment';		addDependency: 'Seaside-Widgets';		addDependency: 'Seaside-Tests-Core';		url: #seasideUrl;		yourself! !
+!GRPackage class categoriesFor: #seasideTestsFunctional!*seaside/tests/functional!public! !
+
+!GRPlatform methodsFor!
+
+seasideGarbageCollect	"this is only needed by the functional tests"	self subclassResponsibility! !
+!GRPlatform categoriesFor: #seasideGarbageCollect!*seaside/tests/functional!public! !
+
+!WAPresenter class methodsFor!
+
+isFunctionalTest	^ false! !
+!WAPresenter class categoriesFor: #isFunctionalTest!*seaside/tests/functional!public! !
+
+"End of package definition"!
+

@@ -1,0 +1,41 @@
+﻿"Filed out from Dolphin Smalltalk 7"!
+
+WALabelledFormDialog subclass: #WAViewer
+	instanceVariableNames: 'presenter'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAViewer guid: (GUID fromString: '{838559e7-d99b-40c5-9fa6-988a23267973}')!
+WAViewer comment: ''!
+!WAViewer categoriesForClass!Seaside-Development-Core! !
+!WAViewer methodsFor!
+
+buttons	^ #(save)!
+
+compile: aString 	GRPlatform current 		compile: aString		into: presenter class		classified: #rendering!
+
+model	^ presenter!
+
+presenter: aPresenter	presenter := aPresenter!
+
+renderContentOn: html 	html heading		level3;		with: presenter greaseString.	super renderContentOn: html!
+
+renderCssOn: html	html textArea		rows: 20;		columns: 80;		value: presenter style;		callback: [ :css |			self compile: 'style ', GRPlatform current newline,				'	^ ', css printString ]!
+
+rows	^ #(css)!
+
+save! !
+!WAViewer categoriesFor: #buttons!accessing!public! !
+!WAViewer categoriesFor: #compile:!actions!public! !
+!WAViewer categoriesFor: #model!accessing!public! !
+!WAViewer categoriesFor: #presenter:!accessing!public! !
+!WAViewer categoriesFor: #renderContentOn:!public!rendering! !
+!WAViewer categoriesFor: #renderCssOn:!public!rendering! !
+!WAViewer categoriesFor: #rows!accessing!public! !
+!WAViewer categoriesFor: #save!actions!public! !
+
+!WAViewer class methodsFor!
+
+on: aPresenter	^ self new presenter: aPresenter! !
+!WAViewer class categoriesFor: #on:!instance creation!public! !
+

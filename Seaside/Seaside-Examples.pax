@@ -1,0 +1,108 @@
+﻿| package |
+package := Package name: 'Seaside-Examples'.
+package paxVersion: 1;
+	basicComment: ''.
+
+
+package classNames
+	add: #WACounter;
+	add: #WAExampleBrowser;
+	add: #WAExampleComponent;
+	add: #WAExamplesLibrary;
+	add: #WAFileLibraryDemo;
+	add: #WAJQueryExampleComponent;
+	add: #WAMultiCounter;
+	add: #WATodo;
+	add: #WATodoItem;
+	yourself.
+
+package methodNames
+	add: 'GRPackage class' -> #seasideExamples;
+	add: 'WAComponent class' -> #headerForExampleBrowser;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: (IdentitySet new
+	add: '..\Core\Object Arts\Dolphin\Base\Dolphin';
+	add: '..\Grease\Grease-Core';
+	add: '..\Javascript\Javascript-Core';
+	add: '..\JQuery\JQuery-Core';
+	add: 'Seaside-Canvas';
+	add: 'Seaside-Component';
+	add: 'Seaside-Core';
+	add: 'Seaside-Development';
+	add: 'Seaside-Tools-Core';
+	yourself).
+
+package!
+
+"Class Definitions"!
+
+WAFileLibrary subclass: #WAExamplesLibrary
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFileLibrary subclass: #WAFileLibraryDemo
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAComponent subclass: #WAExampleComponent
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAComponent subclass: #WAJQueryExampleComponent
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAComponent subclass: #WATodoItem
+	instanceVariableNames: 'todos description done'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAExampleComponent subclass: #WACounter
+	instanceVariableNames: 'count'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAExampleComponent subclass: #WAExampleBrowser
+	instanceVariableNames: 'class selector component hasAnswer answer'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAExampleComponent subclass: #WAMultiCounter
+	instanceVariableNames: 'counters'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAExampleComponent subclass: #WATodo
+	instanceVariableNames: 'todos'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+"Global Aliases"!
+
+
+"Loose Methods"!
+
+!GRPackage class methodsFor!
+
+seasideExamples	^ self new		name: 'Seaside-Examples';		description: 'Simple example applications and components.';		addDependency: 'Seaside-Component';		addDependency: 'Seaside-Canvas';		addDependency: 'Seaside-Tools-Core'; "for WAAdmin"		addDependency: 'Seaside-Development'; "for WADebugErrorHandler"		addDependency: 'JQuery-Core';		url: #seasideUrl;		yourself! !
+!GRPackage class categoriesFor: #seasideExamples!*seaside/examples!public! !
+
+!WAComponent class methodsFor!
+
+headerForExampleBrowser	^ self name = self description		ifTrue: [ self name ]		ifFalse: [ self description , ' (' , self name , ')' ]! !
+!WAComponent class categoriesFor: #headerForExampleBrowser!*seaside/examples/misc!public! !
+
+"End of package definition"!
+

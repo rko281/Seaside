@@ -1,0 +1,63 @@
+﻿| package |
+package := Package name: 'Seaside-Dolphin-Extensions'.
+package paxVersion: 1;
+	basicComment: ''.
+
+
+package classNames
+	add: #JQLightbox;
+	yourself.
+
+package methodNames
+	add: #WAComponent -> #jQueryLightbox:;
+	add: #WAComponent -> #jQueryLightbox:onAnswer:;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: (IdentitySet new
+	add: 'Seaside-Component';
+	yourself).
+
+package!
+
+"Class Definitions"!
+
+WADecoration subclass: #JQLightbox
+	instanceVariableNames: 'delegate'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+"Global Aliases"!
+
+
+"Loose Methods"!
+
+!WAComponent methodsFor!
+
+jQueryLightbox: aComponent 
+	"Display aComponent within a JQuerylightbox of the receiver.
+	Note, that this does a full refresh displaying the lightbox.
+	Also note, that this only works well, if you sent to the root component of your application."
+
+	"This is  NOT MODAL"
+	^self jQueryLightbox: aComponent onAnswer: [:v | ]!
+
+jQueryLightbox: aComponent onAnswer: aMonadicValuable
+
+	^self 
+		show: aComponent
+		onAnswer: aMonadicValuable
+		delegation: ((JQLightbox new)
+				delegate: aComponent;
+				yourself)! !
+!WAComponent categoriesFor: #jQueryLightbox:!*scriptaculous-components-call/answer!public! !
+!WAComponent categoriesFor: #jQueryLightbox:onAnswer:!public! !
+
+"End of package definition"!
+

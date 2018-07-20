@@ -1,0 +1,78 @@
+﻿"Filed out from Dolphin Smalltalk 7"!
+
+WACollectionTag subclass: #WASelectTag
+	instanceVariableNames: 'enabledBlock isOptional optionalLabel titleBlock values'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WASelectTag guid: (GUID fromString: '{a573331e-0ea8-4624-9925-22d18df1c2ac}')!
+WASelectTag comment: 'This element allows the use to select one (in single selection mode) or multiple (in single selection mode) elements. Default is single selection. Multiple selection can be triggered with #beMultiple.Single selection is in general a drop-down list, so make sure the list of options is not too big.Multiple selection has in general crappy browser support and a list of checkboxes is in general the better option.If in single selection mode and you want enable "no selection" see #beOptional.If you absolutely need to you can render the options yourself with ''html option'' inside #with:Make sure to check the superclass for more methods.See WAInputTest >> #renderSingleSelectionOn: and WAInputTest >> #renderMultiSelectionOn: for examples.'!
+!WASelectTag categoriesForClass!Seaside-Canvas-Tags! !
+!WASelectTag methodsFor!
+
+before	self isOptional ifTrue: [ self renderOptional ].	super before!
+
+beOptional	"This adds a nil item to #list: which has the semantic of no selection. #optionalLabel: is the label for nil. This only really makes sense in single selection mode."	isOptional := true!
+
+callback: aBlock	values := Dictionary new.	self name: (self storeCallback: (self callbackClass on: aBlock values: values))!
+
+callbackClass	^ WAValuesCallback!
+
+dispatchCallback	^ self name: (self storeCallback: WADispatchCallback new)!
+
+enabled: aOneArgumentBlock	"Enable only those elements for selection for whom aBlock return true."	enabledBlock := aOneArgumentBlock fixCallbackTemps!
+
+hasCallback	^ values notNil!
+
+initialize	super initialize.	isOptional := false	!
+
+isEnabled: anObject	"Test if anObject is enabled." 	^ enabledBlock isNil or: [ enabledBlock value: anObject ]!
+
+isOptional	^ isOptional!
+
+listId: aString	"aString is the id of a datalist"	self attributeAt: 'list' put: aString!
+
+name: aString	"This attribute assigns the control name."	self attributes at: 'name' put: aString!
+
+nextKey	^ values size + 1!
+
+optionalLabel: aString	"The label for the nil element. See #beOptional."	optionalLabel := aString!
+
+renderListItem: anObject labelled: aString	| option |	option := canvas option.	self hasCallback		ifTrue: [ option value: (self valueFor: anObject) ].	titleBlock isNil		ifFalse: [ option title: (self titleFor: anObject) ].	option		selected: (self isSelected: anObject);		disabled: (self isEnabled: anObject) not;		with: aString!
+
+renderOptional	self renderListItem: nil labelled: optionalLabel!
+
+size: aNumber	"If a SELECT element is presented as a scrolled list box, this attribute specifies the number of rows in the list that should be visible at the same time. Visual user agents are not required to present a SELECT element as a list box; they may use any other mechanism, such as a drop-down menu."	self attributes at: 'size' put: aNumber!
+
+tag	^ 'select'!
+
+titleFor: anObject	^ titleBlock isNil		ifTrue: [ anObject ]		ifFalse: [ titleBlock value: anObject ]!
+
+titles: aOneArgumentBlock	"The given block will be used to generated title attributes for any of the options."	titleBlock := aOneArgumentBlock fixCallbackTemps!
+
+valueFor: anObject	^ self valuesAt: self nextKey put: anObject!
+
+valuesAt: key put: anObject	values at: key put: anObject.	^ values size! !
+!WASelectTag categoriesFor: #before!private! !
+!WASelectTag categoriesFor: #beOptional!attributes!public! !
+!WASelectTag categoriesFor: #callback:!callbacks!public! !
+!WASelectTag categoriesFor: #callbackClass!accessing!public! !
+!WASelectTag categoriesFor: #dispatchCallback!callbacks!public! !
+!WASelectTag categoriesFor: #enabled:!callbacks!public! !
+!WASelectTag categoriesFor: #hasCallback!accessing!public! !
+!WASelectTag categoriesFor: #initialize!initialization!public! !
+!WASelectTag categoriesFor: #isEnabled:!public!testing! !
+!WASelectTag categoriesFor: #isOptional!public!testing! !
+!WASelectTag categoriesFor: #listId:!attributes!public! !
+!WASelectTag categoriesFor: #name:!attributes!public! !
+!WASelectTag categoriesFor: #nextKey!private! !
+!WASelectTag categoriesFor: #optionalLabel:!attributes!public! !
+!WASelectTag categoriesFor: #renderListItem:labelled:!private! !
+!WASelectTag categoriesFor: #renderOptional!private! !
+!WASelectTag categoriesFor: #size:!attributes!public! !
+!WASelectTag categoriesFor: #tag!accessing!public! !
+!WASelectTag categoriesFor: #titleFor:!private! !
+!WASelectTag categoriesFor: #titles:!callbacks!public! !
+!WASelectTag categoriesFor: #valueFor:!private! !
+!WASelectTag categoriesFor: #valuesAt:put:!accessing!public! !
+

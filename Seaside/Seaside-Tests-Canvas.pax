@@ -1,0 +1,105 @@
+﻿| package |
+package := Package name: 'Seaside-Tests-Canvas'.
+package paxVersion: 1;
+	basicComment: ''.
+
+
+package classNames
+	add: #WAAbstractCanvasBrushTest;
+	add: #WABuilderCanvasTest;
+	add: #WACanvasBrushTest;
+	add: #WAEmailAddressTest;
+	add: #WAFormCharEncodingFromCodecTest;
+	add: #WAFormCharEncodingFromHandlerTest;
+	add: #WAFormTagTest;
+	add: #WAPredictableCache;
+	add: #WARenderingTest;
+	add: #WAResourceBaseUrlTest;
+	yourself.
+
+package methodNames
+	add: 'GRPackage class' -> #seasideTestsCanvas;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: (IdentitySet new
+	add: '..\Core\Object Arts\Dolphin\Base\Dolphin';
+	add: '..\Grease\Grease-Core';
+	add: 'Seaside-Canvas';
+	add: 'Seaside-Core';
+	add: 'Seaside-Tests-Core';
+	add: '..\Core\Contributions\Camp Smalltalk\SUnit\SUnit';
+	yourself).
+
+package!
+
+"Class Definitions"!
+
+WABidirectionalCache subclass: #WAPredictableCache
+	instanceVariableNames: 'nextKey'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #WAEmailAddressTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAContextTest subclass: #WAAbstractCanvasBrushTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAContextTest subclass: #WABuilderCanvasTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAContextTest subclass: #WARenderingTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAAbstractCanvasBrushTest subclass: #WACanvasBrushTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAAbstractCanvasBrushTest subclass: #WAFormCharEncodingFromCodecTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAAbstractCanvasBrushTest subclass: #WAFormCharEncodingFromHandlerTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAAbstractCanvasBrushTest subclass: #WAResourceBaseUrlTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WACanvasBrushTest subclass: #WAFormTagTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+"Global Aliases"!
+
+
+"Loose Methods"!
+
+!GRPackage class methodsFor!
+
+seasideTestsCanvas	^ self new		name: 'Seaside-Tests-Canvas';		description: 'Unit tests for the package Seaside-Canvas.';		addDependency: 'Seaside-Canvas';		addDependency: 'Seaside-Tests-Core';		url: #seasideUrl;		yourself! !
+!GRPackage class categoriesFor: #seasideTestsCanvas!*seaside/tests/canvas!public! !
+
+"End of package definition"!
+

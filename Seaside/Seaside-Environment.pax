@@ -1,0 +1,74 @@
+﻿| package |
+package := Package name: 'Seaside-Environment'.
+package paxVersion: 1;
+	basicComment: ''.
+
+
+package classNames
+	add: #WAEnvironment;
+	add: #WAHtmlErrorHandler;
+	add: #WAHtmlFileHandlerListing;
+	add: #WAHtmlResponseGenerator;
+	add: #WALegacyRedirectionHandler;
+	yourself.
+
+package methodNames
+	add: 'GRPackage class' -> #seasideEnvironment;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: (IdentitySet new
+	add: '..\Grease\Grease-Core';
+	add: 'Seaside-Canvas';
+	add: 'Seaside-Core';
+	add: 'Seaside-Development';
+	add: 'Seaside-Tools-Core';
+	yourself).
+
+package!
+
+"Class Definitions"!
+
+WAObject subclass: #WAEnvironment
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: 'configuredApplicationDefaults configuredExceptionHandlingDefaults'!
+WAErrorHandler subclass: #WAHtmlErrorHandler
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFileHandlerListing subclass: #WAHtmlFileHandlerListing
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WARequestHandler subclass: #WALegacyRedirectionHandler
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAResponseGenerator subclass: #WAHtmlResponseGenerator
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+"Global Aliases"!
+
+
+"Loose Methods"!
+
+!GRPackage class methodsFor!
+
+seasideEnvironment	^ self new		name: 'Seaside-Environment';		description: 'The standard Seaside distribution environment. This package can depend on all other code packages as needed.';		addDependency: 'Seaside-Tools-Core';		addDependency: 'Seaside-Core';		addDependency: 'Seaside-Component';		addDependency: 'Seaside-RenderLoop';		addDependency: 'Seaside-Session';		addDependency: 'Seaside-Canvas';		addDependency: 'Seaside-Widgets'; "Users expect #inform:, etc. to be available"		url: #seasideUrl;		yourself! !
+!GRPackage class categoriesFor: #seasideEnvironment!*seaside/environment!public! !
+
+"End of package definition"!
+

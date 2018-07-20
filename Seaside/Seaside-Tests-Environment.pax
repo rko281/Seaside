@@ -1,0 +1,64 @@
+﻿| package |
+package := Package name: 'Seaside-Tests-Environment'.
+package paxVersion: 1;
+	basicComment: ''.
+
+
+package classNames
+	add: #WAEnvironmentDefaultHandlersTest;
+	add: #WAHtmlFileHandlerListingTest;
+	add: #WALegacyRedirectionHandlerTest;
+	yourself.
+
+package methodNames
+	add: 'GRPackage class' -> #seasideTestsEnvironment;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: (IdentitySet new
+	add: '..\Core\Object Arts\Dolphin\Base\Dolphin';
+	add: '..\Grease\Grease-Core';
+	add: 'Seaside-Core';
+	add: 'Seaside-Environment';
+	add: 'Seaside-Tests-Core';
+	add: 'Seaside-Tools-Core';
+	add: '..\Core\Contributions\Camp Smalltalk\SUnit\SUnit';
+	yourself).
+
+package!
+
+"Class Definitions"!
+
+TestCase subclass: #WAEnvironmentDefaultHandlersTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAContextTest subclass: #WALegacyRedirectionHandlerTest
+	instanceVariableNames: 'handler'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFileHandlerListingTest subclass: #WAHtmlFileHandlerListingTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+"Global Aliases"!
+
+
+"Loose Methods"!
+
+!GRPackage class methodsFor!
+
+seasideTestsEnvironment	^ self new		name: 'Seaside-Tests-Environment';		description: 'Unit tests for the package Seaside-Environment.';		addDependency: 'Seaside-Environment';		addDependency: 'Seaside-Tests-Component';		addDependency: 'Seaside-Tests-RenderLoop';		addDependency: 'Seaside-Tests-Session';		addDependency: 'Seaside-Tests-Canvas';		url: #seasideUrl;		yourself! !
+!GRPackage class categoriesFor: #seasideTestsEnvironment!*seaside/tests/environment!public! !
+
+"End of package definition"!
+

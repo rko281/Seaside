@@ -1,0 +1,55 @@
+﻿| package |
+package := Package name: 'Seaside-Dolphin-Environment'.
+package paxVersion: 1;
+	basicComment: ''.
+
+package basicPackageVersion: '6'.
+
+
+package classNames
+	add: #WAHtmlHaltAndErrorHandler;
+	yourself.
+
+package methodNames
+	add: 'GRPackage class' -> #seasideDolphinEnvironment;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: (IdentitySet new
+	add: '..\Grease\Grease-Core';
+	add: 'Seaside-Environment';
+	yourself).
+
+package!
+
+"Class Definitions"!
+
+WAHtmlErrorHandler subclass: #WAHtmlHaltAndErrorHandler
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+"Global Aliases"!
+
+
+"Loose Methods"!
+
+!GRPackage class methodsFor!
+
+seasideDolphinEnvironment
+	^ self new
+		name: 'Seaside-Dolphin-Environment';
+		addDependency: 'Seaside-Environment';
+		addDependency: 'Seaside-Dolphin-Core';
+		url: #seasideUrl;
+		yourself! !
+!GRPackage class categoriesFor: #seasideDolphinEnvironment!*seaside-pharo-environment!public! !
+
+"End of package definition"!
+

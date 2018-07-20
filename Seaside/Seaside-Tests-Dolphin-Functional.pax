@@ -1,0 +1,75 @@
+﻿| package |
+package := Package name: 'Seaside-Tests-Dolphin-Functional'.
+package paxVersion: 1;
+	basicComment: ''.
+
+package basicPackageVersion: '12'.
+
+
+package classNames
+	add: #WAImageFunctionalTest;
+	add: #WAPharoFunctionalTestsDefaultHandlersTest;
+	yourself.
+
+package methodNames
+	add: #GRDolphinPlatform -> #seasideGarbageCollect;
+	add: 'GRPackage class' -> #seasideTestsDolphinFunctional;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: (IdentitySet new
+	add: '..\Core\Object Arts\Dolphin\Base\Dolphin';
+	add: '..\Grease\Grease-Core';
+	add: '..\Grease\Grease-Dolphin-Core';
+	add: 'Seaside-Core';
+	add: 'Seaside-Session';
+	add: 'Seaside-Tests-Environment';
+	add: 'Seaside-Tests-Functional';
+	yourself).
+
+package!
+
+"Class Definitions"!
+
+WAFunctionalTest subclass: #WAImageFunctionalTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAEnvironmentDefaultHandlersTest subclass: #WAPharoFunctionalTestsDefaultHandlersTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+"Global Aliases"!
+
+
+"Loose Methods"!
+
+!GRDolphinPlatform methodsFor!
+
+seasideGarbageCollect
+	MemoryManager current collectGarbage! !
+!GRDolphinPlatform categoriesFor: #seasideGarbageCollect!public! !
+
+!GRPackage class methodsFor!
+
+seasideTestsDolphinFunctional
+	^(self new)
+		name: 'Seaside-Tests-Dolphin-Functional';
+		description: 'Pharo specific functional Seaside test suite.';
+		addDependency: 'Seaside-Tests-Functional';
+		addDependency: 'Seaside-Tests-Environment';
+		addDependency: 'Seaside-Dolphin-Environment';
+		url: #seasideUrl;
+		yourself! !
+!GRPackage class categoriesFor: #seasideTestsDolphinFunctional!*seaside-tests-pharo-functional!public! !
+
+"End of package definition"!
+

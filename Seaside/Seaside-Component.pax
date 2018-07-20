@@ -1,0 +1,166 @@
+﻿| package |
+package := Package name: 'Seaside-Component'.
+package paxVersion: 1;
+	basicComment: ''.
+
+
+package classNames
+	add: #WAAllPresenterGuide;
+	add: #WAAnswerHandler;
+	add: #WAChildComponentShouldNotBeSelfError;
+	add: #WAComponent;
+	add: #WADecoration;
+	add: #WADelegation;
+	add: #WAInitialRequestVisitor;
+	add: #WAPluggablePresenterVisitor;
+	add: #WAPresenter;
+	add: #WAPresenterGuide;
+	add: #WARenderingGuide;
+	add: #WATask;
+	add: #WATaskNotDelegated;
+	add: #WATaskVisitor;
+	add: #WAUpdateStatesVisitor;
+	add: #WAVisiblePresenterGuide;
+	yourself.
+
+package methodNames
+	add: #WAPainter -> #acceptDecorated:;
+	add: #WAPainterVisitor -> #visitComponent:;
+	add: #WAPainterVisitor -> #visitDecoration:;
+	add: #WAPainterVisitor -> #visitDecorationsOfComponent:;
+	add: #WAPainterVisitor -> #visitDelegation:;
+	add: #WAPainterVisitor -> #visitPresenter:;
+	add: 'GRPackage class' -> #seasideComponent;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: (IdentitySet new
+	add: '..\Core\Object Arts\Dolphin\Base\Dolphin';
+	add: '..\Grease\Grease-Core';
+	add: 'Seaside-Core';
+	yourself).
+
+package!
+
+"Class Definitions"!
+
+WAError subclass: #WAChildComponentShouldNotBeSelfError
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAError subclass: #WATaskNotDelegated
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAPainter subclass: #WAPresenter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAPresenter subclass: #WAComponent
+	instanceVariableNames: 'decoration'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAPresenter subclass: #WADecoration
+	instanceVariableNames: 'next'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAComponent subclass: #WATask
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WADecoration subclass: #WAAnswerHandler
+	instanceVariableNames: 'block'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WADecoration subclass: #WADelegation
+	instanceVariableNames: 'delegate'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAPainterVisitor subclass: #WAInitialRequestVisitor
+	instanceVariableNames: 'request'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAPainterVisitor subclass: #WAPluggablePresenterVisitor
+	instanceVariableNames: 'block'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAPainterVisitor subclass: #WAPresenterGuide
+	instanceVariableNames: 'client'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAPainterVisitor subclass: #WATaskVisitor
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAPainterVisitor subclass: #WAUpdateStatesVisitor
+	instanceVariableNames: 'snapshot'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAPresenterGuide subclass: #WARenderingGuide
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAPresenterGuide subclass: #WAVisiblePresenterGuide
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAVisiblePresenterGuide subclass: #WAAllPresenterGuide
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+"Global Aliases"!
+
+
+"Loose Methods"!
+
+!GRPackage class methodsFor!
+
+seasideComponent	^ self new		name: 'Seaside-Component';		description: 'Stateful, reusable components to encapsulate a small part of a page.';		addDependency: 'Seaside-Core';		url: #seasideUrl;		yourself! !
+!GRPackage class categoriesFor: #seasideComponent!*seaside/component!public! !
+
+!WAPainter methodsFor!
+
+acceptDecorated: aVisitor	self accept: aVisitor! !
+!WAPainter categoriesFor: #acceptDecorated:!*seaside/component!public! !
+
+!WAPainterVisitor methodsFor!
+
+visitComponent: aComponent	self visitPresenter: aComponent!
+
+visitDecoration: aDecoration	self visitPresenter: aDecoration!
+
+visitDecorationsOfComponent: aComponent	aComponent decoration accept: self!
+
+visitDelegation: aDelegation	self visitDecoration: aDelegation!
+
+visitPresenter: aPresenter	self visitPainter: aPresenter! !
+!WAPainterVisitor categoriesFor: #visitComponent:!*seaside/component!public! !
+!WAPainterVisitor categoriesFor: #visitDecoration:!*seaside/component!public! !
+!WAPainterVisitor categoriesFor: #visitDecorationsOfComponent:!*seaside/component!public! !
+!WAPainterVisitor categoriesFor: #visitDelegation:!*seaside/component!public! !
+!WAPainterVisitor categoriesFor: #visitPresenter:!*seaside/component!public! !
+
+"End of package definition"!
+

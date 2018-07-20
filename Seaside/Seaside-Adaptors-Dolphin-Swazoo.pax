@@ -1,0 +1,83 @@
+﻿| package |
+package := Package name: 'Seaside-Adaptors-Dolphin-Swazoo'.
+package paxVersion: 1;
+	basicComment: ''.
+
+package basicPackageVersion: '2'.
+
+
+package methodNames
+	add: #WASwazooAdaptor -> #displayOn:;
+	add: #WASwazooAdaptor -> #icon;
+	add: #WASwazooAdaptor -> #removeSite;
+	add: #WASwazooAdaptor -> #unregistered;
+	add: 'WASwazooAdaptor class' -> #publishedAspectsOfInstances;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: (IdentitySet new
+	add: '..\Core\Object Arts\Dolphin\IDE\Base\Development System';
+	add: '..\Grease\Grease-Core';
+	add: 'Seaside-Adaptors-Swazoo';
+	add: 'Seaside-Dolphin-Core';
+	add: '..\Swazoo\Swazoo';
+	yourself).
+
+package!
+
+"Class Definitions"!
+
+
+"Global Aliases"!
+
+
+"Loose Methods"!
+
+!WASwazooAdaptor methodsFor!
+
+displayOn: aStream
+	"Append, to aStream, a String whose characters are a representation of the receiver as a user
+	would want to see it."
+
+	aStream
+		nextPut: $[ ;
+		nextPutAll: self port displayString;
+		nextPut: $] ;
+		space;
+		nextPutAll: self class name asString!
+
+icon
+	"Answer the icon of the receiver."
+
+	^self isRunning ifTrue: [SeasideIcons start] ifFalse: [SeasideIcons stop]!
+
+removeSite
+
+	site ifNotNil: [SwazooServer singleton removeSite: site]!
+
+unregistered
+	super unregistered.
+	self removeSite! !
+!WASwazooAdaptor categoriesFor: #displayOn:!converting-request!public! !
+!WASwazooAdaptor categoriesFor: #icon!converting-request!public! !
+!WASwazooAdaptor categoriesFor: #removeSite!public! !
+!WASwazooAdaptor categoriesFor: #unregistered!public! !
+
+!WASwazooAdaptor class methodsFor!
+
+publishedAspectsOfInstances
+
+	^super publishedAspectsOfInstances
+		add: (Aspect choice: #codec from: GRCodec allCodecs);
+		add: (Aspect integer: #port);
+		add: (Aspect boolean: #isRunning) beReadOnly;
+		yourself! !
+!WASwazooAdaptor class categoriesFor: #publishedAspectsOfInstances!public! !
+
+"End of package definition"!
+

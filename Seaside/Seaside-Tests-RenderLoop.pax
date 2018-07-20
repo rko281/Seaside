@@ -1,0 +1,55 @@
+﻿| package |
+package := Package name: 'Seaside-Tests-RenderLoop'.
+package paxVersion: 1;
+	basicComment: ''.
+
+
+package classNames
+	add: #WARenderLoopContinuationTest;
+	add: #WASignalingErrorHandler;
+	yourself.
+
+package methodNames
+	add: 'GRPackage class' -> #seasideTestsRenderLoop;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: (IdentitySet new
+	add: '..\Grease\Grease-Core';
+	add: 'Seaside-Core';
+	add: 'Seaside-RenderLoop';
+	add: '..\Core\Contributions\Camp Smalltalk\SUnit\SUnit';
+	yourself).
+
+package!
+
+"Class Definitions"!
+
+WAErrorHandler subclass: #WASignalingErrorHandler
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #WARenderLoopContinuationTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+"Global Aliases"!
+
+
+"Loose Methods"!
+
+!GRPackage class methodsFor!
+
+seasideTestsRenderLoop	^ self new		name: 'Seaside-Tests-RenderLoop';		description: 'Unit tests for the package Seaside-RenderLoop.';		addDependency: 'Seaside-RenderLoop';		addDependency: 'Seaside-Tests-Session';		url: #seasideUrl;		yourself! !
+!GRPackage class categoriesFor: #seasideTestsRenderLoop!*seaside/tests/renderloop!public! !
+
+"End of package definition"!
+

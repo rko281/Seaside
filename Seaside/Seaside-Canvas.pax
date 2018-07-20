@@ -1,0 +1,580 @@
+﻿| package |
+package := Package name: 'Seaside-Canvas'.
+package paxVersion: 1;
+	basicComment: ''.
+
+
+package classNames
+	add: #WAAbstractTextAreaTag;
+	add: #WAAnchorTag;
+	add: #WAAudioTag;
+	add: #WABasicFormTag;
+	add: #WABreakTag;
+	add: #WABrush;
+	add: #WAButtonTag;
+	add: #WACancelButtonTag;
+	add: #WACanvas;
+	add: #WACanvasTag;
+	add: #WACheckboxTag;
+	add: #WAClosedRangeTag;
+	add: #WACollectionTag;
+	add: #WAColorInputTag;
+	add: #WACommandTag;
+	add: #WACompound;
+	add: #WADatalistTag;
+	add: #WADateInput;
+	add: #WADateInputTag;
+	add: #WADateTimeInputTag;
+	add: #WADateTimeLocalInputTag;
+	add: #WADetailsTag;
+	add: #WAEditTag;
+	add: #WAEmailInputTag;
+	add: #WAEmbedTag;
+	add: #WAEventSourceTag;
+	add: #WAFieldSetTag;
+	add: #WAFileUploadTag;
+	add: #WAFormInputTag;
+	add: #WAFormTag;
+	add: #WAGenericTag;
+	add: #WAHeadingTag;
+	add: #WAHiddenInputTag;
+	add: #WAHorizontalRuleTag;
+	add: #WAHtmlCanvas;
+	add: #WAIframeTag;
+	add: #WAImageButtonTag;
+	add: #WAImageMapTag;
+	add: #WAImageTag;
+	add: #WAKeyGeneratorTag;
+	add: #WALabelTag;
+	add: #WAListTag;
+	add: #WAMediaElementTag;
+	add: #WAMenuTag;
+	add: #WAMeterTag;
+	add: #WAMonthInputTag;
+	add: #WAMultiSelectTag;
+	add: #WANumberInputTag;
+	add: #WAObjectTag;
+	add: #WAOptionalBreakTag;
+	add: #WAOptionGroupTag;
+	add: #WAOptionTag;
+	add: #WAOrderedListTag;
+	add: #WAOutputTag;
+	add: #WAParameterTag;
+	add: #WAPasswordInputTag;
+	add: #WAPopupAnchorTag;
+	add: #WAProgressTag;
+	add: #WARadioButtonTag;
+	add: #WARadioGroup;
+	add: #WARangeInputTag;
+	add: #WARubyTextTag;
+	add: #WAScriptTag;
+	add: #WASearchInputTag;
+	add: #WASelectTag;
+	add: #WASourceTag;
+	add: #WASteppedTag;
+	add: #WASubmitButtonTag;
+	add: #WATableCellTag;
+	add: #WATableColumnGroupTag;
+	add: #WATableColumnTag;
+	add: #WATableDataTag;
+	add: #WATableHeadingTag;
+	add: #WATableTag;
+	add: #WATagBrush;
+	add: #WATagCanvas;
+	add: #WATelephoneInputTag;
+	add: #WATextAreaTag;
+	add: #WATextInputTag;
+	add: #WATimeInput;
+	add: #WATimeInputTag;
+	add: #WATimeTag;
+	add: #WATrackTag;
+	add: #WAUnorderedListTag;
+	add: #WAUrlInputTag;
+	add: #WAVideoTag;
+	add: #WAWeekInputTag;
+	add: #WAXmlCanvas;
+	yourself.
+
+package methodNames
+	add: #WARequestContext -> #closeThisPopup;
+	add: #WARequestContext -> #closeThisPopupAndReloadOpener;
+	add: 'GRPackage class' -> #seasideCanvas;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: (IdentitySet new
+	add: '..\Core\Object Arts\Dolphin\Base\Dolphin';
+	add: '..\Grease\Grease-Core';
+	add: 'Seaside-Core';
+	yourself).
+
+package!
+
+"Class Definitions"!
+
+WAObject subclass: #WABrush
+	instanceVariableNames: 'canvas parent closed'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAObject subclass: #WARadioGroup
+	instanceVariableNames: 'canvas key values selected'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WABrush subclass: #WACompound
+	instanceVariableNames: 'callbackBlock value id properties'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WABrush subclass: #WATagBrush
+	instanceVariableNames: 'attributes'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WACompound subclass: #WADateInput
+	instanceVariableNames: 'options month day year'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WACompound subclass: #WATimeInput
+	instanceVariableNames: 'withSeconds hours minutes seconds'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WATagBrush subclass: #WAAnchorTag
+	instanceVariableNames: 'url'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WATagBrush subclass: #WABasicFormTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WATagBrush subclass: #WABreakTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WATagBrush subclass: #WACanvasTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WATagBrush subclass: #WACollectionTag
+	instanceVariableNames: 'list selected labelBlock'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WATagBrush subclass: #WACommandTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WATagBrush subclass: #WADetailsTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WATagBrush subclass: #WAEmbedTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WATagBrush subclass: #WAEventSourceTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WATagBrush subclass: #WAFieldSetTag
+	instanceVariableNames: 'legend'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WATagBrush subclass: #WAFormInputTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WATagBrush subclass: #WAGenericTag
+	instanceVariableNames: 'tag'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WATagBrush subclass: #WAHeadingTag
+	instanceVariableNames: 'level'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WATagBrush subclass: #WAHorizontalRuleTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WATagBrush subclass: #WAIframeTag
+	instanceVariableNames: 'rootBlock url'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WATagBrush subclass: #WAImageTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WATagBrush subclass: #WAKeyGeneratorTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WATagBrush subclass: #WALabelTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WATagBrush subclass: #WAMediaElementTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WATagBrush subclass: #WAMenuTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WATagBrush subclass: #WAMeterTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WATagBrush subclass: #WAObjectTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WATagBrush subclass: #WAOptionalBreakTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WATagBrush subclass: #WAOptionGroupTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WATagBrush subclass: #WAOptionTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WATagBrush subclass: #WAOutputTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WATagBrush subclass: #WAParameterTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WATagBrush subclass: #WAProgressTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WATagBrush subclass: #WARubyTextTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WATagBrush subclass: #WAScriptTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WATagBrush subclass: #WASourceTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WATagBrush subclass: #WATableCellTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WATagBrush subclass: #WATableTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WATagBrush subclass: #WATimeTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WATagBrush subclass: #WATrackTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAAnchorTag subclass: #WAImageMapTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAAnchorTag subclass: #WAPopupAnchorTag
+	instanceVariableNames: 'windowTitle features'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WABasicFormTag subclass: #WAFormTag
+	instanceVariableNames: 'defaultAction'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WACollectionTag subclass: #WADatalistTag
+	instanceVariableNames: 'valueBlock'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WACollectionTag subclass: #WAListTag
+	instanceVariableNames: 'callbackBlock'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WACollectionTag subclass: #WASelectTag
+	instanceVariableNames: 'enabledBlock isOptional optionalLabel titleBlock values'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAListTag subclass: #WAOrderedListTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAListTag subclass: #WAUnorderedListTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WASelectTag subclass: #WAMultiSelectTag
+	instanceVariableNames: 'callback'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFormInputTag subclass: #WAAbstractTextAreaTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFormInputTag subclass: #WAButtonTag
+	instanceVariableNames: 'type value'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFormInputTag subclass: #WACheckboxTag
+	instanceVariableNames: 'value callback'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFormInputTag subclass: #WAFileUploadTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFormInputTag subclass: #WAHiddenInputTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFormInputTag subclass: #WARadioButtonTag
+	instanceVariableNames: 'group'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFormInputTag subclass: #WASubmitButtonTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAAbstractTextAreaTag subclass: #WAColorInputTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAAbstractTextAreaTag subclass: #WAEmailInputTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAAbstractTextAreaTag subclass: #WASearchInputTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAAbstractTextAreaTag subclass: #WASteppedTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAAbstractTextAreaTag subclass: #WATelephoneInputTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAAbstractTextAreaTag subclass: #WATextAreaTag
+	instanceVariableNames: 'value'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAAbstractTextAreaTag subclass: #WATextInputTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAAbstractTextAreaTag subclass: #WAUrlInputTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WASteppedTag subclass: #WAClosedRangeTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WASteppedTag subclass: #WADateInputTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WASteppedTag subclass: #WADateTimeInputTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WASteppedTag subclass: #WADateTimeLocalInputTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WASteppedTag subclass: #WAMonthInputTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WASteppedTag subclass: #WAWeekInputTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAClosedRangeTag subclass: #WANumberInputTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAClosedRangeTag subclass: #WARangeInputTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAClosedRangeTag subclass: #WATimeInputTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WATextInputTag subclass: #WAPasswordInputTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WASubmitButtonTag subclass: #WACancelButtonTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WASubmitButtonTag subclass: #WAImageButtonTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAGenericTag subclass: #WAEditTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAMediaElementTag subclass: #WAAudioTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAMediaElementTag subclass: #WAVideoTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WATableCellTag subclass: #WATableColumnGroupTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WATableCellTag subclass: #WATableDataTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WATableColumnGroupTag subclass: #WATableColumnTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WATableDataTag subclass: #WATableHeadingTag
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WARenderer subclass: #WACanvas
+	instanceVariableNames: 'currentBrush parentBrush'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WACanvas subclass: #WATagCanvas
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WATagCanvas subclass: #WAHtmlCanvas
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WATagCanvas subclass: #WAXmlCanvas
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+"Global Aliases"!
+
+
+"Loose Methods"!
+
+!GRPackage class methodsFor!
+
+seasideCanvas	^ self new		name: 'Seaside-Canvas';		description: 'The mechanism of choice to generate valid and reusable XHTML markup.';		addDependency: 'Seaside-Core';		url: #seasideUrl;		yourself! !
+!GRPackage class categoriesFor: #seasideCanvas!*seaside/canvas!public! !
+
+!WARequestContext methodsFor!
+
+closeThisPopup	^ self respond: [ :resp |		resp 			contentType: WAMimeType textHtml;			nextPutAll: (WAHtmlCanvas builder				fullDocument: true;				rootBlock: [ :root | 					root title: 'Seaside'; beHtml5 ];				render: [ :html | html script: 'window.close();' ]) ]!
+
+closeThisPopupAndReloadOpener	^ self respond: [ :resp |		resp			contentType: WAMimeType textHtml;			nextPutAll: (WAHtmlCanvas builder				fullDocument: true;				rootBlock: [ :root | 					root title: 'Seaside'; beHtml5 ];				render: [ :html | html script: 'window.close();window.opener.location=window.opener.location;' ]) ]! !
+!WARequestContext categoriesFor: #closeThisPopup!*seaside/canvas!public! !
+!WARequestContext categoriesFor: #closeThisPopupAndReloadOpener!*seaside/canvas!public! !
+
+"End of package definition"!
+

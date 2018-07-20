@@ -1,0 +1,21 @@
+﻿"Filed out from Dolphin Smalltalk 7"!
+
+WAFunctionalTest subclass: #WACallbackFunctionalTest
+	instanceVariableNames: 'transcript'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WACallbackFunctionalTest guid: (GUID fromString: '{eca1d8a3-4e17-4047-980c-778c691a3b71}')!
+WACallbackFunctionalTest comment: ''!
+!WACallbackFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
+!WACallbackFunctionalTest methodsFor!
+
+append: aString	transcript nextPutAll: aString; nextPut: Character cr!
+
+initialize	super initialize.	transcript := WriteStream on: String new!
+
+renderContentOn: html 	html paragraph: 'Depending on the way the form is submitted the following actions should be triggered and logged:'.	html orderedList list: #( 		'Default: Text, Default'		'Before: Text'		'Before Submit: Text, Before Submit'		'Before Cancel: Before Cancel'		'After: Text'		'After Submit: Text, After Submit'		'After Cancel: After Cancel'	).	html form		defaultAction: [ self append: 'Default' ] ;		with: [			html div: [				"div for validation"				html submitButton					text: 'Before'.				html submitButton					callback:  [ self append: 'Before Submit' ];					text: 'Before Submit'.				html cancelButton					callback:  [ self append: 'Before Cancel' ];					text: 'Before Cancel'.				html break.				html textInput					value: 'Some Text';					callback: [ :value | self append: 'Text: ' , value ].				html break.				html submitButton					text: 'After'.				html submitButton					callback:  [ self append: 'After Submit' ];					text: 'After Submit'.				html cancelButton					callback:  [ self append: 'After Cancel' ];					text: 'After Cancel' ] ].	html preformatted: transcript contents.	transcript reset! !
+!WACallbackFunctionalTest categoriesFor: #append:!accessing!public! !
+!WACallbackFunctionalTest categoriesFor: #initialize!initialization!public! !
+!WACallbackFunctionalTest categoriesFor: #renderContentOn:!public!rendering! !
+

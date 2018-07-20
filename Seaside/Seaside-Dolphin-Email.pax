@@ -1,0 +1,71 @@
+﻿| package |
+package := Package name: 'Seaside-Dolphin-Email'.
+package paxVersion: 1;
+	basicComment: ''.
+
+package basicPackageVersion: '6'.
+
+
+package classNames
+	add: #WAEmailErrorHandler;
+	yourself.
+
+package methodNames
+	add: #GRDolphinPlatform -> #seasideDeliverEmailMessage:;
+	add: 'GRPackage class' -> #seasideDolphinEmail;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: (IdentitySet new
+	add: '..\Core\Object Arts\Dolphin\Base\Dolphin';
+	add: '..\Grease\Grease-Core';
+	add: '..\Grease\Grease-Dolphin-Core';
+	add: 'Seaside-Core';
+	add: 'Seaside-Email';
+	yourself).
+
+package!
+
+"Class Definitions"!
+
+WAErrorHandler subclass: #WAEmailErrorHandler
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+"Global Aliases"!
+
+
+"Loose Methods"!
+
+!GRDolphinPlatform methodsFor!
+
+seasideDeliverEmailMessage: aWAEmailMessage
+
+	self
+		deliverMailFrom: aWAEmailMessage from greaseString
+		to: aWAEmailMessage recipients
+		text: aWAEmailMessage plainMessage
+! !
+!GRDolphinPlatform categoriesFor: #seasideDeliverEmailMessage:!email!public! !
+
+!GRPackage class methodsFor!
+
+seasideDolphinEmail
+	^(self new)
+		name: 'Seaside-Dolphin-Email';
+		description: 'Pharo implementation classes for the package "Seaside-Email".';
+		addDependency: 'Seaside-Email';
+		addDependency: 'Seaside-Dolphin-Core';
+		url: #seasideUrl;
+		yourself! !
+!GRPackage class categoriesFor: #seasideDolphinEmail!*seaside-pharo-email!public! !
+
+"End of package definition"!
+

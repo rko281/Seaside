@@ -1,0 +1,452 @@
+﻿| package |
+package := Package name: 'JQuery-UI'.
+package paxVersion: 1;
+	basicComment: ''.
+
+
+package classNames
+	add: #JQAccordion;
+	add: #JQAutocomplete;
+	add: #JQBaseTheme;
+	add: #JQBlackTieTheme;
+	add: #JQBlitzerTheme;
+	add: #JQButton;
+	add: #JQCupertinoTheme;
+	add: #JQDarkHiveTheme;
+	add: #JQDatepicker;
+	add: #JQDialog;
+	add: #JQDotLuvTheme;
+	add: #JQDraggable;
+	add: #JQDroppable;
+	add: #JQEffect;
+	add: #JQEggplantTheme;
+	add: #JQExciteBikeTheme;
+	add: #JQFlickTheme;
+	add: #JQHotSneaksTheme;
+	add: #JQHumanityTheme;
+	add: #JQLeFrogTheme;
+	add: #JQMintChocTheme;
+	add: #JQOvercastTheme;
+	add: #JQPepperGrinderTheme;
+	add: #JQPosition;
+	add: #JQProgressbar;
+	add: #JQRedmondTheme;
+	add: #JQResizable;
+	add: #JQSelectable;
+	add: #JQSlider;
+	add: #JQSmoothnessTheme;
+	add: #JQSortable;
+	add: #JQSouthStreetTheme;
+	add: #JQStartTheme;
+	add: #JQSunnyTheme;
+	add: #JQSwankyPurseTheme;
+	add: #JQTabs;
+	add: #JQTrontasticTheme;
+	add: #JQUiDarknessTheme;
+	add: #JQUiDeploymentLibrary;
+	add: #JQUiDevelopmentLibrary;
+	add: #JQUiGoogleLibrary;
+	add: #JQUiLightnessTheme;
+	add: #JQVaderTheme;
+	add: #JQWidget;
+	yourself.
+
+package methodNames
+	add: #JQAjax -> #callback:forEvent:;
+	add: #JQAjax -> #callback:passengers:;
+	add: #JQAjax -> #callbackAccordion:;
+	add: #JQAjax -> #callbackDraggable:;
+	add: #JQAjax -> #callbackDroppable:;
+	add: #JQAjax -> #callbackResizable:;
+	add: #JQAjax -> #callbackSlider:;
+	add: #JQAjax -> #callbackSortable:;
+	add: #JQAjax -> #callbackTabs:;
+	add: #JQAjax -> #javascriptForEvent:;
+	add: #JQAjax -> #smalltalkForEvent:value:;
+	add: #JQueryInstance -> #accordion;
+	add: #JQueryInstance -> #addClass:duration:;
+	add: #JQueryInstance -> #autocomplete;
+	add: #JQueryInstance -> #button;
+	add: #JQueryInstance -> #buttonset;
+	add: #JQueryInstance -> #datepicker;
+	add: #JQueryInstance -> #dialog;
+	add: #JQueryInstance -> #draggable;
+	add: #JQueryInstance -> #droppable;
+	add: #JQueryInstance -> #effect;
+	add: #JQueryInstance -> #innerHeight:;
+	add: #JQueryInstance -> #innerWidth:;
+	add: #JQueryInstance -> #outerHeight:;
+	add: #JQueryInstance -> #outerWidth:;
+	add: #JQueryInstance -> #positioned;
+	add: #JQueryInstance -> #progressbar;
+	add: #JQueryInstance -> #removeClass:duration:;
+	add: #JQueryInstance -> #resizable;
+	add: #JQueryInstance -> #selectable;
+	add: #JQueryInstance -> #slider;
+	add: #JQueryInstance -> #sortable;
+	add: #JQueryInstance -> #switchClass:to:duration:;
+	add: #JQueryInstance -> #tabs;
+	add: #JQueryInstance -> #toggleClass:duration:;
+	add: 'GRPackage class' -> #jQueryUI;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: (IdentitySet new
+	add: '..\Core\Object Arts\Dolphin\Base\Dolphin';
+	add: '..\Grease\Grease-Core';
+	add: '..\Javascript\Javascript-Core';
+	add: 'JQuery-Core';
+	add: '..\Seaside\Seaside-Core';
+	yourself).
+
+package!
+
+"Class Definitions"!
+
+JQPlugin subclass: #JQEffect
+	instanceVariableNames: 'method effect speed complete'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQPlugin subclass: #JQWidget
+	instanceVariableNames: 'action arguments'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQWidget subclass: #JQAccordion
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQWidget subclass: #JQAutocomplete
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQWidget subclass: #JQButton
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQWidget subclass: #JQDatepicker
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQWidget subclass: #JQDialog
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQWidget subclass: #JQDraggable
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQWidget subclass: #JQDroppable
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQWidget subclass: #JQPosition
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQWidget subclass: #JQProgressbar
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQWidget subclass: #JQResizable
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQWidget subclass: #JQSelectable
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQWidget subclass: #JQSlider
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQWidget subclass: #JQSortable
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQWidget subclass: #JQTabs
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFileLibrary subclass: #JQBaseTheme
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFileLibrary subclass: #JQUiDeploymentLibrary
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFileLibrary subclass: #JQUiDevelopmentLibrary
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFileLibrary subclass: #JQUiGoogleLibrary
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQBaseTheme subclass: #JQBlackTieTheme
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQBaseTheme subclass: #JQBlitzerTheme
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQBaseTheme subclass: #JQCupertinoTheme
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQBaseTheme subclass: #JQDarkHiveTheme
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQBaseTheme subclass: #JQDotLuvTheme
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQBaseTheme subclass: #JQEggplantTheme
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQBaseTheme subclass: #JQExciteBikeTheme
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQBaseTheme subclass: #JQFlickTheme
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQBaseTheme subclass: #JQHotSneaksTheme
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQBaseTheme subclass: #JQHumanityTheme
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQBaseTheme subclass: #JQLeFrogTheme
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQBaseTheme subclass: #JQMintChocTheme
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQBaseTheme subclass: #JQOvercastTheme
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQBaseTheme subclass: #JQPepperGrinderTheme
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQBaseTheme subclass: #JQRedmondTheme
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQBaseTheme subclass: #JQSmoothnessTheme
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQBaseTheme subclass: #JQSouthStreetTheme
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQBaseTheme subclass: #JQStartTheme
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQBaseTheme subclass: #JQSunnyTheme
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQBaseTheme subclass: #JQSwankyPurseTheme
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQBaseTheme subclass: #JQTrontasticTheme
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQBaseTheme subclass: #JQUiDarknessTheme
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQBaseTheme subclass: #JQUiLightnessTheme
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQBaseTheme subclass: #JQVaderTheme
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+"Global Aliases"!
+
+
+"Loose Methods"!
+
+!GRPackage class methodsFor!
+
+jQueryUI	^ self new		name: 'JQuery-UI';		description: 'jQuery-UI integration for Seaside. Expression through code.';		addDependency: 'JQuery-Core';		url: #seasideUrl;		yourself! !
+!GRPackage class categoriesFor: #jQueryUI!*jquery/ui!public! !
+
+!JQAjax methodsFor!
+
+callback: aBlock forEvent: anArraySpec	self 		callback: [ :value | aBlock value: (self smalltalkForEvent: anArraySpec value: value) ]		value: (self javascriptForEvent: anArraySpec)!
+
+callback: aBlock passengers: aQuery	"Trigger the callback aBlock with the passengers of aQuery. Nodes that have no passenger are ignored."	self		callback: [ :value | 			aBlock value: ((GRPlatform subStringsIn: value value splitBy: $,				collect: [ :each | self renderContext callbacks passengerAt: each ])				reject: [ :each | each isNil ]) ]		value: (JSStream on: JQuery functionName , '.map(' , aQuery greaseString , '.get(),function(each){return each.id}).join(",")')!
+
+callbackAccordion: aBlock	"Trigger aBlock with the accordion event object."		self callback: aBlock forEvent: #(		(passenger newHeader "activated header")		(passenger oldHeader "previous header")		(passenger newContent "activated content")		(passenger oldContent "previous content"))!
+
+callbackDraggable: aBlock	"Trigger aBlock with the draggable event object."		self callback: aBlock forEvent: #(		(passenger helper "the helper that's being dragged")		(position position "current position of the helper")		(position offset "current absolute position of the helper"))!
+
+callbackDroppable: aBlock	"Trigger aBlock with the droppable event object."		self callback: aBlock forEvent: #(		(passenger draggable "current draggable element")		(passenger helper "current draggable helper")		(position position "current position of the draggable helper")		(position offset "current absolute position of the draggable helper"))!
+
+callbackResizable: aBlock	"Trigger aBlock with the resizeable event object."		self callback: aBlock forEvent: #(		(passenger helper "the helper element")		(position originalPosition "position before resizing started") 		(position position "current position")		(size originalSize "size before resizing started")		(size size "current size"))!
+
+callbackSlider: aBlock	"Trigger aBlock with the slider event object."		self callback: aBlock forEvent: #(		(passenger handle "the current focused handle")		(number value "the current handle's value"))!
+
+callbackSortable: aBlock	"Trigger aBlock with the selectable event object."		self callback: aBlock forEvent: #(		(passenger helper "the current helper element")		(passenger item " the current dragged element")		(passenger placeholder "the placeholder")		(passenger sender "the sortable where the item comes from")		(position position "current position of the helper")		(position offset "current absolute position of the helper"))!
+
+callbackTabs: aBlock	"Trigger aBlock with the tabs event object."		self callback: aBlock forEvent: #(		(passenger tab "anchor element of the selected (clicked) tab")		(passenger panel "element, that contains the selected/clicked tab contents")		(number index "zero-based index of the selected (clicked) tab"))!
+
+javascriptForEvent: anArraySpec	| stream |	stream := JSStream new.	anArraySpec		do: [ :spec |			(#(#number string) includes: spec first)				ifTrue: [ stream nextPutAll: 'arguments[1].'; nextPutAll: spec second ].			(spec first = #passenger)				ifTrue: [ stream nextPutAll: JQuery functionName; nextPut: $(; nextPutAll: 'arguments[1].'; nextPutAll: spec second; nextPutAll: ').attr("id")' ].			(spec first = #position)				ifTrue: [ stream nextPutAll: 'arguments[1].'; nextPutAll: spec second; nextPutAll: '.top'; nextPutAll: '+","+'; nextPutAll: 'arguments[1].'; nextPutAll: spec second; nextPutAll: '.left' ].			(spec first = #size)				ifTrue: [ stream nextPutAll: 'arguments[1].'; nextPutAll: spec second; nextPutAll: '.width'; nextPutAll: '+","+'; nextPutAll: 'arguments[1].'; nextPutAll: spec second; nextPutAll: '.height' ] ]		separatedBy: [ stream nextPutAll: '+","+' ].	^ stream!
+
+smalltalkForEvent: anArraySpec value: aString	| stream result |	stream := aString readStream.	result := GRSmallDictionary new.	anArraySpec do: [ :spec |		(spec first = #number)			ifTrue: [ result at: spec last put: (stream upTo: $,) greaseInteger ].		(spec first = #string)				ifTrue: [ result at: spec last put: (stream upTo: $,) ].		(spec first = #passenger)			ifTrue: [ result at: spec last put: (self renderContext callbacks passengerAt: (stream upTo: $,)) ].		(spec first = #position)			ifTrue: [ result at: spec last put: (GRSmallDictionary new add: 'top' -> (stream upTo: $,) greaseInteger; add: 'left' -> (stream upTo: $,) greaseInteger; yourself) ].		(spec first = #size)			ifTrue: [ result at: spec last put: (stream upTo: $,) greaseInteger @ (stream upTo: $,) greaseInteger ] ].	^ result! !
+!JQAjax categoriesFor: #callback:forEvent:!*jquery/ui/private!public! !
+!JQAjax categoriesFor: #callback:passengers:!*jquery/ui!public! !
+!JQAjax categoriesFor: #callbackAccordion:!*jquery/ui!public! !
+!JQAjax categoriesFor: #callbackDraggable:!*jquery/ui!public! !
+!JQAjax categoriesFor: #callbackDroppable:!*jquery/ui!public! !
+!JQAjax categoriesFor: #callbackResizable:!*jquery/ui!public! !
+!JQAjax categoriesFor: #callbackSlider:!*jquery/ui!public! !
+!JQAjax categoriesFor: #callbackSortable:!*jquery/ui!public! !
+!JQAjax categoriesFor: #callbackTabs:!*jquery/ui!public! !
+!JQAjax categoriesFor: #javascriptForEvent:!*jquery/ui/private!public! !
+!JQAjax categoriesFor: #smalltalkForEvent:value:!*jquery/ui/private!public! !
+
+!JQueryInstance methodsFor!
+
+accordion	"Make the selected elements Accordion widgets."		^ self create: JQAccordion!
+
+addClass: aString duration: aDurationOrString	"Adds the specified class to each of the set of matched elements with a optional transition between the states."		self call: 'addClass' with: aString with: aDurationOrString!
+
+autocomplete	"Make the selected input elements autocomplete."		^ self create: JQAutocomplete!
+
+button	"Make the selected input elements buttons."		^ self create: JQButton !
+
+buttonset	"Group buttons which should be always applied for radio buttons."	^ self call: 'buttonset'!
+
+datepicker	"The method that you use to create a new date picker."		^ self create: JQDatepicker!
+
+dialog	"Make the selected elements Dialog boxes."		^ self create: JQDialog!
+
+draggable	"Creates new draggables on the nodeset supplied by the query."		^ self create: JQDraggable!
+
+droppable	"Creates new droppables on the nodeset supplied by the query."		^ self create: JQDroppable!
+
+effect	"This is the core dependency of the effects of jQuery UI."		^ self create: JQEffect!
+
+innerHeight: anInteger	"Set the height for the elements in the set of matched elements, including padding but not border."		self call: 'innerHeight' with: anInteger!
+
+innerWidth: anInteger	"Set the width for the elements in the set of matched elements, including padding but not border."		self call: 'innerWidth' with: anInteger!
+
+outerHeight: anInteger	"Set the height for the elements in the set of matched elements, including padding and border."		self call: 'outerHeight' with: anInteger!
+
+outerWidth: anInteger	"Set the width for the elements in the set of matched elements, including padding and border."		self call: 'outerWidth' with: anInteger!
+
+positioned	"Make the selected elements positioned. Note: this method is called 'positioned' (contrary to the jQueryUI implementation where it is called 'position') to avoid a conflict in Smalltalk."		^ self create: JQPosition!
+
+progressbar	"Make the selected elements progressbar."		^ self create: JQProgressbar!
+
+removeClass: aString duration: aDurationOrString	"Removes the specified class from the set of matched elements with a optional transition."		self call: 'removeClass' with: aString with: aDurationOrString!
+
+resizable	"Creates new resizables on the nodeset supplied by the query."		^ self create: JQResizable!
+
+selectable	"Creates new selectable on the nodeset supplied by the query."		^ self create: JQSelectable!
+
+slider	"Makes a slider from the nodeset supplied by the query."		^ self create: JQSlider!
+
+sortable	"Creates new sortable on the nodeset supplied by the query."		^ self create: JQSortable!
+
+switchClass: firstClassString to: secondClassString duration: aDurationOrString	"Switches from the class defined in the first argument to the class defined as second argument, using a optional transition."		self call: 'switchClass' with: firstClassString with: secondClassString with: aDurationOrString!
+
+tabs	"The method that you use to create a new tabs interface."		^ self create: JQTabs!
+
+toggleClass: aString duration: aDurationOrString	"Adds the specified class if it is not present, removes the specified class if it is present, using a optional transition."		self call: 'toggleClass' with: aString with: aDurationOrString! !
+!JQueryInstance categoriesFor: #accordion!*jquery/ui/widgets!public! !
+!JQueryInstance categoriesFor: #addClass:duration:!*jquery/ui/transitions!public! !
+!JQueryInstance categoriesFor: #autocomplete!*jquery/ui/widgets!public! !
+!JQueryInstance categoriesFor: #button!*jquery/ui/widgets!public! !
+!JQueryInstance categoriesFor: #buttonset!*jquery/ui/widgets!public! !
+!JQueryInstance categoriesFor: #datepicker!*jquery/ui/widgets!public! !
+!JQueryInstance categoriesFor: #dialog!*jquery/ui/widgets!public! !
+!JQueryInstance categoriesFor: #draggable!*jquery/ui/interactions!public! !
+!JQueryInstance categoriesFor: #droppable!*jquery/ui/interactions!public! !
+!JQueryInstance categoriesFor: #effect!*jquery/ui!public! !
+!JQueryInstance categoriesFor: #innerHeight:!*jquery/ui/css!public! !
+!JQueryInstance categoriesFor: #innerWidth:!*jquery/ui/css!public! !
+!JQueryInstance categoriesFor: #outerHeight:!*jquery/ui/css!public! !
+!JQueryInstance categoriesFor: #outerWidth:!*jquery/ui/css!public! !
+!JQueryInstance categoriesFor: #positioned!*jquery/ui/utilities!public! !
+!JQueryInstance categoriesFor: #progressbar!*jquery/ui/widgets!public! !
+!JQueryInstance categoriesFor: #removeClass:duration:!*jquery/ui/transitions!public! !
+!JQueryInstance categoriesFor: #resizable!*jquery/ui/interactions!public! !
+!JQueryInstance categoriesFor: #selectable!*jquery/ui/interactions!public! !
+!JQueryInstance categoriesFor: #slider!*jquery/ui/widgets!public! !
+!JQueryInstance categoriesFor: #sortable!*jquery/ui/interactions!public! !
+!JQueryInstance categoriesFor: #switchClass:to:duration:!*jquery/ui/transitions!public! !
+!JQueryInstance categoriesFor: #tabs!*jquery/ui/widgets!public! !
+!JQueryInstance categoriesFor: #toggleClass:duration:!*jquery/ui/transitions!public! !
+
+"End of package definition"!
+

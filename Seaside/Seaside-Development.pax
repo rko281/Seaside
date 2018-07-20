@@ -1,0 +1,282 @@
+﻿| package |
+package := Package name: 'Seaside-Development'.
+package paxVersion: 1;
+	basicComment: ''.
+
+
+package classNames
+	add: #WAClassnameHaloPlugin;
+	add: #WAConfigureToolPlugin;
+	add: #WADebugErrorHandler;
+	add: #WADeprecatedToolFilter;
+	add: #WADeprecation;
+	add: #WADeprecationToolPlugin;
+	add: #WADevelopmentConfiguration;
+	add: #WADevelopmentFiles;
+	add: #WAHalo;
+	add: #WAHaloPlugin;
+	add: #WAHaloVisitor;
+	add: #WAInspector;
+	add: #WAInspectorHaloPlugin;
+	add: #WAModeHaloPlugin;
+	add: #WANewSessionToolPlugin;
+	add: #WAPluggableTool;
+	add: #WAPrettyPrintedDocument;
+	add: #WAStylesHaloPlugin;
+	add: #WATerminateToolPlugin;
+	add: #WATimingToolFilter;
+	add: #WATimingToolPlugin;
+	add: #WAToggleHalosToolPlugin;
+	add: #WATool;
+	add: #WAToolDecoration;
+	add: #WAToolPlugin;
+	add: #WAValidateToolPlugin;
+	add: #WAViewer;
+	add: #WAWalkback;
+	add: #WAWalkbackErrorHandler;
+	yourself.
+
+package methodNames
+	add: #WAPainter -> #canHaveHalo;
+	add: #WAPainterVisitor -> #addHaloVisitor:;
+	add: #WAPresenter -> #canHaveHalo;
+	add: #WAPresenter -> #haloClass;
+	add: #WAPresenterGuide -> #addHaloVisitor:;
+	add: #WARenderContext -> #addHaloVisitor:;
+	add: #WARenderContext -> #disableHalos;
+	add: #WARenderContext -> #enableHalos;
+	add: #WARenderContext -> #halosEnabled;
+	add: 'GRPackage class' -> #seasideDevelopment;
+	add: 'WAAdmin class' -> #developmentToolsEnabled;
+	add: 'WAAdmin class' -> #disableDevelopmentTools;
+	add: 'WAAdmin class' -> #enableDevelopmentTools;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: (IdentitySet new
+	add: '..\Core\Object Arts\Dolphin\Base\Dolphin';
+	add: '..\Grease\Grease-Core';
+	add: 'Seaside-Canvas';
+	add: 'Seaside-Component';
+	add: 'Seaside-Core';
+	add: 'Seaside-RenderLoop';
+	add: 'Seaside-Tools-Core';
+	add: 'Seaside-Tools-Web';
+	add: 'Seaside-Widgets';
+	yourself).
+
+package!
+
+"Class Definitions"!
+
+WAObject subclass: #WAHalo
+	instanceVariableNames: 'root mode plugins'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFileLibrary subclass: #WADevelopmentFiles
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WASystemConfiguration subclass: #WADevelopmentConfiguration
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAHtmlDocument subclass: #WAPrettyPrintedDocument
+	instanceVariableNames: 'html indentLevel indentCloseTags firstLine singleEncoder'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAErrorHandler subclass: #WADebugErrorHandler
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WADebugErrorHandler subclass: #WAWalkbackErrorHandler
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAPlugin subclass: #WAHaloPlugin
+	instanceVariableNames: 'root'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAPlugin subclass: #WAToolPlugin
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAHaloPlugin subclass: #WAClassnameHaloPlugin
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAHaloPlugin subclass: #WAInspectorHaloPlugin
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAHaloPlugin subclass: #WAModeHaloPlugin
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAHaloPlugin subclass: #WAStylesHaloPlugin
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAToolPlugin subclass: #WAConfigureToolPlugin
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAToolPlugin subclass: #WADeprecationToolPlugin
+	instanceVariableNames: 'filter'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAToolPlugin subclass: #WANewSessionToolPlugin
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAToolPlugin subclass: #WATerminateToolPlugin
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAToolPlugin subclass: #WATimingToolPlugin
+	instanceVariableNames: 'filter'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAToolPlugin subclass: #WAToggleHalosToolPlugin
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAToolPlugin subclass: #WAValidateToolPlugin
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAComponent subclass: #WATool
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAComponent subclass: #WAWalkback
+	instanceVariableNames: 'exception limit'
+	classVariableNames: 'Current'
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WALabelledFormDialog subclass: #WAViewer
+	instanceVariableNames: 'presenter'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WATool subclass: #WADeprecation
+	instanceVariableNames: 'table filter'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WATool subclass: #WAInspector
+	instanceVariableNames: 'path selected input'
+	classVariableNames: 'Current'
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WATool subclass: #WAPluggableTool
+	instanceVariableNames: 'component'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WADecoration subclass: #WAToolDecoration
+	instanceVariableNames: 'plugins showHalos halos'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WARequestFilter subclass: #WADeprecatedToolFilter
+	instanceVariableNames: 'notifications'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WARequestFilter subclass: #WATimingToolFilter
+	instanceVariableNames: 'startTime previousTiming'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAPainterVisitor subclass: #WAHaloVisitor
+	instanceVariableNames: 'toolDecoration renderContext visitor'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+"Global Aliases"!
+
+
+"Loose Methods"!
+
+!GRPackage class methodsFor!
+
+seasideDevelopment	^ self new		name: 'Seaside-Development';		description: 'Web-based development tools and debugging support.';		addDependency: 'Seaside-Tools-Web';		addDependency: 'Seaside-Flow'; "For WAWalkbackErrorHandler"		url: #seasideUrl;		yourself! !
+!GRPackage class categoriesFor: #seasideDevelopment!*seaside/development!public! !
+
+!WAAdmin class methodsFor!
+
+developmentToolsEnabled	^ self applicationDefaults parents includes: WADevelopmentConfiguration instance!
+
+disableDevelopmentTools	self applicationDefaults removeParent: WADevelopmentConfiguration instance!
+
+enableDevelopmentTools	self applicationDefaults addParent: WADevelopmentConfiguration instance! !
+!WAAdmin class categoriesFor: #developmentToolsEnabled!*seaside/development!public! !
+!WAAdmin class categoriesFor: #disableDevelopmentTools!*seaside/development!public! !
+!WAAdmin class categoriesFor: #enableDevelopmentTools!*seaside/development!public! !
+
+!WAPainter methodsFor!
+
+canHaveHalo	"Return true if this Painter should have a Halo displayed for it when Halos are	enabled in the development environment."		^ false! !
+!WAPainter categoriesFor: #canHaveHalo!*seaside/development!public! !
+
+!WAPainterVisitor methodsFor!
+
+addHaloVisitor: aHaloVisitor	^ aHaloVisitor		visitor: self;		yourself! !
+!WAPainterVisitor categoriesFor: #addHaloVisitor:!*seaside/development!public! !
+
+!WAPresenter methodsFor!
+
+canHaveHalo	"Answer true if the presenter should display a halo."	^ self haloClass notNil!
+
+haloClass	"Answer the halo class to be used to wrap this component."	^ WAHalo! !
+!WAPresenter categoriesFor: #canHaveHalo!*seaside/development!public! !
+!WAPresenter categoriesFor: #haloClass!*seaside/development!public! !
+
+!WAPresenterGuide methodsFor!
+
+addHaloVisitor: aHaloVisitor	client := client addHaloVisitor: aHaloVisitor.	^ self! !
+!WAPresenterGuide categoriesFor: #addHaloVisitor:!*seaside/development!public! !
+
+!WARenderContext methodsFor!
+
+addHaloVisitor: aHaloVisitor	visitor := visitor addHaloVisitor: aHaloVisitor!
+
+disableHalos	self properties at: #halosEnabled put: false!
+
+enableHalos	self properties at: #halosEnabled put: true!
+
+halosEnabled	^ self properties at: #halosEnabled ifAbsent: [ false ]! !
+!WARenderContext categoriesFor: #addHaloVisitor:!*seaside/development!public! !
+!WARenderContext categoriesFor: #disableHalos!*seaside/development!public! !
+!WARenderContext categoriesFor: #enableHalos!*seaside/development!public! !
+!WARenderContext categoriesFor: #halosEnabled!*seaside/development!public! !
+
+"End of package definition"!
+

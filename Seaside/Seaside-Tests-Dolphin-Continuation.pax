@@ -1,0 +1,45 @@
+﻿| package |
+package := Package name: 'Seaside-Tests-Dolphin-Continuation'.
+package paxVersion: 1;
+	basicComment: ''.
+
+
+package classNames
+	add: #WAContinuationTest;
+	add: #WAPartialContinuationTest;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: (IdentitySet new
+	add: '..\Core\Object Arts\Dolphin\Base\Dolphin';
+	add: 'Seaside-Dolphin-Continuation';
+	add: '..\Core\Contributions\Camp Smalltalk\SUnit\SUnit';
+	yourself).
+
+package!
+
+"Class Definitions"!
+
+TestCase subclass: #WAContinuationTest
+	instanceVariableNames: 'tmp tmp2'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #WAPartialContinuationTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+"Global Aliases"!
+
+
+"Loose Methods"!
+
+"End of package definition"!
+

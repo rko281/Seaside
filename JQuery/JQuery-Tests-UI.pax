@@ -1,0 +1,273 @@
+﻿| package |
+package := Package name: 'JQuery-Tests-UI'.
+package paxVersion: 1;
+	basicComment: ''.
+
+
+package classNames
+	add: #JQAccordionFunctionalTest;
+	add: #JQAccordionTest;
+	add: #JQAutocompleteFunctionalTest;
+	add: #JQAutocompleterTest;
+	add: #JQButtonFunctionalTest;
+	add: #JQButtonTest;
+	add: #JQDatepickerFunctionalTest;
+	add: #JQDatepickerTest;
+	add: #JQDialogFunctionalTest;
+	add: #JQDialogTest;
+	add: #JQDraggableFunctionalTest;
+	add: #JQDraggableTest;
+	add: #JQDroppableFunctionalTest;
+	add: #JQDroppableTest;
+	add: #JQEffectFunctionalTest;
+	add: #JQEffectTest;
+	add: #JQIconsFunctionalTest;
+	add: #JQPositionTest;
+	add: #JQProgressbarFunctionalTest;
+	add: #JQProgressbarTest;
+	add: #JQResizableFunctionalTest;
+	add: #JQResizableTest;
+	add: #JQSelectableFunctionalTest;
+	add: #JQSelectableTest;
+	add: #JQSliderFunctionalTest;
+	add: #JQSliderTest;
+	add: #JQSortableFunctionalTest;
+	add: #JQSortableTest;
+	add: #JQTabsFunctionalTest;
+	add: #JQTabsTest;
+	add: #JQToggleFunctionalTest;
+	add: #JQTransitionFunctionalTest;
+	add: #JQueryUiTest;
+	add: #JQUiAllFunctionalTests;
+	add: #JQUiAllFunctionalTestsLibrary;
+	add: #JQUiFunctionalTest;
+	add: #JQUiWelcomeFunctionalTest;
+	add: #JQVisualsFunctionalTest;
+	yourself.
+
+package methodNames
+	add: 'GRPackage class' -> #jQueryTestsUI;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: (IdentitySet new
+	add: '..\Core\Object Arts\Dolphin\Base\Dolphin';
+	add: '..\Grease\Grease-Core';
+	add: 'JQuery-Core';
+	add: 'JQuery-Tests-Core';
+	add: 'JQuery-UI';
+	add: '..\Seaside\Seaside-Tools-Core';
+	yourself).
+
+package!
+
+"Class Definitions"!
+
+JQAllFunctionalTestsLibrary subclass: #JQUiAllFunctionalTestsLibrary
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQAllFunctionalTests subclass: #JQUiAllFunctionalTests
+	instanceVariableNames: 'themes theme'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQFunctionalTest subclass: #JQUiFunctionalTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQUiFunctionalTest subclass: #JQAccordionFunctionalTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQUiFunctionalTest subclass: #JQAutocompleteFunctionalTest
+	instanceVariableNames: 'packages'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQUiFunctionalTest subclass: #JQButtonFunctionalTest
+	instanceVariableNames: 'locked number'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQUiFunctionalTest subclass: #JQDatepickerFunctionalTest
+	instanceVariableNames: 'date'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQUiFunctionalTest subclass: #JQDialogFunctionalTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQUiFunctionalTest subclass: #JQDraggableFunctionalTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQUiFunctionalTest subclass: #JQDroppableFunctionalTest
+	instanceVariableNames: 'selected'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQUiFunctionalTest subclass: #JQEffectFunctionalTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQUiFunctionalTest subclass: #JQIconsFunctionalTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQUiFunctionalTest subclass: #JQProgressbarFunctionalTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQUiFunctionalTest subclass: #JQResizableFunctionalTest
+	instanceVariableNames: 'size'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQUiFunctionalTest subclass: #JQSelectableFunctionalTest
+	instanceVariableNames: 'selected'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQUiFunctionalTest subclass: #JQSliderFunctionalTest
+	instanceVariableNames: 'current'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQUiFunctionalTest subclass: #JQSortableFunctionalTest
+	instanceVariableNames: 'items'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQUiFunctionalTest subclass: #JQTabsFunctionalTest
+	instanceVariableNames: 'selectedTab'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQUiFunctionalTest subclass: #JQToggleFunctionalTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQUiFunctionalTest subclass: #JQTransitionFunctionalTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQUiFunctionalTest subclass: #JQVisualsFunctionalTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQWelcomeFunctionalTest subclass: #JQUiWelcomeFunctionalTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQueryTest subclass: #JQueryUiTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQueryUiTest subclass: #JQAccordionTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQueryUiTest subclass: #JQAutocompleterTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQueryUiTest subclass: #JQButtonTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQueryUiTest subclass: #JQDatepickerTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQueryUiTest subclass: #JQDialogTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQueryUiTest subclass: #JQDraggableTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQueryUiTest subclass: #JQDroppableTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQueryUiTest subclass: #JQEffectTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQueryUiTest subclass: #JQPositionTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQueryUiTest subclass: #JQProgressbarTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQueryUiTest subclass: #JQResizableTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQueryUiTest subclass: #JQSelectableTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQueryUiTest subclass: #JQSliderTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQueryUiTest subclass: #JQSortableTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQueryUiTest subclass: #JQTabsTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+"Global Aliases"!
+
+
+"Loose Methods"!
+
+!GRPackage class methodsFor!
+
+jQueryTestsUI	^ self new		name: 'JQuery-Tests-UI';		description: 'Functional and unit tests for the JQuery-UI package.';		addDependency: 'JQuery-UI';		addDependency: 'JQuery-Tests-Core';		url: #seasideUrl;		yourself! !
+!GRPackage class categoriesFor: #jQueryTestsUI!*jquery/tests/ui!public! !
+
+"End of package definition"!
+

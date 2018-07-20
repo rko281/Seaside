@@ -1,0 +1,74 @@
+﻿| package |
+package := Package name: 'Seaside-Dolphin-Development'.
+package paxVersion: 1;
+	basicComment: ''.
+
+package basicPackageVersion: '2'.
+
+
+package classNames
+	add: #WABrowser;
+	add: #WABrowserHaloPlugin;
+	add: #WADolphinInspector;
+	add: #WADolphinWalkback;
+	yourself.
+
+package methodNames
+	add: #StackFrame -> #tempAt:;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: (IdentitySet new
+	add: '..\Core\Object Arts\Dolphin\IDE\Base\Development System';
+	add: '..\Core\Object Arts\Dolphin\Base\Dolphin';
+	add: '..\Grease\Grease-Core';
+	add: '..\Grease\Grease-Dolphin-Core';
+	add: 'Seaside-Development';
+	add: 'Seaside-Dolphin-Browser';
+	add: 'Seaside-Tools-Core';
+	yourself).
+
+package!
+
+"Class Definitions"!
+
+WAHaloPlugin subclass: #WABrowserHaloPlugin
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WATool subclass: #WABrowser
+	instanceVariableNames: 'contents model message findClassName'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAInspector subclass: #WADolphinInspector
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAWalkback subclass: #WADolphinWalkback
+	instanceVariableNames: 'frames'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+"Global Aliases"!
+
+
+"Loose Methods"!
+
+!StackFrame methodsFor!
+
+tempAt: anInteger
+
+	^self temps at: anInteger! !
+!StackFrame categoriesFor: #tempAt:!accessing!public! !
+
+"End of package definition"!
+

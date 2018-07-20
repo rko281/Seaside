@@ -1,0 +1,1215 @@
+﻿| package |
+package := Package name: 'Seaside-Core'.
+package paxVersion: 1;
+	basicComment: ''.
+
+
+package classNames
+	add: #WAAbstractFileLibrary;
+	add: #WAAccept;
+	add: #WAAcceptCharset;
+	add: #WAAcceptEncoding;
+	add: #WAAcceptLanguage;
+	add: #WAActionCallback;
+	add: #WAAddRemoveExpression;
+	add: #WAAllEmailsCallback;
+	add: #WAAllUploadsCallback;
+	add: #WAAllUrlsCallback;
+	add: #WAAllValuesCallback;
+	add: #WAAttribute;
+	add: #WAAttributeExpression;
+	add: #WAAttributeNotFound;
+	add: #WAAttributeSearchContext;
+	add: #WAAttributeVisitor;
+	add: #WAAuthConfiguration;
+	add: #WAAuthConfigurationError;
+	add: #WAAuthenticationFilter;
+	add: #WABaseElement;
+	add: #WABidirectionalCache;
+	add: #WABooleanAttribute;
+	add: #WABufferedResponse;
+	add: #WABuilder;
+	add: #WABulkReapingCache;
+	add: #WABulkReapingCacheEntry;
+	add: #WACache;
+	add: #WACacheConfiguration;
+	add: #WACacheKeyEntry;
+	add: #WACacheListEntry;
+	add: #WACallback;
+	add: #WACallbackRegistry;
+	add: #WACancelActionCallback;
+	add: #WAClassBindingAttribute;
+	add: #WAClassBindingCollectionAttribute;
+	add: #WAClassListAttribute;
+	add: #WAClosingConditionalComment;
+	add: #WAClosingRevealedConditionalComment;
+	add: #WACollectionAttribute;
+	add: #WAComboResponse;
+	add: #WAConcatenatedHtmlAttributeValue;
+	add: #WAConditionalComment;
+	add: #WAConfiguration;
+	add: #WAConfigurationDescription;
+	add: #WAConfigurationElement;
+	add: #WAConfigurationError;
+	add: #WAConfiguredRequestFilter;
+	add: #WAContentElement;
+	add: #WACookie;
+	add: #WACurrentExceptionHandler;
+	add: #WACurrentRequestContext;
+	add: #WADefaultActionCallback;
+	add: #WADefaultScriptGenerator;
+	add: #WADispatchCallback;
+	add: #WADispatcher;
+	add: #WADocument;
+	add: #WADocumentHandler;
+	add: #WADynamicVariable;
+	add: #WAEmailAddress;
+	add: #WAEmailCallback;
+	add: #WAEncoder;
+	add: #WAError;
+	add: #WAErrorHandler;
+	add: #WAExceptionFilter;
+	add: #WAExceptionFilterConfiguration;
+	add: #WAExceptionHandler;
+	add: #WAExpiringCache;
+	add: #WAFile;
+	add: #WAFileHandler;
+	add: #WAFileHandlerConfiguration;
+	add: #WAFileHandlerListing;
+	add: #WAFileLibrary;
+	add: #WAFileLibraryResource;
+	add: #WAFileMetadataLibrary;
+	add: #WAForbiddenFileHandlerListing;
+	add: #WAHandlerTrackingStrategy;
+	add: #WAHashCache;
+	add: #WAHashTableSizes;
+	add: #WAHeaderFields;
+	add: #WAHtmlAttributes;
+	add: #WAHtmlDocument;
+	add: #WAHtmlElement;
+	add: #WAHtmlRoot;
+	add: #WAHttpVersion;
+	add: #WAIllegalStateException;
+	add: #WAImageCallback;
+	add: #WAIntegerAttribute;
+	add: #WAInvalidHeaderValueError;
+	add: #WAInvalidUrlSyntaxError;
+	add: #WAKeyGenerator;
+	add: #WALinkElement;
+	add: #WAListAttribute;
+	add: #WALocale;
+	add: #WAMapCallback;
+	add: #WAMaximumNumberOfSessionsExceededError;
+	add: #WAMergedRequestFields;
+	add: #WAMetaElement;
+	add: #WAMimeDocument;
+	add: #WAMimeType;
+	add: #WAMultipleValuesCallback;
+	add: #WAMutex;
+	add: #WAMutualExclusionCache;
+	add: #WANotification;
+	add: #WANumberAttribute;
+	add: #WAObject;
+	add: #WAOpeningConditionalComment;
+	add: #WAOpeningRevealedConditionalComment;
+	add: #WAPainter;
+	add: #WAPainterVisitor;
+	add: #WAPasswordAttribute;
+	add: #WAPathConsumer;
+	add: #WAProtectionFilter;
+	add: #WAQualifiedValue;
+	add: #WAQueryFieldHandlerTrackingStrategy;
+	add: #WAReducedConflictCounter;
+	add: #WARegistry;
+	add: #WARegistryConfiguration;
+	add: #WARenderContext;
+	add: #WARenderer;
+	add: #WARenderNotification;
+	add: #WARenderVisitor;
+	add: #WARequest;
+	add: #WARequestContext;
+	add: #WARequestContextNotFound;
+	add: #WARequestCookie;
+	add: #WARequestFields;
+	add: #WARequestFilter;
+	add: #WARequestHandler;
+	add: #WARequestHandlingConfiguration;
+	add: #WAResponse;
+	add: #WAResponseGenerator;
+	add: #WAResponseNotification;
+	add: #WARevealedConditionalComment;
+	add: #WARoot;
+	add: #WAScriptElement;
+	add: #WAScriptGenerator;
+	add: #WAServerAdaptor;
+	add: #WAServerManager;
+	add: #WASharedConfiguration;
+	add: #WASnapshot;
+	add: #WAStreamedResponse;
+	add: #WAStringAttribute;
+	add: #WASystemConfiguration;
+	add: #WATableBasedEncoder;
+	add: #WATextFileHandlerListing;
+	add: #WATrailingSlashFilter;
+	add: #WATransactionFilter;
+	add: #WAUnescapedDocument;
+	add: #WAUnhandledNotificationError;
+	add: #WAUnidirectionalCache;
+	add: #WAUnregisteredHandlerError;
+	add: #WAUpdateRootVisitor;
+	add: #WAUpdateUrlVisitor;
+	add: #WAUploadCallback;
+	add: #WAUrl;
+	add: #WAUrlAttribute;
+	add: #WAUrlCallback;
+	add: #WAUrlEncoder;
+	add: #WAUserConfiguration;
+	add: #WAValueCallback;
+	add: #WAValueExpression;
+	add: #WAValueHolder;
+	add: #WAValuesCallback;
+	add: #WAVisitor;
+	add: #WAXmlDocument;
+	add: #WAXmlEncoder;
+	add: #WAXmlRoot;
+	yourself.
+
+package methodNames
+	add: #ByteArray -> #renderOn:;
+	add: #ByteArray -> #seasideMimeDocument;
+	add: #ByteArray -> #seasideMimeDocumentType:;
+	add: #Collection -> #renderOn:;
+	add: #Dictionary -> #seasideRequestFields;
+	add: #Exception -> #seasidePossibleCauses;
+	add: #GRInvalidUtf8Error -> #seasidePossibleCauses;
+	add: #GRPlatform -> #doCommitTransaction;
+	add: #GRPlatform -> #newReducedConflictCounter;
+	add: #GRPlatform -> #newTransientValueHolder;
+	add: #GRPlatform -> #seasideVersion;
+	add: #GRPlatform -> #sourceFileEncoding;
+	add: #GRPlatform -> #urlEncoderOn:;
+	add: #GRPlatform -> #urlEncoderOn:codec:;
+	add: #GRPlatform -> #xmlEncoderOn:;
+	add: #GRSmallDictionary -> #seasideRequestFields;
+	add: #GRUnsupportedEncodingError -> #seasidePossibleCauses;
+	add: #MessageNotUnderstood -> #seasidePossibleCauses;
+	add: #Object -> #encodeOn:;
+	add: #Object -> #isConcatenatedHtmlAttributeValue;
+	add: #Object -> #labelForSelector:;
+	add: #Object -> #renderOn:;
+	add: #String -> #asCapitalizedPhrase;
+	add: #String -> #encodeOn:;
+	add: #String -> #renderOn:;
+	add: #String -> #seasideMimeDocument;
+	add: #String -> #seasideMimeDocumentType:;
+	add: #String -> #seasideMimeType;
+	add: #String -> #seasideUrl;
+	add: #UndefinedObject -> #encodeOn:;
+	add: #UndefinedObject -> #renderOn:;
+	add: #UndefinedObject -> #seasideUrl;
+	add: 'GRPackage class' -> #seasideCore;
+	add: 'GRPlatform class' -> #subStringsIn:splitBy:;
+	add: 'GRPlatform class' -> #subStringsIn:splitBy:collect:;
+	add: 'GRPlatform class' -> #subStringsIn:splitBy:do:;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: (IdentitySet new
+	add: '..\..\Core\Object Arts\Dolphin\Base\Dolphin';
+	add: '..\Grease\Grease-Core';
+	add: '..\Grease\Grease-Dolphin-Core';
+	add: '..\..\Core\Contributions\IDB\IDB DateAndTime';
+	add: '..\..\Core\Contributions\IDB\IDB Duration';
+	yourself).
+
+package setManualPrerequisites: #(
+	'Grease-Dolphin-Core').
+
+package!
+
+"Class Definitions"!
+
+GRError subclass: #WAError
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAError subclass: #WAAuthConfigurationError
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAError subclass: #WAConfigurationError
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAError subclass: #WAIllegalStateException
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAError subclass: #WAInvalidHeaderValueError
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAError subclass: #WAInvalidUrlSyntaxError
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAError subclass: #WAMaximumNumberOfSessionsExceededError
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAError subclass: #WARequestContextNotFound
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAError subclass: #WAUnhandledNotificationError
+	instanceVariableNames: 'notification'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAError subclass: #WAUnregisteredHandlerError
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAConfigurationError subclass: #WAAttributeNotFound
+	instanceVariableNames: 'key'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+GRNotification subclass: #WANotification
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WANotification subclass: #WADynamicVariable
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WANotification subclass: #WARenderNotification
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WANotification subclass: #WAResponseNotification
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WADynamicVariable subclass: #WACurrentExceptionHandler
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WADynamicVariable subclass: #WACurrentRequestContext
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+GRObject subclass: #WAObject
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+GRSmallDictionary subclass: #WAHtmlAttributes
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+GROrderedMultiMap subclass: #WAHeaderFields
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+GROrderedMultiMap subclass: #WARequestFields
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAObject subclass: #WAAbstractFileLibrary
+	instanceVariableNames: ''
+	classVariableNames: 'MimeTypes'
+	poolDictionaries: ''
+	classInstanceVariableNames: 'default'!
+WAObject subclass: #WAAttributeSearchContext
+	instanceVariableNames: 'key attribute cachedValues attributeHolders attributeInheritors'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAObject subclass: #WABuilder
+	instanceVariableNames: 'fullDocument rootBlock rootClass documentClass scriptGeneratorClass rendererClass codec actionUrl resourceUrl'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAObject subclass: #WABulkReapingCacheEntry
+	instanceVariableNames: 'value creationTime accessTime count lastCount'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAObject subclass: #WACache
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAObject subclass: #WACacheKeyEntry
+	instanceVariableNames: 'key keyHash value next byAccessListEntry byCreationListEntry'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAObject subclass: #WACacheListEntry
+	instanceVariableNames: 'previous next time cacheEntry'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAObject subclass: #WACallback
+	instanceVariableNames: 'key'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAObject subclass: #WACallbackRegistry
+	instanceVariableNames: 'callbacks nextKey'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAObject subclass: #WAClosingConditionalComment
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAObject subclass: #WAClosingRevealedConditionalComment
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAObject subclass: #WAConcatenatedHtmlAttributeValue
+	instanceVariableNames: 'values separator'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAObject subclass: #WAConditionalComment
+	instanceVariableNames: 'condition root'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAObject subclass: #WAConfiguration
+	instanceVariableNames: 'cachedSearchContexts'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAObject subclass: #WAConfigurationDescription
+	instanceVariableNames: 'attributes expressions'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAObject subclass: #WAConfigurationElement
+	instanceVariableNames: 'key'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAObject subclass: #WADocument
+	instanceVariableNames: 'stream root'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAObject subclass: #WAEmailAddress
+	instanceVariableNames: 'username address'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAObject subclass: #WAEncoder
+	instanceVariableNames: 'stream'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAObject subclass: #WAExceptionHandler
+	instanceVariableNames: 'requestContext'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAObject subclass: #WAFile
+	instanceVariableNames: 'contents contentType fileName'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAObject subclass: #WAFileHandlerListing
+	instanceVariableNames: 'handler context'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAObject subclass: #WAFileLibraryResource
+	instanceVariableNames: 'filepath mimeType cacheDuration contents'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAObject subclass: #WAHandlerTrackingStrategy
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAObject subclass: #WAHashTableSizes
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: 'sizes'!
+WAObject subclass: #WAHtmlElement
+	instanceVariableNames: 'root attributes children'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAObject subclass: #WAHttpVersion
+	instanceVariableNames: 'major minor'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAObject subclass: #WAKeyGenerator
+	instanceVariableNames: 'generator space'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: 'current'!
+WAObject subclass: #WALocale
+	instanceVariableNames: 'language country'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: 'iso2Languages iso3Languages iso2Countries iso3Countries'!
+WAObject subclass: #WAMergedRequestFields
+	instanceVariableNames: 'delegates'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAObject subclass: #WAMimeDocument
+	instanceVariableNames: 'contents mimeType fileName'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAObject subclass: #WAMimeType
+	instanceVariableNames: 'main sub parameters'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAObject subclass: #WAMutex
+	instanceVariableNames: 'semaphore owner'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAObject subclass: #WAOpeningConditionalComment
+	instanceVariableNames: 'condition'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAObject subclass: #WAPainter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAObject subclass: #WAPathConsumer
+	instanceVariableNames: 'path'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAObject subclass: #WAQualifiedValue
+	instanceVariableNames: 'value quality'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAObject subclass: #WAReducedConflictCounter
+	instanceVariableNames: 'count'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAObject subclass: #WARenderContext
+	instanceVariableNames: 'visitor actionUrl actionBaseUrl resourceUrl callbacks document properties'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAObject subclass: #WARenderer
+	instanceVariableNames: 'context lastId'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: 'default'!
+WAObject subclass: #WARequest
+	instanceVariableNames: 'method uri version remoteAddress headers cookies body postFields sslSessionId'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAObject subclass: #WARequestContext
+	instanceVariableNames: 'handlers request response codec consumer properties'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAObject subclass: #WARequestCookie
+	instanceVariableNames: 'key path pathEncoded domain ports value version'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAObject subclass: #WARequestFilter
+	instanceVariableNames: 'next'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAObject subclass: #WARequestHandler
+	instanceVariableNames: 'filter parent configuration'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAObject subclass: #WAResponse
+	instanceVariableNames: 'headers cookies status message'
+	classVariableNames: 'StatusMessages'
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAObject subclass: #WAResponseGenerator
+	instanceVariableNames: 'requestContext'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAObject subclass: #WARoot
+	instanceVariableNames: 'context'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAObject subclass: #WAScriptGenerator
+	instanceVariableNames: 'loadScripts'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAObject subclass: #WAServerAdaptor
+	instanceVariableNames: 'manager port requestHandler codec'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAObject subclass: #WAServerManager
+	instanceVariableNames: 'adaptors'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: 'default'!
+WAObject subclass: #WASnapshot
+	instanceVariableNames: 'objects'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAObject subclass: #WAUrl
+	instanceVariableNames: 'scheme user password host port path slash queryFields fragment pathParameters'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAObject subclass: #WAValueHolder
+	instanceVariableNames: 'contents'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAObject subclass: #WAVisitor
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAAbstractFileLibrary subclass: #WAFileLibrary
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAAbstractFileLibrary subclass: #WAFileMetadataLibrary
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WACache subclass: #WABidirectionalCache
+	instanceVariableNames: 'byKey byValue'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WACache subclass: #WAExpiringCache
+	instanceVariableNames: 'maximumSize maximumRelativeAge maximumAbsoluteAge overflowAction'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WACache subclass: #WAMutualExclusionCache
+	instanceVariableNames: 'mutex cache'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WACache subclass: #WAUnidirectionalCache
+	instanceVariableNames: 'dictionary'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAExpiringCache subclass: #WABulkReapingCache
+	instanceVariableNames: 'dictionary'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAExpiringCache subclass: #WAHashCache
+	instanceVariableNames: 'keyTable size byAccessStart byAccessEnd byCreationStart byCreationEnd'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WACallback subclass: #WAActionCallback
+	instanceVariableNames: 'block'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WACallback subclass: #WADispatchCallback
+	instanceVariableNames: 'callbacks'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WACallback subclass: #WAValueCallback
+	instanceVariableNames: 'block'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAActionCallback subclass: #WACancelActionCallback
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAActionCallback subclass: #WADefaultActionCallback
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAActionCallback subclass: #WAImageCallback
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAValueCallback subclass: #WAAllValuesCallback
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAValueCallback subclass: #WAEmailCallback
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAValueCallback subclass: #WAMapCallback
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAValueCallback subclass: #WAUploadCallback
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAValueCallback subclass: #WAUrlCallback
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAValueCallback subclass: #WAValuesCallback
+	instanceVariableNames: 'values'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAAllValuesCallback subclass: #WAAllEmailsCallback
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAAllValuesCallback subclass: #WAAllUrlsCallback
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAUploadCallback subclass: #WAAllUploadsCallback
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAValuesCallback subclass: #WAMultipleValuesCallback
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAConditionalComment subclass: #WARevealedConditionalComment
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAConfiguration subclass: #WASystemConfiguration
+	instanceVariableNames: 'description'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: 'instance'!
+WAConfiguration subclass: #WAUserConfiguration
+	instanceVariableNames: 'expressions parents'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WASystemConfiguration subclass: #WAAuthConfiguration
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WASystemConfiguration subclass: #WACacheConfiguration
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WASystemConfiguration subclass: #WAExceptionFilterConfiguration
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WASystemConfiguration subclass: #WAFileHandlerConfiguration
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WASystemConfiguration subclass: #WARegistryConfiguration
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WASystemConfiguration subclass: #WARequestHandlingConfiguration
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAUserConfiguration subclass: #WASharedConfiguration
+	instanceVariableNames: 'name'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: 'instances'!
+WAConfigurationElement subclass: #WAAttribute
+	instanceVariableNames: 'group comment label default advanced'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAConfigurationElement subclass: #WAAttributeExpression
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAAttribute subclass: #WABooleanAttribute
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAAttribute subclass: #WAListAttribute
+	instanceVariableNames: 'optionsBlock'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAAttribute subclass: #WANumberAttribute
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAAttribute subclass: #WAPasswordAttribute
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAAttribute subclass: #WAStringAttribute
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAAttribute subclass: #WAUrlAttribute
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAListAttribute subclass: #WAClassBindingAttribute
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAListAttribute subclass: #WAClassBindingCollectionAttribute
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAListAttribute subclass: #WAClassListAttribute
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAListAttribute subclass: #WACollectionAttribute
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WANumberAttribute subclass: #WAIntegerAttribute
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAAttributeExpression subclass: #WAAddRemoveExpression
+	instanceVariableNames: 'additions removals'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAAttributeExpression subclass: #WAValueExpression
+	instanceVariableNames: 'value'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WADocument subclass: #WAXmlDocument
+	instanceVariableNames: 'urlEncoder xmlEncoder'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAXmlDocument subclass: #WAHtmlDocument
+	instanceVariableNames: 'scriptGenerator'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAXmlDocument subclass: #WAUnescapedDocument
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAEncoder subclass: #WATableBasedEncoder
+	instanceVariableNames: 'table'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: 'table'!
+WAEncoder subclass: #WAXmlEncoder
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WATableBasedEncoder subclass: #WAUrlEncoder
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAExceptionHandler subclass: #WAErrorHandler
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFileHandlerListing subclass: #WAForbiddenFileHandlerListing
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFileHandlerListing subclass: #WATextFileHandlerListing
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAHandlerTrackingStrategy subclass: #WAQueryFieldHandlerTrackingStrategy
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAHtmlElement subclass: #WABaseElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAHtmlElement subclass: #WAContentElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAHtmlElement subclass: #WAMetaElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAContentElement subclass: #WALinkElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAContentElement subclass: #WAScriptElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAOpeningConditionalComment subclass: #WAOpeningRevealedConditionalComment
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAQualifiedValue subclass: #WAAccept
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAQualifiedValue subclass: #WAAcceptCharset
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAQualifiedValue subclass: #WAAcceptEncoding
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAQualifiedValue subclass: #WAAcceptLanguage
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WARequestCookie subclass: #WACookie
+	instanceVariableNames: 'expiry secure discard comment commentUrl httpOnly maxAge'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WARequestFilter subclass: #WAAuthenticationFilter
+	instanceVariableNames: 'authenticator realm'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WARequestFilter subclass: #WAConfiguredRequestFilter
+	instanceVariableNames: 'configuration'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WARequestFilter subclass: #WAProtectionFilter
+	instanceVariableNames: 'remoteAddress'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WARequestFilter subclass: #WATrailingSlashFilter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WARequestFilter subclass: #WATransactionFilter
+	instanceVariableNames: 'closed'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAConfiguredRequestFilter subclass: #WAExceptionFilter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WARequestHandler subclass: #WADispatcher
+	instanceVariableNames: 'defaultName handlers'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: 'default'!
+WARequestHandler subclass: #WADocumentHandler
+	instanceVariableNames: 'document'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WARequestHandler subclass: #WAFileHandler
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: 'default'!
+WARequestHandler subclass: #WARegistry
+	instanceVariableNames: 'cache'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAResponse subclass: #WABufferedResponse
+	instanceVariableNames: 'contentsStream'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAResponse subclass: #WAComboResponse
+	instanceVariableNames: 'bufferedStream externalStream committed closed'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAResponse subclass: #WAStreamedResponse
+	instanceVariableNames: 'committed externalStream'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WARoot subclass: #WAHtmlRoot
+	instanceVariableNames: 'docType htmlAttrs headAttrs bodyAttrs headElements title styles scripts'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WARoot subclass: #WAXmlRoot
+	instanceVariableNames: 'charSet'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAScriptGenerator subclass: #WADefaultScriptGenerator
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAVisitor subclass: #WAAttributeVisitor
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAVisitor subclass: #WAPainterVisitor
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAPainterVisitor subclass: #WARenderVisitor
+	instanceVariableNames: 'renderContext'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAPainterVisitor subclass: #WAUpdateRootVisitor
+	instanceVariableNames: 'root'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAPainterVisitor subclass: #WAUpdateUrlVisitor
+	instanceVariableNames: 'url'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+"Global Aliases"!
+
+
+"Loose Methods"!
+
+!ByteArray methodsFor!
+
+renderOn: aRenderer	aRenderer text: self!
+
+seasideMimeDocument	^ WAMimeDocument on: self mimeType: WAMimeType applicationOctetStream!
+
+seasideMimeDocumentType: aMimeType	^ self seasideMimeDocument		mimeType: aMimeType;		yourself! !
+!ByteArray categoriesFor: #renderOn:!*seaside/core!public! !
+!ByteArray categoriesFor: #seasideMimeDocument!*seaside/core!public! !
+!ByteArray categoriesFor: #seasideMimeDocumentType:!*seaside/core!public! !
+
+!Collection methodsFor!
+
+renderOn: html	self do: [ :each | html render: each ]! !
+!Collection categoriesFor: #renderOn:!*seaside/core!public! !
+
+!Dictionary methodsFor!
+
+seasideRequestFields	^ WARequestFields withAll: self! !
+!Dictionary categoriesFor: #seasideRequestFields!*seaside/core!public! !
+
+!Exception methodsFor!
+
+seasidePossibleCauses	"Used by WAWalkback to render a list of what might have caused the receiver to be signaled.	answers a collection of strings"	^ #()! !
+!Exception categoriesFor: #seasidePossibleCauses!*seaside/core!public! !
+
+!GRInvalidUtf8Error methodsFor!
+
+seasidePossibleCauses	^ #('The input is not UTF-8 but some other encoding like ISO-8859-1.')! !
+!GRInvalidUtf8Error categoriesFor: #seasidePossibleCauses!*seaside/core!public! !
+
+!GRPackage class methodsFor!
+
+seasideCore	^ self new		name: 'Seaside-Core';		description: 'The core of Seaside, required for all packages.';		addDependency: 'Grease-Core';		url: #seasideUrl;		yourself! !
+!GRPackage class categoriesFor: #seasideCore!*seaside/core!public! !
+
+!GRPlatform methodsFor!
+
+doCommitTransaction	"GemStone/S should commit the transaction here."	^ self!
+
+newReducedConflictCounter	"GemStone/S should answer an RcCounter here"	^ WAReducedConflictCounter new!
+
+newTransientValueHolder	"GemStone/S should answer a TransientValue here"	^ WAValueHolder new!
+
+seasideVersion	"Answer the Seaside version"	^ (GRVersion major: 3 minor: 2 revision: 2)		yourself!
+
+sourceFileEncoding	"Answer the encoding used for source files."	^ 'ISO-8859-1'	!
+
+urlEncoderOn: aStream	"Answer an URL encoder that works on aStream.	Platforms may provide optimized implementations."	^ WAUrlEncoder on: aStream!
+
+urlEncoderOn: aStream codec: aCodec	"Answer an URL encoder that works on aStream.	Platforms may provide optimized implementations."	^ aCodec url encoderFor: (WAUrlEncoder on: aStream)!
+
+xmlEncoderOn: aStream	"Answer an XML encoder that works on aStream.	Platforms may provide optimized implementations."	^ WAXmlEncoder on: aStream! !
+!GRPlatform categoriesFor: #doCommitTransaction!*seaside/core!public! !
+!GRPlatform categoriesFor: #newReducedConflictCounter!*seaside/core!public! !
+!GRPlatform categoriesFor: #newTransientValueHolder!*seaside/core!public! !
+!GRPlatform categoriesFor: #seasideVersion!*seaside/core!public! !
+!GRPlatform categoriesFor: #sourceFileEncoding!*seaside/core!public! !
+!GRPlatform categoriesFor: #urlEncoderOn:!*seaside/core!public! !
+!GRPlatform categoriesFor: #urlEncoderOn:codec:!*seaside/core!public! !
+!GRPlatform categoriesFor: #xmlEncoderOn:!*seaside/core!public! !
+
+!GRPlatform class methodsFor!
+
+subStringsIn: aString splitBy: aCharacter	| subStrings |	subStrings := OrderedCollection new: (aString count: [ :each | each = aCharacter ]) + 1.	self subStringsIn: aString splitBy: aCharacter do: [ :each |		subStrings add: each ].	^ subStrings!
+
+subStringsIn: aString splitBy: aCharacter collect: aOneArgumentBlock	| subStrings |	subStrings := OrderedCollection new: (aString count: [ :each | each = aCharacter ]) + 1.	self subStringsIn: aString splitBy: aCharacter do: [ :each |		subStrings add: (aOneArgumentBlock value: each) ].	^ subStrings!
+
+subStringsIn: aString splitBy: aCharacter do: aOneArgumentBlock	"#subStrings: can be slow on Pharo because it uses a lot of allocation so we avoid it	see issue Issue 609"	| startIndex |	startIndex := aString indexOf: aCharacter.	startIndex = 0		ifTrue: [			aString isEmpty ifFalse: [				aOneArgumentBlock value: aString ] ]		ifFalse: [			| endIndex stringSize |			stringSize := aString size.			startIndex = 1 ifFalse: [				"case where we have a path not starting with aCharacter"				aOneArgumentBlock value: (aString copyFrom: 1 to: startIndex - 1) ].			endIndex := aString indexOf: aCharacter startingAt: startIndex + 1.			[ startIndex ~= 0 ] whileTrue: [				startIndex + 1 = endIndex					ifTrue: [						"skip, avoid adding empty strings"						startIndex := endIndex.						endIndex := aString indexOf: aCharacter startingAt: startIndex + 1 ]					ifFalse: [						endIndex = 0							ifTrue: [								startIndex < stringSize ifTrue: [									"avoid adding empty path if aString ends with aCharacter"									aOneArgumentBlock value: (aString copyFrom: startIndex + 1 to: stringSize) ].								startIndex := 0 ]							ifFalse: [								aOneArgumentBlock value: (aString copyFrom: startIndex + 1 to: endIndex  - 1).								startIndex := endIndex.								endIndex := aString indexOf: aCharacter startingAt: startIndex + 1 ] ] ] ]! !
+!GRPlatform class categoriesFor: #subStringsIn:splitBy:!*seaside/core!public! !
+!GRPlatform class categoriesFor: #subStringsIn:splitBy:collect:!*seaside/core!public! !
+!GRPlatform class categoriesFor: #subStringsIn:splitBy:do:!*seaside/core!public! !
+
+!GRSmallDictionary methodsFor!
+
+seasideRequestFields	^ WARequestFields withAll: self! !
+!GRSmallDictionary categoriesFor: #seasideRequestFields!*seaside/core!public! !
+
+!GRUnsupportedEncodingError methodsFor!
+
+seasidePossibleCauses	^ #(		'The given encoding name is not supported on this Smalltalk dialect.'		'The given encoding name is misspelled.'	)! !
+!GRUnsupportedEncodingError categoriesFor: #seasidePossibleCauses!*seaside/core!public! !
+
+!MessageNotUnderstood methodsFor!
+
+seasidePossibleCauses	| causes |	self receiver isNil ifFalse: [		^ #('you sent a message this type of object doesn''t understand') ].	causes := #(		'the receiver of the message is nil'		'a class extension hasn''t been loaded correctly'		'you sent the wrong message' ) asOrderedCollection.	self message selector = #contents ifTrue: [		causes addFirst: 'you forgot to send "super initialize" in a initialize method of a component or task' ].	^ causes! !
+!MessageNotUnderstood categoriesFor: #seasidePossibleCauses!*seaside/core!public! !
+
+!Object methodsFor!
+
+encodeOn: aDocument 	aDocument print: self greaseString!
+
+isConcatenatedHtmlAttributeValue	^ false!
+
+labelForSelector: aSymbol	^ aSymbol asCapitalizedPhrase!
+
+renderOn: aRenderer	"This method is called on all objects passed as an argument to the #render: method of a WARenderer subclass. Override this method to customize how objects render themselves. The default is the return value of #displayString.	Subclasses of WAPainter (including Components) should override #renderContentOn: and #rendererClass instead."	aRenderer text: self! !
+!Object categoriesFor: #encodeOn:!*seaside/core!public! !
+!Object categoriesFor: #isConcatenatedHtmlAttributeValue!*seaside/core/document!public! !
+!Object categoriesFor: #labelForSelector:!*seaside/core!public! !
+!Object categoriesFor: #renderOn:!*seaside/core!public! !
+
+!String methodsFor!
+
+asCapitalizedPhrase	| read words currentWord capitalizedWord |	(self noneSatisfy: [ :ea | ea isLowercase ])		ifTrue: [ ^ self ].	words := WriteStream on: String new.	read := ReadStream on: self.	[ read atEnd ] whileFalse: [		currentWord := WriteStream on: String new.		currentWord nextPut: read next.		[ | x | x := read peek. x isNil or: [ x isUppercase ] ]			whileFalse: [ currentWord nextPut: read next ].		capitalizedWord := currentWord contents capitalized.			(#(Of In At A Or To By) includes: capitalizedWord)				ifTrue: [ capitalizedWord := capitalizedWord asLowercase ].		words nextPutAll: capitalizedWord.		words nextPutAll: ' ' ].	words skip: -1.	^ words contents!
+
+encodeOn: aDocument	aDocument xmlEncoder nextPutAll: self!
+
+renderOn: aRenderer	aRenderer text: self!
+
+seasideMimeDocument	^ WAMimeDocument on: self mimeType: WAMimeType textPlain!
+
+seasideMimeDocumentType: aMimeType	^ self seasideMimeDocument		mimeType: aMimeType;		yourself!
+
+seasideMimeType	^ WAMimeType fromString: self!
+
+seasideUrl	^ WAUrl absolute: self! !
+!String categoriesFor: #asCapitalizedPhrase!*seaside/core!public! !
+!String categoriesFor: #encodeOn:!*seaside/core!public! !
+!String categoriesFor: #renderOn:!*seaside/core!public! !
+!String categoriesFor: #seasideMimeDocument!*seaside/core!public! !
+!String categoriesFor: #seasideMimeDocumentType:!*seaside/core!public! !
+!String categoriesFor: #seasideMimeType!*seaside/core!public! !
+!String categoriesFor: #seasideUrl!*seaside/core!public! !
+
+!UndefinedObject methodsFor!
+
+encodeOn: aDocument!
+
+renderOn: html!
+
+seasideUrl	^ self! !
+!UndefinedObject categoriesFor: #encodeOn:!*seaside/core!public! !
+!UndefinedObject categoriesFor: #renderOn:!*seaside/core!public! !
+!UndefinedObject categoriesFor: #seasideUrl!*seaside/core!public! !
+
+"End of package definition"!
+

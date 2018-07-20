@@ -1,0 +1,69 @@
+﻿| package |
+package := Package name: 'Seaside-Swazoo'.
+package paxVersion: 1;
+	basicComment: ''.
+
+package basicPackageVersion: '19'.
+
+
+package classNames
+	add: #WAPluggableSite;
+	add: #WorkingHTTPSetCookie2Field;
+	add: #WorkingHTTPSetCookieField;
+	yourself.
+
+package methodNames
+	add: 'GRPackage class' -> #seasideSwazoo;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: (IdentitySet new
+	add: '..\Grease\Grease-Core';
+	add: '..\Swazoo\Swazoo';
+	yourself).
+
+package!
+
+"Class Definitions"!
+
+HTTPSetCookieField subclass: #WorkingHTTPSetCookieField
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WorkingHTTPSetCookieField subclass: #WorkingHTTPSetCookie2Field
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+SwazooSite subclass: #WAPluggableSite
+	instanceVariableNames: 'handler'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+"Global Aliases"!
+
+
+"Loose Methods"!
+
+!GRPackage class methodsFor!
+
+seasideSwazoo
+	^ self new
+		name: 'Seaside-Swazoo';
+		description: 'A small set of Swazoo 2 extensions to make it run Seaside.';
+		addDependency: 'Grease-Core';
+		url: #seasideLGPLUrl;
+		license: #LGPL;
+		yourself
+! !
+!GRPackage class categoriesFor: #seasideSwazoo!*seaside-swazoo!public! !
+
+"End of package definition"!
+

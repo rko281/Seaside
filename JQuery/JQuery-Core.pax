@@ -1,0 +1,183 @@
+﻿| package |
+package := Package name: 'JQuery-Core'.
+package paxVersion: 1;
+	basicComment: ''.
+
+
+package classNames
+	add: #JQ2DeploymentLibrary;
+	add: #JQ2DevelopmentLibrary;
+	add: #JQAjax;
+	add: #JQAjaxifierLibrary;
+	add: #JQAjaxSetup;
+	add: #JQAnimate;
+	add: #JQDeploymentLibrary;
+	add: #JQDevelopmentLibrary;
+	add: #JQEvent;
+	add: #JQGet;
+	add: #JQGetJson;
+	add: #JQGetScript;
+	add: #JQGoogleLibrary;
+	add: #JQLoad;
+	add: #JQPlugin;
+	add: #JQPost;
+	add: #JQScriptGenerator;
+	add: #JQuery;
+	add: #JQueryClass;
+	add: #JQueryInstance;
+	yourself.
+
+package methodNames
+	add: #JSScript -> #jQuery;
+	add: #JSScript -> #jQuery:;
+	add: #WARenderer -> #jQuery;
+	add: #WARenderer -> #jQuery:;
+	add: 'GRPackage class' -> #jQueryCore;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: (IdentitySet new
+	add: '..\Core\Object Arts\Dolphin\Base\Dolphin';
+	add: '..\Grease\Grease-Core';
+	add: '..\Javascript\Javascript-Core';
+	add: '..\Seaside\Seaside-Core';
+	yourself).
+
+package!
+
+"Class Definitions"!
+
+JSObject subclass: #JQEvent
+	instanceVariableNames: 'owner'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JSObject subclass: #JQPlugin
+	instanceVariableNames: 'owner options'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JSObject subclass: #JQuery
+	instanceVariableNames: ''
+	classVariableNames: 'FunctionName'
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQPlugin subclass: #JQAjaxSetup
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQPlugin subclass: #JQAnimate
+	instanceVariableNames: 'parameters'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQAjaxSetup subclass: #JQAjax
+	instanceVariableNames: 'callback callbackId'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQAjax subclass: #JQGet
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQAjax subclass: #JQGetJson
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQAjax subclass: #JQGetScript
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQAjax subclass: #JQLoad
+	instanceVariableNames: 'selector'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQAjax subclass: #JQPost
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQuery subclass: #JQueryClass
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQuery subclass: #JQueryInstance
+	instanceVariableNames: 'arguments'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFileLibrary subclass: #JQ2DeploymentLibrary
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFileLibrary subclass: #JQ2DevelopmentLibrary
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFileLibrary subclass: #JQAjaxifierLibrary
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFileLibrary subclass: #JQDeploymentLibrary
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFileLibrary subclass: #JQDevelopmentLibrary
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFileLibrary subclass: #JQGoogleLibrary
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAScriptGenerator subclass: #JQScriptGenerator
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+"Global Aliases"!
+
+
+"Loose Methods"!
+
+!GRPackage class methodsFor!
+
+jQueryCore	^ self new		name: 'JQuery-Core';		description: 'jQuery integration for Seaside. Designed to change the way you write Javascript.';		addDependency: 'Javascript-Core';		url: #seasideUrl;		yourself! !
+!GRPackage class categoriesFor: #jQueryCore!*jquery/core!public! !
+
+!JSScript methodsFor!
+
+jQuery	^ (JQueryClass context: self renderContext)		rendererClass: self rendererClass;		yourself!
+
+jQuery: anObject	^ self jQuery with: anObject! !
+!JSScript categoriesFor: #jQuery!*jquery/core!public! !
+!JSScript categoriesFor: #jQuery:!*jquery/core!public! !
+
+!WARenderer methodsFor!
+
+jQuery	^ (JQueryClass context: self context)		rendererClass: self species;		yourself!
+
+jQuery: anObject	^ self jQuery with: anObject! !
+!WARenderer categoriesFor: #jQuery!*jquery/core!public! !
+!WARenderer categoriesFor: #jQuery:!*jquery/core!public! !
+
+"End of package definition"!
+

@@ -1,0 +1,252 @@
+﻿| package |
+package := Package name: 'Seaside-Dolphin-Core'.
+package paxVersion: 1;
+	basicComment: ''.
+
+package basicPackageVersion: '9'.
+
+
+package classNames
+	add: #SeasideIcons;
+	add: #WADolphinUrl;
+	yourself.
+
+package methodNames
+	add: #Array -> #restoreFromSnapshot:;
+	add: #Bag -> #restoreFromSnapshot:;
+	add: #Bag -> #snapshotCopy;
+	add: #BlockClosure -> #renderOn:;
+	add: #Dictionary -> #restoreFromSnapshot:;
+	add: #Dictionary -> #snapshotCopy;
+	add: #LookupTable -> #snapshotCopy;
+	add: #MessageSend -> #renderOn:;
+	add: #Object -> #restoreFromSnapshot:;
+	add: #Object -> #snapshotCopy;
+	add: #OrderedCollection -> #restoreFromSnapshot:;
+	add: #OrderedCollection -> #snapshotCopy;
+	add: #PositionableStream -> #seasideMimeDocument;
+	add: #PositionableStream -> #seasideMimeDocumentType:;
+	add: #SequenceableCollection -> #restoreFromSnapshot:;
+	add: #Set -> #restoreFromSnapshot:;
+	add: #Set -> #snapshotCopy;
+	add: #String -> #value;
+	add: #WAObject -> #value;
+	add: 'GRObject class' -> #icon;
+	add: 'GRPackage class' -> #seasideDolphinCore;
+	add: 'WAObject class' -> #icon;
+	add: 'WAObject class' -> #value;
+	add: 'WAUrl class' -> #basicNew;
+	add: 'WAUrl class' -> #new;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: (IdentitySet new
+	add: '..\Core\Object Arts\Dolphin\Base\Dolphin';
+	add: '..\Grease\Grease-Core';
+	add: '..\Grease\Grease-Dolphin-Core';
+	add: '..\Core\Object Arts\Dolphin\IDE\Base\Internal Bitmaps and Icons';
+	add: 'Seaside-Core';
+	yourself).
+
+package setManualPrerequisites: #(
+	'Grease-Dolphin-Core').
+
+package!
+
+"Class Definitions"!
+
+Object subclass: #SeasideIcons
+	instanceVariableNames: ''
+	classVariableNames: 'Icons'
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAUrl subclass: #WADolphinUrl
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+"Global Aliases"!
+
+
+"Loose Methods"!
+
+!Array methodsFor!
+
+restoreFromSnapshot: anArray
+	
+	#eamAdded.
+	anArray keysAndValuesDo: [:eachKey :eachValue | self at: eachKey put: eachValue ]
+	
+! !
+!Array categoriesFor: #restoreFromSnapshot:!public! !
+
+!Bag methodsFor!
+
+restoreFromSnapshot: anObject
+	self elements: anObject elements!
+
+snapshotCopy
+	^ self copy! !
+!Bag categoriesFor: #restoreFromSnapshot:!*seaside-squeak-platform!public! !
+!Bag categoriesFor: #snapshotCopy!*seaside-squeak-platform!public! !
+
+!BlockClosure methodsFor!
+
+renderOn: aRenderer
+	self numArgs = 0
+		ifTrue: [ self value ]
+		ifFalse: [ self value: aRenderer ]! !
+!BlockClosure categoriesFor: #renderOn:!*seaside-pharo-core!public! !
+
+!Dictionary methodsFor!
+
+restoreFromSnapshot: aDictionary
+
+	self removeAllKeys: self keys.
+	aDictionary keysAndValuesDo: [:eachKey :eachValue  | self at: eachKey put: eachValue]!
+
+snapshotCopy
+
+	| copy |
+	copy := self copyEmpty.
+	self associationsDo: [:each | copy uncheckedAdd: each copy].
+	^copy! !
+!Dictionary categoriesFor: #restoreFromSnapshot:!public! !
+!Dictionary categoriesFor: #snapshotCopy!public! !
+
+!GRObject class methodsFor!
+
+icon
+	^SeasideIcons pharo! !
+!GRObject class categoriesFor: #icon!public! !
+
+!GRPackage class methodsFor!
+
+seasideDolphinCore
+	^(self new)
+		name: 'Seaside-Dolphin-Core';
+		addDependency: 'Seaside-Core';
+		addDependency: 'Grease-Dolphin-Core';
+		url: #seasideUrl;
+		yourself! !
+!GRPackage class categoriesFor: #seasideDolphinCore!*seaside-pharo-core!public! !
+
+!LookupTable methodsFor!
+
+snapshotCopy
+
+	^self copy! !
+!LookupTable categoriesFor: #snapshotCopy!public! !
+
+!MessageSend methodsFor!
+
+renderOn: html
+	self value: html! !
+!MessageSend categoriesFor: #renderOn:!*seaside-pharo-core!public! !
+
+!Object methodsFor!
+
+restoreFromSnapshot: anObject
+	self copyFrom: anObject!
+
+snapshotCopy
+	^ self shallowCopy! !
+!Object categoriesFor: #restoreFromSnapshot:!*seaside-squeak-platform!public! !
+!Object categoriesFor: #snapshotCopy!*seaside-squeak-platform!public! !
+
+!OrderedCollection methodsFor!
+
+restoreFromSnapshot: anObject
+	super restoreFromSnapshot: anObject snapshotCopy!
+
+snapshotCopy
+	^ self copy! !
+!OrderedCollection categoriesFor: #restoreFromSnapshot:!*seaside-squeak-platform!public! !
+!OrderedCollection categoriesFor: #snapshotCopy!*seaside-squeak-platform!public! !
+
+!PositionableStream methodsFor!
+
+seasideMimeDocument
+	^ self contents seasideMimeDocument!
+
+seasideMimeDocumentType: aMimetype
+	^self seasideMimeDocument mimeType: aMimetype; yourself! !
+!PositionableStream categoriesFor: #seasideMimeDocument!*seaside-pharo-core!public! !
+!PositionableStream categoriesFor: #seasideMimeDocumentType:!*seaside-pharo-core!public! !
+
+!SequenceableCollection methodsFor!
+
+restoreFromSnapshot: aCollection
+
+	#eamAdded.
+	self removeAll.
+	self addAll: aCollection
+	
+! !
+!SequenceableCollection categoriesFor: #restoreFromSnapshot:!public! !
+
+!Set methodsFor!
+
+restoreFromSnapshot: anObject
+	self elements: anObject elements!
+
+snapshotCopy
+	^ self copy! !
+!Set categoriesFor: #restoreFromSnapshot:!*seaside-squeak-platform!public! !
+!Set categoriesFor: #snapshotCopy!*seaside-squeak-platform!public! !
+
+!String methodsFor!
+
+value
+
+	"Pharo implements this in Object"
+
+	^self! !
+!String categoriesFor: #value!accessing!public! !
+
+!WAObject methodsFor!
+
+value
+
+	"Pharo implements this in Object"
+
+	^self! !
+!WAObject categoriesFor: #value!public! !
+
+!WAObject class methodsFor!
+
+icon
+	(self name beginsWith: 'SU') ifTrue: [^SeasideIcons scriptaculous].
+	(self name beginsWith: 'JQ') ifTrue: [^SeasideIcons jQuery].
+	^SeasideIcons seaside!
+
+value
+
+	^self! !
+!WAObject class categoriesFor: #icon!public! !
+!WAObject class categoriesFor: #value!public! !
+
+!WAUrl class methodsFor!
+
+basicNew
+
+	^self == ##(self)
+		ifTrue: [WADolphinUrl basicNew]
+		ifFalse: [super basicNew]!
+
+new
+
+	^self == ##(self)
+		ifTrue: [WADolphinUrl new]
+		ifFalse: [super new]! !
+!WAUrl class categoriesFor: #basicNew!parsing!public! !
+!WAUrl class categoriesFor: #new!parsing!public! !
+
+"End of package definition"!
+

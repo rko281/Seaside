@@ -1,0 +1,98 @@
+﻿"Filed out from Dolphin Smalltalk 7"!
+
+WAObject subclass: #WARequestCookie
+	instanceVariableNames: 'key path pathEncoded domain ports value version'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WARequestCookie guid: (GUID fromString: '{191f7f11-37a6-4580-9662-ab6a92796462}')!
+WARequestCookie comment: 'A WARequestCookie is the cookie the user agent sent to the server.Instance Variables	domain:			<String>	key:			<String>	path:			<String>	pathEncoded:	<String>	ports:			<Collection<Integer>>	value:			<String>	version:			<Integer>domain	- xxxxxkey	- xxxxxpath	- xxxxxports	- xxxxxvalue	- xxxxxversion	- the version of the cookie specification supported, currently only 1 is known'!
+!WARequestCookie categoriesForClass!Seaside-Core-HTTP! !
+!WARequestCookie methodsFor!
+
+= other	"cookies are identified by the triple name/domain/path"	^ self species = other species		and: [ self key = other key		and: [ self domain = other domain		and: [ self path = other path ] ] ]!
+
+domain	^ domain!
+
+domain: aString	domain := aString!
+
+hash	"see #="	^ (self key hash bitXor: self domain hash) bitXor: self path hash!
+
+key	^ key!
+
+key: aString	key := aString!
+
+path	^ path ifNil: [ '/' ]!
+
+path: aString	self pathUnencoded: aString codec: nil!
+
+pathEncoded	^ pathEncoded!
+
+pathEncoded: aString codec: aCodec	pathEncoded := aString isNil ifTrue: [ '/' ] ifFalse: [ aString ].	path := aString isNil		ifTrue: [ '/' ]		ifFalse: [			aCodec isNil				ifTrue: [ aString ]				ifFalse: [ ((WAUrl absolute: aString) decodedWith: aCodec) pathStringUnencoded ] ]!
+
+pathUnencoded	^ path!
+
+pathUnencoded: aString codec: aCodec	path := aString.	pathEncoded := aString isNil		ifTrue: [ '/' ]		ifFalse: [			| codec |			codec := aCodec isNil ifTrue: [ self requestContext codec ] ifFalse: [ aCodec ].			String new: (aString size * 1.1) greaseInteger streamContents: [ :stream |				| encoder |				encoder := GRPlatform current urlEncoderOn: stream codec:  codec.				GRPlatform subStringsIn: path splitBy: $/ do: [ :each |					stream nextPut: $/.					encoder nextPutAll: each ] ] ]!
+
+pathUnencoded: aFirstString encoded: aSecondString	path := aFirstString.	pathEncoded := aSecondString!
+
+port: anInteger	self ports: (Array with: anInteger)!
+
+ports	^ ports!
+
+ports: aCollection	ports := aCollection!
+
+postCopy	super postCopy.	ports := ports copy!
+
+setPorts: aString	ports := OrderedCollection new: 1.	GRPlatform subStringsIn: aString splitBy: $, do: [ :token |		ports add: token greaseInteger ]!
+
+value	^ value!
+
+value: aString	value := aString!
+
+version	^ version!
+
+version: anInteger	version := anInteger! !
+!WARequestCookie categoriesFor: #=!comparing!public! !
+!WARequestCookie categoriesFor: #domain!accessing!public! !
+!WARequestCookie categoriesFor: #domain:!accessing!public! !
+!WARequestCookie categoriesFor: #hash!comparing!public! !
+!WARequestCookie categoriesFor: #key!accessing!public! !
+!WARequestCookie categoriesFor: #key:!accessing!public! !
+!WARequestCookie categoriesFor: #path!accessing!public! !
+!WARequestCookie categoriesFor: #path:!accessing!public! !
+!WARequestCookie categoriesFor: #pathEncoded!accessing!public! !
+!WARequestCookie categoriesFor: #pathEncoded:codec:!accessing!public! !
+!WARequestCookie categoriesFor: #pathUnencoded!accessing!public! !
+!WARequestCookie categoriesFor: #pathUnencoded:codec:!accessing!public! !
+!WARequestCookie categoriesFor: #pathUnencoded:encoded:!accessing!public! !
+!WARequestCookie categoriesFor: #port:!accessing!public! !
+!WARequestCookie categoriesFor: #ports!accessing!public! !
+!WARequestCookie categoriesFor: #ports:!accessing!public! !
+!WARequestCookie categoriesFor: #postCopy!copying!public! !
+!WARequestCookie categoriesFor: #setPorts:!initialization!public! !
+!WARequestCookie categoriesFor: #value!accessing!public! !
+!WARequestCookie categoriesFor: #value:!accessing!public! !
+!WARequestCookie categoriesFor: #version!accessing!public! !
+!WARequestCookie categoriesFor: #version:!accessing!public! !
+
+!WARequestCookie class methodsFor!
+
+actions	^ Dictionary new		at: '$Domain' put: [ :codec :cookie :value | cookie domain: value ];		at: '$Path' put: [ :codec :cookie :value | cookie pathEncoded: value codec: codec ];		at: '$Port' put: [ :codec :cookie :value | cookie setPorts: value ];		yourself!
+
+fromString: aString codec: aCodec	"Creates an array of cookies from a HTTP Cookie: header value."	| version current cookies |	version := nil.	aString isEmptyOrNil		ifTrue: [ ^ #() ].	current := nil.	cookies := OrderedCollection new: 3.	GRPlatform subStringsIn: aString splitBy: $; do: [ :each |		| key value action |		key := self keyFrom: each.		value := self valueFrom: each.		key = '$Version' 			ifTrue: [				version := value greaseInteger ]			ifFalse: [				action := self actions 					at: key					ifAbsent: [ nil ].				action isNil 					ifTrue: [						current := self 							key: key							value: value.						current version: version.						cookies add: current ]					ifFalse: [						action							value: aCodec							value: current							value: value ] ] ].	^ cookies!
+
+key: keyString value: valueString	^ self new		key: keyString;		value: valueString;		yourself!
+
+keyFrom: aString	^ (aString copyUpTo: $=) trimBoth!
+
+trimBlanksAndQuotes: aString	| trimmed |	trimmed := aString trimBoth.	^ (trimmed size > 2		and: [ trimmed first = $"		and: [ trimmed last = $" ] ])			ifTrue: [ trimmed copyFrom: 2 to: trimmed size - 1 ]			ifFalse: [ trimmed ]!
+
+valueFrom: aString	^ (aString includes: $=)		ifTrue: [ self trimBlanksAndQuotes: (aString copyAfter: $=) ]! !
+!WARequestCookie class categoriesFor: #actions!accessing!public! !
+!WARequestCookie class categoriesFor: #fromString:codec:!instance creation!public! !
+!WARequestCookie class categoriesFor: #key:value:!instance creation!public! !
+!WARequestCookie class categoriesFor: #keyFrom:!private! !
+!WARequestCookie class categoriesFor: #trimBlanksAndQuotes:!private! !
+!WARequestCookie class categoriesFor: #valueFrom:!private! !
+

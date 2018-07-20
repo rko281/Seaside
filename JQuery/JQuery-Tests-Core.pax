@@ -1,0 +1,158 @@
+﻿| package |
+package := Package name: 'JQuery-Tests-Core'.
+package paxVersion: 1;
+	basicComment: ''.
+
+
+package classNames
+	add: #JQAjaxFunctionalTest;
+	add: #JQAjaxTest;
+	add: #JQAllFunctionalTests;
+	add: #JQAllFunctionalTestsLibrary;
+	add: #JQAnimateFunctionalTest;
+	add: #JQCounterFunctionalTest;
+	add: #JQEffectsFunctionalTest;
+	add: #JQEffectsTest;
+	add: #JQEventTest;
+	add: #JQFormFunctionalTest;
+	add: #JQFunctionalTest;
+	add: #JQJsonFunctionalTest;
+	add: #JQRepeatingFunctionalTest;
+	add: #JQRequestFunctionalTest;
+	add: #JQueryClassTest;
+	add: #JQueryInstanceTest;
+	add: #JQueryTest;
+	add: #JQWelcomeFunctionalTest;
+	yourself.
+
+package methodNames
+	add: 'GRPackage class' -> #jQueryTestsCore;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: (IdentitySet new
+	add: '..\Core\Object Arts\Dolphin\Base\Dolphin';
+	add: '..\Grease\Grease-Core';
+	add: '..\IDB\IDB DateAndTime';
+	add: '..\Javascript\Javascript-Core';
+	add: '..\Javascript\Javascript-Tests-Core';
+	add: 'JQuery-Core';
+	add: '..\Seaside\Seaside-Component';
+	add: '..\Seaside\Seaside-Core';
+	add: '..\Seaside\Seaside-Development';
+	add: '..\Seaside\Seaside-Tests-Functional';
+	add: '..\Seaside\Seaside-Tools-Core';
+	yourself).
+
+package!
+
+"Class Definitions"!
+
+WAFileLibrary subclass: #JQAllFunctionalTestsLibrary
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAComponent subclass: #JQAllFunctionalTests
+	instanceVariableNames: 'default tests contents'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAComponent subclass: #JQFunctionalTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQFunctionalTest subclass: #JQAjaxFunctionalTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQFunctionalTest subclass: #JQAnimateFunctionalTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQFunctionalTest subclass: #JQCounterFunctionalTest
+	instanceVariableNames: 'count'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQFunctionalTest subclass: #JQEffectsFunctionalTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQFunctionalTest subclass: #JQFormFunctionalTest
+	instanceVariableNames: 'textInput textArea checkBox radioButton selectList multiSelectList fileInput fileInputs'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQFunctionalTest subclass: #JQJsonFunctionalTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQFunctionalTest subclass: #JQRepeatingFunctionalTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQFunctionalTest subclass: #JQRequestFunctionalTest
+	instanceVariableNames: 'logger'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQFunctionalTest subclass: #JQWelcomeFunctionalTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JSObjectTest subclass: #JQueryTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQueryTest subclass: #JQAjaxTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQueryTest subclass: #JQEffectsTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQueryTest subclass: #JQEventTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQueryTest subclass: #JQueryClassTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JQueryTest subclass: #JQueryInstanceTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+"Global Aliases"!
+
+
+"Loose Methods"!
+
+!GRPackage class methodsFor!
+
+jQueryTestsCore	^ self new		name: 'JQuery-Tests-Core';		description: 'Functional and unit tests for the JQuery-Core package.';		addDependency: 'JQuery-Core';		addDependency: 'Javascript-Tests-Core';		addDependency: 'Seaside-Development';		addDependency: 'Seaside-Tests-Functional';		url: #seasideUrl;		yourself! !
+!GRPackage class categoriesFor: #jQueryTestsCore!*jquery/tests/core!public! !
+
+"End of package definition"!
+

@@ -1,0 +1,58 @@
+﻿| package |
+package := Package name: 'Seaside-Dolphin-Continuation'.
+package paxVersion: 1;
+	basicComment: ''.
+
+
+package classNames
+	add: #WAContinuation;
+	add: #WAMarkerNotFound;
+	add: #WAMarkerRequest;
+	add: #WAPartialContinuation;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: (IdentitySet new
+	add: '..\..\Core\Object Arts\Dolphin\Base\Dolphin';
+	add: '..\..\Core\Object Arts\Dolphin\System\Continuations\Dolphin Continuations';
+	add: '..\Daniel S\DS Partial Continuations';
+	add: '..\Grease\Grease-Core';
+	yourself).
+
+package!
+
+"Class Definitions"!
+
+Continuation subclass: #WAContinuation
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+GRError subclass: #WAMarkerNotFound
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+GRNotification subclass: #WAMarkerRequest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+PartialContinuation subclass: #WAPartialContinuation
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+"Global Aliases"!
+
+
+"Loose Methods"!
+
+"End of package definition"!
+

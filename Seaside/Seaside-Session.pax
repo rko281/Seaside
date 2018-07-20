@@ -1,0 +1,265 @@
+﻿| package |
+package := Package name: 'Seaside-Session'.
+package paxVersion: 1;
+	basicComment: ''.
+
+
+package classNames
+	add: #WAApplication;
+	add: #WAApplicationConfiguration;
+	add: #WACookieForBrowserIPForCrawlerTrackingStrategy;
+	add: #WACookieIfSupportedSessionTrackingStrategy;
+	add: #WACookieOnlySessionTrackingStrategy;
+	add: #WACookieSessionTrackingStrategy;
+	add: #WAInvisibleSessionTrackingStrategy;
+	add: #WAIPSessionTrackingStrategy;
+	add: #WAMutualExclusionFilter;
+	add: #WANullSessionContinuation;
+	add: #WASession;
+	add: #WASessionContinuation;
+	add: #WASessionTrackingStrategy;
+	add: #WASslSessionTrackingStrategy;
+	yourself.
+
+package methodNames
+	add: #GRPlatform -> #createMutualExclusionFilter;
+	add: #GRPlatform -> #createSessionCacheForApplication:;
+	add: #WAAnchorTag -> #document:;
+	add: #WAAnchorTag -> #document:mimeType:;
+	add: #WAAnchorTag -> #document:mimeType:fileName:;
+	add: #WAContentElement -> #document:;
+	add: #WAContentElement -> #document:fileName:;
+	add: #WAContentElement -> #document:mimeType:;
+	add: #WAContentElement -> #document:mimeType:fileName:;
+	add: #WAIframeTag -> #document:;
+	add: #WAIframeTag -> #document:mimeType:;
+	add: #WAIframeTag -> #document:mimeType:fileName:;
+	add: #WAImageButtonTag -> #document:;
+	add: #WAImageButtonTag -> #document:mimeType:;
+	add: #WAImageButtonTag -> #document:mimeType:fileName:;
+	add: #WAImageTag -> #document:;
+	add: #WAImageTag -> #document:mimeType:;
+	add: #WAImageTag -> #document:mimeType:fileName:;
+	add: #WAObject -> #application;
+	add: #WAObject -> #session;
+	add: #WARenderContext -> #urlForDocument:;
+	add: #WARenderContext -> #urlForDocument:mimeType:;
+	add: #WARenderContext -> #urlForDocument:mimeType:fileName:;
+	add: #WARequestContext -> #application;
+	add: #WARequestContext -> #redirectTo:;
+	add: #WARequestContext -> #session;
+	add: #WARequestFilter -> #updateStates:;
+	add: #WARequestHandler -> #isApplication;
+	add: #WARequestHandler -> #isSession;
+	add: 'GRPackage class' -> #seasideSession;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: (IdentitySet new
+	add: '..\Core\Object Arts\Dolphin\Base\Dolphin';
+	add: '..\Grease\Grease-Core';
+	add: 'Seaside-Canvas';
+	add: 'Seaside-Core';
+	yourself).
+
+package!
+
+"Class Definitions"!
+
+WASystemConfiguration subclass: #WAApplicationConfiguration
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAHandlerTrackingStrategy subclass: #WASessionTrackingStrategy
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WASessionTrackingStrategy subclass: #WACookieForBrowserIPForCrawlerTrackingStrategy
+	instanceVariableNames: 'cookieStrategy ipStrategy'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WASessionTrackingStrategy subclass: #WACookieSessionTrackingStrategy
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WASessionTrackingStrategy subclass: #WAInvisibleSessionTrackingStrategy
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WACookieSessionTrackingStrategy subclass: #WACookieIfSupportedSessionTrackingStrategy
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WACookieSessionTrackingStrategy subclass: #WACookieOnlySessionTrackingStrategy
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAInvisibleSessionTrackingStrategy subclass: #WAIPSessionTrackingStrategy
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAInvisibleSessionTrackingStrategy subclass: #WASslSessionTrackingStrategy
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WARequestFilter subclass: #WAMutualExclusionFilter
+	instanceVariableNames: 'mutex'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WARequestHandler subclass: #WASession
+	instanceVariableNames: 'continuations properties documentHandlers key'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WARequestHandler subclass: #WASessionContinuation
+	instanceVariableNames: 'states'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WARegistry subclass: #WAApplication
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WASessionContinuation subclass: #WANullSessionContinuation
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+"Global Aliases"!
+
+
+"Loose Methods"!
+
+!GRPackage class methodsFor!
+
+seasideSession	^ self new		name: 'Seaside-Session';		description: 'Support for stateful and secure session handling.';		addDependency: 'Seaside-Core';		url: #seasideUrl;		yourself! !
+!GRPackage class categoriesFor: #seasideSession!*seaside/session!public! !
+
+!GRPlatform methodsFor!
+
+createMutualExclusionFilter	"GemStone/S should create a WAGsMutualExclusionFilter here"	^ WAMutualExclusionFilter new!
+
+createSessionCacheForApplication: anApplication	"GemStone/S should create a WABulkReapingCache without a mutex here"	^ WAMutualExclusionCache on: (WAHashCache		initialSize: 13		maximumSize: (anApplication configuration at: #maximumSize)		maximumAbsoluteAge: (anApplication configuration at: #maximumAbsoluteAge)		maximumRelativeAge: (anApplication configuration at: #maximumRelativeAge)		overflowAction: (anApplication configuration at: #overflowAction))! !
+!GRPlatform categoriesFor: #createMutualExclusionFilter!*seaside/session!public! !
+!GRPlatform categoriesFor: #createSessionCacheForApplication:!*seaside/session!public! !
+
+!WAAnchorTag methodsFor!
+
+document: aDocument	self document: aDocument mimeType: nil!
+
+document: aDocument mimeType: mimeType	self document: aDocument mimeType: mimeType fileName: nil!
+
+document: aDocument mimeType: mimeType fileName: fileName	self url: (canvas context urlForDocument: aDocument mimeType: mimeType fileName: fileName).	mimeType isNil ifFalse: [		self type: mimeType ]! !
+!WAAnchorTag categoriesFor: #document:!*seaside/session!public! !
+!WAAnchorTag categoriesFor: #document:mimeType:!*seaside/session!public! !
+!WAAnchorTag categoriesFor: #document:mimeType:fileName:!*seaside/session!public! !
+
+!WAContentElement methodsFor!
+
+document: aString	self document: aString mimeType: self typeOrNil!
+
+document: aString fileName: fileName	self document: aString mimeType: self typeOrNil fileName: fileName!
+
+document: aString mimeType: mimeType	self document: aString mimeType: mimeType fileName: nil!
+
+document: aString mimeType: mimeType fileName: fileName	self url: (root context urlForDocument: aString mimeType: mimeType fileName: fileName)! !
+!WAContentElement categoriesFor: #document:!*seaside/session!public! !
+!WAContentElement categoriesFor: #document:fileName:!*seaside/session!public! !
+!WAContentElement categoriesFor: #document:mimeType:!*seaside/session!public! !
+!WAContentElement categoriesFor: #document:mimeType:fileName:!*seaside/session!public! !
+
+!WAIframeTag methodsFor!
+
+document: anObject	self document: anObject mimeType: nil!
+
+document: anObject mimeType: aMimeString	self document: anObject mimeType: aMimeString fileName: nil!
+
+document: anObject mimeType: aMimeString fileName: aFileNameString	self url: (canvas context		urlForDocument: anObject		mimeType: aMimeString		fileName: aFileNameString)! !
+!WAIframeTag categoriesFor: #document:!*seaside/session!public! !
+!WAIframeTag categoriesFor: #document:mimeType:!*seaside/session!public! !
+!WAIframeTag categoriesFor: #document:mimeType:fileName:!*seaside/session!public! !
+
+!WAImageButtonTag methodsFor!
+
+document: aDocument	self document: aDocument mimeType: nil!
+
+document: aDocument mimeType: mimeType	self document: aDocument mimeType: mimeType fileName: nil!
+
+document: aDocument mimeType: mimeType fileName: fileName	self url: (canvas context urlForDocument: aDocument mimeType: mimeType fileName: fileName)! !
+!WAImageButtonTag categoriesFor: #document:!*seaside/session!public! !
+!WAImageButtonTag categoriesFor: #document:mimeType:!*seaside/session!public! !
+!WAImageButtonTag categoriesFor: #document:mimeType:fileName:!*seaside/session!public! !
+
+!WAImageTag methodsFor!
+
+document: aDocument	self document: aDocument mimeType: nil!
+
+document: aDocument mimeType: mimeType	self document: aDocument mimeType: mimeType fileName: nil!
+
+document: aDocument mimeType: mimeType fileName: fileName	self url: (canvas context urlForDocument: aDocument mimeType: mimeType fileName: fileName)! !
+!WAImageTag categoriesFor: #document:!*seaside/session!public! !
+!WAImageTag categoriesFor: #document:mimeType:!*seaside/session!public! !
+!WAImageTag categoriesFor: #document:mimeType:fileName:!*seaside/session!public! !
+
+!WAObject methodsFor!
+
+application	"Answer the current seaside application, instance of WAApplication or a subclass."		^ self requestContext application!
+
+session	"Answer the current seaside session, instance of WASession or a subclass."		^ self requestContext session! !
+!WAObject categoriesFor: #application!*seaside/session!public! !
+!WAObject categoriesFor: #session!*seaside/session!public! !
+
+!WARenderContext methodsFor!
+
+urlForDocument: anObject	^ self urlForDocument: anObject mimeType: nil!
+
+urlForDocument: anObject mimeType: mimeString	^ self urlForDocument: anObject mimeType: mimeString fileName: nil!
+
+urlForDocument: anObject mimeType: mimeType fileName: fileName	| handler |	handler := (WADocumentHandler		document: anObject		mimeType: mimeType		fileName: fileName).	^ self requestContext session register: handler! !
+!WARenderContext categoriesFor: #urlForDocument:!*seaside/session!public! !
+!WARenderContext categoriesFor: #urlForDocument:mimeType:!*seaside/session!public! !
+!WARenderContext categoriesFor: #urlForDocument:mimeType:fileName:!*seaside/session!public! !
+
+!WARequestContext methodsFor!
+
+application	"Answer the current application or nil."	^ handlers 		detect: [ :each | each isApplication ]		ifNone: [ nil ]!
+
+redirectTo: aUrlOrString 	self responseGenerator		redirectTo: aUrlOrString;		respond!
+
+session	"Answer the current session or nil."	^ handlers 		detect: [ :each | each isSession ]		ifNone: [ nil ]! !
+!WARequestContext categoriesFor: #application!*seaside/session!public! !
+!WARequestContext categoriesFor: #redirectTo:!*seaside/session!public! !
+!WARequestContext categoriesFor: #session!*seaside/session!public! !
+
+!WARequestFilter methodsFor!
+
+updateStates: aSnapshot	aSnapshot register: next! !
+!WARequestFilter categoriesFor: #updateStates:!*seaside/session!public! !
+
+!WARequestHandler methodsFor!
+
+isApplication	^ false!
+
+isSession	^ false! !
+!WARequestHandler categoriesFor: #isApplication!*seaside/session!public! !
+!WARequestHandler categoriesFor: #isSession!*seaside/session!public! !
+
+"End of package definition"!
+

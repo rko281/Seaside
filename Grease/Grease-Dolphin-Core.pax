@@ -1,0 +1,1393 @@
+﻿| package |
+package := Package name: 'Grease-Dolphin-Core'.
+package paxVersion: 1;
+	basicComment: ''.
+
+package basicPackageVersion: '4'.
+
+
+package classNames
+	add: #GRDolphinConverterCodecStream;
+	add: #GRDolphinCountingStream;
+	add: #GRDolphinLatin1Codec;
+	add: #GRDolphinLatin1CodecStream;
+	add: #GRDolphinPlatform;
+	add: #GRDolphinUtf8Codec;
+	add: #GRDolphinUtf8CodecStream;
+	add: #Text;
+	yourself.
+
+package methodNames
+	add: #Array -> #beMutable;
+	add: #Array -> #isArray;
+	add: #Bag -> #sortedCounts;
+	add: #Behavior -> #allInstancesDo:;
+	add: #Behavior -> #allSubInstancesDo:;
+	add: #Behavior -> #fullName;
+	add: #BlockClosure -> #callCC:;
+	add: #BlockClosure -> #fixCallbackTemps;
+	add: #BlockClosure -> #isBlock;
+	add: #BlockClosure -> #valueWithPossibleArguments:;
+	add: #ByteArray -> #greaseString;
+	add: #Character -> #asUnicode;
+	add: #Character -> #greaseInteger;
+	add: #Character -> #to:;
+	add: #Collection -> #any;
+	add: #Collection -> #associationsDo:;
+	add: #Collection -> #isCollection;
+	add: #Collection -> #isEmptyOrNil;
+	add: #Collection -> #isSequenceable;
+	add: #Collection -> #noneSatisfy:;
+	add: #Collection -> #sorted;
+	add: #Collection -> #sorted:;
+	add: #Color -> #asHTMLColor;
+	add: #Date -> #-;
+	add: #Date -> #dayOfWeek;
+	add: #Date -> #dayOfYear;
+	add: #Date -> #printFormat:;
+	add: #DateAndTime -> #asDate;
+	add: #DateAndTime -> #asDateAndTime;
+	add: #DateAndTime -> #asTime;
+	add: #DateAndTime -> #monthIndex;
+	add: #Dictionary -> #isDictionary;
+	add: #Dictionary -> #keysSortedSafely;
+	add: #Dictionary -> #removeAll;
+	add: #Dictionary -> #valuesDo:;
+	add: #Duration -> #asMilliseconds;
+	add: #Duration -> #asMilliSeconds;
+	add: #Duration -> #isZero;
+	add: #GRDelegatingStream -> #greaseNext:putAll:startingAt:;
+	add: #GRDelegatingStream -> #next:putAll:startingAt:;
+	add: #Integer -> #printPaddedWith:to:;
+	add: #Integer -> #printPaddedWith:to:base:;
+	add: #Integer -> #printStringBase:;
+	add: #Integer -> #second;
+	add: #Integer -> #seconds;
+	add: #MessageSend -> #argumentCount;
+	add: #MessageSend -> #fixCallbackTemps;
+	add: #MessageSend -> #isMessageSend;
+	add: #MessageSend -> #numArgs;
+	add: #MessageSend -> #valueWithEnoughArguments:;
+	add: #MessageSend -> #valueWithPossibleArguments:;
+	add: #Number -> #asNumber;
+	add: #Number -> #day;
+	add: #Number -> #days;
+	add: #Number -> #hour;
+	add: #Number -> #hours;
+	add: #Number -> #isInfinite;
+	add: #Number -> #isNaN;
+	add: #Number -> #javascriptOn:;
+	add: #Number -> #milliseconds;
+	add: #Number -> #minute;
+	add: #Number -> #minutes;
+	add: #Number -> #second;
+	add: #Number -> #seconds;
+	add: #Number -> #weeks;
+	add: #Object -> #className;
+	add: #Object -> #copyFrom:;
+	add: #Object -> #greaseString;
+	add: #Object -> #isArray;
+	add: #Object -> #isBlock;
+	add: #Object -> #isCollection;
+	add: #Object -> #isDictionary;
+	add: #Object -> #isFraction;
+	add: #Object -> #isMessageSend;
+	add: #Object -> #printStringLimitedTo:;
+	add: #PositionableStream -> #binary;
+	add: #PositionableStream -> #greaseUpToAll:;
+	add: #PositionableStream -> #isBinary;
+	add: #Random -> #nextInt:;
+	add: #Random -> #randomFrom:;
+	add: #SequenceableCollection -> #atRandom;
+	add: #SequenceableCollection -> #atRandom:;
+	add: #SequenceableCollection -> #beginsWithSubCollection:;
+	add: #SequenceableCollection -> #copyAfter:;
+	add: #SequenceableCollection -> #copyAfterLast:;
+	add: #SequenceableCollection -> #copyUpTo:;
+	add: #SequenceableCollection -> #copyUpToLast:;
+	add: #SequenceableCollection -> #endsWithSubCollection:;
+	add: #SequenceableCollection -> #isSequenceable;
+	add: #SequenceableCollection -> #reversed;
+	add: #SequenceableCollection -> #sort;
+	add: #SequenceableCollection -> #sort:;
+	add: #StackFrame -> #equalsTo:;
+	add: #String -> #caseInsensitiveLessOrEqual:;
+	add: #String -> #characterCount;
+	add: #String -> #encodeForHTTP;
+	add: #String -> #findTokens:;
+	add: #String -> #greaseString;
+	add: #String -> #greaseSubStrings:;
+	add: #String -> #includesSubString:;
+	add: #String -> #includesSubstring:caseSensitive:;
+	add: #String -> #indexOf:startingAt:;
+	add: #String -> #isByteString;
+	add: #String -> #isWideString;
+	add: #String -> #padded:to:with:;
+	add: #String -> #replaceAll:with:;
+	add: #String -> #skipDelimiters:startingAt:;
+	add: #String -> #trimBoth;
+	add: #String -> #trimBoth:;
+	add: #String -> #trimLeft;
+	add: #String -> #trimLeft:;
+	add: #String -> #trimLeft:right:;
+	add: #String -> #trimRight;
+	add: #String -> #trimRight:;
+	add: #String -> #withCRs;
+	add: #Symbol -> #asMutator;
+	add: #Symbol -> #capitalized;
+	add: #Symbol -> #greaseString;
+	add: #Symbol -> #isKeyword;
+	add: #Symbol -> #isUnary;
+	add: #SystemDictionary -> #globals;
+	add: #Time -> #addSeconds:;
+	add: #Time -> #hour;
+	add: #Time -> #minute;
+	add: #Time -> #second;
+	add: #UndefinedObject -> #greaseString;
+	add: #UndefinedObject -> #isEmptyOrNil;
+	add: #Utf16String -> #isByteString;
+	add: #Utf16String -> #isWideString;
+	add: #Utf8String -> #isWideString;
+	add: #UtfEncodedString -> #characterCount;
+	add: #WriteStream -> #crlf;
+	add: #WriteStream -> #greaseNext:putAll:startingAt:;
+	add: 'ArrayedCollection class' -> #with:with:with:with:with:with:;
+	add: 'Character class' -> #leadingChar:code:;
+	add: 'Collection class' -> #with:with:with:with:with:with:;
+	add: 'Color class' -> #fromString:;
+	add: 'Color class' -> #fromThreeDigitString:;
+	add: 'Date class' -> #daysInMonthNumber:forYear:;
+	add: 'Date class' -> #year:month:day:;
+	add: 'DateAndTime class' -> #date:time:;
+	add: 'DateAndTime class' -> #fromSeconds:;
+	add: 'DateAndTime class' -> #year:month:day:;
+	add: 'Duration class' -> #milliseconds:;
+	add: 'Duration class' -> #milliSeconds:;
+	add: 'Duration class' -> #weeks:;
+	add: 'GRCountingStream class' -> #on:;
+	add: 'GRPackage class' -> #greaseDolphinCore;
+	add: 'String class' -> #cr;
+	add: 'String class' -> #crlf;
+	add: 'String class' -> #lf;
+	add: 'Time class' -> #hour:minute:second:;
+	add: 'Time class' -> #midnight;
+	add: 'Time class' -> #milliseconds:since:;
+	add: 'Time class' -> #millisecondsSince:;
+	add: 'Utf16String class' -> #fromUTF8Content:;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: (IdentitySet new
+	add: '..\Core\Object Arts\Dolphin\ActiveX\Components\CDO\CDO';
+	add: '..\Core\Object Arts\Dolphin\Base\Dolphin';
+	add: '..\Core\Object Arts\Dolphin\MVP\Base\Dolphin MVP Base';
+	add: '..\Core\Object Arts\Dolphin\MVP\Presenters\Prompters\Dolphin Prompter';
+	add: '..\Core\Object Arts\Dolphin\System\Random\Dolphin Random Stream';
+	add: '..\Core\Object Arts\Dolphin\DolphinSure\DolphinSure';
+	add: 'Grease-Core';
+	add: '..\Core\Contributions\IDB\IDB DateAndTime';
+	add: '..\Core\Contributions\IDB\IDB Duration';
+	yourself).
+
+package!
+
+"Class Definitions"!
+
+String variableByteSubclass: #Text
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+GRCodec subclass: #GRDolphinUtf8Codec
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+GRNullCodec subclass: #GRDolphinLatin1Codec
+	instanceVariableNames: 'name'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+GRCodecStream subclass: #GRDolphinConverterCodecStream
+	instanceVariableNames: 'converter'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+GRDolphinConverterCodecStream subclass: #GRDolphinUtf8CodecStream
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+GRNullCodecStream subclass: #GRDolphinLatin1CodecStream
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+GRCountingStream subclass: #GRDolphinCountingStream
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+GRPlatform subclass: #GRDolphinPlatform
+	instanceVariableNames: ''
+	classVariableNames: 'SmtpServer UrlTable XmlTable'
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+"Global Aliases"!
+
+
+"Loose Methods"!
+
+!Array methodsFor!
+
+beMutable
+	"Converts the receiver to a mutable instance."
+
+	self isImmutable: false!
+
+isArray
+	^true! !
+!Array categoriesFor: #beMutable!public! !
+!Array categoriesFor: #isArray!public!testing! !
+
+!ArrayedCollection class methodsFor!
+
+with: element1 with: element2 with: element3 with: element4 with: element5 with: element6
+	"Answer an instance of the receiver containing the <Object>
+	arguments as its elements.
+	N.B. This is not an ANSI standard method (up to 4 elements are supported
+	by <Array factory> #with:&c messages, for more one must use #withAll:)."
+
+	^(self new: 6)
+		at: 1 put: element1;
+		at: 2 put: element2;
+		at: 3 put: element3;
+		at: 4 put: element4;
+		at: 5 put: element5;
+		at: 6 put: element6;
+		yourself! !
+!ArrayedCollection class categoriesFor: #with:with:with:with:with:with:!instance creation!public! !
+
+!Bag methodsFor!
+
+sortedCounts
+	|counts|
+	counts := SortedCollection sortBlock: [:x :y | x >= y].
+	contents associationsDo: [:assoc | counts add: assoc value -> assoc key].
+	^ counts! !
+!Bag categoriesFor: #sortedCounts!enumerating!public! !
+
+!Behavior methodsFor!
+
+allInstancesDo: operation
+	"Evaluates the one argument Block <operation> for each direct instance of the receiver."
+
+	^self allInstances do: operation!
+
+allSubInstancesDo: aMonadicValuable 
+	"Evaluate aMonadicValuable for each of the receiver instances, 
+	and with all the instances of the receiver subclasses."
+
+	self allSubinstances do: aMonadicValuable!
+
+fullName
+	"In VW, will include the namespace"
+	^self name asString! !
+!Behavior categoriesFor: #allInstancesDo:!instances!public! !
+!Behavior categoriesFor: #allSubInstancesDo:!instances!public! !
+!Behavior categoriesFor: #fullName!*seaside-squeak-platform!public! !
+
+!BlockClosure methodsFor!
+
+callCC: continuationClass
+	"Answer a an instance of continuationClass which contains a copy of the active process.
+	When the continuation is later evaluated, it is like returning a value from this frame again."
+
+	^self value: (continuationClass fromContext: Processor activeProcess topFrame sender)!
+
+fixCallbackTemps!
+
+isBlock
+	^true!
+
+valueWithPossibleArguments: anArray
+	| args |
+	(anArray size == self numArgs)
+		ifTrue: [ ^ self valueWithArguments: anArray ].
+	args := Array new: self numArgs.
+	args replaceFrom: 1
+		to: (anArray size min: args size)
+		with: anArray
+		startingAt: 1.
+	^ self valueWithArguments: args! !
+!BlockClosure categoriesFor: #callCC:!evaluating!public! !
+!BlockClosure categoriesFor: #fixCallbackTemps!*seaside-squeak-platform!public! !
+!BlockClosure categoriesFor: #isBlock!*seaside-squeak-platform!public! !
+!BlockClosure categoriesFor: #valueWithPossibleArguments:!*seaside-squeak-platform!public! !
+
+!ByteArray methodsFor!
+
+greaseString
+	"ByteArrays should not automatically be converted to Strings. You should use a WACodec for this."
+
+	^self printString! !
+!ByteArray categoriesFor: #greaseString!*seaside-squeak-platform!public! !
+
+!Character methodsFor!
+
+asUnicode
+	^self codePoint!
+
+greaseInteger
+	"Answer an unicode code point of the receiver."
+
+	^self codePoint bitAnd: 16r3FFFFF!
+
+to: aCharacter
+	^(self asciiValue to: aCharacter asciiValue) collect: [:i | i asCharacter]! !
+!Character categoriesFor: #asUnicode!public! !
+!Character categoriesFor: #greaseInteger!*seaside-squeak-platform!public! !
+!Character categoriesFor: #to:!public! !
+
+!Character class methodsFor!
+
+leadingChar: leadChar code: code
+
+	code >= 16r400000 ifTrue: [
+		self error: 'code is out of range'.
+	].
+	leadChar >= 256 ifTrue: [
+		self error: 'lead is out of range'.
+	].
+
+	^self value: (leadChar bitShift: 22) + code! !
+!Character class categoriesFor: #leadingChar:code:!OmniBase!public! !
+
+!Collection methodsFor!
+
+any
+	^ self anyOne!
+
+associationsDo: aBlock
+	"Evaluate aBlock for each of the receiver's elements (key/value 
+	associations).  If any non-association is within, the error is not caught now,
+	but later, when a key or value message is sent to it.
+	Seaside and Pharo compatibility...
+	Sorry for adding this into Collection."
+
+	self do: aBlock!
+
+isCollection
+	^true!
+
+isEmptyOrNil
+	"Answer whether receiver is emtpy or nil. Receiver never can be nil."
+
+	^self isEmpty!
+
+isSequenceable
+	^false!
+
+noneSatisfy: aBlock 
+	"Evaluate aBlock with the elements of the receiver.
+	If aBlock returns false for all elements return true.
+	Otherwise return false"
+
+	self do: [:item | (aBlock value: item) ifTrue: [^false]].
+	^true!
+
+sorted
+	^ self sorted: [ :a :b | a <= b ]!
+
+sorted: sortBlock
+	^self asSortedCollection: sortBlock! !
+!Collection categoriesFor: #any!*grease-pharo-core!public! !
+!Collection categoriesFor: #associationsDo:!enumerating!public! !
+!Collection categoriesFor: #isCollection!public!testing! !
+!Collection categoriesFor: #isEmptyOrNil!public!testing! !
+!Collection categoriesFor: #isSequenceable!public! !
+!Collection categoriesFor: #noneSatisfy:!enumerating!public! !
+!Collection categoriesFor: #sorted!*grease-pharo-core!public! !
+!Collection categoriesFor: #sorted:!*grease-pharo-core!public! !
+
+!Collection class methodsFor!
+
+with: firstObject with: secondObject with: thirdObject with: fourthObject with: fifthObject with: sixthObject
+	"Answer an instance of the receiver containing the arguments as its elements"
+
+	^self new
+		add: firstObject; 
+		add: secondObject; 
+		add: thirdObject;
+		add: fourthObject; 
+		add: fifthObject; 
+		add: sixthObject;
+		yourself
+! !
+!Collection class categoriesFor: #with:with:with:with:with:with:!instance creation!public! !
+
+!Color methodsFor!
+
+asHTMLColor
+	"Answer the receiver HTML hexadecimal representation string."
+	
+	| stream |
+	stream := WriteStream on: (String new: 7).
+	stream nextPut: $#.
+	(Array with: self red with: self green with: self blue) do: [:color |
+		stream nextPutAll: (color printPaddedWith: $0 to: 2 base: 16)].
+	^stream contents
+
+! !
+!Color categoriesFor: #asHTMLColor!public! !
+
+!Color class methodsFor!
+
+fromString: aString
+	"Answer the color from the aString in the form of RRGGBB."
+
+	| colorHex |
+	aString isEmptyOrNil ifTrue: [^Color white asRGB].
+	colorHex := (aString first = $#
+			ifTrue: [aString copyFrom: 2 to: aString size]
+			ifFalse: [aString]) asUppercase.
+	^(colorHex allSatisfy: [:each | each isHexDigit])
+		ifTrue: [colorHex size = 3 ifTrue: [self fromThreeDigitString: colorHex asUppercase ] ifFalse: [self fromHTMLSpec: ('#' , colorHex) asUppercase]]
+		ifFalse: [
+			"try to match aColorHex with known named colors"
+			colorHex := colorHex asLowercase.
+			(self perform: (self selectors detect: [:selector | selector asString asLowercase = colorHex] ifNone: [#white]) asSymbol) asRGB]!
+
+fromThreeDigitString: aString
+
+	| red green blue |
+
+	red := (aString first digitValue * 16) + aString first digitValue.
+	green := (aString second digitValue * 16) + aString second digitValue.
+	blue := (aString third digitValue * 16) + aString third digitValue.
+
+	^self red: red green: green blue: blue! !
+!Color class categoriesFor: #fromString:!instance creation!public! !
+!Color class categoriesFor: #fromThreeDigitString:!instance creation!public! !
+
+!Date methodsFor!
+
+- operand
+	"Substracts operand from receiver."
+
+	^Duration seconds: (self asSeconds - operand asSeconds)
+!
+
+dayOfWeek
+	"Sunday=1, ... , Saturday=7"
+
+	| weekdayIndex |
+
+	^(weekdayIndex := self weekdayIndex) = 7
+		ifTrue: [1]
+		ifFalse: [weekdayIndex + 1]!
+
+dayOfYear
+	"Answer an <integer> between 1 and 366, inclusive, representing the day 
+	of the year in the local time of the receiver, which includes the receiver."
+
+	^self day!
+
+printFormat: format
+	"Pharo / Squeak compatibility.
+	Not implemented yet."
+
+	^String streamContents: [:stream | self printOn: stream format: Locale default dateFormat]! !
+!Date categoriesFor: #-!public! !
+!Date categoriesFor: #dayOfWeek!accessing!public! !
+!Date categoriesFor: #dayOfYear!accessing!public! !
+!Date categoriesFor: #printFormat:!printing!public! !
+
+!Date class methodsFor!
+
+daysInMonthNumber: monthIndex forYear: yearInteger 
+
+	^self daysInMonthIndex: monthIndex forYear: yearInteger
+!
+
+year: year  month: month day: day
+	"For compatibility with Squeak."
+ 
+	^self newDay: day monthIndex: month year: year! !
+!Date class categoriesFor: #daysInMonthNumber:forYear:!*seaside-squeak-platform!public! !
+!Date class categoriesFor: #year:month:day:!public! !
+
+!DateAndTime methodsFor!
+
+asDate
+	^Date newDay: self dayOfMonth monthIndex: self month year: self year!
+
+asDateAndTime
+	"Answer the receiver asDateAndTime."
+
+	^self!
+
+asTime
+	^Time hours: self hour24 minutes: self minute seconds: self second!
+
+monthIndex
+	"Answer the month integer index of the receiver."
+
+	^self month! !
+!DateAndTime categoriesFor: #asDate!public! !
+!DateAndTime categoriesFor: #asDateAndTime!public! !
+!DateAndTime categoriesFor: #asTime!public! !
+!DateAndTime categoriesFor: #monthIndex!converting!public! !
+
+!DateAndTime class methodsFor!
+
+date: aDate time: aTime 
+	^self fromDate: aDate time: aTime!
+
+fromSeconds: seconds
+	"Answer a DateAndTime since the Squeak epoch: 1 January 1901"
+
+	^ self seconds: seconds offset: self defaultOffset!
+
+year: year month: month day: day
+	"Answer a new instance of receiver in a day of month of year."
+
+	^self year: year month: month day: day hour: 0 minute: 0 second: 0! !
+!DateAndTime class categoriesFor: #date:time:!public! !
+!DateAndTime class categoriesFor: #fromSeconds:!initializing!public! !
+!DateAndTime class categoriesFor: #year:month:day:!public! !
+
+!Dictionary methodsFor!
+
+isDictionary
+	^true!
+
+keysSortedSafely
+	"Answer a SortedCollection containing the receiver's keys."
+
+	| sortedKeys |
+	sortedKeys := SortedCollection new: self size.
+	sortedKeys sortBlock: 
+			[:x :y | 
+			"Should really be use <obj, string, num> compareSafely..."
+			((x isString and: [y isString]) or: [x isNumber and: [y isNumber]]) 
+				ifTrue: [x < y]
+				ifFalse: 
+					[x class == y class 
+						ifTrue: [x displayString < y displayString]
+						ifFalse: [x class name < y class name]]].
+	self keysDo: [:each | sortedKeys add: each].
+	^sortedKeys!
+
+removeAll
+
+	^self removeAllKeys: self keys!
+
+valuesDo: aBlock 
+	"Evaluate aBlock for each of the receiver's values."
+
+	self associationsDo: [:association | aBlock value: association value]! !
+!Dictionary categoriesFor: #isDictionary!public! !
+!Dictionary categoriesFor: #keysSortedSafely!public! !
+!Dictionary categoriesFor: #removeAll!public!removing! !
+!Dictionary categoriesFor: #valuesDo:!public! !
+
+!Duration methodsFor!
+
+asMilliseconds
+	^ self asMilliSeconds!
+
+asMilliSeconds
+	"Seaside Compatibility."
+
+	^self asSeconds * 1000!
+
+isZero
+	^self = self class zero! !
+!Duration categoriesFor: #asMilliseconds!*grease-pharo-core!public! !
+!Duration categoriesFor: #asMilliSeconds!converting!public! !
+!Duration categoriesFor: #isZero!*grease-pharo-core!public! !
+
+!Duration class methodsFor!
+
+milliseconds: anInteger
+	^ self milliSeconds: anInteger!
+
+milliSeconds: milliSeconds
+	"Answer a <Duration> which is <number> seconds in length."
+
+	^self seconds: milliSeconds / 1000!
+
+weeks: aNumber
+	^self days: (aNumber * 7)! !
+!Duration class categoriesFor: #milliseconds:!*grease-pharo-core!public! !
+!Duration class categoriesFor: #milliSeconds:!instance creation!public! !
+!Duration class categoriesFor: #weeks:!*grease-pharo-core!public! !
+
+!GRCountingStream class methodsFor!
+
+on: aStream
+
+	^self == ##(self)
+		ifTrue: [GRDolphinCountingStream on: aStream]
+		ifFalse: [super on: aStream]! !
+!GRCountingStream class categoriesFor: #on:!public! !
+
+!GRDelegatingStream methodsFor!
+
+greaseNext: anInteger putAll: aCollection startingAt: startIndex
+	stream greaseNext: anInteger putAll: aCollection startingAt: startIndex!
+
+next: size putAll: aSequenceableCollection startingAt: start
+	"Append countInteger elements of aSequenceableCollection from startInteger
+	to the receiver. Answer aSequenceableCollection."
+
+	^stream next: size putAll: aSequenceableCollection startingAt: start! !
+!GRDelegatingStream categoriesFor: #greaseNext:putAll:startingAt:!public!streaming! !
+!GRDelegatingStream categoriesFor: #next:putAll:startingAt:!public!streaming! !
+
+!GRPackage class methodsFor!
+
+greaseDolphinCore
+	^(self new)
+		name: 'Grease-Dolphin-Core';
+		addDependency: 'Grease-Core';
+		url: #seasideUrl;
+		yourself! !
+!GRPackage class categoriesFor: #greaseDolphinCore!*grease-pharo-core!public! !
+
+!Integer methodsFor!
+
+printPaddedWith: aCharacter to: anInteger 
+	"Answer the string containing the ASCII representation of the receiver 
+	padded on the left with aCharacter to be at least anInteger characters.
+	Squeak port."
+
+	^ self
+		printPaddedWith: aCharacter
+		to: anInteger
+		base: 10!
+
+printPaddedWith: aCharacter to: anInteger base: aRadix 
+	"Answer the string containing the ASCII representation of the receiver 
+	padded on the left with aCharacter to be at least anInteger characters.
+	Squeak port."
+	| aStream padding digits |
+	aStream := WriteStream on: (String new: 10).
+	self
+		printOn: aStream
+		base: aRadix
+		showRadix: false.
+	digits := aStream contents.
+	padding := anInteger - digits size.
+	padding > 0 ifFalse: [^digits].
+	^((String new: padding) atAllPut: aCharacter; yourself) , digits!
+
+printStringBase: anInteger 
+	"Prints the receiver with anInteger as its base."
+
+	^self printStringRadix: anInteger showRadix: false!
+
+second
+	^self sign seconds
+ !
+
+seconds
+	^Duration seconds: self! !
+!Integer categoriesFor: #printPaddedWith:to:!printing!public! !
+!Integer categoriesFor: #printPaddedWith:to:base:!printing!public! !
+!Integer categoriesFor: #printStringBase:!public! !
+!Integer categoriesFor: #second!public! !
+!Integer categoriesFor: #seconds!public! !
+
+!MessageSend methodsFor!
+
+argumentCount
+	^ selector numArgs - self arguments size!
+
+fixCallbackTemps
+	"for polymorphism with BlockContext >> #fixCallbackTemps"!
+
+isMessageSend
+	^true!
+
+numArgs
+	^ selector numArgs!
+
+valueWithEnoughArguments: anArray
+	"Call the selector with enough arguments from arguments and anArray"
+	| argsArray |
+	argsArray := Array new: self selector numArgs.
+	argsArray replaceFrom: 1
+		to: (self arguments size min: argsArray size)
+		with: self arguments
+		startingAt: 1.
+	argsArray size > self arguments size ifTrue: [
+		argsArray replaceFrom: self arguments size + 1
+			to: (self arguments size + anArray size min: argsArray size)
+			with: anArray
+			startingAt: 1.
+	].
+	^self receiver perform: self selector withArguments: argsArray!
+
+valueWithPossibleArguments: anArray
+
+     "Evaluate the block represented by the receiver.
+     If the block requires one argument, use anArg, if it requires more than one,
+     fill up the rest with nils."
+
+	^self valueWithEnoughArguments: anArray! !
+!MessageSend categoriesFor: #argumentCount!*seaside-squeak-platform!public! !
+!MessageSend categoriesFor: #fixCallbackTemps!*seaside-squeak-platform!public! !
+!MessageSend categoriesFor: #isMessageSend!public! !
+!MessageSend categoriesFor: #numArgs!*seaside-squeak-platform!public! !
+!MessageSend categoriesFor: #valueWithEnoughArguments:!public! !
+!MessageSend categoriesFor: #valueWithPossibleArguments:!*seaside-squeak-platform!public! !
+
+!Number methodsFor!
+
+asNumber
+	"Answer receiver."
+
+	^self!
+
+day
+
+	^self sign days!
+
+days
+
+	^Duration days: self!
+
+hour
+
+	^self sign hours!
+
+hours
+
+	^Duration hours: self!
+
+isInfinite
+	^false!
+
+isNaN
+	^false!
+
+javascriptOn: aStream
+	aStream nextPutAll: self printString!
+
+milliseconds
+	^Duration milliseconds: self!
+
+minute
+
+	^self sign minutes!
+
+minutes
+
+	^Duration minutes: self!
+
+second
+
+	^self sign seconds!
+
+seconds
+
+	^Duration seconds: self!
+
+weeks
+
+	^Duration weeks: self! !
+!Number categoriesFor: #asNumber!constants!public! !
+!Number categoriesFor: #day!public! !
+!Number categoriesFor: #days!public! !
+!Number categoriesFor: #hour!public! !
+!Number categoriesFor: #hours!public! !
+!Number categoriesFor: #isInfinite!public! !
+!Number categoriesFor: #isNaN!public! !
+!Number categoriesFor: #javascriptOn:!public! !
+!Number categoriesFor: #milliseconds!*grease-pharo-core!public! !
+!Number categoriesFor: #minute!public! !
+!Number categoriesFor: #minutes!public! !
+!Number categoriesFor: #second!public! !
+!Number categoriesFor: #seconds!public! !
+!Number categoriesFor: #weeks!public! !
+
+!Object methodsFor!
+
+className
+	"Answer a string characterizing the receiver's class, for use in list views for example"
+
+	^self class name asString!
+
+copyFrom: anotherObject
+	"Copy to myself all instance variables I have in common with anotherObject.
+	This is dangerous because it ignores an object's control over its own inst vars."
+
+	| mine his |
+	mine := self basicClass allInstVarNames.
+	his := anotherObject basicClass allInstVarNames.
+	1 to: (mine size min: his size) do: [:ind |
+		(mine at: ind) = (his at: ind) ifTrue: [
+			self instVarAt: ind put: (anotherObject instVarAt: ind)]].
+	self basicClass isVariable & anotherObject basicClass isVariable ifTrue: [
+		1 to: (self basicSize min: anotherObject basicSize) do: [:ind |
+			self basicAt: ind put: (anotherObject basicAt: ind)]]!
+
+greaseString
+	^self displayString!
+
+isArray
+	^false!
+
+isBlock
+	^false!
+
+isCollection
+	^false!
+
+isDictionary
+	^false!
+
+isFraction
+	"Answer true if receiver is an instance of class Fraction, else answer false."
+
+	^false!
+
+isMessageSend
+	^false!
+
+printStringLimitedTo: limit
+
+	"Todo, the best"
+
+	^self printString readStream nextAvailable: limit! !
+!Object categoriesFor: #className!public! !
+!Object categoriesFor: #copyFrom:!copying!public! !
+!Object categoriesFor: #greaseString!*seaside-squeak-platform!public! !
+!Object categoriesFor: #isArray!public!testing! !
+!Object categoriesFor: #isBlock!*seaside-squeak-platform!public! !
+!Object categoriesFor: #isCollection!public!testing! !
+!Object categoriesFor: #isDictionary!public!testing! !
+!Object categoriesFor: #isFraction!public!testing! !
+!Object categoriesFor: #isMessageSend!public!testing! !
+!Object categoriesFor: #printStringLimitedTo:!public! !
+
+!PositionableStream methodsFor!
+
+binary
+	"Set a flag indicating that the elements of the receiver should be
+	treated as bytes (Integers).
+	Squeak compatibility."
+
+	self collection: self collection asByteArray!
+
+greaseUpToAll: aCollection 
+	"Needed for Seaside ports to other dialects where #upToAll: may have
+	different semantics"
+	^ self upToAll: aCollection!
+
+isBinary
+
+	^self collection isKindOf: ByteArray! !
+!PositionableStream categoriesFor: #binary!public! !
+!PositionableStream categoriesFor: #greaseUpToAll:!*grease-pharo-core!public! !
+!PositionableStream categoriesFor: #isBinary!public! !
+
+!Random methodsFor!
+
+nextInt: anInteger
+	"Answer a random integer in the interval [1, anInteger].
+	Note that the next value of the receiver should be between [0 - 1]."
+	
+	anInteger >= 1 ifFalse: [self error: 'anInteger should be >= 1'].
+	^(self next * anInteger) truncated + 1!
+
+randomFrom: aCollection 
+	| random count |
+	random := self nextInt: aCollection size.
+	^aCollection isSequenceable 
+		ifTrue: [aCollection at: random]
+		ifFalse: 
+			[count := 1.
+			aCollection do: 
+					[:ea | 
+					count = random ifTrue: [^ea].
+					count := count + 1]]! !
+!Random categoriesFor: #nextInt:!public! !
+!Random categoriesFor: #randomFrom:!public! !
+
+!SequenceableCollection methodsFor!
+
+atRandom
+	^ self atRandom: Random new!
+
+atRandom: aRandom
+	^ self at: (aRandom next * self size) truncated + 1!
+
+beginsWithSubCollection: aSequenceableCollection
+	"Some platforms implement #beginsWith: to answer true for an empty argument."
+	^ aSequenceableCollection isEmpty not and: [self beginsWith: aSequenceableCollection]!
+
+copyAfter: target
+	^self copyFrom: (self indexOf: target ifAbsent: [self size])+1 to: self size!
+
+copyAfterLast: anElement
+	"Answer a copy of the receiver from after the last occurence
+	of anElement up to the end. If no such element exists, answer 
+	an empty copy."
+
+	^ self allButFirst: (self lastIndexOf: anElement ifAbsent: [^self copyEmpty: 0])!
+
+copyUpTo: anElement 
+	"Answer all elements up to but not including anObject. If there
+	is no such object, answer a copy of the receiver."
+
+	^ self first: (self indexOf: anElement ifAbsent: [^ self copy]) - 1!
+
+copyUpToLast: anElement
+	"Answer a copy of the receiver from index 1 to the last occurrence of 
+	anElement, not including anElement."
+
+	^ self first: (self lastIndexOf: anElement ifAbsent: [^ self copy]) - 1!
+
+endsWithSubCollection: aSequenceableCollection
+	"Some platforms implement #endsWith: to answer true for an empty argument."
+	^ aSequenceableCollection isEmpty not and: [self endsWith: aSequenceableCollection]!
+
+isSequenceable
+	^true!
+
+reversed
+	"Answer a copy of receiver with its elements in reversed order."
+
+	^self reverse!
+
+sort
+	"Sort this collection into ascending order using the '<=' operator."
+
+	self sort: [:a :b | a <= b]!
+
+sort: sortBlock
+	"Sort the receiver using sortBlock."
+
+	(DefaultSortAlgorithm sortBlock: sortBlock) sort: self from: 1 to: self size! !
+!SequenceableCollection categoriesFor: #atRandom!public! !
+!SequenceableCollection categoriesFor: #atRandom:!public! !
+!SequenceableCollection categoriesFor: #beginsWithSubCollection:!*grease-pharo-core!public! !
+!SequenceableCollection categoriesFor: #copyAfter:!copying!public! !
+!SequenceableCollection categoriesFor: #copyAfterLast:!public! !
+!SequenceableCollection categoriesFor: #copyUpTo:!public! !
+!SequenceableCollection categoriesFor: #copyUpToLast:!public! !
+!SequenceableCollection categoriesFor: #endsWithSubCollection:!*grease-pharo-core!public! !
+!SequenceableCollection categoriesFor: #isSequenceable!public! !
+!SequenceableCollection categoriesFor: #reversed!public! !
+!SequenceableCollection categoriesFor: #sort!public! !
+!SequenceableCollection categoriesFor: #sort:!public! !
+
+!StackFrame methodsFor!
+
+equalsTo: anObject
+
+	^self species == anObject species and: [index == anObject index]! !
+!StackFrame categoriesFor: #equalsTo:!public! !
+
+!String methodsFor!
+
+caseInsensitiveLessOrEqual: aString 
+	"Answer whether the receiver sorts before or equal to aString.
+	The collation order is case insensitive."
+
+	^self <= aString!
+
+characterCount
+
+	"Count and answer the number of Characters in the receiver"
+
+	^self subclassResponsibility!
+
+encodeForHTTP
+	"change dangerous characters to their %XX form, for use in HTTP transactions"
+	| encodedStream |
+	encodedStream := WriteStream on: (String new).
+	self do: [ :c |
+		c isSafeForHTTP ifTrue: [ encodedStream nextPut: c ] ifFalse: [ c printHTTPEncodedStringOn: encodedStream ]
+	].
+	^encodedStream contents. !
+
+findTokens: delimiters
+	"Answer the collection of tokens that result from parsing self.  Return strings between the delimiters.  Any character in the Collection delimiters marks a border.  Several delimiters in a row are considered as just one separation.  Also, allow delimiters to be a single character."
+
+	| tokens keyStart keyStop separators |
+	tokens := OrderedCollection new.
+	separators := String withAll: (delimiters isCharacter 
+		ifTrue: [Array with: delimiters]
+		ifFalse: [delimiters]).
+	keyStop := 1.
+	[keyStop <= self size] whileTrue:
+		[keyStart := self skipDelimiters: separators startingAt: keyStop.
+		keyStop := self indexOfAnyOf: separators startingAt: keyStart.
+		keyStop = 0 ifTrue: [keyStop := self size + 1].
+		keyStart < keyStop
+			ifTrue: [tokens add: (self copyFrom: keyStart to: (keyStop - 1))]].
+	^tokens!
+
+greaseString
+	^self!
+
+greaseSubStrings: separators 
+	"Answer an array containing the substrings in the receiver separated 
+	by the elements of separators.
+	Pharo port of String>>subStrings:"
+
+	| char result sourceStream subString |
+	(separators isString or: [separators allSatisfy: [:element | element isKindOf: Character]]) 
+		ifFalse: [^self error: 'separators must be Characters.'].
+	sourceStream := self readStream.
+	result := OrderedCollection new.
+	subString := String new.
+	[sourceStream atEnd] whileFalse: 
+			[char := sourceStream next.
+			(separators includes: char) 
+				ifTrue: 
+					[subString notEmpty 
+						ifTrue: 
+							[result add: subString copy.
+							subString := String new]]
+				ifFalse: [subString := subString , (String with: char)]].
+	subString notEmpty ifTrue: [result add: subString copy].
+	^result asArray!
+
+includesSubString: aString 
+	^self includesSubstring: aString caseSensitive: false!
+
+includesSubstring: aString caseSensitive: aBoolean
+	"Answer true if the receiver includes aString as substring.
+	If aBoolean is true the search if case sensitive."
+
+	^(self findString: aString startingAt: 1 ignoreCase: aBoolean not) > 0!
+	
+indexOf: aCharacter startingAt: anInteger
+
+	"This is only here to satisfy GRPlatform class>>subStringsIn:splitBy:do: defined in Seaside-Core.
+	Ideally that method should become a GRPlatform instance method to allow it to be overridden by GRDolphinPlatform.
+	For now we do this:"
+
+	^self nextIndexOf: aCharacter from: anInteger to: self size!
+
+isByteString
+	^true!
+
+isWideString
+
+	^false!
+
+padded: leftOrRight to: length with: char
+	leftOrRight = #left ifTrue:
+		[^ (String new: (length - self size max: 0) withAll: char) , self].
+	leftOrRight = #right ifTrue:
+		[^ self , (String new: (length - self size max: 0) withAll: char)].!
+
+replaceAll: aCharacter with: anotherCharacter
+
+	| in out |
+
+	in := self readStream.
+	out := String writeStream: self size.
+
+	[in atEnd] whileFalse: 
+		[| next |
+		next := in next.
+		next = aCharacter 
+			ifTrue: [out nextPut: anotherCharacter]
+			ifFalse: [out nextPut: next]].
+
+	self become: out contents!
+
+skipDelimiters: delimiters startingAt: start 
+	"Answer the index of the character within the receiver, starting at start, that does NOT match one of the delimiters. If the receiver does not contain any of the delimiters, answer size + 1.  Assumes the delimiters to be a non-empty string."
+
+	start to: self size do: [:i | delimiters detect: [:delim | delim = (self at: i)] ifNone: [^i]].
+	^self size + 1!
+
+trimBoth
+	"Trim separators from both sides of the receiving string."
+	
+	^ self trimBoth: [ :char | char isSeparator ]!
+
+trimBoth: aBlock
+	"Trim characters satisfying the condition given in aBlock from both sides of the receiving string."
+
+	^ self trimLeft: aBlock right: aBlock!
+
+trimLeft
+	"Trim separators from the left side of the receiving string."
+	
+	^ self trimLeft: [ :char | char isSeparator ] !
+
+trimLeft: aBlock
+	"Trim characters satisfying the condition given in aBlock from the left side of the receiving string."
+	
+	^ self trimLeft: aBlock right: [ :char | false ]!
+
+trimLeft: aLeftBlock right: aRightBlock
+	"Trim characters satisfying the condition given in aLeftBlock from the left side and aRightBlock from the right sides of the receiving string."
+
+	| left right |
+	left := 1.
+	right := self size.
+	
+	[ left <= right and: [ aLeftBlock value: (self at: left) ] ]
+		whileTrue: [ left := left + 1 ].
+		
+	[ left <= right and: [ aRightBlock value: (self at: right) ] ]
+		whileTrue: [ right := right - 1 ].
+		
+	^ self copyFrom: left to: right!
+
+trimRight
+	"Trim separators from the right side of the receiving string."
+	
+	^ self trimRight: [ :char | char isSeparator ]!
+
+trimRight: aBlock
+	"Trim characters satisfying the condition given in aBlock from the right side of the receiving string."
+
+	^ self trimLeft: [ :char | false ] right: aBlock!
+
+withCRs
+	"Return a copy of the receiver in which backslash (\) characters have been replaced with carriage returns."
+
+	^self collect: [:c | c = $\ ifTrue: [Character cr] ifFalse: [c]]! !
+!String categoriesFor: #caseInsensitiveLessOrEqual:!public! !
+!String categoriesFor: #characterCount!accessing!public! !
+!String categoriesFor: #encodeForHTTP!copying!public! !
+!String categoriesFor: #findTokens:!copying!public! !
+!String categoriesFor: #greaseString!public! !
+!String categoriesFor: #greaseSubStrings:!public! !
+!String categoriesFor: #includesSubString:!public! !
+!String categoriesFor: #includesSubstring:caseSensitive:!public! !
+!String categoriesFor: #indexOf:startingAt:!accessing!public! !
+!String categoriesFor: #isByteString!converting!public! !
+!String categoriesFor: #isWideString!public!testing! !
+!String categoriesFor: #padded:to:with:!public! !
+!String categoriesFor: #replaceAll:with:!public!replacing! !
+!String categoriesFor: #skipDelimiters:startingAt:!copying!public! !
+!String categoriesFor: #trimBoth!copying!public! !
+!String categoriesFor: #trimBoth:!copying!public! !
+!String categoriesFor: #trimLeft!copying!public! !
+!String categoriesFor: #trimLeft:!copying!public! !
+!String categoriesFor: #trimLeft:right:!copying!public! !
+!String categoriesFor: #trimRight!copying!public! !
+!String categoriesFor: #trimRight:!copying!public! !
+!String categoriesFor: #withCRs!public! !
+
+!String class methodsFor!
+
+cr
+	"Answer the cr String"
+
+	^##(String with: Character cr)!
+
+crlf
+	"Answer the crlf String"
+
+	^##(String with: Character cr with: Character lf)!
+
+lf
+	"Answer the lf String"
+
+	^##(String with: Character lf)! !
+!String class categoriesFor: #cr!public! !
+!String class categoriesFor: #crlf!public! !
+!String class categoriesFor: #lf!public! !
+
+!Symbol methodsFor!
+
+asMutator
+	"Return a setter message from a getter message. For example,
+	#name asMutator returns #name:"
+	
+	^(self copyWith: $:) asSymbol
+!
+
+capitalized
+	"I have revised the senders of capitalized on a virgin Dolphin X6 image and
+	appears that this override does not generates any problems."
+
+	^super capitalized asSymbol
+
+!
+
+greaseString
+	^self displayString!
+
+isKeyword
+	"Answer whether the receiver is a message keyword."
+
+	^self endsWith: ':'!
+
+isUnary
+	^ self argumentCount = 0! !
+!Symbol categoriesFor: #asMutator!operations!public! !
+!Symbol categoriesFor: #capitalized!public! !
+!Symbol categoriesFor: #greaseString!public! !
+!Symbol categoriesFor: #isKeyword!public!testing! !
+!Symbol categoriesFor: #isUnary!public!testing! !
+
+!SystemDictionary methodsFor!
+
+globals
+
+	^self! !
+!SystemDictionary categoriesFor: #globals!accessing!public! !
+
+!Time methodsFor!
+
+addSeconds: anInteger 
+	"Adds anInteger seconds to the receiver."
+
+	^self class fromMilliseconds: milliseconds + (anInteger * 1000)!
+
+hour
+
+	^self hours!
+
+minute
+
+	^self minutes!
+
+second
+
+	^self seconds! !
+!Time categoriesFor: #addSeconds:!arithmetic!public! !
+!Time categoriesFor: #hour!accessing!public! !
+!Time categoriesFor: #minute!accessing!public! !
+!Time categoriesFor: #second!accessing!public! !
+
+!Time class methodsFor!
+
+hour: hoursInteger minute: minutesInteger second: secondsInteger 
+
+	^self hours: hoursInteger minutes: minutesInteger seconds: secondsInteger!
+
+midnight
+
+	^self fromSeconds: 0!
+
+milliseconds: currentTime since: lastTime
+	"Answer the elapsed time since last recorded in milliseconds.
+	Compensate for rollover."
+
+	| delta |
+	delta := currentTime - lastTime.
+	^delta < 0
+		ifTrue: [SmallInteger maximum + delta]
+		ifFalse: [delta]!
+
+millisecondsSince: lastTime
+ 	"Answer the elapsed time since last recorded in milliseconds.
+ 	Compensate for rollover."
+ 
+ 	^self milliseconds: self millisecondClockValue since: lastTime! !
+!Time class categoriesFor: #hour:minute:second:!instance creation!public! !
+!Time class categoriesFor: #midnight!public! !
+!Time class categoriesFor: #milliseconds:since:!public! !
+!Time class categoriesFor: #millisecondsSince:!public! !
+
+!UndefinedObject methodsFor!
+
+greaseString
+	"Answer the receiver displayed as String."
+
+	^'nil'!
+
+isEmptyOrNil
+	"Answer whether receiver is emtpy or nil. God forbid receiver isn't nil!!!!."
+
+	^true! !
+!UndefinedObject categoriesFor: #greaseString!copying!public! !
+!UndefinedObject categoriesFor: #isEmptyOrNil!public!testing! !
+
+!Utf16String methodsFor!
+
+isByteString
+	^false!
+
+isWideString
+
+	^true! !
+!Utf16String categoriesFor: #isByteString!converting!public! !
+!Utf16String categoriesFor: #isWideString!public!testing! !
+
+!Utf16String class methodsFor!
+
+fromUTF8Content: aByteArrayOrString 
+	"Originally from US Unicode package. BOM test added to satisfy GRUtf8CodecTest.
+
+	Answer a new instance of the receiver containing the same characters as the <aByteArrayOrString>
+	argument.
+	Implementation Note: CP_ACP is the only code page supported by Win95."
+
+	| content answer answerSize |
+	aByteArrayOrString isEmpty ifTrue: [^Utf16String new].
+
+	(aByteArrayOrString size > 3 and: [(aByteArrayOrString first: 3) asByteArray = #[239 187 191] "BOM"])
+		ifTrue: [content := aByteArrayOrString allButFirst: 3]
+		ifFalse: [content := aByteArrayOrString].
+
+	answer := self new: content size.
+	(answerSize := KernelLibrary default 
+				multiByteToWideChar: Win32Constants.CP_UTF8
+				dwFlags: 0
+				lpMultiByteStr: content
+				cchMultiByte: content size
+				lpWideCharStr: answer
+				cchWideChar: answer basicSize) == 0 
+		ifTrue: [^KernelLibrary default systemError].
+	^answer resize: answerSize! !
+!Utf16String class categoriesFor: #fromUTF8Content:!instance creation!public! !
+
+!Utf8String methodsFor!
+
+isWideString
+
+	^true! !
+!Utf8String categoriesFor: #isWideString!public!testing! !
+
+!UtfEncodedString methodsFor!
+
+characterCount
+
+	"Count and answer the number of Characters in the receiver.
+	This will be < self size where the receiver contains multi-byte representations of characters"
+
+	| stream count |
+
+	stream := ReadStream on: self.
+	count := -1.
+	[count := count + 1.
+	stream nextAvailable isNil] whileFalse.
+
+	^count! !
+!UtfEncodedString categoriesFor: #characterCount!accessing!public! !
+
+!WriteStream methodsFor!
+
+crlf
+	self nextPut: Character cr; nextPut: Character lf!
+
+greaseNext: anInteger putAll: aCollection startingAt: startIndex
+	"Store the next anInteger elements from the given collection."
+	^ self next: anInteger putAll: aCollection startingAt: startIndex! !
+!WriteStream categoriesFor: #crlf!*seaside-squeak-platform!public! !
+!WriteStream categoriesFor: #greaseNext:putAll:startingAt:!*grease-pharo-core!public! !
+
+"End of package definition"!
+

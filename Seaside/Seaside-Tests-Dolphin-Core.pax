@@ -1,0 +1,117 @@
+﻿| package |
+package := Package name: 'Seaside-Tests-Dolphin-Core'.
+package paxVersion: 1;
+	basicComment: ''.
+
+
+package classNames
+	add: #WADolphinBulkReapingCacheTest;
+	add: #WADolphinDocumentHandlerResponseTest;
+	add: #WADolphinHashCacheTest;
+	add: #WADolphinPlatformTest;
+	add: #WADolphinUrlTest;
+	yourself.
+
+package methodNames
+	add: 'WABulkReapingCacheTest class' -> #isAbstract;
+	add: 'WADocumentHandlerResponseTest class' -> #isAbstract;
+	add: 'WAHashCacheTest class' -> #isAbstract;
+	add: 'WAPlatformTest class' -> #isAbstract;
+	add: 'WAUrlTest class' -> #isAbstract;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: (IdentitySet new
+	add: '..\Core\Object Arts\Dolphin\Base\Dolphin';
+	add: '..\Grease\Grease-Core';
+	add: 'Seaside-Core';
+	add: 'Seaside-Tests-Core';
+	yourself).
+
+package!
+
+"Class Definitions"!
+
+WAPlatformTest subclass: #WADolphinPlatformTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WABulkReapingCacheTest subclass: #WADolphinBulkReapingCacheTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAHashCacheTest subclass: #WADolphinHashCacheTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WADocumentHandlerResponseTest subclass: #WADolphinDocumentHandlerResponseTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAUrlTest subclass: #WADolphinUrlTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+"Global Aliases"!
+
+
+"Loose Methods"!
+
+!WABulkReapingCacheTest class methodsFor!
+
+isAbstract
+
+	"Use Dolphin-specific subclass to workaround Delays being non-repeatable"
+
+	^self == ##(self)! !
+!WABulkReapingCacheTest class categoriesFor: #isAbstract!public! !
+
+!WADocumentHandlerResponseTest class methodsFor!
+
+isAbstract
+
+	"Use Dolphin-specific subclass"
+
+	^self == ##(self)! !
+!WADocumentHandlerResponseTest class categoriesFor: #isAbstract!public! !
+
+!WAHashCacheTest class methodsFor!
+
+isAbstract
+
+	"Use Dolphin-specific subclass to workaround Delays being non-repeatable"
+
+	^self == ##(self)! !
+!WAHashCacheTest class categoriesFor: #isAbstract!public! !
+
+!WAPlatformTest class methodsFor!
+
+isAbstract
+
+	"Use Dolphin-specific subclass"
+
+	^self == ##(self)! !
+!WAPlatformTest class categoriesFor: #isAbstract!public! !
+
+!WAUrlTest class methodsFor!
+
+isAbstract
+
+	"Use Dolphin-specific subclass"
+
+	^self == ##(self)! !
+!WAUrlTest class categoriesFor: #isAbstract!public! !
+
+"End of package definition"!
+

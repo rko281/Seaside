@@ -1,0 +1,475 @@
+﻿| package |
+package := Package name: 'Seaside-Tests-Core'.
+package paxVersion: 1;
+	basicComment: ''.
+
+
+package classNames
+	add: #WAAbstractHtmlElementTest;
+	add: #WAAcceptTest;
+	add: #WABacktrackingTest;
+	add: #WABidirectionalCacheTest;
+	add: #WABufferedResponseTest;
+	add: #WABulkReapingCacheTest;
+	add: #WACacheTest;
+	add: #WACallbackTest;
+	add: #WACollectionMimeDocumentTest;
+	add: #WAComboResponseTest;
+	add: #WAConfigurationMock;
+	add: #WAConfigurationTest;
+	add: #WAContextTest;
+	add: #WACookieTest;
+	add: #WACurrentRequestContextTest;
+	add: #WADispatcherTest;
+	add: #WADocumentHandlerResponseTest;
+	add: #WADocumentHandlerTest;
+	add: #WADynamicVariableTest;
+	add: #WAEncoderTest;
+	add: #WAErrorHandlerTest;
+	add: #WAExceptionHandlerTest;
+	add: #WAExpiringCacheTest;
+	add: #WAFileHandlerListingTest;
+	add: #WAFileHandlerTest;
+	add: #WAFileLibraryTest;
+	add: #WAFileMetadataLibraryTest;
+	add: #WAFileTest;
+	add: #WAForbiddenFileHandlerListingTest;
+	add: #WAHandlerTrackingStrategyTest;
+	add: #WAHashCacheTest;
+	add: #WAHeaderFieldsTest;
+	add: #WAHtmlAttributesTest;
+	add: #WAHttpVersionTest;
+	add: #WAKeyGeneratorTest;
+	add: #WALocaleTest;
+	add: #WAMergedRequestFieldsTest;
+	add: #WAMetaElementTest;
+	add: #WAMimeDocumentTest;
+	add: #WAMimeTypeTest;
+	add: #WAMutexTest;
+	add: #WANextUnconsumedPathElementRequestHandler;
+	add: #WAObjectTest;
+	add: #WAObjectUnderstandingUnregistered;
+	add: #WAPathConsumerTest;
+	add: #WAPlatformTest;
+	add: #WAPrecomputedKeyGenerator;
+	add: #WAQueryFieldHandlerTrackingStrategyTest;
+	add: #WARegistryKeyHandlingTest;
+	add: #WARegistryTest;
+	add: #WARenderContextTest;
+	add: #WARequestContextTest;
+	add: #WARequestFieldsTest;
+	add: #WARequestHandlerTest;
+	add: #WARequestTest;
+	add: #WAResponseGeneratorTest;
+	add: #WAResponseTest;
+	add: #WAServerManagerTest;
+	add: #WAStreamedResponseTest;
+	add: #WATestError;
+	add: #WATestingFiles;
+	add: #WATestingMetadataFileLibrary;
+	add: #WATestNoopRequestHandler;
+	add: #WATestNoopSessionHandler;
+	add: #WATestServerAdaptor;
+	add: #WATextFileHandlerListingTest;
+	add: #WAUnidirectionalCacheTest;
+	add: #WAUrlTest;
+	yourself.
+
+package methodNames
+	add: #GRPlatformTest -> #testSubStringsInSplit;
+	add: #GRPlatformTest -> #testSubStringsInSplitByDo;
+	add: #GRPlatformTest -> #testSubStringsInSplitCollect;
+	add: 'GRPackage class' -> #seasideTestsCore;
+	add: 'WAKeyGenerator class' -> #use:during:;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: (IdentitySet new
+	add: '..\Core\Object Arts\Dolphin\Base\Dolphin';
+	add: '..\Grease\Grease-Core';
+	add: '..\Grease\Grease-Tests-Core';
+	add: '..\IDB\IDB DateAndTime';
+	add: '..\IDB\IDB Duration';
+	add: 'Seaside-Core';
+	add: 'Seaside-Session';
+	add: '..\Core\Contributions\Camp Smalltalk\SUnit\SUnit';
+	yourself).
+
+package!
+
+"Class Definitions"!
+
+GRError subclass: #WATestError
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAObject subclass: #WAObjectUnderstandingUnregistered
+	instanceVariableNames: 'hasReceivedUnregistered'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFileLibrary subclass: #WATestingFiles
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFileMetadataLibrary subclass: #WATestingMetadataFileLibrary
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WASystemConfiguration subclass: #WAConfigurationMock
+	instanceVariableNames: 'describeBlock parentsBlock'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAKeyGenerator subclass: #WAPrecomputedKeyGenerator
+	instanceVariableNames: 'keys current'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WARequestHandler subclass: #WANextUnconsumedPathElementRequestHandler
+	instanceVariableNames: 'nextUnconsumedPathElement'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WARequestHandler subclass: #WATestNoopRequestHandler
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WARequestHandler subclass: #WATestNoopSessionHandler
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAServerAdaptor subclass: #WATestServerAdaptor
+	instanceVariableNames: 'status'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #WAAcceptTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #WABacktrackingTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #WACacheTest
+	instanceVariableNames: 'cache'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #WACallbackTest
+	instanceVariableNames: 'registry log'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #WACollectionMimeDocumentTest
+	instanceVariableNames: 'document'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #WAConfigurationTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #WAContextTest
+	instanceVariableNames: 'requestContext'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #WACurrentRequestContextTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #WADynamicVariableTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #WAExceptionHandlerTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #WAFileTest
+	instanceVariableNames: 'file'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #WAHttpVersionTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #WAKeyGeneratorTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #WALocaleTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #WAMergedRequestFieldsTest
+	instanceVariableNames: 'merged one two'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #WAMimeDocumentTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #WAMimeTypeTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #WAMutexTest
+	instanceVariableNames: 'mutex process process2'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #WAObjectTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #WAPathConsumerTest
+	instanceVariableNames: 'consumer'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #WARegistryKeyHandlingTest
+	instanceVariableNames: 'registry registrySize'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #WARenderContextTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #WARequestContextTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #WARequestTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #WAResponseTest
+	instanceVariableNames: 'response'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #WAServerManagerTest
+	instanceVariableNames: 'adaptor manager'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+GRPlatformTest subclass: #WAPlatformTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+GROrderedMultiMapTest subclass: #WAHeaderFieldsTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+GROrderedMultiMapTest subclass: #WARequestFieldsTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WACacheTest subclass: #WABidirectionalCacheTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WACacheTest subclass: #WAExpiringCacheTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WACacheTest subclass: #WAUnidirectionalCacheTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAExpiringCacheTest subclass: #WABulkReapingCacheTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAExpiringCacheTest subclass: #WAHashCacheTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAContextTest subclass: #WAAbstractHtmlElementTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAContextTest subclass: #WACookieTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAContextTest subclass: #WADocumentHandlerResponseTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAContextTest subclass: #WAEncoderTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAContextTest subclass: #WAFileHandlerListingTest
+	instanceVariableNames: 'handler'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAContextTest subclass: #WAFileLibraryTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAContextTest subclass: #WAFileMetadataLibraryTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAContextTest subclass: #WAHandlerTrackingStrategyTest
+	instanceVariableNames: 'strategy'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAContextTest subclass: #WAHtmlAttributesTest
+	instanceVariableNames: 'attributes'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAContextTest subclass: #WARequestHandlerTest
+	instanceVariableNames: 'handler dispatcher'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAContextTest subclass: #WAResponseGeneratorTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAContextTest subclass: #WAUrlTest
+	instanceVariableNames: 'url'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAAbstractHtmlElementTest subclass: #WAMetaElementTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFileHandlerListingTest subclass: #WAForbiddenFileHandlerListingTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFileHandlerListingTest subclass: #WATextFileHandlerListingTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAHandlerTrackingStrategyTest subclass: #WAQueryFieldHandlerTrackingStrategyTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WARequestHandlerTest subclass: #WADispatcherTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WARequestHandlerTest subclass: #WADocumentHandlerTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WARequestHandlerTest subclass: #WAFileHandlerTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WARequestHandlerTest subclass: #WARegistryTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAExceptionHandlerTest subclass: #WAErrorHandlerTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAResponseTest subclass: #WABufferedResponseTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAResponseTest subclass: #WAComboResponseTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAResponseTest subclass: #WAStreamedResponseTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+"Global Aliases"!
+
+
+"Loose Methods"!
+
+!GRPackage class methodsFor!
+
+seasideTestsCore	^ self new		name: 'Seaside-Tests-Core';		description: 'Unit tests for the package Seaside-Core.';		addDependency: 'Seaside-Core';		addDependency: 'Grease-Tests-Core';		url: #seasideUrl;		yourself! !
+!GRPackage class categoriesFor: #seasideTestsCore!*seaside/tests/core!public! !
+
+!GRPlatformTest methodsFor!
+
+testSubStringsInSplit	| subStrings |	subStrings := GRPlatform subStringsIn: 'aaa' splitBy: $,.	self assert: subStrings asArray equals: #('aaa').		subStrings := GRPlatform subStringsIn: 'aaa,' splitBy: $,.	self assert: subStrings asArray equals: #('aaa').		subStrings := GRPlatform subStringsIn: ',aaa' splitBy: $,.	self assert: subStrings asArray equals: #('aaa').		subStrings := GRPlatform subStringsIn: 'aaa,bbb' splitBy: $,.	self assert: subStrings asArray equals: #('aaa' 'bbb')!
+
+testSubStringsInSplitByDo	| subStrings |	subStrings := Array streamContents: [ :stream |		GRPlatform subStringsIn: 'aaa' splitBy: $, do: [ :each |			stream nextPut: each ] ].	self assert: subStrings equals: #('aaa').		subStrings := Array streamContents: [ :stream |		GRPlatform subStringsIn: 'aaa,' splitBy: $, do: [ :each |			stream nextPut: each ] ].	self assert: subStrings equals: #('aaa').		subStrings := Array streamContents: [ :stream |		GRPlatform subStringsIn: ',aaa' splitBy: $, do: [ :each |			stream nextPut: each ] ].	self assert: subStrings equals: #('aaa').		subStrings := Array streamContents: [ :stream |		GRPlatform subStringsIn: 'aaa,bbb' splitBy: $, do: [ :each |			stream nextPut: each ] ].	self assert: subStrings equals: #('aaa' 'bbb')!
+
+testSubStringsInSplitCollect	| subStrings |	subStrings := GRPlatform subStringsIn: '111' splitBy: $, collect: [ :each | each greaseInteger ].	self assert: subStrings asArray equals: #(111).		subStrings := GRPlatform subStringsIn: '111,' splitBy: $, collect: [ :each | each greaseInteger ].	self assert: subStrings asArray equals: #(111).		subStrings := GRPlatform subStringsIn: ',111' splitBy: $, collect: [ :each | each greaseInteger ].	self assert: subStrings asArray equals: #(111).		subStrings := GRPlatform subStringsIn: '111,222' splitBy: $, collect: [ :each | each greaseInteger ].	self assert: subStrings asArray equals: #(111 222)! !
+!GRPlatformTest categoriesFor: #testSubStringsInSplit!*seaside/tests/core!public! !
+!GRPlatformTest categoriesFor: #testSubStringsInSplitByDo!*seaside/tests/core!public! !
+!GRPlatformTest categoriesFor: #testSubStringsInSplitCollect!*seaside/tests/core!public! !
+
+!WAKeyGenerator class methodsFor!
+
+use: aKeyGenerator during: aNiladicBlock	| old |	old := current.	current := aKeyGenerator.	^ aNiladicBlock ensure: [		current := old ]! !
+!WAKeyGenerator class categoriesFor: #use:during:!*Seaside/Tests/Core!public! !
+
+"End of package definition"!
+

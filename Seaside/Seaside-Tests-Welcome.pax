@@ -1,0 +1,50 @@
+﻿| package |
+package := Package name: 'Seaside-Tests-Welcome'.
+package paxVersion: 1;
+	basicComment: ''.
+
+
+package classNames
+	add: #WAWelcomeTest;
+	yourself.
+
+package methodNames
+	add: 'GRPackage class' -> #seasideTestsWelcome;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: (IdentitySet new
+	add: '..\Core\Object Arts\Dolphin\Base\Dolphin';
+	add: '..\Grease\Grease-Core';
+	add: 'Seaside-Tools-Core';
+	add: 'Seaside-Welcome';
+	add: '..\Core\Contributions\Camp Smalltalk\SUnit\SUnit';
+	yourself).
+
+package!
+
+"Class Definitions"!
+
+TestCase subclass: #WAWelcomeTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+"Global Aliases"!
+
+
+"Loose Methods"!
+
+!GRPackage class methodsFor!
+
+seasideTestsWelcome	^ self new		name: 'Seaside-Tests-Welcome';		description: 'Unit tests for the welcome screen.';		addDependency: 'Seaside-Welcome';		url: #seasideUrl;		yourself! !
+!GRPackage class categoriesFor: #seasideTestsWelcome!*seaside/tests/welcome!public! !
+
+"End of package definition"!
+

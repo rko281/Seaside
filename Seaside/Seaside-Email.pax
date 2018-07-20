@@ -1,0 +1,106 @@
+﻿| package |
+package := Package name: 'Seaside-Email'.
+package paxVersion: 1;
+	basicComment: ''.
+
+
+package classNames
+	add: #WAEmailBody;
+	add: #WAEmailConfiguration;
+	add: #WAEmailMessage;
+	add: #WAHtmlEmailBody;
+	add: #WAMultiPartEmailMessage;
+	add: #WAStringEmailBody;
+	yourself.
+
+package methodNames
+	add: #GRPlatform -> #seasideDeliverEmailMessage:;
+	add: #GRPlatform -> #seasideHandlerPreferenceAt:ifAbsent:;
+	add: #GRPlatform -> #seasideSmtpPassword;
+	add: #GRPlatform -> #seasideSmtpPort;
+	add: #GRPlatform -> #seasideSmtpServer;
+	add: #GRPlatform -> #seasideSmtpUsername;
+	add: 'GRPackage class' -> #seasideEmail;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: (IdentitySet new
+	add: '..\Core\Object Arts\Dolphin\Base\Dolphin';
+	add: '..\Grease\Grease-Core';
+	add: '..\Core\Contributions\IDB\IDB DateAndTime';
+	add: 'Seaside-Canvas';
+	add: 'Seaside-Core';
+	yourself).
+
+package!
+
+"Class Definitions"!
+
+WAObject subclass: #WAEmailBody
+	instanceVariableNames: 'contentString'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAObject subclass: #WAEmailMessage
+	instanceVariableNames: 'to from cc bcc subject headers body replyTo'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WASystemConfiguration subclass: #WAEmailConfiguration
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAEmailBody subclass: #WAHtmlEmailBody
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAEmailBody subclass: #WAStringEmailBody
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAEmailMessage subclass: #WAMultiPartEmailMessage
+	instanceVariableNames: 'parts boundary'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+"Global Aliases"!
+
+
+"Loose Methods"!
+
+!GRPackage class methodsFor!
+
+seasideEmail	^ self new		name: 'Seaside-Email';		description: 'Contains convenience classes for sending of emails and preventing header injections.';		addDependency: 'Seaside-Core';		url: #seasideUrl;		yourself! !
+!GRPackage class categoriesFor: #seasideEmail!*seaside/email!public! !
+
+!GRPlatform methodsFor!
+
+seasideDeliverEmailMessage: aWAEmailMessage	self subclassResponsibility!
+
+seasideHandlerPreferenceAt: aKey ifAbsent: aBlock			^ [ WACurrentRequestContext value application preferenceAt: aKey ] "in a Seaside context"		on: WARequestContextNotFound, WAAttributeNotFound 		do: [ :ex | aBlock value ] "not in a Seaside context, treat as absent"!
+
+seasideSmtpPassword	"^ self seasideApplicationPreferenceAt: #smtpPassword ifAbsent: [?]"	self subclassResponsibility!
+
+seasideSmtpPort	"^ self seasideApplicationPreferenceAt: #smtpPort ifAbsent: [?]"	self subclassResponsibility!
+
+seasideSmtpServer		"^ self seasideApplicationPreferenceAt: #smtpServer ifAbsent: [?]"	self subclassResponsibility!
+
+seasideSmtpUsername	"^ self seasideApplicationPreferenceAt: #smtpUsername ifAbsent: [?]"	self subclassResponsibility! !
+!GRPlatform categoriesFor: #seasideDeliverEmailMessage:!*seaside/email!public! !
+!GRPlatform categoriesFor: #seasideHandlerPreferenceAt:ifAbsent:!*seaside/email!public! !
+!GRPlatform categoriesFor: #seasideSmtpPassword!*seaside/email!public! !
+!GRPlatform categoriesFor: #seasideSmtpPort!*seaside/email!public! !
+!GRPlatform categoriesFor: #seasideSmtpServer!*seaside/email!public! !
+!GRPlatform categoriesFor: #seasideSmtpUsername!*seaside/email!public! !
+
+"End of package definition"!
+
