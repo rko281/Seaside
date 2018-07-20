@@ -10,5 +10,6 @@ DS Partial Continuations adapted from [Dolphin Contributions](https://github.com
 
 # Getting Started
 * Install [Dolphin Smalltalk 7.1](https://github.com/dolphinsmalltalk/Dolphin)
-* This repository should then be cloned/downloaded to your Dolphin working directory.
-* Install Package Seaside\Seaside Dolphin Welcome - this will load all required prerequisites and open the Welcome page in your browser.
+* This repository should then be cloned/downloaded to your Dolphin working directory (e.g, Dolphin/Seaside)
+* Install package Seaside\Seaside-Dolphin-Welcome - this will load all required prerequisites
+* See package comment for Seaside-Dolphin-Welcome to start Welcome server
