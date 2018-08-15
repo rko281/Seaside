@@ -11,20 +11,20 @@ GRDolphinPlatform comment: ''!
 !GRDolphinPlatform methodsFor!
 
 addToShutDownList: anObject
-	"Add anObject to the shutdown-list of the system. On shutdown the message #shutDown will be sent to anObject."
+	"Add anObject to the shutdown-list of the system. On shutdown the message #shutDown will be sent to anObject.
+	To be compatible with Pharo we also need to hook onto the imageSaveStarting event"
 
 	SessionManager current
-		when: #sessionStopped
-			send: #shutDown
-			to: anObject!
+		when: #sessionStopped send: #shutDown to: anObject;
+		when: #imageSaveStarting send: #shutDown to: anObject!
 
 addToStartUpList: anObject
-	"Add anObject to the startup-list of the system. On startup the message #startUp will be sent to anObject."
+	"Add anObject to the startup-list of the system. On startup the message #startUp will be sent to anObject..
+	To be compatible with Pharo we also need to hook onto the imageSaveCompleted event"
 
 	SessionManager current
-		when: #sessionStarted
-			send: #startUp
-			to: anObject!
+		when: #sessionStarted send: #startUp to: anObject;
+		when: #imageSaveCompleted send: #startUp to: anObject!
 
 asMethodReturningByteArray: aByteArrayOrString named: aSymbol
 	"Generates the source of a method named aSymbol that returns aByteArrayOrString as a ByteArray"
