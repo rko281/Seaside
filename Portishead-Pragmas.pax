@@ -1,0 +1,84 @@
+﻿| package |
+package := Package name: 'Portishead-Pragmas'.
+package paxVersion: 1;
+	basicComment: 'Portishead - Pharo Compatibility for Dolphin Smalltalk
+
+This Package is an implementation of Pragmas for Dolphin.
+Syntax is modified to be compatible with the Dolphin compiler. 
+
+Pharo/VW Pragma syntax:
+<test: 1 with: ''two''>
+
+Dolphin equivalent:
+##(Pragma test: 1 with: ''two'')
+
+(Note the Dolphin code checker will flag test:with: as an unimplemented method).
+
+Pragma lookup and querying is compatible with Pharo.'.
+
+
+package classNames
+	add: #Pragma;
+	yourself.
+
+package methodNames
+	add: #ClassDescription -> #pragmas;
+	add: #CompiledMethod -> #pragmas;
+	add: #String -> #asPragma;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: (IdentitySet new
+	add: '..\Core\Object Arts\Dolphin\Base\Dolphin';
+	add: '..\Core\Object Arts\Dolphin\System\Compiler\Smalltalk Parser';
+	yourself).
+
+package!
+
+"Class Definitions"!
+
+Object subclass: #Pragma
+	instanceVariableNames: 'method arguments keyword'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+"Global Aliases"!
+
+
+"Loose Methods"!
+
+!ClassDescription methodsFor!
+
+pragmas
+
+	^self methodDictionary inject: OrderedCollection new into: [ :all :each | all addAll: each pragmas; yourself]! !
+!ClassDescription categoriesFor: #pragmas!accessing!public! !
+
+!CompiledMethod methodsFor!
+
+pragmas
+
+	| pragmas |
+
+	pragmas := OrderedCollection new.
+
+	self literalsDo: [ :each | each class = Pragma ifTrue: [pragmas add: (each copy method: self; yourself)]].
+
+	^pragmas! !
+!CompiledMethod categoriesFor: #pragmas!accessing!public! !
+
+!String methodsFor!
+
+asPragma
+
+	^Pragma fromString: self! !
+!String categoriesFor: #asPragma!converting!public! !
+
+"End of package definition"!
+
