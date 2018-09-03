@@ -1,0 +1,180 @@
+﻿| package |
+package := Package name: 'Swazoo Tests'.
+package paxVersion: 1;
+	basicComment: ''.
+
+package basicPackageVersion: '3.2'.
+
+
+package classNames
+	add: #CompositeResourceTest;
+	add: #FileResourceTest;
+	add: #HeaderFieldTest;
+	add: #HelloWorldResourceTest;
+	add: #HomeResourceTest;
+	add: #HTTPPostTest;
+	add: #HTTPRequestTest;
+	add: #HTTPResponseTest;
+	add: #HTTPServerTest;
+	add: #RedirectionResourceTest;
+	add: #ResourceTest;
+	add: #SiteIdentifierTest;
+	add: #SiteTest;
+	add: #SwazooBaseExtensionsTest;
+	add: #SwazooBufferTest;
+	add: #SwazooCacheControlTest;
+	add: #SwazooCompilerTest;
+	add: #SwazooConfigurationTest;
+	add: #SwazooServerTest;
+	add: #SwazooSocketTest;
+	add: #SwazooStreamTest;
+	add: #SwazooURITest;
+	add: #URIParsingTest;
+	add: #URIResolutionTest;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: (IdentitySet new
+	add: '..\Core\Object Arts\Dolphin\Base\Dolphin';
+	add: 'Sport';
+	add: '..\Core\Contributions\Camp Smalltalk\SUnit\SUnit';
+	add: 'Swazoo';
+	yourself).
+
+package!
+
+"Class Definitions"!
+
+TestCase subclass: #CompositeResourceTest
+	instanceVariableNames: 'composite'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #FileResourceTest
+	instanceVariableNames: 'resource'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #HeaderFieldTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #HelloWorldResourceTest
+	instanceVariableNames: 'hello'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #HomeResourceTest
+	instanceVariableNames: 'resource'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #HTTPPostTest
+	instanceVariableNames: 'request'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #HTTPRequestTest
+	instanceVariableNames: 'request'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #HTTPResponseTest
+	instanceVariableNames: 'response'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #HTTPServerTest
+	instanceVariableNames: 'server stream'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #RedirectionResourceTest
+	instanceVariableNames: 'resource'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #ResourceTest
+	instanceVariableNames: 'resource'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #SiteIdentifierTest
+	instanceVariableNames: 'identifier'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #SiteTest
+	instanceVariableNames: 'site'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #SwazooBaseExtensionsTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #SwazooBufferTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #SwazooCacheControlTest
+	instanceVariableNames: 'resource cacheTarget request cacheControl'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #SwazooCompilerTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #SwazooConfigurationTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #SwazooServerTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #SwazooSocketTest
+	instanceVariableNames: 'input output'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #SwazooStreamTest
+	instanceVariableNames: 'input output'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #SwazooURITest
+	instanceVariableNames: 'fooURI barURI queryURI'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #URIParsingTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #URIResolutionTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+"Global Aliases"!
+
+
+"Loose Methods"!
+
+"End of package definition"!
+
