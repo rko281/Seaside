@@ -1,0 +1,41 @@
+﻿| package |
+package := Package name: 'Seaside-Dolphin-REST-Core'.
+package paxVersion: 1;
+	basicComment: ''.
+
+
+package methodNames
+	add: #GRDolphinPlatform -> #argumentNamesOf:;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: (IdentitySet new
+	add: '..\Grease\Grease-Dolphin-Core';
+	add: 'Seaside-REST-Core';
+	yourself).
+
+package setManualPrerequisites: #(
+	'Seaside-REST-Core').
+
+package!
+
+"Class Definitions"!
+
+
+"Global Aliases"!
+
+
+"Loose Methods"!
+
+!GRDolphinPlatform methodsFor!
+
+argumentNamesOf: aCompiledMethod	"Answer the argument names of a method as a sequenceable collection of strings."	^aCompiledMethod parseTree argumentNames! !
+!GRDolphinPlatform categoriesFor: #argumentNamesOf:!*seaside/rest/core!public! !
+
+"End of package definition"!
+

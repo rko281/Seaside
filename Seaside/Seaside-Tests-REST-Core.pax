@@ -1,0 +1,214 @@
+﻿| package |
+package := Package name: 'Seaside-Tests-REST-Core'.
+package paxVersion: 1;
+	basicComment: ''.
+
+
+package classNames
+	add: #WAAcceptsMatchTest;
+	add: #WAByMethodRoutesStub;
+	add: #WAByMethodRoutesTest;
+	add: #WAComplexRouteTest;
+	add: #WACompositeMimeTypeMatchTest;
+	add: #WAExactParameterMatchTest;
+	add: #WAExactPathMatchTest;
+	add: #WAFullMimeTypeMatchTest;
+	add: #WAMainMimeTypeMatchTest;
+	add: #WAMimeTypeMatchTest;
+	add: #WAMimeTypeStubHandler;
+	add: #WAMimeTypeStubHandlerTest;
+	add: #WAOrPathMatchTest;
+	add: #WAPlaceholderParameterTest;
+	add: #WAPlaceholderPathMatchTest;
+	add: #WAPragmaBasedRestfulHandlerTest;
+	add: #WAPragmaStubHandler;
+	add: #WARestfulFilterTest;
+	add: #WARestfulHandlerTest;
+	add: #WARouteTest;
+	add: #WARouteVictimMock;
+	add: #WASimpleRouteTest;
+	add: #WAStreamTypeHandler;
+	add: #WAStreamTypeHandlerTest;
+	add: #WAStubFilter;
+	add: #WAStubHandler;
+	add: #WASubMimeTypeMatchTest;
+	add: #WAWildcardMimeTypeMatchTest;
+	yourself.
+
+package methodNames
+	add: 'GRPackage class' -> #seasideTestsRestCore;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: (IdentitySet new
+	add: '..\Core\Object Arts\Dolphin\Base\Dolphin';
+	add: '..\Grease\Grease-Core';
+	add: '..\Portishead\Portishead-Pragmas';
+	add: 'Seaside-Core';
+	add: 'Seaside-REST-Core';
+	add: 'Seaside-Tests-Core';
+	add: '..\Core\Contributions\Camp Smalltalk\SUnit\SUnit';
+	yourself).
+
+package!
+
+"Class Definitions"!
+
+Object subclass: #WAByMethodRoutesStub
+	instanceVariableNames: 'selector arguments'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+Object subclass: #WARouteVictimMock
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WARestfulFilter subclass: #WAStubFilter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WARestfulHandler subclass: #WAMimeTypeStubHandler
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WARestfulHandler subclass: #WAPragmaStubHandler
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WARestfulHandler subclass: #WAStreamTypeHandler
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WARestfulHandler subclass: #WAStubHandler
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #WAAcceptsMatchTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #WAByMethodRoutesTest
+	instanceVariableNames: 'routes'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #WAComplexRouteTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #WACompositeMimeTypeMatchTest
+	instanceVariableNames: 'match'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #WAExactParameterMatchTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #WAExactPathMatchTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #WAFullMimeTypeMatchTest
+	instanceVariableNames: 'match'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #WAMainMimeTypeMatchTest
+	instanceVariableNames: 'match'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #WAMimeTypeMatchTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #WAMimeTypeStubHandlerTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #WAOrPathMatchTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #WAPlaceholderParameterTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #WAPlaceholderPathMatchTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #WAPragmaBasedRestfulHandlerTest
+	instanceVariableNames: 'handler'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #WARouteTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #WASimpleRouteTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #WASubMimeTypeMatchTest
+	instanceVariableNames: 'match'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #WAWildcardMimeTypeMatchTest
+	instanceVariableNames: 'match'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAContextTest subclass: #WARestfulFilterTest
+	instanceVariableNames: 'handler'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAContextTest subclass: #WARestfulHandlerTest
+	instanceVariableNames: 'handler'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAContextTest subclass: #WAStreamTypeHandlerTest
+	instanceVariableNames: 'handler'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+"Global Aliases"!
+
+
+"Loose Methods"!
+
+!GRPackage class methodsFor!
+
+seasideTestsRestCore	^ self new		name: 'Seaside-Tests-REST-Core';		description: 'Unit tests for the package Seaside-REST-Core.';		addDependency: 'Seaside-REST-Core';		url: #seasideUrl;		yourself! !
+!GRPackage class categoriesFor: #seasideTestsRestCore!*seaside/tests/rest/core!public! !
+
+"End of package definition"!
+

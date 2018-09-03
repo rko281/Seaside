@@ -24,7 +24,7 @@ package globalAliases: (Set new
 	yourself).
 
 package setPrerequisites: (IdentitySet new
-	add: '..\Daniel S\DS Partial Continuations Tests';
+	add: '..\Contributions\Daniel S\DS Partial Continuations Tests';
 	add: '..\Grease\Grease-Dolphin-Core';
 	add: '..\Grease\Grease-Tests-Dolphin-Core';
 	add: '..\Javascript\Javascript-Dolphin-Core';
@@ -35,9 +35,11 @@ package setPrerequisites: (IdentitySet new
 	add: 'Seaside-Dolphin-Extensions';
 	add: 'Seaside-Dolphin-Flow';
 	add: 'Seaside-Dolphin-JSON-Core';
+	add: 'Seaside-Dolphin-REST-Core';
 	add: 'Seaside-Tests-Dolphin-Continuation';
 	add: 'Seaside-Tests-Dolphin-Core';
 	add: 'Seaside-Tests-Dolphin-Functional';
+	add: 'Seaside-Tests-REST-Core';
 	add: 'Seaside-Welcome';
 	yourself).
 
@@ -53,9 +55,11 @@ package setManualPrerequisites: #(
 	'Seaside-Dolphin-Extensions'
 	'Seaside-Dolphin-Flow'
 	'Seaside-Dolphin-JSON-Core'
+	'Seaside-Dolphin-REST-Core'
 	'Seaside-Tests-Dolphin-Continuation'
 	'Seaside-Tests-Dolphin-Core'
 	'Seaside-Tests-Dolphin-Functional'
+	'Seaside-Tests-REST-Core'
 	'Seaside-Welcome').
 
 package!
