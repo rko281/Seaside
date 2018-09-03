@@ -1,0 +1,113 @@
+﻿| package |
+package := Package name: 'Sport Tests'.
+package paxVersion: 1;
+	basicComment: 'Sport is a Smalltalk Portability library.
+All Sport implementations are available under the LGPL.
+
+This package includes the tests for Sport on Dolphin X6 platform.
+
+Sport provides a consistent interface to things which are implemented differently in most Smalltalk dialects. Sport provides wrappers for:
+    * Exceptions
+    * Times & Dates
+    * Files
+    * Sockets
+     ... and more.
+
+So far, Sport is implemented in: 
+ - VisualWorks
+ - Gemstone
+ - Squeak
+ - Visual Age for Smalltalk
+ - Dolphin Smalltalk X6
+
+Website: http://wiki.cs.uiuc.edu/VisualWorks/Sport
+
+===============
+Dolphin X6 port by: Esteban A. Maringolo <eMaringolo at gmail.com>
+
+Note: This version of Sport has been tested only with the Swazoo version that runs on it (1.1.4).
+It may include methods not yet implemented, and other unknown errors. 
+If you fix some, please report them to my mail address. Thank you.
+
+================
+'.
+
+package basicPackageVersion: '2.031.jsc'.
+
+
+package classNames
+	add: #SpDateTest;
+	add: #SpEnvironmentTest;
+	add: #SpFilenameTest;
+	add: #SpMiscellaneous;
+	add: #SpSocketTest;
+	add: #SpStringUtilitiesTest;
+	add: #SpTestCase;
+	add: #SpTimestampTest;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: (IdentitySet new
+	add: '..\Core\Object Arts\Dolphin\Base\Dolphin';
+	add: '..\Core\Object Arts\Dolphin\Sockets\Dolphin Sockets';
+	add: 'Sport';
+	add: '..\Core\Contributions\Camp Smalltalk\SUnit\SUnit';
+	yourself).
+
+package!
+
+"Class Definitions"!
+
+TestCase subclass: #SpTestCase
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+SpTestCase subclass: #SpDateTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+SpTestCase subclass: #SpEnvironmentTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+SpTestCase subclass: #SpFilenameTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+SpTestCase subclass: #SpMiscellaneous
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+SpTestCase subclass: #SpSocketTest
+	instanceVariableNames: 'socket serverSocket newSpServerSocket semaphore acceptProcess'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+SpTestCase subclass: #SpStringUtilitiesTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+SpTestCase subclass: #SpTimestampTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+"Global Aliases"!
+
+
+"Loose Methods"!
+
+"End of package definition"!
+
