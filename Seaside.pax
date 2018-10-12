@@ -1,0 +1,38 @@
+﻿| package |
+package := Package name: 'Seaside'.
+package paxVersion: 1;
+	basicComment: 'Seaside 3.2 for Dolphin Smalltalk.
+Core packages ported from github.com/SeasideSt April 2018
+Dolphin Seaside, Grease, Swazoo and Sport packages adapted from www.infoil.com.ar/seaside/ with thanks and acknowledgement.'.
+
+package basicScriptAt: #postinstall put: '"Launch the Welcome server"
+(WASwazooAdaptor port: 8080)
+	codec: (GRCodec forEncoding: ''utf-8'');
+	start.
+ShellLibrary default shellOpen: ''http://localhost:8080/seaside/'''.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: (IdentitySet new
+	add: 'Seaside\Seaside-Dolphin-Welcome';
+	yourself).
+
+package setManualPrerequisites: #(
+	'Seaside-Dolphin-Welcome').
+
+package!
+
+"Class Definitions"!
+
+
+"Global Aliases"!
+
+
+"Loose Methods"!
+
+"End of package definition"!
+

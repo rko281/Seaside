@@ -24,10 +24,10 @@ package globalAliases: (Set new
 	yourself).
 
 package setPrerequisites: (IdentitySet new
-	add: '..\Core\Object Arts\Dolphin\IDE\Base\Development System';
-	add: '..\Core\Object Arts\Dolphin\Base\Dolphin';
-	add: '..\Grease\Grease-Core';
-	add: '..\Portishead\Portishead-Core';
+	add: '..\..\Core\Object Arts\Dolphin\IDE\Base\Development System';
+	add: '..\..\Core\Object Arts\Dolphin\Base\Dolphin';
+	add: '..\..\Grease\Grease-Core';
+	add: '..\..\Portishead\Portishead-Core';
 	add: 'Seaside-Development';
 	add: 'Seaside-Dolphin-Browser';
 	add: 'Seaside-Tools-Core';

@@ -46,10 +46,10 @@ package globalAliases: (Set new
 	yourself).
 
 package setPrerequisites: (IdentitySet new
-	add: '..\Core\Object Arts\Dolphin\Base\Dolphin';
-	add: '..\Grease\Grease-Core';
-	add: '..\Grease\Grease-Dolphin-Core';
-	add: '..\Core\Object Arts\Dolphin\IDE\Base\Internal Bitmaps and Icons';
+	add: '..\..\Core\Object Arts\Dolphin\Base\Dolphin';
+	add: '..\..\Grease\Grease-Core';
+	add: '..\..\Grease\Grease-Dolphin-Core';
+	add: '..\..\Core\Object Arts\Dolphin\MVP\Icons\Internal Bitmaps and Icons';
 	add: 'Seaside-Core';
 	yourself).
 

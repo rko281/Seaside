@@ -62,9 +62,9 @@ package globalAliases: (Set new
 	yourself).
 
 package setPrerequisites: (IdentitySet new
-	add: '..\Core\Object Arts\Dolphin\Base\Dolphin';
-	add: '..\Grease\Grease-Core';
-	add: '..\IDB\IDB DateAndTime';
+	add: '..\..\Core\Object Arts\Dolphin\Base\Dolphin';
+	add: '..\..\Grease\Grease-Core';
+	add: '..\..\Core\Contributions\IDB\IDB DateAndTime';
 	add: 'Seaside-Canvas';
 	add: 'Seaside-Component';
 	add: 'Seaside-Core';

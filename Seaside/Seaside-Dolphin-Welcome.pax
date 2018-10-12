@@ -24,10 +24,13 @@ package globalAliases: (Set new
 	yourself).
 
 package setPrerequisites: (IdentitySet new
-	add: '..\Contributions\Daniel S\DS Partial Continuations Tests';
-	add: '..\Grease\Grease-Dolphin-Core';
-	add: '..\Grease\Grease-Tests-Dolphin-Core';
+	add: '..\..\Grease\Grease-Dolphin-Core';
+	add: '..\..\Grease\Grease-Tests-Core';
+	add: '..\..\Grease\Grease-Tests-Dolphin-Core';
 	add: '..\Javascript\Javascript-Dolphin-Core';
+	add: '..\Javascript\Javascript-Tests-Core';
+	add: '..\JQuery\JQuery-Tests-Core';
+	add: '..\JQuery\JQuery-Tests-UI';
 	add: 'Seaside-Adaptors-Dolphin-Swazoo';
 	add: 'Seaside-Dolphin-Development';
 	add: 'Seaside-Dolphin-Email';
@@ -36,18 +39,29 @@ package setPrerequisites: (IdentitySet new
 	add: 'Seaside-Dolphin-Flow';
 	add: 'Seaside-Dolphin-JSON-Core';
 	add: 'Seaside-Dolphin-REST-Core';
+	add: 'Seaside-Tests-Canvas';
+	add: 'Seaside-Tests-Component';
+	add: 'Seaside-Tests-Core';
 	add: 'Seaside-Tests-Dolphin-Continuation';
 	add: 'Seaside-Tests-Dolphin-Core';
 	add: 'Seaside-Tests-Dolphin-Functional';
+	add: 'Seaside-Tests-Environment';
+	add: 'Seaside-Tests-Flow';
+	add: 'Seaside-Tests-Functional';
+	add: 'Seaside-Tests-RenderLoop';
 	add: 'Seaside-Tests-REST-Core';
-	add: 'Seaside-Welcome';
+	add: 'Seaside-Tests-Session';
+	add: 'Seaside-Tests-Welcome';
 	yourself).
 
 package setManualPrerequisites: #(
-	'DS Partial Continuations Tests'
 	'Grease-Dolphin-Core'
+	'Grease-Tests-Core'
 	'Grease-Tests-Dolphin-Core'
 	'Javascript-Dolphin-Core'
+	'Javascript-Tests-Core'
+	'JQuery-Tests-Core'
+	'JQuery-Tests-UI'
 	'Seaside-Adaptors-Dolphin-Swazoo'
 	'Seaside-Dolphin-Development'
 	'Seaside-Dolphin-Email'
@@ -56,11 +70,19 @@ package setManualPrerequisites: #(
 	'Seaside-Dolphin-Flow'
 	'Seaside-Dolphin-JSON-Core'
 	'Seaside-Dolphin-REST-Core'
+	'Seaside-Tests-Canvas'
+	'Seaside-Tests-Component'
+	'Seaside-Tests-Core'
 	'Seaside-Tests-Dolphin-Continuation'
 	'Seaside-Tests-Dolphin-Core'
 	'Seaside-Tests-Dolphin-Functional'
+	'Seaside-Tests-Environment'
+	'Seaside-Tests-Flow'
+	'Seaside-Tests-Functional'
+	'Seaside-Tests-RenderLoop'
 	'Seaside-Tests-REST-Core'
-	'Seaside-Welcome').
+	'Seaside-Tests-Session'
+	'Seaside-Tests-Welcome').
 
 package!
 

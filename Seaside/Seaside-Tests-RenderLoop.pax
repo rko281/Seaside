@@ -20,10 +20,10 @@ package globalAliases: (Set new
 	yourself).
 
 package setPrerequisites: (IdentitySet new
-	add: '..\Grease\Grease-Core';
+	add: '..\..\Grease\Grease-Core';
 	add: 'Seaside-Core';
 	add: 'Seaside-RenderLoop';
-	add: '..\Core\Contributions\Camp Smalltalk\SUnit\SUnit';
+	add: '..\..\Core\Contributions\Camp Smalltalk\SUnit\SUnit';
 	yourself).
 
 package!

@@ -17,7 +17,7 @@ package globalAliases: (Set new
 	yourself).
 
 package setPrerequisites: (IdentitySet new
-	add: '..\Grease\Grease-Core';
+	add: '..\..\Grease\Grease-Core';
 	add: '..\Javascript\Javascript-Core';
 	add: 'JQuery-Core';
 	add: '..\Seaside\Seaside-Core';

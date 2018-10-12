@@ -5,11 +5,23 @@ Core packages ported from [Seaside](https://github.com/SeasideSt/Seaside) April 
 
 Dolphin Seaside, Grease, Swazoo and Sport packages adapted from [Infoil](http://www.infoil.com.ar/seaside)'s D6 versions with thanks and acknowledgement.
 
-DS Partial Continuations adapted from [Dolphin Contributions](https://github.com/dolphinsmalltalk/Contributions) and included here for convenience (pull request to origin pending).
 
-
-# Getting Started
+## Getting Started
 * Install [Dolphin Smalltalk 7.1](https://github.com/dolphinsmalltalk/Dolphin)
-* This repository should then be cloned/downloaded to your Dolphin working directory (e.g, Dolphin/Seaside)
-* Install package Seaside\Seaside-Dolphin-Welcome - this will load all required prerequisites
-* See package comment for Seaside-Dolphin-Welcome to start Welcome server
+
+### Automated Installation
+* Download and install the [GitHub Package Manager](https://github.com/rko281/GitHub)
+* Evaluate:
+  `GitHubPackageManager install: 'rko281/Seaside'`
+* All required packages and prerequisites will be downloaded and installed
+* Once installation is complete the Seaside Welcome server will be started
+
+
+### Manual Installation
+* This repository should be cloned/downloaded to <image directory>\Seaside
+* Also download the following repositories:
+* [Grease](https://github.com/rko281/Grease)
+* [Portishead](https://github.com/rko281/Portishead)
+* [Swazoo](https://github.com/rko281/Swazoo)
+* [Contributions](https://github.com/dolphinsmalltalk/Contributions)
+* Install package `Seaside` - this will load all required prerequisites and start the Welcome server

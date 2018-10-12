@@ -21,11 +21,11 @@ package globalAliases: (Set new
 	yourself).
 
 package setPrerequisites: (IdentitySet new
-	add: '..\Core\Object Arts\Dolphin\Base\Dolphin';
-	add: '..\Grease\Grease-Core';
+	add: '..\..\Core\Object Arts\Dolphin\Base\Dolphin';
+	add: '..\..\Grease\Grease-Core';
 	add: 'Seaside-Core';
 	add: 'Seaside-Swazoo';
-	add: '..\Swazoo\Swazoo';
+	add: '..\..\Swazoo\Swazoo';
 	yourself).
 
 package!

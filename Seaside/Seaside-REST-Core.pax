@@ -52,9 +52,9 @@ package globalAliases: (Set new
 	yourself).
 
 package setPrerequisites: (IdentitySet new
-	add: '..\Core\Object Arts\Dolphin\Base\Dolphin';
-	add: '..\Grease\Grease-Core';
-	add: '..\Portishead\Portishead-Pragmas';
+	add: '..\..\Core\Object Arts\Dolphin\Base\Dolphin';
+	add: '..\..\Grease\Grease-Core';
+	add: '..\..\Portishead\Portishead-Pragmas';
 	add: 'Seaside-Core';
 	yourself).
 

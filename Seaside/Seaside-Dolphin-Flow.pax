@@ -22,8 +22,8 @@ package globalAliases: (Set new
 	yourself).
 
 package setPrerequisites: (IdentitySet new
-	add: '..\Core\Object Arts\Dolphin\Base\Dolphin';
-	add: '..\Grease\Grease-Dolphin-Core';
+	add: '..\..\Core\Object Arts\Dolphin\Base\Dolphin';
+	add: '..\..\Grease\Grease-Dolphin-Core';
 	add: 'Seaside-Component';
 	add: 'Seaside-Core';
 	add: 'Seaside-Dolphin-Continuation';

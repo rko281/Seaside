@@ -34,12 +34,10 @@ package globalAliases: (Set new
 	yourself).
 
 package setPrerequisites: (IdentitySet new
-	add: '..\Core\Object Arts\Dolphin\Base\Dolphin';
-	add: '..\Grease\Grease-Core';
-	add: '..\Grease\Grease-Tests-Core';
+	add: '..\..\Core\Object Arts\Dolphin\Base\Dolphin';
+	add: '..\..\Grease\Grease-Core';
 	add: '..\JQuery\JQuery-Core';
 	add: '..\JQuery\JQuery-JSON';
-	add: '..\JQuery\JQuery-Tests-UI';
 	add: '..\JQuery\JQuery-UI';
 	add: 'Seaside-Component';
 	add: 'Seaside-Core';
@@ -54,9 +52,7 @@ package setPrerequisites: (IdentitySet new
 	yourself).
 
 package setManualPrerequisites: #(
-	'Grease-Tests-Core'
 	'JQuery-JSON'
-	'JQuery-Tests-UI'
 	'Seaside-Email'
 	'Seaside-Flow').
 

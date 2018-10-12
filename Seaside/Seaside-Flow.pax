@@ -31,7 +31,7 @@ package globalAliases: (Set new
 	yourself).
 
 package setPrerequisites: (IdentitySet new
-	add: '..\Grease\Grease-Core';
+	add: '..\..\Grease\Grease-Core';
 	add: 'Seaside-Component';
 	add: 'Seaside-Core';
 	yourself).

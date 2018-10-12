@@ -28,8 +28,8 @@ package globalAliases: (Set new
 	yourself).
 
 package setPrerequisites: (IdentitySet new
-	add: '..\Core\Object Arts\Dolphin\Base\Dolphin';
-	add: '..\Grease\Grease-Core';
+	add: '..\..\Core\Object Arts\Dolphin\Base\Dolphin';
+	add: '..\..\Grease\Grease-Core';
 	add: '..\Javascript\Javascript-Core';
 	add: '..\JQuery\JQuery-Core';
 	add: 'Seaside-Canvas';

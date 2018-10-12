@@ -10,7 +10,20 @@ WAFileMetadataLibrary comment: 'I seek to address the following WAFileLibrary re
 !WAFileMetadataLibrary categoriesForClass!Seaside-Core-Libraries! !
 !WAFileMetadataLibrary methodsFor!
 
-asFileAndFoldername: aSelector	| foldername filename pathSeparator |	pathSeparator := GRPlatform current pathSeparator.	filename := (self fileResourceOf: aSelector) filepath.	filename := filename replaceAll: $/ with: pathSeparator first.	foldername := (filename includes: $/)		ifTrue: [ self name , pathSeparator, (filename copyUpToLast: pathSeparator first) ]		ifFalse: [ self name ].	^ Array with: foldername with: (GRPlatform current localNameOf: filename)!
+asFileAndFoldername: aSelector
+
+	"Backported from develop branch to fix Windows-specific path separators issue"
+
+	| foldername filename pathSeparator |
+	pathSeparator := GRPlatform current pathSeparator.
+	filename := (self fileResourceOf: aSelector) filepath.
+	"File resources in metadata libraries are always specified using the UNIX path separator convention"
+	foldername := (filename includes: $/)
+		ifTrue: [
+			filename := filename copyReplaceAll: '/' with: pathSeparator.
+			self name, pathSeparator, (filename copyUpToLast: pathSeparator first) ]
+		ifFalse: [ self name ].
+	^ Array with: foldername with: (GRPlatform current localNameOf: filename)!
 
 asFilename: aSelector	^ (self fileResourceOf: aSelector) filepath!
 
