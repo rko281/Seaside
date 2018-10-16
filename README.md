@@ -18,10 +18,10 @@ Dolphin Seaside, Grease, Swazoo and Sport packages adapted from [Infoil](http://
 
 
 ### Manual Installation
-* This repository should be cloned/downloaded to <image directory>\Seaside
+* This repository should be cloned/downloaded to {image directory}\Seaside
 * Also download the following repositories:
-* [Grease](https://github.com/rko281/Grease)
-* [Portishead](https://github.com/rko281/Portishead)
-* [Swazoo](https://github.com/rko281/Swazoo)
-* [Contributions](https://github.com/dolphinsmalltalk/Contributions)
+   * [Grease](https://github.com/rko281/Grease)
+   * [Portishead](https://github.com/rko281/Portishead)
+   * [Swazoo](https://github.com/rko281/Swazoo)
+   * [Contributions](https://github.com/dolphinsmalltalk/Contributions) (specifically the branch containing `DS Partial Continuations`)
 * Install package `Seaside` - this will load all required prerequisites and start the Welcome server
