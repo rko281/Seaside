@@ -18,7 +18,7 @@ Dolphin Seaside, Grease, Swazoo and Sport packages adapted from [Infoil](http://
 
 
 ### Manual Installation
-* This repository should be cloned/downloaded to {image directory}\Seaside
+* This repository should be cloned/downloaded to your image directory
 * Also download the following repositories:
    * [Grease](https://github.com/rko281/Grease)
    * [Portishead](https://github.com/rko281/Portishead)
