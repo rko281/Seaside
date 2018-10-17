@@ -10,7 +10,7 @@ Dolphin Seaside, Grease, Swazoo and Sport packages adapted from [Infoil](http://
 * Install [Dolphin Smalltalk 7.1](https://github.com/dolphinsmalltalk/Dolphin)
 
 ### Automated Installation
-* Download and install the [GitHub Package Manager](https://github.com/rko281/GitHub)
+* Download and install [GitHub Package Manager](https://github.com/rko281/GitHub)
 * Evaluate:
   `GitHubPackageManager install: 'rko281/Seaside'`
 * All required packages and prerequisites will be downloaded and installed
