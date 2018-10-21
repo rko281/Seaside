@@ -39,6 +39,7 @@ package setPrerequisites: (IdentitySet new
 	add: 'Seaside-Dolphin-Flow';
 	add: 'Seaside-Dolphin-JSON-Core';
 	add: 'Seaside-Dolphin-REST-Core';
+	add: 'Seaside-Dolphin-Tools';
 	add: 'Seaside-Tests-Canvas';
 	add: 'Seaside-Tests-Component';
 	add: 'Seaside-Tests-Core';
@@ -70,6 +71,7 @@ package setManualPrerequisites: #(
 	'Seaside-Dolphin-Flow'
 	'Seaside-Dolphin-JSON-Core'
 	'Seaside-Dolphin-REST-Core'
+	'Seaside-Dolphin-Tools'
 	'Seaside-Tests-Canvas'
 	'Seaside-Tests-Component'
 	'Seaside-Tests-Core'
