@@ -5,7 +5,7 @@ WAFileLibrary subclass: #WAFileLibraryDemo
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAFileLibraryDemo guid: (GUID fromString: '{f7c1ef77-0373-4864-b8d6-8d624c4fce6d}')!
+WAFileLibraryDemo guid: (GUID fromString: '{44426bd0-03ec-44b9-85c5-b27b199bafc7}')!
 WAFileLibraryDemo comment: ''!
 !WAFileLibraryDemo categoriesForClass!Seaside-Examples-Misc! !
 !WAFileLibraryDemo methodsFor!

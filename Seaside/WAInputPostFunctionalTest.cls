@@ -5,7 +5,7 @@ WAFunctionalTest subclass: #WAInputPostFunctionalTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAInputPostFunctionalTest guid: (GUID fromString: '{17da5473-de56-44d3-af02-474f15278f94}')!
+WAInputPostFunctionalTest guid: (GUID fromString: '{7a8d5beb-86f4-4a8e-832d-5936d974e304}')!
 WAInputPostFunctionalTest comment: ''!
 !WAInputPostFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
 !WAInputPostFunctionalTest methodsFor!

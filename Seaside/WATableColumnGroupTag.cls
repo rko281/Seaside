@@ -5,7 +5,7 @@ WATableCellTag subclass: #WATableColumnGroupTag
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WATableColumnGroupTag guid: (GUID fromString: '{6936b56e-0ea3-4e62-a2f8-1491ed62ba42}')!
+WATableColumnGroupTag guid: (GUID fromString: '{150c3765-09b6-4c64-80fa-e2394e2ddb79}')!
 WATableColumnGroupTag comment: 'WATableColumnGroupTag groups a set of col elements. It allows you to group several semantically related columns together.'!
 !WATableColumnGroupTag categoriesForClass!Seaside-Canvas-Tags! !
 !WATableColumnGroupTag methodsFor!

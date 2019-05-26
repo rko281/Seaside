@@ -5,7 +5,7 @@ WAExceptionHandler subclass: #WAErrorHandler
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAErrorHandler guid: (GUID fromString: '{edf12ea1-def7-4fb4-afef-0a102a85d957}')!
+WAErrorHandler guid: (GUID fromString: '{0acf12f4-69fb-4e6b-9fbb-ac7c96466746}')!
 WAErrorHandler comment: 'WAErrorHandler catches Errors and Warnings and provides two methods for handling each type of exception:handleError:handleWarning:If either method is not implemented, the default implementation will call #handleDefault:, which can be used to provide common behaviour for both exception types.'!
 !WAErrorHandler categoriesForClass!Seaside-Core-RequestHandling! !
 !WAErrorHandler methodsFor!

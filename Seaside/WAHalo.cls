@@ -5,7 +5,7 @@ WAObject subclass: #WAHalo
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAHalo guid: (GUID fromString: '{d402566c-dc55-4801-a8e9-62302e7e6bb0}')!
+WAHalo guid: (GUID fromString: '{01553e67-5f0b-4e15-aa22-87a17ca6f691}')!
 WAHalo comment: ''!
 !WAHalo categoriesForClass!Seaside-Development-Core! !
 !WAHalo methodsFor!

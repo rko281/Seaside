@@ -5,7 +5,7 @@ WASessionTrackingStrategyTest subclass: #WACookieForBrowserIPForCrawlerTrackingS
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WACookieForBrowserIPForCrawlerTrackingStrategyTest guid: (GUID fromString: '{aff4ce7b-4de5-442e-8fe6-bcf7ce27a613}')!
+WACookieForBrowserIPForCrawlerTrackingStrategyTest guid: (GUID fromString: '{94a3638a-fb8c-4c7a-8d28-8af8b601edb0}')!
 WACookieForBrowserIPForCrawlerTrackingStrategyTest comment: ''!
 !WACookieForBrowserIPForCrawlerTrackingStrategyTest categoriesForClass!Seaside-Tests-Session! !
 !WACookieForBrowserIPForCrawlerTrackingStrategyTest methodsFor!

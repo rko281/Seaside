@@ -5,7 +5,7 @@ WAExceptionHandlerTest subclass: #WAErrorHandlerTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAErrorHandlerTest guid: (GUID fromString: '{625b8e76-a7bc-4cd0-a26a-3ab610b154f2}')!
+WAErrorHandlerTest guid: (GUID fromString: '{fe563487-43a8-4f21-a32b-3ae98da3666f}')!
 WAErrorHandlerTest comment: ''!
 !WAErrorHandlerTest categoriesForClass!Seaside-Tests-Core-RequestHandling! !
 !WAErrorHandlerTest methodsFor!

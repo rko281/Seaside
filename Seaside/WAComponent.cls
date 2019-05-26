@@ -5,9 +5,9 @@ WAPresenter subclass: #WAComponent
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAComponent guid: (GUID fromString: '{7fb54a47-0bd4-4e06-b418-7f1a9ffe18f9}')!
+WAComponent guid: (GUID fromString: '{3d20d6e7-3af2-48f4-a6f6-54caad36ce5c}')!
 WAComponent comment: 'I am a Presenter with the additional abilities of wrapping myself with Decorations and displaying another Component with #call:.		Call/Answer:If a sub-Component makes a #call: to another Component, that Component will appear in place of the sub-Component.  For example, if an embedded WACounter, stored in an instance variable called myCounter, made a #call: to DateSelector, that DateSelector would appear in the context of the counter''s parent, with the ''My Counter'' heading above it.Since an embedded subcomponent has not been #call:''d, in general #answer: is a no-op.  However, the parent may attach an #onAnswer: block to the embedded subcomponent to be notified if it sends #answer:. This allows one component to be used both from #call: and through embedding. For example:	initialize		dateSelector := WADateSelector new 			onAnswer: [ :date | self dateChosen: date ].			Visibility:A component is visible if it:- meets the visibility requirements of a Presenter; or- is passed as an argument to #call: on a visible component'!
-!WAComponent categoriesForClass!Seaside-Component! !
+!WAComponent categoriesForClass!Seaside-Component-Base! !
 !WAComponent methodsFor!
 
 accept: aVisitor	aVisitor visitComponent: self!
@@ -28,9 +28,9 @@ decoratedComponent	"For polymorphism with WADecoration"	^ self!
 
 decorateWith: aDecoration during: aBlock	"Decorate the receiver with aDecoration during the execution of aBlock."	| result |	self addDecoration: aDecoration.	result := aBlock value.	self removeDecoration: aDecoration.	^ result!
 
-decoration	^ decoration contents!
+decoration	decoration isNil		ifTrue: [ ^ self ].	^ decoration contents!
 
-decoration: aDecoration	decoration contents: aDecoration!
+decoration: aDecoration	decoration isNil ifTrue: [ 		decoration := WAValueHolder with: self ].	decoration contents: aDecoration!
 
 decoration: oldDecoration shouldWrap: newDecoration	^ (oldDecoration isGlobal and: [ newDecoration isGlobal not ])		or: [ oldDecoration isDelegation and: [ newDecoration isLocal ] ]!
 
@@ -39,8 +39,6 @@ decorations	"Answer an ordered collection of all decorations active in the rece
 delegations	"Answer an ordered collection of all delegations active in the receiver."		^ self decorations select: [ :each | each isDelegation ]!
 
 home	"Remove all delegations from the receiver, making sure that it is displayed again."		self delegations do: [ :each | self removeDecoration: each ]!
-
-initialize	super initialize.	decoration := WAValueHolder with: self!
 
 onAnswer: aBlock	"Adds an answer handler aBlock to the receiver."	^ self addDecoration: (WAAnswerHandler new block: aBlock)!
 
@@ -54,7 +52,7 @@ show: aComponent onAnswer: aBlock	"Pass control from the receiver to aComponent
 
 show: aComponent onAnswer: aBlock delegation: aDelegation	| event |	event := nil.	event := aComponent onAnswer: [ :value |		aDelegation remove.		event remove.		aBlock valueWithPossibleArguments: (Array with: value) ].	self addDecoration: aDelegation!
 
-updateStates: aSnapshot	super updateStates: aSnapshot.	aSnapshot register: decoration! !
+updateStates: aSnapshot	super updateStates: aSnapshot.	decoration isNil		ifFalse: [ aSnapshot register: decoration ]! !
 !WAComponent categoriesFor: #accept:!public!visiting! !
 !WAComponent categoriesFor: #acceptDecorated:!public!visiting! !
 !WAComponent categoriesFor: #activeComponent!convenience!public! !
@@ -70,7 +68,6 @@ updateStates: aSnapshot	super updateStates: aSnapshot.	aSnapshot register: dec
 !WAComponent categoriesFor: #decorations!accessing!public! !
 !WAComponent categoriesFor: #delegations!accessing!public! !
 !WAComponent categoriesFor: #home!accessing!public! !
-!WAComponent categoriesFor: #initialize!initialization!public! !
 !WAComponent categoriesFor: #onAnswer:!delegation!public! !
 !WAComponent categoriesFor: #removeDecoration:!decorations!public! !
 !WAComponent categoriesFor: #removeDelegation!delegation!public! !

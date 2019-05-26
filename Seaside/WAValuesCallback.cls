@@ -5,7 +5,7 @@ WAValueCallback subclass: #WAValuesCallback
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAValuesCallback guid: (GUID fromString: '{0a4f0d9c-c488-4913-a9b7-bf41278a3799}')!
+WAValuesCallback guid: (GUID fromString: '{8e50444c-48ec-4365-9bf9-dbfc05abfe99}')!
 WAValuesCallback comment: ''!
 !WAValuesCallback categoriesForClass!Seaside-Core-Callbacks! !
 !WAValuesCallback methodsFor!

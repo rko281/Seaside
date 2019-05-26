@@ -5,7 +5,7 @@ JSDecoration subclass: #JSApply
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSApply guid: (GUID fromString: '{7a685ac1-a699-4e60-9449-4c59bfe27aed}')!
+JSApply guid: (GUID fromString: '{77774380-f666-4b2e-87ca-9a5350ff5e9e}')!
 JSApply comment: 'I apply a JavaScript function and provide arguments.'!
 !JSApply categoriesForClass!Javascript-Core-Decorations! !
 !JSApply methodsFor!

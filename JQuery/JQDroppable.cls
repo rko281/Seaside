@@ -5,7 +5,7 @@ JQWidget subclass: #JQDroppable
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQDroppable guid: (GUID fromString: '{5571d37b-029d-47d8-a460-254a2c8e3f66}')!
+JQDroppable guid: (GUID fromString: '{03b3cbb6-3396-4e17-9d2c-b12b2d4864ec}')!
 JQDroppable comment: 'Creates new droppables on the nodeset supplied by the query.'!
 !JQDroppable categoriesForClass!JQuery-UI-Interaction! !
 !JQDroppable methodsFor!

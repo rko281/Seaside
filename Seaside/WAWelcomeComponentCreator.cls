@@ -5,12 +5,12 @@ WATask subclass: #WAWelcomeComponentCreator
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAWelcomeComponentCreator guid: (GUID fromString: '{db13b363-d288-47cc-905e-b552d0ab224f}')!
+WAWelcomeComponentCreator guid: (GUID fromString: '{26e8dcbe-ff2c-49c7-8922-a65aab18a176}')!
 WAWelcomeComponentCreator comment: ''!
 !WAWelcomeComponentCreator categoriesForClass!Seaside-Welcome! !
 !WAWelcomeComponentCreator methodsFor!
 
-checkAuthorInitials	GRPlatform current seasideIsAuthorNameSet ifFalse: [ self call: WAWelcomeAuthorNamePrompter new ] 	!
+checkAuthorInitials	GRPlatform current seasideIsAuthorNameSet		ifFalse: [ self call: WAWelcomeAuthorNamePrompter new ] 	!
 
 chooseComponentName	^ self call: WAWelcomeComponentNamePrompter new 	!
 

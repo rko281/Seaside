@@ -21,13 +21,12 @@ package binaryGlobalNames: (Set new
 package globalAliases: (Set new
 	yourself).
 
-package setPrerequisites: (IdentitySet new
-	add: '..\..\Core\Object Arts\Dolphin\Base\Dolphin';
-	add: '..\..\Grease\Grease-Core';
-	add: '..\..\Grease\Grease-Dolphin-Core';
-	add: 'Seaside-Core';
-	add: 'Seaside-Email';
-	yourself).
+package setPrerequisites: #(
+	'..\..\Core\Object Arts\Dolphin\Base\Dolphin'
+	'..\..\Grease\Grease-Core'
+	'..\..\Grease\Grease-Dolphin-Core'
+	'Seaside-Core'
+	'Seaside-Email').
 
 package!
 

@@ -5,7 +5,7 @@ WAConfigurationToolPlugin subclass: #WAOpenHandlerPlugin
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAOpenHandlerPlugin guid: (GUID fromString: '{377252fd-b324-4707-9f9f-a0088789fcab}')!
+WAOpenHandlerPlugin guid: (GUID fromString: '{707c6ed4-a9f5-4e52-a694-d39e722d1816}')!
 WAOpenHandlerPlugin comment: ''!
 !WAOpenHandlerPlugin categoriesForClass!Seaside-Tools-Web! !
 !WAOpenHandlerPlugin methodsFor!

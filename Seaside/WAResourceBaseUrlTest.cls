@@ -5,7 +5,7 @@ WAAbstractCanvasBrushTest subclass: #WAResourceBaseUrlTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAResourceBaseUrlTest guid: (GUID fromString: '{78f754cf-30d5-495a-954d-76bdb3da3029}')!
+WAResourceBaseUrlTest guid: (GUID fromString: '{1c66582e-ae95-485b-8e86-306172378d42}')!
 WAResourceBaseUrlTest comment: ''!
 !WAResourceBaseUrlTest categoriesForClass!Seaside-Tests-Canvas! !
 !WAResourceBaseUrlTest methodsFor!

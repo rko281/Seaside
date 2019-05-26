@@ -5,7 +5,7 @@ WAConfigurationToolPlugin subclass: #WAClearDefaultHandlerPlugin
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAClearDefaultHandlerPlugin guid: (GUID fromString: '{6f8ad595-4e6f-4799-b2a7-c13ed5faf5d4}')!
+WAClearDefaultHandlerPlugin guid: (GUID fromString: '{581181d3-95e4-4f4b-9fbe-79cd9fd12ad5}')!
 WAClearDefaultHandlerPlugin comment: ''!
 !WAClearDefaultHandlerPlugin categoriesForClass!Seaside-Tools-Web! !
 !WAClearDefaultHandlerPlugin methodsFor!

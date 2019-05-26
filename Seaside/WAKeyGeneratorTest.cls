@@ -5,7 +5,7 @@ TestCase subclass: #WAKeyGeneratorTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAKeyGeneratorTest guid: (GUID fromString: '{b2169d40-2d1b-45c9-b56f-4713868fb696}')!
+WAKeyGeneratorTest guid: (GUID fromString: '{a44507a3-68df-4c86-bd2f-fde8e080d713}')!
 WAKeyGeneratorTest comment: ''!
 !WAKeyGeneratorTest categoriesForClass!Seaside-Tests-Core-Utilities! !
 !WAKeyGeneratorTest methodsFor!

@@ -22,12 +22,11 @@ package binaryGlobalNames: (Set new
 package globalAliases: (Set new
 	yourself).
 
-package setPrerequisites: (IdentitySet new
-	add: '..\..\Grease\Grease-Core';
-	add: 'Seaside-Core';
-	add: 'Seaside-RenderLoop';
-	add: 'Seaside-Session';
-	yourself).
+package setPrerequisites: #(
+	'..\..\Grease\Grease-Core'
+	'Seaside-Core'
+	'Seaside-RenderLoop'
+	'Seaside-Session').
 
 package!
 

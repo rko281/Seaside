@@ -5,7 +5,7 @@ JQBaseTheme subclass: #JQUiDarknessTheme
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQUiDarknessTheme guid: (GUID fromString: '{518c80b3-5482-45c6-8acf-d10cb904f210}')!
+JQUiDarknessTheme guid: (GUID fromString: '{8102de53-65e9-482b-a606-1a3946e89e09}')!
 JQUiDarknessTheme comment: ''!
 !JQUiDarknessTheme categoriesForClass!JQuery-UI-Libraries! !
 !JQUiDarknessTheme methodsFor!

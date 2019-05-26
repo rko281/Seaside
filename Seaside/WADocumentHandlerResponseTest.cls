@@ -5,7 +5,7 @@ WAContextTest subclass: #WADocumentHandlerResponseTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WADocumentHandlerResponseTest guid: (GUID fromString: '{5b989dd1-eb34-413e-ae3a-c4dc511f4ba6}')!
+WADocumentHandlerResponseTest guid: (GUID fromString: '{8120e3e1-7833-4496-acb5-c5f40e56ad96}')!
 WADocumentHandlerResponseTest comment: ''!
 !WADocumentHandlerResponseTest categoriesForClass!Seaside-Tests-Core-RequestHandling! !
 !WADocumentHandlerResponseTest methodsFor!

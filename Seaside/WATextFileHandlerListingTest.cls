@@ -5,7 +5,7 @@ WAFileHandlerListingTest subclass: #WATextFileHandlerListingTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WATextFileHandlerListingTest guid: (GUID fromString: '{fe6b3393-7a82-43f5-9af1-356d244dd1ba}')!
+WATextFileHandlerListingTest guid: (GUID fromString: '{ea000df2-fcaa-4857-a168-9d1ad1912b73}')!
 WATextFileHandlerListingTest comment: ''!
 !WATextFileHandlerListingTest categoriesForClass!Seaside-Tests-Core-Libraries! !
 !WATextFileHandlerListingTest methodsFor!

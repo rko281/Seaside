@@ -5,7 +5,7 @@ WANumberAttribute subclass: #WAIntegerAttribute
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAIntegerAttribute guid: (GUID fromString: '{212da252-c38c-4464-a0c4-891d2a0b80c2}')!
+WAIntegerAttribute guid: (GUID fromString: '{9024aeed-88af-48b0-a9f2-5dc5cf4e7dfe}')!
 WAIntegerAttribute comment: ''!
 !WAIntegerAttribute categoriesForClass!Seaside-Core-Configuration! !
 !WAIntegerAttribute methodsFor!

@@ -5,9 +5,9 @@ WAObject subclass: #WAEmailMessage
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAEmailMessage guid: (GUID fromString: '{186651d1-703a-4863-89bb-7ffa4a873b03}')!
-WAEmailMessage comment: ''!
-!WAEmailMessage categoriesForClass!Seaside-Email! !
+WAEmailMessage guid: (GUID fromString: '{3b3b0a0a-36e0-4e80-bc6c-3661511ac28e}')!
+WAEmailMessage comment: 'I am a  general email message (single part).'!
+!WAEmailMessage categoriesForClass!Seaside-Email-Base! !
 !WAEmailMessage methodsFor!
 
 addAllTo: aCollectionOfEmailAddress	aCollectionOfEmailAddress do: [ :each |		self addTo: each ]!

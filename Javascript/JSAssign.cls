@@ -5,7 +5,7 @@ JSMember subclass: #JSAssign
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSAssign guid: (GUID fromString: '{c0290617-6614-400b-ab5d-ee0e1074a6b1}')!
+JSAssign guid: (GUID fromString: '{7b6dbe4b-4b1c-49ee-a6d0-cc4f181203ab}')!
 JSAssign comment: 'I assign the decorated object to a global variable.'!
 !JSAssign categoriesForClass!Javascript-Core-Decorations! !
 !JSAssign methodsFor!

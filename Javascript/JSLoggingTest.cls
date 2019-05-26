@@ -5,7 +5,7 @@ JSObjectTest subclass: #JSLoggingTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSLoggingTest guid: (GUID fromString: '{eb7d474c-94b2-496e-b37b-4df1e130c8d7}')!
+JSLoggingTest guid: (GUID fromString: '{28bb7bcb-8bf1-4b7b-bbdd-7e6259e6f968}')!
 JSLoggingTest comment: ''!
 !JSLoggingTest categoriesForClass!Javascript-Tests-Core! !
 !JSLoggingTest methodsFor!

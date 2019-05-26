@@ -5,7 +5,7 @@ WAComponent subclass: #WAPopupCloseTestComponent
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAPopupCloseTestComponent guid: (GUID fromString: '{dd034dc1-7cf4-40e8-942a-3028ff603ff5}')!
+WAPopupCloseTestComponent guid: (GUID fromString: '{e00b7808-09e6-4926-a49e-340af198965f}')!
 WAPopupCloseTestComponent comment: ''!
 !WAPopupCloseTestComponent categoriesForClass!Seaside-Tests-Functional! !
 !WAPopupCloseTestComponent methodsFor!

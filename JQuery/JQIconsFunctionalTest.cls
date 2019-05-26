@@ -5,7 +5,7 @@ JQUiFunctionalTest subclass: #JQIconsFunctionalTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQIconsFunctionalTest guid: (GUID fromString: '{a739ddd7-5c34-40f2-a60c-b723cafd9286}')!
+JQIconsFunctionalTest guid: (GUID fromString: '{b880a998-56bc-4575-9b16-9da374a3b01f}')!
 JQIconsFunctionalTest comment: ''!
 !JQIconsFunctionalTest categoriesForClass!JQuery-Tests-UI-Functional! !
 !JQIconsFunctionalTest methodsFor!

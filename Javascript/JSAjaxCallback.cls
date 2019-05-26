@@ -5,9 +5,9 @@ WACallback subclass: #JSAjaxCallback
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSAjaxCallback guid: (GUID fromString: '{e4a9020c-493e-4a65-8fee-77ede326888b}')!
+JSAjaxCallback guid: (GUID fromString: '{01e01d47-3bec-48d1-ba50-9e61798364f8}')!
 JSAjaxCallback comment: ''!
-!JSAjaxCallback categoriesForClass!Javascript-Core! !
+!JSAjaxCallback categoriesForClass!Javascript-Core-Base! !
 !JSAjaxCallback methodsFor!
 
 block: aZeroOrOneArgBlock	block := aZeroOrOneArgBlock isNil		ifFalse: [ aZeroOrOneArgBlock fixCallbackTemps ]!

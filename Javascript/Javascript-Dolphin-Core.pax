@@ -21,12 +21,11 @@ package binaryGlobalNames: (Set new
 package globalAliases: (Set new
 	yourself).
 
-package setPrerequisites: (IdentitySet new
-	add: '..\..\Core\Object Arts\Dolphin\Base\Dolphin';
-	add: '..\..\Core\Object Arts\Dolphin\MVP\Base\Dolphin MVP Base';
-	add: '..\..\Grease\Grease-Core';
-	add: 'Javascript-Core';
-	yourself).
+package setPrerequisites: #(
+	'..\..\Core\Object Arts\Dolphin\Base\Dolphin'
+	'..\..\Core\Object Arts\Dolphin\MVP\Base\Dolphin MVP Base'
+	'..\..\Grease\Grease-Core'
+	'Javascript-Core').
 
 package!
 

@@ -5,7 +5,7 @@ WASystemConfiguration subclass: #WADevelopmentConfiguration
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WADevelopmentConfiguration guid: (GUID fromString: '{a772a6e0-0651-4b62-8bee-368c92fa2252}')!
+WADevelopmentConfiguration guid: (GUID fromString: '{a12d9312-4af8-4b37-be38-009d40d550c7}')!
 WADevelopmentConfiguration comment: ''!
 !WADevelopmentConfiguration categoriesForClass!Seaside-Development-Core! !
 !WADevelopmentConfiguration methodsFor!

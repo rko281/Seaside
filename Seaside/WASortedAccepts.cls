@@ -5,14 +5,14 @@ WAObject subclass: #WASortedAccepts
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WASortedAccepts guid: (GUID fromString: '{e6dd1f1f-1b31-4917-b548-ff121ea3e87b}')!
+WASortedAccepts guid: (GUID fromString: '{37059c57-3e46-42d8-b7b3-fb069e60ee8b}')!
 WASortedAccepts comment: ''!
 !WASortedAccepts categoriesForClass!Seaside-REST-Core-Route! !
 !WASortedAccepts methodsFor!
 
 acceptsDo: aOneArgumentBlock	| sortedKeys |	sortedKeys := accepts keys sorted: [ :a :b | a > b ].	sortedKeys do: [ :each |		aOneArgumentBlock value: (accepts allAt: each) ]!
 
-initializeWithAccepts: aCollectionOfAccepts	self initialize.	accepts := GROrderedMultiMap new.	aCollectionOfAccepts isNil ifFalse: [		aCollectionOfAccepts do: [ :each |			accepts at: each quality add: each value ] ]!
+initializeWithAccepts: aCollectionOfAccepts	self initialize.	accepts := GROrderedMultiMap2 new.	aCollectionOfAccepts isNil ifFalse: [		aCollectionOfAccepts do: [ :each |			accepts at: each quality add: each value ] ]!
 
 isEmpty	^ accepts isEmpty! !
 !WASortedAccepts categoriesFor: #acceptsDo:!initialization!public! !

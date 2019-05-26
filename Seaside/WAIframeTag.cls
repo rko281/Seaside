@@ -5,7 +5,7 @@ WATagBrush subclass: #WAIframeTag
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAIframeTag guid: (GUID fromString: '{840ecdfc-f923-436b-b327-4612df410923}')!
+WAIframeTag guid: (GUID fromString: '{d3722425-5d0a-4351-8310-d7e517e9daa8}')!
 WAIframeTag comment: 'The IFRAME element allows authors to insert a frame within a block of text. Inserting an inline frame within a section of text is much like inserting an object via the OBJECT element: they both allow you to insert an HTML document in the middle of another, they may both be aligned with surrounding text, etc. The information to be inserted inline is designated by the src attribute of this element. The contents of the IFRAME element, on the other hand, should only be displayed by user agents that do not support frames or are configured not to display frames.Inline frames may not be resized.'!
 !WAIframeTag categoriesForClass!Seaside-Canvas-Tags! !
 !WAIframeTag methodsFor!

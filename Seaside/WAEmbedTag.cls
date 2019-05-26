@@ -5,8 +5,8 @@ WATagBrush subclass: #WAEmbedTag
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAEmbedTag guid: (GUID fromString: '{31ea02d4-8027-42ea-b746-5395ce74f597}')!
-WAEmbedTag comment: ''!
+WAEmbedTag guid: (GUID fromString: '{af50c9c0-7b13-4b42-89d0-6db3f2943fa7}')!
+WAEmbedTag comment: 'The <embed> tag defines a container for an external application or interactive content (a plug-in).'!
 !WAEmbedTag categoriesForClass!Seaside-Canvas-Tags! !
 !WAEmbedTag methodsFor!
 

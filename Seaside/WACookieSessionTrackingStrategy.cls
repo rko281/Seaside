@@ -5,12 +5,12 @@ WASessionTrackingStrategy subclass: #WACookieSessionTrackingStrategy
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WACookieSessionTrackingStrategy guid: (GUID fromString: '{fe3dc1ca-3869-4c73-8f9f-24dc87f18cd4}')!
+WACookieSessionTrackingStrategy guid: (GUID fromString: '{8a74b5d6-2796-4524-af9b-e886a7e65517}')!
 WACookieSessionTrackingStrategy comment: 'I am the abstract base class for tracking strategies that use cookies to track sessions and query fields to track everything else.'!
 !WACookieSessionTrackingStrategy categoriesForClass!Seaside-Session! !
 !WACookieSessionTrackingStrategy methodsFor!
 
-addCookieWithValue: aString to: aRequestContext	"Create a new handler key cookie and att it to the response."		aRequestContext response addCookie: 		(aRequestContext newCookie			key: self keyCookieName;			value: aString;			discard: true;			comment: 'the Seaside Session Cookie';			commentUrl: 'http://www.seaside.st/documentation/sessionCookie';			yourself)!
+addCookieWithValue: aString to: aRequestContext	"Create a new handler key cookie and att it to the response."		aRequestContext response addCookie: 		(aRequestContext newCookie			key: self keyCookieName;			value: aString;			discard: true;			sameSite: 'Strict';			comment: 'the Seaside Session Cookie';			commentUrl: 'https://github.com/SeasideSt/Seaside/wiki/Session-Cookie';			yourself)!
 
 addKey: aString toContext: aRequestContext	| oldCookie |	oldCookie := self cookieFromContext: aRequestContext ifAbsent: [ nil ].	(oldCookie isNil or: [ oldCookie value ~= aString ]) ifTrue: [		"only add the cookie if we don't already have one or it has the wrong key"		self addCookieWithValue: aString to: aRequestContext ]!
 

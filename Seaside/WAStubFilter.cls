@@ -5,7 +5,7 @@ WARestfulFilter subclass: #WAStubFilter
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAStubFilter guid: (GUID fromString: '{6749516d-330c-45b7-ac30-d96f27939479}')!
+WAStubFilter guid: (GUID fromString: '{0993289d-4193-4e85-afb7-bb27aec9cc0c}')!
 WAStubFilter comment: ''!
 !WAStubFilter categoriesForClass!Seaside-Tests-REST-Core! !
 !WAStubFilter methodsFor!

@@ -1,0 +1,78 @@
+﻿| package |
+package := Package name: 'Seaside-REST-Examples'.
+package paxVersion: 1;
+	basicComment: ''.
+
+package basicScriptAt: #postinstall put: 'WARestCounter register.'.
+
+package classNames
+	add: #WAOneTwoThree;
+	add: #WARestCounter;
+	add: #WARestCounterStarter;
+	add: #WAThree;
+	add: #WATwo;
+	yourself.
+
+package methodNames
+	add: 'GRPackage class' -> #seasideRestExamples;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: #(
+	'..\..\Core\Object Arts\Dolphin\Base\Dolphin'
+	'..\..\Grease\Grease-Core'
+	'..\..\Portishead\Portishead-Pragmas'
+	'Seaside-Canvas'
+	'Seaside-Component'
+	'Seaside-Core'
+	'Seaside-Examples'
+	'Seaside-REST-Core'
+	'Seaside-Tools-Core').
+
+package!
+
+"Class Definitions"!
+
+WAPainter subclass: #WATwo
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAComponent subclass: #WAThree
+	instanceVariableNames: 'counter'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAExampleComponent subclass: #WARestCounter
+	instanceVariableNames: 'count'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WARestfulComponentFilter subclass: #WAOneTwoThree
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WARestfulComponentFilter subclass: #WARestCounterStarter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+"Global Aliases"!
+
+
+"Loose Methods"!
+
+!GRPackage class methodsFor!
+
+seasideRestExamples	^ self new		name: 'Seaside-REST-Examples';		description: 'Examples on how to use Seaside-REST-Core';		addDependency: 'Seaside-REST-Core';		addDependency: 'Seaside-Canvas';		addDependency: 'Seaside-RenderLoop';		url: #seasideUrl;		yourself! !
+!GRPackage class categoriesFor: #seasideRestExamples!*seaside/rest/examples!public! !
+
+"End of package definition"!
+

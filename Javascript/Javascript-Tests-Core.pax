@@ -25,16 +25,14 @@ package binaryGlobalNames: (Set new
 package globalAliases: (Set new
 	yourself).
 
-package setPrerequisites: (IdentitySet new
-	add: '..\..\Core\Object Arts\Dolphin\Base\Dolphin';
-	add: '..\..\Grease\Grease-Core';
-	add: '..\..\Core\Contributions\IDB\IDB DateAndTime';
-	add: '..\..\Core\Contributions\IDB\IDB Duration';
-	add: 'Javascript-Core';
-	add: '..\Seaside\Seaside-Canvas';
-	add: '..\Seaside\Seaside-Core';
-	add: '..\Seaside\Seaside-Tests-Core';
-	yourself).
+package setPrerequisites: #(
+	'..\..\Core\Object Arts\Dolphin\Base\Dolphin'
+	'..\..\Core\Object Arts\Dolphin\Base\Dolphin Legacy Date & Time'
+	'..\..\Grease\Grease-Core'
+	'Javascript-Core'
+	'..\Seaside\Seaside-Canvas'
+	'..\Seaside\Seaside-Core'
+	'..\Seaside\Seaside-Tests-Core').
 
 package!
 

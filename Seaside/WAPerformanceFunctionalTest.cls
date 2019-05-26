@@ -5,7 +5,7 @@ WAFunctionalTest subclass: #WAPerformanceFunctionalTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAPerformanceFunctionalTest guid: (GUID fromString: '{ce15a7dc-254c-4f7a-90d2-57854f666a90}')!
+WAPerformanceFunctionalTest guid: (GUID fromString: '{05bb6a2c-99c4-4135-a913-da39457a0a16}')!
 WAPerformanceFunctionalTest comment: ''!
 !WAPerformanceFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
 !WAPerformanceFunctionalTest methodsFor!

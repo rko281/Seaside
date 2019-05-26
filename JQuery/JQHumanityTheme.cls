@@ -5,7 +5,7 @@ JQBaseTheme subclass: #JQHumanityTheme
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQHumanityTheme guid: (GUID fromString: '{d28fa8be-b90c-4c71-a00f-85e33c3a1a7a}')!
+JQHumanityTheme guid: (GUID fromString: '{d285c53c-3f43-49b6-bdb9-b85ad2840611}')!
 JQHumanityTheme comment: ''!
 !JQHumanityTheme categoriesForClass!JQuery-UI-Libraries! !
 !JQHumanityTheme methodsFor!

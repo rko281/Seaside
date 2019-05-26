@@ -5,7 +5,7 @@ WAComponent subclass: #WAStatusItem
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAStatusItem guid: (GUID fromString: '{cab94f53-ec21-4a9b-b3b6-65aa71d23cb4}')!
+WAStatusItem guid: (GUID fromString: '{bf098994-8e0c-40ff-b5e4-1f63550f84e8}')!
 WAStatusItem comment: ''!
 !WAStatusItem categoriesForClass!Seaside-Tools-Web! !
 !WAStatusItem methodsFor!

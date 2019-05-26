@@ -33,28 +33,19 @@ package binaryGlobalNames: (Set new
 package globalAliases: (Set new
 	yourself).
 
-package setPrerequisites: (IdentitySet new
-	add: '..\..\Core\Object Arts\Dolphin\Base\Dolphin';
-	add: '..\..\Grease\Grease-Core';
-	add: '..\JQuery\JQuery-Core';
-	add: '..\JQuery\JQuery-JSON';
-	add: '..\JQuery\JQuery-UI';
-	add: 'Seaside-Component';
-	add: 'Seaside-Core';
-	add: 'Seaside-Development';
-	add: 'Seaside-Email';
-	add: 'Seaside-Environment';
-	add: 'Seaside-Examples';
-	add: 'Seaside-Flow';
-	add: 'Seaside-Tests-Flow';
-	add: 'Seaside-Tools-Core';
-	add: 'Seaside-Tools-Web';
-	yourself).
-
-package setManualPrerequisites: #(
-	'JQuery-JSON'
-	'Seaside-Email'
-	'Seaside-Flow').
+package setPrerequisites: #(
+	'..\..\Core\Object Arts\Dolphin\Base\Dolphin'
+	'..\..\Grease\Grease-Core'
+	'..\JQuery\JQuery-Core'
+	'..\JQuery\JQuery-UI'
+	'Seaside-Component'
+	'Seaside-Core'
+	'Seaside-Development'
+	'Seaside-Environment'
+	'Seaside-Examples'
+	'Seaside-Tests-Flow'
+	'Seaside-Tools-Core'
+	'Seaside-Tools-Web').
 
 package!
 

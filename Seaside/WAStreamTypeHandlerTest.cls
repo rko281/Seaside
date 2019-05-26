@@ -5,7 +5,7 @@ WAContextTest subclass: #WAStreamTypeHandlerTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAStreamTypeHandlerTest guid: (GUID fromString: '{d686be52-6545-4754-9f5e-95435cd70118}')!
+WAStreamTypeHandlerTest guid: (GUID fromString: '{1bf9ce7c-5776-4bea-8470-c90974783396}')!
 WAStreamTypeHandlerTest comment: ''!
 !WAStreamTypeHandlerTest categoriesForClass!Seaside-Tests-REST-Core! !
 !WAStreamTypeHandlerTest methodsFor!

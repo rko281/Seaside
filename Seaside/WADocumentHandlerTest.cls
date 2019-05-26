@@ -5,7 +5,7 @@ WARequestHandlerTest subclass: #WADocumentHandlerTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WADocumentHandlerTest guid: (GUID fromString: '{b952cf81-eee8-4d5f-b56c-a2acca61f3ce}')!
+WADocumentHandlerTest guid: (GUID fromString: '{1624780a-c7eb-4113-a4f3-261a88542e0f}')!
 WADocumentHandlerTest comment: ''!
 !WADocumentHandlerTest categoriesForClass!Seaside-Tests-Core-RequestHandling! !
 !WADocumentHandlerTest methodsFor!

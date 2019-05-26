@@ -5,7 +5,7 @@ WAObject subclass: #WAJsonParser
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAJsonParser guid: (GUID fromString: '{b11f9055-1135-401c-ae44-12474daf6eaa}')!
+WAJsonParser guid: (GUID fromString: '{0194ba52-6dc6-4669-a92e-992295b2246c}')!
 WAJsonParser comment: 'I am a parser for JSON. It is a bit more forgiving than the standard and allows any kind of top level element except numbers, not just {} and []. See http://www.json.org/ for details.I can be subclasses to create more sophisticated objects than just Arrays and Dictionaries. To do that, override the one or more methods in the creating protocol.'!
 !WAJsonParser categoriesForClass!Seaside-JSON-Core! !
 !WAJsonParser methodsFor!

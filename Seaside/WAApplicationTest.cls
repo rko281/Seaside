@@ -5,7 +5,7 @@ WARegistryTest subclass: #WAApplicationTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAApplicationTest guid: (GUID fromString: '{38222193-2dfe-41c1-b3c7-edf21b22c57e}')!
+WAApplicationTest guid: (GUID fromString: '{fb295d06-a0a9-4591-be5c-a4b593728ce4}')!
 WAApplicationTest comment: ''!
 !WAApplicationTest categoriesForClass!Seaside-Tests-Session! !
 !WAApplicationTest methodsFor!

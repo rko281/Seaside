@@ -5,7 +5,7 @@ WAFunctionalTest subclass: #WABatchFunctionalTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WABatchFunctionalTest guid: (GUID fromString: '{34358a33-013e-4b47-a58d-5e6834396666}')!
+WABatchFunctionalTest guid: (GUID fromString: '{dab009e8-e9f9-4435-8a83-f32c264d6b78}')!
 WABatchFunctionalTest comment: ''!
 !WABatchFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
 !WABatchFunctionalTest methodsFor!

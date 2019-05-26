@@ -5,7 +5,7 @@ JSTimed subclass: #JSInterval
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSInterval guid: (GUID fromString: '{bc8fa31e-bd01-4f44-8386-f1ca1b5363b8}')!
+JSInterval guid: (GUID fromString: '{bc3a200b-5284-42b3-92a8-43bfe5a4b3b4}')!
 JSInterval comment: 'I periodically execute the decorated object.'!
 !JSInterval categoriesForClass!Javascript-Core-Decorations! !
 !JSInterval methodsFor!

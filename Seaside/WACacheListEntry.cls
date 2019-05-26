@@ -5,8 +5,8 @@ WAObject subclass: #WACacheListEntry
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WACacheListEntry guid: (GUID fromString: '{3a481d72-6278-4ba2-92d6-c040227d7d8d}')!
-WACacheListEntry comment: ''!
+WACacheListEntry guid: (GUID fromString: '{c7a46c9e-1563-4762-a7ef-e1d18996ba5e}')!
+WACacheListEntry comment: 'I am a node in a sorted linked list in WAHashCache.    Instance Variables	cacheEntry:		<WACacheKeyEntry>	next:		<WACacheListEntry>	previous:		<WACacheListEntry>	time:		<Integer>time:	timestamp in seconds, could be the creation time or access time depending on with of the two linked lists it is'!
 !WACacheListEntry categoriesForClass!Seaside-Core-Cache! !
 !WACacheListEntry methodsFor!
 

@@ -5,6 +5,6 @@ WADynamicVariable subclass: #WACurrentExceptionHandler
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WACurrentExceptionHandler guid: (GUID fromString: '{271801ca-90d0-4cfd-94b7-4fa112652da3}')!
-WACurrentExceptionHandler comment: 'I hold a reference to the current WAExceptionHandler. This may be needed when nesting exception handlers so that the look up of an exception handler from within an exception handler block still succeeds.'!
+WACurrentExceptionHandler guid: (GUID fromString: '{e7a2e4b0-76dc-481f-95b3-ffdcf3d3aa05}')!
+WACurrentExceptionHandler comment: 'WASystemConfiguration subclass: #WAExceptionFilterConfiguration	instanceVariableNames: ''''	classVariableNames: ''''	poolDictionaries: ''''	category: ''Seaside-Core-Filter'''!
 !WACurrentExceptionHandler categoriesForClass!Seaside-Core-Filter! !

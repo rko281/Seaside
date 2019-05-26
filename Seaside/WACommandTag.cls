@@ -5,7 +5,7 @@ WATagBrush subclass: #WACommandTag
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WACommandTag guid: (GUID fromString: '{34aec9f1-ecb2-43dc-a875-56e7471157bf}')!
+WACommandTag guid: (GUID fromString: '{cb18c9fc-9665-47c6-a92f-7cb704d16830}')!
 WACommandTag comment: 'The command element represents a command that the user can invoke.'!
 !WACommandTag categoriesForClass!Seaside-Canvas-Tags! !
 !WACommandTag methodsFor!

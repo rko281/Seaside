@@ -5,7 +5,7 @@ WARequestHandler subclass: #WATestNoopSessionHandler
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WATestNoopSessionHandler guid: (GUID fromString: '{bdb693cd-0866-4c22-9b8a-ccca51867442}')!
+WATestNoopSessionHandler guid: (GUID fromString: '{3dde0291-3d93-4095-ac02-2034bd3c3ced}')!
 WATestNoopSessionHandler comment: ''!
 !WATestNoopSessionHandler categoriesForClass!Seaside-Tests-Core-RequestHandling! !
 !WATestNoopSessionHandler methodsFor!

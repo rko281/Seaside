@@ -5,6 +5,6 @@ WAComponent subclass: #WAJQueryExampleComponent
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAJQueryExampleComponent guid: (GUID fromString: '{b22acbbc-fec9-4d31-9df2-8db7b6489b0d}')!
+WAJQueryExampleComponent guid: (GUID fromString: '{f929edce-62eb-4dde-90a3-79db59491fd0}')!
 WAJQueryExampleComponent comment: ''!
 !WAJQueryExampleComponent categoriesForClass!Seaside-Examples-Misc! !

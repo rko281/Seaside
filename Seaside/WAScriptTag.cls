@@ -5,7 +5,7 @@ WATagBrush subclass: #WAScriptTag
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAScriptTag guid: (GUID fromString: '{7a6c00ec-470f-4d56-8f90-b2b49e5ce2a4}')!
+WAScriptTag guid: (GUID fromString: '{20d839f7-8d8f-4588-9c82-0d91f9dea360}')!
 WAScriptTag comment: 'Defines a script, such as a JavaScript.'!
 !WAScriptTag categoriesForClass!Seaside-Canvas-Tags! !
 !WAScriptTag methodsFor!

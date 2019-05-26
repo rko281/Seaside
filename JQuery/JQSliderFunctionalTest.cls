@@ -5,7 +5,7 @@ JQUiFunctionalTest subclass: #JQSliderFunctionalTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQSliderFunctionalTest guid: (GUID fromString: '{20c775ad-e04b-448a-92af-fedf317ed043}')!
+JQSliderFunctionalTest guid: (GUID fromString: '{c2c5d9f1-d47e-4ca6-9401-f3b2977a0f3b}')!
 JQSliderFunctionalTest comment: ''!
 !JQSliderFunctionalTest categoriesForClass!JQuery-Tests-UI-Functional! !
 !JQSliderFunctionalTest methodsFor!

@@ -5,7 +5,7 @@ JSDecoration subclass: #JSNegation
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSNegation guid: (GUID fromString: '{ff014cde-21bf-4207-b019-949b8841d50b}')!
+JSNegation guid: (GUID fromString: '{acc70a10-2dc6-47f3-8f31-a15c96099409}')!
 JSNegation comment: 'I negate the decorated object and yield a boolean value.'!
 !JSNegation categoriesForClass!Javascript-Core-Decorations! !
 !JSNegation methodsFor!

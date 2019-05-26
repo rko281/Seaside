@@ -5,7 +5,7 @@ JQUiFunctionalTest subclass: #JQSelectableFunctionalTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQSelectableFunctionalTest guid: (GUID fromString: '{78bd224f-f495-438e-bf3b-1d3dfe0fdbc3}')!
+JQSelectableFunctionalTest guid: (GUID fromString: '{15821941-08d1-4b0d-83f6-35d898280a62}')!
 JQSelectableFunctionalTest comment: ''!
 !JQSelectableFunctionalTest categoriesForClass!JQuery-Tests-UI-Functional! !
 !JQSelectableFunctionalTest methodsFor!

@@ -5,7 +5,7 @@ TestCase subclass: #WAConfigurationTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAConfigurationTest guid: (GUID fromString: '{588d108b-080a-49c1-8066-5584d40ce6af}')!
+WAConfigurationTest guid: (GUID fromString: '{c7ee439e-3c49-4042-9abd-962b4317bfb5}')!
 WAConfigurationTest comment: ''!
 !WAConfigurationTest categoriesForClass!Seaside-Tests-Core-Configuration! !
 !WAConfigurationTest methodsFor!

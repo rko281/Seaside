@@ -5,7 +5,7 @@ WAFileLibrary subclass: #WAWelcomeFiles
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAWelcomeFiles guid: (GUID fromString: '{9a531514-92ba-4357-9e52-88d95276515f}')!
+WAWelcomeFiles guid: (GUID fromString: '{8e5251ec-398c-4ff4-adc8-ec67d46dd4fc}')!
 WAWelcomeFiles comment: 'A WAFileLibrary derived class for the WAWelcome* classes'!
 !WAWelcomeFiles categoriesForClass!Seaside-Welcome! !
 !WAWelcomeFiles methodsFor!

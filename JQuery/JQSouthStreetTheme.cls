@@ -5,7 +5,7 @@ JQBaseTheme subclass: #JQSouthStreetTheme
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQSouthStreetTheme guid: (GUID fromString: '{c0a84827-7fde-4d24-aae3-24b51f2771e8}')!
+JQSouthStreetTheme guid: (GUID fromString: '{d121a962-44e5-42a0-bdbe-602cd1049a26}')!
 JQSouthStreetTheme comment: ''!
 !JQSouthStreetTheme categoriesForClass!JQuery-UI-Libraries! !
 !JQSouthStreetTheme methodsFor!

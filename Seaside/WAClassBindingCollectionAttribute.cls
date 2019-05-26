@@ -5,7 +5,7 @@ WAListAttribute subclass: #WAClassBindingCollectionAttribute
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAClassBindingCollectionAttribute guid: (GUID fromString: '{a4d2b5f0-88d4-4f4f-9e11-07e3d6fd6fc8}')!
+WAClassBindingCollectionAttribute guid: (GUID fromString: '{15ff3a9b-5def-4e1e-b067-53d57dc348b1}')!
 WAClassBindingCollectionAttribute comment: ''!
 !WAClassBindingCollectionAttribute categoriesForClass!Seaside-Core-Configuration! !
 !WAClassBindingCollectionAttribute methodsFor!

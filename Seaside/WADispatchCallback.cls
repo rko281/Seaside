@@ -5,7 +5,7 @@ WACallback subclass: #WADispatchCallback
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WADispatchCallback guid: (GUID fromString: '{017cde52-ebce-4933-b4d7-04c457512d2d}')!
+WADispatchCallback guid: (GUID fromString: '{c2154c3c-4867-4bba-b37c-f02061e4eb19}')!
 WADispatchCallback comment: ''!
 !WADispatchCallback categoriesForClass!Seaside-Core-Callbacks! !
 !WADispatchCallback methodsFor!

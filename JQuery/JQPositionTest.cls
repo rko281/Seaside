@@ -5,7 +5,7 @@ JQueryUiTest subclass: #JQPositionTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQPositionTest guid: (GUID fromString: '{1eaa8257-3f9a-40a2-a313-ed8b6deae1df}')!
+JQPositionTest guid: (GUID fromString: '{00cbffa6-7ba0-48b6-99b5-6cd4cfea85b6}')!
 JQPositionTest comment: ''!
 !JQPositionTest categoriesForClass!JQuery-Tests-UI-Unit! !
 !JQPositionTest methodsFor!

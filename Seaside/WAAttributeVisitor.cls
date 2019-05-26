@@ -5,7 +5,7 @@ WAVisitor subclass: #WAAttributeVisitor
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAAttributeVisitor guid: (GUID fromString: '{435c7bb5-6fae-4a90-8046-3bb033c9192a}')!
+WAAttributeVisitor guid: (GUID fromString: '{31c7ef20-0fd7-4e2a-a5f2-fa7dedec7e61}')!
 WAAttributeVisitor comment: ''!
 !WAAttributeVisitor categoriesForClass!Seaside-Core-Configuration! !
 !WAAttributeVisitor methodsFor!

@@ -5,7 +5,7 @@ WAResponseTest subclass: #WABufferedResponseTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WABufferedResponseTest guid: (GUID fromString: '{7f6add1d-465b-4160-8531-f0b133fba509}')!
+WABufferedResponseTest guid: (GUID fromString: '{bc3b9ee0-ff6f-4344-be51-4f3090c6f34c}')!
 WABufferedResponseTest comment: ''!
 !WABufferedResponseTest categoriesForClass!Seaside-Tests-Core-HTTP! !
 !WABufferedResponseTest methodsFor!

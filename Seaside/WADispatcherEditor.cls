@@ -5,6 +5,6 @@ WAHandlerEditor subclass: #WADispatcherEditor
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WADispatcherEditor guid: (GUID fromString: '{48f78cf5-8ff6-4023-867a-ed9b5d3b030c}')!
+WADispatcherEditor guid: (GUID fromString: '{a6b9904a-77b1-4bdb-8f40-8dcab5021085}')!
 WADispatcherEditor comment: ''!
 !WADispatcherEditor categoriesForClass!Seaside-Tools-Web! !

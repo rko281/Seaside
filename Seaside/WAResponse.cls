@@ -5,7 +5,7 @@ WAObject subclass: #WAResponse
 	classVariableNames: 'StatusMessages'
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAResponse guid: (GUID fromString: '{4d1c263e-5379-48b7-bbd3-ad28de01109f}')!
+WAResponse guid: (GUID fromString: '{0ca293fc-0a13-4e20-a169-3eaa2f8e9995}')!
 WAResponse comment: 'A WAResponse is an abstract HTTP response objects. It is independent of the used server adapter.Instance Variables	status:		<Integer> The HTTP status code.	message:	<String> The HTTP status message.	headers:	<WAHeaderFields> A dictionary with the header fields.	cookies:	<OrderedCollection> A collection of cookies.'!
 !WAResponse categoriesForClass!Seaside-Core-HTTP! !
 !WAResponse methodsFor!
@@ -92,7 +92,7 @@ isCommitted	"Answer a boolean indicating if the response header has been commit
 
 isStreamingResponse	"Return true if the receiver supports partial stream responses."	^ false!
 
-location: aUrlOrString 	self 		headerAt: 'Location'		put: aUrlOrString greaseString!
+location: aUrlOrString 	self 		headerAt: 'Location'		put: aUrlOrString!
 
 message	"Answer the message associated with this response."	^ message!
 

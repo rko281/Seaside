@@ -5,7 +5,7 @@ WARequestHandlerTest subclass: #WADispatcherTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WADispatcherTest guid: (GUID fromString: '{7bf030d9-7945-4c06-a8f3-2dffb178b159}')!
+WADispatcherTest guid: (GUID fromString: '{07b12c71-4659-4e35-ac38-f1859829aa98}')!
 WADispatcherTest comment: ''!
 !WADispatcherTest categoriesForClass!Seaside-Tests-Core-RequestHandling! !
 !WADispatcherTest methodsFor!

@@ -5,7 +5,7 @@ WALabelledFormDialog subclass: #WAViewer
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAViewer guid: (GUID fromString: '{838559e7-d99b-40c5-9fa6-988a23267973}')!
+WAViewer guid: (GUID fromString: '{6eab7e40-2557-4be2-bb38-6fa5cbeb92cb}')!
 WAViewer comment: ''!
 !WAViewer categoriesForClass!Seaside-Development-Core! !
 !WAViewer methodsFor!

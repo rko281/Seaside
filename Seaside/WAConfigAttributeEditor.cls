@@ -5,7 +5,7 @@ WAAttributeEditor subclass: #WAConfigAttributeEditor
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAConfigAttributeEditor guid: (GUID fromString: '{71793775-ac7c-4291-a629-7b03d4e05c3c}')!
+WAConfigAttributeEditor guid: (GUID fromString: '{8a8df463-138b-4b0b-8816-130dcb34e492}')!
 WAConfigAttributeEditor comment: ''!
 !WAConfigAttributeEditor categoriesForClass!Seaside-Tools-Web! !
 !WAConfigAttributeEditor methodsFor!

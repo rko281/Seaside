@@ -5,7 +5,7 @@ WAError subclass: #WAAuthConfigurationError
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAAuthConfigurationError guid: (GUID fromString: '{cb7e9fc2-47d9-427f-b078-d502fe9e5afa}')!
+WAAuthConfigurationError guid: (GUID fromString: '{2c1b5649-8db2-49e0-a9c3-7f8562aca2c6}')!
 WAAuthConfigurationError comment: 'A WAAuthConfigurationError is signaled when no WAAuthConfiguration was added to an application that is behind a WAAuthenticationFilter.'!
 !WAAuthConfigurationError categoriesForClass!Seaside-Core-Exceptions! !
 !WAAuthConfigurationError methodsFor!

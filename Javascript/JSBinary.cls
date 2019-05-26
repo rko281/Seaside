@@ -5,7 +5,7 @@ JSStatement subclass: #JSBinary
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSBinary guid: (GUID fromString: '{85b68308-bc87-428f-a6ba-4c40eec891c3}')!
+JSBinary guid: (GUID fromString: '{1993c261-4348-4ae8-8d1c-3e7e54da679e}')!
 JSBinary comment: 'I join the decorated object with a binary operator.'!
 !JSBinary categoriesForClass!Javascript-Core-Decorations! !
 !JSBinary methodsFor!

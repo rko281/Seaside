@@ -5,7 +5,7 @@ WAObject subclass: #WAFile
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAFile guid: (GUID fromString: '{dd50dc84-270b-4034-bb11-912b136f71c5}')!
+WAFile guid: (GUID fromString: '{b379245d-16df-4e30-9f96-91846238586b}')!
 WAFile comment: 'I represent a file that was uploaded by the user via #fileInput.Instance Variables	contents:		<ByteArray>	contentType:	<WAMimeType>	fileName:		<String>contents	- the contents of the file, binarycontentType	- the content type of the file	fileName	- The name of the file the user agent uploaded. This is locale name on the machine of the client. The instance variable might include the full path on the file system, the accessor will never return the path.'!
 !WAFile categoriesForClass!Seaside-Core-HTTP! !
 !WAFile methodsFor!

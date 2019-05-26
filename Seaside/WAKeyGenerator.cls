@@ -5,7 +5,7 @@ WAObject subclass: #WAKeyGenerator
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: 'current'!
-WAKeyGenerator guid: (GUID fromString: '{d99ffe34-7316-469f-a000-3af54674a0ca}')!
+WAKeyGenerator guid: (GUID fromString: '{662bbc11-8d05-407e-8ca2-8ecbc0ac0a0c}')!
 WAKeyGenerator comment: ''!
 !WAKeyGenerator categoriesForClass!Seaside-Core-Utilities! !
 !WAKeyGenerator methodsFor!

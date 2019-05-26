@@ -5,7 +5,7 @@ WARestfulHandler subclass: #WAStreamTypeHandler
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAStreamTypeHandler guid: (GUID fromString: '{63f00ab7-0353-4bc0-a998-f19cbff0aa6d}')!
+WAStreamTypeHandler guid: (GUID fromString: '{6226bcaf-5ffc-4651-8bf6-3edfb9f4d67c}')!
 WAStreamTypeHandler comment: ''!
 !WAStreamTypeHandler categoriesForClass!Seaside-Tests-REST-Core! !
 !WAStreamTypeHandler methodsFor!

@@ -5,7 +5,7 @@ WACanvasBrushTest subclass: #WAFormTagTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAFormTagTest guid: (GUID fromString: '{4fbfc296-69c9-427e-9652-06ff706657b6}')!
+WAFormTagTest guid: (GUID fromString: '{9d6fb06f-10d7-47ae-8470-7525dec2b963}')!
 WAFormTagTest comment: ''!
 !WAFormTagTest categoriesForClass!Seaside-Tests-Canvas! !
 !WAFormTagTest methodsFor!

@@ -5,7 +5,7 @@ JQWidget subclass: #JQSelectable
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQSelectable guid: (GUID fromString: '{dea21151-693e-48fd-aca1-17c894a7d38d}')!
+JQSelectable guid: (GUID fromString: '{7315c072-2f3d-4659-9627-ed9d98a7705c}')!
 JQSelectable comment: 'Creates new selectable on the nodeset supplied by the query.'!
 !JQSelectable categoriesForClass!JQuery-UI-Interaction! !
 !JQSelectable methodsFor!

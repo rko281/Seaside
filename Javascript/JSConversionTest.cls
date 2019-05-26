@@ -5,18 +5,18 @@ JSObjectTest subclass: #JSConversionTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSConversionTest guid: (GUID fromString: '{2796938d-5ed0-4121-a9a9-b691d5133655}')!
+JSConversionTest guid: (GUID fromString: '{5a772019-8768-4ecb-be62-5206c995b94b}')!
 JSConversionTest comment: ''!
 !JSConversionTest categoriesForClass!Javascript-Tests-Core! !
 !JSConversionTest methodsFor!
 
-testArray	self assert: #(1 2 3) equals: '[1,2,3]'!
+testArray	self assert: #(1 2 3) equals: '[1,2,3]'.	self assert: (GRSmallOrderedSet withAll: #(1 2 3)) equals: '[1,2,3]'!
 
 testCharacter	self assert: (Character codePoint: 0) equals: '"\0"'.	self assert: Character lf equals: '"\n"'.	self assert: $a equals: '"a"'!
 
 testDateAndTime	self assert: (DateAndTime year: 1980 month: 6 day: 11 hour: 12 minute: 45 second: 23) equals: 'new Date(1980,5,11,12,45,23)'.	self assert: (Date year: 1980 month: 6 day: 11) equals: 'new Date(1980,5,11)'!
 
-testDictionary	self 		assert: (GRSmallDictionary new				at: 'foo'					put: 1;				at: 'bar'					put: 2;				at: 'zork'					put: 3;				yourself)		equals: '{"foo":1,"bar":2,"zork":3}'.	self 		assert: (GRSmallDictionary new				at: ''					put: 'empty';				yourself)		equals: '{"":"empty"}'.	self 		assert: (Dictionary new				at: 1					put: 'not-a-string';				yourself)		equals: '{"1":"not-a-string"}'.	self 		assert: (Dictionary new				at: '1abc'					put: 'not-an-id';				yourself)		equals: '{"1abc":"not-an-id"}'.	self 		assert: (Dictionary new				at: 'abc1'					put: 'totally sexy';				yourself)		equals: '{"abc1":"totally sexy"}'!
+testDictionary	self 		assert: (GRSmallDictionary2 new				at: 'foo'					put: 1;				at: 'bar'					put: 2;				at: 'zork'					put: 3;				yourself)		equals: '{"foo":1,"bar":2,"zork":3}'.	self 		assert: (GRSmallDictionary2 new				at: ''					put: 'empty';				yourself)		equals: '{"":"empty"}'.	self 		assert: (Dictionary new				at: 1					put: 'not-a-string';				yourself)		equals: '{"1":"not-a-string"}'.	self 		assert: (Dictionary new				at: '1abc'					put: 'not-an-id';				yourself)		equals: '{"1abc":"not-an-id"}'.	self 		assert: (Dictionary new				at: 'abc1'					put: 'totally sexy';				yourself)		equals: '{"abc1":"totally sexy"}'!
 
 testDuration	self assert: (Duration seconds: 1) equals: '1000'.	self assert: (Duration milliseconds: 1200) equals: '1200'!
 

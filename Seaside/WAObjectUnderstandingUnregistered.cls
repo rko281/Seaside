@@ -5,7 +5,7 @@ WAObject subclass: #WAObjectUnderstandingUnregistered
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAObjectUnderstandingUnregistered guid: (GUID fromString: '{3807daed-6e8d-4bb6-81b9-cec218fd0d56}')!
+WAObjectUnderstandingUnregistered guid: (GUID fromString: '{e24236aa-e683-4122-809d-617ed60737fb}')!
 WAObjectUnderstandingUnregistered comment: ''!
 !WAObjectUnderstandingUnregistered categoriesForClass!Seaside-Tests-Core-Cache! !
 !WAObjectUnderstandingUnregistered methodsFor!

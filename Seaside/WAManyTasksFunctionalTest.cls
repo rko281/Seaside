@@ -5,7 +5,7 @@ WAFunctionalTest subclass: #WAManyTasksFunctionalTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAManyTasksFunctionalTest guid: (GUID fromString: '{57edf4e0-203b-49a5-acfa-e878058a4dc0}')!
+WAManyTasksFunctionalTest guid: (GUID fromString: '{57b617cd-2b71-4a0a-b2ce-ae60dd7609b1}')!
 WAManyTasksFunctionalTest comment: ''!
 !WAManyTasksFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
 !WAManyTasksFunctionalTest methodsFor!

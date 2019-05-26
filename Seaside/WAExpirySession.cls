@@ -5,7 +5,7 @@ WASession subclass: #WAExpirySession
 	classVariableNames: 'Created Unregistered'
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAExpirySession guid: (GUID fromString: '{53c26f52-fa11-4b0e-9a15-bdc11dee5582}')!
+WAExpirySession guid: (GUID fromString: '{d741fc13-2b3e-4375-ac8f-cde8a2bf1f0a}')!
 WAExpirySession comment: ''!
 !WAExpirySession categoriesForClass!Seaside-Tests-Functional! !
 !WAExpirySession methodsFor!

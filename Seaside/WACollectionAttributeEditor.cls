@@ -5,7 +5,7 @@ WAComponent subclass: #WACollectionAttributeEditor
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WACollectionAttributeEditor guid: (GUID fromString: '{4f48bfe2-60c9-4931-8970-415fe3d913bf}')!
+WACollectionAttributeEditor guid: (GUID fromString: '{b1f29327-9fa7-490e-9aef-4f388cff4c65}')!
 WACollectionAttributeEditor comment: ''!
 !WACollectionAttributeEditor categoriesForClass!Seaside-Tools-Web! !
 !WACollectionAttributeEditor methodsFor!

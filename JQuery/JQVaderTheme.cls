@@ -5,7 +5,7 @@ JQBaseTheme subclass: #JQVaderTheme
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQVaderTheme guid: (GUID fromString: '{9bde038b-b324-4814-b8cc-235e0c1daf09}')!
+JQVaderTheme guid: (GUID fromString: '{575228f1-ec60-45b7-a897-214d2097f7a0}')!
 JQVaderTheme comment: ''!
 !JQVaderTheme categoriesForClass!JQuery-UI-Libraries! !
 !JQVaderTheme methodsFor!

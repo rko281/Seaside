@@ -5,14 +5,14 @@ WAFileLibrary subclass: #JQBaseTheme
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQBaseTheme guid: (GUID fromString: '{bb65431c-aa2b-476d-a8b4-fedbe0b14348}')!
+JQBaseTheme guid: (GUID fromString: '{28a57e9b-8294-4114-89a0-bd3e723c363f}')!
 JQBaseTheme comment: ''!
 !JQBaseTheme categoriesForClass!JQuery-UI-Libraries! !
 !JQBaseTheme methodsFor!
 
 themeName	^ 'base'!
 
-updateRoot: anHtmlRoot	anHtmlRoot stylesheet		url: 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/themes/' , self themeName , '/jquery-ui.css'! !
+updateRoot: anHtmlRoot	anHtmlRoot stylesheet		url: 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/' , self themeName , '/jquery-ui.css'! !
 !JQBaseTheme categoriesFor: #themeName!accessing!public! !
 !JQBaseTheme categoriesFor: #updateRoot:!public!updating! !
 

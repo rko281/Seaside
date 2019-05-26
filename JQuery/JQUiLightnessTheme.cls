@@ -5,7 +5,7 @@ JQBaseTheme subclass: #JQUiLightnessTheme
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQUiLightnessTheme guid: (GUID fromString: '{3a01eb86-222e-4c95-b49c-6e4166fab9cc}')!
+JQUiLightnessTheme guid: (GUID fromString: '{0ed9d3f5-a595-4d8b-b2d7-c7b0484b286b}')!
 JQUiLightnessTheme comment: ''!
 !JQUiLightnessTheme categoriesForClass!JQuery-UI-Libraries! !
 !JQUiLightnessTheme methodsFor!

@@ -5,7 +5,7 @@ WAExampleComponent subclass: #WATodo
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WATodo guid: (GUID fromString: '{18cb728f-934e-4f61-b7a0-1cf8c1c17cb1}')!
+WATodo guid: (GUID fromString: '{8e0322d3-833a-4e2a-9ae1-426c5b5c1913}')!
 WATodo comment: ''!
 !WATodo categoriesForClass!Seaside-Examples-Misc! !
 !WATodo methodsFor!

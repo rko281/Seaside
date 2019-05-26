@@ -5,7 +5,7 @@ JQBaseTheme subclass: #JQRedmondTheme
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQRedmondTheme guid: (GUID fromString: '{b9fca9d3-8347-4bb1-9ac6-23272c59af32}')!
+JQRedmondTheme guid: (GUID fromString: '{88905610-5f90-4464-a817-d78f0d22c791}')!
 JQRedmondTheme comment: ''!
 !JQRedmondTheme categoriesForClass!JQuery-UI-Libraries! !
 !JQRedmondTheme methodsFor!

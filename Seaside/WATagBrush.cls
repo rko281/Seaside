@@ -5,9 +5,9 @@ WABrush subclass: #WATagBrush
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WATagBrush guid: (GUID fromString: '{8e673816-77b9-4e7e-9f87-8f0917d901ae}')!
+WATagBrush guid: (GUID fromString: '{7ef52439-50d7-47ce-b08a-a9235e4a87de}')!
 WATagBrush comment: 'This is the superclass for all XML element classes. Its main additions are- element name (#tag)- attributes (instance of WAHtmlAttributes)- common events (onXXX), this is a hack and would better be solved with traits'!
-!WATagBrush categoriesForClass!Seaside-Canvas! !
+!WATagBrush categoriesForClass!Seaside-Canvas-Base! !
 !WATagBrush methodsFor!
 
 accessKey: aString	"Set a keyboard shortcut to access an element. An access key is a single character from the document character set.	Pressing an access key assigned to an element gives focus to the element. The action that occurs when an element receives focus depends on the element. For example, when a user activates a link defined by the A element, the user agent generally follows the link. When a user activates a radio button, the user agent changes the value of the radio button. When the user activates a text field, it allows input, etc.The following elements support the accesskey attribute: A, AREA, BUTTON, INPUT, LABEL, and LEGEND, and TEXTAREA.	The invocation of access keys depends on the underlying system. For instance, on machines running MS Windows, one generally has to press the 'alt' key in addition to the access key. On Apple systems, one generally has to press the 'cmd' key in addition to the access key."	self attributes at: 'accesskey' put: aString!
@@ -62,19 +62,51 @@ language: aString	"Set the language code."	self attributes		at: 'lang' put: 
 
 onAbort: anObject	"The abort event occurs when page loading is stopped before an image has been allowed to completely load."	self document scriptGenerator		event: 'abort'		do: anObject		on: self!
 
+onAuxiliaryClick: anObject	"The auxclick event type MUST be dispatched on the topmost	event target indicated by the pointer, when the user presses down and releases the non-primary pointer button, or otherwise activates the pointer in a manner that simulates such an action. The actuation method of the mouse button depends upon the pointer device and the environment configuration, e.g., it MAY depend on the screen location or the delay between the press and release of the pointing device button."	self document scriptGenerator		event: 'auxclick'		do: anObject		on: self!
+
 onBlur: anObject	"The onblurs event occurs when the element that is in focus, loses that focus."	self document scriptGenerator		event: 'blur'		do: anObject		on: self!
+
+onCancel: anObject	"Fired at dialog elements when they are canceled by the user (e.g. by pressing the Escape key)"	self document scriptGenerator		event: 'cancel'		do: anObject		on: self!
 
 onChange: anObject	"The onchange event occurs when a select input element has a selection made or when a text input element has a change in the text."	self document scriptGenerator		event: 'change'		do: anObject		on: self!
 
 onClick: anObject	"The onclick event occurs when the pointing device button is clicked over an element."	self document scriptGenerator		event: 'click'		do: anObject		on: self!
 
+onClose: anObject	"Fired at dialog elements when they are closed, and at WebSocket elements when the connection is terminated."	self document scriptGenerator		event: 'close'		do: anObject		on: self!
+
+onContextMenu: anObject	"Fired at elements when the user requests their context menu."	self document scriptGenerator		event: 'contextmenu'		do: anObject		on: self!
+
+onCopy: anObject	"Fired at elements when the user copies data to the clipboard."	self document scriptGenerator		event: 'copy'		do: anObject		on: self!
+
+onCueChange: anObject	"One or more cues in the track have become active or stopped being active."	self document scriptGenerator		event: 'cuechange'		do: anObject		on: self!
+
+onCut: anObject	"Fired at elements when the user copies the selected data on the clipboard and removes the selection from the document."	self document scriptGenerator		event: 'cut'		do: anObject		on: self!
+
 onDoubleClick: anObject	"The ondblclick event occurs when the pointing device button is double clicked over an element."	self document scriptGenerator		event: 'dblclick'		do: anObject		on: self!
 
-onError: anObject	"The error event occurs when an image does not load properly or when an error occurs during script execution."	self document scriptGenerator		event: 'error'		do: anObject		on: self!
+onDrag: anObject	self document scriptGenerator		event: 'drag'		do: anObject		on: self!
+
+onDragEnd: anObject	self document scriptGenerator		event: 'dragend'		do: anObject		on: self!
+
+onDragEnter: anObject	self document scriptGenerator		event: 'dragenter'		do: anObject		on: self!
+
+onDragExit: anObject	self document scriptGenerator		event: 'dragexit'		do: anObject		on: self!
+
+onDragLeave: anObject	self document scriptGenerator		event: 'dragleave'		do: anObject		on: self!
+
+onDragOver: anObject	self document scriptGenerator		event: 'dragover'		do: anObject		on: self!
+
+onDragStart: anObject	self document scriptGenerator		event: 'dragstart'		do: anObject		on: self!
+
+onDrop: anObject	self document scriptGenerator		event: 'drop'		do: anObject		on: self!
+
+onError: anObject	"Fired when unexpected errors occur (e.g. networking errors, script errors, decoding errors)."	self document scriptGenerator		event: 'error'		do: anObject		on: self!
 
 onFocus: anObject	"The onfocus event occurs when an element receives focus either by the pointing device or by tabbing navigation."	self document scriptGenerator		event: 'focus'		do: anObject		on: self!
 
-onInput: anObject	"Any element that accepts an onchange attribute to handle change events shall also accept an oninput  attribute to handle input events, except the output element (for which it would make no sense)."	self document scriptGenerator		event: 'input'		do: anObject		on: self!
+onInput: anObject	"Fired at controls when the user changes the value (see also the change event)."	self document scriptGenerator		event: 'input'		do: anObject		on: self!
+
+onInvalid: anObject	"Fired at controls during form validation if they do not satisfy their constraints."	self document scriptGenerator		event: 'invalid'		do: anObject		on: self!
 
 onKeyDown: anObject	"The onkeydown event occurs when a key is pressed down over an element."	self document scriptGenerator		event: 'keydown'		do: anObject		on: self!
 
@@ -86,6 +118,10 @@ onLoad: anObject	"The onload event occurs when the user agent finishes loading 
 
 onMouseDown: anObject	"The onmousedown event occurs when the pointing device button is pressed over an element."	self document scriptGenerator		event: 'mousedown'		do: anObject		on: self!
 
+onMouseEnter: anObject	"A user agent MUST dispatch this event when a pointing device is moved onto the boundaries of an element or one of its descendent elements. This event type is similar to mouseover, but	differs in that it does not bubble, and MUST NOT be dispatched when the pointer device moves from an element onto the boundaries of one of its descendent elements."	self document scriptGenerator		event: 'mouseenter'		do: anObject		on: self!
+
+onMouseLeave: anObject	"A user agent MUST dispatch this event when a pointing device is moved off of the boundaries of an element and all of its descendent elements. This event type is similar to mouseout,	but differs in that does not bubble, and that it MUST NOT be dispatched until the pointing device has left the boundaries of the element and the boundaries of all of its children."	self document scriptGenerator		event: 'mouseleave'		do: anObject		on: self!
+
 onMouseMove: anObject	"The onmousemove event occurs when the pointing device is moved while it is over an element."	self document scriptGenerator		event: 'mousemove'		do: anObject		on: self!
 
 onMouseOut: anObject	"The onmouseout event occurs when the pointing device is moved away from an element."	self document scriptGenerator		event: 'mouseout'		do: anObject		on: self!
@@ -94,17 +130,25 @@ onMouseOver: anObject	"The onmouseover event occurs when the pointing device is
 
 onMouseUp: anObject	"The onmouseup event occurs when the pointing device button is released over an element."	self document scriptGenerator		event: 'mouseup'		do: anObject		on: self!
 
+onPaste: anObject	self document scriptGenerator		event: 'paste'		do: anObject		on: self!
+
 onReset: anObject	"The onreset event occurs when a form is reset."	self document scriptGenerator		event: 'reset'		do: anObject		on: self!
 
-onResize: anObject	"The resize event occurs when a document view is resized. "	self document scriptGenerator		event: 'resize'		do: anObject		on: self!
+onResize: anObject	"The resize event occurs when a document view is resized."	self document scriptGenerator		event: 'resize'		do: anObject		on: self!
 
-onScroll: anObject	"The scroll event occurs when a document view is scrolled. "	self document scriptGenerator		event: 'scroll'		do: anObject		on: self!
+onScroll: anObject	"The scroll event occurs when a document view is scrolled."	self document scriptGenerator		event: 'scroll'		do: anObject		on: self!
+
+onSecurityPolicyViolation: anObject	"Fired at elements when a Content Security Policy violation is generated."	self document scriptGenerator		event: 'securitypolicyviolation'		do: anObject		on: self!
 
 onSelect: anObject	"The onselect event occurs when a user selects some text in a text field."	self document scriptGenerator		event: 'select'		do: anObject		on: self!
 
 onSubmit: anObject	"The onsubmit event occurs when a form is submitted."	self document scriptGenerator		event: 'submit'		do: anObject		on: self!
 
+onToggle: anObject	"Fired at details elements when they open or close."	self document scriptGenerator		event: 'toggle'		do: anObject		on: self!
+
 onUnload: anObject	"The onunload event occurs when the user agent removes a document from a window."	self document scriptGenerator		event: 'unload'		do: anObject		on: self!
+
+onWheel: anObject	"A user agent MUST dispatch this event when a mouse wheel has been rotated around any axis, or when an equivalent input device (such as a mouse-ball, certain tablets or touchpads, etc.) has emulated such an action. Depending on the platform and input device, diagonal wheel deltas MAY be delivered either as a single wheel event with multiple non-zero axes or as separate wheel events for each non-zero axis. The typical default action of the wheel event type is	to scroll (or in some cases, zoom) the document by the indicated amount. If this event is canceled, the implementation MUST NOT scroll or zoom the document (or perform whatever other implementation-specific default action is associated with this event type)."	self document scriptGenerator		event: 'wheel'		do: anObject		on: self!
 
 openTag	"Open the receiving and all associated attributes onto the document."	self document openTag: self tag attributes: attributes closed: self isClosed!
 
@@ -149,28 +193,50 @@ withLineBreaks: aString	"Renders text preserving line breaks."	self with: [ c
 !WATagBrush categoriesFor: #isDisabled!attributes!public! !
 !WATagBrush categoriesFor: #language:!attributes/language!public! !
 !WATagBrush categoriesFor: #onAbort:!attributes/events!public! !
+!WATagBrush categoriesFor: #onAuxiliaryClick:!attributes/events!public! !
 !WATagBrush categoriesFor: #onBlur:!attributes/events!public! !
+!WATagBrush categoriesFor: #onCancel:!attributes/events!public! !
 !WATagBrush categoriesFor: #onChange:!attributes/events!public! !
 !WATagBrush categoriesFor: #onClick:!attributes/events!public! !
+!WATagBrush categoriesFor: #onClose:!attributes/events!public! !
+!WATagBrush categoriesFor: #onContextMenu:!attributes/events!public! !
+!WATagBrush categoriesFor: #onCopy:!attributes/events!public! !
+!WATagBrush categoriesFor: #onCueChange:!attributes/events!public! !
+!WATagBrush categoriesFor: #onCut:!attributes/events!public! !
 !WATagBrush categoriesFor: #onDoubleClick:!attributes/events!public! !
-!WATagBrush categoriesFor: #onError:!convenience!public! !
+!WATagBrush categoriesFor: #onDrag:!attributes/events!public! !
+!WATagBrush categoriesFor: #onDragEnd:!attributes/events!public! !
+!WATagBrush categoriesFor: #onDragEnter:!attributes/events!public! !
+!WATagBrush categoriesFor: #onDragExit:!attributes/events!public! !
+!WATagBrush categoriesFor: #onDragLeave:!attributes/events!public! !
+!WATagBrush categoriesFor: #onDragOver:!attributes/events!public! !
+!WATagBrush categoriesFor: #onDragStart:!attributes/events!public! !
+!WATagBrush categoriesFor: #onDrop:!attributes/events!public! !
+!WATagBrush categoriesFor: #onError:!attributes/events!public! !
 !WATagBrush categoriesFor: #onFocus:!attributes/events!public! !
-!WATagBrush categoriesFor: #onInput:!convenience!public! !
+!WATagBrush categoriesFor: #onInput:!attributes/events!public! !
+!WATagBrush categoriesFor: #onInvalid:!attributes/events!public! !
 !WATagBrush categoriesFor: #onKeyDown:!attributes/events!public! !
 !WATagBrush categoriesFor: #onKeyPress:!attributes/events!public! !
 !WATagBrush categoriesFor: #onKeyUp:!attributes/events!public! !
 !WATagBrush categoriesFor: #onLoad:!attributes/events!public! !
 !WATagBrush categoriesFor: #onMouseDown:!attributes/events!public! !
+!WATagBrush categoriesFor: #onMouseEnter:!attributes/events!public! !
+!WATagBrush categoriesFor: #onMouseLeave:!attributes/events!public! !
 !WATagBrush categoriesFor: #onMouseMove:!attributes/events!public! !
 !WATagBrush categoriesFor: #onMouseOut:!attributes/events!public! !
 !WATagBrush categoriesFor: #onMouseOver:!attributes/events!public! !
 !WATagBrush categoriesFor: #onMouseUp:!attributes/events!public! !
+!WATagBrush categoriesFor: #onPaste:!attributes/events!public! !
 !WATagBrush categoriesFor: #onReset:!attributes/events!public! !
-!WATagBrush categoriesFor: #onResize:!convenience!public! !
-!WATagBrush categoriesFor: #onScroll:!convenience!public! !
+!WATagBrush categoriesFor: #onResize:!attributes/events!public! !
+!WATagBrush categoriesFor: #onScroll:!attributes/events!public! !
+!WATagBrush categoriesFor: #onSecurityPolicyViolation:!attributes/events!public! !
 !WATagBrush categoriesFor: #onSelect:!attributes/events!public! !
 !WATagBrush categoriesFor: #onSubmit:!attributes/events!public! !
+!WATagBrush categoriesFor: #onToggle:!attributes/events!public! !
 !WATagBrush categoriesFor: #onUnload:!attributes/events!public! !
+!WATagBrush categoriesFor: #onWheel:!attributes/events!public! !
 !WATagBrush categoriesFor: #openTag!private! !
 !WATagBrush categoriesFor: #required!attributes!public! !
 !WATagBrush categoriesFor: #storeCallback:!private! !

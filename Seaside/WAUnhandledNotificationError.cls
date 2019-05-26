@@ -5,7 +5,7 @@ WAError subclass: #WAUnhandledNotificationError
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAUnhandledNotificationError guid: (GUID fromString: '{4fb40a05-032d-4f5d-bf5a-c058ed01dd4b}')!
+WAUnhandledNotificationError guid: (GUID fromString: '{aa0b61cf-e47a-437c-abdf-97467033abe5}')!
 WAUnhandledNotificationError comment: 'Seaside has several Notifications that signal the desire to end the current attempt to process a request. These Notification must be handled as they are not resumable or continuable. If those Notifications are not handled, their default actions are to signal this error.'!
 !WAUnhandledNotificationError categoriesForClass!Seaside-Core-Exceptions! !
 !WAUnhandledNotificationError methodsFor!

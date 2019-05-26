@@ -5,7 +5,7 @@ WAActionPhaseContinuation subclass: #WAInitialRenderLoopContinuation
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAInitialRenderLoopContinuation guid: (GUID fromString: '{ac7f7ab4-88f7-4693-88cd-7a2ecc755954}')!
+WAInitialRenderLoopContinuation guid: (GUID fromString: '{f784525f-300d-4396-8ae7-6e9df6ddc9e6}')!
 WAInitialRenderLoopContinuation comment: 'I''m the initial continuation of a render loop. I just render the initial page. Subclasses may want to override #shouldRedirect and answer true so that a redirect happens before displaying the first page.'!
 !WAInitialRenderLoopContinuation categoriesForClass!Seaside-RenderLoop! !
 !WAInitialRenderLoopContinuation methodsFor!

@@ -5,7 +5,7 @@ WAContextTest subclass: #JSObjectTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSObjectTest guid: (GUID fromString: '{7781d4d4-eff2-41c7-b10e-434513e84e47}')!
+JSObjectTest guid: (GUID fromString: '{7dfc97d6-a22d-403b-a772-3af0bc52aa6b}')!
 JSObjectTest comment: ''!
 !JSObjectTest categoriesForClass!Javascript-Tests-Core! !
 !JSObjectTest methodsFor!
@@ -13,6 +13,8 @@ JSObjectTest comment: ''!
 assert: anObject equals: aString	self		assert: anObject asJavascript = aString		description: anObject asJavascript printString , ' expected to be ' , aString printString		resumable: true!
 
 assert: aBlock renders: aString 	| html |	html := WAHtmlCanvas builder		documentClass: WAHtmlDocument;		rootClass: WAHtmlRoot;		fullDocument: false;		render: aBlock.	self 		assert: html = aString		description: 'Got ' , html printString , '; but expected ' , aString printString!
+
+createHandlers	^ Array with: WARequestHandler new!
 
 javascript	^ JSScript context: self renderContext!
 
@@ -23,6 +25,7 @@ renderContext	^ WARenderContext new		actionUrl: (WAUrl absolute: 'http://www.s
 stream	^ JSStream new! !
 !JSObjectTest categoriesFor: #assert:equals:!asserting!public! !
 !JSObjectTest categoriesFor: #assert:renders:!public!utilities! !
+!JSObjectTest categoriesFor: #createHandlers!configuration!public! !
 !JSObjectTest categoriesFor: #javascript!accessing/javascript!public! !
 !JSObjectTest categoriesFor: #mock!accessing/javascript!public! !
 !JSObjectTest categoriesFor: #renderContext!accessing!public! !

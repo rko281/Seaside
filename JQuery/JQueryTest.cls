@@ -5,7 +5,7 @@ JSObjectTest subclass: #JQueryTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQueryTest guid: (GUID fromString: '{7b217479-83f6-4a48-b749-4e76cde134f8}')!
+JQueryTest guid: (GUID fromString: '{d892a9e6-fece-448a-b986-9824e304ee52}')!
 JQueryTest comment: ''!
 !JQueryTest categoriesForClass!JQuery-Tests-Core-Unit! !
 !JQueryTest methodsFor!

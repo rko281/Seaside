@@ -5,6 +5,6 @@ WAError subclass: #WAInvalidHeaderValueError
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAInvalidHeaderValueError guid: (GUID fromString: '{bac6ed58-fd77-4e38-8136-aa5d314aa266}')!
+WAInvalidHeaderValueError guid: (GUID fromString: '{a53e65cc-f03b-4066-91b2-f4b840def176}')!
 WAInvalidHeaderValueError comment: ''!
 !WAInvalidHeaderValueError categoriesForClass!Seaside-Core-HTTP! !

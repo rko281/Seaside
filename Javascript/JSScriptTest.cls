@@ -5,7 +5,7 @@ JSObjectTest subclass: #JSScriptTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSScriptTest guid: (GUID fromString: '{ff459efb-8296-47ce-aab7-d5e49f45d383}')!
+JSScriptTest guid: (GUID fromString: '{fdfc4c82-a1ff-48d1-a7ed-61c01c2205de}')!
 JSScriptTest comment: ''!
 !JSScriptTest categoriesForClass!Javascript-Tests-Core! !
 !JSScriptTest methodsFor!

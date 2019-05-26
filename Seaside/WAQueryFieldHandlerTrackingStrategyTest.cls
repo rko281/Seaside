@@ -5,7 +5,7 @@ WAHandlerTrackingStrategyTest subclass: #WAQueryFieldHandlerTrackingStrategyTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAQueryFieldHandlerTrackingStrategyTest guid: (GUID fromString: '{5ddb79b4-fd3e-45de-b2cd-f2d7919630a3}')!
+WAQueryFieldHandlerTrackingStrategyTest guid: (GUID fromString: '{7869fe60-6b61-475d-98da-485790671da6}')!
 WAQueryFieldHandlerTrackingStrategyTest comment: ''!
 !WAQueryFieldHandlerTrackingStrategyTest categoriesForClass!Seaside-Tests-Core-RequestHandling! !
 !WAQueryFieldHandlerTrackingStrategyTest methodsFor!

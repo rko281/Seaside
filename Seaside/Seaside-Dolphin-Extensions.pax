@@ -19,9 +19,8 @@ package binaryGlobalNames: (Set new
 package globalAliases: (Set new
 	yourself).
 
-package setPrerequisites: (IdentitySet new
-	add: 'Seaside-Component';
-	yourself).
+package setPrerequisites: #(
+	'Seaside-Component').
 
 package!
 

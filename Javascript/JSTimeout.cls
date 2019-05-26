@@ -5,7 +5,7 @@ JSTimed subclass: #JSTimeout
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSTimeout guid: (GUID fromString: '{8f7e3ab6-9d2b-447c-b9f2-d0e206c71d0d}')!
+JSTimeout guid: (GUID fromString: '{83e97c7d-f59b-487a-b990-c80bd86c92b8}')!
 JSTimeout comment: 'I evaluate the decorated object after a timeout.'!
 !JSTimeout categoriesForClass!Javascript-Core-Decorations! !
 !JSTimeout methodsFor!

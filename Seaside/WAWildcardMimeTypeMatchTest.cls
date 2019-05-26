@@ -5,7 +5,7 @@ TestCase subclass: #WAWildcardMimeTypeMatchTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAWildcardMimeTypeMatchTest guid: (GUID fromString: '{8c5b0fde-4847-4f8d-b7ee-27598cbc435d}')!
+WAWildcardMimeTypeMatchTest guid: (GUID fromString: '{17bc0c9e-e5a7-4be7-b6b2-73bce40eabee}')!
 WAWildcardMimeTypeMatchTest comment: ''!
 !WAWildcardMimeTypeMatchTest categoriesForClass!Seaside-Tests-REST-Core! !
 !WAWildcardMimeTypeMatchTest methodsFor!

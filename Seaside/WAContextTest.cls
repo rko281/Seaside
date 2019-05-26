@@ -5,7 +5,7 @@ TestCase subclass: #WAContextTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAContextTest guid: (GUID fromString: '{45e9fa0a-7116-430a-ab02-849ce819ad50}')!
+WAContextTest guid: (GUID fromString: '{c4c321ec-d514-45a6-b897-741e5a2e4e02}')!
 WAContextTest comment: 'I am the base class for all tests that need a WARequestContext present.'!
 !WAContextTest categoriesForClass!Seaside-Tests-Core-RequestHandling! !
 !WAContextTest methodsFor!

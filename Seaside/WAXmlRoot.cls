@@ -5,7 +5,7 @@ WARoot subclass: #WAXmlRoot
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAXmlRoot guid: (GUID fromString: '{0dc5b7fe-3f22-4e32-b8dd-0542ab783fcc}')!
+WAXmlRoot guid: (GUID fromString: '{990444c3-b6ed-4f7e-b2ba-662ba5ab1213}')!
 WAXmlRoot comment: ''!
 !WAXmlRoot categoriesForClass!Seaside-Core-Document! !
 !WAXmlRoot methodsFor!

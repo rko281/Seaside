@@ -5,7 +5,7 @@ WAObject subclass: #WAMatch
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAMatch guid: (GUID fromString: '{8c9d8286-1cfd-41a8-8236-4423ff438d69}')!
+WAMatch guid: (GUID fromString: '{ae1375e3-28d6-4f0e-8f5d-c48bfb37f19d}')!
 WAMatch comment: ''!
 !WAMatch categoriesForClass!Seaside-REST-Core-Route! !
 !WAMatch class methodsFor!

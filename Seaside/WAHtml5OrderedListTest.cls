@@ -5,7 +5,7 @@ WAFunctionalTest subclass: #WAHtml5OrderedListTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAHtml5OrderedListTest guid: (GUID fromString: '{81865857-c76f-4050-ba19-5faccbc6bc98}')!
+WAHtml5OrderedListTest guid: (GUID fromString: '{254d53c6-5a48-4bb0-8cf3-14c5024edaa2}')!
 WAHtml5OrderedListTest comment: ''!
 !WAHtml5OrderedListTest categoriesForClass!Seaside-Tests-Functional! !
 !WAHtml5OrderedListTest methodsFor!

@@ -5,8 +5,8 @@ WASubmitButtonTag subclass: #WACancelButtonTag
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WACancelButtonTag guid: (GUID fromString: '{9274d9f1-4319-4cc0-81de-849c4569b02c}')!
-WACancelButtonTag comment: ''!
+WACancelButtonTag guid: (GUID fromString: '{5283ff55-4eb1-461a-b19a-afb73249b577}')!
+WACancelButtonTag comment: 'Creates a Cancel submit button.'!
 !WACancelButtonTag categoriesForClass!Seaside-Canvas-Tags! !
 !WACancelButtonTag methodsFor!
 

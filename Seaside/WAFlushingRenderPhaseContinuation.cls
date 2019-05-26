@@ -5,7 +5,7 @@ WARenderPhaseContinuation subclass: #WAFlushingRenderPhaseContinuation
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAFlushingRenderPhaseContinuation guid: (GUID fromString: '{269527e1-94dd-4b3f-a8c3-ea5ea58e9beb}')!
+WAFlushingRenderPhaseContinuation guid: (GUID fromString: '{a52bc1e3-38ec-446b-a71f-023744d7fdf3}')!
 WAFlushingRenderPhaseContinuation comment: ''!
 !WAFlushingRenderPhaseContinuation categoriesForClass!Seaside-RenderLoop! !
 !WAFlushingRenderPhaseContinuation methodsFor!

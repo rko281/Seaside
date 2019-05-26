@@ -5,7 +5,7 @@ JQUiFunctionalTest subclass: #JQAutocompleteFunctionalTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQAutocompleteFunctionalTest guid: (GUID fromString: '{4424e640-7ace-4bd9-aaf0-db33655f5bda}')!
+JQAutocompleteFunctionalTest guid: (GUID fromString: '{f6f2b8aa-f450-4a40-a67e-06a1ece75182}')!
 JQAutocompleteFunctionalTest comment: ''!
 !JQAutocompleteFunctionalTest categoriesForClass!JQuery-Tests-UI-Functional! !
 !JQAutocompleteFunctionalTest methodsFor!

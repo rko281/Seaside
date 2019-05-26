@@ -5,7 +5,7 @@ TestCase subclass: #WAResponseTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAResponseTest guid: (GUID fromString: '{225ae22d-1e11-4164-98a0-cf7fbd85b6b9}')!
+WAResponseTest guid: (GUID fromString: '{3be6c903-2cdd-43af-b649-18fd8bb58fc0}')!
 WAResponseTest comment: ''!
 !WAResponseTest categoriesForClass!Seaside-Tests-Core-HTTP! !
 !WAResponseTest methodsFor!
@@ -34,7 +34,7 @@ testContentType	self response contentType: WAMimeType textHtml.	self assert: s
 
 testDefaultCache	self deny: (self response headers includesKey: 'Pragma').	self deny: (self response headers includesKey: 'Expires').	self deny: (self response headers includesKey: 'Cache-Control')!
 
-testDeleteCookie	| cookie actual |	cookie := (WARequestCookie key: 'key' value: 'value')		pathUnencoded: '/highway/to/hell' codec: GRNullCodec new;		domain: 'hotel'		yourself.	self response deleteCookie: cookie.	self assert: self response cookies size = 1.	actual := self response cookies first.	self assert: cookie ~~ actual.	self assert: actual domain = 'hotel'.	self assert: actual path = '/highway/to/hell'!
+testDeleteCookie	| cookie actual |	cookie := (WARequestCookie key: 'key' value: 'value')		pathUnencoded: '/highway/to/hell' encoded: '/highway/to/hell';		domain: 'hotel'		yourself.	self response deleteCookie: cookie.	self assert: self response cookies size = 1.	actual := self response cookies first.	self assert: cookie ~~ actual.	self assert: actual domain = 'hotel'.	self assert: actual path = '/highway/to/hell'!
 
 testDocumentMimeType	self response document: 'alert("Seaside")' mimeType: 'text/javascript'.	self assertLines: #('HTTP/1.1 200 OK' 'Content-Type: text/javascript' 'Content-Length: 16' '' 'alert("Seaside")')!
 

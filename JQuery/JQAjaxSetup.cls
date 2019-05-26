@@ -5,7 +5,7 @@ JQPlugin subclass: #JQAjaxSetup
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQAjaxSetup guid: (GUID fromString: '{6d0fd11a-2bc9-4fd3-97b9-622a169417ec}')!
+JQAjaxSetup guid: (GUID fromString: '{1021bf26-cabd-4a86-a527-869fefcdcd89}')!
 JQAjaxSetup comment: 'Setup global settings for AJAX requests.'!
 !JQAjaxSetup categoriesForClass!JQuery-Core-Objects! !
 !JQAjaxSetup methodsFor!

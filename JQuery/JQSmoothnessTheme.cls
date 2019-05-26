@@ -5,7 +5,7 @@ JQBaseTheme subclass: #JQSmoothnessTheme
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQSmoothnessTheme guid: (GUID fromString: '{ae14bd66-47af-49b0-9a81-ec2be1215379}')!
+JQSmoothnessTheme guid: (GUID fromString: '{fd543481-22c2-42c8-98ca-dd52130bf4c2}')!
 JQSmoothnessTheme comment: ''!
 !JQSmoothnessTheme categoriesForClass!JQuery-UI-Libraries! !
 !JQSmoothnessTheme methodsFor!

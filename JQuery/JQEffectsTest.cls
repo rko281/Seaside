@@ -5,7 +5,7 @@ JQueryTest subclass: #JQEffectsTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQEffectsTest guid: (GUID fromString: '{3d62fd14-bd79-497d-9fc5-d57f8fe80d26}')!
+JQEffectsTest guid: (GUID fromString: '{50e1bb63-ad87-4c71-a36e-0857c527a51c}')!
 JQEffectsTest comment: ''!
 !JQEffectsTest categoriesForClass!JQuery-Tests-Core-Unit! !
 !JQEffectsTest methodsFor!

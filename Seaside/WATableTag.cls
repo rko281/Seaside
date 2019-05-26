@@ -5,7 +5,7 @@ WATagBrush subclass: #WATableTag
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WATableTag guid: (GUID fromString: '{8652083c-51eb-4d3c-9a59-82f3f0bbb5b0}')!
+WATableTag guid: (GUID fromString: '{4b6da81f-d213-42de-ae26-292fd7a06bb1}')!
 WATableTag comment: 'The <table> tag defines a table. Inside a <table> tag you can put table headers, table rows, table cells, and other tables.'!
 !WATableTag categoriesForClass!Seaside-Canvas-Tags! !
 !WATableTag methodsFor!

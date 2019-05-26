@@ -5,7 +5,7 @@ WARoot subclass: #WAHtmlRoot
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAHtmlRoot guid: (GUID fromString: '{244b46d5-a067-4b87-a70b-d6aedc784aec}')!
+WAHtmlRoot guid: (GUID fromString: '{470ef249-d241-4f09-b323-defb5bcb00a7}')!
 WAHtmlRoot comment: 'A WAHtmlRoot is the root element of an HTML Document (<html>).Instance Variables	bodyAttrs:		<WAHtmlAttributes>	context:			<WARenderContext>	docType:		<String>	headAttrs:		<WAHtmlAttributes>	headElements:	<OrderedCollection<WAHtmlElement>>	htmlAttrs:		<WAHtmlAttributes>	scripts:			<Set<String>>	styles:			<Set<String>>	title:			<String>bodyAttrs	- the attributes of the <body> elementcontext	- the context used to render the contents of the <body> elementdocType	- the document typeheadAttrs	- the attributes of the <head> elementheadElements	- the elements inside the <head> sectionhtmlAttrs	- the attributes of the <html> elementscripts	- contains the strings returned by WAPresenter >> #scriptstyles	- contains the strings returned by WAPresenter >> #styletitle	- the title of the HTML document, the contents of the <title> element'!
 !WAHtmlRoot categoriesForClass!Seaside-Core-Document! !
 !WAHtmlRoot methodsFor!
@@ -22,11 +22,11 @@ base	^ self add: (WABaseElement root: self)!
 
 beHtml5	self docType: '<!!DOCTYPE html>'!
 
-beXhtml10Strict	self meta contentScriptType: WAMimeType textJavascript.	self addXmlNamespaces.	self docType: '<!!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">'!
+beXhtml10Strict	self greaseDeprecatedApi: 'WACookie>>#beXhtml10Strict' details: 'Use #beHtml5 instead.'.	self meta contentScriptType: WAMimeType textJavascript.	self addXmlNamespaces.	self docType: '<!!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">'!
 
-beXhtml10Transitional	self meta contentScriptType: WAMimeType textJavascript.	self addXmlNamespaces.	self docType: '<!!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'!
+beXhtml10Transitional	self greaseDeprecatedApi: 'WACookie>>#beXhtml10Transitional' details: 'Use #beHtml5 instead.'.	self meta contentScriptType: WAMimeType textJavascript.	self addXmlNamespaces.	self docType: '<!!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'!
 
-beXhtml11	self meta contentScriptType: WAMimeType textJavascript.	self addXmlNamespaces.	self docType: '<!!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">'!
+beXhtml11	self greaseDeprecatedApi: 'WACookie>>#beXhtml11' details: 'Use #beHtml5 instead.'.	self meta contentScriptType: WAMimeType textJavascript.	self addXmlNamespaces.	self docType: '<!!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">'!
 
 bodyAttributes	^ bodyAttrs ifNil: [ bodyAttrs := WAHtmlAttributes new ]!
 
@@ -63,6 +63,10 @@ redirectTo: aLocationString delay: aNumber	self meta redirectAfter: aNumber to:
 revealedIf	^ WARevealedConditionalComment root: self!
 
 script	^ self add: (WAScriptElement root: self)!
+
+style	^ self add: (WAStyleElement root: self)!
+
+style: aString	self style with: aString!
 
 stylesheet	^ self link beStylesheet; beCss; yourself!
 
@@ -106,6 +110,8 @@ writeStylesOn: aDocument	styles ifNil: [ ^ self ].	styles do: [ :each |		aDoc
 !WAHtmlRoot categoriesFor: #redirectTo:delay:!convenience!public! !
 !WAHtmlRoot categoriesFor: #revealedIf!elements!public! !
 !WAHtmlRoot categoriesFor: #script!elements!public! !
+!WAHtmlRoot categoriesFor: #style!elements!public! !
+!WAHtmlRoot categoriesFor: #style:!convenience!public! !
 !WAHtmlRoot categoriesFor: #stylesheet!elements!public! !
 !WAHtmlRoot categoriesFor: #title!accessing/properties!public! !
 !WAHtmlRoot categoriesFor: #title:!accessing/properties!public! !

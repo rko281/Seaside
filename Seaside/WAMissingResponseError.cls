@@ -5,8 +5,8 @@ WAError subclass: #WAMissingResponseError
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAMissingResponseError guid: (GUID fromString: '{5597d1c3-79cd-42e8-a158-146c5e065c5a}')!
-WAMissingResponseError comment: ''!
+WAMissingResponseError guid: (GUID fromString: '{68aef47c-5348-4ffd-91dd-dd8aabc22c49}')!
+WAMissingResponseError comment: 'I signal a missing response - can be caused by an attempt to use #call: or a similar method while rendering.'!
 !WAMissingResponseError categoriesForClass!Seaside-RenderLoop! !
 !WAMissingResponseError methodsFor!
 

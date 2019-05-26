@@ -5,7 +5,7 @@ TestCase subclass: #WATestsFunctionalPlatformTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WATestsFunctionalPlatformTest guid: (GUID fromString: '{ab5d6c18-5790-41fe-9579-e7057ea6ddb0}')!
+WATestsFunctionalPlatformTest guid: (GUID fromString: '{bca9951d-e84e-4caf-951b-e2a78cd848aa}')!
 WATestsFunctionalPlatformTest comment: ''!
 !WATestsFunctionalPlatformTest categoriesForClass!Seaside-Tests-Functional! !
 !WATestsFunctionalPlatformTest methodsFor!

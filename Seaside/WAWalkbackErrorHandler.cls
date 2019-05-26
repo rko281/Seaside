@@ -4,8 +4,8 @@ WADebugErrorHandler subclass: #WAWalkbackErrorHandler
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
-	classInstanceVariableNames: ''!
-WAWalkbackErrorHandler guid: (GUID fromString: '{c583df6d-19ab-464e-a38a-b35b7fb2661f}')!
+	classInstanceVariableNames: 'configuredExceptionHandlingDefaults'!
+WAWalkbackErrorHandler guid: (GUID fromString: '{585f3b79-0726-46c6-8207-ad6388787988}')!
 WAWalkbackErrorHandler comment: 'I am the default development error handler that displays the stack frames and adds the option to display a debugger.I delegate the rendering to WAWalkback.This handler uses Components and depends on having a valid Session. If an error occurs outside of the Session scope it will simply use the superclass behaviour, which should be to open a debugger.'!
 !WAWalkbackErrorHandler categoriesForClass!Seaside-Development-Core! !
 !WAWalkbackErrorHandler methodsFor!
@@ -27,6 +27,9 @@ shouldCall	"WAWalkback would like to resubmit the same URL with different param
 
 !WAWalkbackErrorHandler class methodsFor!
 
-initialize	WAAdmin applicationExceptionHandlingDefaults at: #exceptionHandler put: self! !
-!WAWalkbackErrorHandler class categoriesFor: #initialize!initialization!public! !
+configureApplicationExceptionHandlingDefaults	(configuredExceptionHandlingDefaults ifNil: [ false ]) ifFalse: [		WAAdmin applicationExceptionHandlingDefaults			at: #exceptionHandler put: self.		configuredExceptionHandlingDefaults := true ]!
+
+initialize	self configureApplicationExceptionHandlingDefaults! !
+!WAWalkbackErrorHandler class categoriesFor: #configureApplicationExceptionHandlingDefaults!class initialization!public! !
+!WAWalkbackErrorHandler class categoriesFor: #initialize!class initialization!public! !
 

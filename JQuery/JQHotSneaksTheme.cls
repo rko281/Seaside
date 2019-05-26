@@ -5,7 +5,7 @@ JQBaseTheme subclass: #JQHotSneaksTheme
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQHotSneaksTheme guid: (GUID fromString: '{acc77bdb-eed3-4dad-94aa-55f2b6955d35}')!
+JQHotSneaksTheme guid: (GUID fromString: '{2348491e-e1d0-4c8d-8b2c-94a89297ff4e}')!
 JQHotSneaksTheme comment: ''!
 !JQHotSneaksTheme categoriesForClass!JQuery-UI-Libraries! !
 !JQHotSneaksTheme methodsFor!

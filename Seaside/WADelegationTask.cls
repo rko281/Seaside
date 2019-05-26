@@ -5,7 +5,7 @@ WATask subclass: #WADelegationTask
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WADelegationTask guid: (GUID fromString: '{087fe25e-36cf-429a-9ba5-7f63bfc817cf}')!
+WADelegationTask guid: (GUID fromString: '{d425ba66-e6a2-4f61-a61b-96e9c22de206}')!
 WADelegationTask comment: ''!
 !WADelegationTask categoriesForClass!Seaside-Tests-Functional! !
 !WADelegationTask methodsFor!

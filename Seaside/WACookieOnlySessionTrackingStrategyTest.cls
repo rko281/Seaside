@@ -5,7 +5,7 @@ WACookieSessionTrackingStrategyTest subclass: #WACookieOnlySessionTrackingStrate
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WACookieOnlySessionTrackingStrategyTest guid: (GUID fromString: '{5b6d668d-6dcf-4ce9-adb6-c952a365e8f2}')!
+WACookieOnlySessionTrackingStrategyTest guid: (GUID fromString: '{6e2b018c-f83b-42ff-ae58-81e47491a406}')!
 WACookieOnlySessionTrackingStrategyTest comment: ''!
 !WACookieOnlySessionTrackingStrategyTest categoriesForClass!Seaside-Tests-Session! !
 !WACookieOnlySessionTrackingStrategyTest methodsFor!

@@ -5,7 +5,7 @@ JQBaseTheme subclass: #JQStartTheme
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQStartTheme guid: (GUID fromString: '{7ee1e7de-8d16-4b99-9e5c-90adb3a78c1b}')!
+JQStartTheme guid: (GUID fromString: '{9938f6d8-2cc4-409f-afdc-89a004174dde}')!
 JQStartTheme comment: ''!
 !JQStartTheme categoriesForClass!JQuery-UI-Libraries! !
 !JQStartTheme methodsFor!

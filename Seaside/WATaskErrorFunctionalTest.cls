@@ -5,7 +5,7 @@ WAFunctionalTaskTest subclass: #WATaskErrorFunctionalTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WATaskErrorFunctionalTest guid: (GUID fromString: '{af8131e8-731b-4df2-8bac-43c8a2c4aa29}')!
+WATaskErrorFunctionalTest guid: (GUID fromString: '{be554924-b041-4f93-b891-80c695f56d28}')!
 WATaskErrorFunctionalTest comment: ''!
 !WATaskErrorFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
 !WATaskErrorFunctionalTest methodsFor!

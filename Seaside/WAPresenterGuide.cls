@@ -5,7 +5,7 @@ WAPainterVisitor subclass: #WAPresenterGuide
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAPresenterGuide guid: (GUID fromString: '{a8c85437-8bf5-4cd2-bc29-c9464774015d}')!
+WAPresenterGuide guid: (GUID fromString: '{c91b63d7-99da-4ff8-a89a-4d9ecfb9e825}')!
 WAPresenterGuide comment: 'WAPresenterGuides takes another WAPainterVisitor as a client. When asked to visit a Component, they will first visit its Decorations. Along the way, they will ask their client to visit each Painter they come across.This allows us to separate the behaviour of the various Presenter-tree traversal methods from the behaviour to perform on each Presenter we visit.'!
 !WAPresenterGuide categoriesForClass!Seaside-Component-Visitors! !
 !WAPresenterGuide methodsFor!

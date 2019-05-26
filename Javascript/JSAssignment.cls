@@ -5,7 +5,7 @@ JSDecoration subclass: #JSAssignment
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSAssignment guid: (GUID fromString: '{77501e54-6fa9-404a-b71f-f4c2fb027e79}')!
+JSAssignment guid: (GUID fromString: '{405fc4a0-dc90-44a5-81f4-65ce401da16f}')!
 JSAssignment comment: 'I represent an assignment ot the decorated object.'!
 !JSAssignment categoriesForClass!Javascript-Core-Decorations! !
 !JSAssignment methodsFor!

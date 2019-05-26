@@ -5,7 +5,7 @@ WAResponse subclass: #WAStreamedResponse
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAStreamedResponse guid: (GUID fromString: '{d8bb53ef-4bae-4d5a-aec6-dd2493b7f2ce}')!
+WAStreamedResponse guid: (GUID fromString: '{400ae55c-84d9-487e-b952-ca8604447a09}')!
 WAStreamedResponse comment: 'A WAStreamedResponse is a HTTP response that directly writes to an external write stream. This response class is used to implement efficient HTTP response streaming, as it can directly write do the socket while content is still generated.Instance Variables	committed:		<Boolean>	Whether the status and header was written to the stream.	externalStream:		<WriteStream>	The external stream to write to.'!
 !WAStreamedResponse categoriesForClass!Seaside-Core-HTTP! !
 !WAStreamedResponse methodsFor!

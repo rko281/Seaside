@@ -5,7 +5,7 @@ JSDecoration subclass: #JSCall
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSCall guid: (GUID fromString: '{ce611c04-a0b6-4974-a7c3-77ed8ff37cca}')!
+JSCall guid: (GUID fromString: '{cebdf770-96ba-4c93-adcc-45d2867175d3}')!
 JSCall comment: 'I represent a function call or method invocation to the decorated object.'!
 !JSCall categoriesForClass!Javascript-Core-Decorations! !
 !JSCall methodsFor!

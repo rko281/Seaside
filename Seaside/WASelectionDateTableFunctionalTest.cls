@@ -5,7 +5,7 @@ WAFunctionalTest subclass: #WASelectionDateTableFunctionalTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WASelectionDateTableFunctionalTest guid: (GUID fromString: '{6c18f817-f762-43cd-a69b-65a972aee2f2}')!
+WASelectionDateTableFunctionalTest guid: (GUID fromString: '{737ced95-1b44-4aa1-9fb4-51469a466bd3}')!
 WASelectionDateTableFunctionalTest comment: ''!
 !WASelectionDateTableFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
 !WASelectionDateTableFunctionalTest methodsFor!

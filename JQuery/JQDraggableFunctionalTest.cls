@@ -5,7 +5,7 @@ JQUiFunctionalTest subclass: #JQDraggableFunctionalTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQDraggableFunctionalTest guid: (GUID fromString: '{14b6cdca-e4c9-41ff-923d-b110eae35dc8}')!
+JQDraggableFunctionalTest guid: (GUID fromString: '{4e20b183-df85-47c5-99b6-f8de75248b3e}')!
 JQDraggableFunctionalTest comment: ''!
 !JQDraggableFunctionalTest categoriesForClass!JQuery-Tests-UI-Functional! !
 !JQDraggableFunctionalTest methodsFor!

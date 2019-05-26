@@ -5,7 +5,7 @@ JQBaseTheme subclass: #JQCupertinoTheme
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQCupertinoTheme guid: (GUID fromString: '{0b48f552-ecdc-4465-962c-90cc0ed58b4c}')!
+JQCupertinoTheme guid: (GUID fromString: '{7980dae7-c73b-427e-adaa-f0728a119111}')!
 JQCupertinoTheme comment: ''!
 !JQCupertinoTheme categoriesForClass!JQuery-UI-Libraries! !
 !JQCupertinoTheme methodsFor!

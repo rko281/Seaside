@@ -5,7 +5,7 @@ WAFunctionalTest subclass: #WAHomeFunctionalTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAHomeFunctionalTest guid: (GUID fromString: '{3ebd268d-0b2e-4ab7-8af4-1134cf2138c1}')!
+WAHomeFunctionalTest guid: (GUID fromString: '{7a7605b1-5f8b-453f-93a5-ea83180100a3}')!
 WAHomeFunctionalTest comment: ''!
 !WAHomeFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
 !WAHomeFunctionalTest methodsFor!

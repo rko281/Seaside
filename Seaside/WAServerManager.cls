@@ -5,7 +5,7 @@ WAObject subclass: #WAServerManager
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: 'default'!
-WAServerManager guid: (GUID fromString: '{47a6f7be-673e-438b-91c5-53c3f1b33e84}')!
+WAServerManager guid: (GUID fromString: '{796dd5a9-7f88-4a7f-853b-41cbcf75627c}')!
 WAServerManager comment: ''!
 !WAServerManager categoriesForClass!Seaside-Core-Server! !
 !WAServerManager methodsFor!

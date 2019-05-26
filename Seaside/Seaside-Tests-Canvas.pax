@@ -8,13 +8,18 @@ package classNames
 	add: #WAAbstractCanvasBrushTest;
 	add: #WABuilderCanvasTest;
 	add: #WACanvasBrushTest;
+	add: #WADefaultScriptGeneratorTest;
 	add: #WAEmailAddressTest;
 	add: #WAFormCharEncodingFromCodecTest;
 	add: #WAFormCharEncodingFromHandlerTest;
 	add: #WAFormTagTest;
+	add: #WANullScriptGeneratorTest;
 	add: #WAPredictableCache;
 	add: #WARenderingTest;
 	add: #WAResourceBaseUrlTest;
+	add: #WAScriptGeneratorTest;
+	add: #WAStubJsObject;
+	add: #WAXmlCanvasTest;
 	yourself.
 
 package methodNames
@@ -27,19 +32,23 @@ package binaryGlobalNames: (Set new
 package globalAliases: (Set new
 	yourself).
 
-package setPrerequisites: (IdentitySet new
-	add: '..\..\Core\Object Arts\Dolphin\Base\Dolphin';
-	add: '..\..\Grease\Grease-Core';
-	add: 'Seaside-Canvas';
-	add: 'Seaside-Core';
-	add: 'Seaside-Tests-Core';
-	add: '..\..\Core\Contributions\Camp Smalltalk\SUnit\SUnit';
-	yourself).
+package setPrerequisites: #(
+	'..\..\Core\Object Arts\Dolphin\Base\Dolphin'
+	'..\..\Grease\Grease-Core'
+	'Seaside-Canvas'
+	'Seaside-Core'
+	'Seaside-Tests-Core'
+	'..\..\Core\Contributions\Camp Smalltalk\SUnit\SUnit').
 
 package!
 
 "Class Definitions"!
 
+WAObject subclass: #WAStubJsObject
+	instanceVariableNames: 'value'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
 WABidirectionalCache subclass: #WAPredictableCache
 	instanceVariableNames: 'nextKey'
 	classVariableNames: ''
@@ -65,6 +74,16 @@ WAContextTest subclass: #WARenderingTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+WAContextTest subclass: #WAScriptGeneratorTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAContextTest subclass: #WAXmlCanvasTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
 WAAbstractCanvasBrushTest subclass: #WACanvasBrushTest
 	instanceVariableNames: ''
 	classVariableNames: ''
@@ -86,6 +105,16 @@ WAAbstractCanvasBrushTest subclass: #WAResourceBaseUrlTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 WACanvasBrushTest subclass: #WAFormTagTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAScriptGeneratorTest subclass: #WADefaultScriptGeneratorTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAScriptGeneratorTest subclass: #WANullScriptGeneratorTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''

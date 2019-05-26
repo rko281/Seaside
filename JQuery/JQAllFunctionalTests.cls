@@ -5,7 +5,7 @@ WAComponent subclass: #JQAllFunctionalTests
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQAllFunctionalTests guid: (GUID fromString: '{4138df9d-8701-4e19-a4ff-216dbef7dccb}')!
+JQAllFunctionalTests guid: (GUID fromString: '{47ae3594-17e7-48b7-87a4-9bccac3c36a5}')!
 JQAllFunctionalTests comment: ''!
 !JQAllFunctionalTests categoriesForClass!JQuery-Tests-Core-Functional! !
 !JQAllFunctionalTests methodsFor!

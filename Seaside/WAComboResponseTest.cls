@@ -5,7 +5,7 @@ WAResponseTest subclass: #WAComboResponseTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAComboResponseTest guid: (GUID fromString: '{4af8752e-3988-444b-8f71-aa0acd07d7cc}')!
+WAComboResponseTest guid: (GUID fromString: '{66b174fd-1226-4fce-857f-a63f658be61c}')!
 WAComboResponseTest comment: ''!
 !WAComboResponseTest categoriesForClass!Seaside-Tests-Core-HTTP! !
 !WAComboResponseTest methodsFor!

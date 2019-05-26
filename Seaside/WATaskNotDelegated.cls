@@ -5,7 +5,7 @@ WAError subclass: #WATaskNotDelegated
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WATaskNotDelegated guid: (GUID fromString: '{123b6827-8031-4f5f-988c-6f0733c3fc55}')!
+WATaskNotDelegated guid: (GUID fromString: '{05035ef9-17b5-4704-b690-43ab0fba157e}')!
 WATaskNotDelegated comment: ''!
 !WATaskNotDelegated categoriesForClass!Seaside-Component-Tasks! !
 !WATaskNotDelegated methodsFor!

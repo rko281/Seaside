@@ -5,7 +5,7 @@ WAObject subclass: #WAEncoder
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAEncoder guid: (GUID fromString: '{210f054b-6d4b-41e9-ab32-7e042d80bc3d}')!
+WAEncoder guid: (GUID fromString: '{50151cca-efbf-4af7-b004-d6b70b074e27}')!
 WAEncoder comment: 'I encode everything that is written to myself using #nextPut: and #nextPutAll: onto the wrapped stream.'!
 !WAEncoder categoriesForClass!Seaside-Core-Document! !
 !WAEncoder methodsFor!

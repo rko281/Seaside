@@ -5,7 +5,7 @@ WASessionContinuation subclass: #WARenderLoopContinuation
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WARenderLoopContinuation guid: (GUID fromString: '{86ac6a54-80a5-464f-8f71-89ee8379cc01}')!
+WARenderLoopContinuation guid: (GUID fromString: '{ba5c7f5e-b0ec-4530-a1a6-19cbdf620777}')!
 WARenderLoopContinuation comment: ''!
 !WARenderLoopContinuation categoriesForClass!Seaside-RenderLoop! !
 !WARenderLoopContinuation methodsFor!
@@ -24,6 +24,8 @@ isRenderContinuation	^ self class isRenderContinuation!
 
 presenter	"Answer the root presenter instance for the current session."	^ self session presenter!
 
+scriptGeneratorClass	^ (self application preferenceAt: #scriptGeneratorClass) value!
+
 toPresenterSendRoot: anHtmlRoot	(WAVisiblePresenterGuide client:		(WAUpdateRootVisitor root: anHtmlRoot))		start: self presenter!
 
 updateRoot: anHtmlRoot	| charSet |	charSet := self application contentType charSet.	charSet isNil ifFalse: [		anHtmlRoot meta charset: charSet ].	anHtmlRoot beHtml5.	anHtmlRoot title: 'Seaside'.	self application libraries 		do: [ :each | each default updateRoot: anHtmlRoot ].	self session updateRoot: anHtmlRoot!
@@ -40,6 +42,7 @@ withNotificationHandlerDo: aBlock	| currentHandler |	currentHandler := WACurre
 !WARenderLoopContinuation categoriesFor: #isActionContinuation!public!testing! !
 !WARenderLoopContinuation categoriesFor: #isRenderContinuation!public!testing! !
 !WARenderLoopContinuation categoriesFor: #presenter!accessing!public! !
+!WARenderLoopContinuation categoriesFor: #scriptGeneratorClass!private! !
 !WARenderLoopContinuation categoriesFor: #toPresenterSendRoot:!public!updating! !
 !WARenderLoopContinuation categoriesFor: #updateRoot:!public!updating! !
 !WARenderLoopContinuation categoriesFor: #updateStates:!public!updating! !

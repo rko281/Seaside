@@ -5,7 +5,7 @@ WAFunctionalTest subclass: #WAParameterFunctionalTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAParameterFunctionalTest guid: (GUID fromString: '{61684ce8-c85f-4527-9230-4bca33aa301c}')!
+WAParameterFunctionalTest guid: (GUID fromString: '{6cc2697a-1a1a-4e94-bca4-1491e527439a}')!
 WAParameterFunctionalTest comment: 'A WAParameterFunctionalTest tests whether GET and POST fields are merged in WARequest >> #fields.'!
 !WAParameterFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
 !WAParameterFunctionalTest methodsFor!

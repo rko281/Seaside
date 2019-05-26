@@ -5,7 +5,7 @@ WAFunctionalTest subclass: #WACallbackSecurityFunctionalTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WACallbackSecurityFunctionalTest guid: (GUID fromString: '{000555e7-5cc3-40bb-911b-6b575f7b4f6f}')!
+WACallbackSecurityFunctionalTest guid: (GUID fromString: '{e0ef325f-1aa9-4973-abe0-ca9e92199750}')!
 WACallbackSecurityFunctionalTest comment: ''!
 !WACallbackSecurityFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
 !WACallbackSecurityFunctionalTest methodsFor!

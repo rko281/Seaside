@@ -5,14 +5,16 @@ WAContextTest subclass: #WAFileMetadataLibraryTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAFileMetadataLibraryTest guid: (GUID fromString: '{3a5dc41f-32fe-4c64-9799-98b8e897b50e}')!
+WAFileMetadataLibraryTest guid: (GUID fromString: '{8d2a9542-4c71-4bc1-a7b4-abd06fb19cdd}')!
 WAFileMetadataLibraryTest comment: ''!
 !WAFileMetadataLibraryTest categoriesForClass!Seaside-Tests-Core-Libraries! !
 !WAFileMetadataLibraryTest methodsFor!
 
 testAsFileAndFoldername	| library |	library := WATestingMetadataFileLibrary default.	self assert: (library asFileAndFoldername: #mainCss) first equals: library name!
 
-testAsFilename	| library |	library := WATestingMetadataFileLibrary default.	self assert: (library asFilename: #imgglyphiconshalflingsPng) ='img/glyphicons-halflings.png'.	self assert: (library asFilename: #jsbootstrapJs) =  'js/bootstrap.js'!
+testAsFileAndFoldernameWithSubfolders	| library fileAndFolderName |	library := WATestingMetadataFileLibrary default.	fileAndFolderName := library asFileAndFoldername: #jsbootstrapJs.		self assert: fileAndFolderName first equals: library name, GRPlatform current pathSeparator, 'js'.	self assert: fileAndFolderName last equals: 'bootstrap.js'!
+
+testAsFilename	| library |	library := WATestingMetadataFileLibrary default.	self assert: (library asFilename: #imgglyphiconshalflingsPng) = 'img/glyphicons-halflings.png'.	self assert: (library asFilename: #jsbootstrapJs) =  'js/bootstrap.js'!
 
 testAsSelector	self assert: (WAFileMetadataLibrary asSelector: 'js/bootstrap.js') = #jsbootstrapJs.	self assert: (WAFileMetadataLibrary asSelector: 'img/glyphicons-halflings.png') = #imgglyphiconshalflingsPng.	self assert: (WAFileMetadataLibrary asSelector: 'css/bootstrap-responsive.css') = #cssbootstrapresponsiveCss!
 
@@ -34,6 +36,7 @@ testName	"Issue 620: 	WAFileLibrary>>name answers a Symbol, but used in places 
 
 testUrlOf	self assert: (WATestingMetadataFileLibrary / #jsbootstrapJs) greaseString = '/files/WATestingMetadataFileLibrary/js/bootstrap.js'! !
 !WAFileMetadataLibraryTest categoriesFor: #testAsFileAndFoldername!public!tests! !
+!WAFileMetadataLibraryTest categoriesFor: #testAsFileAndFoldernameWithSubfolders!public!tests! !
 !WAFileMetadataLibraryTest categoriesFor: #testAsFilename!public!tests! !
 !WAFileMetadataLibraryTest categoriesFor: #testAsSelector!public!tests! !
 !WAFileMetadataLibraryTest categoriesFor: #testCompileByteArray!public!tests! !

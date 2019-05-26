@@ -5,7 +5,7 @@ JQueryUiTest subclass: #JQDraggableTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQDraggableTest guid: (GUID fromString: '{48b1442e-14d9-480e-a338-782563b843e5}')!
+JQDraggableTest guid: (GUID fromString: '{8ebfd9e9-cac5-4166-bba0-89b7f98f4fe0}')!
 JQDraggableTest comment: ''!
 !JQDraggableTest categoriesForClass!JQuery-Tests-UI-Unit! !
 !JQDraggableTest methodsFor!

@@ -5,7 +5,7 @@ TestCase subclass: #WAPathConsumerTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAPathConsumerTest guid: (GUID fromString: '{8532b8b2-4474-4f97-820f-bbe217743c0d}')!
+WAPathConsumerTest guid: (GUID fromString: '{91beac35-0a91-4b8b-8ed5-a6a283d52026}')!
 WAPathConsumerTest comment: ''!
 !WAPathConsumerTest categoriesForClass!Seaside-Tests-Core-RequestHandling! !
 !WAPathConsumerTest methodsFor!

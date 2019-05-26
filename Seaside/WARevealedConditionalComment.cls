@@ -5,7 +5,7 @@ WAConditionalComment subclass: #WARevealedConditionalComment
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WARevealedConditionalComment guid: (GUID fromString: '{c192b1b4-5e58-459a-a5a3-e6598c0c1ab4}')!
+WARevealedConditionalComment guid: (GUID fromString: '{88a65ba1-e63d-48a7-a22a-01084952690c}')!
 WARevealedConditionalComment comment: 'A WAConditionalComment is an implementation of Downlevel-revealed Conditional Comments:http://msdn2.microsoft.com/en-us/library/ms537512.aspxNon-IE family browsers see them always.See also WAOpeningRevealedConditionalComment and WARevealedConditionalComment.'!
 !WARevealedConditionalComment categoriesForClass!Seaside-Core-Document-Elements! !
 !WARevealedConditionalComment methodsFor!

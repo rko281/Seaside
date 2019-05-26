@@ -5,12 +5,12 @@ WASessionTrackingStrategyTest subclass: #WACookieSessionTrackingStrategyTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WACookieSessionTrackingStrategyTest guid: (GUID fromString: '{0d27d828-17bb-4163-be28-56a655cb206a}')!
+WACookieSessionTrackingStrategyTest guid: (GUID fromString: '{ae48943f-5187-47ec-ae35-a3a5383a1983}')!
 WACookieSessionTrackingStrategyTest comment: ''!
 !WACookieSessionTrackingStrategyTest categoriesForClass!Seaside-Tests-Session! !
 !WACookieSessionTrackingStrategyTest methodsFor!
 
-assertNotFound: aRequestContext	self assert: aRequestContext response status = WAResponse statusFound.	self assert: (aRequestContext response headerAt: 'Location') = '/1/2'!
+assertNotFound: aRequestContext	self assert: aRequestContext response status = WAResponse statusFound.	self assert: (aRequestContext response headerAt: 'Location') greaseString = '/1/2'!
 
 createRequest	^ WARequest method: 'GET' uri: '/1/2'!
 

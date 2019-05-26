@@ -5,7 +5,7 @@ WAValueCallback subclass: #WAAllValuesCallback
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAAllValuesCallback guid: (GUID fromString: '{32ddbf45-d652-46f8-b5d5-81c2ec13ff97}')!
+WAAllValuesCallback guid: (GUID fromString: '{3caeb4f8-a702-4865-a8d1-e5aabd9c41fe}')!
 WAAllValuesCallback comment: 'WAAllValuesCallback is a special WAValueCallback that whos value is a sequenceable collection of values.'!
 !WAAllValuesCallback categoriesForClass!Seaside-Core-Callbacks! !
 !WAAllValuesCallback methodsFor!

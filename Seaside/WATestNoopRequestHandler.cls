@@ -5,7 +5,7 @@ WARequestHandler subclass: #WATestNoopRequestHandler
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WATestNoopRequestHandler guid: (GUID fromString: '{449ea4b4-087d-47f2-83af-4febfb2df3dc}')!
+WATestNoopRequestHandler guid: (GUID fromString: '{5b8a63b0-a26e-4ee1-979d-28b727a9cc4f}')!
 WATestNoopRequestHandler comment: ''!
 !WATestNoopRequestHandler categoriesForClass!Seaside-Tests-Core-RequestHandling! !
 !WATestNoopRequestHandler methodsFor!

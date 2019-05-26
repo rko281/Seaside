@@ -5,7 +5,7 @@ WARequestFilter subclass: #WARestfulFilter
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WARestfulFilter guid: (GUID fromString: '{dcc18bb5-2af4-43d4-bb52-42ccc1ca5c5c}')!
+WARestfulFilter guid: (GUID fromString: '{e8cd6b39-1ce0-4102-bffc-3fe1de54dcc6}')!
 WARestfulFilter comment: ''!
 !WARestfulFilter categoriesForClass!Seaside-REST-Core-Handler! !
 !WARestfulFilter methodsFor!

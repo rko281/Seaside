@@ -5,6 +5,6 @@ GRError subclass: #WATestError
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WATestError guid: (GUID fromString: '{85f7a305-0cb4-4525-9341-cb48ef21f518}')!
-WATestError comment: ''!
-!WATestError categoriesForClass!Seaside-Tests-Core! !
+WATestError guid: (GUID fromString: '{9976cf95-0973-4907-b634-36c7d278b9d3}')!
+WATestError comment: 'TestCase subclass: #WARenderContextTest	instanceVariableNames: ''''	classVariableNames: ''''	poolDictionaries: ''''	category: ''Seaside-Tests-Core-Rendering'''!
+!WATestError categoriesForClass!Seaside-Tests-Core-Base! !

@@ -5,7 +5,7 @@ JSDecoration subclass: #JSCreate
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSCreate guid: (GUID fromString: '{99533929-f5d4-423c-bfa5-0b9ca4be5c88}')!
+JSCreate guid: (GUID fromString: '{be3955f6-5b42-45ea-b9ab-48de18f10ea6}')!
 JSCreate comment: 'I instantiate the decorated object.'!
 !JSCreate categoriesForClass!Javascript-Core-Decorations! !
 !JSCreate methodsFor!

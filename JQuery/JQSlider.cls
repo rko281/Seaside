@@ -5,7 +5,7 @@ JQWidget subclass: #JQSlider
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQSlider guid: (GUID fromString: '{6c9c619a-5027-4ac7-87d5-db7279fe1ca2}')!
+JQSlider guid: (GUID fromString: '{d370c16c-4f9d-47de-9ba9-b5c45f0ce85e}')!
 JQSlider comment: ''!
 !JQSlider categoriesForClass!JQuery-UI-Widgets! !
 !JQSlider methodsFor!

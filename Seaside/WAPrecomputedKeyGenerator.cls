@@ -5,7 +5,7 @@ WAKeyGenerator subclass: #WAPrecomputedKeyGenerator
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAPrecomputedKeyGenerator guid: (GUID fromString: '{59d4f79d-a5d5-4432-875c-28ae4fa6c07a}')!
+WAPrecomputedKeyGenerator guid: (GUID fromString: '{b527c747-cf8c-49be-8d24-a895c474e09e}')!
 WAPrecomputedKeyGenerator comment: ''!
 !WAPrecomputedKeyGenerator categoriesForClass!Seaside-Tests-Core-Cache! !
 !WAPrecomputedKeyGenerator methodsFor!

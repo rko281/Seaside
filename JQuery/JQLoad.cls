@@ -5,7 +5,7 @@ JQAjax subclass: #JQLoad
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQLoad guid: (GUID fromString: '{d37000f9-0a39-482c-a227-8ff949fa2a90}')!
+JQLoad guid: (GUID fromString: '{67cae475-ecf9-4362-bbd3-87486f463634}')!
 JQLoad comment: 'Load HTML from a remote file and inject it into the DOM.'!
 !JQLoad categoriesForClass!JQuery-Core-Objects! !
 !JQLoad methodsFor!

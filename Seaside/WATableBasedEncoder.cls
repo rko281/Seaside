@@ -5,7 +5,7 @@ WAEncoder subclass: #WATableBasedEncoder
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: 'table'!
-WATableBasedEncoder guid: (GUID fromString: '{a3f0cabc-bfa7-43e4-a646-4484ed94cefe}')!
+WATableBasedEncoder guid: (GUID fromString: '{745f6e4d-1c0d-482d-836d-08013b96c006}')!
 WATableBasedEncoder comment: 'I encode everything that is written to myself using #nextPut: and #nextPutAll: onto the wrapped stream. The specific encoding that is done is determined by my subclasses (the conversion of a single character is defined in the class-side method #encode:on:).To be efficient, each subclass uses a cached encoding table to transform the most used characters from the UTF Basic Multilingual Plane.'!
 !WATableBasedEncoder categoriesForClass!Seaside-Core-Document! !
 !WATableBasedEncoder methodsFor!

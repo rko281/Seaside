@@ -5,7 +5,7 @@ WAObject subclass: #WASnapshot
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WASnapshot guid: (GUID fromString: '{94a7aeed-9044-4994-b99f-4f4791dbb270}')!
+WASnapshot guid: (GUID fromString: '{ce895f3a-752c-47c7-95a2-a30101c7cb5b}')!
 WASnapshot comment: 'I represent a memory snapshot of objects. Objects can be registered by sending the message #register:. All object snapshots are updated by sending #snapshot and restored by sending #restore. To have specific snpshot and restore actions for particular classes override #snapshotCopy and #restoreFromSnapshot: in your classes.'!
 !WASnapshot categoriesForClass!Seaside-Core-Backtracking! !
 !WASnapshot methodsFor!

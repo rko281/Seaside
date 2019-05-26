@@ -5,7 +5,7 @@ WAFunctionalTest subclass: #WAEncodingFunctionalTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAEncodingFunctionalTest guid: (GUID fromString: '{a309aa36-be60-4622-8be3-e9dfba84aed7}')!
+WAEncodingFunctionalTest guid: (GUID fromString: '{91b51dec-b93a-4a9e-a8bd-4daaf2257e64}')!
 WAEncodingFunctionalTest comment: 'A WAEncodingFunctionalTest test whether Seaside correctly handles non-ASCII strings. Unfortunately due to differences in server setup and source code encodings this test requires manual interaction.'!
 !WAEncodingFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
 !WAEncodingFunctionalTest methodsFor!

@@ -5,7 +5,7 @@ WASessionTrackingStrategy subclass: #WAInvisibleSessionTrackingStrategy
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAInvisibleSessionTrackingStrategy guid: (GUID fromString: '{9b888623-b0b3-4dcc-9864-a69a7bee3392}')!
+WAInvisibleSessionTrackingStrategy guid: (GUID fromString: '{9b97ed8b-e117-41a0-91f9-30c7ab4b4d0b}')!
 WAInvisibleSessionTrackingStrategy comment: 'I am the abstract base class for classes that that use some request attribute that is present on every request for tracking sessions. For document handlers query fields are used.'!
 !WAInvisibleSessionTrackingStrategy categoriesForClass!Seaside-Session! !
 !WAInvisibleSessionTrackingStrategy methodsFor!

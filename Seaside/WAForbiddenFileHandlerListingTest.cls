@@ -5,7 +5,7 @@ WAFileHandlerListingTest subclass: #WAForbiddenFileHandlerListingTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAForbiddenFileHandlerListingTest guid: (GUID fromString: '{bf2a533f-693e-43d9-b2cb-832e672ed3bd}')!
+WAForbiddenFileHandlerListingTest guid: (GUID fromString: '{f57c896b-292d-4abe-86c5-55e7cf8336cf}')!
 WAForbiddenFileHandlerListingTest comment: ''!
 !WAForbiddenFileHandlerListingTest categoriesForClass!Seaside-Tests-Core-Libraries! !
 !WAForbiddenFileHandlerListingTest methodsFor!

@@ -5,7 +5,7 @@ WATagBrush subclass: #WAImageTag
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAImageTag guid: (GUID fromString: '{4230f36f-cba8-49ac-8819-98040b087603}')!
+WAImageTag guid: (GUID fromString: '{a25cb2e1-699e-4c15-a9c7-2041251a0b04}')!
 WAImageTag comment: 'The IMG element embeds an image in the current document at the location of the element''s definition. The IMG element has no content; it is usually replaced inline by the image designated by the src attribute, the exception being for left or right-aligned images that are "floated" out of line.The alt attribute specifies alternate text that is rendered when the image cannot be displayed (see below for information on how to specify alternate text ). User agents must render alternate text when they cannot support images, they cannot support a certain image type or when they are configured not to display images.Seaside per default sets the alternate text to an empty string. This helps validation of the page.'!
 !WAImageTag categoriesForClass!Seaside-Canvas-Tags! !
 !WAImageTag methodsFor!
@@ -17,6 +17,8 @@ height: anInteger	self attributes at: 'height' put: anInteger!
 initialize	super initialize.	self altText: ''!
 
 isClosed	^ true!
+
+onLoadEnd: anObject	"Fired at img elements after a successful load."	self document scriptGenerator		event: 'loadend'		do: anObject		on: self!
 
 resourceUrl: aString	self url: (canvas absoluteUrlForResource: aString)!
 
@@ -33,6 +35,7 @@ width: anInteger	self attributes at: 'width' put: anInteger! !
 !WAImageTag categoriesFor: #height:!attributes!public! !
 !WAImageTag categoriesFor: #initialize!initialization!public! !
 !WAImageTag categoriesFor: #isClosed!public!testing! !
+!WAImageTag categoriesFor: #onLoadEnd:!attributes/events!public! !
 !WAImageTag categoriesFor: #resourceUrl:!accessing!public! !
 !WAImageTag categoriesFor: #setParent:canvas:!initialization!public! !
 !WAImageTag categoriesFor: #sourceSet:!attributes!public! !

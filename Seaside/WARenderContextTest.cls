@@ -5,7 +5,7 @@ TestCase subclass: #WARenderContextTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WARenderContextTest guid: (GUID fromString: '{3175e9ef-429b-4328-93af-126fbce536c7}')!
+WARenderContextTest guid: (GUID fromString: '{e458a544-bfdb-4495-9eae-1b29a209744a}')!
 WARenderContextTest comment: ''!
 !WARenderContextTest categoriesForClass!Seaside-Tests-Core-Rendering! !
 !WARenderContextTest methodsFor!

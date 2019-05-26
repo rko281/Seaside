@@ -5,7 +5,7 @@ JQWidget subclass: #JQProgressbar
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQProgressbar guid: (GUID fromString: '{48df59fc-ecaa-44a9-894c-83f1b27b8cf5}')!
+JQProgressbar guid: (GUID fromString: '{33b4d6d2-3ff1-46ad-ae2e-c1aa9068ce72}')!
 JQProgressbar comment: 'Make the selected elements progressbar.'!
 !JQProgressbar categoriesForClass!JQuery-UI-Widgets! !
 !JQProgressbar methodsFor!

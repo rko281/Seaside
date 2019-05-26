@@ -5,7 +5,7 @@ JQAjax subclass: #JQPost
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQPost guid: (GUID fromString: '{fb930b49-bc5a-45be-a69e-2a77b7ac18c8}')!
+JQPost guid: (GUID fromString: '{323ee8ec-b615-4e3d-b69e-b556fa28baa4}')!
 JQPost comment: 'Load a remote page using an HTTP POST request.'!
 !JQPost categoriesForClass!JQuery-Core-Objects! !
 !JQPost methodsFor!

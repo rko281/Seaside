@@ -70,16 +70,15 @@ package binaryGlobalNames: (Set new
 package globalAliases: (Set new
 	yourself).
 
-package setPrerequisites: (IdentitySet new
-	add: '..\..\Core\Object Arts\Dolphin\Base\Dolphin';
-	add: '..\..\Grease\Grease-Core';
-	add: 'Seaside-Canvas';
-	add: 'Seaside-Component';
-	add: 'Seaside-Core';
-	add: 'Seaside-Session';
-	add: 'Seaside-Tools-Core';
-	add: 'Seaside-Widgets';
-	yourself).
+package setPrerequisites: #(
+	'..\..\Core\Object Arts\Dolphin\Base\Dolphin'
+	'..\..\Grease\Grease-Core'
+	'Seaside-Canvas'
+	'Seaside-Component'
+	'Seaside-Core'
+	'Seaside-Session'
+	'Seaside-Tools-Core'
+	'Seaside-Widgets').
 
 package!
 

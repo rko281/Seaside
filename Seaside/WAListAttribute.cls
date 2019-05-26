@@ -5,7 +5,7 @@ WAAttribute subclass: #WAListAttribute
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAListAttribute guid: (GUID fromString: '{384f1521-ef2e-461e-bd48-268dbd4e3a8d}')!
+WAListAttribute guid: (GUID fromString: '{c57cb58b-c292-46c0-a04b-2d32d6eed161}')!
 WAListAttribute comment: 'WAListAttribute is an attribute that is restricted to a list of values. Instance Variables:	options	<Block>	A block returning a list of possible values for the attribute'!
 !WAListAttribute categoriesForClass!Seaside-Core-Configuration! !
 !WAListAttribute methodsFor!

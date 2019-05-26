@@ -5,7 +5,7 @@ WAAllValuesCallback subclass: #WAAllUrlsCallback
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAAllUrlsCallback guid: (GUID fromString: '{a951f291-a9ad-4543-b832-586e18935889}')!
+WAAllUrlsCallback guid: (GUID fromString: '{71fa4363-ed6f-450c-8336-d1b44d06713e}')!
 WAAllUrlsCallback comment: ''!
 !WAAllUrlsCallback categoriesForClass!Seaside-Core-Callbacks! !
 !WAAllUrlsCallback methodsFor!

@@ -5,9 +5,9 @@ TestCase subclass: #WAObjectTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAObjectTest guid: (GUID fromString: '{c78d9f04-f0e6-4b9b-bb02-130c88303309}')!
-WAObjectTest comment: ''!
-!WAObjectTest categoriesForClass!Seaside-Tests-Core! !
+WAObjectTest guid: (GUID fromString: '{47e32bcd-b12e-4942-9cb2-489a4e13fe14}')!
+WAObjectTest comment: 'I contain unit tests for WAObject.'!
+!WAObjectTest categoriesForClass!Seaside-Tests-Core-Base! !
 !WAObjectTest methodsFor!
 
 testError	"Make sure #error: signals a subclass of WAError."		self should: [ WAObject new error: 'oh dear' ] raise: WAError.	self should: [ WAObject error: 'oh dear' ] raise: WAError!

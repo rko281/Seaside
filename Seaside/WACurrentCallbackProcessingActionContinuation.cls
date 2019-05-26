@@ -5,6 +5,6 @@ WADynamicVariable subclass: #WACurrentCallbackProcessingActionContinuation
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WACurrentCallbackProcessingActionContinuation guid: (GUID fromString: '{933573a2-e71b-48f5-b794-732f48cb7fba}')!
+WACurrentCallbackProcessingActionContinuation guid: (GUID fromString: '{69aa80eb-8b26-4660-b638-1dd157d4ae41}')!
 WACurrentCallbackProcessingActionContinuation comment: ''!
 !WACurrentCallbackProcessingActionContinuation categoriesForClass!Seaside-RenderLoop! !

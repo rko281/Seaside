@@ -5,7 +5,7 @@ JQBaseTheme subclass: #JQSunnyTheme
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQSunnyTheme guid: (GUID fromString: '{6f96b1a5-e0db-45c4-a615-f70cd03cab3e}')!
+JQSunnyTheme guid: (GUID fromString: '{e728c826-f67c-448d-975b-7b11a3bfad06}')!
 JQSunnyTheme comment: ''!
 !JQSunnyTheme categoriesForClass!JQuery-UI-Libraries! !
 !JQSunnyTheme methodsFor!

@@ -5,7 +5,7 @@ WAFunctionalTest subclass: #WAHtml5ElementsTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAHtml5ElementsTest guid: (GUID fromString: '{f6b325a6-6b81-436c-97d2-4f874e53955c}')!
+WAHtml5ElementsTest guid: (GUID fromString: '{6e5f0dca-239a-46e7-b429-cedb373b95f6}')!
 WAHtml5ElementsTest comment: ''!
 !WAHtml5ElementsTest categoriesForClass!Seaside-Tests-Functional! !
 !WAHtml5ElementsTest methodsFor!

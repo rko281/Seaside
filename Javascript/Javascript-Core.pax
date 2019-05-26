@@ -46,7 +46,10 @@ package methodNames
 	add: #DateAndTime -> #javascriptOn:;
 	add: #Dictionary -> #javascriptOn:;
 	add: #Duration -> #javascriptOn:;
+	add: #GRDelegatingStream -> #javascript:;
 	add: #GRSmallDictionary -> #javascriptOn:;
+	add: #GRSmallDictionary2 -> #javascriptOn:;
+	add: #GRSmallOrderedSet -> #javascriptOn:;
 	add: #Object -> #asFunction;
 	add: #Object -> #asFunction:;
 	add: #Object -> #asJavascript;
@@ -74,14 +77,12 @@ package binaryGlobalNames: (Set new
 package globalAliases: (Set new
 	yourself).
 
-package setPrerequisites: (IdentitySet new
-	add: '..\..\Core\Object Arts\Dolphin\Base\Dolphin';
-	add: '..\..\Grease\Grease-Core';
-	add: '..\..\Core\Contributions\IDB\IDB DateAndTime';
-	add: '..\..\Core\Contributions\IDB\IDB Duration';
-	add: '..\Seaside\Seaside-Canvas';
-	add: '..\Seaside\Seaside-Core';
-	yourself).
+package setPrerequisites: #(
+	'..\..\Core\Object Arts\Dolphin\Base\Dolphin'
+	'..\..\Core\Object Arts\Dolphin\Base\Dolphin Legacy Date & Time'
+	'..\..\Grease\Grease-Core'
+	'..\Seaside\Seaside-Canvas'
+	'..\Seaside\Seaside-Core').
 
 package!
 
@@ -279,6 +280,11 @@ javascriptOn: aStream	JSStream encodeDictionary: self on: aStream! !
 javascriptOn: aStream	aStream javascript: self asMilliseconds! !
 !Duration categoriesFor: #javascriptOn:!*javascript/core!public! !
 
+!GRDelegatingStream methodsFor!
+
+javascript: anObject	anObject javascriptOn: self! !
+!GRDelegatingStream categoriesFor: #javascript:!*javascript/core!public! !
+
 !GRPackage class methodsFor!
 
 javascriptCore	^ self new		name: 'Javascript-Core';		description: 'Javascript integration in Seaside. Provides a basic functionality to generate Javascript from Smalltalk.';		addDependency: 'Seaside-Core';		addDependency: 'Seaside-Canvas';		url: #seasideUrl;		yourself! !
@@ -288,6 +294,16 @@ javascriptCore	^ self new		name: 'Javascript-Core';		description: 'Javascript
 
 javascriptOn: aStream	JSStream encodeDictionary: self on: aStream! !
 !GRSmallDictionary categoriesFor: #javascriptOn:!*javascript/core!public! !
+
+!GRSmallDictionary2 methodsFor!
+
+javascriptOn: aStream	JSStream encodeDictionary: self on: aStream! !
+!GRSmallDictionary2 categoriesFor: #javascriptOn:!*javascript/core!public! !
+
+!GRSmallOrderedSet methodsFor!
+
+javascriptOn: aStream	JSStream encodeCollection: self on: aStream! !
+!GRSmallOrderedSet categoriesFor: #javascriptOn:!*javascript/core!public! !
 
 !Object methodsFor!
 

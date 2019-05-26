@@ -5,7 +5,7 @@ WAFunctionalTest subclass: #WAIframeFunctionalTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAIframeFunctionalTest guid: (GUID fromString: '{468e7307-ec9f-4ecd-b98c-ee38afc13765}')!
+WAIframeFunctionalTest guid: (GUID fromString: '{25b07c84-980f-4b64-85c5-b2ad8391cefe}')!
 WAIframeFunctionalTest comment: ''!
 !WAIframeFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
 !WAIframeFunctionalTest methodsFor!

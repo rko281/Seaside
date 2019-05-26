@@ -5,9 +5,9 @@ WADecoration subclass: #WAAnswerHandler
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAAnswerHandler guid: (GUID fromString: '{d14d0d66-a30f-4e3f-95a0-8df92130ed1f}')!
-WAAnswerHandler comment: ''!
-!WAAnswerHandler categoriesForClass!Seaside-Component! !
+WAAnswerHandler guid: (GUID fromString: '{ff397b50-db71-4f04-b8a8-86e76e4e4c06}')!
+WAAnswerHandler comment: 'I am the specific decoration to handle the answer of a given block.'!
+!WAAnswerHandler categoriesForClass!Seaside-Component-Base! !
 !WAAnswerHandler methodsFor!
 
 block: aBlock	block := aBlock!

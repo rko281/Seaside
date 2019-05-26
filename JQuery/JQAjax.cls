@@ -5,7 +5,7 @@ JQAjaxSetup subclass: #JQAjax
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQAjax guid: (GUID fromString: '{caae779f-70e4-4ecd-9a50-b4194b03504b}')!
+JQAjax guid: (GUID fromString: '{740e7860-4383-4dc4-b549-2f76d98ff518}')!
 JQAjax comment: 'Load a remote page using an HTTP request.'!
 !JQAjax categoriesForClass!JQuery-Core-Objects! !
 !JQAjax methodsFor!

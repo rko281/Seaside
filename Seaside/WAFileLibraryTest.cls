@@ -5,7 +5,7 @@ WAContextTest subclass: #WAFileLibraryTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAFileLibraryTest guid: (GUID fromString: '{1fc9969b-23e3-4b3e-9e4b-4efdd3861e02}')!
+WAFileLibraryTest guid: (GUID fromString: '{912e390b-d7e3-41ea-933d-b16cfc7c0712}')!
 WAFileLibraryTest comment: ''!
 !WAFileLibraryTest categoriesForClass!Seaside-Tests-Core-Libraries! !
 !WAFileLibraryTest methodsFor!

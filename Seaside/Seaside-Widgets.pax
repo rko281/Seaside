@@ -61,14 +61,13 @@ package binaryGlobalNames: (Set new
 package globalAliases: (Set new
 	yourself).
 
-package setPrerequisites: (IdentitySet new
-	add: '..\..\Core\Object Arts\Dolphin\Base\Dolphin';
-	add: '..\..\Grease\Grease-Core';
-	add: '..\..\Core\Contributions\IDB\IDB DateAndTime';
-	add: 'Seaside-Canvas';
-	add: 'Seaside-Component';
-	add: 'Seaside-Core';
-	yourself).
+package setPrerequisites: #(
+	'..\..\Core\Object Arts\Dolphin\Base\Dolphin'
+	'..\..\Core\Object Arts\Dolphin\Base\Dolphin Legacy Date & Time'
+	'..\..\Grease\Grease-Core'
+	'Seaside-Canvas'
+	'Seaside-Component'
+	'Seaside-Core').
 
 package!
 
@@ -243,7 +242,7 @@ WAWidgetDecoration subclass: #WAWindowDecoration
 !GRPackage class methodsFor!
 
 seasideWidgets	^ self new		name: 'Seaside-Widgets';		description: 'Various sample Decorations and Components that require Canvas.';		addDependency: 'Seaside-Canvas';		addDependency: 'Seaside-Component';		url: #seasideUrl;		yourself! !
-!GRPackage class categoriesFor: #seasideWidgets!*seaside/widgets!public! !
+!GRPackage class categoriesFor: #seasideWidgets!*Seaside/Widgets!public! !
 
 !WAComponent methodsFor!
 
@@ -270,18 +269,18 @@ request: aRequestString label: aLabelString onAnswer: aBlock	"Display an input 
 request: aString onAnswer: aBlock	"Display an input dialog with the question aRequestString. Passes the answer into aBlock."	self request: aString default: nil onAnswer: aBlock!
 
 validateWith: aBlock	^ self addDecoration: (WAValidationDecoration new validateWith: aBlock)! !
-!WAComponent categoriesFor: #addMessage:!*seaside/widgets/decorations!public! !
-!WAComponent categoriesFor: #chooseFrom:caption:onAnswer:!*seaside/widgets/dialogs!public! !
-!WAComponent categoriesFor: #chooseFrom:default:caption:onAnswer:!*seaside/widgets/dialogs!public! !
-!WAComponent categoriesFor: #chooseFrom:default:onAnswer:!*seaside/widgets/dialogs!public! !
-!WAComponent categoriesFor: #chooseFrom:onAnswer:!*seaside/widgets/dialogs!public! !
-!WAComponent categoriesFor: #confirm:onAnswer:!*seaside/widgets/dialogs!public! !
-!WAComponent categoriesFor: #inform:onAnswer:!*seaside/widgets/dialogs!public! !
-!WAComponent categoriesFor: #request:default:onAnswer:!*seaside/widgets/dialogs!public! !
-!WAComponent categoriesFor: #request:label:default:onAnswer:!*seaside/widgets/dialogs!public! !
-!WAComponent categoriesFor: #request:label:onAnswer:!*seaside/widgets/dialogs!public! !
-!WAComponent categoriesFor: #request:onAnswer:!*seaside/widgets/dialogs!public! !
-!WAComponent categoriesFor: #validateWith:!*seaside/widgets/decorations!public! !
+!WAComponent categoriesFor: #addMessage:!*Seaside/Widgets/decorations!public! !
+!WAComponent categoriesFor: #chooseFrom:caption:onAnswer:!*Seaside/Widgets/dialogs!public! !
+!WAComponent categoriesFor: #chooseFrom:default:caption:onAnswer:!*Seaside/Widgets!public! !
+!WAComponent categoriesFor: #chooseFrom:default:onAnswer:!*Seaside/Widgets!public! !
+!WAComponent categoriesFor: #chooseFrom:onAnswer:!*Seaside/Widgets!public! !
+!WAComponent categoriesFor: #confirm:onAnswer:!*Seaside/Widgets!public! !
+!WAComponent categoriesFor: #inform:onAnswer:!*Seaside/Widgets!public! !
+!WAComponent categoriesFor: #request:default:onAnswer:!*Seaside/Widgets!public! !
+!WAComponent categoriesFor: #request:label:default:onAnswer:!*Seaside/Widgets!public! !
+!WAComponent categoriesFor: #request:label:onAnswer:!*Seaside/Widgets!public! !
+!WAComponent categoriesFor: #request:onAnswer:!*Seaside/Widgets!public! !
+!WAComponent categoriesFor: #validateWith:!*Seaside/Widgets!public! !
 
 "End of package definition"!
 

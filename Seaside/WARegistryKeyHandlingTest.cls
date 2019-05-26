@@ -5,7 +5,7 @@ TestCase subclass: #WARegistryKeyHandlingTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WARegistryKeyHandlingTest guid: (GUID fromString: '{47c216a6-4cb2-4bd9-9b58-81f5af8f4271}')!
+WARegistryKeyHandlingTest guid: (GUID fromString: '{fef0ed23-da34-4e15-afe9-3cdd868ce2aa}')!
 WARegistryKeyHandlingTest comment: ''!
 !WARegistryKeyHandlingTest categoriesForClass!Seaside-Tests-Core-RequestHandling! !
 !WARegistryKeyHandlingTest methodsFor!
@@ -20,13 +20,13 @@ assertDefault: aResponse	self assert: registry cache size = registrySize.	self
 
 assertDispatched: aResponse	self assert: registry cache size = registrySize.	self assert: aResponse status = 200!
 
-assertExpired: aResponse	self assert: registry cache size = registrySize.	self assert: aResponse status = 302.	self assert: (aResponse headers at: 'Location') = self path!
+assertExpired: aResponse	self assert: registry cache size = registrySize.	self assert: aResponse status = 302.	self assert: (aResponse headers at: 'Location') greaseString = self path!
 
 assertNoCookies: aResponse	self assert: aResponse cookies isEmpty!
 
 cookieKey	^ self fieldName!
 
-createRegistry	^ WADispatcher new		register: (WARegistry new			cache: WABidirectionalCache new;			yourself)		at: self registryName!
+createRegistry	^ WADispatcher new		register: (WARedirectingRegistry new			cache: WABidirectionalCache new;			yourself)		at: self registryName!
 
 createRegistryWithCookiesEnabled	"We have an instance variable named 'registry' and GemStone does not like 		method temps to have the same name as instance variables."	| newRegistry |	newRegistry := self createRegistry.	newRegistry configuration at: #trackingStrategy put: WACookieIfSupportedSessionTrackingStrategy new.	^ newRegistry!
 

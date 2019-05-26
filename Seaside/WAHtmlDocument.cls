@@ -5,7 +5,7 @@ WAXmlDocument subclass: #WAHtmlDocument
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAHtmlDocument guid: (GUID fromString: '{4bdc048d-e977-4c2a-845c-f0353f315a4e}')!
+WAHtmlDocument guid: (GUID fromString: '{ff4ab7a3-b4ae-4515-aa1b-cc3aef244422}')!
 WAHtmlDocument comment: 'A WAHtmlDocument controls how a string is created from a series of brushes.'!
 !WAHtmlDocument categoriesForClass!Seaside-Core-Document! !
 !WAHtmlDocument methodsFor!

@@ -5,7 +5,7 @@ TestCase subclass: #WAExactParameterMatchTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAExactParameterMatchTest guid: (GUID fromString: '{65c93d44-1b79-4e10-bf69-0cbeb104e4f9}')!
+WAExactParameterMatchTest guid: (GUID fromString: '{62f910b6-7324-4efa-be9a-8d5d300a21a9}')!
 WAExactParameterMatchTest comment: ''!
 !WAExactParameterMatchTest categoriesForClass!Seaside-Tests-REST-Core! !
 !WAExactParameterMatchTest methodsFor!

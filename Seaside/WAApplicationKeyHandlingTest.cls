@@ -5,14 +5,14 @@ WARegistryKeyHandlingTest subclass: #WAApplicationKeyHandlingTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAApplicationKeyHandlingTest guid: (GUID fromString: '{e98487e1-eec4-4869-9011-100594492f7d}')!
+WAApplicationKeyHandlingTest guid: (GUID fromString: '{56d72dd8-773f-4321-9f43-e0c58b289f9d}')!
 WAApplicationKeyHandlingTest comment: ''!
 !WAApplicationKeyHandlingTest categoriesForClass!Seaside-Tests-Session! !
 !WAApplicationKeyHandlingTest methodsFor!
 
 assertDefault: aResponse	"Instead of returning 404 on a default request as WARegistry does, WAApplication creates a new	Session and dispatches to it."	self assert: registry cache size = (registrySize + 1).	self assert: aResponse status = 200.	self assert: (aResponse contents beginsWithSubCollection: 'start:')!
 
-createRegistry	^ WADispatcher new		register: (WAApplication new			sessionClass: WATestSession;			cache: WAUnidirectionalCache new;			yourself)		at: self registryName!
+createRegistry	^ WADispatcher new		register: (WARedirectingApplication new			sessionClass: WATestSession;			cache: WAUnidirectionalCache new;			yourself)		at: self registryName!
 
 registerNewHandler	^ registry register: WATestNoopSessionHandler new!
 

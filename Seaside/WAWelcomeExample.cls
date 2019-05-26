@@ -5,7 +5,7 @@ WAComponent subclass: #WAWelcomeExample
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAWelcomeExample guid: (GUID fromString: '{56c1574f-ede9-4b5b-954d-9d5cd0c94d7d}')!
+WAWelcomeExample guid: (GUID fromString: '{49ddd07e-0ec3-4256-9faa-7962904b3418}')!
 WAWelcomeExample comment: ''!
 !WAWelcomeExample categoriesForClass!Seaside-Welcome! !
 !WAWelcomeExample methodsFor!

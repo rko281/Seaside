@@ -5,7 +5,7 @@ WAObject subclass: #WAConcatenatedHtmlAttributeValue
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAConcatenatedHtmlAttributeValue guid: (GUID fromString: '{d6d5cd14-a0ff-4f23-8ac8-a4ccab6adb63}')!
+WAConcatenatedHtmlAttributeValue guid: (GUID fromString: '{53b1333d-fbe3-4c20-b7f5-3ff5f99d2dc8}')!
 WAConcatenatedHtmlAttributeValue comment: ''!
 !WAConcatenatedHtmlAttributeValue categoriesForClass!Seaside-Core-Document! !
 !WAConcatenatedHtmlAttributeValue methodsFor!

@@ -5,7 +5,7 @@ GROrderedMultiMapTest subclass: #WARequestFieldsTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WARequestFieldsTest guid: (GUID fromString: '{ebbd93d8-b71d-47a5-8ca0-1ee5755d01aa}')!
+WARequestFieldsTest guid: (GUID fromString: '{b4a05b32-5b96-4400-89f1-010db2c3e993}')!
 WARequestFieldsTest comment: ''!
 !WARequestFieldsTest categoriesForClass!Seaside-Tests-Core-HTTP! !
 !WARequestFieldsTest methodsFor!

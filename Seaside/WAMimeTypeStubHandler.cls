@@ -5,7 +5,7 @@ WARestfulHandler subclass: #WAMimeTypeStubHandler
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAMimeTypeStubHandler guid: (GUID fromString: '{3b0ebcac-afff-49a1-8d7d-e6d2cffd980e}')!
+WAMimeTypeStubHandler guid: (GUID fromString: '{2dd40f39-57fd-48de-ac1a-9a0b1aa242a5}')!
 WAMimeTypeStubHandler comment: ''!
 !WAMimeTypeStubHandler categoriesForClass!Seaside-Tests-REST-Core! !
 !WAMimeTypeStubHandler methodsFor!

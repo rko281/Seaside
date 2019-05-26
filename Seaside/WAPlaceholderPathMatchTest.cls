@@ -5,7 +5,7 @@ TestCase subclass: #WAPlaceholderPathMatchTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAPlaceholderPathMatchTest guid: (GUID fromString: '{ede8144e-18e2-489a-a625-af142a6ebc2c}')!
+WAPlaceholderPathMatchTest guid: (GUID fromString: '{222af59c-d30c-4abb-86cd-489be2d3b62c}')!
 WAPlaceholderPathMatchTest comment: ''!
 !WAPlaceholderPathMatchTest categoriesForClass!Seaside-Tests-REST-Core! !
 !WAPlaceholderPathMatchTest methodsFor!

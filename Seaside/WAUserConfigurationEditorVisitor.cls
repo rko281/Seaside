@@ -5,7 +5,7 @@ WAAttributeVisitor subclass: #WAUserConfigurationEditorVisitor
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAUserConfigurationEditorVisitor guid: (GUID fromString: '{e29cef67-fd47-4689-a24c-9d4c71fc4e50}')!
+WAUserConfigurationEditorVisitor guid: (GUID fromString: '{ec5517d0-9fbf-437d-b0da-ce73f9d1cdbf}')!
 WAUserConfigurationEditorVisitor comment: ''!
 !WAUserConfigurationEditorVisitor categoriesForClass!Seaside-Tools-Web! !
 !WAUserConfigurationEditorVisitor methodsFor!

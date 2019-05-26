@@ -5,7 +5,7 @@ WAContextTest subclass: #WAEncoderTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAEncoderTest guid: (GUID fromString: '{70103dc6-42a5-42d5-9d88-d5ae27183398}')!
+WAEncoderTest guid: (GUID fromString: '{60631960-1aa1-4dbd-9383-fb0b58a6d40c}')!
 WAEncoderTest comment: ''!
 !WAEncoderTest categoriesForClass!Seaside-Tests-Core-Document! !
 !WAEncoderTest methodsFor!
@@ -25,8 +25,8 @@ testEncodedXmlUnicdeSmp	| emoji string |	emoji := Character codePoint: 16r1F64
 !WAEncoderTest categoriesFor: #assert:xmlEncodedGives:!private! !
 !WAEncoderTest categoriesFor: #testEncodedUrl!public!tests! !
 !WAEncoderTest categoriesFor: #testEncodedXml!public!tests! !
-!WAEncoderTest categoriesFor: #testEncodedXmlUnicde!private! !
-!WAEncoderTest categoriesFor: #testEncodedXmlUnicdeSmp!private! !
+!WAEncoderTest categoriesFor: #testEncodedXmlUnicde!public!tests! !
+!WAEncoderTest categoriesFor: #testEncodedXmlUnicdeSmp!public!tests! !
 
 !WAEncoderTest class methodsFor!
 

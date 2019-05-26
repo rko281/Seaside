@@ -5,7 +5,7 @@ WASystemConfiguration subclass: #WAConfigurationMock
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAConfigurationMock guid: (GUID fromString: '{6559322d-74e3-47ef-8a83-003847f3bf44}')!
+WAConfigurationMock guid: (GUID fromString: '{c9d98fab-02c7-4028-907a-e328bbc4929a}')!
 WAConfigurationMock comment: ''!
 !WAConfigurationMock categoriesForClass!Seaside-Tests-Core-Configuration! !
 !WAConfigurationMock methodsFor!

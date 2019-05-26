@@ -5,7 +5,7 @@ TestCase subclass: #WACollectionMimeDocumentTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WACollectionMimeDocumentTest guid: (GUID fromString: '{d8f250f7-338c-48d5-9b0c-b4770dfa27f5}')!
+WACollectionMimeDocumentTest guid: (GUID fromString: '{42ace3c8-011e-4a6a-8837-3b01c6707eba}')!
 WACollectionMimeDocumentTest comment: ''!
 !WACollectionMimeDocumentTest categoriesForClass!Seaside-Tests-Core-HTTP! !
 !WACollectionMimeDocumentTest methodsFor!

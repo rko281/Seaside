@@ -5,7 +5,7 @@ WADecoration subclass: #WADecorationStub
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WADecorationStub guid: (GUID fromString: '{49ea45fd-32ad-432b-834d-44ff45d9a9d8}')!
+WADecorationStub guid: (GUID fromString: '{04cc50e0-6541-4981-9712-3c2ba629febf}')!
 WADecorationStub comment: ''!
 !WADecorationStub categoriesForClass!Seaside-Tests-Component-Stubs! !
 !WADecorationStub methodsFor!

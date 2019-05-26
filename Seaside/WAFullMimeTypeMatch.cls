@@ -5,7 +5,7 @@ WAMimeTypeMatch subclass: #WAFullMimeTypeMatch
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAFullMimeTypeMatch guid: (GUID fromString: '{c15cefe3-e31f-4238-a14d-624fd7a06cac}')!
+WAFullMimeTypeMatch guid: (GUID fromString: '{092251ec-75f9-4b7d-b4c8-15191ea4dcc6}')!
 WAFullMimeTypeMatch comment: ''!
 !WAFullMimeTypeMatch categoriesForClass!Seaside-REST-Core-Route! !
 !WAFullMimeTypeMatch methodsFor!

@@ -5,7 +5,7 @@ WAAttributeEditor subclass: #WAExpiringCacheAttributeEditor
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAExpiringCacheAttributeEditor guid: (GUID fromString: '{d4fc6fe6-0b83-4ab4-a32b-548881356639}')!
+WAExpiringCacheAttributeEditor guid: (GUID fromString: '{593419ed-9456-48d2-b06f-4c33ffd86612}')!
 WAExpiringCacheAttributeEditor comment: ''!
 !WAExpiringCacheAttributeEditor categoriesForClass!Seaside-Tools-Web! !
 !WAExpiringCacheAttributeEditor methodsFor!

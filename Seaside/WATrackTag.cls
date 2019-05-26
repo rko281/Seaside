@@ -5,8 +5,8 @@ WATagBrush subclass: #WATrackTag
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WATrackTag guid: (GUID fromString: '{b9d8f710-f3c1-4df5-bc53-e07a69baf2a5}')!
-WATrackTag comment: ''!
+WATrackTag guid: (GUID fromString: '{1e319fca-c137-481f-9ec9-300865a7bd5c}')!
+WATrackTag comment: 'The <track> tag specifies text tracks for media elements This element is used to specify subtitles, caption files or other files containing text, that should be visible when the media is playing.'!
 !WATrackTag categoriesForClass!Seaside-Canvas-Tags! !
 !WATrackTag methodsFor!
 

@@ -5,7 +5,7 @@ WAExpiringCache subclass: #WABulkReapingCache
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WABulkReapingCache guid: (GUID fromString: '{c9752dbf-0df7-478d-8725-8a585ca62787}')!
+WABulkReapingCache guid: (GUID fromString: '{04049083-c660-481a-9372-6bef4ec2ab09}')!
 WABulkReapingCache comment: 'I am a cache that reaps all elements at once instead of incrementally.I am intended to be used in GemStone/S instead of WAHashCache. A background process should send #reap to me.    Instance Variables	dictionary:		<Dictionary>'!
 !WABulkReapingCache categoriesForClass!Seaside-Core-Cache! !
 !WABulkReapingCache methodsFor!
@@ -14,7 +14,7 @@ at: aKey ifAbsent: aBlock	| entry |	entry := dictionary at: aKey ifAbsent: [ ^
 
 at: aKey put: anObject	| present value |	present := false.	value := WABulkReapingCacheEntry value: anObject.	dictionary		at: aKey		ifAbsentPut: [ present := true. value ].	present ifTrue: [		^ anObject ].	dictionary at: aKey put: value.	^ anObject!
 
-clear	dictionary valuesDo: [ :value |		self cacheEntryRemoved: value value ].	dictionary removeAll!
+clear	dictionary do: [ :value |		self cacheEntryRemoved: value value ].	dictionary removeAll!
 
 initializeWithInitialSize: aSizeInteger maximumSize: aMaximumSizeInteger maximumAbsoluteAge: aMaximumAbsoluteAge maximumRelativeAge: aMaximumRelativeAge overflowAction: aOverflowActionSymbol	super initializeWithInitialSize: aSizeInteger maximumSize: aMaximumSizeInteger maximumAbsoluteAge: aMaximumAbsoluteAge maximumRelativeAge: aMaximumRelativeAge overflowAction: aOverflowActionSymbol.	dictionary := GRPlatform current reducedConflictDictionary new!
 

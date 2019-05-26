@@ -5,7 +5,7 @@ TestCase subclass: #WARouteTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WARouteTest guid: (GUID fromString: '{fafa2566-c01d-4b6b-b2b0-5e5f3fbf4939}')!
+WARouteTest guid: (GUID fromString: '{c59b0741-7f34-47a6-865c-59cc7cbf6873}')!
 WARouteTest comment: ''!
 !WARouteTest categoriesForClass!Seaside-Tests-REST-Core! !
 !WARouteTest methodsFor!

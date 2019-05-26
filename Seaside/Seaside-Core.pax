@@ -108,6 +108,7 @@ package classNames
 	add: #WAMutex;
 	add: #WAMutualExclusionCache;
 	add: #WANotification;
+	add: #WANullScriptGenerator;
 	add: #WANumberAttribute;
 	add: #WAObject;
 	add: #WAOpeningConditionalComment;
@@ -147,6 +148,7 @@ package classNames
 	add: #WASnapshot;
 	add: #WAStreamedResponse;
 	add: #WAStringAttribute;
+	add: #WAStyleElement;
 	add: #WASystemConfiguration;
 	add: #WATableBasedEncoder;
 	add: #WATextFileHandlerListing;
@@ -191,8 +193,10 @@ package methodNames
 	add: #GRPlatform -> #urlEncoderOn:codec:;
 	add: #GRPlatform -> #xmlEncoderOn:;
 	add: #GRSmallDictionary -> #seasideRequestFields;
+	add: #GRSmallDictionary2 -> #seasideRequestFields;
 	add: #GRUnsupportedEncodingError -> #seasidePossibleCauses;
 	add: #MessageNotUnderstood -> #seasidePossibleCauses;
+	add: #Number -> #encodeOn:;
 	add: #Object -> #encodeOn:;
 	add: #Object -> #isConcatenatedHtmlAttributeValue;
 	add: #Object -> #labelForSelector:;
@@ -219,16 +223,11 @@ package binaryGlobalNames: (Set new
 package globalAliases: (Set new
 	yourself).
 
-package setPrerequisites: (IdentitySet new
-	add: '..\..\Core\Object Arts\Dolphin\Base\Dolphin';
-	add: '..\..\Grease\Grease-Core';
-	add: '..\..\Grease\Grease-Dolphin-Core';
-	add: '..\..\Core\Contributions\IDB\IDB DateAndTime';
-	add: '..\..\Core\Contributions\IDB\IDB Duration';
-	yourself).
-
-package setManualPrerequisites: #(
-	'Grease-Dolphin-Core').
+package setPrerequisites: #(
+	'..\..\Core\Object Arts\Dolphin\Base\Dolphin'
+	'..\..\Core\Object Arts\Dolphin\Base\Dolphin Legacy Date & Time'
+	'..\..\Grease\Grease-Core'
+	'..\..\Grease\Grease-Dolphin-Core').
 
 package!
 
@@ -289,22 +288,7 @@ WAConfigurationError subclass: #WAAttributeNotFound
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-GRNotification subclass: #WANotification
-	instanceVariableNames: ''
-	classVariableNames: ''
-	poolDictionaries: ''
-	classInstanceVariableNames: ''!
-WANotification subclass: #WADynamicVariable
-	instanceVariableNames: ''
-	classVariableNames: ''
-	poolDictionaries: ''
-	classInstanceVariableNames: ''!
-WANotification subclass: #WARenderNotification
-	instanceVariableNames: ''
-	classVariableNames: ''
-	poolDictionaries: ''
-	classInstanceVariableNames: ''!
-WANotification subclass: #WAResponseNotification
+GRDynamicVariable subclass: #WADynamicVariable
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
@@ -315,6 +299,21 @@ WADynamicVariable subclass: #WACurrentExceptionHandler
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 WADynamicVariable subclass: #WACurrentRequestContext
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+GRNotification subclass: #WANotification
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WANotification subclass: #WARenderNotification
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WANotification subclass: #WAResponseNotification
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
@@ -334,7 +333,7 @@ GROrderedMultiMap subclass: #WAHeaderFields
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-GROrderedMultiMap subclass: #WARequestFields
+GROrderedMultiMap2 subclass: #WARequestFields
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
@@ -924,6 +923,11 @@ WAHtmlElement subclass: #WAMetaElement
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+WAHtmlElement subclass: #WAStyleElement
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
 WAContentElement subclass: #WALinkElement
 	instanceVariableNames: ''
 	classVariableNames: ''
@@ -960,7 +964,7 @@ WAQualifiedValue subclass: #WAAcceptLanguage
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 WARequestCookie subclass: #WACookie
-	instanceVariableNames: 'expiry secure discard comment commentUrl httpOnly maxAge'
+	instanceVariableNames: 'expiry secure discard comment commentUrl httpOnly sameSite maxAge'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
@@ -1044,6 +1048,11 @@ WAScriptGenerator subclass: #WADefaultScriptGenerator
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+WAScriptGenerator subclass: #WANullScriptGenerator
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
 WAVisitor subclass: #WAAttributeVisitor
 	instanceVariableNames: ''
 	classVariableNames: ''
@@ -1082,34 +1091,34 @@ renderOn: aRenderer	aRenderer text: self!
 seasideMimeDocument	^ WAMimeDocument on: self mimeType: WAMimeType applicationOctetStream!
 
 seasideMimeDocumentType: aMimeType	^ self seasideMimeDocument		mimeType: aMimeType;		yourself! !
-!ByteArray categoriesFor: #renderOn:!*seaside/core!public! !
-!ByteArray categoriesFor: #seasideMimeDocument!*seaside/core!public! !
-!ByteArray categoriesFor: #seasideMimeDocumentType:!*seaside/core!public! !
+!ByteArray categoriesFor: #renderOn:!*Seaside/Core!public! !
+!ByteArray categoriesFor: #seasideMimeDocument!*Seaside/Core!public! !
+!ByteArray categoriesFor: #seasideMimeDocumentType:!*Seaside/Core!public! !
 
 !Collection methodsFor!
 
 renderOn: html	self do: [ :each | html render: each ]! !
-!Collection categoriesFor: #renderOn:!*seaside/core!public! !
+!Collection categoriesFor: #renderOn:!*Seaside/Core!public! !
 
 !Dictionary methodsFor!
 
 seasideRequestFields	^ WARequestFields withAll: self! !
-!Dictionary categoriesFor: #seasideRequestFields!*seaside/core!public! !
+!Dictionary categoriesFor: #seasideRequestFields!*Seaside/Core!public! !
 
 !Exception methodsFor!
 
 seasidePossibleCauses	"Used by WAWalkback to render a list of what might have caused the receiver to be signaled.	answers a collection of strings"	^ #()! !
-!Exception categoriesFor: #seasidePossibleCauses!*seaside/core!public! !
+!Exception categoriesFor: #seasidePossibleCauses!*Seaside/Core!public! !
 
 !GRInvalidUtf8Error methodsFor!
 
 seasidePossibleCauses	^ #('The input is not UTF-8 but some other encoding like ISO-8859-1.')! !
-!GRInvalidUtf8Error categoriesFor: #seasidePossibleCauses!*seaside/core!public! !
+!GRInvalidUtf8Error categoriesFor: #seasidePossibleCauses!*Seaside/Core!public! !
 
 !GRPackage class methodsFor!
 
 seasideCore	^ self new		name: 'Seaside-Core';		description: 'The core of Seaside, required for all packages.';		addDependency: 'Grease-Core';		url: #seasideUrl;		yourself! !
-!GRPackage class categoriesFor: #seasideCore!*seaside/core!public! !
+!GRPackage class categoriesFor: #seasideCore!*Seaside/Core!public! !
 
 !GRPlatform methodsFor!
 
@@ -1119,7 +1128,7 @@ newReducedConflictCounter	"GemStone/S should answer an RcCounter here"	^ WARed
 
 newTransientValueHolder	"GemStone/S should answer a TransientValue here"	^ WAValueHolder new!
 
-seasideVersion	"Answer the Seaside version"	^ (GRVersion major: 3 minor: 2 revision: 2)		yourself!
+seasideVersion	"Answer the Seaside version"	^ (GRVersion major: 3 minor: 3 revision: 0)		yourself!
 
 sourceFileEncoding	"Answer the encoding used for source files."	^ 'ISO-8859-1'	!
 
@@ -1128,14 +1137,14 @@ urlEncoderOn: aStream	"Answer an URL encoder that works on aStream.	Platforms 
 urlEncoderOn: aStream codec: aCodec	"Answer an URL encoder that works on aStream.	Platforms may provide optimized implementations."	^ aCodec url encoderFor: (WAUrlEncoder on: aStream)!
 
 xmlEncoderOn: aStream	"Answer an XML encoder that works on aStream.	Platforms may provide optimized implementations."	^ WAXmlEncoder on: aStream! !
-!GRPlatform categoriesFor: #doCommitTransaction!*seaside/core!public! !
-!GRPlatform categoriesFor: #newReducedConflictCounter!*seaside/core!public! !
-!GRPlatform categoriesFor: #newTransientValueHolder!*seaside/core!public! !
-!GRPlatform categoriesFor: #seasideVersion!*seaside/core!public! !
-!GRPlatform categoriesFor: #sourceFileEncoding!*seaside/core!public! !
-!GRPlatform categoriesFor: #urlEncoderOn:!*seaside/core!public! !
-!GRPlatform categoriesFor: #urlEncoderOn:codec:!*seaside/core!public! !
-!GRPlatform categoriesFor: #xmlEncoderOn:!*seaside/core!public! !
+!GRPlatform categoriesFor: #doCommitTransaction!*Seaside/Core!public! !
+!GRPlatform categoriesFor: #newReducedConflictCounter!*Seaside/Core!public! !
+!GRPlatform categoriesFor: #newTransientValueHolder!*Seaside/Core!public! !
+!GRPlatform categoriesFor: #seasideVersion!*Seaside/Core!public! !
+!GRPlatform categoriesFor: #sourceFileEncoding!*Seaside/Core!public! !
+!GRPlatform categoriesFor: #urlEncoderOn:!*Seaside/Core!public! !
+!GRPlatform categoriesFor: #urlEncoderOn:codec:!*Seaside/Core!public! !
+!GRPlatform categoriesFor: #xmlEncoderOn:!*Seaside/Core!public! !
 
 !GRPlatform class methodsFor!
 
@@ -1144,24 +1153,34 @@ subStringsIn: aString splitBy: aCharacter	| subStrings |	subStrings := Ordered
 subStringsIn: aString splitBy: aCharacter collect: aOneArgumentBlock	| subStrings |	subStrings := OrderedCollection new: (aString count: [ :each | each = aCharacter ]) + 1.	self subStringsIn: aString splitBy: aCharacter do: [ :each |		subStrings add: (aOneArgumentBlock value: each) ].	^ subStrings!
 
 subStringsIn: aString splitBy: aCharacter do: aOneArgumentBlock	"#subStrings: can be slow on Pharo because it uses a lot of allocation so we avoid it	see issue Issue 609"	| startIndex |	startIndex := aString indexOf: aCharacter.	startIndex = 0		ifTrue: [			aString isEmpty ifFalse: [				aOneArgumentBlock value: aString ] ]		ifFalse: [			| endIndex stringSize |			stringSize := aString size.			startIndex = 1 ifFalse: [				"case where we have a path not starting with aCharacter"				aOneArgumentBlock value: (aString copyFrom: 1 to: startIndex - 1) ].			endIndex := aString indexOf: aCharacter startingAt: startIndex + 1.			[ startIndex ~= 0 ] whileTrue: [				startIndex + 1 = endIndex					ifTrue: [						"skip, avoid adding empty strings"						startIndex := endIndex.						endIndex := aString indexOf: aCharacter startingAt: startIndex + 1 ]					ifFalse: [						endIndex = 0							ifTrue: [								startIndex < stringSize ifTrue: [									"avoid adding empty path if aString ends with aCharacter"									aOneArgumentBlock value: (aString copyFrom: startIndex + 1 to: stringSize) ].								startIndex := 0 ]							ifFalse: [								aOneArgumentBlock value: (aString copyFrom: startIndex + 1 to: endIndex  - 1).								startIndex := endIndex.								endIndex := aString indexOf: aCharacter startingAt: startIndex + 1 ] ] ] ]! !
-!GRPlatform class categoriesFor: #subStringsIn:splitBy:!*seaside/core!public! !
-!GRPlatform class categoriesFor: #subStringsIn:splitBy:collect:!*seaside/core!public! !
-!GRPlatform class categoriesFor: #subStringsIn:splitBy:do:!*seaside/core!public! !
+!GRPlatform class categoriesFor: #subStringsIn:splitBy:!*Seaside/Core!public! !
+!GRPlatform class categoriesFor: #subStringsIn:splitBy:collect:!*Seaside/Core!public! !
+!GRPlatform class categoriesFor: #subStringsIn:splitBy:do:!*Seaside/Core!public! !
 
 !GRSmallDictionary methodsFor!
 
 seasideRequestFields	^ WARequestFields withAll: self! !
-!GRSmallDictionary categoriesFor: #seasideRequestFields!*seaside/core!public! !
+!GRSmallDictionary categoriesFor: #seasideRequestFields!*Seaside/Core!public! !
+
+!GRSmallDictionary2 methodsFor!
+
+seasideRequestFields	^ WARequestFields withAll: self! !
+!GRSmallDictionary2 categoriesFor: #seasideRequestFields!*Seaside/Core!public! !
 
 !GRUnsupportedEncodingError methodsFor!
 
 seasidePossibleCauses	^ #(		'The given encoding name is not supported on this Smalltalk dialect.'		'The given encoding name is misspelled.'	)! !
-!GRUnsupportedEncodingError categoriesFor: #seasidePossibleCauses!*seaside/core!public! !
+!GRUnsupportedEncodingError categoriesFor: #seasidePossibleCauses!*Seaside/Core!public! !
 
 !MessageNotUnderstood methodsFor!
 
 seasidePossibleCauses	| causes |	self receiver isNil ifFalse: [		^ #('you sent a message this type of object doesn''t understand') ].	causes := #(		'the receiver of the message is nil'		'a class extension hasn''t been loaded correctly'		'you sent the wrong message' ) asOrderedCollection.	self message selector = #contents ifTrue: [		causes addFirst: 'you forgot to send "super initialize" in a initialize method of a component or task' ].	^ causes! !
-!MessageNotUnderstood categoriesFor: #seasidePossibleCauses!*seaside/core!public! !
+!MessageNotUnderstood categoriesFor: #seasidePossibleCauses!*Seaside/Core!public! !
+
+!Number methodsFor!
+
+encodeOn: aDocument	self printOn: aDocument! !
+!Number categoriesFor: #encodeOn:!*Seaside/Core/document!public! !
 
 !Object methodsFor!
 
@@ -1172,10 +1191,10 @@ isConcatenatedHtmlAttributeValue	^ false!
 labelForSelector: aSymbol	^ aSymbol asCapitalizedPhrase!
 
 renderOn: aRenderer	"This method is called on all objects passed as an argument to the #render: method of a WARenderer subclass. Override this method to customize how objects render themselves. The default is the return value of #displayString.	Subclasses of WAPainter (including Components) should override #renderContentOn: and #rendererClass instead."	aRenderer text: self! !
-!Object categoriesFor: #encodeOn:!*seaside/core!public! !
-!Object categoriesFor: #isConcatenatedHtmlAttributeValue!*seaside/core/document!public! !
-!Object categoriesFor: #labelForSelector:!*seaside/core!public! !
-!Object categoriesFor: #renderOn:!*seaside/core!public! !
+!Object categoriesFor: #encodeOn:!*Seaside/Core!public! !
+!Object categoriesFor: #isConcatenatedHtmlAttributeValue!*Seaside/Core!public! !
+!Object categoriesFor: #labelForSelector:!*Seaside/Core!public! !
+!Object categoriesFor: #renderOn:!*Seaside/Core!public! !
 
 !String methodsFor!
 
@@ -1192,13 +1211,13 @@ seasideMimeDocumentType: aMimeType	^ self seasideMimeDocument		mimeType: aMime
 seasideMimeType	^ WAMimeType fromString: self!
 
 seasideUrl	^ WAUrl absolute: self! !
-!String categoriesFor: #asCapitalizedPhrase!*seaside/core!public! !
-!String categoriesFor: #encodeOn:!*seaside/core!public! !
-!String categoriesFor: #renderOn:!*seaside/core!public! !
-!String categoriesFor: #seasideMimeDocument!*seaside/core!public! !
-!String categoriesFor: #seasideMimeDocumentType:!*seaside/core!public! !
-!String categoriesFor: #seasideMimeType!*seaside/core!public! !
-!String categoriesFor: #seasideUrl!*seaside/core!public! !
+!String categoriesFor: #asCapitalizedPhrase!*Seaside/Core!public! !
+!String categoriesFor: #encodeOn:!*Seaside/Core!public! !
+!String categoriesFor: #renderOn:!*Seaside/Core!public! !
+!String categoriesFor: #seasideMimeDocument!*Seaside/Core!public! !
+!String categoriesFor: #seasideMimeDocumentType:!*Seaside/Core!public! !
+!String categoriesFor: #seasideMimeType!*Seaside/Core!public! !
+!String categoriesFor: #seasideUrl!*Seaside/Core!public! !
 
 !UndefinedObject methodsFor!
 
@@ -1207,9 +1226,9 @@ encodeOn: aDocument!
 renderOn: html!
 
 seasideUrl	^ self! !
-!UndefinedObject categoriesFor: #encodeOn:!*seaside/core!public! !
-!UndefinedObject categoriesFor: #renderOn:!*seaside/core!public! !
-!UndefinedObject categoriesFor: #seasideUrl!*seaside/core!public! !
+!UndefinedObject categoriesFor: #encodeOn:!*Seaside/Core!public! !
+!UndefinedObject categoriesFor: #renderOn:!*Seaside/Core!public! !
+!UndefinedObject categoriesFor: #seasideUrl!*Seaside/Core!public! !
 
 "End of package definition"!
 

@@ -5,7 +5,7 @@ WAListAttribute subclass: #WAClassListAttribute
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAClassListAttribute guid: (GUID fromString: '{6aed6747-8804-4242-96b0-4f2f31c629b5}')!
+WAClassListAttribute guid: (GUID fromString: '{fb63f1cf-267e-4fc3-9a3e-72475495a004}')!
 WAClassListAttribute comment: 'WAClassListAttribute is an attribute that is restricted to a list of classes. The value will be an instance of the given class created with #new. '!
 !WAClassListAttribute categoriesForClass!Seaside-Core-Configuration! !
 !WAClassListAttribute methodsFor!

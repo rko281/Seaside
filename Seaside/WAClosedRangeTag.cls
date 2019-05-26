@@ -5,7 +5,7 @@ WASteppedTag subclass: #WAClosedRangeTag
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAClosedRangeTag guid: (GUID fromString: '{545c3f66-ade9-4406-b405-1b761e199f95}')!
+WAClosedRangeTag guid: (GUID fromString: '{4497fa4f-e6e3-469f-b329-6debdf247988}')!
 WAClosedRangeTag comment: 'abstract class for all the elements that have a step, min and max attribute'!
 !WAClosedRangeTag categoriesForClass!Seaside-Canvas-Tags! !
 !WAClosedRangeTag methodsFor!

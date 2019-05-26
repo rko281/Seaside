@@ -5,7 +5,7 @@ WAExpiringCacheTest subclass: #WABulkReapingCacheTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WABulkReapingCacheTest guid: (GUID fromString: '{4b8315c9-3ada-4957-8603-b1fa20aad69a}')!
+WABulkReapingCacheTest guid: (GUID fromString: '{86bcffe8-3b0a-49ed-bce2-de74f624cb87}')!
 WABulkReapingCacheTest comment: ''!
 !WABulkReapingCacheTest categoriesForClass!Seaside-Tests-Core-Cache! !
 !WABulkReapingCacheTest methodsFor!

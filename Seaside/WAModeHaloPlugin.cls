@@ -5,7 +5,7 @@ WAHaloPlugin subclass: #WAModeHaloPlugin
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAModeHaloPlugin guid: (GUID fromString: '{b53d75af-4aaf-4d55-83ec-ab371caab68c}')!
+WAModeHaloPlugin guid: (GUID fromString: '{3bae7644-a5af-4158-8f55-5344328884be}')!
 WAModeHaloPlugin comment: 'I control the rendering modes of the halo.'!
 !WAModeHaloPlugin categoriesForClass!Seaside-Development-Plugins! !
 !WAModeHaloPlugin methodsFor!

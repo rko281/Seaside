@@ -5,7 +5,7 @@ JQWidget subclass: #JQSortable
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQSortable guid: (GUID fromString: '{0d67112d-1caf-45eb-ab14-fa0045885fa8}')!
+JQSortable guid: (GUID fromString: '{657a138d-b445-40ba-94b7-bdf9bf9210fe}')!
 JQSortable comment: 'Creates new sortable on the nodeset supplied by the query.'!
 !JQSortable categoriesForClass!JQuery-UI-Interaction! !
 !JQSortable methodsFor!
@@ -86,9 +86,7 @@ scrollSensitivity: anInteger	"Defines how near the mouse must be to an edge to 
 
 scrollSpeed: anInteger	"The speed at which the window should scroll once the mouse pointer gets within the scrollSensitivity distance."	self optionAt: 'scrollSpeed' put: anInteger!
 
-tolerance: aString	"This is the way the reordering behaves during drag. Possible values: 'intersect', 'pointer'. In some setups, 'pointer' is more natural.  ''intersect'': draggable overlaps the droppable at least 50% ''pointer'': mouse pointer overlaps the droppable "	self optionAt: 'tolerance' put: aString!
-
-zIndex: anInteger	"Z-index for element/helper while being sorted."	self optionAt: 'zIndex' put: anInteger! !
+tolerance: aString	"This is the way the reordering behaves during drag. Possible values: 'intersect', 'pointer'. In some setups, 'pointer' is more natural.  ''intersect'': draggable overlaps the droppable at least 50% ''pointer'': mouse pointer overlaps the droppable "	self optionAt: 'tolerance' put: aString! !
 !JQSortable categoriesFor: #appendTo:!options/generated!public! !
 !JQSortable categoriesFor: #axis:!options/generated!public! !
 !JQSortable categoriesFor: #cancel!actions!public! !
@@ -128,5 +126,4 @@ zIndex: anInteger	"Z-index for element/helper while being sorted."	self optio
 !JQSortable categoriesFor: #scrollSensitivity:!options/generated!public! !
 !JQSortable categoriesFor: #scrollSpeed:!options/generated!public! !
 !JQSortable categoriesFor: #tolerance:!options/generated!public! !
-!JQSortable categoriesFor: #zIndex:!options/generated!public! !
 

@@ -5,7 +5,7 @@ WAObject subclass: #WAFileLibraryResource
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAFileLibraryResource guid: (GUID fromString: '{b4ebdfaa-29a2-48bd-82ad-3f681d2f01c9}')!
+WAFileLibraryResource guid: (GUID fromString: '{34d5242d-fefe-4b32-b303-5b6bfdbdbec3}')!
 WAFileLibraryResource comment: ''!
 !WAFileLibraryResource categoriesForClass!Seaside-Core-Libraries! !
 !WAFileLibraryResource methodsFor!

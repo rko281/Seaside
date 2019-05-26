@@ -5,7 +5,7 @@ WATagBrush subclass: #WAParameterTag
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAParameterTag guid: (GUID fromString: '{9f6a5f5c-a6cc-4151-b337-4e047162cf7a}')!
+WAParameterTag guid: (GUID fromString: '{e7875cd1-3e11-46fb-83ef-8bf2307f37c4}')!
 WAParameterTag comment: 'The param element allows you to specify the run-time settings for an object inserted into XHTML documents.'!
 !WAParameterTag categoriesForClass!Seaside-Canvas-Tags! !
 !WAParameterTag methodsFor!

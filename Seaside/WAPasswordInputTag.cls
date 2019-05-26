@@ -5,7 +5,7 @@ WATextInputTag subclass: #WAPasswordInputTag
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAPasswordInputTag guid: (GUID fromString: '{fe65dd4a-0472-497d-af2a-1768c304f31a}')!
+WAPasswordInputTag guid: (GUID fromString: '{3d586f8c-ce75-4e2a-932e-06ef331ebb80}')!
 WAPasswordInputTag comment: 'I am a password input widget that does not display the entered text.'!
 !WAPasswordInputTag categoriesForClass!Seaside-Canvas-Tags! !
 !WAPasswordInputTag methodsFor!

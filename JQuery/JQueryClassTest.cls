@@ -5,7 +5,7 @@ JQueryTest subclass: #JQueryClassTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQueryClassTest guid: (GUID fromString: '{37ac753a-45cf-40e8-b362-bed45c7adfdc}')!
+JQueryClassTest guid: (GUID fromString: '{99692f07-7996-4396-96cc-fa32c2b74c9b}')!
 JQueryClassTest comment: ''!
 !JQueryClassTest categoriesForClass!JQuery-Tests-Core-Unit! !
 !JQueryClassTest methodsFor!
@@ -23,6 +23,8 @@ testContains	self		assert: (self jQuery contains: 1 in: #(1 2 3))		equals: se
 testDocument	self		assert: (self jQuery document)		equals: self function , '(document)'!
 
 testError	self		assert: (self jQuery error: 'Doomsday Device')		equals: self function , '.error("Doomsday Device")'!
+
+testEscapeSelector	self		assert: (self jQuery escapeSelector: '#foobar')		equals: self function , '.escapeSelector("#foobar")'!
 
 testExpression	self		assert: (self jQuery expression: '#foo')		equals: self function , '("#foo")'.	self		assert: (self jQuery expression: 'div > p')		equals: self function , '("div > p")'.	self		assert: (self jQuery expression: 'ul li.active')		equals: self function , '("ul li.active")'!
 
@@ -56,7 +58,7 @@ testThis	self		assert: (self jQuery this)		equals: self function , '(this)'!
 
 testType	self		assert: (self jQuery type: true)		equals: self function , '.type(true)'!
 
-testUnique	self		assert: (self jQuery unique: #(1 2 2 3))		equals: self function , '.unique([1,2,2,3])'!
+testUniqueSort	self		assert: (self jQuery uniqueSort: #(1 2 2 3))		equals: self function , '.uniqueSort([1,2,2,3])'!
 
 testWithBlock	self		assert: (self jQuery: [ :html | html heading: 'jQuery' ])		equals: self function , '("<h1>jQuery</h1>")'!
 
@@ -74,6 +76,7 @@ testWithSymbol	self		assert: (self jQuery: #foo)		equals: self function , '("
 !JQueryClassTest categoriesFor: #testContains!public!tests/utilities! !
 !JQueryClassTest categoriesFor: #testDocument!public!tests/creation! !
 !JQueryClassTest categoriesFor: #testError!public!tests/utilities! !
+!JQueryClassTest categoriesFor: #testEscapeSelector!public!tests/utilities! !
 !JQueryClassTest categoriesFor: #testExpression!public!tests/creation! !
 !JQueryClassTest categoriesFor: #testExpressionContext!public!tests/creation! !
 !JQueryClassTest categoriesFor: #testHoldReady!public!tests/utilities! !
@@ -90,7 +93,7 @@ testWithSymbol	self		assert: (self jQuery: #foo)		equals: self function , '("
 !JQueryClassTest categoriesFor: #testSupport!public!tests/agent! !
 !JQueryClassTest categoriesFor: #testThis!public!tests/creation! !
 !JQueryClassTest categoriesFor: #testType!public!tests/utilities! !
-!JQueryClassTest categoriesFor: #testUnique!public!tests/utilities! !
+!JQueryClassTest categoriesFor: #testUniqueSort!public!tests/utilities! !
 !JQueryClassTest categoriesFor: #testWithBlock!public!tests/with! !
 !JQueryClassTest categoriesFor: #testWithNil!public!tests/with! !
 !JQueryClassTest categoriesFor: #testWithReady!public!tests/with! !

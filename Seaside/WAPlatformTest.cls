@@ -5,9 +5,9 @@ GRPlatformTest subclass: #WAPlatformTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAPlatformTest guid: (GUID fromString: '{5c78a017-92cf-49e0-8acb-4dd1476006d6}')!
-WAPlatformTest comment: ''!
-!WAPlatformTest categoriesForClass!Seaside-Tests-Core! !
+WAPlatformTest guid: (GUID fromString: '{90b48da8-4151-42d9-8ae1-45649ffb748c}')!
+WAPlatformTest comment: 'I contain unit tests for Seaside class extensions on GRPlatform.'!
+!WAPlatformTest categoriesForClass!Seaside-Tests-Core-Base! !
 !WAPlatformTest methodsFor!
 
 testSeasideVersion	self assert: (self platform seasideVersion isKindOf: GRVersion)! !

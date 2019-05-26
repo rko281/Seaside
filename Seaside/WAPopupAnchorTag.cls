@@ -5,7 +5,7 @@ WAAnchorTag subclass: #WAPopupAnchorTag
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAPopupAnchorTag guid: (GUID fromString: '{a99b585b-259e-4777-97d7-4eea9da114fd}')!
+WAPopupAnchorTag guid: (GUID fromString: '{335550cf-0afd-4847-9a20-51c02b55dccb}')!
 WAPopupAnchorTag comment: 'I am used to create a link that opens in a new window. A name can be specified using #name: and many features can be configured. Note, that not all features are supported on all web browser platforms. If Javascript is disabled the link will behave like any other anchor.Most of the time a popup-anchor is created like this:	html popupAnchor		callback: [ self session presenter			show: WACounter new ];		with: ''Open the counter within a new window''This code creates a new render-loop and displays a new instance of WACounter within the new browser window.		'!
 !WAPopupAnchorTag categoriesForClass!Seaside-Canvas-Tags! !
 !WAPopupAnchorTag methodsFor!
@@ -18,7 +18,7 @@ featureString	^ String streamContents:  [ :stream | 		features associations do
 
 height: anInteger	"Specifies the height of the new window."	features at: #height put: anInteger!
 
-initialize	super initialize.	windowTitle := '_blank'.	features := GRSmallDictionary new!
+initialize	super initialize.	windowTitle := '_blank'.	features := GRSmallDictionary2 new!
 
 left: anInteger	"Specifies the x coordinate of the top left corner of the new window. "	features at: #left put: anInteger!
 

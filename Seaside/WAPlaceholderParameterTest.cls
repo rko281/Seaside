@@ -5,7 +5,7 @@ TestCase subclass: #WAPlaceholderParameterTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAPlaceholderParameterTest guid: (GUID fromString: '{70580cca-3af3-49e3-9b50-31126591e4f8}')!
+WAPlaceholderParameterTest guid: (GUID fromString: '{af5c82c2-414f-457f-9b35-e68c193067c4}')!
 WAPlaceholderParameterTest comment: ''!
 !WAPlaceholderParameterTest categoriesForClass!Seaside-Tests-REST-Core! !
 !WAPlaceholderParameterTest methodsFor!

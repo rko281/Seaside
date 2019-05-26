@@ -5,7 +5,7 @@ WAComponent subclass: #WAWelcomeGettingStarted
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAWelcomeGettingStarted guid: (GUID fromString: '{6fba73ce-a70d-4160-8748-5ae9bebe8dd7}')!
+WAWelcomeGettingStarted guid: (GUID fromString: '{fc4711d6-2d1b-4b3a-b1bd-fbe8a650d2ae}')!
 WAWelcomeGettingStarted comment: ''!
 !WAWelcomeGettingStarted categoriesForClass!Seaside-Welcome! !
 !WAWelcomeGettingStarted methodsFor!

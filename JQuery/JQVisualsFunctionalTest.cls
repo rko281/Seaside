@@ -5,7 +5,7 @@ JQUiFunctionalTest subclass: #JQVisualsFunctionalTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQVisualsFunctionalTest guid: (GUID fromString: '{3479339d-d54a-479c-b44d-be67b9c9af65}')!
+JQVisualsFunctionalTest guid: (GUID fromString: '{95dee9fe-9f00-4ccb-a027-47fc80d435be}')!
 JQVisualsFunctionalTest comment: ''!
 !JQVisualsFunctionalTest categoriesForClass!JQuery-Tests-UI-Functional! !
 !JQVisualsFunctionalTest methodsFor!

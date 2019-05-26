@@ -5,7 +5,7 @@ WAAbstractHtmlElementTest subclass: #WAMetaElementTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAMetaElementTest guid: (GUID fromString: '{51d95ee6-435b-4984-8519-f7e1d4500310}')!
+WAMetaElementTest guid: (GUID fromString: '{d07eb801-774b-491c-a77d-ab4ab516ad68}')!
 WAMetaElementTest comment: ''!
 !WAMetaElementTest categoriesForClass!Seaside-Tests-Core-Document! !
 !WAMetaElementTest methodsFor!

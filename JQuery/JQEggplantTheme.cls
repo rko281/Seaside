@@ -5,7 +5,7 @@ JQBaseTheme subclass: #JQEggplantTheme
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQEggplantTheme guid: (GUID fromString: '{12d085c3-807c-48c2-81b3-d262c09f382a}')!
+JQEggplantTheme guid: (GUID fromString: '{aff51d15-f8be-45f2-958a-7e4d90bb8fc3}')!
 JQEggplantTheme comment: ''!
 !JQEggplantTheme categoriesForClass!JQuery-UI-Libraries! !
 !JQEggplantTheme methodsFor!

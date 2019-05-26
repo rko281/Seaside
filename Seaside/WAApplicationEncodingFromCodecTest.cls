@@ -5,7 +5,7 @@ WARegistryTest subclass: #WAApplicationEncodingFromCodecTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAApplicationEncodingFromCodecTest guid: (GUID fromString: '{93015457-61d0-4fb9-b341-0e9c489fcac7}')!
+WAApplicationEncodingFromCodecTest guid: (GUID fromString: '{1c43d02f-0fec-4012-b8e6-a71461274bf3}')!
 WAApplicationEncodingFromCodecTest comment: ''!
 !WAApplicationEncodingFromCodecTest categoriesForClass!Seaside-Tests-Session! !
 !WAApplicationEncodingFromCodecTest methodsFor!

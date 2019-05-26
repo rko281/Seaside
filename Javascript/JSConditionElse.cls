@@ -5,7 +5,7 @@ JSCondition subclass: #JSConditionElse
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSConditionElse guid: (GUID fromString: '{deb99ef3-1aec-4771-9537-758380fcba72}')!
+JSConditionElse guid: (GUID fromString: '{e26821d7-e197-4bac-a2b9-4222c2157371}')!
 JSConditionElse comment: ''!
 !JSConditionElse categoriesForClass!Javascript-Core-Decorations! !
 !JSConditionElse methodsFor!

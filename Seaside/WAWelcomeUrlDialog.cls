@@ -5,7 +5,7 @@ WAPainter subclass: #WAWelcomeUrlDialog
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAWelcomeUrlDialog guid: (GUID fromString: '{aebbd34f-26e0-4711-92b5-45be8ceabdf5}')!
+WAWelcomeUrlDialog guid: (GUID fromString: '{db67cf5f-319d-4206-8844-4610b7168ae1}')!
 WAWelcomeUrlDialog comment: ''!
 !WAWelcomeUrlDialog categoriesForClass!Seaside-Welcome! !
 !WAWelcomeUrlDialog methodsFor!

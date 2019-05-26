@@ -5,7 +5,7 @@ JSObjectTest subclass: #JSStreamTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSStreamTest guid: (GUID fromString: '{7a4e4efd-c9c7-48fd-839e-23ca4410b0a2}')!
+JSStreamTest guid: (GUID fromString: '{d4868dec-3ad5-4e77-854e-44fe08ea13c9}')!
 JSStreamTest comment: ''!
 !JSStreamTest categoriesForClass!Javascript-Tests-Core! !
 !JSStreamTest methodsFor!
@@ -15,6 +15,8 @@ testArgument	| stream |	stream := self stream argument: 1.	self assert: strea
 testArguments	| stream |	stream := self stream arguments: #(1 2 3).	self assert: stream contents = '(1,2,3)'!
 
 testCharacter	self assert: $a equals: '"a"'!
+
+testCodecStream	| actual |	actual := String streamContents: [ :stream |		(GRNullCodec new encoderFor: stream)			javascript: 'OK' ].	self assert: actual = '"OK"'!
 
 testCopy	| stream1 stream2 |	stream1 := self stream nextPutAll: 'foo'.	stream2 := stream1 copy nextPutAll: 'bar'.	stream1 nextPutAll: 'zork'.	self assert: stream1 contents = 'foozork'.	self assert: stream2 contents = 'foobar'!
 
@@ -46,6 +48,7 @@ testStringSpecial	self assert: (String with: Character cr) equals: '"\r"'.	sel
 !JSStreamTest categoriesFor: #testArgument!public!tests! !
 !JSStreamTest categoriesFor: #testArguments!public!tests! !
 !JSStreamTest categoriesFor: #testCharacter!public!tests/literals! !
+!JSStreamTest categoriesFor: #testCodecStream!public!tests/literals! !
 !JSStreamTest categoriesFor: #testCopy!public!tests! !
 !JSStreamTest categoriesFor: #testEncodeKeyValueOn!public!tests/encoding! !
 !JSStreamTest categoriesFor: #testJavascript!public!tests! !

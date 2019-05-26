@@ -5,7 +5,7 @@ JQBaseTheme subclass: #JQPepperGrinderTheme
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQPepperGrinderTheme guid: (GUID fromString: '{dee20a38-3541-415b-814f-40b0d7cc2197}')!
+JQPepperGrinderTheme guid: (GUID fromString: '{f43e91cb-02b8-4462-947f-28f079b845ac}')!
 JQPepperGrinderTheme comment: ''!
 !JQPepperGrinderTheme categoriesForClass!JQuery-UI-Libraries! !
 !JQPepperGrinderTheme methodsFor!

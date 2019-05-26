@@ -5,7 +5,7 @@ WAActionPhaseContinuation subclass: #WAPluggableActionContinuation
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAPluggableActionContinuation guid: (GUID fromString: '{8e68d292-451f-455e-8cf1-b35af1d88194}')!
+WAPluggableActionContinuation guid: (GUID fromString: '{10b71362-f4b0-47a5-a3ca-131fa3ef28e5}')!
 WAPluggableActionContinuation comment: 'This continuation executes an action (any class that implements #value or #value:). If possible, the renderContext is passed in as an argument. When the action is complete, if a response hasn''t been returned, control is passed to a render continuation.''Instance Variables:	action	<BlockClosure | BlockContext | GRDelayedSend | MessageSend | WAContinuation | WAPartialContinuation>'!
 !WAPluggableActionContinuation categoriesForClass!Seaside-RenderLoop! !
 !WAPluggableActionContinuation methodsFor!

@@ -5,7 +5,7 @@ WAValueCallback subclass: #WAMapCallback
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAMapCallback guid: (GUID fromString: '{84b777de-c6f7-4d2b-bdb4-37ef2994e406}')!
+WAMapCallback guid: (GUID fromString: '{d1aa3c12-e02e-405a-bf3b-6340c8ea45a7}')!
 WAMapCallback comment: ''!
 !WAMapCallback categoriesForClass!Seaside-Core-Callbacks! !
 !WAMapCallback methodsFor!

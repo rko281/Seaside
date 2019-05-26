@@ -11,6 +11,7 @@ package classNames
 	add: #WACookieIfSupportedSessionTrackingStrategy;
 	add: #WACookieOnlySessionTrackingStrategy;
 	add: #WACookieSessionTrackingStrategy;
+	add: #WAEnterpriseAuberginesStrategy;
 	add: #WAInvisibleSessionTrackingStrategy;
 	add: #WAIPSessionTrackingStrategy;
 	add: #WAMutualExclusionFilter;
@@ -60,12 +61,11 @@ package binaryGlobalNames: (Set new
 package globalAliases: (Set new
 	yourself).
 
-package setPrerequisites: (IdentitySet new
-	add: '..\..\Core\Object Arts\Dolphin\Base\Dolphin';
-	add: '..\..\Grease\Grease-Core';
-	add: 'Seaside-Canvas';
-	add: 'Seaside-Core';
-	yourself).
+package setPrerequisites: #(
+	'..\..\Core\Object Arts\Dolphin\Base\Dolphin'
+	'..\..\Grease\Grease-Core'
+	'Seaside-Canvas'
+	'Seaside-Core').
 
 package!
 
@@ -102,6 +102,11 @@ WACookieSessionTrackingStrategy subclass: #WACookieIfSupportedSessionTrackingStr
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 WACookieSessionTrackingStrategy subclass: #WACookieOnlySessionTrackingStrategy
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WACookieIfSupportedSessionTrackingStrategy subclass: #WAEnterpriseAuberginesStrategy
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''

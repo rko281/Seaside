@@ -5,9 +5,9 @@ JSObject subclass: #JSLogger
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSLogger guid: (GUID fromString: '{d496c75f-969e-4770-949f-e4656448d4c4}')!
+JSLogger guid: (GUID fromString: '{4a3f7f62-73c5-435d-aa64-f3c3a58a1f95}')!
 JSLogger comment: 'I am a logger class to be used together with FireBug. I have nothing to do with Scriptaculous directly, but I nicely fit in here as everybody should be using FireBug for Script debugging anyway.'!
-!JSLogger categoriesForClass!Javascript-Core! !
+!JSLogger categoriesForClass!Javascript-Core-Base! !
 !JSLogger methodsFor!
 
 assert: anObject 	self 		call: 'assert'		with: anObject!

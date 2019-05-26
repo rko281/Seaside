@@ -5,7 +5,7 @@ JQUiFunctionalTest subclass: #JQProgressbarFunctionalTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQProgressbarFunctionalTest guid: (GUID fromString: '{8353662a-3139-4823-80b8-113310a60131}')!
+JQProgressbarFunctionalTest guid: (GUID fromString: '{f2cf26f6-e0f5-4206-bfee-05687289a81e}')!
 JQProgressbarFunctionalTest comment: ''!
 !JQProgressbarFunctionalTest categoriesForClass!JQuery-Tests-UI-Functional! !
 !JQProgressbarFunctionalTest methodsFor!

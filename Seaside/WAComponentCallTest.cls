@@ -5,7 +5,7 @@ TestCase subclass: #WAComponentCallTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAComponentCallTest guid: (GUID fromString: '{e5dd88f1-3697-404c-aed6-16a8288b9798}')!
+WAComponentCallTest guid: (GUID fromString: '{68836221-bed9-4f8f-a8ea-3f17291ba533}')!
 WAComponentCallTest comment: ''!
 !WAComponentCallTest categoriesForClass!Seaside-Tests-Flow-Unit! !
 !WAComponentCallTest methodsFor!

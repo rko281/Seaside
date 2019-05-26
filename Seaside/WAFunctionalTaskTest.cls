@@ -5,7 +5,7 @@ WATask subclass: #WAFunctionalTaskTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAFunctionalTaskTest guid: (GUID fromString: '{f250b45b-3f01-42ad-a4f9-78d22b54d30b}')!
+WAFunctionalTaskTest guid: (GUID fromString: '{5471b58f-2042-4b1b-a7a3-d164fcb1144b}')!
 WAFunctionalTaskTest comment: ''!
 !WAFunctionalTaskTest categoriesForClass!Seaside-Tests-Functional! !
 !WAFunctionalTaskTest class methodsFor!

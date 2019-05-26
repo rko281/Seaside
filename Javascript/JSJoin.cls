@@ -5,9 +5,9 @@ JSObject subclass: #JSJoin
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSJoin guid: (GUID fromString: '{e3e2c714-35d9-465c-bb3e-301e86716743}')!
+JSJoin guid: (GUID fromString: '{d20376c8-017b-421d-b8b5-b02f57ce193a}')!
 JSJoin comment: 'I join a collection of JavaScript statements with the given string.'!
-!JSJoin categoriesForClass!Javascript-Core! !
+!JSJoin categoriesForClass!Javascript-Core-Base! !
 !JSJoin methodsFor!
 
 collection	^ collection!

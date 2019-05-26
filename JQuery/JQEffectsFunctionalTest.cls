@@ -5,7 +5,7 @@ JQFunctionalTest subclass: #JQEffectsFunctionalTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQEffectsFunctionalTest guid: (GUID fromString: '{10e88401-4caf-4f04-b6ea-91207f490425}')!
+JQEffectsFunctionalTest guid: (GUID fromString: '{45a18731-27f0-4c95-9ada-67f488b44810}')!
 JQEffectsFunctionalTest comment: ''!
 !JQEffectsFunctionalTest categoriesForClass!JQuery-Tests-Core-Functional! !
 !JQEffectsFunctionalTest methodsFor!

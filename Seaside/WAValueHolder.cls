@@ -5,7 +5,7 @@ WAObject subclass: #WAValueHolder
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAValueHolder guid: (GUID fromString: '{91c39f01-2ceb-4f62-bb26-ee1391bc80a2}')!
+WAValueHolder guid: (GUID fromString: '{a37a0483-105a-43c3-aeca-efcc5810e058}')!
 WAValueHolder comment: 'I wrap a single object. I am like value holder except that I am portable and don''t include the Model cruft in Squeak.'!
 !WAValueHolder categoriesForClass!Seaside-Core-Utilities! !
 !WAValueHolder methodsFor!

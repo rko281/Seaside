@@ -5,7 +5,7 @@ WANotification subclass: #WARenderNotification
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WARenderNotification guid: (GUID fromString: '{35e832a4-ec46-4aae-99b3-ef9ed5b5f15c}')!
+WARenderNotification guid: (GUID fromString: '{e36b3b2d-85bc-4e0b-a845-c295c94147c0}')!
 WARenderNotification comment: ''!
 !WARenderNotification categoriesForClass!Seaside-Core-Exceptions! !
 !WARenderNotification methodsFor!

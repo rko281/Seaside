@@ -5,7 +5,7 @@ WAAttributeEditor subclass: #WAFileAttributeEditor
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAFileAttributeEditor guid: (GUID fromString: '{863fce51-2523-486a-90b9-cdd3621b2e98}')!
+WAFileAttributeEditor guid: (GUID fromString: '{df7db317-a366-41ab-92ad-2d6b04399bb5}')!
 WAFileAttributeEditor comment: ''!
 !WAFileAttributeEditor categoriesForClass!Seaside-Tools-Web! !
 !WAFileAttributeEditor methodsFor!

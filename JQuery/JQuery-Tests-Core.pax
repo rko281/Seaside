@@ -35,19 +35,17 @@ package binaryGlobalNames: (Set new
 package globalAliases: (Set new
 	yourself).
 
-package setPrerequisites: (IdentitySet new
-	add: '..\..\Core\Object Arts\Dolphin\Base\Dolphin';
-	add: '..\..\Grease\Grease-Core';
-	add: '..\..\Core\Contributions\IDB\IDB DateAndTime';
-	add: '..\Javascript\Javascript-Core';
-	add: '..\Javascript\Javascript-Tests-Core';
-	add: 'JQuery-Core';
-	add: '..\Seaside\Seaside-Component';
-	add: '..\Seaside\Seaside-Core';
-	add: '..\Seaside\Seaside-Development';
-	add: '..\Seaside\Seaside-Tests-Functional';
-	add: '..\Seaside\Seaside-Tools-Core';
-	yourself).
+package setPrerequisites: #(
+	'..\..\Core\Object Arts\Dolphin\Base\Dolphin'
+	'..\..\Grease\Grease-Core'
+	'..\Javascript\Javascript-Core'
+	'..\Javascript\Javascript-Tests-Core'
+	'JQuery-Core'
+	'..\Seaside\Seaside-Component'
+	'..\Seaside\Seaside-Core'
+	'..\Seaside\Seaside-Development'
+	'..\Seaside\Seaside-Tests-Functional'
+	'..\Seaside\Seaside-Tools-Core').
 
 package!
 

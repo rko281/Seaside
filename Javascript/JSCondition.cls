@@ -5,7 +5,7 @@ JSStatement subclass: #JSCondition
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSCondition guid: (GUID fromString: '{97c21599-b7af-44c1-a84e-9d030edd187f}')!
+JSCondition guid: (GUID fromString: '{bbb30437-d61d-4006-929f-5c671a2eac07}')!
 JSCondition comment: 'I wrap the decorated object into a conditional statement.'!
 !JSCondition categoriesForClass!Javascript-Core-Decorations! !
 !JSCondition methodsFor!

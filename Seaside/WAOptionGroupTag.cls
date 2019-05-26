@@ -5,7 +5,7 @@ WATagBrush subclass: #WAOptionGroupTag
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAOptionGroupTag guid: (GUID fromString: '{c8f242e0-1173-4099-8723-d90e2d2518d6}')!
+WAOptionGroupTag guid: (GUID fromString: '{41a2e5c6-cdf4-4ed3-847e-dff0b4cbf0da}')!
 WAOptionGroupTag comment: 'The OPTGROUP element allows authors to group choices logically. This is particularly helpful when the user must choose from a long list of options; groups of related choices are easier to grasp and remember than a single long list of options.It has crappy browser support and noone as ever used it. See WAInputTest >> #renderOptionGroupOn: for examples.'!
 !WAOptionGroupTag categoriesForClass!Seaside-Canvas-Tags! !
 !WAOptionGroupTag methodsFor!

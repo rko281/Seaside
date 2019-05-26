@@ -5,8 +5,8 @@ TestCase subclass: #WAEnvironmentDefaultHandlersTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAEnvironmentDefaultHandlersTest guid: (GUID fromString: '{50b19e92-e33c-4050-ac2a-39ad91c01f3d}')!
-WAEnvironmentDefaultHandlersTest comment: ''!
+WAEnvironmentDefaultHandlersTest guid: (GUID fromString: '{897a4690-abf8-44e8-b0f5-e7c52efacf9f}')!
+WAEnvironmentDefaultHandlersTest comment: 'I contain unit test for default handlers of the environment.'!
 !WAEnvironmentDefaultHandlersTest categoriesForClass!Seaside-Tests-Environment! !
 !WAEnvironmentDefaultHandlersTest methodsFor!
 

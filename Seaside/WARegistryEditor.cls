@@ -5,7 +5,7 @@ WAHandlerEditor subclass: #WARegistryEditor
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WARegistryEditor guid: (GUID fromString: '{c59688e2-5d88-46dc-99a8-2e9aa375fe56}')!
+WARegistryEditor guid: (GUID fromString: '{2015bc43-118b-4978-8fac-17ad014ad4be}')!
 WARegistryEditor comment: ''!
 !WARegistryEditor categoriesForClass!Seaside-Tools-Web! !
 !WARegistryEditor methodsFor!

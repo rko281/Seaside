@@ -5,9 +5,9 @@ WAObject subclass: #WARadioGroup
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WARadioGroup guid: (GUID fromString: '{ef5db84b-4833-43c5-84fe-f20067aa2b29}')!
+WARadioGroup guid: (GUID fromString: '{86f9427e-f454-4eaf-b78d-d523fb830aed}')!
 WARadioGroup comment: 'A WARadioGroup is a container for several related radio buttons. It must be used to create radio buttons.Example:| group |group := html radioGroup.group radioButton	selected: aBoolean;	callback: [ self someThing ].'!
-!WARadioGroup categoriesForClass!Seaside-Canvas! !
+!WARadioGroup categoriesForClass!Seaside-Canvas-Base! !
 !WARadioGroup methodsFor!
 
 callback: aBlock	values := Dictionary new.	key := canvas callbacks store: (WAValuesCallback on: aBlock values: values)!

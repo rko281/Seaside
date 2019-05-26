@@ -5,7 +5,7 @@ WAContextTest subclass: #WAHtmlAttributesTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAHtmlAttributesTest guid: (GUID fromString: '{d292a2e9-da8b-4dde-a387-e919acf41954}')!
+WAHtmlAttributesTest guid: (GUID fromString: '{2b53c41c-6982-4495-8917-164151712380}')!
 WAHtmlAttributesTest comment: ''!
 !WAHtmlAttributesTest categoriesForClass!Seaside-Tests-Core-Document! !
 !WAHtmlAttributesTest methodsFor!
@@ -22,7 +22,7 @@ testAt	attributes at: 'foo' put: 'bar'.	self assert: (attributes at: 'foo') = 
 
 testAtAppend	self		assert: [ :attr | attr at: 'onclick' append: 'this' separator: ';' ]		gives: ' onclick="this"'.	self		assert: [ :attr |			attr				at: 'onclick' append: 'this' separator: ';';				at: 'onclick' append: 'that' separator: ';' ]		gives: ' onclick="this;that"'.	self		assert: [ :attr |			attr				at: 'onclick' append: 'this' separator: ';';				at: 'onclick' append: nil separator: ';' ]		gives: ' onclick="this"'.	self		assert: [ :attr |			attr				at: 'onclick' append: 1 separator: ';';				at: 'onclick' append: 2 separator: ';' ]		gives: ' onclick="1;2"'!
 
-testAtPut	self		assert: [ :attr | attr at: 'id' put: 'foo' ]		gives: ' id="foo"'.	self		assert: [ :attr | attr at: 'tabindex' put: 6 ]		gives: ' tabindex="6"'.	self		assert: [ :attr | attr at: 'checked' put: true ]		gives: ' checked="checked"'.	self		assert: [ :attr | attr at: 'readonly' put: false ]		gives: ''.	self		assert: [ :attr | attr at: 'disabled' put: nil ]		gives: ''!
+testAtPut	self		assert: [ :attr | attr at: 'id' put: 'foo' ]		gives: ' id="foo"'.	self		assert: [ :attr | attr at: 'tabindex' put: 6 ]		gives: ' tabindex="6"'.	self		assert: [ :attr | attr at: 'checked' put: true ]		gives: ' checked'.	self		assert: [ :attr | attr at: 'readonly' put: false ]		gives: ''.	self		assert: [ :attr | attr at: 'disabled' put: nil ]		gives: ''!
 
 testCaseSensititve	self		assert: [ :attr | attr at: 'lastBuildDate' put: 'Sat, 07 Sep 2002 09:42:31 GMT' ]		gives: ' lastBuildDate="Sat, 07 Sep 2002 09:42:31 GMT"'!
 

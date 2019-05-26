@@ -5,7 +5,7 @@ WATagBrush subclass: #WACollectionTag
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WACollectionTag guid: (GUID fromString: '{38e5956c-cba0-4f40-9f1b-35b614d3ebad}')!
+WACollectionTag guid: (GUID fromString: '{833f25d7-814f-4df4-a4ff-812279c082ab}')!
 WACollectionTag comment: 'This element allows the use to select one (in single selection mode) or multiple (in single selection mode) elements. Multiple selection can be triggered with #beMultiple, single selection can be triggered with #beSingle .Default is single selection.The general idea is that you pass the collection of options to #list: and use #labels: to customize their rendering. The selected option(s) can be set with: #selected:.This whole class is kind of an awkward hack, but nobody needs MI anyway. You can always get a way with composition and delegation'!
 !WACollectionTag categoriesForClass!Seaside-Canvas-Tags! !
 !WACollectionTag methodsFor!

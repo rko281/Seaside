@@ -5,14 +5,14 @@ JQWidget subclass: #JQButton
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQButton guid: (GUID fromString: '{de5acf8f-4d2b-4dcd-8f48-319b4d730a0e}')!
+JQButton guid: (GUID fromString: '{2d9132d8-e02e-4599-a1a8-255a34a3eec9}')!
 JQButton comment: 'Button enhances standard form elements like button, input of type submit or reset or anchors to themable buttons with appropiate mouseover and active styles.In addition to basic push buttons, radio buttons and checkboxes (inputs of type radio and checkbox) can be converted to buttons: Their associated label is styled to appear as the button, while the underlying input is updated on click.Buttons can be grouped using the buttonSet method, which should be always applied for radio buttons.'!
 !JQButton categoriesForClass!JQuery-UI-Widgets! !
 !JQButton methodsFor!
 
 disabled: aBoolean	"Disables (true) or enables (false) the button. Can be set when initialising (first creating) the button."	self optionAt: 'disabled' put: aBoolean!
 
-icons	^ self options at: 'icons' ifAbsentPut: [ GRSmallDictionary new ]!
+icons	^ self options at: 'icons' ifAbsentPut: [ GRSmallDictionary2 new ]!
 
 icons: anOptions	"Icons to display, with or without text (see text option). The primary icon is displayed by default on the left of the label text, the secondary by default is on the right. Value for the primary and secondary properties must be a classname (String), eg. 'ui-icon-gear'. For using only one icon: icons: {primary:'ui-icon-locked'}. For using two icons: icons: {primary:'ui-icon-gear',secondary:'ui-icon-triangle-1-s'}"	self optionAt: 'icons' put: anOptions!
 

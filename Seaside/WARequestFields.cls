@@ -1,10 +1,15 @@
 ﻿"Filed out from Dolphin Smalltalk 7"!
 
-GROrderedMultiMap subclass: #WARequestFields
+GROrderedMultiMap2 subclass: #WARequestFields
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WARequestFields guid: (GUID fromString: '{2e641be1-7870-4bef-b3f8-f74b7acf1590}')!
+WARequestFields guid: (GUID fromString: '{ec997804-ac4d-42f7-9e10-bf1d406f7b6e}')!
 WARequestFields comment: ''!
 !WARequestFields categoriesForClass!Seaside-Core-HTTP! !
+!WARequestFields methodsFor!
+
+seasideRequestFields	^ self! !
+!WARequestFields categoriesFor: #seasideRequestFields!converting!public! !
+

@@ -5,7 +5,7 @@ WACanvasWidget subclass: #WANavigation
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WANavigation guid: (GUID fromString: '{ec665fda-8914-4d76-a8ee-f4cb61d9a2a7}')!
+WANavigation guid: (GUID fromString: '{5093b5da-75d2-40ce-b219-6f781252ca88}')!
 WANavigation comment: ''!
 !WANavigation categoriesForClass!Seaside-Widgets-Components! !
 !WANavigation methodsFor!

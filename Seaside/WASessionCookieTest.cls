@@ -5,12 +5,12 @@ WARegistryTest subclass: #WASessionCookieTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WASessionCookieTest guid: (GUID fromString: '{f21a1c90-5f95-440e-92a6-b26b4b9f54e0}')!
+WASessionCookieTest guid: (GUID fromString: '{3e7bd523-0924-4ff7-b809-089ca18aedb5}')!
 WASessionCookieTest comment: ''!
 !WASessionCookieTest categoriesForClass!Seaside-Tests-Session! !
 !WASessionCookieTest methodsFor!
 
-newHandler	^ WAApplication new		preferenceAt: #trackingStrategy put: WACookieIfSupportedSessionTrackingStrategy new;		preferenceAt: #serverHostname put: 'www.seaside.st';		yourself!
+newHandler	^ WARedirectingApplication new		preferenceAt: #trackingStrategy put: WACookieIfSupportedSessionTrackingStrategy new;		preferenceAt: #serverHostname put: 'www.seaside.st';		yourself!
 
 requestWithMethod: aString	^ WARequest		method: aString		uri: '/'!
 

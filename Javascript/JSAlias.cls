@@ -5,7 +5,7 @@ JSMember subclass: #JSAlias
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSAlias guid: (GUID fromString: '{df7a4130-1440-4286-ab8c-789741575673}')!
+JSAlias guid: (GUID fromString: '{4b54fa68-39de-4a2c-9e64-80c5ce5dd9bb}')!
 JSAlias comment: 'I alias the decorated object with a name.'!
 !JSAlias categoriesForClass!Javascript-Core-Decorations! !
 !JSAlias methodsFor!

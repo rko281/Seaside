@@ -5,6 +5,6 @@ WAError subclass: #WAInvalidUrlSyntaxError
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAInvalidUrlSyntaxError guid: (GUID fromString: '{23b0ba3b-e683-48c4-af57-9eada1b84a28}')!
+WAInvalidUrlSyntaxError guid: (GUID fromString: '{1c24d61e-ce3e-434d-83bc-b4c893bb5397}')!
 WAInvalidUrlSyntaxError comment: ''!
 !WAInvalidUrlSyntaxError categoriesForClass!Seaside-Core-HTTP! !

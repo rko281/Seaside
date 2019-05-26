@@ -5,7 +5,7 @@ WARequestHandler subclass: #WARestfulHandler
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WARestfulHandler guid: (GUID fromString: '{b3444667-03bb-48fb-ae20-e9f01f47da2b}')!
+WARestfulHandler guid: (GUID fromString: '{07f5e0f4-2fa0-461f-bf82-26fa60287889}')!
 WARestfulHandler comment: ''!
 !WARestfulHandler categoriesForClass!Seaside-REST-Core-Handler! !
 !WARestfulHandler methodsFor!

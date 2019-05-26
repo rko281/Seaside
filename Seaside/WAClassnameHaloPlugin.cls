@@ -5,7 +5,7 @@ WAHaloPlugin subclass: #WAClassnameHaloPlugin
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAClassnameHaloPlugin guid: (GUID fromString: '{cdcf639e-353c-4bf4-b303-be82724f2cd3}')!
+WAClassnameHaloPlugin guid: (GUID fromString: '{f3060100-449d-4b30-a42a-265ab329731c}')!
 WAClassnameHaloPlugin comment: 'I display the class name of the component class.'!
 !WAClassnameHaloPlugin categoriesForClass!Seaside-Development-Plugins! !
 !WAClassnameHaloPlugin methodsFor!

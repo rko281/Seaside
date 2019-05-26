@@ -5,9 +5,9 @@ WAEmailBody subclass: #WAStringEmailBody
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAStringEmailBody guid: (GUID fromString: '{41ce8e1d-d9fa-4f1c-be81-6f64bf5e907e}')!
-WAStringEmailBody comment: ''!
-!WAStringEmailBody categoriesForClass!Seaside-Email! !
+WAStringEmailBody guid: (GUID fromString: '{78f32bea-cfa9-4c03-80ad-df95505afdc0}')!
+WAStringEmailBody comment: 'I am a plain text email body.'!
+!WAStringEmailBody categoriesForClass!Seaside-Email-Base! !
 !WAStringEmailBody methodsFor!
 
 contentType	^ WAMimeType textPlain!

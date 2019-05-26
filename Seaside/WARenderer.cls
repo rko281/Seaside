@@ -5,7 +5,7 @@ WAObject subclass: #WARenderer
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: 'default'!
-WARenderer guid: (GUID fromString: '{7d1c5149-fe2f-4d4f-a49a-f9bbffc9a8ef}')!
+WARenderer guid: (GUID fromString: '{0bf85666-13eb-4639-b1e4-34664accb5be}')!
 WARenderer comment: 'A Renderer provides methods for rendering data (typically HTML) onto a Document. It gets all the information needed to do its work from a WARenderContext, which is passed in on initialization.Renderer are typically controlled by a Painter.'!
 !WARenderer categoriesForClass!Seaside-Core-Rendering! !
 !WARenderer methodsFor!

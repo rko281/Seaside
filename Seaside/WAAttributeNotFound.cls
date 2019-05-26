@@ -5,7 +5,7 @@ WAConfigurationError subclass: #WAAttributeNotFound
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAAttributeNotFound guid: (GUID fromString: '{f46a7cc3-76a0-48cc-a251-8a2891fe7797}')!
+WAAttributeNotFound guid: (GUID fromString: '{e2d46019-5a4e-4595-a40b-8a4e790dd7aa}')!
 WAAttributeNotFound comment: ''!
 !WAAttributeNotFound categoriesForClass!Seaside-Core-Configuration! !
 !WAAttributeNotFound methodsFor!

@@ -5,7 +5,7 @@ TestCase subclass: #WAOrPathMatchTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAOrPathMatchTest guid: (GUID fromString: '{86b62911-cc35-49c1-9d36-95265a69891f}')!
+WAOrPathMatchTest guid: (GUID fromString: '{5e5ec5a6-e9e3-4780-b8ec-b89d45ecb809}')!
 WAOrPathMatchTest comment: ''!
 !WAOrPathMatchTest categoriesForClass!Seaside-Tests-REST-Core! !
 !WAOrPathMatchTest methodsFor!

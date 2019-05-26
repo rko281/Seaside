@@ -14,10 +14,9 @@ package binaryGlobalNames: (Set new
 package globalAliases: (Set new
 	yourself).
 
-package setPrerequisites: (IdentitySet new
-	add: '..\..\Grease\Grease-Dolphin-Core';
-	add: 'Seaside-REST-Core';
-	yourself).
+package setPrerequisites: #(
+	'..\..\Grease\Grease-Dolphin-Core'
+	'Seaside-REST-Core').
 
 package setManualPrerequisites: #(
 	'Seaside-REST-Core').

@@ -5,7 +5,7 @@ WAComponent subclass: #WAWelcomeConfigure
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAWelcomeConfigure guid: (GUID fromString: '{3bdb68fe-a465-406a-bfe3-aa8a39f5db65}')!
+WAWelcomeConfigure guid: (GUID fromString: '{74308291-b905-4ab2-8156-aeb815f38d68}')!
 WAWelcomeConfigure comment: ''!
 !WAWelcomeConfigure categoriesForClass!Seaside-Welcome! !
 !WAWelcomeConfigure methodsFor!

@@ -5,7 +5,7 @@ WAComponent subclass: #WATrailTestComponent
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WATrailTestComponent guid: (GUID fromString: '{342f79ea-36ba-4331-a7be-c68718697c4e}')!
+WATrailTestComponent guid: (GUID fromString: '{8b44dd27-9012-4280-9f5e-18252616524e}')!
 WATrailTestComponent comment: ''!
 !WATrailTestComponent categoriesForClass!Seaside-Tests-Functional! !
 !WATrailTestComponent methodsFor!

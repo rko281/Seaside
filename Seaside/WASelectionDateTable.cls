@@ -5,7 +5,7 @@ WADateTable subclass: #WASelectionDateTable
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WASelectionDateTable guid: (GUID fromString: '{9e441f84-9e6e-4797-87fc-25d2052ef5e9}')!
+WASelectionDateTable guid: (GUID fromString: '{3868b5cc-26c8-454b-af2c-650c91098191}')!
 WASelectionDateTable comment: 'WASelectionDateTable renders a table containing dates and rows. A user can select a continuous block of cells in the table.  The table contains one column for each date from startDate to endDate. The top row of the table groups columns by month and labels each month (January 2008). The second row contains the date of each month  (1-30) in the date range. The table also contains "rows size" rows. The first column of these rows contains the contents of the instance variable "rows". Rest of the cells contents are given by "cellBlock". Instance Variables:	cellBlock	<BlockClosure [:rowIndex :date | ]>	returns text for the cell in row "rowIndex" and column for "date"	dateSelectionEnd	<Date>	last selected date	dateSelectionStart	<Date>	first selected date	rowSelectionEnd	<Integer>	index of last selected row	rowSelectionStart	<Integer>	index of first selected row'!
 !WASelectionDateTable categoriesForClass!Seaside-Widgets-Components! !
 !WASelectionDateTable methodsFor!

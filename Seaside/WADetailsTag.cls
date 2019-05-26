@@ -5,7 +5,7 @@ WATagBrush subclass: #WADetailsTag
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WADetailsTag guid: (GUID fromString: '{a1e2c1c6-83a2-4336-b6de-12e4360b8db1}')!
+WADetailsTag guid: (GUID fromString: '{ee542707-14bd-4d47-a6fb-4b1a1c387b6d}')!
 WADetailsTag comment: 'The details element represents additional information or controls which the user can obtain on demand.The first element child of a details element, if it is a legend element, represents the summary of the details.If the first element is not a legend element, the UA should provide its own legend (e.g. "Details"). '!
 !WADetailsTag categoriesForClass!Seaside-Canvas-Tags! !
 !WADetailsTag methodsFor!

@@ -5,6 +5,6 @@ WAJsonParser subclass: #JSJsonParser
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSJsonParser guid: (GUID fromString: '{add5e03c-6827-4694-8cdc-9e2269a772f8}')!
-JSJsonParser comment: 'I''m purely for backwards compatibility with Seaside 3.0'!
+JSJsonParser guid: (GUID fromString: '{57ecfa60-03ce-4eb8-8d43-e4707ba5d7a0}')!
+JSJsonParser comment: 'WAError subclass: #WAJsonSyntaxError	instanceVariableNames: ''''	classVariableNames: ''''	poolDictionaries: ''''	category: ''Seaside-JSON-Core'''!
 !JSJsonParser categoriesForClass!Seaside-JSON-Core! !

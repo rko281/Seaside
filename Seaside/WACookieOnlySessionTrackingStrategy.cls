@@ -5,7 +5,7 @@ WACookieSessionTrackingStrategy subclass: #WACookieOnlySessionTrackingStrategy
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WACookieOnlySessionTrackingStrategy guid: (GUID fromString: '{922c6755-a6ca-4d49-b3af-35aa29ad7e73}')!
+WACookieOnlySessionTrackingStrategy guid: (GUID fromString: '{e5e45c30-c2b4-4a69-bb5d-1b1b195ce48e}')!
 WACookieOnlySessionTrackingStrategy comment: 'I track sessions using cookies and everything else using query fields. This works fine as long as the client accepts cookies. This breaks for web crawlers (they don''t accept cookies).'!
 !WACookieOnlySessionTrackingStrategy categoriesForClass!Seaside-Session! !
 !WACookieOnlySessionTrackingStrategy methodsFor!

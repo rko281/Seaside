@@ -5,7 +5,7 @@ TestCase subclass: #WAPragmaBasedRestfulHandlerTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAPragmaBasedRestfulHandlerTest guid: (GUID fromString: '{cb3035e8-e1eb-42e8-b92e-aedae251d976}')!
+WAPragmaBasedRestfulHandlerTest guid: (GUID fromString: '{5e319f38-f86a-4733-b76f-e2182f297796}')!
 WAPragmaBasedRestfulHandlerTest comment: ''!
 !WAPragmaBasedRestfulHandlerTest categoriesForClass!Seaside-Tests-REST-Core! !
 !WAPragmaBasedRestfulHandlerTest methodsFor!

@@ -5,8 +5,8 @@ WADocument subclass: #WAJsonDocument
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAJsonDocument guid: (GUID fromString: '{e545fec3-12be-484e-9f98-7ab16e90e9ef}')!
-WAJsonDocument comment: ''!
+WAJsonDocument guid: (GUID fromString: '{6033511d-e94b-4bff-8665-28bb01a63e78}')!
+WAJsonDocument comment: 'I add the possibility to generate JSON.'!
 !WAJsonDocument categoriesForClass!Seaside-JSON-Core! !
 !WAJsonDocument methodsFor!
 

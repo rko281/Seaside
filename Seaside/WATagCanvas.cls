@@ -5,9 +5,9 @@ WACanvas subclass: #WATagCanvas
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WATagCanvas guid: (GUID fromString: '{ba5831ce-924d-4811-9cc7-d0ad66092a48}')!
-WATagCanvas comment: ''!
-!WATagCanvas categoriesForClass!Seaside-Canvas! !
+WATagCanvas guid: (GUID fromString: '{a4ba5f1b-1509-46d7-88f2-7be95cb717ca}')!
+WATagCanvas comment: 'I am the abstract superclass for tag based canvases.'!
+!WATagCanvas categoriesForClass!Seaside-Canvas-Canvas! !
 !WATagCanvas methodsFor!
 
 break	self subclassResponsibility !

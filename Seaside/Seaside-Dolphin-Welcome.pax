@@ -1,14 +1,12 @@
 ﻿| package |
 package := Package name: 'Seaside-Dolphin-Welcome'.
 package paxVersion: 1;
-	basicComment: 'Seaside 3.2 for Dolphin Smalltalk.
-Core packages ported from github.com/SeasideSt April 2018
-Dolphin Seaside, Grease, Swazoo and Sport packages adapted from www.infoil.com.ar/seaside/ with thanks and acknowledgement.
+	basicComment: 'Seaside 3.3 for Dolphin Smalltalk.
+Core packages ported from github.com/SeasideSt 24th May 2019
+Dolphin Seaside and Grease packages adapted from www.infoil.com.ar/seaside/ with thanks and acknowledgement.
 
 "Launch the Welcome server"
-(WASwazooAdaptor port: 8080)
-	codec: (GRCodec forEncoding: ''utf-8'');
-	start.
+(WAHttpServerAdaptor port: 8080) start.
 ShellLibrary default shellOpen: ''http://localhost:8080/seaside/'''.
 
 
@@ -23,47 +21,15 @@ package binaryGlobalNames: (Set new
 package globalAliases: (Set new
 	yourself).
 
-package setPrerequisites: (IdentitySet new
-	add: '..\..\Grease\Grease-Dolphin-Core';
-	add: '..\..\Grease\Grease-Tests-Core';
-	add: '..\..\Grease\Grease-Tests-Dolphin-Core';
-	add: '..\Javascript\Javascript-Dolphin-Core';
-	add: '..\Javascript\Javascript-Tests-Core';
-	add: '..\JQuery\JQuery-Tests-Core';
-	add: '..\JQuery\JQuery-Tests-UI';
-	add: 'Seaside-Adaptors-Dolphin-Swazoo';
-	add: 'Seaside-Dolphin-Development';
-	add: 'Seaside-Dolphin-Email';
-	add: 'Seaside-Dolphin-Environment';
-	add: 'Seaside-Dolphin-Extensions';
-	add: 'Seaside-Dolphin-Flow';
-	add: 'Seaside-Dolphin-JSON-Core';
-	add: 'Seaside-Dolphin-REST-Core';
-	add: 'Seaside-Dolphin-Tools';
-	add: 'Seaside-Tests-Canvas';
-	add: 'Seaside-Tests-Component';
-	add: 'Seaside-Tests-Core';
-	add: 'Seaside-Tests-Dolphin-Continuation';
-	add: 'Seaside-Tests-Dolphin-Core';
-	add: 'Seaside-Tests-Dolphin-Functional';
-	add: 'Seaside-Tests-Environment';
-	add: 'Seaside-Tests-Flow';
-	add: 'Seaside-Tests-Functional';
-	add: 'Seaside-Tests-RenderLoop';
-	add: 'Seaside-Tests-REST-Core';
-	add: 'Seaside-Tests-Session';
-	add: 'Seaside-Tests-Welcome';
-	yourself).
-
-package setManualPrerequisites: #(
-	'Grease-Dolphin-Core'
-	'Grease-Tests-Core'
-	'Grease-Tests-Dolphin-Core'
-	'Javascript-Dolphin-Core'
-	'Javascript-Tests-Core'
-	'JQuery-Tests-Core'
-	'JQuery-Tests-UI'
-	'Seaside-Adaptors-Dolphin-Swazoo'
+package setPrerequisites: #(
+	'..\..\Grease\Grease-Dolphin-Core'
+	'..\..\Grease\Grease-Tests-Core'
+	'..\..\Grease\Grease-Tests-Dolphin-Core'
+	'..\Javascript\Javascript-Dolphin-Core'
+	'..\Javascript\Javascript-Tests-Core'
+	'..\JQuery\JQuery-Tests-Core'
+	'..\JQuery\JQuery-Tests-UI'
+	'..\..\DolphinHttpServer\SeasideHTTPServerAdaptor\Seaside Http Server Adaptor'
 	'Seaside-Dolphin-Development'
 	'Seaside-Dolphin-Email'
 	'Seaside-Dolphin-Environment'
@@ -71,7 +37,7 @@ package setManualPrerequisites: #(
 	'Seaside-Dolphin-Flow'
 	'Seaside-Dolphin-JSON-Core'
 	'Seaside-Dolphin-REST-Core'
-	'Seaside-Dolphin-Tools'
+	'Seaside-REST-Examples'
 	'Seaside-Tests-Canvas'
 	'Seaside-Tests-Component'
 	'Seaside-Tests-Core'
@@ -84,7 +50,40 @@ package setManualPrerequisites: #(
 	'Seaside-Tests-RenderLoop'
 	'Seaside-Tests-REST-Core'
 	'Seaside-Tests-Session'
-	'Seaside-Tests-Welcome').
+	'Seaside-Tests-Welcome'
+	'Seaside-Welcome').
+
+package setManualPrerequisites: #(
+	'Grease-Dolphin-Core'
+	'Grease-Tests-Core'
+	'Grease-Tests-Dolphin-Core'
+	'Javascript-Dolphin-Core'
+	'Javascript-Tests-Core'
+	'JQuery-Tests-Core'
+	'JQuery-Tests-UI'
+	'Seaside Http Server Adaptor'
+	'Seaside-Dolphin-Development'
+	'Seaside-Dolphin-Email'
+	'Seaside-Dolphin-Environment'
+	'Seaside-Dolphin-Extensions'
+	'Seaside-Dolphin-Flow'
+	'Seaside-Dolphin-JSON-Core'
+	'Seaside-Dolphin-REST-Core'
+	'Seaside-REST-Examples'
+	'Seaside-Tests-Canvas'
+	'Seaside-Tests-Component'
+	'Seaside-Tests-Core'
+	'Seaside-Tests-Dolphin-Continuation'
+	'Seaside-Tests-Dolphin-Core'
+	'Seaside-Tests-Dolphin-Functional'
+	'Seaside-Tests-Environment'
+	'Seaside-Tests-Flow'
+	'Seaside-Tests-Functional'
+	'Seaside-Tests-RenderLoop'
+	'Seaside-Tests-REST-Core'
+	'Seaside-Tests-Session'
+	'Seaside-Tests-Welcome'
+	'Seaside-Welcome').
 
 package!
 

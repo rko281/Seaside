@@ -5,9 +5,9 @@ WARenderer subclass: #WACanvas
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WACanvas guid: (GUID fromString: '{406fb139-8254-4d08-b11b-0d0228e29311}')!
+WACanvas guid: (GUID fromString: '{86490d64-8696-4071-b8cb-90abffb23110}')!
 WACanvas comment: 'This is the superclass of all canvas. It''s a rendering interface that generates brushes (see WABrush).Subclass WAXmlCanvas, if you want to generate an XML dialect.'!
-!WACanvas categoriesForClass!Seaside-Canvas! !
+!WACanvas categoriesForClass!Seaside-Canvas-Canvas! !
 !WACanvas methodsFor!
 
 brush: aBrush	self flush.	currentBrush := aBrush.	aBrush setParent: parentBrush canvas: self.	^ aBrush!

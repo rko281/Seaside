@@ -5,7 +5,7 @@ JSObjectTest subclass: #JSDecorationTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSDecorationTest guid: (GUID fromString: '{cd2d9c1a-766b-4853-8a5d-c19e1cca1f20}')!
+JSDecorationTest guid: (GUID fromString: '{b2e3ba4b-c44b-489c-98e3-4834dfc6679e}')!
 JSDecorationTest comment: ''!
 !JSDecorationTest categoriesForClass!Javascript-Tests-Core! !
 !JSDecorationTest methodsFor!
@@ -54,7 +54,7 @@ testReturn	self		assert: (self mock return: 1)		equals: 'mock;return 1'!
 
 testThenElse	| mock |	mock := self mock.	mock then: 1.	self assert: mock equals: '(mock?1:null)'.	mock := self mock.	mock then: 1 else: 2.	self assert: mock equals: '(mock?1:2)'!
 
-testTimeout	| mock |	mock := self mock.	mock timeout: 123.	self assert: mock equals: 'setTimeout(function(){mock},123)'! !
+testTimeout	| mock |	mock := self mock.	mock setTimeout: 123.	self assert: mock equals: 'setTimeout(function(){mock},123)'! !
 !JSDecorationTest categoriesFor: #testAccess!public!tests! !
 !JSDecorationTest categoriesFor: #testAlias!public!tests! !
 !JSDecorationTest categoriesFor: #testApply!public!tests! !

@@ -5,7 +5,7 @@ WAPainterVisitor subclass: #WAUpdateUrlVisitor
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAUpdateUrlVisitor guid: (GUID fromString: '{db8523c2-b75d-4ebd-bc20-4ad72510b15b}')!
+WAUpdateUrlVisitor guid: (GUID fromString: '{eadaacfd-e153-4dbb-8143-db06aaa4e4df}')!
 WAUpdateUrlVisitor comment: 'A visitor which asks Painters to update a WAUrl subclass using #updateRoot:.This is used to update the base URL stored on a WARenderContext.'!
 !WAUpdateUrlVisitor categoriesForClass!Seaside-Core-Rendering! !
 !WAUpdateUrlVisitor methodsFor!

@@ -5,7 +5,7 @@ WAPainterVisitor subclass: #WAUpdateRootVisitor
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAUpdateRootVisitor guid: (GUID fromString: '{e1993e31-f994-46e9-91d4-6ac9c2dfb76c}')!
+WAUpdateRootVisitor guid: (GUID fromString: '{de4933f9-a6c2-4b48-977c-3b492dfc8647}')!
 WAUpdateRootVisitor comment: 'A visitor which asks Painters to update a WARoot subclass using #updateRoot:.This is used to update the root of the Document stored on a WARenderContext.'!
 !WAUpdateRootVisitor categoriesForClass!Seaside-Core-Rendering! !
 !WAUpdateRootVisitor methodsFor!

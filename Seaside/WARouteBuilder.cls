@@ -5,7 +5,7 @@ WAObject subclass: #WARouteBuilder
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: 'configuration'!
-WARouteBuilder guid: (GUID fromString: '{4c101e83-03a2-4b7a-8243-ae3b288ccd56}')!
+WARouteBuilder guid: (GUID fromString: '{a082cc20-8033-4c73-a7b6-cd3f52108cdf}')!
 WARouteBuilder comment: 'I am a builder for building WARoute instances from a CompiledMethod.Instance Variables:	compiled	<CompiledMethod>	method		<String>	path		<String>	produces	<WAWildcardMimeTypeMatch|WAMimeTypeMatch>	consumes	<Collection<WAWildcardMimeTypeMatch|WAMimeTypeMatch>>Class Instance Variables:	configuration	<Collection>'!
 !WARouteBuilder categoriesForClass!Seaside-REST-Core-Route! !
 !WARouteBuilder methodsFor!
@@ -67,7 +67,7 @@ createRoutesFor: aClass	^ self createRoutesFrom: aClass to: aClass!
 
 createRoutesFrom: aClass to: aSuperClass	| current seen routes |	current := aClass.	seen := IdentitySet new.	routes := OrderedCollection new.	[ current notNil ] whileTrue: [ 		current selectorsAndMethodsDo: [ :selector :method |			(seen includes: selector) ifFalse: [				| pragmas |				pragmas := method pragmas					select: [ :pragma | configuration includes: pragma keyword ].				pragmas isEmpty ifFalse: [					routes add: (pragmas						inject: (self on: method)						into: [ :builder :pragma | builder perform: pragma keyword withArguments: pragma arguments ])							create ].				seen add: selector ] ].		current = aSuperClass			ifTrue: [ ^ routes ].		current := current superclass ].	^ routes!
 
-initialize	configuration := IdentitySet new.	(Pragma allNamed: #configuration in: self)		do: [ :pragma | configuration add: pragma methodSelector ]!
+initialize	configuration := IdentitySet new.	(Pragma allNamed: #configuration in: self)		do: [ :pragma | configuration add: pragma method selector ]!
 
 on: aCompiledMethod	^ self basicNew initializeOn: aCompiledMethod! !
 !WARouteBuilder class categoriesFor: #createRoutesFor:!public! !

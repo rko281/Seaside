@@ -5,6 +5,6 @@ GRNotification subclass: #WANotification
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WANotification guid: (GUID fromString: '{2499a0bd-6d25-49d9-92b7-50133560ac72}')!
+WANotification guid: (GUID fromString: '{b0bd0c0d-dfde-4275-a252-1c9eb2807b9d}')!
 WANotification comment: ''!
 !WANotification categoriesForClass!Seaside-Core-Exceptions! !

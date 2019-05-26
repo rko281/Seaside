@@ -5,9 +5,9 @@ WACallback subclass: #JSPassenger
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSPassenger guid: (GUID fromString: '{9b522a2a-8763-4888-973b-bffdde608973}')!
+JSPassenger guid: (GUID fromString: '{0a52f74b-13e0-41e9-86d3-a2f8a0ed0db5}')!
 JSPassenger comment: ''!
-!JSPassenger categoriesForClass!Javascript-Core! !
+!JSPassenger categoriesForClass!Javascript-Core-Base! !
 !JSPassenger methodsFor!
 
 evaluateWithArgument: anObject	self shouldNotImplement!

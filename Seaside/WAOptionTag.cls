@@ -5,7 +5,7 @@ WATagBrush subclass: #WAOptionTag
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAOptionTag guid: (GUID fromString: '{e4255cfe-80fc-40bf-bc20-e0d08b731537}')!
+WAOptionTag guid: (GUID fromString: '{243b0a03-c65d-4079-96ac-9db0fa69ce45}')!
 WAOptionTag comment: 'The option element defines an option in a drop-down list. '!
 !WAOptionTag categoriesForClass!Seaside-Canvas-Tags! !
 !WAOptionTag methodsFor!

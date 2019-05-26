@@ -5,7 +5,7 @@ WAFormDialog subclass: #WAYesOrNoDialog
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAYesOrNoDialog guid: (GUID fromString: '{5d507c88-a360-4394-b8b0-273623d6e6e6}')!
+WAYesOrNoDialog guid: (GUID fromString: '{964a9938-a8c6-4774-9efd-8e8a5dc7a142}')!
 WAYesOrNoDialog comment: 'WAYesOrNoDialog displays a yes/no dialog. Returns boolean indicating user selection. See WAComponent>>confirm: for sample usage and easy way to use WAYesOrNoDialog.'!
 !WAYesOrNoDialog categoriesForClass!Seaside-Widgets-Components! !
 !WAYesOrNoDialog methodsFor!

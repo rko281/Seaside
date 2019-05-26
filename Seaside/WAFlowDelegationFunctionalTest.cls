@@ -5,7 +5,7 @@ WADelegationFunctionalTest subclass: #WAFlowDelegationFunctionalTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAFlowDelegationFunctionalTest guid: (GUID fromString: '{260d64dd-e546-4478-9903-784430d60f37}')!
+WAFlowDelegationFunctionalTest guid: (GUID fromString: '{740d64b0-733f-4efd-b75b-5c0166c31f51}')!
 WAFlowDelegationFunctionalTest comment: ''!
 !WAFlowDelegationFunctionalTest categoriesForClass!Seaside-Tests-Flow-Functional! !
 !WAFlowDelegationFunctionalTest methodsFor!

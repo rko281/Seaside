@@ -5,8 +5,8 @@ WACanvas subclass: #WAJsonCanvas
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAJsonCanvas guid: (GUID fromString: '{cfd84c75-c515-4dbf-b150-d6c03e5e656f}')!
-WAJsonCanvas comment: ''!
+WAJsonCanvas guid: (GUID fromString: '{c7a029bc-220d-4a6f-8f3a-9b386c3a3a02}')!
+WAJsonCanvas comment: 'I am a  specific canvas to render JSON output.'!
 !WAJsonCanvas categoriesForClass!Seaside-JSON-Core! !
 !WAJsonCanvas methodsFor!
 
@@ -32,6 +32,8 @@ object: aBlock	^ (self brush: WAJsonObjectBrush new) with: aBlock!
 
 render: anObject	self flush.	anObject jsonOn: self!
 
+scaledDecimal: aScaledDecimal	| converter |	converter := GRSignPrinter new, (GRNumberPrinter new precision: aScaledDecimal scale).	converter print: aScaledDecimal on: self document stream!
+
 string: aString	self document string: aString!
 
 value: aBlock	^ (self brush: WAJsonValueBrush new) with: aBlock!
@@ -48,6 +50,7 @@ writeIfNotFirst: aString	first ifFalse: [		self document nextPutAll: aString ]
 !WAJsonCanvas categoriesFor: #number:!double/disptach!public! !
 !WAJsonCanvas categoriesFor: #object:!public! !
 !WAJsonCanvas categoriesFor: #render:!public! !
+!WAJsonCanvas categoriesFor: #scaledDecimal:!double/disptach!public! !
 !WAJsonCanvas categoriesFor: #string:!double/disptach!public! !
 !WAJsonCanvas categoriesFor: #value:!public! !
 !WAJsonCanvas categoriesFor: #writeIfNotFirst:!private! !

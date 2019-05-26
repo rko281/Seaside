@@ -30,11 +30,10 @@ package binaryGlobalNames: (Set new
 package globalAliases: (Set new
 	yourself).
 
-package setPrerequisites: (IdentitySet new
-	add: '..\..\Grease\Grease-Core';
-	add: 'Seaside-Component';
-	add: 'Seaside-Core';
-	yourself).
+package setPrerequisites: #(
+	'..\..\Grease\Grease-Core'
+	'Seaside-Component'
+	'Seaside-Core').
 
 package!
 
@@ -49,12 +48,12 @@ package!
 !GRPackage class methodsFor!
 
 seasideFlow	^ self new		name: 'Seaside-Flow';		description: 'Define control flow as a continuous piece of code, with natural, linear control flow.';		addDependency: 'Seaside-Core'; "Methods are added to WARequestContext"		addDependency: 'Seaside-Component'; "Methods are added to WAComponent"		addDependency: 'Seaside-RenderLoop'; "Methods are added to WASession that depend on RenderLoop"		addDependency: 'Seaside-Tools-Core';		url: #seasideUrl;		yourself! !
-!GRPackage class categoriesFor: #seasideFlow!*seaside/flow!public! !
+!GRPackage class categoriesFor: #seasideFlow!*Seaside/Flow!public! !
 
 !GRPlatform methodsFor!
 
 seasideSuspendFlowDo: aBlock	"Evaluate aBlock, passing in a continuation that can be evaluated to answer to the place where this very method was called. This method is presumed to be executed only within the scope of an executing Callback or Task and should, ideally, create a continuation that includes only the contexts that make up the Callback or Task execution (a partial or delimited continuation). Do not use this method, if you don't understand this comment."	self subclassResponsibility! !
-!GRPlatform categoriesFor: #seasideSuspendFlowDo:!*seaside/flow!public! !
+!GRPlatform categoriesFor: #seasideSuspendFlowDo:!*Seaside/Flow!public! !
 
 !WAComponent methodsFor!
 
@@ -85,25 +84,25 @@ request: aRequestString label: aLabelString	"Display an input dialog with the q
 request: aRequestString label: aLabelString default: aDefaultString	"Display an input dialog with the question aRequestString, the button label aLabelString and the default string aDefaultString. Answer the string the user enters."	^ self wait: [ :cc | self request: aRequestString label: aLabelString default: aDefaultString onAnswer: cc ]!
 
 wait: aBlock 	"Evaluate aBlock and pass in a continuation that can be evaluated to answer to the place where this very method was called."	^ GRPlatform current seasideSuspendFlowDo: [ :cc | aBlock value: cc ]! !
-!WAComponent categoriesFor: #authenticateWith:during:!*seaside/flow/filters!public! !
-!WAComponent categoriesFor: #call:!*seaside/flow!public! !
-!WAComponent categoriesFor: #chooseFrom:!*seaside/flow/dialog!public! !
-!WAComponent categoriesFor: #chooseFrom:caption:!*seaside/flow/dialog!public! !
-!WAComponent categoriesFor: #chooseFrom:default:!*seaside/flow/dialog!public! !
-!WAComponent categoriesFor: #chooseFrom:default:caption:!*seaside/flow/dialog!public! !
-!WAComponent categoriesFor: #confirm:!*seaside/flow/dialog!public! !
-!WAComponent categoriesFor: #filterWith:during:!*seaside/flow/filters!public! !
-!WAComponent categoriesFor: #inform:!*seaside/flow/dialog!public! !
-!WAComponent categoriesFor: #request:!*seaside/flow/dialog!public! !
-!WAComponent categoriesFor: #request:default:!*seaside/flow/dialog!public! !
-!WAComponent categoriesFor: #request:label:!*seaside/flow/dialog!public! !
-!WAComponent categoriesFor: #request:label:default:!*seaside/flow/dialog!public! !
-!WAComponent categoriesFor: #wait:!*seaside/flow!public! !
+!WAComponent categoriesFor: #authenticateWith:during:!*Seaside/Flow/filters!public! !
+!WAComponent categoriesFor: #call:!*Seaside/Flow!public! !
+!WAComponent categoriesFor: #chooseFrom:!*Seaside/Flow/dialog!public! !
+!WAComponent categoriesFor: #chooseFrom:caption:!*Seaside/Flow!public! !
+!WAComponent categoriesFor: #chooseFrom:default:!*Seaside/Flow!public! !
+!WAComponent categoriesFor: #chooseFrom:default:caption:!*Seaside/Flow!public! !
+!WAComponent categoriesFor: #confirm:!*Seaside/Flow!public! !
+!WAComponent categoriesFor: #filterWith:during:!*Seaside/Flow!public! !
+!WAComponent categoriesFor: #inform:!*Seaside/Flow!public! !
+!WAComponent categoriesFor: #request:!*Seaside/Flow!public! !
+!WAComponent categoriesFor: #request:default:!*Seaside/Flow!public! !
+!WAComponent categoriesFor: #request:label:!*Seaside/Flow!public! !
+!WAComponent categoriesFor: #request:label:default:!*Seaside/Flow!public! !
+!WAComponent categoriesFor: #wait:!*Seaside/Flow!public! !
 
 !WAPainterVisitor methodsFor!
 
 visitTask: aTask	self visitComponent: aTask! !
-!WAPainterVisitor categoriesFor: #visitTask:!*seaside/flow!public! !
+!WAPainterVisitor categoriesFor: #visitTask:!*Seaside/Flow!public! !
 
 "End of package definition"!
 

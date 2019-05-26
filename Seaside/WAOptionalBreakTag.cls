@@ -5,8 +5,8 @@ WATagBrush subclass: #WAOptionalBreakTag
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAOptionalBreakTag guid: (GUID fromString: '{6911dc5d-73b0-4f65-a6a6-34019a788cf3}')!
-WAOptionalBreakTag comment: ''!
+WAOptionalBreakTag guid: (GUID fromString: '{bacfc1da-db7c-49a1-804d-b35091e6ea0d}')!
+WAOptionalBreakTag comment: 'The <wbr> (Word Break Opportunity) tag specifies where in a text it would be ok to add a line-break.'!
 !WAOptionalBreakTag categoriesForClass!Seaside-Canvas-Tags! !
 !WAOptionalBreakTag methodsFor!
 

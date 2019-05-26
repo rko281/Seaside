@@ -22,15 +22,14 @@ package binaryGlobalNames: (Set new
 package globalAliases: (Set new
 	yourself).
 
-package setPrerequisites: (IdentitySet new
-	add: '..\..\Core\Object Arts\Dolphin\Base\Dolphin';
-	add: '..\..\Grease\Grease-Core';
-	add: '..\..\Grease\Grease-Dolphin-Core';
-	add: 'Seaside-Core';
-	add: 'Seaside-Session';
-	add: 'Seaside-Tests-Environment';
-	add: 'Seaside-Tests-Functional';
-	yourself).
+package setPrerequisites: #(
+	'..\..\Core\Object Arts\Dolphin\Base\Dolphin'
+	'..\..\Grease\Grease-Core'
+	'..\..\Grease\Grease-Dolphin-Core'
+	'Seaside-Core'
+	'Seaside-Session'
+	'Seaside-Tests-Environment'
+	'Seaside-Tests-Functional').
 
 package!
 

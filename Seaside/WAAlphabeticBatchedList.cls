@@ -5,7 +5,7 @@ WACanvasWidget subclass: #WAAlphabeticBatchedList
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAAlphabeticBatchedList guid: (GUID fromString: '{3e4314c5-4778-46ba-b560-d0aaad3eb56b}')!
+WAAlphabeticBatchedList guid: (GUID fromString: '{91d7f9cf-43da-43af-b7f3-ef2d5de5c82f}')!
 WAAlphabeticBatchedList comment: 'WAAlphabeticBatchedList organizes a collection of items into pages for display. A page contains all items whose string representation (item displayString) starts with the same character. WAAlphabeticBatchedList only displays the navigation (alphabet with links) for the list. Your code needs to display the current page.Use WAAlphabeticBatchedList>>items: to set the collections of items.Use WAAlphabeticBatchedList>>batch to get the items to display on the current pageSee WABatchFunctionalTest for example of usage.Select "Batch" tab of the Functional Seaside Test Suite to run an example  (http://127.0.0.1:xxxx/seaside/tests/alltests)Instance Variables:	currentPage	<Character>	the character of the curent page	items	<(Collection of: (Object ))> collection of the items managed by WAAlphabeticBatchedList. Collection is sorted before items are displayed.'!
 !WAAlphabeticBatchedList categoriesForClass!Seaside-Widgets-Components! !
 !WAAlphabeticBatchedList methodsFor!

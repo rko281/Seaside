@@ -5,7 +5,7 @@ WAFormInputTag subclass: #WACheckboxTag
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WACheckboxTag guid: (GUID fromString: '{1b4ba8fb-154f-4cbb-9405-0f4df35ca576}')!
+WACheckboxTag guid: (GUID fromString: '{d1d6e9b9-077f-4857-989b-d1e67a2df656}')!
 WACheckboxTag comment: 'The checkbox element is used with an associated property of typ boolean. It renders a HTML <input> element of type checkbox.If this input element is disabled then the callback will still be evaluated but with an argument that is false. See method comment of #callback: for more information.'!
 !WACheckboxTag categoriesForClass!Seaside-Canvas-Tags! !
 !WACheckboxTag methodsFor!

@@ -5,7 +5,7 @@ TestCase subclass: #WARenderLoopContinuationTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WARenderLoopContinuationTest guid: (GUID fromString: '{bd30df7d-54d3-4586-81b1-f551c2cb58b9}')!
+WARenderLoopContinuationTest guid: (GUID fromString: '{4d6adc50-2d04-42bc-b1f1-ff9f4e52cf90}')!
 WARenderLoopContinuationTest comment: ''!
 !WARenderLoopContinuationTest categoriesForClass!Seaside-Tests-RenderLoop! !
 !WARenderLoopContinuationTest methodsFor!

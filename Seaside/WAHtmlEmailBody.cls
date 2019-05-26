@@ -5,9 +5,9 @@ WAEmailBody subclass: #WAHtmlEmailBody
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAHtmlEmailBody guid: (GUID fromString: '{742f9b9f-5811-4ba2-9557-474cc11bb47d}')!
-WAHtmlEmailBody comment: ''!
-!WAHtmlEmailBody categoriesForClass!Seaside-Email! !
+WAHtmlEmailBody guid: (GUID fromString: '{8067559c-b63f-40bd-9165-252d3e25de62}')!
+WAHtmlEmailBody comment: 'I am an HTML email body.'!
+!WAHtmlEmailBody categoriesForClass!Seaside-Email-Base! !
 !WAHtmlEmailBody methodsFor!
 
 contentType	^ WAMimeType textHtml!

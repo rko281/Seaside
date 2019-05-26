@@ -5,7 +5,7 @@ JSObject subclass: #JQEvent
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQEvent guid: (GUID fromString: '{05998857-0e2c-4538-8a2d-cf5bfae86bd8}')!
+JQEvent guid: (GUID fromString: '{58ff0c54-de63-483d-a477-e6e5b6392f54}')!
 JQEvent comment: ''!
 !JQEvent categoriesForClass!JQuery-Core-Objects! !
 !JQEvent methodsFor!

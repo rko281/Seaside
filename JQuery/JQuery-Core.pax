@@ -5,8 +5,6 @@ package paxVersion: 1;
 
 
 package classNames
-	add: #JQ2DeploymentLibrary;
-	add: #JQ2DevelopmentLibrary;
 	add: #JQAjax;
 	add: #JQAjaxifierLibrary;
 	add: #JQAjaxSetup;
@@ -41,12 +39,11 @@ package binaryGlobalNames: (Set new
 package globalAliases: (Set new
 	yourself).
 
-package setPrerequisites: (IdentitySet new
-	add: '..\..\Core\Object Arts\Dolphin\Base\Dolphin';
-	add: '..\..\Grease\Grease-Core';
-	add: '..\Javascript\Javascript-Core';
-	add: '..\Seaside\Seaside-Core';
-	yourself).
+package setPrerequisites: #(
+	'..\..\Core\Object Arts\Dolphin\Base\Dolphin'
+	'..\..\Grease\Grease-Core'
+	'..\Javascript\Javascript-Core'
+	'..\Seaside\Seaside-Core').
 
 package!
 
@@ -114,16 +111,6 @@ JQuery subclass: #JQueryClass
 	classInstanceVariableNames: ''!
 JQuery subclass: #JQueryInstance
 	instanceVariableNames: 'arguments'
-	classVariableNames: ''
-	poolDictionaries: ''
-	classInstanceVariableNames: ''!
-WAFileLibrary subclass: #JQ2DeploymentLibrary
-	instanceVariableNames: ''
-	classVariableNames: ''
-	poolDictionaries: ''
-	classInstanceVariableNames: ''!
-WAFileLibrary subclass: #JQ2DevelopmentLibrary
-	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!

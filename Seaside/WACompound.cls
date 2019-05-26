@@ -5,7 +5,7 @@ WABrush subclass: #WACompound
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WACompound guid: (GUID fromString: '{6b5b377c-6bf0-4e87-9729-885943954fe1}')!
+WACompound guid: (GUID fromString: '{b53c7c95-5f6c-4911-9830-2c756881e263}')!
 WACompound comment: 'I am the superclass for stuff that is not html element but you still want to access via the canvas API.'!
 !WACompound categoriesForClass!Seaside-Canvas-Tags! !
 !WACompound methodsFor!

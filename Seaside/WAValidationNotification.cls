@@ -5,6 +5,6 @@ WANotification subclass: #WAValidationNotification
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAValidationNotification guid: (GUID fromString: '{237056c1-5cba-40c0-b044-d676af49ac85}')!
-WAValidationNotification comment: 'I am signaled to indicate that a validation has occurred.  See: WAFormDialog>>#validationError:, WAComponent>>validateWith: and WAValidationDecoration.'!
+WAValidationNotification guid: (GUID fromString: '{d42884b1-c3d7-4a1f-8329-eaba166733df}')!
+WAValidationNotification comment: 'WADecoration subclass: #WAWidgetDecoration	instanceVariableNames: ''''	classVariableNames: ''''	poolDictionaries: ''''	category: ''Seaside-Widgets-Decorations'''!
 !WAValidationNotification categoriesForClass!Seaside-Widgets-Decorations! !

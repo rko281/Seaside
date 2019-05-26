@@ -5,7 +5,7 @@ JSAssign subclass: #JSAssignLocal
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSAssignLocal guid: (GUID fromString: '{88e10f5d-bc50-4f15-9cd4-9e9b4e9bd02e}')!
+JSAssignLocal guid: (GUID fromString: '{48c11134-db9c-4b80-ae99-8e5467bdff95}')!
 JSAssignLocal comment: 'I assign the decorated object to a local variable.'!
 !JSAssignLocal categoriesForClass!Javascript-Core-Decorations! !
 !JSAssignLocal methodsFor!

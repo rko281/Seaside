@@ -5,7 +5,7 @@ TestCase subclass: #WAByMethodRoutesTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAByMethodRoutesTest guid: (GUID fromString: '{948bfe14-178b-41c8-aff3-5c4f6fa3dfea}')!
+WAByMethodRoutesTest guid: (GUID fromString: '{4b7b8ab5-d162-47a7-a33b-707be7830aad}')!
 WAByMethodRoutesTest comment: ''!
 !WAByMethodRoutesTest categoriesForClass!Seaside-Tests-REST-Core! !
 !WAByMethodRoutesTest methodsFor!

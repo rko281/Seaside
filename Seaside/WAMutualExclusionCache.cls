@@ -5,7 +5,7 @@ WACache subclass: #WAMutualExclusionCache
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAMutualExclusionCache guid: (GUID fromString: '{4a7bc9d0-aa5b-470a-88dd-455cefa37b57}')!
+WAMutualExclusionCache guid: (GUID fromString: '{599ea004-bd71-47ad-9c69-9b31c612d7d9}')!
 WAMutualExclusionCache comment: 'WAMutualExclusionCacheNG is a wrapper around a WACacheNG that wraps all messages in a mutex.Instance Variables:	mutex	<WAMutex>	cache	<WACache>'!
 !WAMutualExclusionCache categoriesForClass!Seaside-Core-Cache! !
 !WAMutualExclusionCache methodsFor!

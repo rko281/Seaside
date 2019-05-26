@@ -5,7 +5,7 @@ WAFunctionalTest subclass: #WAFilterFunctionalTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAFilterFunctionalTest guid: (GUID fromString: '{91460ac4-3a6f-40db-965c-5049f7b5b77d}')!
+WAFilterFunctionalTest guid: (GUID fromString: '{32537297-4837-4f30-ada2-0bfff0fcaefc}')!
 WAFilterFunctionalTest comment: ''!
 !WAFilterFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
 !WAFilterFunctionalTest methodsFor!

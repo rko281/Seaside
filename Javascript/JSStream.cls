@@ -5,9 +5,9 @@ JSObject subclass: #JSStream
 	classVariableNames: 'Arguments JavascriptCharacters This'
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSStream guid: (GUID fromString: '{6366dfaf-d300-4c9e-9e7f-a351c83b9cfe}')!
+JSStream guid: (GUID fromString: '{2868a4e6-9fbb-4486-81f1-8a19666bb0e1}')!
 JSStream comment: 'I represent a verbatim JavaScript string. I support streaming facilities to efficiently encode JavaScript input.'!
-!JSStream categoriesForClass!Javascript-Core! !
+!JSStream categoriesForClass!Javascript-Core-Base! !
 !JSStream methodsFor!
 
 argument: anObject	"Write a single argument anObject onto the receiving stream."	self arguments: (Array with: anObject)!

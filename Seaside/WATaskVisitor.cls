@@ -5,7 +5,7 @@ WAPainterVisitor subclass: #WATaskVisitor
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WATaskVisitor guid: (GUID fromString: '{03a60567-8475-4a18-8876-9057c844fb7f}')!
+WATaskVisitor guid: (GUID fromString: '{46c46c5f-f95b-4d47-829c-e39dfeade47c}')!
 WATaskVisitor comment: ''!
 !WATaskVisitor categoriesForClass!Seaside-Component-Visitors! !
 !WATaskVisitor methodsFor!

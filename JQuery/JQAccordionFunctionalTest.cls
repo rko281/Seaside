@@ -5,7 +5,7 @@ JQUiFunctionalTest subclass: #JQAccordionFunctionalTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQAccordionFunctionalTest guid: (GUID fromString: '{ac28e664-db6c-48c1-b57c-3f9744dcbf0b}')!
+JQAccordionFunctionalTest guid: (GUID fromString: '{98bc6741-43d9-4154-bb7f-08b798c4124a}')!
 JQAccordionFunctionalTest comment: ''!
 !JQAccordionFunctionalTest categoriesForClass!JQuery-Tests-UI-Functional! !
 !JQAccordionFunctionalTest methodsFor!

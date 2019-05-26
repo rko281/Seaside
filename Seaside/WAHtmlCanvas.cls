@@ -5,9 +5,9 @@ WATagCanvas subclass: #WAHtmlCanvas
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAHtmlCanvas guid: (GUID fromString: '{48388555-eec7-4cc4-be36-ad3bfb80b714}')!
+WAHtmlCanvas guid: (GUID fromString: '{1b970896-e851-4209-b9dd-a4127048c7c9}')!
 WAHtmlCanvas comment: 'I''m a canvas for building HTML.'!
-!WAHtmlCanvas categoriesForClass!Seaside-Canvas! !
+!WAHtmlCanvas categoriesForClass!Seaside-Canvas-Canvas! !
 !WAHtmlCanvas methodsFor!
 
 abbreviated	"Defines an abbreviation, such as 'M.', 'Inc.', 'et al.', 'etc.'"	^ self tag: 'abbr'!

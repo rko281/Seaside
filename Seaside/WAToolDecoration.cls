@@ -5,7 +5,7 @@ WADecoration subclass: #WAToolDecoration
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAToolDecoration guid: (GUID fromString: '{0f4a1f24-ebcd-4db7-bdc4-e173b2a54a90}')!
+WAToolDecoration guid: (GUID fromString: '{d80db614-b6bd-4f8a-a4f4-c398bcaf4df8}')!
 WAToolDecoration comment: ''!
 !WAToolDecoration categoriesForClass!Seaside-Development-Core! !
 !WAToolDecoration methodsFor!

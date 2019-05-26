@@ -5,7 +5,7 @@ TestCase subclass: #WAAcceptsMatchTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAAcceptsMatchTest guid: (GUID fromString: '{7e60f1d7-085b-4854-b432-fe0d54e32546}')!
+WAAcceptsMatchTest guid: (GUID fromString: '{a7829340-0d0e-4a22-9844-dec5ca9afaae}')!
 WAAcceptsMatchTest comment: ''!
 !WAAcceptsMatchTest categoriesForClass!Seaside-Tests-REST-Core! !
 !WAAcceptsMatchTest methodsFor!

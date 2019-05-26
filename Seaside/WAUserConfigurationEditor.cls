@@ -5,7 +5,7 @@ WAComponent subclass: #WAUserConfigurationEditor
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAUserConfigurationEditor guid: (GUID fromString: '{28c9da94-afe9-4550-8118-a328d31c6a54}')!
+WAUserConfigurationEditor guid: (GUID fromString: '{4a4d9ab8-3585-49a5-961a-dbbd55d21d92}')!
 WAUserConfigurationEditor comment: ''!
 !WAUserConfigurationEditor categoriesForClass!Seaside-Tools-Web! !
 !WAUserConfigurationEditor methodsFor!

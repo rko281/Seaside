@@ -5,7 +5,7 @@ WAObject subclass: #WAMimeType
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAMimeType guid: (GUID fromString: '{70dca883-44a3-4a48-b4b4-bc8bd952089f}')!
+WAMimeType guid: (GUID fromString: '{8d5d0ef4-5e85-4430-be52-2fa2d3c7c996}')!
 WAMimeType comment: 'A WAMimeType abstracts a Internet media type, it is a two-part identifier for file formats on the Internet.Instance Variables	main:			<String>	parameters:	<GRSmallDictionary>	sub:			<String>main	- the main typeparameters	- a lazily initialized dictionary of optional parameterssub	- the subtype'!
 !WAMimeType categoriesForClass!Seaside-Core-HTTP! !
 !WAMimeType methodsFor!
@@ -34,7 +34,7 @@ matches: aMimeType	"aMimeType is the pattern to match, it is a normal WAMimeTyp
 
 parameterAt: aKey put: aValue	self parameters at: aKey put: aValue!
 
-parameters	parameters isNil ifTrue: [ parameters := GRSmallDictionary new ].	^ parameters!
+parameters	parameters isNil ifTrue: [ parameters := GRSmallDictionary2 new ].	^ parameters!
 
 parameters: aDictionary	parameters := aDictionary!
 
@@ -76,7 +76,7 @@ applicationRssXml	^ self main: 'application' sub: 'rss+xml'!
 
 formUrlencoded	^ self main: 'application' sub: 'x-www-form-urlencoded'!
 
-fromString: aString 	| main endOfSub sub parameters slashIndex |	slashIndex := aString indexOf: $/.	slashIndex = 0		ifTrue: [			"work arount for Issue 655			some user agents just send '*', not '*/*'"			endOfSub := aString indexOf: $;.			endOfSub = 0				ifTrue: [					main := aString.					endOfSub := aString size ]				ifFalse: [					main := aString copyFrom: 1 to: endOfSub - 1 ].			sub := main ]		ifFalse: [			main := aString copyUpTo: $/.			endOfSub := aString indexOf: $;.			endOfSub := endOfSub = 0 				ifTrue: [ aString size ]				ifFalse: [ endOfSub - 1 ].			sub := aString 				copyFrom: main size + 2				to: endOfSub ].	endOfSub = aString size ifTrue: [		^ self 			main: main			sub: sub ].	parameters := GRSmallDictionary new.	GRPlatform subStringsIn: (aString copyFrom: endOfSub + 1 to: aString size) splitBy: $; do: [ :each |		parameters 			at: (each copyUpTo: $=) trimBoth			put: (each copyAfter: $=) trimBoth ].	^ self 		main: main		sub: sub		parameters: parameters!
+fromString: aString 	| main endOfSub sub parameters slashIndex |	slashIndex := aString indexOf: $/.	slashIndex = 0		ifTrue: [			"work arount for Issue 655			some user agents just send '*', not '*/*'"			endOfSub := aString indexOf: $;.			endOfSub = 0				ifTrue: [					main := aString.					endOfSub := aString size ]				ifFalse: [					main := aString copyFrom: 1 to: endOfSub - 1 ].			sub := main ]		ifFalse: [			main := aString copyUpTo: $/.			endOfSub := aString indexOf: $;.			endOfSub := endOfSub = 0 				ifTrue: [ aString size ]				ifFalse: [ endOfSub - 1 ].			sub := aString 				copyFrom: main size + 2				to: endOfSub ].	endOfSub = aString size ifTrue: [		^ self 			main: main			sub: sub ].	parameters := GRSmallDictionary2 new.	GRPlatform subStringsIn: (aString copyFrom: endOfSub + 1 to: aString size) splitBy: $; do: [ :each |		parameters 			at: (each copyUpTo: $=) trimBoth			put: (each copyAfter: $=) trimBoth ].	^ self 		main: main		sub: sub		parameters: parameters!
 
 imageGif	^ self main: 'image' sub: 'gif'!
 

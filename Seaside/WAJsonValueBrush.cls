@@ -5,6 +5,6 @@ WAJsonElementBrush subclass: #WAJsonValueBrush
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAJsonValueBrush guid: (GUID fromString: '{ad23b674-91d6-4528-9f68-33ecfccec18a}')!
+WAJsonValueBrush guid: (GUID fromString: '{30ac1669-3133-4e21-9ab7-e5c56c420e4c}')!
 WAJsonValueBrush comment: ''!
 !WAJsonValueBrush categoriesForClass!Seaside-JSON-Core! !

@@ -5,7 +5,7 @@ WAAbstractCanvasBrushTest subclass: #WAFormCharEncodingFromHandlerTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAFormCharEncodingFromHandlerTest guid: (GUID fromString: '{cd6a9d09-a178-483d-842e-a7ead7ad5fdd}')!
+WAFormCharEncodingFromHandlerTest guid: (GUID fromString: '{07ac390b-c387-48c2-b6de-a703a25bc67a}')!
 WAFormCharEncodingFromHandlerTest comment: 'I test that the encoding from the handler is taken if a handler is present but a codec is missing.'!
 !WAFormCharEncodingFromHandlerTest categoriesForClass!Seaside-Tests-Canvas! !
 !WAFormCharEncodingFromHandlerTest methodsFor!

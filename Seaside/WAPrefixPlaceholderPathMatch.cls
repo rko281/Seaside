@@ -5,7 +5,7 @@ WAPlaceholderPathMatch subclass: #WAPrefixPlaceholderPathMatch
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAPrefixPlaceholderPathMatch guid: (GUID fromString: '{e2d9720a-8578-46df-9354-81f8a3f0a27a}')!
+WAPrefixPlaceholderPathMatch guid: (GUID fromString: '{42035cde-b5c0-4f1c-8803-dfad8f0a4d97}')!
 WAPrefixPlaceholderPathMatch comment: ''!
 !WAPrefixPlaceholderPathMatch categoriesForClass!Seaside-REST-Core-Route! !
 !WAPrefixPlaceholderPathMatch methodsFor!

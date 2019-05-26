@@ -5,7 +5,7 @@ WAVisiblePresenterGuide subclass: #WAAllPresenterGuide
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAAllPresenterGuide guid: (GUID fromString: '{19f84213-b80f-4430-aa8d-404754617d54}')!
+WAAllPresenterGuide guid: (GUID fromString: '{3e80bd3a-7eca-4857-99c6-426a4e353f84}')!
 WAAllPresenterGuide comment: 'Visit the tree of all Presenters and their registered #children.'!
 !WAAllPresenterGuide categoriesForClass!Seaside-Component-Visitors! !
 !WAAllPresenterGuide methodsFor!

@@ -5,7 +5,7 @@ JQUiFunctionalTest subclass: #JQTransitionFunctionalTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQTransitionFunctionalTest guid: (GUID fromString: '{2dfa5f49-59bc-4b5c-93c9-4e255a2806e8}')!
+JQTransitionFunctionalTest guid: (GUID fromString: '{1e1a0826-0d67-44f2-a1ed-2f14939da0be}')!
 JQTransitionFunctionalTest comment: ''!
 !JQTransitionFunctionalTest categoriesForClass!JQuery-Tests-UI-Functional! !
 !JQTransitionFunctionalTest methodsFor!

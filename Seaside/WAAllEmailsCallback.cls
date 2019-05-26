@@ -5,7 +5,7 @@ WAAllValuesCallback subclass: #WAAllEmailsCallback
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAAllEmailsCallback guid: (GUID fromString: '{cc8857eb-2a94-4dec-b3e2-d2d10d63adbd}')!
+WAAllEmailsCallback guid: (GUID fromString: '{7cddfad2-5e77-4432-9ed1-b89fdd16d862}')!
 WAAllEmailsCallback comment: ''!
 !WAAllEmailsCallback categoriesForClass!Seaside-Core-Callbacks! !
 !WAAllEmailsCallback methodsFor!

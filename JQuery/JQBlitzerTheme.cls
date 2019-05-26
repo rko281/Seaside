@@ -5,7 +5,7 @@ JQBaseTheme subclass: #JQBlitzerTheme
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQBlitzerTheme guid: (GUID fromString: '{506b3125-1c51-43af-a952-79eeeaa02a4d}')!
+JQBlitzerTheme guid: (GUID fromString: '{d83186ed-9a8c-49bf-b25e-f9be5f068914}')!
 JQBlitzerTheme comment: ''!
 !JQBlitzerTheme categoriesForClass!JQuery-UI-Libraries! !
 !JQBlitzerTheme methodsFor!

@@ -5,7 +5,7 @@ WASessionTrackingStrategyTest subclass: #WAInvisibleSessionTrackingStrategyTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAInvisibleSessionTrackingStrategyTest guid: (GUID fromString: '{84dd24ec-9361-496e-86fe-3323d5fbc0e5}')!
+WAInvisibleSessionTrackingStrategyTest guid: (GUID fromString: '{2ea863c5-bfd0-490c-8423-9b3ca7541c92}')!
 WAInvisibleSessionTrackingStrategyTest comment: ''!
 !WAInvisibleSessionTrackingStrategyTest categoriesForClass!Seaside-Tests-Session! !
 !WAInvisibleSessionTrackingStrategyTest methodsFor!

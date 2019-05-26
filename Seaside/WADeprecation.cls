@@ -5,7 +5,7 @@ WATool subclass: #WADeprecation
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WADeprecation guid: (GUID fromString: '{22c32817-80e5-47fa-bd92-ff38e54a9f9b}')!
+WADeprecation guid: (GUID fromString: '{ae6805e7-289e-49e8-9902-cb0153eadedb}')!
 WADeprecation comment: ''!
 !WADeprecation categoriesForClass!Seaside-Development-Core! !
 !WADeprecation methodsFor!

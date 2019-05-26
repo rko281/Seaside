@@ -5,8 +5,8 @@ WAQualifiedValue subclass: #WAAccept
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAAccept guid: (GUID fromString: '{08eb2cb2-2bf5-41a9-aafd-7e2888701323}')!
-WAAccept comment: 'A WAAccept is a WAQualifiedValue with a value that is an instance of WAMimeType. It represents how much a user agent prefers a certain mime type.'!
+WAAccept guid: (GUID fromString: '{17004b12-8955-4bd9-b0d1-c07d81594040}')!
+WAAccept comment: 'WAAccept class	instanceVariableNames: '''''!
 !WAAccept categoriesForClass!Seaside-Core-HTTP! !
 !WAAccept class methodsFor!
 

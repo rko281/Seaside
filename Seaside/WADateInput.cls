@@ -5,7 +5,7 @@ WACompound subclass: #WADateInput
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WADateInput guid: (GUID fromString: '{7afa6c65-ab01-481f-bb81-3ef08b022e2c}')!
+WADateInput guid: (GUID fromString: '{5eb502d9-489f-4c11-b8ec-714f33359133}')!
 WADateInput comment: 'I am a composition of three input fields that allow the user to select year, month and day. #options: can be used to toggle them individually.The argument for my callback blocks is an instance of Date.See WADateTimeTest >> #renderDateTimeOn:'!
 !WADateInput categoriesForClass!Seaside-Canvas-Tags! !
 !WADateInput methodsFor!

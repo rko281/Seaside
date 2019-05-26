@@ -5,7 +5,7 @@ WAObject subclass: #JSDecoration
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSDecoration guid: (GUID fromString: '{6ba20a76-2603-44d1-ade2-7f6fa875550f}')!
+JSDecoration guid: (GUID fromString: '{38ca558c-3e86-44b3-9245-94caf01cf3a1}')!
 JSDecoration comment: 'I decorate JavaScript objects.'!
 !JSDecoration categoriesForClass!Javascript-Core-Decorations! !
 !JSDecoration methodsFor!

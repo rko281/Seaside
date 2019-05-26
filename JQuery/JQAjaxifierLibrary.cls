@@ -5,7 +5,7 @@ WAFileLibrary subclass: #JQAjaxifierLibrary
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQAjaxifierLibrary guid: (GUID fromString: '{51e29b57-8784-4c33-bec1-099d04debbbd}')!
+JQAjaxifierLibrary guid: (GUID fromString: '{b01f6787-ed47-4c67-baf0-64ce478ef9f4}')!
 JQAjaxifierLibrary comment: ''!
 !JQAjaxifierLibrary categoriesForClass!JQuery-Core-Libraries! !
 !JQAjaxifierLibrary methodsFor!

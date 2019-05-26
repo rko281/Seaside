@@ -5,7 +5,7 @@ WACache subclass: #WAUnidirectionalCache
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAUnidirectionalCache guid: (GUID fromString: '{a230f558-e94d-40c2-8637-47064c7ab446}')!
+WAUnidirectionalCache guid: (GUID fromString: '{92015a26-8275-4118-a25d-df5a75277a97}')!
 WAUnidirectionalCache comment: 'I support only key -> value mappings and never forget anything.'!
 !WAUnidirectionalCache categoriesForClass!Seaside-Core-Cache! !
 !WAUnidirectionalCache methodsFor!

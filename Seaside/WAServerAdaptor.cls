@@ -5,7 +5,7 @@ WAObject subclass: #WAServerAdaptor
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAServerAdaptor guid: (GUID fromString: '{44821a29-588e-4fe1-a0dc-72a9c22cedad}')!
+WAServerAdaptor guid: (GUID fromString: '{d9696f41-0e16-41b4-8c77-2599bd747467}')!
 WAServerAdaptor comment: 'A WAServer is the abstract base class for all servers. Actual servers do not have to subclass it but have to support the protocol: - #codec - #usesSmalltalkEncodingInstance Variables	codec:		<WACodec>codec	- the codec used for response conversion from characters to bytes'!
 !WAServerAdaptor categoriesForClass!Seaside-Core-Server! !
 !WAServerAdaptor methodsFor!
@@ -58,7 +58,7 @@ port	^ port!
 
 port: anObject	port := anObject!
 
-process: aNativeRequest	"Process aNativeRequest by converting to a request context, handling the request, and converting the request context back to a native response. Make sure to release the context after processing, to help the garbage collector and avoid having large streams and sockets hanging around if people still refer to the obsolete request context."	| context |	context := self contextFor: aNativeRequest.	^ [ self handle: context; responseFrom: context ]		ensure: [ context destroy ]!
+process: aNativeRequest	"Process aNativeRequest by converting to a request context, handling the request, and converting the request context back to a native response. Make sure to release the context after processing, to help the garbage collector and avoid having large streams and sockets hanging around if people still refer to the obsolete request context."	| context |	context := self contextFor: aNativeRequest.	^ [ self handle: context.		"URL -> String conversion in #responseFrom: needs access to request context for codec"		context push: self requestHandler during: [ self responseFrom: context ] ]		ensure: [ context destroy ]!
 
 requestAddressFor: aNativeRequest	self subclassResponsibility!
 

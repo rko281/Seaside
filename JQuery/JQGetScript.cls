@@ -5,7 +5,7 @@ JQAjax subclass: #JQGetScript
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQGetScript guid: (GUID fromString: '{17ab6fd3-36aa-403b-a93c-ce9a7557ee4a}')!
+JQGetScript guid: (GUID fromString: '{4714825a-4821-41d6-84bd-dcd692c1389d}')!
 JQGetScript comment: 'Loads, and executes, a local JavaScript file using an HTTP GET request.'!
 !JQGetScript categoriesForClass!JQuery-Core-Objects! !
 !JQGetScript methodsFor!

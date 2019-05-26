@@ -5,7 +5,7 @@ WARequestHandler subclass: #WASessionContinuation
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WASessionContinuation guid: (GUID fromString: '{be750cd8-40dd-4e97-bcfd-90bf955ad357}')!
+WASessionContinuation guid: (GUID fromString: '{c938376f-2d3b-4ee3-bacd-1390ec076eb0}')!
 WASessionContinuation comment: 'I represent a continuation as part of the flow of pages within a session. I am not a real continuation (as compared to those used in #call: and #answer:), I only represent a specific point in the session. I reference the root component and a memory snapshot of backtracked objects.'!
 !WASessionContinuation categoriesForClass!Seaside-Session! !
 !WASessionContinuation methodsFor!

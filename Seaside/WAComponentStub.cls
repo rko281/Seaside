@@ -5,7 +5,7 @@ WAComponent subclass: #WAComponentStub
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAComponentStub guid: (GUID fromString: '{3fbf0b7b-0062-44b6-b72a-5685636d5ea3}')!
+WAComponentStub guid: (GUID fromString: '{1a773d85-ce45-4528-b26e-c70747226d9d}')!
 WAComponentStub comment: ''!
 !WAComponentStub categoriesForClass!Seaside-Tests-Component-Stubs! !
 !WAComponentStub methodsFor!

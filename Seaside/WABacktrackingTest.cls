@@ -5,7 +5,7 @@ TestCase subclass: #WABacktrackingTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WABacktrackingTest guid: (GUID fromString: '{beda9cad-79a7-47ee-a352-d24c27b93889}')!
+WABacktrackingTest guid: (GUID fromString: '{4952af76-85b5-4c11-83ca-05880dce7bf5}')!
 WABacktrackingTest comment: ''!
 !WABacktrackingTest categoriesForClass!Seaside-Tests-Core-Backtracking! !
 !WABacktrackingTest methodsFor!

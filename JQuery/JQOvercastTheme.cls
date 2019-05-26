@@ -5,7 +5,7 @@ JQBaseTheme subclass: #JQOvercastTheme
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQOvercastTheme guid: (GUID fromString: '{945e8304-9d41-4dcd-a511-ceb8620d96d5}')!
+JQOvercastTheme guid: (GUID fromString: '{323678da-d930-46a2-b540-5946d8071e04}')!
 JQOvercastTheme comment: ''!
 !JQOvercastTheme categoriesForClass!JQuery-UI-Libraries! !
 !JQOvercastTheme methodsFor!

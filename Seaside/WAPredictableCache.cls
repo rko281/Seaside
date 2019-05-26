@@ -5,7 +5,7 @@ WABidirectionalCache subclass: #WAPredictableCache
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAPredictableCache guid: (GUID fromString: '{d1edfc38-ad50-4b91-a87c-b4e5e29fe62d}')!
+WAPredictableCache guid: (GUID fromString: '{7aebf7a3-995d-4af1-98c8-710a434f7020}')!
 WAPredictableCache comment: 'A WAPredictableCache is a WACache that uses incrementing numbers as cache keys. This way the keys are predictable. This is useful for tests.'!
 !WAPredictableCache categoriesForClass!Seaside-Tests-Canvas! !
 !WAPredictableCache methodsFor!

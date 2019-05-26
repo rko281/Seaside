@@ -53,6 +53,7 @@ package classNames
 	add: #WAPlatformTest;
 	add: #WAPrecomputedKeyGenerator;
 	add: #WAQueryFieldHandlerTrackingStrategyTest;
+	add: #WARedirectingRegistry;
 	add: #WARegistryKeyHandlingTest;
 	add: #WARegistryTest;
 	add: #WARenderContextTest;
@@ -89,16 +90,13 @@ package binaryGlobalNames: (Set new
 package globalAliases: (Set new
 	yourself).
 
-package setPrerequisites: (IdentitySet new
-	add: '..\..\Core\Object Arts\Dolphin\Base\Dolphin';
-	add: '..\..\Grease\Grease-Core';
-	add: '..\..\Grease\Grease-Tests-Core';
-	add: '..\..\Core\Contributions\IDB\IDB DateAndTime';
-	add: '..\..\Core\Contributions\IDB\IDB Duration';
-	add: 'Seaside-Core';
-	add: 'Seaside-Session';
-	add: '..\..\Core\Contributions\Camp Smalltalk\SUnit\SUnit';
-	yourself).
+package setPrerequisites: #(
+	'..\..\Core\Object Arts\Dolphin\Base\Dolphin'
+	'..\..\Grease\Grease-Core'
+	'..\..\Grease\Grease-Tests-Core'
+	'Seaside-Core'
+	'Seaside-Session'
+	'..\..\Core\Contributions\Camp Smalltalk\SUnit\SUnit').
 
 package!
 
@@ -145,6 +143,11 @@ WARequestHandler subclass: #WATestNoopRequestHandler
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 WARequestHandler subclass: #WATestNoopSessionHandler
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WARegistry subclass: #WARedirectingRegistry
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
@@ -284,17 +287,17 @@ TestCase subclass: #WAServerManagerTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-GRPlatformTest subclass: #WAPlatformTest
-	instanceVariableNames: ''
-	classVariableNames: ''
-	poolDictionaries: ''
-	classInstanceVariableNames: ''!
-GROrderedMultiMapTest subclass: #WAHeaderFieldsTest
-	instanceVariableNames: ''
-	classVariableNames: ''
-	poolDictionaries: ''
-	classInstanceVariableNames: ''!
 GROrderedMultiMapTest subclass: #WARequestFieldsTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+GROrderedMultiMap2Test subclass: #WAHeaderFieldsTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+GRPlatformTest subclass: #WAPlatformTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''

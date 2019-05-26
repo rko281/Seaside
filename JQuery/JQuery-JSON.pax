@@ -16,13 +16,12 @@ package binaryGlobalNames: (Set new
 package globalAliases: (Set new
 	yourself).
 
-package setPrerequisites: (IdentitySet new
-	add: '..\..\Grease\Grease-Core';
-	add: '..\Javascript\Javascript-Core';
-	add: 'JQuery-Core';
-	add: '..\Seaside\Seaside-Core';
-	add: '..\Seaside\Seaside-JSON-Core';
-	yourself).
+package setPrerequisites: #(
+	'..\..\Grease\Grease-Core'
+	'..\Javascript\Javascript-Core'
+	'JQuery-Core'
+	'..\Seaside\Seaside-Core'
+	'..\Seaside\Seaside-JSON-Core').
 
 package!
 

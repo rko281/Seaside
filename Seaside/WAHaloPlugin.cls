@@ -5,7 +5,7 @@ WAPlugin subclass: #WAHaloPlugin
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAHaloPlugin guid: (GUID fromString: '{0df9d2d7-6dcd-4255-b36a-2c1dcebcf664}')!
+WAHaloPlugin guid: (GUID fromString: '{f9be3124-b1d4-4fed-9e4c-269befa4e01a}')!
 WAHaloPlugin comment: 'Abstract root class for all halo tools. They add functionality to the halo toolbar.'!
 !WAHaloPlugin categoriesForClass!Seaside-Development-Plugins! !
 !WAHaloPlugin methodsFor!

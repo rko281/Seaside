@@ -5,7 +5,7 @@ WARestfulHandler subclass: #WAStubHandler
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAStubHandler guid: (GUID fromString: '{ab9e5406-5513-4d75-a7ad-28c10c622488}')!
+WAStubHandler guid: (GUID fromString: '{0135dc74-8448-4e8c-b07e-46cd28c25b84}')!
 WAStubHandler comment: ''!
 !WAStubHandler categoriesForClass!Seaside-Tests-REST-Core! !
 !WAStubHandler methodsFor!

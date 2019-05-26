@@ -1,12 +1,12 @@
 ﻿"Filed out from Dolphin Smalltalk 7"!
 
 WARequestCookie subclass: #WACookie
-	instanceVariableNames: 'expiry secure discard comment commentUrl httpOnly maxAge'
+	instanceVariableNames: 'expiry secure discard comment commentUrl httpOnly sameSite maxAge'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WACookie guid: (GUID fromString: '{b1775d57-9f87-4e98-82f3-f58ffbd85ff7}')!
-WACookie comment: 'I represent a cookie, a piece of information that is stored on the client and read and writable by the server. I am basically a key/value pair of strings.You can never trust information in a cookie, the client is free to edit it.I model only a part of the full cookie specification.Browser support:http://www.mnot.net/blog/2006/10/27/cookie_funNetscape spechttp://cgi.netscape.com/newsref/std/cookie_spec.htmlCookie spechttp://tools.ietf.org/html/rfc2109Cookie 2 spechttp://tools.ietf.org/html/rfc2965HttpOnlyhttp://msdn2.microsoft.com/en-us/library/ms533046.aspxhttps://bugzilla.mozilla.org/show_bug.cgi?id=178993Compared to WARequestCookie I represent the information that is sent to the user agent.'!
+WACookie guid: (GUID fromString: '{7a6dcddc-a93c-4662-9d26-b482a25cc697}')!
+WACookie comment: 'I represent a cookie, a piece of information that is stored on the client and read and writable by the server. I am basically a key/value pair of strings.You can never trust information in a cookie, the client is free to edit it.I model only a part of the full cookie specification.Browser support:http://www.mnot.net/blog/2006/10/27/cookie_funNetscape spechttp://cgi.netscape.com/newsref/std/cookie_spec.htmlCookie spechttp://tools.ietf.org/html/rfc2109Cookie 2 spechttps://tools.ietf.org/html/rfc6265HttpOnlyhttp://msdn2.microsoft.com/en-us/library/ms533046.aspxhttps://bugzilla.mozilla.org/show_bug.cgi?id=178993Compared to WARequestCookie I represent the information that is sent to the user agent.'!
 !WACookie categoriesForClass!Seaside-Core-HTTP! !
 !WACookie methodsFor!
 
@@ -44,13 +44,11 @@ maxAge	^ maxAge!
 
 maxAge: anInteger	"Optional.  The Max-Age attribute defines the lifetime of the	cookie, in seconds.  The delta-seconds value is a decimal non-	negative integer.  After delta-seconds seconds elapse, the client	should discard the cookie.  A value of zero means the cookie	should be discarded immediately."	maxAge := anInteger!
 
-oldNetscapeString	"Serializes the receiver according to the orginal Netscape spec.	This has the broadest browser support but limited features.	It can not be used with HTTP header combining.	See class comment for a link to the spec."	self greaseDeprecatedApi: 'WACookie>>#oldNetscapeString' details: 'Use #rfc6265String instead.'. 	^ String streamContents: [ :stream |		self writeKeyValueQuoted: false on: stream.		self writeExpiresOn: stream.		self writePathQuoted: false on: stream.		self writeDomainQuoted: false on: stream.		self writeSecureOn: stream.		self writeHttpOnlyOn: stream ]!
+rfc6265String	"Serializes the receiver according to RFC 6265.	See class comment for a link to the spec."	^ String streamContents: [ :stream |		| useQuotes |		"the spec allows us to quote but we don't know how good browser support is"		useQuotes := false.		self writeKeyValueQuoted: useQuotes on: stream.		self writeExpiresOn: stream.		self writeMaxAgeQuoted: useQuotes on: stream.		self writeDomainQuoted: useQuotes on: stream.		self writePathQuoted: useQuotes on: stream.		self writeSecureOn: stream.		self writeHttpOnlyOn: stream.		self writeSameSiteOn: stream ]!
 
-rfc2109String	"Serializes the receiver according to RFC 2109.	Almost no browser support.	It can be used with HTTP header combining.	See class comment for a link to the spec."	self greaseDeprecatedApi: 'WACookie>>#rfc2109String' details: 'Use #rfc6265String instead.'. 	^ String streamContents: [ :stream |		self writeKeyValueQuoted: true on: stream.		self writeCommentOn: stream.		self writeMaxAgeQuoted: true on: stream.		self writePathQuoted: true on: stream.		self writeDomainQuoted: true on: stream.		self writeSecureOn: stream.		self writeHttpOnlyOn: stream.		self writeVersionOn: stream ]!
+sameSite	^ sameSite!
 
-rfc2965String	"Serializes the receiver according to RFC 2965.	This has the most features but is only supported in Opera.	It can be used together with other serialization forms.	It can be used with HTTP header combining.	See class comment for a link to the spec."	self greaseDeprecatedApi: 'WACookie>>#rfc2965String' details: 'Use #rfc6265String instead.'. 	^ String streamContents: [ :stream |		self writeKeyValueQuoted: true on: stream.		self writeCommentOn: stream.		self writeCommentUrlOn: stream.		self writeMaxAgeQuoted: true on: stream.		self writePathQuoted: true on: stream.		self writePortsOn: stream.		self writeDomainQuoted: true on: stream.		self writeSecureOn: stream.		self writeHttpOnlyOn: stream.		self writeDiscardOn: stream.		self writeVersionOn: stream ]!
-
-rfc6265String	"Serializes the receiver according to RFC 6265.	Almost no browser support.	It can be used with HTTP header combining.	See class comment for a link to the spec."	^ String streamContents: [ :stream |		| useQuotes |		"the spec allows us to quote but we don't know how good browser support is"		useQuotes := false.		self writeKeyValueQuoted: useQuotes on: stream.		self writeExpiresOn: stream.		self writeMaxAgeQuoted: useQuotes on: stream.		self writeDomainQuoted: useQuotes on: stream.		self writePathQuoted: useQuotes on: stream.		self writeSecureOn: stream.		self writeHttpOnlyOn: stream ]!
+sameSite: aString	sameSite := aString!
 
 secure	^ secure!
 
@@ -82,6 +80,8 @@ writePathQuoted: aBoolean on: aStream	pathEncoded isNil		ifTrue: [ ^ self ].	
 
 writePortsOn: aStream	ports isEmptyOrNil		ifTrue: [ ^ self ].	aStream nextPutAll: '; Port="'.	self ports do: [ :each | aStream print: each ] separatedBy: [ aStream nextPut: $, ].	aStream nextPut: $"!
 
+writeSameSiteOn: aStream	sameSite isNil		ifTrue: [ ^ self ].	aStream		nextPutAll: '; SameSite=';		nextPutAll: sameSite!
+
 writeSecureOn: aStream	self secure		ifTrue: [ aStream nextPutAll: '; Secure' ]!
 
 writeVersionOn: aStream	aStream nextPutAll: '; Version='.	aStream print: self version! !
@@ -102,10 +102,9 @@ writeVersionOn: aStream	aStream nextPutAll: '; Version='.	aStream print: self 
 !WACookie categoriesFor: #initialize!initialization!public! !
 !WACookie categoriesFor: #maxAge!accessing!public! !
 !WACookie categoriesFor: #maxAge:!accessing!public! !
-!WACookie categoriesFor: #oldNetscapeString!public!writing! !
-!WACookie categoriesFor: #rfc2109String!public!writing! !
-!WACookie categoriesFor: #rfc2965String!public!writing! !
 !WACookie categoriesFor: #rfc6265String!public!writing! !
+!WACookie categoriesFor: #sameSite!accessing!public! !
+!WACookie categoriesFor: #sameSite:!accessing!public! !
 !WACookie categoriesFor: #secure!accessing!public! !
 !WACookie categoriesFor: #secure:!accessing!public! !
 !WACookie categoriesFor: #write:asQuotedStringOn:!public!writing/private! !
@@ -121,6 +120,7 @@ writeVersionOn: aStream	aStream nextPutAll: '; Version='.	aStream print: self 
 !WACookie categoriesFor: #writeOn:!public!writing! !
 !WACookie categoriesFor: #writePathQuoted:on:!public!writing/private! !
 !WACookie categoriesFor: #writePortsOn:!public!writing/private! !
+!WACookie categoriesFor: #writeSameSiteOn:!public!writing/private! !
 !WACookie categoriesFor: #writeSecureOn:!public!writing/private! !
 !WACookie categoriesFor: #writeVersionOn:!public!writing/private! !
 

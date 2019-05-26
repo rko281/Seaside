@@ -5,7 +5,7 @@ WAComponent subclass: #WAAttributeEditor
 	classVariableNames: 'HelpTexts PropertiesCache'
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAAttributeEditor guid: (GUID fromString: '{f2d3b9e5-f896-45f7-b80b-7a32651740c4}')!
+WAAttributeEditor guid: (GUID fromString: '{37a9ddd0-7e25-42f6-a969-9d2e2122b828}')!
 WAAttributeEditor comment: ''!
 !WAAttributeEditor categoriesForClass!Seaside-Tools-Web! !
 !WAAttributeEditor methodsFor!

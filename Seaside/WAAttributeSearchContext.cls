@@ -5,7 +5,7 @@ WAObject subclass: #WAAttributeSearchContext
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAAttributeSearchContext guid: (GUID fromString: '{370efc4a-0fdc-4a32-8b9d-afad47b9100c}')!
+WAAttributeSearchContext guid: (GUID fromString: '{f1fe9722-366e-4a6e-838c-638b776c625f}')!
 WAAttributeSearchContext comment: 'This class makes attribute searching more efficient by traversing the ancestry once and caching which Configurations hold the attribute. It is then passed through search functions which cache values for the attribute.'!
 !WAAttributeSearchContext categoriesForClass!Seaside-Core-Configuration! !
 !WAAttributeSearchContext methodsFor!

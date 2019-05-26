@@ -17,12 +17,11 @@ package binaryGlobalNames: (Set new
 package globalAliases: (Set new
 	yourself).
 
-package setPrerequisites: (IdentitySet new
-	add: '..\..\Core\Object Arts\Dolphin\Base\Dolphin';
-	add: '..\..\Core\Object Arts\Dolphin\System\Continuations\Dolphin Continuations';
-	add: '..\..\Contributions\Daniel S\DS Partial Continuations';
-	add: '..\..\Grease\Grease-Core';
-	yourself).
+package setPrerequisites: #(
+	'..\..\Core\Object Arts\Dolphin\Base\Dolphin'
+	'..\..\Core\Object Arts\Dolphin\System\Continuations\Dolphin Continuations'
+	'..\..\Contributions\Daniel S\DS Partial Continuations'
+	'..\..\Grease\Grease-Core').
 
 package!
 

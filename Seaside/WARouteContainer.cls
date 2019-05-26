@@ -5,7 +5,7 @@ WAObject subclass: #WARouteContainer
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WARouteContainer guid: (GUID fromString: '{7d76212d-531e-47f1-b6ac-b8d9d9cbf806}')!
+WARouteContainer guid: (GUID fromString: '{3d7c79dc-8817-4106-80e5-cc8853676a6c}')!
 WARouteContainer comment: 'A WARouteContainer is a collection of routes that all accept the same number of path elements ordered by priority.Instance Variables	pathElementCount:		<Integer>	routes:		<SortedCollection<WARoute>>pathElementCount	- the number of path elements that any of the routes in this container acceptsroutes	- the routes ordered by priority'!
 !WARouteContainer categoriesForClass!Seaside-REST-Core-Route! !
 !WARouteContainer methodsFor!

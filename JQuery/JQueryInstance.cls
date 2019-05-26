@@ -5,7 +5,7 @@ JQuery subclass: #JQueryInstance
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQueryInstance guid: (GUID fromString: '{6eb65c23-032c-4110-b8bc-9ddbecec049f}')!
+JQueryInstance guid: (GUID fromString: '{717936ce-6384-4f70-90ae-a1d71c5243c1}')!
 JQueryInstance comment: ''!
 !JQueryInstance categoriesForClass!JQuery-Core-Objects! !
 !JQueryInstance methodsFor!
@@ -19,8 +19,6 @@ addBack	"Add the previous set of elements on the stack to the current set."	se
 addClass: aString	"Adds the specified class(es) to each of the set of matched elements."		self call: 'addClass' with: aString!
 
 after: aRenderable 	"Insert content, specified by the parameter, after each element in the set of matched elements."		self call: 'after' with: (self render: aRenderable)!
-
-andSelf	"Add the previous set of elements on the stack to the current set."	self 		greaseDeprecatedApi: 'JQueryInstance>>#andSelf'		details: 'Replaced in jQuery 1.9 with addBack. See http://jquery.com/upgrade-guide/1.9/.'.	self call: 'addBack'!
 
 animate	"Perform a custom animation of a set of CSS properties."		^ self create: JQAnimate!
 
@@ -40,9 +38,9 @@ attributes: aDictionary 	"Set one or more attributes for the set of matched ele
 
 before: aRenderable 	"Insert content, specified by the parameter, before each element in the set of matched elements."		self call: 'before' with: (self render: aRenderable)!
 
-bind: aString data: aDataObject  do: anObject 	"Handle click and double-click for the paragraph. Note: the coordinates are window relative, so in this case relative to the demo iframe."		self call: 'bind' with: aString with: aDataObject with: anObject asFunction!
+bind: aString data: aDataObject  do: anObject	self 		greaseDeprecatedApi: 'JQueryInstance>>#bind:do:'		details: 'See https://jquery.com/upgrade-guide/3.0/#deprecated-bind-and-delegate'.		self call: 'bind' with: aString with: aDataObject with: anObject asFunction!
 
-bind: aString do: anObject 	"Handle click and double-click for the paragraph. Note: the coordinates are window relative, so in this case relative to the demo iframe."		self call: 'bind' with: aString with: anObject asFunction!
+bind: aString do: anObject 	self 		greaseDeprecatedApi: 'JQueryInstance>>#bind:do:'		details: 'See https://jquery.com/upgrade-guide/3.0/#deprecated-bind-and-delegate'.		self call: 'bind' with: aString with: anObject asFunction!
 
 children	"Get the children of each element in the set of matched elements."		self call: 'children'!
 
@@ -63,8 +61,6 @@ closest: aString	"Get the first element that matches the selector, beginning at
 collect: anObject	"Translate a set of elements in the jQuery object into another set of values in an array (which may, or may not, be elements)."		self map: (self iteratorFor: anObject return: true)!
 
 contents	"Get the children of each element in the set of matched elements, including text nodes."		self call: 'contents'!
-
-context	"The DOM node context originally passed to jQuery(); if none was passed then context will likely be the document."		self access: 'context'!
 
 css: aDictionary	"Set one or more CSS properties for the set of matched elements."		self call: 'css' with: aDictionary!
 
@@ -170,7 +166,7 @@ javascriptContentOn: aStream	super javascriptContentOn: aStream.	JSStream enco
 
 last	"Reduce the set of matched elements to the final one in the set."		self call: 'last'!
 
-length	"The number of elements in the jQuery object."		self access: 'length'!
+length	"Return the number of DOM elements matched by the jQuery object."		self access: 'length'!
 
 load	"Load data from the server and place the returned HTML into the matched element."		^ self create: JQLoad!
 
@@ -226,7 +222,7 @@ onDoubleClick: anObject	"Bind an event handler to the 'dblclick' JavaScript eve
 
 one: aString do: anObject 	"Attach a handler to an event for the elements. The handler is executed at most once."		self call: 'one' with: aString with: anObject asFunction!
 
-onError: anObject	"Bind an event handler to the 'error' JavaScript event."		self call: 'error' with: anObject asFunction!
+onError: anObject	"Bind an event handler to the 'error' JavaScript event."		self on: 'error' do: anObject asFunction!
 
 onFocus: anObject	"Bind an event handler to the 'focus' JavaScript event, or trigger that event on an element."		self call: 'focus' with: anObject asFunction!
 
@@ -234,13 +230,15 @@ onFocusIn: anObject	"Bind an event handler to the 'focusin' JavaScript event."
 
 onFocusOut: anObject	"Bind an event handler to the 'focusout' JavaScript event."		self call: 'focusout' with: anObject asFunction!
 
+onInput: anObject	"Bind an event handler to the 'input' JavaScript event, or trigger that event on an element."		self on: 'input' do: anObject asFunction!
+
 onKeyDown: anObject	"Bind an event handler to the 'keydown' JavaScript event, or trigger that event on an element."		self call: 'keydown' with: anObject asFunction!
 
 onKeyPress: anObject	"Bind an event handler to the 'keypress' JavaScript event, or trigger that event on an element."		self call: 'keypress' with: anObject asFunction!
 
 onKeyUp: anObject	"Bind an event handler to the 'keyup' JavaScript event, or trigger that event on an element."		self call: 'keyup' with: anObject asFunction!
 
-onLoad: anObject	"Bind an event handler to the 'load' JavaScript event."		self call: 'load' with: anObject asFunction!
+onLoad: anObject	"Bind an event handler to the 'load' JavaScript event."		self on: 'load' do: anObject asFunction!
 
 onMouseDown: anObject	"Bind an event handler to the 'mousedown' JavaScript event, or trigger that event on an element."		self call: 'mousedown' with: anObject asFunction!
 
@@ -264,7 +262,7 @@ onSelect: anObject	"Bind an event handler to the 'select' JavaScript event, or 
 
 onSubmit: anObject	"Bind an event handler to the 'submit' JavaScript event, or trigger that event on an element."		self call: 'submit' with: anObject asFunction!
 
-onUnload: anObject	"Binds a function to the unload event of each matched element."		self call: 'unload' with: anObject asFunction!
+onUnload: anObject	"Binds a function to the unload event of each matched element."		self on: 'unload' do: anObject asFunction!
 
 outerHeight	"Get the current computed height for the first element in the set of matched elements, including padding and border."		self call: 'outerHeight'!
 
@@ -352,8 +350,6 @@ siblings	"Get the siblings of each element in the set of matched elements, opti
 
 siblings: aString	"Get the siblings of each element in the set of matched elements, optionally filtered by a selector."		self call: 'siblings' with: aString!
 
-size	"Return the number of DOM elements matched by the jQuery object."		self call: 'size'!
-
 sliceFrom: aStartInteger	"Reduce the set of matched elements to a subset specified by a range of indices."		self call: 'slice' with: aStartInteger!
 
 sliceFrom: aStartInteger to: aStopInteger	"Reduce the set of matched elements to a subset specified by a range of indices."		self call: 'slice' with: aStartInteger with: aStopInteger!
@@ -384,9 +380,9 @@ toggle: anObject	self call: 'toggle' with: anObject!
 
 toggle: aDuration callback: anObject	"Bind two or more handlers to the matched elements, to be executed on alternate clicks."		self call: 'toggle' with: aDuration with: anObject asFunction!
 
-toggleClass: aString 	"Add or remove a class from each element in the set of matched elements, depending on either the class's presence or the value of the switch argument."		self call: 'toggleClass' with: aString!
+toggleClass: aStringOrFunction	"Add or remove a class from each element in the set of matched elements, depending on either the class's presence or the value of the switch argument."		self call: 'toggleClass' with: aStringOrFunction!
 
-toggleClass: aString state: aBoolean	"Adds the specified class if the switch is true, removes the specified class if the switch is false."		self call: 'toggleClass' with: aString with: aBoolean!
+toggleClass: aStringOrFunction state: aBoolean	"Adds the specified class if the switch is true, removes the specified class if the switch is false."		self call: 'toggleClass' with: aStringOrFunction with: aBoolean!
 
 trigger: aString	"Execute all handlers and behaviors attached to the matched elements for the given event type."		self call: 'trigger' with: aString!
 
@@ -414,11 +410,11 @@ triggerSelect	"Trigger the select event of each matched element."		self call:
 
 triggerSubmit	"Trigger the submit event of each matched element."		self call: 'submit'!
 
-unbind: aString	"Remove a previously-attached event handler from the elements."		self call: 'unbind' with: aString!
+unbind: aString	"Remove a previously-attached event handler from the elements."	self 		greaseDeprecatedApi: 'JQueryInstance>>#bind:do:'		details: 'See https://jquery.com/upgrade-guide/3.0/#deprecated-bind-and-delegate'.		self call: 'unbind' with: aString!
 
-undelegate	"Remove a handler from the event for all elements which match the current selector, now or in the future, based upon a specific set of root elements."		self call: 'undelegate'!
+undelegate	"Remove a handler from the event for all elements which match the current selector, now or in the future, based upon a specific set of root elements."	self 		greaseDeprecatedApi: 'JQueryInstance>>#bind:do:'		details: 'See https://jquery.com/upgrade-guide/3.0/#deprecated-bind-and-delegate'.		self call: 'undelegate'!
 
-undelegate: aSelectorString on: anEventString	"Remove a handler from the event for all elements which match the current selector, now or in the future, based upon a specific set of root elements."		self call: 'undelegate' with: aSelectorString with: anEventString!
+undelegate: aSelectorString on: anEventString	"Remove a handler from the event for all elements which match the current selector, now or in the future, based upon a specific set of root elements."	self 		greaseDeprecatedApi: 'JQueryInstance>>#bind:do:'		details: 'See https://jquery.com/upgrade-guide/3.0/#deprecated-bind-and-delegate'.		self call: 'undelegate' with: aSelectorString with: anEventString!
 
 unwrap	"Remove the parents of the set of matched elements from the DOM, leaving the matched elements in their place."		self call: 'unwrap'!
 
@@ -440,7 +436,6 @@ wrapInner: aRenderable 	"Wrap an HTML structure around the content of each elem
 !JQueryInstance categoriesFor: #addBack!chaining!public! !
 !JQueryInstance categoriesFor: #addClass:!classes!public! !
 !JQueryInstance categoriesFor: #after:!modifying!public! !
-!JQueryInstance categoriesFor: #andSelf!chaining!public! !
 !JQueryInstance categoriesFor: #animate!effects!public! !
 !JQueryInstance categoriesFor: #append:!modifying!public! !
 !JQueryInstance categoriesFor: #appendTo:!modifying!public! !
@@ -462,7 +457,6 @@ wrapInner: aRenderable 	"Wrap an HTML structure around the content of each elem
 !JQueryInstance categoriesFor: #closest:!navigation!public! !
 !JQueryInstance categoriesFor: #collect:!accessors/smalltalk!public! !
 !JQueryInstance categoriesFor: #contents!navigation!public! !
-!JQueryInstance categoriesFor: #context!accessors!public! !
 !JQueryInstance categoriesFor: #css:!css!public! !
 !JQueryInstance categoriesFor: #cssAt:!css!public! !
 !JQueryInstance categoriesFor: #cssAt:put:!css!public! !
@@ -515,7 +509,7 @@ wrapInner: aRenderable 	"Wrap an HTML structure around the content of each elem
 !JQueryInstance categoriesFor: #iteratorFor:return:!private! !
 !JQueryInstance categoriesFor: #javascriptContentOn:!printing!public! !
 !JQueryInstance categoriesFor: #last!filtering!public! !
-!JQueryInstance categoriesFor: #length!accessors!public! !
+!JQueryInstance categoriesFor: #length!private! !
 !JQueryInstance categoriesFor: #load!ajax!public! !
 !JQueryInstance categoriesFor: #map:!accessors!public! !
 !JQueryInstance categoriesFor: #next!navigation!public! !
@@ -547,6 +541,7 @@ wrapInner: aRenderable 	"Wrap an HTML structure around the content of each elem
 !JQueryInstance categoriesFor: #onFocus:!events/register!public! !
 !JQueryInstance categoriesFor: #onFocusIn:!events/register!public! !
 !JQueryInstance categoriesFor: #onFocusOut:!events/register!public! !
+!JQueryInstance categoriesFor: #onInput:!events/register!public! !
 !JQueryInstance categoriesFor: #onKeyDown:!events/register!public! !
 !JQueryInstance categoriesFor: #onKeyPress:!events/register!public! !
 !JQueryInstance categoriesFor: #onKeyUp:!events/register!public! !
@@ -606,7 +601,6 @@ wrapInner: aRenderable 	"Wrap an HTML structure around the content of each elem
 !JQueryInstance categoriesFor: #show:callback:!effects!public! !
 !JQueryInstance categoriesFor: #siblings!navigation!public! !
 !JQueryInstance categoriesFor: #siblings:!navigation!public! !
-!JQueryInstance categoriesFor: #size!accessors!public! !
 !JQueryInstance categoriesFor: #sliceFrom:!filtering!public! !
 !JQueryInstance categoriesFor: #sliceFrom:to:!filtering!public! !
 !JQueryInstance categoriesFor: #slideDown:!effects!public! !

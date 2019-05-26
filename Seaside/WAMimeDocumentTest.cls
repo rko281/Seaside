@@ -5,7 +5,7 @@ TestCase subclass: #WAMimeDocumentTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAMimeDocumentTest guid: (GUID fromString: '{62f1fa6c-98f1-43a5-baee-0f66a7734c3e}')!
+WAMimeDocumentTest guid: (GUID fromString: '{77c70973-1633-485a-b187-20e2a3616d9a}')!
 WAMimeDocumentTest comment: ''!
 !WAMimeDocumentTest categoriesForClass!Seaside-Tests-Core-HTTP! !
 !WAMimeDocumentTest methodsFor!

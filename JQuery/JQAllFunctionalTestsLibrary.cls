@@ -5,7 +5,7 @@ WAFileLibrary subclass: #JQAllFunctionalTestsLibrary
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQAllFunctionalTestsLibrary guid: (GUID fromString: '{ec655b42-690b-4eab-9396-2ffb9308a4bc}')!
+JQAllFunctionalTestsLibrary guid: (GUID fromString: '{3c438ca0-9d39-4a68-9a18-e7c2d7c5ff17}')!
 JQAllFunctionalTestsLibrary comment: ''!
 !JQAllFunctionalTestsLibrary categoriesForClass!JQuery-Tests-Core-Functional! !
 !JQAllFunctionalTestsLibrary methodsFor!

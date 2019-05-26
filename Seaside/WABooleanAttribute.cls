@@ -5,7 +5,7 @@ WAAttribute subclass: #WABooleanAttribute
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WABooleanAttribute guid: (GUID fromString: '{b922a7c8-37e7-473b-bec9-7b2887e2fca3}')!
+WABooleanAttribute guid: (GUID fromString: '{c0ec618d-e57e-4df9-b7ac-e837f6ed9b29}')!
 WABooleanAttribute comment: 'WABooleanAttribute  represents a boolean attribute. It converts between text entered on the configuration page and boolean values.'!
 !WABooleanAttribute categoriesForClass!Seaside-Core-Configuration! !
 !WABooleanAttribute methodsFor!

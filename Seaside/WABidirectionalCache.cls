@@ -5,7 +5,7 @@ WACache subclass: #WABidirectionalCache
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WABidirectionalCache guid: (GUID fromString: '{02c43f58-8f71-4188-b865-661c79833005}')!
+WABidirectionalCache guid: (GUID fromString: '{4c93748d-0635-44f7-bc96-57e4c3c4b9a5}')!
 WABidirectionalCache comment: 'I support key -> value and value -> key mappings and never forget anything.I also implement serveral methods of Dictionary.'!
 !WABidirectionalCache categoriesForClass!Seaside-Core-Cache! !
 !WABidirectionalCache methodsFor!

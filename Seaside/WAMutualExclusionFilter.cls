@@ -5,7 +5,7 @@ WARequestFilter subclass: #WAMutualExclusionFilter
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAMutualExclusionFilter guid: (GUID fromString: '{86eefe60-f516-4573-98d5-0e4f6ba1345e}')!
+WAMutualExclusionFilter guid: (GUID fromString: '{0be75bb5-d2a2-486e-b540-354e65528b62}')!
 WAMutualExclusionFilter comment: ''!
 !WAMutualExclusionFilter categoriesForClass!Seaside-Session-Filter! !
 !WAMutualExclusionFilter methodsFor!

@@ -5,7 +5,7 @@ WAObject subclass: #WAClosingRevealedConditionalComment
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAClosingRevealedConditionalComment guid: (GUID fromString: '{56819731-6224-4186-93da-a67c106f96d9}')!
+WAClosingRevealedConditionalComment guid: (GUID fromString: '{2f2fa003-a0bb-462f-8db0-25611d9301b9}')!
 WAClosingRevealedConditionalComment comment: 'Closes a WARevealedConditionalComment.'!
 !WAClosingRevealedConditionalComment categoriesForClass!Seaside-Core-Document-Elements! !
 !WAClosingRevealedConditionalComment methodsFor!

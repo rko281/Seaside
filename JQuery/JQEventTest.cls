@@ -5,7 +5,7 @@ JQueryTest subclass: #JQEventTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQEventTest guid: (GUID fromString: '{cf3d2e28-47ef-4164-ae46-fe4b42fe7912}')!
+JQEventTest guid: (GUID fromString: '{6dff5890-c45f-485b-80b9-8402e275e7e3}')!
 JQEventTest comment: ''!
 !JQEventTest categoriesForClass!JQuery-Tests-Core-Unit! !
 !JQEventTest methodsFor!

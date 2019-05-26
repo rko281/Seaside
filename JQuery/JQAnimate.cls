@@ -5,7 +5,7 @@ JQPlugin subclass: #JQAnimate
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQAnimate guid: (GUID fromString: '{61b0d178-e85e-4b30-91a7-0b5401352ea3}')!
+JQAnimate guid: (GUID fromString: '{6f1349ea-ef1d-455e-bdf4-4272818e401a}')!
 JQAnimate comment: ''!
 !JQAnimate categoriesForClass!JQuery-Core-Objects! !
 !JQAnimate methodsFor!
@@ -26,7 +26,7 @@ onStep: anObject	"A function to be executed on each animation step, executes fo
 
 parameterAt: aKey put: aValue	self parameters at: aKey put: aValue!
 
-parameters	^ parameters ifNil: [ parameters := GRSmallDictionary new ]!
+parameters	^ parameters ifNil: [ parameters := GRSmallDictionary2 new ]!
 
 parameters: aDictionary	"A set of style attributes that you wish to animate, and to what end."		parameters := aDictionary!
 

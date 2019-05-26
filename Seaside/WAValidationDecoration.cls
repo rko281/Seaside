@@ -5,7 +5,7 @@ WAWidgetDecoration subclass: #WAValidationDecoration
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAValidationDecoration guid: (GUID fromString: '{07610206-071b-4473-97e6-3d622c896a2e}')!
+WAValidationDecoration guid: (GUID fromString: '{3d3d4053-1375-4ce0-8797-a90c02be97d4}')!
 WAValidationDecoration comment: 'A WAValidationDecoration validates its component form data when the component returns using "answer" or "answer:". A WAValidationDecoration can be added to component via the method "validateWith:" as below.	SampleLoginComponent>>intialize		form := WAFormDecoration new buttons: self buttons.		self addDecoration: form.		self validateWith: [:answerArgOrSelf | answerArgOrSelf validate].		self addMessage: ''Please enter the following information''.If component returns via "answer:" the answer: argument is passed to the validate block. If the component returns using "answer" the sender of "answer" is passed to the validate block.Instance Variables	exceptionClass:		<Notification>	message:		<String>	validationBlock:		<one arg block>exceptionClass	- Type of notication that is raised by validation code when validation fails. Default value is WAValidationNotificationmessage	- String message displayed on validation failure. Obtained from the notificationvalidationBlock	- One arg block, '!
 !WAValidationDecoration categoriesForClass!Seaside-Widgets-Decorations! !
 !WAValidationDecoration methodsFor!

@@ -5,7 +5,7 @@ WARequestHandler subclass: #WAFileHandler
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: 'default'!
-WAFileHandler guid: (GUID fromString: '{f337f9e8-8727-4b6c-a56f-7b5c5147b9bb}')!
+WAFileHandler guid: (GUID fromString: '{cd749086-42f9-4f41-9a21-9141cf02493b}')!
 WAFileHandler comment: 'Seaside serves static files using WAFileLibrary subclasses. WAFileHandler handles all requests for WALibrary files (or methods) for all applications on the Seaside server. WAFileHandler is registered with the default WADispatcher automatically.'!
 !WAFileHandler categoriesForClass!Seaside-Core-Libraries! !
 !WAFileHandler methodsFor!

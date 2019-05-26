@@ -5,7 +5,7 @@ TestCase subclass: #WACacheTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WACacheTest guid: (GUID fromString: '{edadf8d7-b470-4416-aa3d-93f74ce05136}')!
+WACacheTest guid: (GUID fromString: '{6664c3bc-46a7-41fe-9b93-7ce09af1d1cc}')!
 WACacheTest comment: ''!
 !WACacheTest categoriesForClass!Seaside-Tests-Core-Cache! !
 !WACacheTest methodsFor!

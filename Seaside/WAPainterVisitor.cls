@@ -5,7 +5,7 @@ WAVisitor subclass: #WAPainterVisitor
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAPainterVisitor guid: (GUID fromString: '{48bc9043-97c7-4625-adac-0775d057544d}')!
+WAPainterVisitor guid: (GUID fromString: '{63fef6f7-f3a1-42b0-8b21-7d537957a582}')!
 WAPainterVisitor comment: 'An implementation of the Visitor pattern for Painter subclasses.'!
 !WAPainterVisitor categoriesForClass!Seaside-Core-Rendering! !
 !WAPainterVisitor methodsFor!

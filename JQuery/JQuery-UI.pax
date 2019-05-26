@@ -96,13 +96,12 @@ package binaryGlobalNames: (Set new
 package globalAliases: (Set new
 	yourself).
 
-package setPrerequisites: (IdentitySet new
-	add: '..\..\Core\Object Arts\Dolphin\Base\Dolphin';
-	add: '..\..\Grease\Grease-Core';
-	add: '..\Javascript\Javascript-Core';
-	add: 'JQuery-Core';
-	add: '..\Seaside\Seaside-Core';
-	yourself).
+package setPrerequisites: #(
+	'..\..\Core\Object Arts\Dolphin\Base\Dolphin'
+	'..\..\Grease\Grease-Core'
+	'..\Javascript\Javascript-Core'
+	'JQuery-Core'
+	'..\Seaside\Seaside-Core').
 
 package!
 
@@ -337,7 +336,7 @@ JQBaseTheme subclass: #JQVaderTheme
 !GRPackage class methodsFor!
 
 jQueryUI	^ self new		name: 'JQuery-UI';		description: 'jQuery-UI integration for Seaside. Expression through code.';		addDependency: 'JQuery-Core';		url: #seasideUrl;		yourself! !
-!GRPackage class categoriesFor: #jQueryUI!*jquery/ui!public! !
+!GRPackage class categoriesFor: #jQueryUI!*JQuery/UI!public! !
 
 !JQAjax methodsFor!
 
@@ -361,18 +360,18 @@ callbackTabs: aBlock	"Trigger aBlock with the tabs event object."		self callb
 
 javascriptForEvent: anArraySpec	| stream |	stream := JSStream new.	anArraySpec		do: [ :spec |			(#(#number string) includes: spec first)				ifTrue: [ stream nextPutAll: 'arguments[1].'; nextPutAll: spec second ].			(spec first = #passenger)				ifTrue: [ stream nextPutAll: JQuery functionName; nextPut: $(; nextPutAll: 'arguments[1].'; nextPutAll: spec second; nextPutAll: ').attr("id")' ].			(spec first = #position)				ifTrue: [ stream nextPutAll: 'arguments[1].'; nextPutAll: spec second; nextPutAll: '.top'; nextPutAll: '+","+'; nextPutAll: 'arguments[1].'; nextPutAll: spec second; nextPutAll: '.left' ].			(spec first = #size)				ifTrue: [ stream nextPutAll: 'arguments[1].'; nextPutAll: spec second; nextPutAll: '.width'; nextPutAll: '+","+'; nextPutAll: 'arguments[1].'; nextPutAll: spec second; nextPutAll: '.height' ] ]		separatedBy: [ stream nextPutAll: '+","+' ].	^ stream!
 
-smalltalkForEvent: anArraySpec value: aString	| stream result |	stream := aString readStream.	result := GRSmallDictionary new.	anArraySpec do: [ :spec |		(spec first = #number)			ifTrue: [ result at: spec last put: (stream upTo: $,) greaseInteger ].		(spec first = #string)				ifTrue: [ result at: spec last put: (stream upTo: $,) ].		(spec first = #passenger)			ifTrue: [ result at: spec last put: (self renderContext callbacks passengerAt: (stream upTo: $,)) ].		(spec first = #position)			ifTrue: [ result at: spec last put: (GRSmallDictionary new add: 'top' -> (stream upTo: $,) greaseInteger; add: 'left' -> (stream upTo: $,) greaseInteger; yourself) ].		(spec first = #size)			ifTrue: [ result at: spec last put: (stream upTo: $,) greaseInteger @ (stream upTo: $,) greaseInteger ] ].	^ result! !
-!JQAjax categoriesFor: #callback:forEvent:!*jquery/ui/private!public! !
-!JQAjax categoriesFor: #callback:passengers:!*jquery/ui!public! !
-!JQAjax categoriesFor: #callbackAccordion:!*jquery/ui!public! !
-!JQAjax categoriesFor: #callbackDraggable:!*jquery/ui!public! !
-!JQAjax categoriesFor: #callbackDroppable:!*jquery/ui!public! !
-!JQAjax categoriesFor: #callbackResizable:!*jquery/ui!public! !
-!JQAjax categoriesFor: #callbackSlider:!*jquery/ui!public! !
-!JQAjax categoriesFor: #callbackSortable:!*jquery/ui!public! !
-!JQAjax categoriesFor: #callbackTabs:!*jquery/ui!public! !
-!JQAjax categoriesFor: #javascriptForEvent:!*jquery/ui/private!public! !
-!JQAjax categoriesFor: #smalltalkForEvent:value:!*jquery/ui/private!public! !
+smalltalkForEvent: anArraySpec value: aString	| stream result |	stream := aString readStream.	result := GRSmallDictionary2 new.	anArraySpec do: [ :spec |		(spec first = #number)			ifTrue: [ result at: spec last put: (stream upTo: $,) greaseInteger ].		(spec first = #string)				ifTrue: [ result at: spec last put: (stream upTo: $,) ].		(spec first = #passenger)			ifTrue: [ result at: spec last put: (self renderContext callbacks passengerAt: (stream upTo: $,)) ].		(spec first = #position)			ifTrue: [ result at: spec last put: (GRSmallDictionary2 new add: 'top' -> (stream upTo: $,) greaseInteger; add: 'left' -> (stream upTo: $,) greaseInteger; yourself) ].		(spec first = #size)			ifTrue: [ result at: spec last put: (stream upTo: $,) greaseInteger @ (stream upTo: $,) greaseInteger ] ].	^ result! !
+!JQAjax categoriesFor: #callback:forEvent:!*JQuery/UI/private!public! !
+!JQAjax categoriesFor: #callback:passengers:!*JQuery/UI!public! !
+!JQAjax categoriesFor: #callbackAccordion:!*JQuery/UI!public! !
+!JQAjax categoriesFor: #callbackDraggable:!*JQuery/UI!public! !
+!JQAjax categoriesFor: #callbackDroppable:!*JQuery/UI!public! !
+!JQAjax categoriesFor: #callbackResizable:!*JQuery/UI!public! !
+!JQAjax categoriesFor: #callbackSlider:!*JQuery/UI!public! !
+!JQAjax categoriesFor: #callbackSortable:!*JQuery/UI!public! !
+!JQAjax categoriesFor: #callbackTabs:!*JQuery/UI!public! !
+!JQAjax categoriesFor: #javascriptForEvent:!*JQuery/UI!public! !
+!JQAjax categoriesFor: #smalltalkForEvent:value:!*JQuery/UI!public! !
 
 !JQueryInstance methodsFor!
 
@@ -423,30 +422,30 @@ switchClass: firstClassString to: secondClassString duration: aDurationOrString
 tabs	"The method that you use to create a new tabs interface."		^ self create: JQTabs!
 
 toggleClass: aString duration: aDurationOrString	"Adds the specified class if it is not present, removes the specified class if it is present, using a optional transition."		self call: 'toggleClass' with: aString with: aDurationOrString! !
-!JQueryInstance categoriesFor: #accordion!*jquery/ui/widgets!public! !
-!JQueryInstance categoriesFor: #addClass:duration:!*jquery/ui/transitions!public! !
-!JQueryInstance categoriesFor: #autocomplete!*jquery/ui/widgets!public! !
-!JQueryInstance categoriesFor: #button!*jquery/ui/widgets!public! !
-!JQueryInstance categoriesFor: #buttonset!*jquery/ui/widgets!public! !
-!JQueryInstance categoriesFor: #datepicker!*jquery/ui/widgets!public! !
-!JQueryInstance categoriesFor: #dialog!*jquery/ui/widgets!public! !
-!JQueryInstance categoriesFor: #draggable!*jquery/ui/interactions!public! !
-!JQueryInstance categoriesFor: #droppable!*jquery/ui/interactions!public! !
-!JQueryInstance categoriesFor: #effect!*jquery/ui!public! !
-!JQueryInstance categoriesFor: #innerHeight:!*jquery/ui/css!public! !
-!JQueryInstance categoriesFor: #innerWidth:!*jquery/ui/css!public! !
-!JQueryInstance categoriesFor: #outerHeight:!*jquery/ui/css!public! !
-!JQueryInstance categoriesFor: #outerWidth:!*jquery/ui/css!public! !
-!JQueryInstance categoriesFor: #positioned!*jquery/ui/utilities!public! !
-!JQueryInstance categoriesFor: #progressbar!*jquery/ui/widgets!public! !
-!JQueryInstance categoriesFor: #removeClass:duration:!*jquery/ui/transitions!public! !
-!JQueryInstance categoriesFor: #resizable!*jquery/ui/interactions!public! !
-!JQueryInstance categoriesFor: #selectable!*jquery/ui/interactions!public! !
-!JQueryInstance categoriesFor: #slider!*jquery/ui/widgets!public! !
-!JQueryInstance categoriesFor: #sortable!*jquery/ui/interactions!public! !
-!JQueryInstance categoriesFor: #switchClass:to:duration:!*jquery/ui/transitions!public! !
-!JQueryInstance categoriesFor: #tabs!*jquery/ui/widgets!public! !
-!JQueryInstance categoriesFor: #toggleClass:duration:!*jquery/ui/transitions!public! !
+!JQueryInstance categoriesFor: #accordion!*JQuery/UI/widgets!public! !
+!JQueryInstance categoriesFor: #addClass:duration:!*JQuery/UI/transitions!public! !
+!JQueryInstance categoriesFor: #autocomplete!*JQuery/UI!public! !
+!JQueryInstance categoriesFor: #button!*JQuery/UI!public! !
+!JQueryInstance categoriesFor: #buttonset!*JQuery/UI!public! !
+!JQueryInstance categoriesFor: #datepicker!*JQuery/UI!public! !
+!JQueryInstance categoriesFor: #dialog!*JQuery/UI!public! !
+!JQueryInstance categoriesFor: #draggable!*JQuery/UI/interactions!public! !
+!JQueryInstance categoriesFor: #droppable!*JQuery/UI!public! !
+!JQueryInstance categoriesFor: #effect!*JQuery/UI!public! !
+!JQueryInstance categoriesFor: #innerHeight:!*JQuery/UI/css!public! !
+!JQueryInstance categoriesFor: #innerWidth:!*JQuery/UI!public! !
+!JQueryInstance categoriesFor: #outerHeight:!*JQuery/UI!public! !
+!JQueryInstance categoriesFor: #outerWidth:!*JQuery/UI!public! !
+!JQueryInstance categoriesFor: #positioned!*JQuery/UI/utilities!public! !
+!JQueryInstance categoriesFor: #progressbar!*JQuery/UI!public! !
+!JQueryInstance categoriesFor: #removeClass:duration:!*JQuery/UI!public! !
+!JQueryInstance categoriesFor: #resizable!*JQuery/UI!public! !
+!JQueryInstance categoriesFor: #selectable!*JQuery/UI!public! !
+!JQueryInstance categoriesFor: #slider!*JQuery/UI!public! !
+!JQueryInstance categoriesFor: #sortable!*JQuery/UI!public! !
+!JQueryInstance categoriesFor: #switchClass:to:duration:!*JQuery/UI!public! !
+!JQueryInstance categoriesFor: #tabs!*JQuery/UI!public! !
+!JQueryInstance categoriesFor: #toggleClass:duration:!*JQuery/UI!public! !
 
 "End of package definition"!
 

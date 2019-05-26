@@ -5,7 +5,7 @@ WARequestHandler subclass: #WARegistry
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WARegistry guid: (GUID fromString: '{95c12154-0078-47de-ad69-1d8c49076e15}')!
+WARegistry guid: (GUID fromString: '{88c2ab85-8685-4268-bd4d-3db1f8e3ab49}')!
 WARegistry comment: 'WARegistry maintains a set of handlers indexed by a key which it assigns when the handler is registerd. WARegistry checks incoming request URLs for a key and looks for a matching active request handler. If one exists, the request is sent to the proper handler. If not, the request is either a new request (in which case #handleDefaultRequest: is called) or a request to a now-inactive handler (in which case #handleExpiredRequest: is called). These two methods allow subclasses to properly handle these requests.Subclasses must implement the following messages:	handleDefaultRequest:		Handle a request without a session key, ie a new request.	handlerField		The URL parameter in which to store the request handler key.Instance Variables:	cache - an instance of WACache to hold the stored request handlers'!
 !WARegistry categoriesForClass!Seaside-Core-RequestHandling! !
 !WARegistry methodsFor!
@@ -30,7 +30,7 @@ handle: aRequestContext registering: aRequestHandler at: aKey	"Register a new h
 
 handleDefault: aRequestContext 	"This method is called whenever a request is received with no key specified. This method can be overridden by subclasses to register a new handler to handle the request."		aRequestContext responseGenerator		notFound;		respond!
 
-handleExpired: aRequestContext 	"This method is called whenever a request is received with a key that does not match a registered handler."		aRequestContext responseGenerator		expiredRegistryKey;		respond!
+handleExpired: aRequestContext  	"This method is called whenever a request is received with a key that does not match a registered handler."	 			 	 	aRequestContext request isXmlHttpRequest ifTrue: [ 		^ aRequestContext responseGenerator 			forbidden; 			respond ]. 	 	"Previously, Seaside used to send a redirect response (302) with the 	'Location' header set to the same path as in the request (if possible). 	Any session cookie would at this point have been set for deletion (i.e. 	a 'Set-Cookie' header with a request for deletion would have been set). 	Unfortunately, user-agents across the board don't play well with 'Set-Cookie' 	and redirect responses. 	Hence, we proceed and respond as usual. If a session is to be created, 	another 'Set-Cookie' header will tell the browser to use the new 	session identifier from now on. 	Nice side-effect: user-agents will no longer need to perform the additional 	redirect when a stale cookie is still in the cache. 	 	See https://github.com/SeasideSt/Seaside/issues/916." 	self handleDefault: aRequestContext!
 
 handleFiltered: aRequestContext	| key handler |	key := self trackingStrategy keyFromContext: aRequestContext.	key isNil		ifTrue: [			self handleDefault: aRequestContext ]		ifFalse: [			handler := self cache at: key ifAbsent: [ nil ].			handler isNil				ifTrue: [					self trackingStrategy noHandlerFoundForKey: key in: self context: aRequestContext ]				ifFalse: [					self handleKeyed: handler with: key context: aRequestContext ] ]!
 
@@ -38,7 +38,9 @@ handleKeyed: aRequestHandler with: aString context: aRequestContext	"This metho
 
 handlersDo: aBlock	self keysAndHandlersDo: [ :key :value | aBlock value: value ]!
 
-initialize	super initialize.	cache := self createCache!
+initialize	super initialize.	self initializeCache!
+
+initializeCache	cache := self createCache!
 
 isRegistry	^ true!
 
@@ -78,6 +80,7 @@ urlFor: aRequestHandler ifAbsent: absentBlock	"Return the URL for the given req
 !WARegistry categoriesFor: #handleKeyed:with:context:!handling!public! !
 !WARegistry categoriesFor: #handlersDo:!enumerating!public! !
 !WARegistry categoriesFor: #initialize!initialization!public! !
+!WARegistry categoriesFor: #initializeCache!initialization!public! !
 !WARegistry categoriesFor: #isRegistry!public!testing! !
 !WARegistry categoriesFor: #keyFor:ifAbsent:!parent/child!public! !
 !WARegistry categoriesFor: #keysAndHandlersDo:!enumerating!public! !

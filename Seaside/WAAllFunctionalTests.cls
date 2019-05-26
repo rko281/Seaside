@@ -5,7 +5,7 @@ WAComponent subclass: #WAAllFunctionalTests
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAAllFunctionalTests guid: (GUID fromString: '{f347e4a2-8a15-43e0-98d2-7b372f55b464}')!
+WAAllFunctionalTests guid: (GUID fromString: '{479e4c77-386c-4af5-8ed3-58083fc52c11}')!
 WAAllFunctionalTests comment: 'If you want to see these examples:/config app:- add a new application named "tests"- choose WAAllFunctionalTests as the root component'!
 !WAAllFunctionalTests categoriesForClass!Seaside-Tests-Functional! !
 !WAAllFunctionalTests methodsFor!
@@ -32,7 +32,7 @@ selectionIndex	^ classes indexOf: self selected!
 
 states	^ Array with: current!
 
-updateUrl: aUrl	super updateUrl: aUrl.	aUrl addToPath: self selected name! !
+updateUrl: aUrl	super updateUrl: aUrl.	"class name is a Symbol, using a String makes a big difference for WALotsaLinksFunctionalTest"	aUrl addToPath: self selected name greaseString! !
 !WAAllFunctionalTests categoriesFor: #children!hooks!public! !
 !WAAllFunctionalTests categoriesFor: #initialize!initialization!public! !
 !WAAllFunctionalTests categoriesFor: #initializeTests!initialization!public! !

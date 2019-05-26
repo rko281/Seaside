@@ -5,7 +5,7 @@ TestCase subclass: #WAAcceptTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAAcceptTest guid: (GUID fromString: '{b95a998b-8212-4b4e-8b93-9187f9079390}')!
+WAAcceptTest guid: (GUID fromString: '{e64fc947-89f1-456f-b960-817dbed85703}')!
 WAAcceptTest comment: ''!
 !WAAcceptTest categoriesForClass!Seaside-Tests-Core-HTTP! !
 !WAAcceptTest methodsFor!

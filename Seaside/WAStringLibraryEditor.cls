@@ -5,7 +5,7 @@ WAComponent subclass: #WAStringLibraryEditor
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAStringLibraryEditor guid: (GUID fromString: '{923db701-2028-4aed-a33f-1c50cefddd32}')!
+WAStringLibraryEditor guid: (GUID fromString: '{b4573a28-0b82-4a40-8d50-970b49597b92}')!
 WAStringLibraryEditor comment: ''!
 !WAStringLibraryEditor categoriesForClass!Seaside-Tools-Web! !
 !WAStringLibraryEditor methodsFor!

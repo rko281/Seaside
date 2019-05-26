@@ -29,9 +29,12 @@ package methodNames
 	add: #GRDelegatingStream -> #json:;
 	add: #GRPlatform -> #jsonEncoderOn:;
 	add: #GRSmallDictionary -> #jsonOn:;
+	add: #GRSmallDictionary2 -> #jsonOn:;
+	add: #GRSmallOrderedSet -> #jsonOn:;
 	add: #Integer -> #jsonOn:;
 	add: #Object -> #asJson;
 	add: #Object -> #jsonOn:;
+	add: #ScaledDecimal -> #jsonOn:;
 	add: #Stream -> #json:;
 	add: #String -> #jsonOn:;
 	add: #UndefinedObject -> #jsonOn:;
@@ -45,13 +48,11 @@ package binaryGlobalNames: (Set new
 package globalAliases: (Set new
 	yourself).
 
-package setPrerequisites: (IdentitySet new
-	add: '..\..\Core\Object Arts\Dolphin\Base\Dolphin';
-	add: '..\..\Grease\Grease-Core';
-	add: '..\..\Core\Contributions\IDB\IDB DateAndTime';
-	add: 'Seaside-Canvas';
-	add: 'Seaside-Core';
-	yourself).
+package setPrerequisites: #(
+	'..\..\Core\Object Arts\Dolphin\Base\Dolphin'
+	'..\..\Grease\Grease-Core'
+	'Seaside-Canvas'
+	'Seaside-Core').
 
 package!
 
@@ -173,6 +174,16 @@ jsonEncoderOn: aStream	"Answer an JSON encoder that works on aStream.	Platform
 jsonOn: aRenderer	aRenderer object: [		self keysAndValuesDo: [ :key :value |			aRenderer key: key value: value ] ]! !
 !GRSmallDictionary categoriesFor: #jsonOn:!*seaside/json/core!public! !
 
+!GRSmallDictionary2 methodsFor!
+
+jsonOn: aRenderer	aRenderer object: [		self keysAndValuesDo: [ :key :value |			aRenderer key: key value: value ] ]! !
+!GRSmallDictionary2 categoriesFor: #jsonOn:!*seaside/json/core!public! !
+
+!GRSmallOrderedSet methodsFor!
+
+jsonOn: aRenderer	aRenderer array: [		self do: [ :each |			aRenderer value: each ] ]! !
+!GRSmallOrderedSet categoriesFor: #jsonOn:!*seaside/json/core!public! !
+
 !Integer methodsFor!
 
 jsonOn: aRenderer	aRenderer number: self! !
@@ -185,6 +196,11 @@ asJson	^ WAJsonCanvas builder render: [ :json |		self jsonOn: json ]!
 jsonOn: aRenderer	self error: 'Override #jsonOn: to make the receiver serializeable as JSON'! !
 !Object categoriesFor: #asJson!*seaside/json/core!public! !
 !Object categoriesFor: #jsonOn:!*seaside/json/core!public! !
+
+!ScaledDecimal methodsFor!
+
+jsonOn: aRenderer	aRenderer scaledDecimal: self! !
+!ScaledDecimal categoriesFor: #jsonOn:!*Seaside/JSON/Core!public! !
 
 !Stream methodsFor!
 

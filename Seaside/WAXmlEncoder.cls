@@ -5,7 +5,7 @@ WAEncoder subclass: #WAXmlEncoder
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAXmlEncoder guid: (GUID fromString: '{d09c02a0-f310-48e4-aafc-5aed801c3847}')!
+WAXmlEncoder guid: (GUID fromString: '{949959d9-e672-48a9-8a25-75bb1e702a28}')!
 WAXmlEncoder comment: 'I encode XHTML text.'!
 !WAXmlEncoder categoriesForClass!Seaside-Core-Document! !
 !WAXmlEncoder methodsFor!

@@ -5,7 +5,7 @@ JQPlugin subclass: #JQEffect
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQEffect guid: (GUID fromString: '{590c6f2f-5635-466d-80da-75bfb6e2fe37}')!
+JQEffect guid: (GUID fromString: '{f71d8be2-8706-4362-ba3b-e85792898c7c}')!
 JQEffect comment: 'This is the core dependency of the effects of jQuery UI. This file is needed by all other effects and can also be used as stand-alone. Please note that ui.core.js is not a dependency for the effects to work.'!
 !JQEffect categoriesForClass!JQuery-UI-Objects! !
 !JQEffect methodsFor!
@@ -42,7 +42,7 @@ fast	self speed: 'fast'!
 
 fold	"Folds the element like a piece of paper."		self effect: 'fold'!
 
-from	^ self options 		at: 'from'		ifAbsentPut: [ GRSmallDictionary new ]!
+from	^ self options 		at: 'from'		ifAbsentPut: [ GRSmallDictionary2 new ]!
 
 from: aDictionary	"Transfer - The element from width/height to."		self optionAt: 'from' put: aDictionary!
 
@@ -94,7 +94,7 @@ speed: aDuration	"A string representing one of the three predefined speeds (slo
 
 times: anInteger	"Pulsate - Number of times to pulsate."	"Bounce - Number of times to bounce."	"Shake - Number of times to shake."	self optionAt: 'times' put: anInteger!
 
-to	^ self options 		at: 'to'		ifAbsentPut: [ GRSmallDictionary new ]!
+to	^ self options 		at: 'to'		ifAbsentPut: [ GRSmallDictionary2 new ]!
 
 to: aDictionaryOrString	"Transfer - The element to transfer to."	self optionAt: 'to' put: aDictionaryOrString!
 

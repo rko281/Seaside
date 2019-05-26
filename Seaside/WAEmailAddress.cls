@@ -5,7 +5,7 @@ WAObject subclass: #WAEmailAddress
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAEmailAddress guid: (GUID fromString: '{eb3cf719-83b2-47a6-8eb9-fe04d4f2ab22}')!
+WAEmailAddress guid: (GUID fromString: '{3afb79bb-ae6d-4018-a58d-ed694d5aa012}')!
 WAEmailAddress comment: ''!
 !WAEmailAddress categoriesForClass!Seaside-Core-HTTP! !
 !WAEmailAddress methodsFor!

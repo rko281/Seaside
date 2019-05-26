@@ -5,7 +5,7 @@ WAFunctionalTest subclass: #WAKeyGeneratorFunctionalTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAKeyGeneratorFunctionalTest guid: (GUID fromString: '{b3024347-4e6d-4ac1-ae42-162f76cf07de}')!
+WAKeyGeneratorFunctionalTest guid: (GUID fromString: '{da8ef9c3-6fa7-4387-8833-0adda2337c9d}')!
 WAKeyGeneratorFunctionalTest comment: ''!
 !WAKeyGeneratorFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
 !WAKeyGeneratorFunctionalTest methodsFor!

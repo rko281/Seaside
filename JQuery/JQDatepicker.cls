@@ -5,7 +5,7 @@ JQWidget subclass: #JQDatepicker
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQDatepicker guid: (GUID fromString: '{2e4f9842-2670-4b27-ba94-767f85d9e38c}')!
+JQDatepicker guid: (GUID fromString: '{79b68906-0832-4c87-b327-b6893af95a46}')!
 JQDatepicker comment: 'A highly configurable plugin that adds datepicker functionality to your pages. You can restrict the functionality in various ways, you can select date ranges, and you can provide the date in picker in a number of languages.'!
 !JQDatepicker categoriesForClass!JQuery-UI-Widgets! !
 !JQDatepicker methodsFor!

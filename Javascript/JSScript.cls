@@ -5,9 +5,9 @@ JSObject subclass: #JSScript
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSScript guid: (GUID fromString: '{e2162664-2ee4-4501-b19a-95ac11822008}')!
+JSScript guid: (GUID fromString: '{a048b694-3fef-4c88-a9b0-00af0a734c0e}')!
 JSScript comment: 'I represent a sequence of JavaScript statements.'!
-!JSScript categoriesForClass!Javascript-Core! !
+!JSScript categoriesForClass!Javascript-Core-Base! !
 !JSScript methodsFor!
 
 , anObject	self add: anObject!

@@ -5,7 +5,7 @@ WAActionPhaseContinuation subclass: #WACallbackProcessingActionContinuation
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WACallbackProcessingActionContinuation guid: (GUID fromString: '{b569d471-e5a1-4d5f-842e-e71422c30d22}')!
+WACallbackProcessingActionContinuation guid: (GUID fromString: '{090ffe55-ed58-4e4a-aa4a-d50cd254c0f3}')!
 WACallbackProcessingActionContinuation comment: ''!
 !WACallbackProcessingActionContinuation categoriesForClass!Seaside-RenderLoop! !
 !WACallbackProcessingActionContinuation methodsFor!

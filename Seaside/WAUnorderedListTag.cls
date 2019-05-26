@@ -5,7 +5,7 @@ WAListTag subclass: #WAUnorderedListTag
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAUnorderedListTag guid: (GUID fromString: '{e26cff37-24ef-4f97-ab1b-f169508e695c}')!
+WAUnorderedListTag guid: (GUID fromString: '{96b9d685-6599-48bd-9695-f8333bdf2247}')!
 WAUnorderedListTag comment: 'See superclass comment.'!
 !WAUnorderedListTag categoriesForClass!Seaside-Canvas-Tags! !
 !WAUnorderedListTag methodsFor!

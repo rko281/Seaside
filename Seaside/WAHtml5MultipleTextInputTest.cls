@@ -5,7 +5,7 @@ WAFunctionalTest subclass: #WAHtml5MultipleTextInputTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAHtml5MultipleTextInputTest guid: (GUID fromString: '{1b0eee4e-5793-42eb-826f-a7a664d4255f}')!
+WAHtml5MultipleTextInputTest guid: (GUID fromString: '{22c2331d-4098-43f6-9ea4-95f06a278b5e}')!
 WAHtml5MultipleTextInputTest comment: ''!
 !WAHtml5MultipleTextInputTest categoriesForClass!Seaside-Tests-Functional! !
 !WAHtml5MultipleTextInputTest methodsFor!

@@ -5,7 +5,7 @@ JQWelcomeFunctionalTest subclass: #JQUiWelcomeFunctionalTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQUiWelcomeFunctionalTest guid: (GUID fromString: '{bf1e9c78-ca5a-44cd-8d14-e4c271586f6b}')!
+JQUiWelcomeFunctionalTest guid: (GUID fromString: '{62f0c6d1-1e0b-4950-9713-e5265e40c70f}')!
 JQUiWelcomeFunctionalTest comment: ''!
 !JQUiWelcomeFunctionalTest categoriesForClass!JQuery-Tests-UI-Functional! !
 !JQUiWelcomeFunctionalTest methodsFor!

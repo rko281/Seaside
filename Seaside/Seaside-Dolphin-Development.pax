@@ -23,15 +23,14 @@ package binaryGlobalNames: (Set new
 package globalAliases: (Set new
 	yourself).
 
-package setPrerequisites: (IdentitySet new
-	add: '..\..\Core\Object Arts\Dolphin\IDE\Base\Development System';
-	add: '..\..\Core\Object Arts\Dolphin\Base\Dolphin';
-	add: '..\..\Grease\Grease-Core';
-	add: '..\..\Portishead\Portishead-Core';
-	add: 'Seaside-Development';
-	add: 'Seaside-Dolphin-Browser';
-	add: 'Seaside-Tools-Core';
-	yourself).
+package setPrerequisites: #(
+	'..\..\Core\Object Arts\Dolphin\IDE\Base\Development System'
+	'..\..\Core\Object Arts\Dolphin\Base\Dolphin'
+	'..\..\Grease\Grease-Core'
+	'..\..\Portishead\Portishead-Core'
+	'Seaside-Development'
+	'Seaside-Dolphin-Browser'
+	'Seaside-Tools-Core').
 
 package setManualPrerequisites: #(
 	'Portishead-Core').

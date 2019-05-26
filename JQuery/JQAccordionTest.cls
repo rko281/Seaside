@@ -5,7 +5,7 @@ JQueryUiTest subclass: #JQAccordionTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQAccordionTest guid: (GUID fromString: '{bdc253d6-a740-4ecc-a813-3ffd144212b4}')!
+JQAccordionTest guid: (GUID fromString: '{ccfb71ad-1098-48d3-8dba-35d88690a965}')!
 JQAccordionTest comment: ''!
 !JQAccordionTest categoriesForClass!JQuery-Tests-UI-Unit! !
 !JQAccordionTest methodsFor!

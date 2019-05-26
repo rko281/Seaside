@@ -5,7 +5,7 @@ WAComponent subclass: #WAValidationTestComponent
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAValidationTestComponent guid: (GUID fromString: '{748de106-0899-453a-b10a-85819a48edfe}')!
+WAValidationTestComponent guid: (GUID fromString: '{45aae2d3-9284-4e68-b321-f01a55ed8c14}')!
 WAValidationTestComponent comment: ''!
 !WAValidationTestComponent categoriesForClass!Seaside-Tests-Functional! !
 !WAValidationTestComponent methodsFor!

@@ -5,7 +5,7 @@ WARequestHandler subclass: #WANextUnconsumedPathElementRequestHandler
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WANextUnconsumedPathElementRequestHandler guid: (GUID fromString: '{024bdbfc-89a1-4fda-b056-2c9656a9e0c8}')!
+WANextUnconsumedPathElementRequestHandler guid: (GUID fromString: '{3994b0e2-7df5-4ec5-a552-2f508f70be6a}')!
 WANextUnconsumedPathElementRequestHandler comment: ''!
 !WANextUnconsumedPathElementRequestHandler categoriesForClass!Seaside-Tests-Core-RequestHandling! !
 !WANextUnconsumedPathElementRequestHandler methodsFor!

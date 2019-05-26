@@ -5,7 +5,7 @@ WAObject subclass: #WAScriptGenerator
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAScriptGenerator guid: (GUID fromString: '{f054ee76-69ab-4ab3-802a-e5b08fb542cd}')!
+WAScriptGenerator guid: (GUID fromString: '{4f40285d-2207-4084-abe5-78cf7c1c81bd}')!
 WAScriptGenerator comment: ''!
 !WAScriptGenerator categoriesForClass!Seaside-Core-Document! !
 !WAScriptGenerator methodsFor!
@@ -26,7 +26,7 @@ loadScripts	"Answer the load scripts of the receiver. These scripts will be eva
 
 open: aHtmlRoot on: aDocument	"This method is called before the document is opened."!
 
-writeLoadScriptsOn: aDocument	"Utility method to write the receivers load scripts onto aDocument."	self loadScripts do: [ :each |		aDocument stream javascript: each.		aDocument  nextPut: $; ]!
+writeLoadScriptsOn: aDocument	"Utility method to write the receivers load scripts onto aDocument."	self loadScripts do: [ :each |		aDocument stream javascript: each.		aDocument nextPut: $; ]!
 
 writeScriptTag: aBlock on: aDocument	"Utitlity method to properly wrap the script generation code in aBlock onto aDocument."	| attributes |	attributes := WAHtmlAttributes new.	attributes at: 'type' put: 'text/javascript'.	aDocument openTag: 'script' attributes: attributes.	aBlock value.	aDocument closeTag: 'script'! !
 !WAScriptGenerator categoriesFor: #addLoadScript:!accessing!public! !

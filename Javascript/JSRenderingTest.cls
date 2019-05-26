@@ -5,7 +5,7 @@ JSObjectTest subclass: #JSRenderingTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSRenderingTest guid: (GUID fromString: '{61a2dd6f-3171-4007-ad7f-73af50493b43}')!
+JSRenderingTest guid: (GUID fromString: '{34dda01d-1004-43f3-b60a-c2a83e0b1e54}')!
 JSRenderingTest comment: ''!
 !JSRenderingTest categoriesForClass!Javascript-Tests-Core! !
 !JSRenderingTest methodsFor!

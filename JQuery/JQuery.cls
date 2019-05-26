@@ -5,7 +5,7 @@ JSObject subclass: #JQuery
 	classVariableNames: 'FunctionName'
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQuery guid: (GUID fromString: '{2a7e0af7-945a-4177-8549-797f4714136d}')!
+JQuery guid: (GUID fromString: '{300be376-d893-4eff-a305-0f9173eead9b}')!
 JQuery comment: 'The core functionality of jQuery centers around this object. Everything in jQuery is based upon this, or uses this in some way. The most basic use of this object is to pass in an expression (usually consisting of CSS), which then finds all matching elements.'!
 !JQuery categoriesForClass!JQuery-Core-Objects! !
 !JQuery methodsFor!

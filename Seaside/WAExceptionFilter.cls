@@ -5,7 +5,7 @@ WAConfiguredRequestFilter subclass: #WAExceptionFilter
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAExceptionFilter guid: (GUID fromString: '{325ca72a-ab61-4265-8e12-635dfc7c3d83}')!
+WAExceptionFilter guid: (GUID fromString: '{a66c16fc-84b3-49d3-b657-dcdaccfdacdb}')!
 WAExceptionFilter comment: ''!
 !WAExceptionFilter categoriesForClass!Seaside-Core-Filter! !
 !WAExceptionFilter methodsFor!

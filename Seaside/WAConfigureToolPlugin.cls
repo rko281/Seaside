@@ -5,7 +5,7 @@ WAToolPlugin subclass: #WAConfigureToolPlugin
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAConfigureToolPlugin guid: (GUID fromString: '{351f141a-59fe-4990-ad2a-116bb40c100f}')!
+WAConfigureToolPlugin guid: (GUID fromString: '{11c327e8-6125-46ba-99d8-e94145c7ddf3}')!
 WAConfigureToolPlugin comment: 'I display the configuration dialog for the currently active application'!
 !WAConfigureToolPlugin categoriesForClass!Seaside-Development-Plugins! !
 !WAConfigureToolPlugin methodsFor!

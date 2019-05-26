@@ -5,7 +5,7 @@ WAPlaceholderPathMatch subclass: #WASuffixPlaceholderPathMatch
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WASuffixPlaceholderPathMatch guid: (GUID fromString: '{6318880b-0855-4469-8102-26e3b90ebbc1}')!
+WASuffixPlaceholderPathMatch guid: (GUID fromString: '{b804476a-c440-4946-8267-9b87bedcb53d}')!
 WASuffixPlaceholderPathMatch comment: ''!
 !WASuffixPlaceholderPathMatch categoriesForClass!Seaside-REST-Core-Route! !
 !WASuffixPlaceholderPathMatch methodsFor!

@@ -5,7 +5,7 @@ JQueryUiTest subclass: #JQSliderTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQSliderTest guid: (GUID fromString: '{42249c8a-4fd2-4955-8e25-55b03ef3708b}')!
+JQSliderTest guid: (GUID fromString: '{4fa6a091-1fd4-4320-8ca5-87877f81d7da}')!
 JQSliderTest comment: ''!
 !JQSliderTest categoriesForClass!JQuery-Tests-UI-Unit! !
 !JQSliderTest methodsFor!

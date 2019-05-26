@@ -5,7 +5,7 @@ TestCase subclass: #WACurrentRequestContextTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WACurrentRequestContextTest guid: (GUID fromString: '{f1bc7845-77c5-4a6f-814d-efee4031d72c}')!
+WACurrentRequestContextTest guid: (GUID fromString: '{85575d17-9d4c-40c3-a7dc-42ea19523844}')!
 WACurrentRequestContextTest comment: ''!
 !WACurrentRequestContextTest categoriesForClass!Seaside-Tests-Core-RequestHandling! !
 !WACurrentRequestContextTest methodsFor!

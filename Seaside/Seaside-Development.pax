@@ -30,7 +30,6 @@ package classNames
 	add: #WATool;
 	add: #WAToolDecoration;
 	add: #WAToolPlugin;
-	add: #WAValidateToolPlugin;
 	add: #WAViewer;
 	add: #WAWalkback;
 	add: #WAWalkbackErrorHandler;
@@ -58,17 +57,17 @@ package binaryGlobalNames: (Set new
 package globalAliases: (Set new
 	yourself).
 
-package setPrerequisites: (IdentitySet new
-	add: '..\..\Core\Object Arts\Dolphin\Base\Dolphin';
-	add: '..\..\Grease\Grease-Core';
-	add: 'Seaside-Canvas';
-	add: 'Seaside-Component';
-	add: 'Seaside-Core';
-	add: 'Seaside-RenderLoop';
-	add: 'Seaside-Tools-Core';
-	add: 'Seaside-Tools-Web';
-	add: 'Seaside-Widgets';
-	yourself).
+package setPrerequisites: #(
+	'..\..\Core\Object Arts\Dolphin\Base\Dolphin'
+	'..\..\Core\Object Arts\Dolphin\Base\Dolphin Legacy Date & Time'
+	'..\..\Grease\Grease-Core'
+	'Seaside-Canvas'
+	'Seaside-Component'
+	'Seaside-Core'
+	'Seaside-RenderLoop'
+	'Seaside-Tools-Core'
+	'Seaside-Tools-Web'
+	'Seaside-Widgets').
 
 package!
 
@@ -93,7 +92,7 @@ WAHtmlDocument subclass: #WAPrettyPrintedDocument
 	instanceVariableNames: 'html indentLevel indentCloseTags firstLine singleEncoder'
 	classVariableNames: ''
 	poolDictionaries: ''
-	classInstanceVariableNames: ''!
+	classInstanceVariableNames: 'knownEvents'!
 WAErrorHandler subclass: #WADebugErrorHandler
 	instanceVariableNames: ''
 	classVariableNames: ''
@@ -103,7 +102,7 @@ WADebugErrorHandler subclass: #WAWalkbackErrorHandler
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
-	classInstanceVariableNames: ''!
+	classInstanceVariableNames: 'configuredExceptionHandlingDefaults'!
 WAPlugin subclass: #WAHaloPlugin
 	instanceVariableNames: 'root'
 	classVariableNames: ''
@@ -160,11 +159,6 @@ WAToolPlugin subclass: #WATimingToolPlugin
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 WAToolPlugin subclass: #WAToggleHalosToolPlugin
-	instanceVariableNames: ''
-	classVariableNames: ''
-	poolDictionaries: ''
-	classInstanceVariableNames: ''!
-WAToolPlugin subclass: #WAValidateToolPlugin
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
@@ -234,9 +228,9 @@ seasideDevelopment	^ self new		name: 'Seaside-Development';		description: 'We
 
 developmentToolsEnabled	^ self applicationDefaults parents includes: WADevelopmentConfiguration instance!
 
-disableDevelopmentTools	self applicationDefaults removeParent: WADevelopmentConfiguration instance!
+disableDevelopmentTools	self applicationDefaults removeParent: WADevelopmentConfiguration instance.	self clearConfigurationCaches!
 
-enableDevelopmentTools	self applicationDefaults addParent: WADevelopmentConfiguration instance! !
+enableDevelopmentTools	self applicationDefaults addParent: WADevelopmentConfiguration instance.	self clearConfigurationCaches! !
 !WAAdmin class categoriesFor: #developmentToolsEnabled!*seaside/development!public! !
 !WAAdmin class categoriesFor: #disableDevelopmentTools!*seaside/development!public! !
 !WAAdmin class categoriesFor: #enableDevelopmentTools!*seaside/development!public! !

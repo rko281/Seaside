@@ -5,7 +5,7 @@ JQUiFunctionalTest subclass: #JQDatepickerFunctionalTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQDatepickerFunctionalTest guid: (GUID fromString: '{f01b7598-faee-4a56-b9e2-6358252f8da4}')!
+JQDatepickerFunctionalTest guid: (GUID fromString: '{e25fa8d6-f48d-4a33-9b6b-6e3b02edcb08}')!
 JQDatepickerFunctionalTest comment: ''!
 !JQDatepickerFunctionalTest categoriesForClass!JQuery-Tests-UI-Functional! !
 !JQDatepickerFunctionalTest methodsFor!

@@ -5,7 +5,7 @@ WARoute subclass: #WAComplexRoute
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAComplexRoute guid: (GUID fromString: '{498dd459-ee0f-49ec-9d50-85001dc32ea5}')!
+WAComplexRoute guid: (GUID fromString: '{d1882f8b-d29c-40cf-a487-cd0e377d0a23}')!
 WAComplexRoute comment: ''!
 !WAComplexRoute categoriesForClass!Seaside-REST-Core-Route! !
 !WAComplexRoute methodsFor!

@@ -5,7 +5,7 @@ WASystemConfiguration subclass: #WAEmailConfiguration
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAEmailConfiguration guid: (GUID fromString: '{4b2d5be2-2cf2-4f04-99a0-a710548883d0}')!
+WAEmailConfiguration guid: (GUID fromString: '{52e4fa8d-fca6-496b-80b4-105bdb13d0af}')!
 WAEmailConfiguration comment: ''!
 !WAEmailConfiguration categoriesForClass!Seaside-Email-Configuration! !
 !WAEmailConfiguration methodsFor!

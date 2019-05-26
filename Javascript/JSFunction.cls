@@ -5,9 +5,9 @@ JSScript subclass: #JSFunction
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSFunction guid: (GUID fromString: '{eb263041-5d42-4556-a58b-a80b2b84dab1}')!
+JSFunction guid: (GUID fromString: '{7f62ff45-16bd-4448-9a96-b31f30c4eff6}')!
 JSFunction comment: 'I represent an anonymous JavaScript function.'!
-!JSFunction categoriesForClass!Javascript-Core! !
+!JSFunction categoriesForClass!Javascript-Core-Base! !
 !JSFunction methodsFor!
 
 argument	^ arguments!

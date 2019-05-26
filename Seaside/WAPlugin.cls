@@ -5,7 +5,7 @@ WAPainter subclass: #WAPlugin
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAPlugin guid: (GUID fromString: '{26eade0f-9055-4ab4-9143-68cb1baa1a97}')!
+WAPlugin guid: (GUID fromString: '{c1abdd67-dc17-414d-8418-66673bf33d22}')!
 WAPlugin comment: 'I am an abstract root class for all plugins. Plugins are an easy way to add or remove additional tools without changing the codebase. To add a new plugin make sure you choose the right superclass so that the tool can detect your code.The appearance of all plugins, such as icons, has to be configured using CSS.'!
 !WAPlugin categoriesForClass!Seaside-Tools-Web! !
 !WAPlugin methodsFor!

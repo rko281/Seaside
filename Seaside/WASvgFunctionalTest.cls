@@ -5,7 +5,7 @@ WAFunctionalTest subclass: #WASvgFunctionalTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WASvgFunctionalTest guid: (GUID fromString: '{578c9e34-6739-403b-a02a-fc9994ab7d1b}')!
+WASvgFunctionalTest guid: (GUID fromString: '{b774bfba-e6cc-48c6-b9fe-d93b79d0841f}')!
 WASvgFunctionalTest comment: ''!
 !WASvgFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
 !WASvgFunctionalTest methodsFor!

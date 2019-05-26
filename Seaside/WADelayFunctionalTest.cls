@@ -5,7 +5,7 @@ WAFunctionalTest subclass: #WADelayFunctionalTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WADelayFunctionalTest guid: (GUID fromString: '{b986c1c8-9aa6-497a-8a3f-0a1a49561412}')!
+WADelayFunctionalTest guid: (GUID fromString: '{918f728e-3343-4801-975d-5a39cca33aeb}')!
 WADelayFunctionalTest comment: ''!
 !WADelayFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
 !WADelayFunctionalTest methodsFor!

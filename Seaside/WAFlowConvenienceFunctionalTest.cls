@@ -5,7 +5,7 @@ WAFunctionalTaskTest subclass: #WAFlowConvenienceFunctionalTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAFlowConvenienceFunctionalTest guid: (GUID fromString: '{61c379a2-3127-4abc-ae06-1edb211524fd}')!
+WAFlowConvenienceFunctionalTest guid: (GUID fromString: '{8fb056db-e367-45d2-87eb-f01e4d9aaca6}')!
 WAFlowConvenienceFunctionalTest comment: ''!
 !WAFlowConvenienceFunctionalTest categoriesForClass!Seaside-Tests-Flow-Functional! !
 !WAFlowConvenienceFunctionalTest methodsFor!

@@ -5,7 +5,7 @@ WAObject subclass: #WARenderContext
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WARenderContext guid: (GUID fromString: '{ebcddc19-b98c-4473-91a1-3b7d342e4773}')!
+WARenderContext guid: (GUID fromString: '{60953b34-4afb-4d33-9fa7-6c7fab896bc8}')!
 WARenderContext comment: 'A WARenderContext provides all the state needed by a Renderer to do its work.It is a decoupling device between whatever is initiating rendering and the Renderer itself.'!
 !WARenderContext categoriesForClass!Seaside-Core-Rendering! !
 !WARenderContext methodsFor!
@@ -38,7 +38,7 @@ initialize	super initialize.	callbacks := WACallbackRegistry new!
 
 postCopy	super postCopy.	visitor := visitor copyForRenderContext: self.	actionUrl := actionUrl copy.	resourceUrl := resourceUrl copy.	properties := properties copy!
 
-properties	"Answer a property dictionary."	^ properties ifNil: [ properties := GRSmallDictionary new ]!
+properties	"Answer a property dictionary."	^ properties ifNil: [ properties := GRSmallDictionary2 new ]!
 
 resourceUrl	^ resourceUrl!
 

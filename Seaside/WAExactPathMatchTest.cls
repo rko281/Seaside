@@ -5,7 +5,7 @@ TestCase subclass: #WAExactPathMatchTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAExactPathMatchTest guid: (GUID fromString: '{3d1f9889-d1e3-4068-a710-ec381706b8c8}')!
+WAExactPathMatchTest guid: (GUID fromString: '{fbfeca62-bf1b-42b3-8f66-21c5193a6026}')!
 WAExactPathMatchTest comment: ''!
 !WAExactPathMatchTest categoriesForClass!Seaside-Tests-REST-Core! !
 !WAExactPathMatchTest methodsFor!

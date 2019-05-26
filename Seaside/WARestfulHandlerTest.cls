@@ -5,7 +5,7 @@ WAContextTest subclass: #WARestfulHandlerTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WARestfulHandlerTest guid: (GUID fromString: '{5d781b3f-3fde-4fbb-9a63-e8edd32822c2}')!
+WARestfulHandlerTest guid: (GUID fromString: '{37ba0e7a-82e5-4bdd-8d4b-cd1a6fe3bd37}')!
 WARestfulHandlerTest comment: ''!
 !WARestfulHandlerTest categoriesForClass!Seaside-Tests-REST-Core! !
 !WARestfulHandlerTest methodsFor!

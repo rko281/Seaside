@@ -5,9 +5,9 @@ WATagBrush subclass: #WAGenericTag
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAGenericTag guid: (GUID fromString: '{ac55e187-18a0-42d2-aa5b-be1e50f7e157}')!
+WAGenericTag guid: (GUID fromString: '{f8c22111-22e4-4996-8989-c39386d9039d}')!
 WAGenericTag comment: 'A WAGenericTag is the class for all tags that do not have a class of their own.Instance Variables	tag:		<String>tag	- the name of the tag'!
-!WAGenericTag categoriesForClass!Seaside-Canvas! !
+!WAGenericTag categoriesForClass!Seaside-Canvas-Base! !
 !WAGenericTag methodsFor!
 
 initializeWithTag: aString	self initialize.	tag := aString!

@@ -5,7 +5,7 @@ WAFileHandlerListing subclass: #WAForbiddenFileHandlerListing
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAForbiddenFileHandlerListing guid: (GUID fromString: '{e172433c-ba8d-4e43-8976-e3f4fc1711ec}')!
+WAForbiddenFileHandlerListing guid: (GUID fromString: '{964fcdca-20ab-46b3-b6d2-75b98a375be6}')!
 WAForbiddenFileHandlerListing comment: ''!
 !WAForbiddenFileHandlerListing categoriesForClass!Seaside-Core-Libraries! !
 !WAForbiddenFileHandlerListing methodsFor!

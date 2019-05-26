@@ -5,7 +5,7 @@ WAFunctionalTest subclass: #WAFlowRenderingCallFunctionalTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAFlowRenderingCallFunctionalTest guid: (GUID fromString: '{1fd09a5e-034d-482a-a900-f5a1c1c03727}')!
+WAFlowRenderingCallFunctionalTest guid: (GUID fromString: '{dff4e789-43b4-4753-8d5e-7440ed93c298}')!
 WAFlowRenderingCallFunctionalTest comment: ''!
 !WAFlowRenderingCallFunctionalTest categoriesForClass!Seaside-Tests-Flow-Functional! !
 !WAFlowRenderingCallFunctionalTest methodsFor!

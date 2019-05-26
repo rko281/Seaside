@@ -22,13 +22,11 @@ package binaryGlobalNames: (Set new
 package globalAliases: (Set new
 	yourself).
 
-package setPrerequisites: (IdentitySet new
-	add: '..\..\Grease\Grease-Core';
-	add: 'Seaside-Canvas';
-	add: 'Seaside-Core';
-	add: 'Seaside-Development';
-	add: 'Seaside-Tools-Core';
-	yourself).
+package setPrerequisites: #(
+	'..\..\Grease\Grease-Core'
+	'Seaside-Canvas'
+	'Seaside-Core'
+	'Seaside-Tools-Core').
 
 package!
 
@@ -38,7 +36,7 @@ WAObject subclass: #WAEnvironment
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
-	classInstanceVariableNames: 'configuredApplicationDefaults configuredExceptionHandlingDefaults'!
+	classInstanceVariableNames: 'configuredApplicationDefaults'!
 WAErrorHandler subclass: #WAHtmlErrorHandler
 	instanceVariableNames: ''
 	classVariableNames: ''

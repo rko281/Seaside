@@ -5,7 +5,7 @@ WASystemConfiguration subclass: #WAFileHandlerConfiguration
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAFileHandlerConfiguration guid: (GUID fromString: '{03c0c7c1-5872-41eb-a48d-a695d4a7250a}')!
+WAFileHandlerConfiguration guid: (GUID fromString: '{655bec20-3cec-4995-8a30-786dac1be537}')!
 WAFileHandlerConfiguration comment: ''!
 !WAFileHandlerConfiguration categoriesForClass!Seaside-Core-Libraries! !
 !WAFileHandlerConfiguration methodsFor!

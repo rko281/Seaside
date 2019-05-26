@@ -5,7 +5,7 @@ WAFormInputTag subclass: #WAFileUploadTag
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAFileUploadTag guid: (GUID fromString: '{9ba7e83c-7103-4b30-a2d0-cb06e81c05e5}')!
+WAFileUploadTag guid: (GUID fromString: '{7a025776-432f-4744-afe0-58d6051fef4f}')!
 WAFileUploadTag comment: 'I represent a file input element (<input type="file"). My callbacks will be evaluated with an instance of WAFile as an argument.'!
 !WAFileUploadTag categoriesForClass!Seaside-Canvas-Tags! !
 !WAFileUploadTag methodsFor!

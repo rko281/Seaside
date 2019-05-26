@@ -5,7 +5,7 @@ WAObject subclass: #WAMimeDocument
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAMimeDocument guid: (GUID fromString: '{254d8025-cc4e-425d-9d2f-3d334ed50baa}')!
+WAMimeDocument guid: (GUID fromString: '{7416d3c6-8f2b-49b6-b7ca-2a7391115ede}')!
 WAMimeDocument comment: 'WAMimeDocument is the abstract base class for mime documents. It is intended as a very basic, mime documents. Implementations are free to use more advance, native implementations as long as they conform to the protocol.Instance Variables	contentType:		<WAMimeType>mimeType	- the mime type of this document'!
 !WAMimeDocument categoriesForClass!Seaside-Core-HTTP! !
 !WAMimeDocument methodsFor!

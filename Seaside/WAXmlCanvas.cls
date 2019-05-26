@@ -5,9 +5,9 @@ WATagCanvas subclass: #WAXmlCanvas
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAXmlCanvas guid: (GUID fromString: '{ef534889-a703-4bbd-a950-39a13be93ec3}')!
+WAXmlCanvas guid: (GUID fromString: '{3d144bfd-fbde-4cc0-b7b3-93779b591421}')!
 WAXmlCanvas comment: 'I''m an abstract canvas base class for building canvas for custom XML dialects.'!
-!WAXmlCanvas categoriesForClass!Seaside-Canvas! !
+!WAXmlCanvas categoriesForClass!Seaside-Canvas-Canvas! !
 !WAXmlCanvas methodsFor!
 
 break	^ String with: Character cr with: Character lf!
@@ -18,4 +18,9 @@ spaceEntity	^ '&#160;'! !
 !WAXmlCanvas categoriesFor: #break!private! !
 !WAXmlCanvas categoriesFor: #cdata:!convenience!public! !
 !WAXmlCanvas categoriesFor: #spaceEntity!private! !
+
+!WAXmlCanvas class methodsFor!
+
+builder	^ super builder		documentClass: WAXmlDocument;		rootClass: WAXmlRoot;		yourself! !
+!WAXmlCanvas class categoriesFor: #builder!instance creation!public! !
 

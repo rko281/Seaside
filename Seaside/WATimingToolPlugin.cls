@@ -5,7 +5,7 @@ WAToolPlugin subclass: #WATimingToolPlugin
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WATimingToolPlugin guid: (GUID fromString: '{c45713a7-3476-4c58-a2bb-19a479d5049a}')!
+WATimingToolPlugin guid: (GUID fromString: '{4426bf8d-ad2e-45fc-a60e-fb7eeb200bb9}')!
 WATimingToolPlugin comment: 'I display render and callback times.'!
 !WATimingToolPlugin categoriesForClass!Seaside-Development-Plugins! !
 !WATimingToolPlugin methodsFor!

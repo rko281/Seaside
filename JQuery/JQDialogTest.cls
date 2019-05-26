@@ -5,7 +5,7 @@ JQueryUiTest subclass: #JQDialogTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQDialogTest guid: (GUID fromString: '{22ab1e16-7aab-43c6-af52-c98b41c00df2}')!
+JQDialogTest guid: (GUID fromString: '{eb1b065d-8e7d-447c-bc42-6a5721cdffee}')!
 JQDialogTest comment: ''!
 !JQDialogTest categoriesForClass!JQuery-Tests-UI-Unit! !
 !JQDialogTest methodsFor!

@@ -5,7 +5,7 @@ JSObjectTest subclass: #JSJsonTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSJsonTest guid: (GUID fromString: '{26b24996-5c5c-4e24-98c2-7ac9ed4fb896}')!
+JSJsonTest guid: (GUID fromString: '{bc427bf3-fc41-420c-9e81-d9ca9acc5aaf}')!
 JSJsonTest comment: ''!
 !JSJsonTest categoriesForClass!Javascript-Tests-Core! !
 !JSJsonTest methodsFor!

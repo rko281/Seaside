@@ -5,7 +5,7 @@ WAUserConfiguration subclass: #WASharedConfiguration
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: 'instances'!
-WASharedConfiguration guid: (GUID fromString: '{1b2bec06-d6a1-4645-8a53-06df5bcee0bf}')!
+WASharedConfiguration guid: (GUID fromString: '{b3f55147-3b0d-46a4-b402-9d7048881470}')!
 WASharedConfiguration comment: ''!
 !WASharedConfiguration categoriesForClass!Seaside-Core-Configuration! !
 !WASharedConfiguration methodsFor!

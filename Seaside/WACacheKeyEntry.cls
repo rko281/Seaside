@@ -5,8 +5,8 @@ WAObject subclass: #WACacheKeyEntry
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WACacheKeyEntry guid: (GUID fromString: '{20858d0b-ed33-419f-a193-e7a7419bcc65}')!
-WACacheKeyEntry comment: ''!
+WACacheKeyEntry guid: (GUID fromString: '{5612de66-d845-4e45-8b85-83e0882f430a}')!
+WACacheKeyEntry comment: 'I am an entry in the table of WAHashCache.Besides keys and values I keep track of linked list entries so they can be removed without scanning the list. Internal Representation and Key Implementation Points.    Instance Variables	byAccessListEntry:		<WACacheListEntry>	byCreationListEntry:		<WACacheListEntry>	key:		<Object>	keyHash:		<Integer>	next:		<WACacheKeyEntry>	value:		<Object>'!
 !WACacheKeyEntry categoriesForClass!Seaside-Core-Cache! !
 !WACacheKeyEntry methodsFor!
 

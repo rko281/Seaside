@@ -5,9 +5,9 @@ WAObject subclass: #JSObject
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSObject guid: (GUID fromString: '{bc1617cf-c737-4bb9-82a7-498eee18a86a}')!
+JSObject guid: (GUID fromString: '{46c2bb58-d29d-4754-9559-7a252c686f7e}')!
 JSObject comment: 'I represent the abstract root of all JavaScript objects in the Smalltalk world. My subclasses provide accessors and action methods to configure instances of myself and implement the method #javascriptContentOn: to emit valid JavaScript code for my presentation.Instance Variables	decoration:			<JSObject|JSDecoration>	renderContext:		<WARenderContext>	rendererClass:		<WARenderer>'!
-!JSObject categoriesForClass!Javascript-Core! !
+!JSObject categoriesForClass!Javascript-Core-Base! !
 !JSObject methodsFor!
 
 & anObject 	"Combine the receiver and anObject with a logical AND."		self addDecoration: (JSBinary new operator: '&&'; statement: anObject)!
@@ -70,7 +70,7 @@ property: aString 	"Treat anObject as a condition to the execution of the recei
 
 render: aRenderable	"Render aRenderable and answer the resulting string."		^ String streamContents: [ :stream | self render: aRenderable on: stream ]!
 
-render: aRenderable on: aStream	"Render aRenderable on aStream."		| document |	document := WAHtmlDocument		on: aStream		codec: self requestContext codec.	self renderContext document: document during: [		(self rendererClass context: self renderContext)			render: aRenderable; flush ].	document scriptGenerator closeOn: document!
+render: aRenderable on: aStream	"Render aRenderable on aStream."		| document |	document := (WAHtmlDocument		on: aStream		codec: self requestContext codec)		scriptGenerator: self requestContext handler scriptGeneratorClass new;		yourself.	self renderContext document: document during: [		(self rendererClass context: self renderContext)			render: aRenderable; flush ].	document scriptGenerator closeOn: document!
 
 renderContext	"Answer the current WARenderContext."	^ renderContext!
 
@@ -82,15 +82,17 @@ return: anObject 	"Return anObject after evaluating the receiver."		self , (J
 
 script: aBlock	"Evaluate aBlock and answer the string of the generated script."		^ String streamContents: [ :stream | self script: aBlock on: stream ]!
 
-script: aBlock on: aStream	"Evaluate aBlock and pass in a script object that is subsequently written to aStream."	| script document |	document := WAHtmlDocument		on: aStream		codec: self requestContext codec.	self renderContext document: document during: [ 		script := (JSScript context: self renderContext)			rendererClass: self rendererClass;			yourself.		aBlock value: script.		script addAll: document loadScripts ].	script javascriptOn: aStream!
+script: aBlock on: aStream	"Evaluate aBlock and pass in a script object that is subsequently written to aStream."	| script document |	document := (WAHtmlDocument		on: aStream		codec: self requestContext codec)		scriptGenerator: self requestContext handler scriptGeneratorClass new;		yourself.	self renderContext document: document during: [ 		script := (JSScript context: self renderContext)			rendererClass: self rendererClass;			yourself.		aBlock value: script.		script addAll: document loadScripts ].	script javascriptOn: aStream!
 
 setContext: aRenderContext	renderContext := aRenderContext!
+
+setTimeout: aDuration 	"Evaluates the receiver after aDuration."		self addDecoration: (JSTimeout duration: aDuration)!
 
 then: anObject	"Evaluates anObject if the receiver treated as a boolean evaluates to true."	self then: anObject else: nil!
 
 then: anObject else: anotherObject 	"Evaluates anObject if the receiver treated as a boolean evaluates to true, otherwise evaluate anotherObject."		self addDecoration: (JSIfThenElse new		trueStatement: anObject;		falseStatement: anotherObject)!
 
-timeout: aDuration 	"Evaluates the receiver after aDuration."		self addDecoration: (JSTimeout duration: aDuration)! !
+timeout: aDuration 	"Evaluates the receiver after aDuration."	self greaseDeprecatedApi: 'JSObject>>#timeout:' details: 'Use #setTimeout: instead.'. 	self setTimeout: aDuration! !
 !JSObject categoriesFor: #&!decorations!public! !
 !JSObject categoriesFor: #,!convenience!public! !
 !JSObject categoriesFor: #|!decorations!public! !
@@ -129,6 +131,7 @@ timeout: aDuration 	"Evaluates the receiver after aDuration."		self addDecora
 !JSObject categoriesFor: #script:!public!utilities! !
 !JSObject categoriesFor: #script:on:!public!utilities! !
 !JSObject categoriesFor: #setContext:!initialization!public! !
+!JSObject categoriesFor: #setTimeout:!decorations!public! !
 !JSObject categoriesFor: #then:!decorations!public! !
 !JSObject categoriesFor: #then:else:!decorations!public! !
 !JSObject categoriesFor: #timeout:!decorations!public! !

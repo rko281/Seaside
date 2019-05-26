@@ -5,7 +5,7 @@ JQAjax subclass: #JQGetJson
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQGetJson guid: (GUID fromString: '{a787b53e-c356-42c1-a48f-5fc45420958d}')!
+JQGetJson guid: (GUID fromString: '{bd20e60b-8d90-4915-8369-d76405fd2c09}')!
 JQGetJson comment: 'Load JSON data using an HTTP GET request.'!
 !JQGetJson categoriesForClass!JQuery-Core-Objects! !
 !JQGetJson methodsFor!

@@ -5,18 +5,18 @@ WAHandlerTrackingStrategyTest subclass: #WASessionTrackingStrategyTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WASessionTrackingStrategyTest guid: (GUID fromString: '{a931019d-f452-401d-ba4b-fb64f8f4a54a}')!
+WASessionTrackingStrategyTest guid: (GUID fromString: '{96371dce-a09b-43b0-8de9-fc80e905cfa4}')!
 WASessionTrackingStrategyTest comment: ''!
 !WASessionTrackingStrategyTest categoriesForClass!Seaside-Tests-Session! !
 !WASessionTrackingStrategyTest methodsFor!
 
-assertNotFound: aRequestContext	self assert: aRequestContext response status = WAResponse statusFound.	self assert: (aRequestContext response headerAt: 'Location') = '/catspajamassc2'!
+assertNotFound: aRequestContext	self assert: aRequestContext response status = WAResponse statusFound.	self assert: (aRequestContext response headerAt: 'Location') greaseString = '/catspajamassc2'!
 
 assertOk: aRequestContext	self assert: aRequestContext response status = WAResponse statusOk!
 
 createHandlers	^ Array with: self newApplication!
 
-newApplication	^ WAApplication new		cache: WAUnidirectionalCache new;		yourself!
+newApplication	^ WARedirectingApplication new		cache: WAUnidirectionalCache new;		yourself!
 
 newSession	^ WASession new! !
 !WASessionTrackingStrategyTest categoriesFor: #assertNotFound:!private! !

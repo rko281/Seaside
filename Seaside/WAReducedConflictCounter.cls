@@ -5,7 +5,7 @@ WAObject subclass: #WAReducedConflictCounter
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAReducedConflictCounter guid: (GUID fromString: '{2a02f44b-6ace-4dce-b152-872f1240f6bf}')!
+WAReducedConflictCounter guid: (GUID fromString: '{61dd7104-c51e-4d90-8aab-03f4a1a40eaa}')!
 WAReducedConflictCounter comment: 'I am a fake implementation of RcCounter'!
 !WAReducedConflictCounter categoriesForClass!Seaside-Core-Cache! !
 !WAReducedConflictCounter methodsFor!

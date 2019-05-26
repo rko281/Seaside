@@ -5,7 +5,7 @@ WAJsonBrush subclass: #WAJsonArrayBrush
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAJsonArrayBrush guid: (GUID fromString: '{9770a7ab-686f-4d2d-ae41-965d82fd0354}')!
+WAJsonArrayBrush guid: (GUID fromString: '{a7432a00-76d9-4ca0-a7de-0a890b3b7fb8}')!
 WAJsonArrayBrush comment: ''!
 !WAJsonArrayBrush categoriesForClass!Seaside-JSON-Core! !
 !WAJsonArrayBrush methodsFor!

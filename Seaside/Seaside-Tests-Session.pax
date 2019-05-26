@@ -14,10 +14,12 @@ package classNames
 	add: #WACookieIfSupportedSessionTrackingStrategyTest;
 	add: #WACookieOnlySessionTrackingStrategyTest;
 	add: #WACookieSessionTrackingStrategyTest;
+	add: #WAEnterpriseAuberginesStrategyTest;
 	add: #WAInteractionTest;
 	add: #WAInvisibleSessionTrackingStrategyTest;
 	add: #WAIPSessionTrackingStrategyTest;
 	add: #WAQueryFieldHandlerTrackingStrategySessionTest;
+	add: #WARedirectingApplication;
 	add: #WASessionCookieTest;
 	add: #WASessionTest;
 	add: #WASessionTrackingStrategyTest;
@@ -35,19 +37,23 @@ package binaryGlobalNames: (Set new
 package globalAliases: (Set new
 	yourself).
 
-package setPrerequisites: (IdentitySet new
-	add: '..\..\Core\Object Arts\Dolphin\Base\Dolphin';
-	add: '..\..\Grease\Grease-Core';
-	add: 'Seaside-Core';
-	add: 'Seaside-Session';
-	add: 'Seaside-Tests-Canvas';
-	add: 'Seaside-Tests-Core';
-	yourself).
+package setPrerequisites: #(
+	'..\..\Core\Object Arts\Dolphin\Base\Dolphin'
+	'..\..\Grease\Grease-Core'
+	'Seaside-Core'
+	'Seaside-Session'
+	'Seaside-Tests-Canvas'
+	'Seaside-Tests-Core').
 
 package!
 
 "Class Definitions"!
 
+WAApplication subclass: #WARedirectingApplication
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
 WASession subclass: #WATestSession
 	instanceVariableNames: ''
 	classVariableNames: ''
@@ -99,6 +105,11 @@ WACookieSessionTrackingStrategyTest subclass: #WACookieIfSupportedSessionTrackin
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 WACookieSessionTrackingStrategyTest subclass: #WACookieOnlySessionTrackingStrategyTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WACookieSessionTrackingStrategyTest subclass: #WAEnterpriseAuberginesStrategyTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''

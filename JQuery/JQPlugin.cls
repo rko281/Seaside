@@ -5,7 +5,7 @@ JSObject subclass: #JQPlugin
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQPlugin guid: (GUID fromString: '{50e005f4-c7c0-46c4-8445-859999d1129a}')!
+JQPlugin guid: (GUID fromString: '{2979554e-210d-4e48-b8f3-a81371ffe6e0}')!
 JQPlugin comment: ''!
 !JQPlugin categoriesForClass!JQuery-Core-Objects! !
 !JQPlugin methodsFor!
@@ -22,7 +22,7 @@ method	self subclassResponsibility!
 
 optionAt: aKey put: aValue	^ self options at: aKey put: aValue!
 
-options	^ options ifNil: [ options := GRSmallDictionary new ]!
+options	^ options ifNil: [ options := GRSmallDictionary2 new ]!
 
 owner	^ owner!
 

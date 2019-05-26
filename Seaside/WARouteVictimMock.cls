@@ -5,7 +5,7 @@ Object subclass: #WARouteVictimMock
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WARouteVictimMock guid: (GUID fromString: '{4e0fd62f-93b5-4c77-a77a-2cc45cd1b7b5}')!
+WARouteVictimMock guid: (GUID fromString: '{fc94ffd8-9382-4bf4-8ade-c2c9e9a3f69e}')!
 WARouteVictimMock comment: ''!
 !WARouteVictimMock categoriesForClass!Seaside-Tests-REST-Core! !
 !WARouteVictimMock methodsFor!

@@ -5,7 +5,7 @@ TestCase subclass: #WASimpleRouteTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WASimpleRouteTest guid: (GUID fromString: '{4fc6603e-3ff1-4c91-88b6-dbdf189183aa}')!
+WASimpleRouteTest guid: (GUID fromString: '{6d5cc2ae-46ee-4155-bd82-aa909ca1810f}')!
 WASimpleRouteTest comment: ''!
 !WASimpleRouteTest categoriesForClass!Seaside-Tests-REST-Core! !
 !WASimpleRouteTest methodsFor!

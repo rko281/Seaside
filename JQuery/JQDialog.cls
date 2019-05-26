@@ -5,12 +5,12 @@ JQWidget subclass: #JQDialog
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQDialog guid: (GUID fromString: '{619f32e9-0a75-4954-a2b9-cfbbd3603b8c}')!
+JQDialog guid: (GUID fromString: '{a0fd742c-3b68-4253-ae8e-21f2427e8f40}')!
 JQDialog comment: 'Make the selected elements Dialog boxes.'!
 !JQDialog categoriesForClass!JQuery-UI-Widgets! !
 !JQDialog methodsFor!
 
-addButton: aString do: anObject 	"Adds a new button with the label aString and the action anObject."	(self options 		at: 'buttons'		ifAbsentPut: [ GRSmallDictionary new ]) 		at: aString		put: anObject asFunction!
+addButton: aString do: anObject 	"Adds a new button with the label aString and the action anObject."	(self options 		at: 'buttons'		ifAbsentPut: [ GRSmallDictionary2 new ]) 		at: aString		put: anObject asFunction!
 
 appendTo: aString	"Which element the dialog (and overlay, if modal) should be appended to."	self optionAt: 'appendTo' put: aString!
 

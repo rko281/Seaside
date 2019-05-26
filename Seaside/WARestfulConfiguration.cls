@@ -5,6 +5,6 @@ WASystemConfiguration subclass: #WARestfulConfiguration
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WARestfulConfiguration guid: (GUID fromString: '{dc05f3c3-03f3-43a0-8c18-fdfd84b526fd}')!
+WARestfulConfiguration guid: (GUID fromString: '{c59fa079-1991-423d-a141-984ac146e1bb}')!
 WARestfulConfiguration comment: ''!
 !WARestfulConfiguration categoriesForClass!Seaside-REST-Core-Handler! !

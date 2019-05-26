@@ -5,7 +5,7 @@ JQueryUiTest subclass: #JQDatepickerTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQDatepickerTest guid: (GUID fromString: '{6a9edeef-8360-4465-bf3d-2de3461aca2d}')!
+JQDatepickerTest guid: (GUID fromString: '{1f587526-966c-484c-bf5b-9f8825ef5441}')!
 JQDatepickerTest comment: ''!
 !JQDatepickerTest categoriesForClass!JQuery-Tests-UI-Unit! !
 !JQDatepickerTest methodsFor!

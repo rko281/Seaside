@@ -5,7 +5,7 @@ WARestfulHandler subclass: #WAPragmaStubHandler
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAPragmaStubHandler guid: (GUID fromString: '{05b9a058-d198-4887-8c27-99b0084580f2}')!
+WAPragmaStubHandler guid: (GUID fromString: '{4c6d8284-4ae6-4384-944e-399dd27df555}')!
 WAPragmaStubHandler comment: ''!
 !WAPragmaStubHandler categoriesForClass!Seaside-Tests-REST-Core! !
 !WAPragmaStubHandler methodsFor!

@@ -5,7 +5,7 @@ JSDecoration subclass: #JSIfThenElse
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSIfThenElse guid: (GUID fromString: '{c11c178c-2404-4e36-854a-be5af3adcd70}')!
+JSIfThenElse guid: (GUID fromString: '{d54ef196-7bab-4953-8869-68d416c758f0}')!
 JSIfThenElse comment: 'I execute different code snippets depending if the receiver is true (defined) or false (null).'!
 !JSIfThenElse categoriesForClass!Javascript-Core-Decorations! !
 !JSIfThenElse methodsFor!

@@ -5,7 +5,7 @@ WARequestFilter subclass: #WATimingToolFilter
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WATimingToolFilter guid: (GUID fromString: '{2f06d380-d111-483a-b7b4-97a852da5113}')!
+WATimingToolFilter guid: (GUID fromString: '{984624e3-e82e-44c6-a86a-c8af6058d8c4}')!
 WATimingToolFilter comment: ''!
 !WATimingToolFilter categoriesForClass!Seaside-Development-Filter! !
 !WATimingToolFilter methodsFor!

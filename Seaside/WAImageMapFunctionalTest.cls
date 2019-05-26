@@ -5,7 +5,7 @@ WAFunctionalTest subclass: #WAImageMapFunctionalTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAImageMapFunctionalTest guid: (GUID fromString: '{c7348bd9-dbd2-41e4-bdda-244188acd283}')!
+WAImageMapFunctionalTest guid: (GUID fromString: '{05e02ef6-c46d-44bb-8286-185f09b7a802}')!
 WAImageMapFunctionalTest comment: ''!
 !WAImageMapFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
 !WAImageMapFunctionalTest methodsFor!

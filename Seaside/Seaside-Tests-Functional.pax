@@ -19,6 +19,7 @@ package classNames
 	add: #WADelayFunctionalTest;
 	add: #WADelegationFunctionalTest;
 	add: #WADelegationTask;
+	add: #WADeprecationFunctionalTest;
 	add: #WAEmptyTestTask;
 	add: #WAEncodingFunctionalTest;
 	add: #WAExceptionFunctionalTest;
@@ -54,6 +55,7 @@ package classNames
 	add: #WAPopupCloseTestComponent;
 	add: #WAPopupFunctionalTest;
 	add: #WARequestFunctionalTest;
+	add: #WARootFunctionalTest;
 	add: #WARubyFunctionalTest;
 	add: #WASelectionDateTableFunctionalTest;
 	add: #WASourceSetTest;
@@ -83,18 +85,18 @@ package binaryGlobalNames: (Set new
 package globalAliases: (Set new
 	yourself).
 
-package setPrerequisites: (IdentitySet new
-	add: '..\..\Core\Object Arts\Dolphin\Base\Dolphin';
-	add: '..\..\Grease\Grease-Core';
-	add: 'Seaside-Canvas';
-	add: 'Seaside-Component';
-	add: 'Seaside-Core';
-	add: 'Seaside-Session';
-	add: 'Seaside-Tests-Core';
-	add: 'Seaside-Tools-Core';
-	add: 'Seaside-Widgets';
-	add: '..\..\Core\Contributions\Camp Smalltalk\SUnit\SUnit';
-	yourself).
+package setPrerequisites: #(
+	'..\..\Core\Object Arts\Dolphin\Base\Dolphin'
+	'..\..\Core\Object Arts\Dolphin\Base\Dolphin Legacy Date & Time'
+	'..\..\Grease\Grease-Core'
+	'Seaside-Canvas'
+	'Seaside-Component'
+	'Seaside-Core'
+	'Seaside-Session'
+	'Seaside-Tests-Core'
+	'Seaside-Tools-Core'
+	'Seaside-Widgets'
+	'..\..\Core\Contributions\Camp Smalltalk\SUnit\SUnit').
 
 package!
 
@@ -187,6 +189,11 @@ WAFunctionalTest subclass: #WADelayFunctionalTest
 	classInstanceVariableNames: ''!
 WAFunctionalTest subclass: #WADelegationFunctionalTest
 	instanceVariableNames: 'task'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WADeprecationFunctionalTest
+	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
@@ -331,6 +338,11 @@ WAFunctionalTest subclass: #WAPopupFunctionalTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 WAFunctionalTest subclass: #WARequestFunctionalTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WARootFunctionalTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''

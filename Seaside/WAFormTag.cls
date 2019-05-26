@@ -5,7 +5,7 @@ WABasicFormTag subclass: #WAFormTag
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAFormTag guid: (GUID fromString: '{8ba76726-80c1-402f-97ce-e83121e6e940}')!
+WAFormTag guid: (GUID fromString: '{8d159150-c659-4481-bcc3-32903ec101af}')!
 WAFormTag comment: 'The FORM element acts as a container for input elements and buttons.Evaluation order:The input fields callbacks will be evaluated in the order theyappear in the XHTML. Buttons will always be evaluated last, no matterwhere they are positioned.'!
 !WAFormTag categoriesForClass!Seaside-Canvas-Tags! !
 !WAFormTag methodsFor!

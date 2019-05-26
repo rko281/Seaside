@@ -5,7 +5,7 @@ WATagBrush subclass: #WARubyTextTag
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WARubyTextTag guid: (GUID fromString: '{0d13327a-e9e7-4f49-b5d6-75f4952448cb}')!
+WARubyTextTag guid: (GUID fromString: '{2d30a1af-d9e6-4e66-8e85-be21158a443b}')!
 WARubyTextTag comment: 'This element works with the <ruby> element. The text following <rt> appears as a note to the base text displayed by the <ruby> element.'!
 !WARubyTextTag categoriesForClass!Seaside-Canvas-Tags! !
 !WARubyTextTag methodsFor!

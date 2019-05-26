@@ -5,7 +5,7 @@ WADispatcherBrowser subclass: #WAConfigurationBrowser
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAConfigurationBrowser guid: (GUID fromString: '{bb60e601-89c0-4e85-b037-7d370c52fbdf}')!
+WAConfigurationBrowser guid: (GUID fromString: '{f8e5c5f3-b2cd-4dc8-bc96-4f9ac1366d8e}')!
 WAConfigurationBrowser comment: ''!
 !WAConfigurationBrowser categoriesForClass!Seaside-Tools-Web! !
 !WAConfigurationBrowser methodsFor!

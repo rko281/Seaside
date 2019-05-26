@@ -5,7 +5,7 @@ WAObject subclass: #WARoute
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WARoute guid: (GUID fromString: '{a771d71b-eab0-494a-9f66-aebf2d01cbd2}')!
+WARoute guid: (GUID fromString: '{cbd717a7-b0d4-4dd2-b4ff-317057c419dc}')!
 WARoute comment: 'I am a message that can be sent if I match a request. Message arguments can be taken from the request.Instance Variables:	method		<String>	selector	<Symbol>	produces 	<WAMatch>	consumes 	<WAMatch>		method	- The HTTP method on which to follow this route, eg. ''GET''selector	- The selector to perform, eg. #index	produces	- The MIME type this route produces (Content-Type HTTP header)	consumes	- The MIME type this route accepts (Accept HTTP header)'!
 !WARoute categoriesForClass!Seaside-REST-Core-Route! !
 !WARoute methodsFor!

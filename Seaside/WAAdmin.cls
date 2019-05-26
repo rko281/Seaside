@@ -5,7 +5,7 @@ WAObject subclass: #WAAdmin
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: 'configuredApplicationDefaults configuredExceptionHandlingDefaults'!
-WAAdmin guid: (GUID fromString: '{38d78414-f3a4-428d-899d-75aac4c379a4}')!
+WAAdmin guid: (GUID fromString: '{eee7523b-87e0-4c93-a90d-7ef68f446ad7}')!
 WAAdmin comment: ''!
 !WAAdmin categoriesForClass!Seaside-Tools-Core! !
 !WAAdmin class methodsFor!
@@ -16,7 +16,7 @@ applicationExceptionHandlingDefaults	| config |	config := WASharedConfiguratio
 
 clearAll	self clearDefaultDispatcher.	self clearConfigurationCaches.	self clearSessions!
 
-clearConfigurationCaches	WASystemConfiguration clearAllDescriptions!
+clearConfigurationCaches	WASystemConfiguration clearAllDescriptions.	self defaultServerManager adaptors do: [ :adaptor |		adaptor requestHandler withDescendantsDo: [ :handler |			handler configuration clearSearchContexts ] ]!
 
 clearDefaultDispatcher	WADispatcher resetDefault!
 

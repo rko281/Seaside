@@ -5,7 +5,7 @@ JQBaseTheme subclass: #JQDarkHiveTheme
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQDarkHiveTheme guid: (GUID fromString: '{2ffea7c0-90fe-48a8-b2ec-b5bf38a1b620}')!
+JQDarkHiveTheme guid: (GUID fromString: '{e60db0ac-e818-4557-9e56-9ad766597c79}')!
 JQDarkHiveTheme comment: ''!
 !JQDarkHiveTheme categoriesForClass!JQuery-UI-Libraries! !
 !JQDarkHiveTheme methodsFor!

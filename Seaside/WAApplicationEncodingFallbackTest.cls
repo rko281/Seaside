@@ -5,7 +5,7 @@ WARegistryTest subclass: #WAApplicationEncodingFallbackTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAApplicationEncodingFallbackTest guid: (GUID fromString: '{58bf94cf-a1ca-408e-a802-7c0510fc75cb}')!
+WAApplicationEncodingFallbackTest guid: (GUID fromString: '{7630817f-e021-42b3-a666-df6bd34e8eff}')!
 WAApplicationEncodingFallbackTest comment: ''!
 !WAApplicationEncodingFallbackTest categoriesForClass!Seaside-Tests-Session! !
 !WAApplicationEncodingFallbackTest methodsFor!

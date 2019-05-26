@@ -5,7 +5,7 @@ TestCase subclass: #WACompositeMimeTypeMatchTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WACompositeMimeTypeMatchTest guid: (GUID fromString: '{25c226e4-3f53-4f63-950a-6940a3fab5e9}')!
+WACompositeMimeTypeMatchTest guid: (GUID fromString: '{2dd3690c-c480-4a25-acdb-6dacdf5e09ee}')!
 WACompositeMimeTypeMatchTest comment: ''!
 !WACompositeMimeTypeMatchTest categoriesForClass!Seaside-Tests-REST-Core! !
 !WACompositeMimeTypeMatchTest methodsFor!

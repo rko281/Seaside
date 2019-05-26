@@ -5,9 +5,9 @@ JSObject subclass: #JSJson
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSJson guid: (GUID fromString: '{5f509dc9-97e7-4755-ad5d-8ea6bc85df41}')!
+JSJson guid: (GUID fromString: '{bb4c7f81-dcc6-497d-b060-3ac05e956eb9}')!
 JSJson comment: 'I represent the JSON object (www.json.org) that is supported by most modern web browsers. For older browsers I require WAJsonDeploymentLibrary or WAJsonDevelopmentLibrary to be included.'!
-!JSJson categoriesForClass!Javascript-Core! !
+!JSJson categoriesForClass!Javascript-Core-Base! !
 !JSJson methodsFor!
 
 javascriptContentOn: aStream	aStream nextPutAll: 'JSON'!

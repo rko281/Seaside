@@ -5,7 +5,7 @@ JQPlugin subclass: #JQWidget
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQWidget guid: (GUID fromString: '{0c519a2a-84d8-443f-a1b8-f26b57d0721e}')!
+JQWidget guid: (GUID fromString: '{44b2974d-cedc-4fa0-a351-9081eb6da192}')!
 JQWidget comment: ''!
 !JQWidget categoriesForClass!JQuery-UI-Objects! !
 !JQWidget methodsFor!

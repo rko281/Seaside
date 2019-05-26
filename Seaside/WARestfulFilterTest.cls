@@ -5,7 +5,7 @@ WAContextTest subclass: #WARestfulFilterTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WARestfulFilterTest guid: (GUID fromString: '{0c41431c-d84f-4a40-aea1-8864837a1189}')!
+WARestfulFilterTest guid: (GUID fromString: '{0c669fe9-17cf-4472-badf-ccd06c395c8d}')!
 WARestfulFilterTest comment: ''!
 !WARestfulFilterTest categoriesForClass!Seaside-Tests-REST-Core! !
 !WARestfulFilterTest methodsFor!

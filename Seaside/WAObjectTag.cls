@@ -5,7 +5,7 @@ WATagBrush subclass: #WAObjectTag
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAObjectTag guid: (GUID fromString: '{74668037-8cb4-4db6-b0b7-13b2a0194d69}')!
+WAObjectTag guid: (GUID fromString: '{d66b6af6-eba6-4e45-a911-3513ed156a16}')!
 WAObjectTag comment: 'Defines an embedded object. Use this element to add multimedia to your XHTML page.This element allows you to specify the data and parameters for objects inserted into HTML documents, and the code that can be used to display/manipulate that data.'!
 !WAObjectTag categoriesForClass!Seaside-Canvas-Tags! !
 !WAObjectTag methodsFor!

@@ -27,17 +27,16 @@ package binaryGlobalNames: (Set new
 package globalAliases: (Set new
 	yourself).
 
-package setPrerequisites: (IdentitySet new
-	add: '..\..\Core\Object Arts\Dolphin\Base\Dolphin';
-	add: '..\..\Grease\Grease-Core';
-	add: '..\Javascript\Javascript-Core';
-	add: '..\JQuery\JQuery-Core';
-	add: 'Seaside-Canvas';
-	add: 'Seaside-Component';
-	add: 'Seaside-Core';
-	add: 'Seaside-Development';
-	add: 'Seaside-Tools-Core';
-	yourself).
+package setPrerequisites: #(
+	'..\..\Core\Object Arts\Dolphin\Base\Dolphin'
+	'..\..\Grease\Grease-Core'
+	'..\Javascript\Javascript-Core'
+	'..\JQuery\JQuery-Core'
+	'Seaside-Canvas'
+	'Seaside-Component'
+	'Seaside-Core'
+	'Seaside-Development'
+	'Seaside-Tools-Core').
 
 package!
 
@@ -97,12 +96,12 @@ WAExampleComponent subclass: #WATodo
 !GRPackage class methodsFor!
 
 seasideExamples	^ self new		name: 'Seaside-Examples';		description: 'Simple example applications and components.';		addDependency: 'Seaside-Component';		addDependency: 'Seaside-Canvas';		addDependency: 'Seaside-Tools-Core'; "for WAAdmin"		addDependency: 'Seaside-Development'; "for WADebugErrorHandler"		addDependency: 'JQuery-Core';		url: #seasideUrl;		yourself! !
-!GRPackage class categoriesFor: #seasideExamples!*seaside/examples!public! !
+!GRPackage class categoriesFor: #seasideExamples!*Seaside/Examples!public! !
 
 !WAComponent class methodsFor!
 
 headerForExampleBrowser	^ self name = self description		ifTrue: [ self name ]		ifFalse: [ self description , ' (' , self name , ')' ]! !
-!WAComponent class categoriesFor: #headerForExampleBrowser!*seaside/examples/misc!public! !
+!WAComponent class categoriesFor: #headerForExampleBrowser!*Seaside/Examples/misc!public! !
 
 "End of package definition"!
 

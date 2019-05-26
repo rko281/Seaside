@@ -5,29 +5,38 @@ WAContextTest subclass: #WARenderingTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WARenderingTest guid: (GUID fromString: '{982ad104-cfdd-4c8b-9b69-306a4f004150}')!
+WARenderingTest guid: (GUID fromString: '{7a447b40-988d-4c7e-b48a-e753003212f2}')!
 WARenderingTest comment: ''!
 !WARenderingTest categoriesForClass!Seaside-Tests-Canvas! !
 !WARenderingTest methodsFor!
 
-assert: aBlock gives: aString	| html |	html := WAHtmlCanvas builder		fullDocument: true;		rootBlock: aBlock;		render: [ :canvas | ].	self assert: '<html><head>' , aString , '</head><body onload="onLoad()"><script type="text/javascript">function onLoad(){};</script></body></html>' = html!
+assert: aBlock gives: aString	| html |	html := WAHtmlCanvas builder		fullDocument: false;		rootBlock: aBlock;		render: aBlock.	self assert: aString = html!
 
-testConditionalComment	self		assert: [ :html |			html if greaterThan; orEqual; ie55; do: [				html script					defer;					url: 'http://www.example.com/bugs.js' ] ]		gives: '<title></title><!!--[if gte IE 5.5]><script defer="defer" src="http://www.example.com/bugs.js"></script><!![endif]-->'.			self		assert: [ :html |			html if not; ie; do: [				html script					url: 'http://www.example.com/bugs.js' ] ]		gives: '<title></title><!!--[if !! IE]><script src="http://www.example.com/bugs.js"></script><!![endif]-->'!
+assertRoot: aBlock gives: aString	| html |	html := WAHtmlCanvas builder		fullDocument: true;		rootBlock: aBlock;		render: [ :canvas | ].	self assert: '<html><head>' , aString , '</head><body onload="onLoad()"><script type="text/javascript">function onLoad(){};</script></body></html>' = html!
 
-testContentType	self		assert: [ :html |			html meta contentType: 'application/xhtml+xml' seasideMimeType  ]		gives: '<title></title><meta http-equiv="Content-Type" content="application/xhtml+xml"/>'.	self		assert: [ :html |			html meta contentType: 'application/xhtml+xml'  ]		gives: '<title></title><meta http-equiv="Content-Type" content="application/xhtml+xml"/>'!
+testConditionalComment	self		assertRoot: [ :html |			html if greaterThan; orEqual; ie55; do: [				html script					defer;					url: 'http://www.example.com/bugs.js' ] ]		gives: '<title></title><!!--[if gte IE 5.5]><script defer src="http://www.example.com/bugs.js"></script><!![endif]-->'.			self		assertRoot: [ :html |			html if not; ie; do: [				html script					url: 'http://www.example.com/bugs.js' ] ]		gives: '<title></title><!!--[if !! IE]><script src="http://www.example.com/bugs.js"></script><!![endif]-->'!
 
-testJavascript	self		assert: [ :html |			html javascript				add: 'true & false'  ]		gives: '<title></title><script type="text/javascript">true & false</script>'!
+testContentType	self		assertRoot: [ :html |			html meta contentType: 'application/xhtml+xml' seasideMimeType  ]		gives: '<title></title><meta http-equiv="Content-Type" content="application/xhtml+xml"/>'.	self		assertRoot: [ :html |			html meta contentType: 'application/xhtml+xml'  ]		gives: '<title></title><meta http-equiv="Content-Type" content="application/xhtml+xml"/>'!
 
-testLinkElement	self		assert: [ :html |			html stylesheet				addAural;				addTeletype;				title: 'aTilte';				url: 'http://example.com/style.css'  ]		gives: '<title></title><link rel="stylesheet" type="text/css" media="aural, tty" title="aTilte" href="http://example.com/style.css"/>'!
+testInteger	self		assert: [ :canvas | canvas render: 123 ]		gives: '123'.	self		assert: [ :canvas | canvas render: -123 ]		gives: '-123'!
 
-testLinkElementWithContent	self		assert: [ :html |			html stylesheet				add: 'div > em { color: blue; }'  ]		gives: '<title></title><style type="text/css">div > em { color: blue; }</style>'.	self		assert: [ :html |			html stylesheet				add: 'E[foo$="bar"]'  ]		gives: '<title></title><style type="text/css">E[foo$="bar"]</style>'	!
+testJavascript	self		assertRoot: [ :html |			html javascript				add: 'true & false'  ]		gives: '<title></title><script type="text/javascript">true & false</script>'!
 
-testRevealedConditionalComment		self assert: [ :html |			html revealedIf ie7; do: [				html script					defer;					url: 'http://www.example.com/bugs.js' ] ]		gives: '<title></title><!!--[if IE 7]><!!--><script defer="defer" src="http://www.example.com/bugs.js"></script><!!--<!![endif]-->'! !
+testLinkElement	self		assertRoot: [ :html |			html stylesheet				addAural;				addTeletype;				title: 'aTilte';				url: 'http://example.com/style.css'  ]		gives: '<title></title><link rel="stylesheet" type="text/css" media="aural, tty" title="aTilte" href="http://example.com/style.css"/>'!
+
+testLinkElementWithContent	self		assertRoot: [ :html |			html stylesheet				add: 'div > em { color: blue; }'  ]		gives: '<title></title><style type="text/css">div > em { color: blue; }</style>'.	self		assertRoot: [ :html |			html stylesheet				add: 'E[foo$="bar"]'  ]		gives: '<title></title><style type="text/css">E[foo$="bar"]</style>'	!
+
+testRevealedConditionalComment		self assertRoot: [ :html |			html revealedIf ie7; do: [				html script					defer;					url: 'http://www.example.com/bugs.js' ] ]		gives: '<title></title><!!--[if IE 7]><!!--><script defer src="http://www.example.com/bugs.js"></script><!!--<!![endif]-->'!
+
+testStyle		self			assertRoot: [ :html |				html style: 'body{font-size:12px;}' ]			gives: '<title></title><style>body{font-size:12px;}</style>'! !
 !WARenderingTest categoriesFor: #assert:gives:!private! !
+!WARenderingTest categoriesFor: #assertRoot:gives:!private! !
 !WARenderingTest categoriesFor: #testConditionalComment!public!tests! !
 !WARenderingTest categoriesFor: #testContentType!public!tests! !
+!WARenderingTest categoriesFor: #testInteger!public!tests! !
 !WARenderingTest categoriesFor: #testJavascript!public!tests! !
 !WARenderingTest categoriesFor: #testLinkElement!public!tests! !
 !WARenderingTest categoriesFor: #testLinkElementWithContent!public!tests! !
 !WARenderingTest categoriesFor: #testRevealedConditionalComment!public!tests! !
+!WARenderingTest categoriesFor: #testStyle!public!tests! !
 

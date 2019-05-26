@@ -5,7 +5,7 @@ WAObject subclass: #WARequestHandler
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WARequestHandler guid: (GUID fromString: '{ef31ae5c-1c9b-4235-9339-5bbc381c6024}')!
+WARequestHandler guid: (GUID fromString: '{adbeb519-2487-45c5-af14-77bb880f1a7f}')!
 WARequestHandler comment: 'WARequestHandler is an abstract class whose subclasses handle http requests. Most of the methods are either empty or return a default value. Subclasses must implement the following messages:	handleFiltered:	process the request'!
 !WARequestHandler categoriesForClass!Seaside-Core-RequestHandling! !
 !WARequestHandler methodsFor!

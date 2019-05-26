@@ -5,8 +5,8 @@ WAQualifiedValue subclass: #WAAcceptEncoding
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAAcceptEncoding guid: (GUID fromString: '{6bf32fc8-719b-439e-9f4d-f8dfb37e88fb}')!
-WAAcceptEncoding comment: 'A WAAcceptCharset is a WAQualifiedValue with a value that is an instance of String. It represents how much a user agent prefers a certain encoding for the response.'!
+WAAcceptEncoding guid: (GUID fromString: '{8d1c216a-5b35-4da7-b274-bce860a06338}')!
+WAAcceptEncoding comment: 'WAAcceptEncoding class	instanceVariableNames: '''''!
 !WAAcceptEncoding categoriesForClass!Seaside-Core-HTTP! !
 !WAAcceptEncoding class methodsFor!
 

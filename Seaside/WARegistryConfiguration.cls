@@ -5,7 +5,7 @@ WASystemConfiguration subclass: #WARegistryConfiguration
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WARegistryConfiguration guid: (GUID fromString: '{70f76c2a-9480-489c-91ad-5c94a4778eaa}')!
+WARegistryConfiguration guid: (GUID fromString: '{81652dc0-3d93-4f72-8836-17b4dad697cf}')!
 WARegistryConfiguration comment: ''!
 !WARegistryConfiguration categoriesForClass!Seaside-Core-RequestHandling! !
 !WARegistryConfiguration methodsFor!

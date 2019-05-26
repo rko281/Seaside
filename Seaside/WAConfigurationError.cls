@@ -5,6 +5,6 @@ WAError subclass: #WAConfigurationError
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAConfigurationError guid: (GUID fromString: '{4ed4ee17-4186-4195-9710-3184485e083e}')!
+WAConfigurationError guid: (GUID fromString: '{a89c2f0c-f55e-4eb2-b420-162292ec1214}')!
 WAConfigurationError comment: ''!
 !WAConfigurationError categoriesForClass!Seaside-Core-Configuration! !

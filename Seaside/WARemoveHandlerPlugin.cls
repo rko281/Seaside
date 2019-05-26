@@ -5,7 +5,7 @@ WAConfigurationToolPlugin subclass: #WARemoveHandlerPlugin
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WARemoveHandlerPlugin guid: (GUID fromString: '{e9174423-61ff-4b6c-b183-3ae8e7bb1d2a}')!
+WARemoveHandlerPlugin guid: (GUID fromString: '{32133b3e-7aa8-434b-b915-be87a960bf70}')!
 WARemoveHandlerPlugin comment: 'I remove an application.'!
 !WARemoveHandlerPlugin categoriesForClass!Seaside-Tools-Web! !
 !WARemoveHandlerPlugin methodsFor!

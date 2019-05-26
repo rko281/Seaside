@@ -5,7 +5,7 @@ JQWidget subclass: #JQDraggable
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQDraggable guid: (GUID fromString: '{f22fc609-db89-4e3f-b9f0-6937fc748bbf}')!
+JQDraggable guid: (GUID fromString: '{61ae9a81-3d19-4d32-82b4-44ca084b6812}')!
 JQDraggable comment: 'Creates new draggables on the nodeset supplied by the query.'!
 !JQDraggable categoriesForClass!JQuery-UI-Interaction! !
 !JQDraggable methodsFor!
@@ -68,9 +68,7 @@ snapMode: aString	"Determines which edges of snap elements the draggable will s
 
 snapTolerance: anInteger	"The distance in pixels from the snap element edges at which snapping should occur. Ignored if snap is false."	self optionAt: 'snapTolerance' put: anInteger!
 
-stack: aSelector	"Controls the z-Index of the set of elements that match the selector, always brings to front the dragged item. Very useful in things like window managers."	self optionAt: 'stack' put: aSelector!
-
-zIndex: anInteger	"z-index for the helper while being dragged."	self optionAt: 'zIndex' put: anInteger! !
+stack: aSelector	"Controls the z-Index of the set of elements that match the selector, always brings to front the dragged item. Very useful in things like window managers."	self optionAt: 'stack' put: aSelector! !
 !JQDraggable categoriesFor: #addClasses:!options/generated!public! !
 !JQDraggable categoriesFor: #appendTo:!options/generated!public! !
 !JQDraggable categoriesFor: #axis:!options/generated!public! !
@@ -101,5 +99,4 @@ zIndex: anInteger	"z-index for the helper while being dragged."	self optionAt
 !JQDraggable categoriesFor: #snapMode:!options/generated!public! !
 !JQDraggable categoriesFor: #snapTolerance:!options/generated!public! !
 !JQDraggable categoriesFor: #stack:!options/generated!public! !
-!JQDraggable categoriesFor: #zIndex:!options/generated!public! !
 
