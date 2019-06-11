@@ -21,6 +21,9 @@ package binaryGlobalNames: (Set new
 package globalAliases: (Set new
 	yourself).
 
+"Manually added so Seaside Http Server Adaptor can be located:"
+Smalltalk at: #GitHubPackageInstaller ifPresent: [ :gh | gh default include: 'fxgallego'].
+
 package setPrerequisites: #(
 	'..\..\Grease\Grease-Dolphin-Core'
 	'..\..\Grease\Grease-Tests-Core'
