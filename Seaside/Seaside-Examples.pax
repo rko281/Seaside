@@ -12,6 +12,8 @@ package classNames
 	add: #WAFileLibraryDemo;
 	add: #WAJQueryExampleComponent;
 	add: #WAMultiCounter;
+	add: #WASessionCookieProtectedSession;
+	add: #WASessionProtectedCounter;
 	add: #WATodo;
 	add: #WATodoItem;
 	yourself.
@@ -36,6 +38,7 @@ package setPrerequisites: #(
 	'Seaside-Component'
 	'Seaside-Core'
 	'Seaside-Development'
+	'Seaside-Session'
 	'Seaside-Tools-Core').
 
 package!
@@ -82,8 +85,18 @@ WAExampleComponent subclass: #WAMultiCounter
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+WAExampleComponent subclass: #WASessionProtectedCounter
+	instanceVariableNames: 'counter'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
 WAExampleComponent subclass: #WATodo
 	instanceVariableNames: 'todos'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WASession subclass: #WASessionCookieProtectedSession
+	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!

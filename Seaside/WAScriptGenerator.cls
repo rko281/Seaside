@@ -6,7 +6,7 @@ WAObject subclass: #WAScriptGenerator
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 WAScriptGenerator guid: (GUID fromString: '{4f40285d-2207-4084-abe5-78cf7c1c81bd}')!
-WAScriptGenerator comment: ''!
+WAScriptGenerator comment: 'I am responsible to render the loadscripts and make them run on page load. See subclasses for different strategies.'!
 !WAScriptGenerator categoriesForClass!Seaside-Core-Document! !
 !WAScriptGenerator methodsFor!
 

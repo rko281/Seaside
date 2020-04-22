@@ -9,6 +9,8 @@ package classNames
 	add: #WAAcceptTest;
 	add: #WABacktrackingTest;
 	add: #WABidirectionalCacheTest;
+	add: #WABlockMimeDocument;
+	add: #WABlockMimeDocumentTest;
 	add: #WABufferedResponseTest;
 	add: #WABulkReapingCacheTest;
 	add: #WACacheTest;
@@ -132,6 +134,11 @@ WAKeyGenerator subclass: #WAPrecomputedKeyGenerator
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+WAMimeDocument subclass: #WABlockMimeDocument
+	instanceVariableNames: 'block'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
 WARequestHandler subclass: #WANextUnconsumedPathElementRequestHandler
 	instanceVariableNames: 'nextUnconsumedPathElement'
 	classVariableNames: ''
@@ -163,6 +170,11 @@ TestCase subclass: #WAAcceptTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 TestCase subclass: #WABacktrackingTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #WABlockMimeDocumentTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''

@@ -122,6 +122,10 @@ queryFields: aDictionary	queryFields := aDictionary!
 
 queryString	"Answer the full query part of the URL. It would probably be better to	store this as a string somewhere so we can support queries that are not	key/value field lists."		^ String streamContents: [ :stream |		| urlEncoder |		urlEncoder := GRPlatform current urlEncoderOn: stream.		self queryFields associations			do: [ :each |				urlEncoder nextPutAll: each key.				each value notNil ifTrue: [					stream nextPut: $=.					urlEncoder nextPutAll: each value greaseString ] ]			separatedBy: [ stream nextPut: $& ] ]!
 
+rawAddAllToPath: aCollectionOfStrings	"Add a collection of strings to the path. If an element contains $/ it is not split into multiple elements."		aCollectionOfStrings do: [ :each | self rawAddToPath: each ]!
+
+rawAddToPath: aString	"Adds the argument as a path element. If the argument contains $/ it is not split into multiple elements."	self path add: aString!
+
 relativeTo: aUrl	"Answer a path element collection relative from the receiver to aUrl."		| currentPath argumentPath resultingPath |	currentPath := self path copy.	argumentPath := aUrl path copy.	[ currentPath notEmpty and: [ argumentPath notEmpty and: [ currentPath first = argumentPath first ] ] ] whileTrue: [		currentPath removeFirst.		argumentPath removeFirst ].	resultingPath := OrderedCollection new.	currentPath size 		timesRepeat: [ resultingPath add: '..' ].	resultingPath addAll: argumentPath.	^ resultingPath!
 
 scheme	"Answer the URL's scheme."	^ scheme ifNil: [ 'http' ]!
@@ -209,6 +213,8 @@ withoutQuery	^ self copy		queryFields: nil;		yourself! !
 !WAUrl categoriesFor: #queryFields!accessing!public! !
 !WAUrl categoriesFor: #queryFields:!accessing!public! !
 !WAUrl categoriesFor: #queryString!converting!public! !
+!WAUrl categoriesFor: #rawAddAllToPath:!adding!public! !
+!WAUrl categoriesFor: #rawAddToPath:!adding!public! !
 !WAUrl categoriesFor: #relativeTo:!converting!public! !
 !WAUrl categoriesFor: #scheme!accessing!public! !
 !WAUrl categoriesFor: #scheme:!accessing!public! !
@@ -232,17 +238,20 @@ absolute: aString	"Parse aString as an absolute URL."	^ self basicNew initial
 
 absolute: aString relative: aRelativeString	"Take absolute URL aString and combine it with a relative path aRelativeString."	^ (self absolute: aString)		parsePath: aRelativeString;		yourself!
 
-decodePercent: aString	"percent decodes the given String"	| input output char |	input := aString readStream.	output := WriteStream on: (String new: aString size).	[ input atEnd ] whileFalse: [		char := input next.		output nextPut: (char = $+			ifTrue: [ Character space ]			ifFalse: [				char = $%					ifTrue: [						| firstByte secondByte |						firstByte :=  input atEnd ifTrue: [ WAInvalidUrlSyntaxError signal: aString ] ifFalse: [ input next asUppercase digitValue ].						secondByte :=  input atEnd ifTrue: [ WAInvalidUrlSyntaxError signal: aString ] ifFalse: [ input next asUppercase digitValue ].						Character codePoint:firstByte * 16 + secondByte ]					ifFalse: [ char ] ]) ].	^ output contents!
+decodePercent: aString	"percent decodes the given String"	| input output char |	input := aString readStream.	output := WriteStream on: (String new: aString size).	[ input atEnd ] whileFalse: [		char := input next.		output nextPut: (char = $+			ifTrue: [ Character space ]			ifFalse: [				char = $%					ifTrue: [						| firstByte secondByte |						firstByte :=  self readHexFrom: input errorDetail: aString.						secondByte :=  self readHexFrom: input errorDetail: aString.						Character codePoint: firstByte * 16 + secondByte ]					ifFalse: [ char ] ]) ].	^ output contents!
 
 decodePercent: aString from: start	"percent decodes the fragment string starting at the given index	/?:@-._~!!$&'()*+,;= are allowed unescaped anywhere within a fragment part"	^ self decodePercent: aString from: start to: aString size + 1!
 
 decodePercent: aString from: start to: end	"percent decodes the string starting at the given index"	| input output index left |	index := aString indexOf: $% startingAt: start.	(index = 0 or: [ index >= end ])		ifTrue: [ ^ aString copyFrom: start to: end - 1 ].	input := aString readStream.	input skip: start - 1. "start index 1 -> skip 0"	output := WriteStream on: (String new: aString size).	left := end - start.	[ left > 0 and: [ input atEnd not ] ] whileTrue: [		| char |		char := input next.		output nextPut: (char = $%			ifTrue: [				| firstByte secondByte |				firstByte :=  input atEnd ifTrue: [ WAInvalidUrlSyntaxError signal: aString ] ifFalse: [ input next asUppercase digitValue ].				secondByte :=  input atEnd ifTrue: [ WAInvalidUrlSyntaxError signal: aString ] ifFalse: [ input next asUppercase digitValue ].				left := left - 3.				Character codePoint:firstByte * 16 + secondByte ]			ifFalse: [				left := left - 1.				char ]) ].	^ output contents!
 
-decodePercentAndPlus: aString from: start to: end	"percent decodes the given String"	| percentIndex input output left |	"check if we contain %"	percentIndex := aString indexOf: $% startingAt: start.	(percentIndex = 0 or: [ percentIndex >= end ]) ifTrue: [		| plusIndex |		"check if we contain +"		plusIndex := aString indexOf: $+ startingAt: start.		(plusIndex = 0 or: [ plusIndex >= end ]) ifTrue: [			^ aString copyFrom: start to: end - 1 ] ].		"we contain either % or +"	input := aString readStream.	input skip: start - 1. "start index 1 -> skip 0"	output := WriteStream on: (String new: aString size).	left := end - start.	[ left > 0 and: [ input atEnd not ] ] whileTrue: [		| char |		char := input next.		output nextPut: (char = $+			ifTrue: [				left := left - 1.				Character space ]			ifFalse: [				char = $%					ifTrue: [						| firstByte secondByte |						firstByte :=  input atEnd ifTrue: [ WAInvalidUrlSyntaxError signal: aString ] ifFalse: [ input next asUppercase digitValue ].						secondByte :=  input atEnd ifTrue: [ WAInvalidUrlSyntaxError signal: aString ] ifFalse: [ input next asUppercase digitValue ].						left := left - 3.						Character codePoint:firstByte * 16 + secondByte ]					ifFalse: [						left := left - 1.						char ] ]) ].	^ output contents! !
+decodePercentAndPlus: aString from: start to: end	"percent decodes the given String"	| percentIndex input output left |	"check if we contain %"	percentIndex := aString indexOf: $% startingAt: start.	(percentIndex = 0 or: [ percentIndex >= end ]) ifTrue: [		| plusIndex |		"check if we contain +"		plusIndex := aString indexOf: $+ startingAt: start.		(plusIndex = 0 or: [ plusIndex >= end ]) ifTrue: [			^ aString copyFrom: start to: end - 1 ] ].		"we contain either % or +"	input := aString readStream.	input skip: start - 1. "start index 1 -> skip 0"	output := WriteStream on: (String new: aString size).	left := end - start.	[ left > 0 and: [ input atEnd not ] ] whileTrue: [		| char |		char := input next.		output nextPut: (char = $+			ifTrue: [				left := left - 1.				Character space ]			ifFalse: [				char = $%					ifTrue: [						| firstByte secondByte |						firstByte :=  input atEnd ifTrue: [ WAInvalidUrlSyntaxError signal: aString ] ifFalse: [ input next asUppercase digitValue ].						secondByte :=  input atEnd ifTrue: [ WAInvalidUrlSyntaxError signal: aString ] ifFalse: [ input next asUppercase digitValue ].						left := left - 3.						Character codePoint:firstByte * 16 + secondByte ]					ifFalse: [						left := left - 1.						char ] ]) ].	^ output contents!
+
+readHexFrom: aStream errorDetail: aString	| hexChar |	aStream atEnd ifTrue: [		WAInvalidUrlSyntaxError signal: aString ].	hexChar := aStream next.	((hexChar between: $0 and: $9)		or: [ (hexChar between: $a and: $f)		or: [ hexChar between: $A and: $F ] ]) ifFalse: [ WAInvalidUrlSyntaxError signal: aString ].	^ hexChar digitValue! !
 !WAUrl class categoriesFor: #absolute:!parsing!public! !
 !WAUrl class categoriesFor: #absolute:relative:!parsing!public! !
 !WAUrl class categoriesFor: #decodePercent:!decoding!public! !
 !WAUrl class categoriesFor: #decodePercent:from:!decoding!public! !
 !WAUrl class categoriesFor: #decodePercent:from:to:!decoding!public! !
 !WAUrl class categoriesFor: #decodePercentAndPlus:from:to:!decoding!public! !
+!WAUrl class categoriesFor: #readHexFrom:errorDetail:!private! !
 

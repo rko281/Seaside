@@ -20,7 +20,7 @@ callbackClass	^ WAValuesCallback!
 
 dispatchCallback	^ self name: (self storeCallback: WADispatchCallback new)!
 
-enabled: aOneArgumentBlock	"Enable only those elements for selection for whom aBlock return true."	enabledBlock := aOneArgumentBlock fixCallbackTemps!
+enabled: aOneArgumentBlock	"Enable only those elements for selection for whom aBlock return true."	enabledBlock := aOneArgumentBlock!
 
 hasCallback	^ values notNil!
 
@@ -48,7 +48,7 @@ tag	^ 'select'!
 
 titleFor: anObject	^ titleBlock isNil		ifTrue: [ anObject ]		ifFalse: [ titleBlock value: anObject ]!
 
-titles: aOneArgumentBlock	"The given block will be used to generated title attributes for any of the options."	titleBlock := aOneArgumentBlock fixCallbackTemps!
+titles: aOneArgumentBlock	"The given block will be used to generated title attributes for any of the options."	titleBlock := aOneArgumentBlock!
 
 valueFor: anObject	^ self valuesAt: self nextKey put: anObject!
 

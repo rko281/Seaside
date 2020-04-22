@@ -12,7 +12,7 @@ WACookieForBrowserIPForCrawlerTrackingStrategy comment: 'WACookieForBrowserIPFor
 
 addKey: aString toContext: aRequestContext	^ (self strategyFor: aRequestContext)		addKey: aString toContext: aRequestContext!
 
-addKey: aString toUrl: aUrl	^ (self strategyFor: WACurrentRequestContext value)		addKey: aString toUrl: aUrl!
+addKey: aString toUrl: aUrl	^ (self strategyFor: self requestContext)		addKey: aString toUrl: aUrl!
 
 crawlerSubStrings	^ #(		'bot'		'Bot'		'Yahoo!! Slurp'		'Feedfetcher-Google'	)!
 

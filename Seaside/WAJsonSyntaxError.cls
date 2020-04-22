@@ -6,5 +6,5 @@ WAError subclass: #WAJsonSyntaxError
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 WAJsonSyntaxError guid: (GUID fromString: '{7acc45f4-c635-4e75-a146-0c95b95a18e8}')!
-WAJsonSyntaxError comment: '''From Pharo7.0.2 of 15 March 2019 [Build information: Pharo-7.0.2+build.154.sha.9f17218676db0c1a0dd5d1b03226e660dbd674b6 (64 Bit)] on 24 May 2019 at 1:14:40.482633 pm'''!
+WAJsonSyntaxError comment: '''From Pharo8.0.0 of 22 January 2020 [Build information: Pharo-8.0.0+build.1124.sha.0932da82f08175e906b0e2a8052120c823374e9f (64 Bit)] on 22 April 2020 at 9:01:54.416372 am'''!
 !WAJsonSyntaxError categoriesForClass!Seaside-JSON-Core! !

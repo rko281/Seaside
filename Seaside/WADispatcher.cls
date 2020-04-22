@@ -24,11 +24,11 @@ handleFiltered: aRequestContext	| consumer |	consumer := aRequestContext consu
 
 handleFiltered: aRequestContext named: aString	(self 		handlerAt: aString 		ifAbsent: [ aRequestContext responseGenerator notFound; respond ])			handle: aRequestContext!
 
-handlerAt: aString	^ self			handlerAt: aString			with: [ :dispatcher :token |				dispatcher handlers at: token ] !
+handlerAt: aString	^ self			handlerAt: aString			ifAbsent: [ WAError signal: 'Handler not found.' ] !
 
-handlerAt: aString ifAbsent: aBlock	^ self		handlerAt: (aString			ifNil: [ ^ aBlock value ])		with: [ :dispatcher :token |			dispatcher handlers				at: token				ifAbsent: [ ^ aBlock value ] ]!
+handlerAt: aString ifAbsent: aBlock	aString isNil		ifTrue: [ ^ aBlock value ].	^ self handlers		at: aString		ifAbsent: aBlock!
 
-handlerAt: aString with: aBlock	| dispatcher |	dispatcher := self.	GRPlatform subStringsIn: aString splitBy: $/ do: [ :token |		dispatcher := aBlock value: dispatcher value: token ].	^ dispatcher!
+handlerAtAll: aCollectionOfStrings	^ aCollectionOfStrings inject: self into: [ :handler :element |		handler handlerAt: element ]!
 
 handlers	^ handlers!
 
@@ -54,7 +54,7 @@ urlFor: aRequestHandler	^ self url		addToPath: (self nameOfHandler: aRequestHa
 !WADispatcher categoriesFor: #handleFiltered:named:!handling!public! !
 !WADispatcher categoriesFor: #handlerAt:!accessing!public! !
 !WADispatcher categoriesFor: #handlerAt:ifAbsent:!accessing!public! !
-!WADispatcher categoriesFor: #handlerAt:with:!accessing!public! !
+!WADispatcher categoriesFor: #handlerAtAll:!accessing!public! !
 !WADispatcher categoriesFor: #handlers!accessing!public! !
 !WADispatcher categoriesFor: #initialize!initialization!public! !
 !WADispatcher categoriesFor: #isDispatcher!public!testing! !

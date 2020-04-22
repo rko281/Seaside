@@ -3,7 +3,6 @@ package := Package name: 'Seaside-REST-Examples'.
 package paxVersion: 1;
 	basicComment: ''.
 
-package basicScriptAt: #postinstall put: 'WARestCounter register.'.
 
 package classNames
 	add: #WAOneTwoThree;

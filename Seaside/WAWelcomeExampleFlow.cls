@@ -22,8 +22,7 @@ renderGoCodeOn: html	html preformatted class: #codeSample; with: [		html span 
 
 renderInformCheeseCodeOn: html	html preformatted class: #codeSample; with: [		html span class: #patternUnary; with: 'informCheese'. html break.		html span class: #self; with: '    self'. html text: ' inform: '. html span class: #string; with: '''Your favorite is '''. html text:', '. html span class: #instanceVar; with: 'cheese'. html text: ','. html span class: #string; with: '''.'''. html break ]!
 
-taskExample
-	^ taskExample ifNil: [ taskExample := WAFlowConvenienceFunctionalTest new ]!
+taskExample	^ taskExample ifNil: [ taskExample := WAFlowConvenienceFunctionalTest new ]!
 
 title	^ 'Task'! !
 !WAWelcomeExampleFlow categoriesFor: #children!hooks!public! !
@@ -32,6 +31,6 @@ title	^ 'Task'! !
 !WAWelcomeExampleFlow categoriesFor: #renderExampleOn:!public!rendering! !
 !WAWelcomeExampleFlow categoriesFor: #renderGoCodeOn:!public!rendering! !
 !WAWelcomeExampleFlow categoriesFor: #renderInformCheeseCodeOn:!public!rendering! !
-!WAWelcomeExampleFlow categoriesFor: #taskExample!public! !
+!WAWelcomeExampleFlow categoriesFor: #taskExample!accessing!public! !
 !WAWelcomeExampleFlow categoriesFor: #title!private! !
 

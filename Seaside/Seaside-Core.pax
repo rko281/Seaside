@@ -6,6 +6,7 @@ package paxVersion: 1;
 
 package classNames
 	add: #WAAbstractFileLibrary;
+	add: #WAAbstractProtectionFilter;
 	add: #WAAccept;
 	add: #WAAcceptCharset;
 	add: #WAAcceptEncoding;
@@ -117,12 +118,12 @@ package classNames
 	add: #WAPainterVisitor;
 	add: #WAPasswordAttribute;
 	add: #WAPathConsumer;
-	add: #WAProtectionFilter;
 	add: #WAQualifiedValue;
 	add: #WAQueryFieldHandlerTrackingStrategy;
 	add: #WAReducedConflictCounter;
 	add: #WARegistry;
 	add: #WARegistryConfiguration;
+	add: #WARemoteAddressProtectionFilter;
 	add: #WARenderContext;
 	add: #WARenderer;
 	add: #WARenderNotification;
@@ -144,6 +145,7 @@ package classNames
 	add: #WAScriptGenerator;
 	add: #WAServerAdaptor;
 	add: #WAServerManager;
+	add: #WASessionCookieProtectionFilter;
 	add: #WASharedConfiguration;
 	add: #WASnapshot;
 	add: #WAStreamedResponse;
@@ -968,6 +970,11 @@ WARequestCookie subclass: #WACookie
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+WARequestFilter subclass: #WAAbstractProtectionFilter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
 WARequestFilter subclass: #WAAuthenticationFilter
 	instanceVariableNames: 'authenticator realm'
 	classVariableNames: ''
@@ -978,11 +985,6 @@ WARequestFilter subclass: #WAConfiguredRequestFilter
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WARequestFilter subclass: #WAProtectionFilter
-	instanceVariableNames: 'remoteAddress'
-	classVariableNames: ''
-	poolDictionaries: ''
-	classInstanceVariableNames: ''!
 WARequestFilter subclass: #WATrailingSlashFilter
 	instanceVariableNames: ''
 	classVariableNames: ''
@@ -990,6 +992,16 @@ WARequestFilter subclass: #WATrailingSlashFilter
 	classInstanceVariableNames: ''!
 WARequestFilter subclass: #WATransactionFilter
 	instanceVariableNames: 'closed'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAAbstractProtectionFilter subclass: #WARemoteAddressProtectionFilter
+	instanceVariableNames: 'remoteAddress'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAAbstractProtectionFilter subclass: #WASessionCookieProtectionFilter
+	instanceVariableNames: 'browserSessionID'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
@@ -1128,7 +1140,7 @@ newReducedConflictCounter	"GemStone/S should answer an RcCounter here"	^ WARed
 
 newTransientValueHolder	"GemStone/S should answer a TransientValue here"	^ WAValueHolder new!
 
-seasideVersion	"Answer the Seaside version"	^ (GRVersion major: 3 minor: 3 revision: 0)		yourself!
+seasideVersion	"Answer the Seaside version"	^ (GRVersion major: 3 minor: 4 revision: 0)		yourself!
 
 sourceFileEncoding	"Answer the encoding used for source files."	^ 'ISO-8859-1'	!
 

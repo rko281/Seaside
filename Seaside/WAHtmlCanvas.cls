@@ -216,6 +216,10 @@ listItem	"Defines a list item."	^ self tag: 'li'!
 
 listItem: aBlock	self listItem with: aBlock!
 
+main	"The HTML <main> element represents the dominant content of the <body> of a document. The main content area consists of content that is directly related to or expands upon the central topic of a document, or the central functionality of an application."	^ self tag: 'main'!
+
+main: aBlock	self main with: aBlock!
+
 map	"Defines an anchor to be used around an image."	^ self brush: WAImageMapTag new!
 
 map: aBlock	self map with: aBlock!
@@ -554,6 +558,8 @@ withUrls: aString 	| stream url |	stream := aString readStream.	[ stream atEn
 !WAHtmlCanvas categoriesFor: #lineBreakOpportunity:!public!tags! !
 !WAHtmlCanvas categoriesFor: #listItem!public!tags/lists! !
 !WAHtmlCanvas categoriesFor: #listItem:!public!tags/lists! !
+!WAHtmlCanvas categoriesFor: #main!public!tags! !
+!WAHtmlCanvas categoriesFor: #main:!public!tags! !
 !WAHtmlCanvas categoriesFor: #map!public!tags/images! !
 !WAHtmlCanvas categoriesFor: #map:!public!tags/images! !
 !WAHtmlCanvas categoriesFor: #marked!public!tags! !

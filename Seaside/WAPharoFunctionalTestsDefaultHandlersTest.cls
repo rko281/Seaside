@@ -12,7 +12,7 @@ WAPharoFunctionalTestsDefaultHandlersTest comment: ''!
 
 testAllTests
 	| app |
-	app := self defaultDispatcher handlerAt: 'tests/functional'.
+	app := self defaultDispatcher handlerAtAll: #('tests' 'functional').
 	self assert: app class == WAApplication.
 	self assert: app isApplication.
 	self deny: app isDispatcher.

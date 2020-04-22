@@ -68,6 +68,7 @@ package classNames
 	add: #WATrailTestComponent;
 	add: #WATreeFunctionalTest;
 	add: #WAUploadFunctionalTest;
+	add: #WAUrlDecodingFunctionalTest;
 	add: #WAUrlEncodingFunctionalTest;
 	add: #WAValidationDecorationFunctionalTest;
 	add: #WAValidationTestComponent;
@@ -389,6 +390,11 @@ WAFunctionalTest subclass: #WATreeFunctionalTest
 	classInstanceVariableNames: ''!
 WAFunctionalTest subclass: #WAUploadFunctionalTest
 	instanceVariableNames: 'file'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAFunctionalTest subclass: #WAUrlDecodingFunctionalTest
+	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!

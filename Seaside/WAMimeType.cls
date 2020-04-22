@@ -20,7 +20,7 @@ greaseString	| stringSize string stream |	stringSize := main size + 1 + sub si
 
 hash	^ self main hash bitXor: self sub hash!
 
-isBinary	"answers whether the contents of a document of the receiving mime type are binary"	self main = 'text' ifTrue: [ ^ false ].	self main = 'application'		ifTrue: [			"application/json is text"			self sub = 'json' ifTrue: [ ^ false ] ]		ifFalse: [ ^ true ].	GRPlatform subStringsIn: self sub splitBy: $+ do: [ :each |		"application/x-javascript and application/xml are text"		(#('x-javascript' 'xml') includes: each)			ifTrue: [ ^ false ] ].	^ true!
+isBinary	"answers whether the contents of a document of the receiving mime type are binary"	self main = 'text' ifTrue: [ ^ false ].	self main = 'application'		ifTrue: [			"application/json is text"			self sub = 'json' ifTrue: [ ^ false ] ].	GRPlatform subStringsIn: self sub splitBy: $+ do: [ :each |		"application/javascript and application/xml are text"		(#('javascript' 'xml') includes: each)			ifTrue: [ ^ false ] ].	^ true!
 
 isNonStandard	"tests if the receiver is a non-standard mime type that is not registered with IANA"	^ (self main beginsWithSubCollection: 'x-')		or: [ (self main beginsWithSubCollection: 'X-')		or: [ (self sub beginsWithSubCollection: 'x-')		or: [ self sub beginsWithSubCollection: 'X-' ] ] ]!
 

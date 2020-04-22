@@ -10,7 +10,7 @@ JSAjaxCallback comment: ''!
 !JSAjaxCallback categoriesForClass!Javascript-Core-Base! !
 !JSAjaxCallback methodsFor!
 
-block: aZeroOrOneArgBlock	block := aZeroOrOneArgBlock isNil		ifFalse: [ aZeroOrOneArgBlock fixCallbackTemps ]!
+block: aZeroOrOneArgBlock	block := aZeroOrOneArgBlock!
 
 evaluateWithArgument: anObject	block isNil		ifFalse: [ block valueWithPossibleArguments: (Array with: anObject) ].	self requestContext		respond: [ :response | response doNotCache ]!
 

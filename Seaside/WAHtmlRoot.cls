@@ -22,12 +22,6 @@ base	^ self add: (WABaseElement root: self)!
 
 beHtml5	self docType: '<!!DOCTYPE html>'!
 
-beXhtml10Strict	self greaseDeprecatedApi: 'WACookie>>#beXhtml10Strict' details: 'Use #beHtml5 instead.'.	self meta contentScriptType: WAMimeType textJavascript.	self addXmlNamespaces.	self docType: '<!!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">'!
-
-beXhtml10Transitional	self greaseDeprecatedApi: 'WACookie>>#beXhtml10Transitional' details: 'Use #beHtml5 instead.'.	self meta contentScriptType: WAMimeType textJavascript.	self addXmlNamespaces.	self docType: '<!!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'!
-
-beXhtml11	self greaseDeprecatedApi: 'WACookie>>#beXhtml11' details: 'Use #beHtml5 instead.'.	self meta contentScriptType: WAMimeType textJavascript.	self addXmlNamespaces.	self docType: '<!!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">'!
-
 bodyAttributes	^ bodyAttrs ifNil: [ bodyAttrs := WAHtmlAttributes new ]!
 
 closeOn: aDocument	aDocument scriptGenerator		close: self on: aDocument.	self writeFootOn: aDocument!
@@ -89,9 +83,6 @@ writeStylesOn: aDocument	styles ifNil: [ ^ self ].	styles do: [ :each |		aDoc
 !WAHtmlRoot categoriesFor: #addXmlNamespaces!private! !
 !WAHtmlRoot categoriesFor: #base!elements!public! !
 !WAHtmlRoot categoriesFor: #beHtml5!doctype!public! !
-!WAHtmlRoot categoriesFor: #beXhtml10Strict!doctype!public! !
-!WAHtmlRoot categoriesFor: #beXhtml10Transitional!doctype!public! !
-!WAHtmlRoot categoriesFor: #beXhtml11!doctype!public! !
 !WAHtmlRoot categoriesFor: #bodyAttributes!accessing/attributes!public! !
 !WAHtmlRoot categoriesFor: #closeOn:!public!writing! !
 !WAHtmlRoot categoriesFor: #contentBase:!convenience!public! !

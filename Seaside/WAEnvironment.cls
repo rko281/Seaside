@@ -10,12 +10,7 @@ WAEnvironment comment: 'WAEnvironment class	instanceVariableNames: ''configured
 !WAEnvironment categoriesForClass!Seaside-Environment! !
 !WAEnvironment class methodsFor!
 
-configureApplicationDefaults
-	(configuredApplicationDefaults ifNil: [ false ]) ifFalse: [
-		WAAdmin applicationDefaults
-			at: #responseGenerator putClass: WAHtmlResponseGenerator.
-		configuredApplicationDefaults := true ]
-	!
+configureApplicationDefaults	(configuredApplicationDefaults ifNil: [ false ]) ifFalse: [		WAAdmin applicationDefaults			at: #responseGenerator putClass: WAHtmlResponseGenerator.		configuredApplicationDefaults := true ]	!
 
 initialize	self configureApplicationDefaults.	self registerDefaultRequestHandlers.	self registerDefaultComponents!
 

@@ -16,9 +16,11 @@ children	^ Array with: child!
 
 initialize	super initialize.	child := WAComponent new!
 
-protector	| filter |	"We could use #filterWith:during: but that requires Flow."	filter := WAProtectionFilter new.	self session addFilter: filter.	child inform: 'Open this page on a different computer by copying the complete URL to a machine with a different IP address. Seaside should reply with a forbidden message. Closing this dialog should remove the filter.' onAnswer: [ self session removeFilter: filter ]!
+protectorByBrowserSessionCookie	| filter |	"We could use #filterWith:during: but that requires Flow."	filter := WASessionCookieProtectionFilter new.	self session addFilter: filter.	child inform: 'Open this page in a different browser by copying the complete URL. Seaside should reply with a forbidden message. Closing this dialog should remove the filter.' onAnswer: [ self session removeFilter: filter ]!
 
-renderActionsOn: html	html paragraph: [		html anchor			callback: [ self authentication ];			with: 'Basic Authentication'.		html text: ' (admin/seaside)'.		html break.		html anchor			callback: [ self protector ];			with: 'Session Protector' ].	html horizontalRule.	html paragraph: self children!
+protectorByRemoteAddress	| filter |	"We could use #filterWith:during: but that requires Flow."	filter := WARemoteAddressProtectionFilter new.	self session addFilter: filter.	child inform: 'Open this page on a different computer by copying the complete URL to a machine with a different IP address. Seaside should reply with a forbidden message. Closing this dialog should remove the filter.' onAnswer: [ self session removeFilter: filter ]!
+
+renderActionsOn: html	html paragraph: [		html anchor			callback: [ self authentication ];			with: 'Basic Authentication'.		html text: ' (admin/seaside)'.		html break.		html anchor			callback: [ self protectorByRemoteAddress ];			with: 'Session Protector by remote address'.		html break.		html anchor			callback: [ self protectorByBrowserSessionCookie ];			with: 'Session Protector by session cookie' ].	html horizontalRule.	html paragraph: self children!
 
 renderContentOn: html	self renderFiltersOn: html.	self renderActionsOn: html!
 
@@ -28,7 +30,8 @@ verifyPassword: aPasswordString forUser: aUserString	^ aUserString = 'admin' an
 !WAFilterFunctionalTest categoriesFor: #authentication!actions!public! !
 !WAFilterFunctionalTest categoriesFor: #children!hooks!public! !
 !WAFilterFunctionalTest categoriesFor: #initialize!initialization!public! !
-!WAFilterFunctionalTest categoriesFor: #protector!actions!public! !
+!WAFilterFunctionalTest categoriesFor: #protectorByBrowserSessionCookie!actions!public! !
+!WAFilterFunctionalTest categoriesFor: #protectorByRemoteAddress!actions!public! !
 !WAFilterFunctionalTest categoriesFor: #renderActionsOn:!public!rendering! !
 !WAFilterFunctionalTest categoriesFor: #renderContentOn:!public!rendering! !
 !WAFilterFunctionalTest categoriesFor: #renderFiltersOn:!public!rendering! !

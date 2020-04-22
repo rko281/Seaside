@@ -10,10 +10,7 @@ WAIPSessionTrackingStrategy comment: 'I track sessions using the remote address 
 !WAIPSessionTrackingStrategy categoriesForClass!Seaside-Session! !
 !WAIPSessionTrackingStrategy methodsFor!
 
-remoteAddressFromRequest: aRequest	^ aRequest			headerAt: 'x-forwarded-for'			ifAbsent: [				aRequest					headerAt: 'forwarded-for'					ifAbsent: [ aRequest remoteAddress ] ]!
-
-sessionIdFromContext: aRequestContext	^ self remoteAddressFromRequest: aRequestContext request! !
-!WAIPSessionTrackingStrategy categoriesFor: #remoteAddressFromRequest:!private! !
+sessionIdFromContext: aRequestContext	^ aRequestContext request forwardedFor ifNil:[ aRequestContext request remoteAddress ]! !
 !WAIPSessionTrackingStrategy categoriesFor: #sessionIdFromContext:!private! !
 
 !WAIPSessionTrackingStrategy class methodsFor!

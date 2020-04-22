@@ -10,7 +10,7 @@ WAActionCallback comment: ''!
 !WAActionCallback categoriesForClass!Seaside-Core-Callbacks! !
 !WAActionCallback methodsFor!
 
-block: aZeroOrOneArgBlock	block := aZeroOrOneArgBlock fixCallbackTemps!
+block: aZeroOrOneArgBlock	block := aZeroOrOneArgBlock!
 
 evaluateWithArgument: anObject	block valueWithPossibleArguments: (Array with: anObject).	self signalRenderNotification!
 

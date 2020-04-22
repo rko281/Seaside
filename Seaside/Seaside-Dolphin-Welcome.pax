@@ -1,8 +1,8 @@
 ﻿| package |
 package := Package name: 'Seaside-Dolphin-Welcome'.
 package paxVersion: 1;
-	basicComment: 'Seaside 3.3 for Dolphin Smalltalk.
-Core packages ported from github.com/SeasideSt 24th May 2019
+	basicComment: 'Seaside 3.4 for Dolphin Smalltalk.
+Core packages ported from github.com/SeasideSt 21st April 2020
 Dolphin Seaside and Grease packages adapted from www.infoil.com.ar/seaside/ with thanks and acknowledgement.
 
 "Launch the Welcome server"

@@ -34,7 +34,7 @@ testIsBinary	self deny: (WAFileLibrary isBinary: 'scipt.js').	self deny: (WAFi
 
 testMainJs	| handler response |	handler := WAFileHandler new.	self requestContextWithUrl: '/i/dont/care/main.js'.	self requestContext consumer next; next; next.	response := self responseAfter: [ handler handle: self requestContext ].	self assert: response status = 404!
 
-testMimeType	| library |	library := WATestingFiles default.	self assert: (library mimetypeForFile: 'main.js') = 'application/x-javascript' seasideMimeType.	self assert: (library mimetypeForFile: 'style2.css') = WAMimeType textCss.	self assert: (library mimetypeForFile: 'image.jpg') = WAMimeType imageJpeg.	self assert: (library mimetypeForFile: 'index') = WAMimeType applicationOctetStream!
+testMimeType	| library |	library := WATestingFiles default.	self assert: (library mimetypeForFile: 'main.js') = 'application/javascript' seasideMimeType.	self assert: (library mimetypeForFile: 'style2.css') = WAMimeType textCss.	self assert: (library mimetypeForFile: 'image.jpg') = WAMimeType imageJpeg.	self assert: (library mimetypeForFile: 'index') = WAMimeType applicationOctetStream!
 
 testName	"Issue 620: 	WAFileLibrary>>name answers a Symbol, but used in places where String should be used	http://code.google.com/p/seaside/issues/detail?id=620		Issue 186: 	WAFileLibrary>>deployFiles fail if folder already exists	http://code.google.com/p/glassdb/issues/detail?id=186		Avoid having a Symbol because otherwise deploying the files on GemStone fails because equality checks with existing files always anser false."	| library |	library := WATestingFiles default.	self assert: library name = 'WATestingFiles'.	self assert: library name isString.	self deny: library name isSymbol!
 

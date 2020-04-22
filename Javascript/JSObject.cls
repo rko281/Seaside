@@ -90,9 +90,7 @@ setTimeout: aDuration 	"Evaluates the receiver after aDuration."		self addDec
 
 then: anObject	"Evaluates anObject if the receiver treated as a boolean evaluates to true."	self then: anObject else: nil!
 
-then: anObject else: anotherObject 	"Evaluates anObject if the receiver treated as a boolean evaluates to true, otherwise evaluate anotherObject."		self addDecoration: (JSIfThenElse new		trueStatement: anObject;		falseStatement: anotherObject)!
-
-timeout: aDuration 	"Evaluates the receiver after aDuration."	self greaseDeprecatedApi: 'JSObject>>#timeout:' details: 'Use #setTimeout: instead.'. 	self setTimeout: aDuration! !
+then: anObject else: anotherObject 	"Evaluates anObject if the receiver treated as a boolean evaluates to true, otherwise evaluate anotherObject."		self addDecoration: (JSIfThenElse new		trueStatement: anObject;		falseStatement: anotherObject)! !
 !JSObject categoriesFor: #&!decorations!public! !
 !JSObject categoriesFor: #,!convenience!public! !
 !JSObject categoriesFor: #|!decorations!public! !
@@ -134,7 +132,6 @@ timeout: aDuration 	"Evaluates the receiver after aDuration."	self greaseDepre
 !JSObject categoriesFor: #setTimeout:!decorations!public! !
 !JSObject categoriesFor: #then:!decorations!public! !
 !JSObject categoriesFor: #then:else:!decorations!public! !
-!JSObject categoriesFor: #timeout:!decorations!public! !
 
 !JSObject class methodsFor!
 

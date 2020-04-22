@@ -24,7 +24,7 @@ routeForContext: aRequestContext ifAbsent: aNiladicBlock	^ (WAByMethodRoutes ro
 
 routes	"Answer a collection of routes for the receiver."	^ self shouldCacheRoutes		ifTrue: [  routes ifNil: [ routes := self createRoutes ] ]		ifFalse: [			"Issue 785			even assign when they should not be cached to better support recaching"			routes := self createRoutes ]!
 
-shouldCacheRoutes	"Answer a boolean if the routes should be cached by the receiver."	^ false!
+shouldCacheRoutes	"Answer a boolean if the routes should be cached by the receiver.	Subclasses are supposed to override this method in such a way that routes are cached in production. This way the overhead of recreating the routes on every request is avoided. Recreating the routes may involve decompilation or parsing to get the method parameter names which may not be thread-safe.	For development recreating the routes on every request makes for a better development experience as changes are immediately visible."	^ false!
 
 shouldConsumePath	"Answer whether the request path should be consumed if a route is found."	^ true! !
 !WARestfulHandler categoriesFor: #createRoutes!private! !

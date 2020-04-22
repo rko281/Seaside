@@ -6,6 +6,7 @@ package paxVersion: 1;
 
 package classNames
 	add: #WAAbstractCanvasBrushTest;
+	add: #WAAnchorTagTest;
 	add: #WABuilderCanvasTest;
 	add: #WACanvasBrushTest;
 	add: #WADefaultScriptGeneratorTest;
@@ -80,6 +81,11 @@ WAContextTest subclass: #WAScriptGeneratorTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 WAContextTest subclass: #WAXmlCanvasTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+WAAbstractCanvasBrushTest subclass: #WAAnchorTagTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''

@@ -52,6 +52,8 @@ testCopyWithPathParameterValue	| copy |	url addToPath: 'zork'.	copy := url co
 
 testDecodedWith	"http://ùs:er:pa:ß@localhost:8080/foo/äbc/dêf?õ=stîgetc&ô#tårget"	| pathArray expectedPathArray |	url := (WAUrl absolute: 'http://%c3%b9s%3aer:pa%3A%c3%9f@localhost:8080/foo/%C3%A4bc/d%c3%aaf?%c3%b5=st%c3%aegetc&%c3%b4#t%c3%a5rget') decodedWith: (GRCodec forEncoding: 'utf-8').	self assert: url scheme = 'http'.	self assert: url userinfo = (self asString: #(249 115 58 101 114 58 112 97 58 223 )).	self assert: url user = (self asString: #(249 115 58 101 114 )).	self assert: url password = (self asString: #(112 97 58 223 )).	self assert: url host = 'localhost'.	self assert: url port = 8080.	pathArray := url path asArray.	self assert: pathArray size = 3.	"must not use Collection >> #= due to Enterprise Smalltalk (tm)"	expectedPathArray := Array 		with: 'foo'		with: (self asString: #(228 98 99 ))		with: (self asString: #(100 234 102 )).	expectedPathArray keysAndValuesDo: [ :index :each | self assert: (pathArray at: index) = each ].	self assert: url queryFields size = 2.	self assert: (url queryFields at: (self asString: #(245 ))) = (self asString: #(					115					116					238					103					101					116					99				)).	self assert: (url queryFields includesKey: (self asString: #(244 ))).	self assert: (url queryFields at: (self asString: #(244 ))) isNil.	""	self assert: url fragment = (self asString: #(116 229 114 103 101 116 ))!
 
+testDecodePercent	"regression test for https://github.com/SeasideSt/Seaside/issues/1157"	| element |	url := WAUrl absolute: 'http://www.seaside.st/%21%2a%7A'.	element := url path first.	self assert: element equals: (String											with: (Character codePoint: 16r21)											with: (Character codePoint: 16r2A)											with: (Character codePoint: 16r7A))!
+
 testEqual	url host: 'seaside.st'; addField: 'foo' value: 'bar'. 	self assert: url = url.	self deny: url = WAUrl new.	self deny: url = url printString.	self deny: url = (url withoutQuery).	self deny: url = (url withField: 'zork').	self deny: url = (url withField: 'zork' value: 'zonk')!
 
 testFragment	url fragment: 'id'.	self assert: url fragment = 'id'.	self assert: url greaseString = '/#id'!
@@ -60,7 +62,7 @@ testHash	url host: 'seaside.st'.	self assert: url hash = url hash.	self asser
 
 testHost	url host: 'seaside.st'.	self assert: url host = 'seaside.st'.	self assert: url greaseString = 'http://seaside.st/'!
 
-testInvalidSyntax	"Regression test for:	http://code.google.com/p/seaside/issues/detail?id=762		ANSI #next	The result is undefined if there the receiver has no future sequence values."	self 		should: [ WAUrl decodePercent: 'abc%' ]		raise: WAInvalidUrlSyntaxError!
+testInvalidSyntax	"Regression test for:	http://code.google.com/p/seaside/issues/detail?id=762		ANSI #next	The result is undefined if there the receiver has no future sequence values."	self 		should: [ WAUrl decodePercent: 'abc%' ]		raise: WAInvalidUrlSyntaxError.			"0xZZ is invalid hex	https://github.com/SeasideSt/Seaside/issues/1157"	self 		should: [ WAUrl decodePercent: '%ZZ' ]		raise: WAInvalidUrlSyntaxError!
 
 testIsSsl	url := WAUrl absolute: 'https://www.seaside.st/'.	self assert: url isSsl.	url := WAUrl absolute: 'http://www.seaside.st/'.	self deny: url isSsl.	url := WAUrl absolute: 'ftps://www.seaside.st/'.	self assert: url isSsl.	url := WAUrl absolute: 'ftp://www.seaside.st/'.	self deny: url isSsl.	self deny: WAUrl new isSsl!
 
@@ -103,6 +105,10 @@ testQueryEncoding	self		assert: (url withField: '/' value: ' ')			printString
 testQueryFields	url queryFields 		at: '1'		put: nil.	self assert: url greaseString = '/?1'.	url queryFields 		at: '2'		put: 'foo'.	self assert: url greaseString = '/?1&2=foo'.	url queryFields 		at: '3'		put: 123.	self assert: url greaseString = '/?1&2=foo&3=123'.	url queryFields 		at: '4'		put: 'foo bar&zork'.	self assert: url greaseString = '/?1&2=foo&3=123&4=foo%20bar%26zork'.	url queryFields 		at: '1'		add: 'dupe'.	self assert: url greaseString = '/?1&2=foo&3=123&4=foo%20bar%26zork&1=dupe'!
 
 testQueryString	self assert: url queryString = ''.	url addField: 'foo'.	self assert: url queryString = 'foo'.	url addField: 'foo' value: 'bar'.	self assert: url queryString = 'foo&foo=bar'.	url addField: 'foo#' value: 'bar#'.	self assert: url queryString = 'foo&foo=bar&foo%23=bar%23'!
+
+testRawAddAllToPath	url rawAddAllToPath: #('files/WAStandardFiles' 'seaside.jpg' ).	self assert: url path size = 2.	self assert: url path first = 'files/WAStandardFiles'.	self assert: url path last = 'seaside.jpg'.	self assert: url greaseString = '/files%2FWAStandardFiles/seaside.jpg'!
+
+testRawAddToPath	url rawAddToPath: 'a/b'.	self assert: url greaseString = '/a%2Fb'!
 
 testRelativeTo	| first second relativePath |	first := WAUrl absolute: 'http://www.seaside.st/news'.	second := WAUrl absolute: 'http://www.seaside.st/news/2008/April'.	relativePath := first relativeTo: second.	"we can not use #= here because of the Smalltalk that makes the easy parts more fucking tedious than Java"	self assert: relativePath size = 2.	self assert: relativePath first = '2008'.	self assert: relativePath second = 'April'!
 
@@ -150,6 +156,7 @@ testWithoutQuery	| copy |	url addField: 'foo' value: 'bar'.	copy := url witho
 !WAUrlTest categoriesFor: #testCopyWithPathParameter!public!tests/copy! !
 !WAUrlTest categoriesFor: #testCopyWithPathParameterValue!public!tests/copy! !
 !WAUrlTest categoriesFor: #testDecodedWith!public!tests/encoding! !
+!WAUrlTest categoriesFor: #testDecodePercent!public!testing/parsing! !
 !WAUrlTest categoriesFor: #testEqual!public!tests/comparing! !
 !WAUrlTest categoriesFor: #testFragment!public!tests! !
 !WAUrlTest categoriesFor: #testHash!public!tests/comparing! !
@@ -176,6 +183,8 @@ testWithoutQuery	| copy |	url addField: 'foo' value: 'bar'.	copy := url witho
 !WAUrlTest categoriesFor: #testQueryEncoding!public!tests/encoding! !
 !WAUrlTest categoriesFor: #testQueryFields!public!tests! !
 !WAUrlTest categoriesFor: #testQueryString!public!tests/encoding! !
+!WAUrlTest categoriesFor: #testRawAddAllToPath!public!tests/adding! !
+!WAUrlTest categoriesFor: #testRawAddToPath!public!tests/adding! !
 !WAUrlTest categoriesFor: #testRelativeTo!public!tests/encoding! !
 !WAUrlTest categoriesFor: #testScheme!public!tests! !
 !WAUrlTest categoriesFor: #testSlash!public!tests! !

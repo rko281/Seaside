@@ -10,7 +10,7 @@ WAFlowFunctionalTest comment: ''!
 !WAFlowFunctionalTest categoriesForClass!Seaside-Tests-Flow-Functional! !
 !WAFlowFunctionalTest methodsFor!
 
-goAnchors		1 to: 5 do: [ :each | 		| component |		component := WAComponent new.		component addMessage: [ :html | 			html anchor				callback: [ component answer ];				with: each greaseString, ': ', self stackDepth greaseString ] fixCallbackTemps.		self call: component ]!
+goAnchors		1 to: 5 do: [ :each | 		| component |		component := WAComponent new.		component addMessage: [ :html | 			html anchor				callback: [ component answer ];				with: each greaseString, ': ', self stackDepth greaseString ].		self call: component ]!
 
 goButtons	1 to: 5 do: [ :each |		self inform: each greaseString, ': ', self stackDepth greaseString ]!
 

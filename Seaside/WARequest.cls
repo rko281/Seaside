@@ -44,6 +44,10 @@ destroy	body := method := uri := version := postFields := remoteAddress := head
 
 fields	^ WAMergedRequestFields on: (Array with: self queryFields with: self postFields)!
 
+forwarded	^ self headerAt: 'forwarded'!
+
+forwardedFor	"Returns the value of the first occurrence of the For directive in a forwarded header, if it exists. Returns nil otherwise."	| startOfFirstForDirective endOfFirstForDirective |	^ self forwarded ifNotNil:[ :forwarded | 		startOfFirstForDirective := forwarded indexOfSubCollection:'for=' startingAt: 1.		startOfFirstForDirective = 0 ifTrue:[ startOfFirstForDirective := forwarded indexOfSubCollection:'For=' startingAt: 1 ].		startOfFirstForDirective ~= 0			ifTrue:[ 				endOfFirstForDirective := (forwarded indexOfAnyOf: ';,' startingAt: startOfFirstForDirective) - 1.				endOfFirstForDirective = -1 ifTrue:[ endOfFirstForDirective := forwarded size ].				forwarded copyFrom: startOfFirstForDirective + 4 to: endOfFirstForDirective ]			ifFalse: [ nil ] ]!
+
 headerAt: aKey	^ self headerAt: aKey ifAbsent: [ nil ]!
 
 headerAt: aKey ifAbsent: aBlock	^ headers at: aKey ifAbsent: aBlock!
@@ -128,6 +132,8 @@ version: aVersion	version := aVersion! !
 !WARequest categoriesFor: #decodeAuthorization:!private! !
 !WARequest categoriesFor: #destroy!initialization!public! !
 !WARequest categoriesFor: #fields!accessing!public! !
+!WARequest categoriesFor: #forwarded!accessing/headers!public! !
+!WARequest categoriesFor: #forwardedFor!accessing!public! !
 !WARequest categoriesFor: #headerAt:!accessing!public! !
 !WARequest categoriesFor: #headerAt:ifAbsent:!accessing!public! !
 !WARequest categoriesFor: #headers!accessing!public! !

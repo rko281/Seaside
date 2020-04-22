@@ -26,7 +26,7 @@ renderSideBarJoinTheCommunityOn: html	html heading		level: 3; 		with: 'Join t
 
 renderSideBarOn: html	html space.	html form		action: 'http://www.google.com/search';		get;		with: [			html hiddenInput				value: 'site:seaside.st';				name: 'q'.			html textInput				name: 'q'.			html submitButton: 'Search'.			html text: ' the Seaside site' ].		self renderSideBarJoinTheCommunityOn: html.	self renderSideBarDivingInOn: html!
 
-title	^ 'Welcome to Seaside 3.3'!
+title	^ 'Welcome to Seaside 3.4'!
 
 updateRoot: anHtmlRoot	super updateRoot: anHtmlRoot.		anHtmlRoot title: self title.	anHtmlRoot link beShortcutIcon; url: WAToolFiles / #faviconIco! !
 !WAWelcome categoriesFor: #children!hooks!public! !

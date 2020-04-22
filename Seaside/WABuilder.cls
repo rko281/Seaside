@@ -32,7 +32,9 @@ initialize	super initialize.	self fullDocument: false!
 
 openDocument: aDocument context: aContext 	| documentRoot |	self fullDocument ifFalse: [ ^ self ].	documentRoot := self rootClass context: aContext.	self rootBlock value: documentRoot.	aDocument open: documentRoot!
 
-render: anObject	"Render anObject and return the contents of the resulting Document as a String.	anObject must understand #renderOn:. Commonly anObject will be a one-argument	block, which will be evaluated with the appropriate renderer."		^ String streamContents: [ :stream |		| context document renderer |		document := self documentClass on: stream codec: self codec.		document scriptGenerator: self scriptGeneratorClass new.		context := WARenderContext new.		context document: document.		context actionUrl: self actionUrl; resourceUrl: self resourceUrl.		renderer := self rendererClass context: context.				self openDocument: document context: context.		renderer render: anObject; flush.		self closeDocument: document ]!
+render: anObject	^ String streamContents: [ :stream |		self			render: anObject			on: stream ]!
+
+render: anObject on: aStream	"Render anObject and return the contents of the resulting Document as a String.	anObject must understand #renderOn:. Commonly anObject will be a one-argument	block, which will be evaluated with the appropriate renderer."	| context document renderer |	document := self documentClass on: aStream codec: self codec.	document scriptGenerator: self scriptGeneratorClass new.	context := WARenderContext new.	context document: document.	context actionUrl: self actionUrl; resourceUrl: self resourceUrl.	renderer := self rendererClass context: context.		self openDocument: document context: context.	renderer render: anObject; flush.	self closeDocument: document!
 
 rendererClass	^ rendererClass!
 
@@ -65,6 +67,7 @@ scriptGeneratorClass: aScriptGeneratorClass	scriptGeneratorClass := aScriptGene
 !WABuilder categoriesFor: #initialize!initialization!public! !
 !WABuilder categoriesFor: #openDocument:context:!private! !
 !WABuilder categoriesFor: #render:!public!rendering! !
+!WABuilder categoriesFor: #render:on:!public!rendering! !
 !WABuilder categoriesFor: #rendererClass!accessing!public! !
 !WABuilder categoriesFor: #rendererClass:!accessing!public! !
 !WABuilder categoriesFor: #resourceUrl!accessing!public! !

@@ -98,6 +98,7 @@ package classNames
 package methodNames
 	add: #WARequestContext -> #closeThisPopup;
 	add: #WARequestContext -> #closeThisPopupAndReloadOpener;
+	add: #WASessionCookieProtectionFilter -> #respondCookiesRequired:;
 	add: 'GRPackage class' -> #seasideCanvas;
 	yourself.
 
@@ -575,6 +576,25 @@ closeThisPopup	^ self respond: [ :resp |		resp 			contentType: WAMimeType tex
 closeThisPopupAndReloadOpener	^ self respond: [ :resp |		resp			contentType: WAMimeType textHtml;			nextPutAll: (WAHtmlCanvas builder				fullDocument: true;				rootBlock: [ :root | 					root title: 'Seaside'; beHtml5 ];				render: [ :html | html script: 'window.close();window.opener.location=window.opener.location;' ]) ]! !
 !WARequestContext categoriesFor: #closeThisPopup!*seaside/canvas!public! !
 !WARequestContext categoriesFor: #closeThisPopupAndReloadOpener!*seaside/canvas!public! !
+
+!WASessionCookieProtectionFilter methodsFor!
+
+respondCookiesRequired: aRequestContext
+	| dialog |
+	dialog := WAHtmlCanvas builder
+		fullDocument: true;
+		rootBlock: [ :root | 
+			root
+				beHtml5;
+				title: 'Cookies Required' ];
+		render: [ :html | self renderCookiesRequiredStatementOn: html ].
+	aRequestContext
+		respond: [ :response | 
+			response
+				forbidden;
+				contentType: WAMimeType textHtml;
+				nextPutAll: dialog ]! !
+!WASessionCookieProtectionFilter categoriesFor: #respondCookiesRequired:!processing!public! !
 
 "End of package definition"!
 

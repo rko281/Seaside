@@ -10,7 +10,7 @@ WAValueCallback comment: ''!
 !WAValueCallback categoriesForClass!Seaside-Core-Callbacks! !
 !WAValueCallback methodsFor!
 
-block: aOneArgBlock	block := aOneArgBlock fixCallbackTemps!
+block: aOneArgBlock	block := aOneArgBlock!
 
 evaluateWithArgument: anObject	anObject isNil		ifFalse: [ block valueWithPossibleArguments: (Array with: anObject) ]!
 

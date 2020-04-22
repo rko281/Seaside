@@ -12,13 +12,7 @@ WACanvasBrushTest comment: ''!
 
 createHandlers	^ Array with: (WARegistry new		 cache: WAPredictableCache new;		yourself)!
 
-testAnchor	self		assert: [ :html | html anchor ]		gives: '<a></a>'.	self		assert: [ :html | html anchor callback: [ ]; with: 'foo' ]		gives: '<a href="/?1">foo</a>'.	self		assert: [ :html |			html anchor callback: [ ]; with: 'foo'.			html anchor callback: [ ]; with: 'bar' ]		gives: '<a href="/?1">foo</a><a href="/?2">bar</a>'.	self		assert: [ :html |			html anchor				extraPath: 'zork';				callback: [ ];				with: 'foo' ]		gives: '<a href="/zork?1">foo</a>'.	self		assert: [ :html |			html anchor				extraParameters: 'zork';				callback: [ ];				with: 'foo' ]		gives: '<a href="/?zork&amp;1">foo</a>'!
-
-testAnchorAttributes	self		assert: [ :html | html anchor charset: 'utf-8' ]		gives: '<a charset="utf-8"></a>'.	self		assert: [ :html | html anchor name: 'foo' ]		gives: '<a name="foo"></a>'.	self		assert: [ :html | html anchor relationship: 'home' ]		gives: '<a rel="home"></a>'.	self		assert: [ :html | html anchor relationship: 'home'; relationship: 'parent' ]		gives: '<a rel="home parent"></a>'.	self		assert: [ :html | html anchor reverse: 'home' ]		gives: '<a rev="home"></a>'.	self		assert: [ :html | html anchor reverse: 'home'; reverse: 'parent' ]		gives: '<a rev="home parent"></a>'.	self		assert: [ :html | html anchor target: '_new' ]		gives: '<a target="_new"></a>'.	self		assert: [ :html | html anchor type: 'text/plain' ]		gives: '<a type="text/plain"></a>'!
-
-testAnchorCallback	self		assert: [ :html | html anchor callback: [ ] ]		gives: '<a href="/?1"></a>'.			self		assert: [ :html | 			self 				should: [ html anchor callback: [ :value | ] ]				raise: Error ]		gives: '<a></a>'!
-
-testAnchorUrl	| url string |	url := WAUrl new.	url		host: 'www.seaside.st';		addToPath: 'foo bar&zork<blah';		addField: '1' value: nil;		addField: '2' value: 123;		addField: '3' value: 'foo bar&zork'.	string := 'http://www.seaside.st/foo%20bar%26zork%3Cblah?1&amp;2=123&amp;3=foo%20bar%26zork'.	self		assert: [ :html | html anchor url: url; with: url ]		gives: '<a href="' , string , '">' , string , '</a>'!
+testArticle	self		assert: [ :html | html article ]		gives: '<article></article>'.	self		assert: [ :html | html article: 'test' ]		gives: '<article>test</article>'.	self		assert: [ :html | html article with:[ html text: 'test' ] ]		gives: '<article>test</article>'.!
 
 testBasicNesting	self assert: [ :html | html div ] gives: '<div></div>'.	self assert: [ :html | html div: 1 ] gives: '<div>1</div>'.	self assert: [ :html | html div: 'foo' ] gives: '<div>foo</div>'!
 
@@ -80,6 +74,8 @@ testLabelTag	self		assert: [ :html | html label: 'foo' ]		gives: '<label>foo<
 
 testLastId	self		assert: [ :html | self assert: html lastId isNil ]		gives: ''.	self		assert: [ :html | html nextId. html text: html lastId; text: html lastId ]		gives: 'id1id1'.	self		assert: [ :html | html anchor ensureId; callback: [ ]. self assert: html lastId = 'id1' ]		gives: '<a id="id1" href="/?2"></a>'!
 
+testMain	self		assert: [ :html | html main ]		gives: '<main></main>'.	self		assert: [ :html | html main: 'test' ]		gives: '<main>test</main>'.	self		assert: [ :html | html main with:[ html text: 'test' ] ]		gives: '<main>test</main>'.!
+
 testMapTag	self		assert: [ :html | html map callback: [ :point | ]; with: [ html image url: 'seaside.jpg' ] ]		gives: '<a href="/?1="><img alt="" ismap src="seaside.jpg"/></a>'!
 
 testMultiSelectTag	self		assert: [ :html | html multiSelect ]		gives: '<select multiple></select>'.	self		assert: [ :html | html multiSelect list: #(1 2) ]		gives: '<select multiple><option>1</option><option>2</option></select>'.	self		assert: [ :html | html multiSelect list: #(1 2); labels: [ :v | 2 * v ] ]		gives: '<select multiple><option>2</option><option>4</option></select>'.	self		assert: [ :html | html multiSelect list: #(1 2); enabled: [ :v | v even ] ]		gives: '<select multiple><option disabled>1</option><option>2</option></select>'.	self		assert: [ :html | html multiSelect list: #(3 4); callback: [ :v | ] ]		gives: '<select name="1" multiple><option value="1">3</option><option value="2">4</option></select><input name="2" type="hidden"/>'!
@@ -118,10 +114,7 @@ testTextInput	self		assert: [ :html | html textInput ]		gives: '<input type="
 
 testUnorderedListTag	self		assert: [ :html | html unorderedList ]		gives: '<ul></ul>'.	self		assert: [ :html | html unorderedList add: 1 ]		gives: '<ul><li>1</li></ul>'.	self		assert: [ :html | html unorderedList addAll: #( 1 2 ) ]		gives: '<ul><li>1</li><li>2</li></ul>'.	self		assert: [ :html | html unorderedList list: #( 1 2 ) ]		gives: '<ul><li>1</li><li>2</li></ul>'.	self		assert: [ :html | html unorderedList list: #( 1 2 ); with: [ html listItem: 3 ] ]		gives: '<ul><li>1</li><li>2</li><li>3</li></ul>'.	self		assert: [ :html | html unorderedList add: 2; labels: [ :e | 2 * e ] ]		gives: '<ul><li>4</li></ul>'.	self		assert: [ :html | html unorderedList add: 2; labels: [ :e | 2 * e ]; with: [ html listItem: 5 ] ]		gives: '<ul><li>4</li><li>5</li></ul>'! !
 !WACanvasBrushTest categoriesFor: #createHandlers!configuration!public! !
-!WACanvasBrushTest categoriesFor: #testAnchor!public!tests/tags/anchors! !
-!WACanvasBrushTest categoriesFor: #testAnchorAttributes!public!tests/tags/anchors! !
-!WACanvasBrushTest categoriesFor: #testAnchorCallback!public!tests/tags/anchors! !
-!WACanvasBrushTest categoriesFor: #testAnchorUrl!public!tests/tags/anchors! !
+!WACanvasBrushTest categoriesFor: #testArticle!public!tests/tags! !
 !WACanvasBrushTest categoriesFor: #testBasicNesting!public!tests! !
 !WACanvasBrushTest categoriesFor: #testBlock!public!tests/tags! !
 !WACanvasBrushTest categoriesFor: #testBreakTag!public!tests/tags! !
@@ -152,6 +145,7 @@ testUnorderedListTag	self		assert: [ :html | html unorderedList ]		gives: '<u
 !WACanvasBrushTest categoriesFor: #testKeyboardAttributes!public!tests/attributes! !
 !WACanvasBrushTest categoriesFor: #testLabelTag!public!tests/tags! !
 !WACanvasBrushTest categoriesFor: #testLastId!public!tests! !
+!WACanvasBrushTest categoriesFor: #testMain!public!tests/tags! !
 !WACanvasBrushTest categoriesFor: #testMapTag!public!tests/tags/anchors! !
 !WACanvasBrushTest categoriesFor: #testMultiSelectTag!public!tests/tags/forms! !
 !WACanvasBrushTest categoriesFor: #testNextId!public!tests! !

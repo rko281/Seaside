@@ -10,7 +10,7 @@ WAListTag comment: 'Abstract base class for ordered and unordered list tags.Or
 !WAListTag categoriesForClass!Seaside-Canvas-Tags! !
 !WAListTag methodsFor!
 
-callback: aBlock	callbackBlock := aBlock fixCallbackTemps!
+callback: aBlock	callbackBlock := aBlock!
 
 hasCallback	^ callbackBlock notNil!
 

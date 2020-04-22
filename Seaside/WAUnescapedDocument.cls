@@ -6,7 +6,7 @@ WAXmlDocument subclass: #WAUnescapedDocument
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 WAUnescapedDocument guid: (GUID fromString: '{87a38824-eeb4-4ff7-b42f-8b95b2f645aa}')!
-WAUnescapedDocument comment: 'A WAUnescapedDocument is does not do any escaping.'!
+WAUnescapedDocument comment: 'A WAUnescapedDocument does not do any escaping.'!
 !WAUnescapedDocument categoriesForClass!Seaside-Core-Document! !
 !WAUnescapedDocument methodsFor!
 
