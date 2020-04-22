@@ -1,7 +1,7 @@
 # Seaside
-[Seaside 3.3](https://github.com/SeasideSt) for [Dolphin Smalltalk 7.1](https://github.com/dolphinsmalltalk/Dolphin)
+[Seaside 3.4](https://github.com/SeasideSt) for [Dolphin Smalltalk 7.1](https://github.com/dolphinsmalltalk/Dolphin)
 
-Core packages ported from [Seaside](https://github.com/SeasideSt/Seaside) 24th May 2019
+Core packages ported from [Seaside](https://github.com/SeasideSt/Seaside) 21st April 2020
 
 Dolphin Seaside and Grease packages adapted from [Infoil](http://www.infoil.com.ar/seaside)'s D6 versions with thanks and acknowledgement.
 
@@ -15,12 +15,9 @@ Dolphin HTTP Server and Seaside adaptor created by [Sebastian Calvo](https://git
 * Download and install [GitHub Package Manager](https://github.com/rko281/GitHub)
 * Evaluate:
 ```
-GitHubPackageManager
-    install: 'rko281/Seaside/Seaside/Seaside-Core';
-    install: 'rko281/Seaside/Seaside/Seaside-Dolphin-Core';
-    install: 'fxgallego/DolphinHttpServer/SeasideHttpServerAdaptor/Seaside Http Server Adaptor';
-    install: 'rko281/Seaside'.
+GitHubPackageManager beAuthenticated install: 'rko281/Seaside'.
 ```
+* Due to the number of packages and prerequisites, [authenticated GitHub requests](https://github.com/rko281/GitHub#security) are required 
 * All required packages and prerequisites will be downloaded and installed
 * Once installation is complete the Seaside Welcome server will be started
 
