@@ -18,9 +18,17 @@ frames
 	^ frames first: (self limit min: frames size)!
 
 initializeWithException: anException
-	| context |
+	| context processCopy copyContext |
 	super initializeWithException: anException.
 	context := anException raisingFrame.
+
+	"If the exception is being processed via a call we need to copy the stack to preserve it"
+	(Processor activeProcess topFrame sender sender method selector = #openUsingCall:) ifTrue: 
+		[processCopy := Processor activeProcess copy.
+		copyContext := processCopy topFrame.
+		[copyContext index = context index] whileFalse: [copyContext := copyContext sender].
+		context := copyContext].
+
 	frames := OrderedCollection new.
 	[ context isNil ] whileFalse: [
 		frames add: context.
