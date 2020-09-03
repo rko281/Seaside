@@ -15,9 +15,8 @@ Dolphin HTTP Server and Seaside adaptor created by [Sebastian Calvo](https://git
 * Download and install [GitHub Package Manager](https://github.com/rko281/GitHub)
 * Evaluate:
 ```
-GitHubPackageManager beAuthenticated install: 'rko281/Seaside'.
+GitHubPackageManager install: 'rko281/Seaside'.
 ```
-* Due to the number of packages and prerequisites, [authenticated GitHub requests](https://github.com/rko281/GitHub#security) are required 
 * All required packages and prerequisites will be downloaded and installed
 * Once installation is complete the Seaside Welcome server will be started
 
