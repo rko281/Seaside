@@ -5,10 +5,10 @@ package paxVersion: 1;
 
 package basicPackageVersion: '9'.
 
-
 package classNames
 	add: #SeasideIcons;
 	add: #WADolphinUrl;
+	add: #WebBrowser;
 	yourself.
 
 package methodNames
@@ -16,6 +16,7 @@ package methodNames
 	add: #Bag -> #restoreFromSnapshot:;
 	add: #Bag -> #snapshotCopy;
 	add: #BlockClosure -> #renderOn:;
+	add: #Character -> #asCharacter;
 	add: #Dictionary -> #restoreFromSnapshot:;
 	add: #Dictionary -> #snapshotCopy;
 	add: #LookupTable -> #snapshotCopy;
@@ -50,7 +51,8 @@ package setPrerequisites: #(
 	'..\..\Grease\Grease-Core'
 	'..\..\Grease\Grease-Dolphin-Core'
 	'..\..\Core\Object Arts\Dolphin\MVP\Icons\Internal Bitmaps and Icons'
-	'Seaside-Core').
+	'Seaside-Core'
+	'..\..\Core\Object Arts\Dolphin\ActiveX\Shell\Windows Shell').
 
 package setManualPrerequisites: #(
 	'Grease-Dolphin-Core').
@@ -64,14 +66,18 @@ Object subclass: #SeasideIcons
 	classVariableNames: 'Icons'
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAUrl subclass: #WADolphinUrl
+
+Object subclass: #WebBrowser
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-"Global Aliases"!
-
+WAUrl subclass: #WADolphinUrl
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
 
 "Loose Methods"!
 
@@ -83,7 +89,10 @@ restoreFromSnapshot: anArray
 	anArray keysAndValuesDo: [:eachKey :eachValue | self at: eachKey put: eachValue ]
 	
 ! !
-!Array categoriesFor: #restoreFromSnapshot:!public! !
+
+!Array categoriesForMethods!
+restoreFromSnapshot:!public! !
+!
 
 !Bag methodsFor!
 
@@ -92,8 +101,11 @@ restoreFromSnapshot: anObject
 
 snapshotCopy
 	^ self copy! !
-!Bag categoriesFor: #restoreFromSnapshot:!*seaside-squeak-platform!public! !
-!Bag categoriesFor: #snapshotCopy!*seaside-squeak-platform!public! !
+
+!Bag categoriesForMethods!
+restoreFromSnapshot:!*seaside-squeak-platform!public! !
+snapshotCopy!*seaside-squeak-platform!public! !
+!
 
 !BlockClosure methodsFor!
 
@@ -101,7 +113,19 @@ renderOn: aRenderer
 	self numArgs = 0
 		ifTrue: [ self value ]
 		ifFalse: [ self value: aRenderer ]! !
-!BlockClosure categoriesFor: #renderOn:!*seaside-pharo-core!public! !
+
+!BlockClosure categoriesForMethods!
+renderOn:!*seaside-pharo-core!public! !
+!
+
+!Character methodsFor!
+
+asCharacter
+	^self! !
+
+!Character categoriesForMethods!
+asCharacter!public! !
+!
 
 !Dictionary methodsFor!
 
@@ -116,14 +140,20 @@ snapshotCopy
 	copy := self copyEmpty.
 	self associationsDo: [:each | copy uncheckedAdd: each copy].
 	^copy! !
-!Dictionary categoriesFor: #restoreFromSnapshot:!public! !
-!Dictionary categoriesFor: #snapshotCopy!public! !
+
+!Dictionary categoriesForMethods!
+restoreFromSnapshot:!public! !
+snapshotCopy!public! !
+!
 
 !GRObject class methodsFor!
 
 icon
 	^SeasideIcons pharo! !
-!GRObject class categoriesFor: #icon!public! !
+
+!GRObject class categoriesForMethods!
+icon!public! !
+!
 
 !GRPackage class methodsFor!
 
@@ -134,20 +164,29 @@ seasideDolphinCore
 		addDependency: 'Grease-Dolphin-Core';
 		url: #seasideUrl;
 		yourself! !
-!GRPackage class categoriesFor: #seasideDolphinCore!*seaside-pharo-core!public! !
+
+!GRPackage class categoriesForMethods!
+seasideDolphinCore!*seaside-pharo-core!public! !
+!
 
 !LookupTable methodsFor!
 
 snapshotCopy
 
 	^self copy! !
-!LookupTable categoriesFor: #snapshotCopy!public! !
+
+!LookupTable categoriesForMethods!
+snapshotCopy!public! !
+!
 
 !MessageSend methodsFor!
 
 renderOn: html
 	self value: html! !
-!MessageSend categoriesFor: #renderOn:!*seaside-pharo-core!public! !
+
+!MessageSend categoriesForMethods!
+renderOn:!*seaside-pharo-core!public! !
+!
 
 !Object methodsFor!
 
@@ -156,8 +195,11 @@ restoreFromSnapshot: anObject
 
 snapshotCopy
 	^ self shallowCopy! !
-!Object categoriesFor: #restoreFromSnapshot:!*seaside-squeak-platform!public! !
-!Object categoriesFor: #snapshotCopy!*seaside-squeak-platform!public! !
+
+!Object categoriesForMethods!
+restoreFromSnapshot:!*seaside-squeak-platform!public! !
+snapshotCopy!*seaside-squeak-platform!public! !
+!
 
 !OrderedCollection methodsFor!
 
@@ -166,8 +208,11 @@ restoreFromSnapshot: anObject
 
 snapshotCopy
 	^ self copy! !
-!OrderedCollection categoriesFor: #restoreFromSnapshot:!*seaside-squeak-platform!public! !
-!OrderedCollection categoriesFor: #snapshotCopy!*seaside-squeak-platform!public! !
+
+!OrderedCollection categoriesForMethods!
+restoreFromSnapshot:!*seaside-squeak-platform!public! !
+snapshotCopy!*seaside-squeak-platform!public! !
+!
 
 !PositionableStream methodsFor!
 
@@ -176,8 +221,11 @@ seasideMimeDocument
 
 seasideMimeDocumentType: aMimetype
 	^self seasideMimeDocument mimeType: aMimetype; yourself! !
-!PositionableStream categoriesFor: #seasideMimeDocument!*seaside-pharo-core!public! !
-!PositionableStream categoriesFor: #seasideMimeDocumentType:!*seaside-pharo-core!public! !
+
+!PositionableStream categoriesForMethods!
+seasideMimeDocument!*seaside-pharo-core!public! !
+seasideMimeDocumentType:!*seaside-pharo-core!public! !
+!
 
 !SequenceableCollection methodsFor!
 
@@ -188,7 +236,10 @@ restoreFromSnapshot: aCollection
 	self addAll: aCollection
 	
 ! !
-!SequenceableCollection categoriesFor: #restoreFromSnapshot:!public! !
+
+!SequenceableCollection categoriesForMethods!
+restoreFromSnapshot:!public! !
+!
 
 !Set methodsFor!
 
@@ -197,8 +248,11 @@ restoreFromSnapshot: anObject
 
 snapshotCopy
 	^ self copy! !
-!Set categoriesFor: #restoreFromSnapshot:!*seaside-squeak-platform!public! !
-!Set categoriesFor: #snapshotCopy!*seaside-squeak-platform!public! !
+
+!Set categoriesForMethods!
+restoreFromSnapshot:!*seaside-squeak-platform!public! !
+snapshotCopy!*seaside-squeak-platform!public! !
+!
 
 !String methodsFor!
 
@@ -207,7 +261,10 @@ value
 	"Pharo implements this in Object"
 
 	^self! !
-!String categoriesFor: #value!accessing!public! !
+
+!String categoriesForMethods!
+value!accessing!public! !
+!
 
 !WAObject methodsFor!
 
@@ -216,7 +273,10 @@ value
 	"Pharo implements this in Object"
 
 	^self! !
-!WAObject categoriesFor: #value!public! !
+
+!WAObject categoriesForMethods!
+value!public! !
+!
 
 !WAObject class methodsFor!
 
@@ -228,8 +288,11 @@ icon
 value
 
 	^self! !
-!WAObject class categoriesFor: #icon!public! !
-!WAObject class categoriesFor: #value!public! !
+
+!WAObject class categoriesForMethods!
+icon!public! !
+value!public! !
+!
 
 !WAUrl class methodsFor!
 
@@ -244,8 +307,11 @@ new
 	^self == ##(self)
 		ifTrue: [WADolphinUrl new]
 		ifFalse: [super new]! !
-!WAUrl class categoriesFor: #basicNew!parsing!public! !
-!WAUrl class categoriesFor: #new!parsing!public! !
+
+!WAUrl class categoriesForMethods!
+basicNew!parsing!public! !
+new!parsing!public! !
+!
 
 "End of package definition"!
 

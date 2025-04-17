@@ -3,9 +3,7 @@ package := Package name: 'Seaside-JSON-Core'.
 package paxVersion: 1;
 	basicComment: ''.
 
-
 package classNames
-	add: #JSJsonParser;
 	add: #WAJsonArrayBrush;
 	add: #WAJsonBrush;
 	add: #WAJsonCanvas;
@@ -33,13 +31,14 @@ package methodNames
 	add: #GRSmallOrderedSet -> #jsonOn:;
 	add: #Integer -> #jsonOn:;
 	add: #Object -> #asJson;
+	add: #Object -> #jsonKeyOn:;
 	add: #Object -> #jsonOn:;
 	add: #ScaledDecimal -> #jsonOn:;
 	add: #Stream -> #json:;
+	add: #String -> #jsonKeyOn:;
 	add: #String -> #jsonOn:;
 	add: #UndefinedObject -> #jsonOn:;
 	add: #WAUrl -> #jsonOn:;
-	add: 'GRPackage class' -> #seasideJsonCore;
 	yourself.
 
 package binaryGlobalNames: (Set new
@@ -63,164 +62,221 @@ WAError subclass: #WAJsonSyntaxError
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAObject subclass: #WAJsonParser
 	instanceVariableNames: 'stream'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WABrush subclass: #WAJsonBrush
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAJsonBrush subclass: #WAJsonArrayBrush
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAJsonBrush subclass: #WAJsonElementBrush
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAJsonBrush subclass: #WAJsonObjectBrush
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAJsonElementBrush subclass: #WAJsonKeyValueBrush
 	instanceVariableNames: 'key'
-	classVariableNames: ''
+	classVariableNames: 'StringKeysOnly'
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAJsonElementBrush subclass: #WAJsonValueBrush
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WADocument subclass: #WAJsonDocument
 	instanceVariableNames: 'jsonEncoder'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WATableBasedEncoder subclass: #WAJsonEncoder
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAJsonParser subclass: #JSJsonParser
-	instanceVariableNames: ''
-	classVariableNames: ''
-	poolDictionaries: ''
-	classInstanceVariableNames: ''!
+
 WACanvas subclass: #WAJsonCanvas
 	instanceVariableNames: 'first'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-"Global Aliases"!
-
-
 "Loose Methods"!
 
 !Boolean methodsFor!
 
 jsonOn: aRenderer	aRenderer boolean: self! !
-!Boolean categoriesFor: #jsonOn:!*seaside/json/core!public! !
+
+!Boolean categoriesForMethods!
+jsonOn:!*seaside/json/core!public! !
+!
 
 !Character methodsFor!
 
 jsonOn: aRenderer	aRenderer string: (String with: self)! !
-!Character categoriesFor: #jsonOn:!*seaside/json/core!public! !
+
+!Character categoriesForMethods!
+jsonOn:!*seaside/json/core!public! !
+!
 
 !Collection methodsFor!
 
 jsonOn: aRenderer 	aRenderer array: [		self do: [ :each |			aRenderer value: each ] ]! !
-!Collection categoriesFor: #jsonOn:!*seaside/json/core!public! !
+
+!Collection categoriesForMethods!
+jsonOn:!*seaside/json/core!public! !
+!
 
 !DateAndTime methodsFor!
 
 jsonOn: aRenderer	aRenderer dateAndTime: self! !
-!DateAndTime categoriesFor: #jsonOn:!*seaside/json/core!public! !
+
+!DateAndTime categoriesForMethods!
+jsonOn:!*seaside/json/core!public! !
+!
 
 !Dictionary methodsFor!
 
 jsonOn: aRenderer	aRenderer object: [		self keysAndValuesDo: [ :key :value |			aRenderer key: key value: value ] ]! !
-!Dictionary categoriesFor: #jsonOn:!*seaside/json/core!public! !
+
+!Dictionary categoriesForMethods!
+jsonOn:!*seaside/json/core!public! !
+!
 
 !Float methodsFor!
 
 jsonOn: aRenderer	(self - self) = 0.0 "check for infinity, negative infinity and NaN"		ifTrue: [ aRenderer number: self ]		ifFalse: [ aRenderer null ]! !
-!Float categoriesFor: #jsonOn:!*seaside/json/core!public! !
+
+!Float categoriesForMethods!
+jsonOn:!*seaside/json/core!public! !
+!
 
 !GRDelegatingStream methodsFor!
 
 json: anObject	| document context canvas |	document := WAJsonDocument on: self.	context := WARenderContext new		actionUrl: WAUrl new;		document: document;		yourself.	canvas := WAJsonCanvas context: context.	canvas render: anObject.	document close! !
-!GRDelegatingStream categoriesFor: #json:!*seaside/json/core!public! !
 
-!GRPackage class methodsFor!
-
-seasideJsonCore	^ self new		name: 'Seaside-JSON-Core';		description: 'JSON integration in Seaside. Provides a basic functionality to generate JSON from Smalltalk.';		addDependency: 'Seaside-Core';		addDependency: 'Seaside-Canvas';		url: #seasideUrl;		yourself! !
-!GRPackage class categoriesFor: #seasideJsonCore!*seaside/json/core!public! !
+!GRDelegatingStream categoriesForMethods!
+json:!*seaside/json/core!public! !
+!
 
 !GRPlatform methodsFor!
 
 jsonEncoderOn: aStream	"Answer an JSON encoder that works on aStream.	Platforms may provide optimized implementations."	^ WAJsonEncoder on: aStream! !
-!GRPlatform categoriesFor: #jsonEncoderOn:!*seaside/json/core!public! !
+
+!GRPlatform categoriesForMethods!
+jsonEncoderOn:!*seaside/json/core!public! !
+!
 
 !GRSmallDictionary methodsFor!
 
 jsonOn: aRenderer	aRenderer object: [		self keysAndValuesDo: [ :key :value |			aRenderer key: key value: value ] ]! !
-!GRSmallDictionary categoriesFor: #jsonOn:!*seaside/json/core!public! !
+
+!GRSmallDictionary categoriesForMethods!
+jsonOn:!*seaside/json/core!public! !
+!
 
 !GRSmallDictionary2 methodsFor!
 
 jsonOn: aRenderer	aRenderer object: [		self keysAndValuesDo: [ :key :value |			aRenderer key: key value: value ] ]! !
-!GRSmallDictionary2 categoriesFor: #jsonOn:!*seaside/json/core!public! !
+
+!GRSmallDictionary2 categoriesForMethods!
+jsonOn:!*seaside/json/core!public! !
+!
 
 !GRSmallOrderedSet methodsFor!
 
 jsonOn: aRenderer	aRenderer array: [		self do: [ :each |			aRenderer value: each ] ]! !
-!GRSmallOrderedSet categoriesFor: #jsonOn:!*seaside/json/core!public! !
+
+!GRSmallOrderedSet categoriesForMethods!
+jsonOn:!*seaside/json/core!public! !
+!
 
 !Integer methodsFor!
 
 jsonOn: aRenderer	aRenderer number: self! !
-!Integer categoriesFor: #jsonOn:!*seaside/json/core!public! !
+
+!Integer categoriesForMethods!
+jsonOn:!*seaside/json/core!public! !
+!
 
 !Object methodsFor!
 
 asJson	^ WAJsonCanvas builder render: [ :json |		self jsonOn: json ]!
 
+jsonKeyOn: aRenderer	self error: 'Only Strings can be used as keys in JSON objects.'!
+
 jsonOn: aRenderer	self error: 'Override #jsonOn: to make the receiver serializeable as JSON'! !
-!Object categoriesFor: #asJson!*seaside/json/core!public! !
-!Object categoriesFor: #jsonOn:!*seaside/json/core!public! !
+
+!Object categoriesForMethods!
+asJson!*seaside/json/core!public! !
+jsonKeyOn:!*Seaside/JSON/Core!public! !
+jsonOn:!*seaside/json/core!public! !
+!
 
 !ScaledDecimal methodsFor!
 
 jsonOn: aRenderer	aRenderer scaledDecimal: self! !
-!ScaledDecimal categoriesFor: #jsonOn:!*Seaside/JSON/Core!public! !
+
+!ScaledDecimal categoriesForMethods!
+jsonOn:!*Seaside/JSON/Core!public! !
+!
 
 !Stream methodsFor!
 
 json: anObject	| document context canvas |	document := WAJsonDocument on: self.	context := WARenderContext new		actionUrl: WAUrl new;		document: document;		yourself.	canvas := WAJsonCanvas context: context.	canvas render: anObject.	document close! !
-!Stream categoriesFor: #json:!*seaside/json/core!public! !
+
+!Stream categoriesForMethods!
+json:!*seaside/json/core!public! !
+!
 
 !String methodsFor!
 
+jsonKeyOn: aRenderer	self jsonOn: aRenderer!
+
 jsonOn: aRenderer	aRenderer string: self! !
-!String categoriesFor: #jsonOn:!*seaside/json/core!public! !
+
+!String categoriesForMethods!
+jsonKeyOn:!*seaside/json/core!public! !
+jsonOn:!*seaside/json/core!public! !
+!
 
 !UndefinedObject methodsFor!
 
 jsonOn: aRenderer	aRenderer null! !
-!UndefinedObject categoriesFor: #jsonOn:!*seaside/json/core!public! !
+
+!UndefinedObject categoriesForMethods!
+jsonOn:!*seaside/json/core!public! !
+!
 
 !WAUrl methodsFor!
 
 jsonOn: aRenderer	aRenderer string: self printString! !
-!WAUrl categoriesFor: #jsonOn:!*seaside/json/core!public! !
+
+!WAUrl categoriesForMethods!
+jsonOn:!*seaside/json/core!public! !
+!
 
 "End of package definition"!
 

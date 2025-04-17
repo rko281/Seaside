@@ -3,7 +3,6 @@ package := Package name: 'Seaside-REST-Core'.
 package paxVersion: 1;
 	basicComment: ''.
 
-
 package classNames
 	add: #WAArgumentNotFoundError;
 	add: #WAByMethodRoutes;
@@ -42,7 +41,7 @@ package methodNames
 	add: #GRPlatform -> #argumentNamesOf:;
 	add: #GRPlatform -> #createRoutesFor:;
 	add: #GRPlatform -> #createRoutesFrom:to:;
-	add: 'GRPackage class' -> #seasideRestCore;
+	add: #GRPlatform -> #selectorOfPragma:;
 	yourself.
 
 package binaryGlobalNames: (Set new
@@ -66,166 +65,188 @@ WAError subclass: #WAArgumentNotFoundError
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAObject subclass: #WAByMethodRoutes
 	instanceVariableNames: 'fixedContainers flexibleContainers'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAObject subclass: #WAMatch
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAObject subclass: #WARoute
 	instanceVariableNames: 'method selector produces consumes'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAObject subclass: #WARouteBuilder
 	instanceVariableNames: 'compiled method path produces consumes'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: 'configuration'!
+
 WAObject subclass: #WARouteContainer
 	instanceVariableNames: 'pathElementCount routes'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAObject subclass: #WARouteResult
 	instanceVariableNames: 'route elements parameters'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAObject subclass: #WASortedAccepts
 	instanceVariableNames: 'accepts'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WASystemConfiguration subclass: #WARestfulConfiguration
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAMatch subclass: #WACompositeMimeTypeMatch
 	instanceVariableNames: 'matches'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAMatch subclass: #WAMimeTypeMatch
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAMatch subclass: #WAParameterMatch
 	instanceVariableNames: 'name'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAMatch subclass: #WAPPathMatch
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAMimeTypeMatch subclass: #WAFullMimeTypeMatch
 	instanceVariableNames: 'main sub'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAMimeTypeMatch subclass: #WAMainMimeTypeMatch
 	instanceVariableNames: 'main'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAMimeTypeMatch subclass: #WASubMimeTypeMatch
 	instanceVariableNames: 'sub'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAMimeTypeMatch subclass: #WAWildcardMimeTypeMatch
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAParameterMatch subclass: #WAExactParameterMatch
 	instanceVariableNames: 'value'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAParameterMatch subclass: #WAPlaceholderParameterMatch
 	instanceVariableNames: 'index'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAPPathMatch subclass: #WAExactPathMatch
 	instanceVariableNames: 'element'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAPPathMatch subclass: #WAOrPathMatch
 	instanceVariableNames: 'elements'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAPPathMatch subclass: #WAPlaceholderPathMatch
 	instanceVariableNames: 'sourceIndex targetIndex'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAPlaceholderPathMatch subclass: #WAFullPlaceholderPathMatch
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAPlaceholderPathMatch subclass: #WAMultiPlaceholderPathMatch
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAPlaceholderPathMatch subclass: #WAPrefixPlaceholderPathMatch
 	instanceVariableNames: 'prefix'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAPlaceholderPathMatch subclass: #WASuffixPlaceholderPathMatch
 	instanceVariableNames: 'suffix'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WARequestFilter subclass: #WARestfulFilter
 	instanceVariableNames: 'routes'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WARestfulFilter subclass: #WARestfulComponentFilter
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WARequestHandler subclass: #WARestfulHandler
 	instanceVariableNames: 'routes'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WARoute subclass: #WAComplexRoute
 	instanceVariableNames: 'pathMatches parameterMatches isOverlyComplex'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WARoute subclass: #WASimpleRoute
 	instanceVariableNames: 'count'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-"Global Aliases"!
-
-
 "Loose Methods"!
-
-!GRPackage class methodsFor!
-
-seasideRestCore	^ self new		name: 'Seaside-REST-Core';		description: 'Write RESTful web services using Seaside';		addDependency: 'Seaside-Core';		url: #seasideUrl;		yourself! !
-!GRPackage class categoriesFor: #seasideRestCore!*seaside/rest/core!public! !
 
 !GRPlatform methodsFor!
 
@@ -233,10 +254,16 @@ argumentNamesOf: aCompiledMethod	"Answer the argument names of a method as a se
 
 createRoutesFor: aClass	^ WARouteBuilder createRoutesFor: aClass!
 
-createRoutesFrom: aClass to: aSuperClass	^ WARouteBuilder createRoutesFrom: aClass to: aSuperClass! !
-!GRPlatform categoriesFor: #argumentNamesOf:!*seaside/rest/core!public! !
-!GRPlatform categoriesFor: #createRoutesFor:!*seaside/rest/core!public! !
-!GRPlatform categoriesFor: #createRoutesFrom:to:!*seaside/rest/core!public! !
+createRoutesFrom: aClass to: aSuperClass	^ WARouteBuilder createRoutesFrom: aClass to: aSuperClass!
+
+selectorOfPragma: aPragma	^ self subclassResponsibility! !
+
+!GRPlatform categoriesForMethods!
+argumentNamesOf:!*seaside/rest/core!public! !
+createRoutesFor:!*seaside/rest/core!public! !
+createRoutesFrom:to:!*seaside/rest/core!public! !
+selectorOfPragma:!*Seaside/REST/Core!public! !
+!
 
 "End of package definition"!
 

@@ -3,15 +3,10 @@ package := Package name: 'Seaside-Tests-Component'.
 package paxVersion: 1;
 	basicComment: ''.
 
-
 package classNames
 	add: #WAComponentStub;
 	add: #WAComponentTest;
 	add: #WADecorationStub;
-	yourself.
-
-package methodNames
-	add: 'GRPackage class' -> #seasideTestsComponent;
 	yourself.
 
 package binaryGlobalNames: (Set new
@@ -22,7 +17,6 @@ package globalAliases: (Set new
 
 package setPrerequisites: #(
 	'..\..\Core\Object Arts\Dolphin\Base\Dolphin'
-	'..\..\Grease\Grease-Core'
 	'Seaside-Component'
 	'Seaside-Core'
 	'..\..\Core\Contributions\Camp Smalltalk\SUnit\SUnit').
@@ -36,26 +30,18 @@ WAComponent subclass: #WAComponentStub
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WADecoration subclass: #WADecorationStub
 	instanceVariableNames: 'initialRequestBlock updateRootBlock updateUrlBlock updateStatesBlock renderBlock childrenBlock'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 TestCase subclass: #WAComponentTest
 	instanceVariableNames: 'log root decoration1 decoration2 child1 child2 child3 child4'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-
-"Global Aliases"!
-
-
-"Loose Methods"!
-
-!GRPackage class methodsFor!
-
-seasideTestsComponent	^ self new		name: 'Seaside-Tests-Component';		description: 'Unit tests for the package Seaside-Component.';		addDependency: 'Seaside-Component';		addDependency: 'Seaside-Tests-Core';		url: #seasideUrl;		yourself! !
-!GRPackage class categoriesFor: #seasideTestsComponent!*seaside/tests/component!public! !
 
 "End of package definition"!
 

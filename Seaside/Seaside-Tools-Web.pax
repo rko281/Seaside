@@ -3,7 +3,6 @@ package := Package name: 'Seaside-Tools-Web'.
 package paxVersion: 1;
 	basicComment: ''.
 
-
 package classNames
 	add: #WAAddHandlerPlugin;
 	add: #WAAncestryAttributeEditor;
@@ -61,7 +60,6 @@ package methodNames
 	add: #WARequestHandler -> #hierarchyPathString;
 	add: #WAUserConfiguration -> #configurationComponent;
 	add: #WAUserConfiguration -> #currentCollectionAt:;
-	add: 'GRPackage class' -> #seasideToolsWeb;
 	yourself.
 
 package binaryGlobalNames: (Set new
@@ -89,246 +87,306 @@ WAFileLibrary subclass: #WAToolFiles
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAPainter subclass: #WAPlugin
 	instanceVariableNames: 'requestor'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAPlugin subclass: #WAConfigurationToolPlugin
 	instanceVariableNames: 'handler'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAConfigurationToolPlugin subclass: #WAAddHandlerPlugin
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAConfigurationToolPlugin subclass: #WAClearDefaultHandlerPlugin
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAConfigurationToolPlugin subclass: #WACopyHandlerPlugin
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAConfigurationToolPlugin subclass: #WAOpenHandlerPlugin
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAConfigurationToolPlugin subclass: #WARemoveHandlerPlugin
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAConfigurationToolPlugin subclass: #WASetDefaultHandlerPlugin
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAComponent subclass: #WAAttributeEditor
 	instanceVariableNames: 'configuration group properties parent'
 	classVariableNames: 'HelpTexts PropertiesCache'
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAComponent subclass: #WACollectionAttributeEditor
 	instanceVariableNames: 'configuration attribute selections selectionsCurrent'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAComponent subclass: #WAConfigurationTool
 	instanceVariableNames: 'component'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAComponent subclass: #WADispatcherBrowser
 	instanceVariableNames: 'dispatcher'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAComponent subclass: #WADispatcherSubPage
 	instanceVariableNames: 'parent'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAComponent subclass: #WAHandlerEditor
 	instanceVariableNames: 'handler filterEditor configurationEditor'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAComponent subclass: #WAStatus
 	instanceVariableNames: 'navigation'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAComponent subclass: #WAStatusItem
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAComponent subclass: #WAStringLibraryEditor
 	instanceVariableNames: 'library'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAComponent subclass: #WAUserConfigurationEditor
 	instanceVariableNames: 'configuration groups parent dialog'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAAttributeEditor subclass: #WAAncestryAttributeEditor
 	instanceVariableNames: 'selectedConfiguration'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAAttributeEditor subclass: #WAConfigAttributeEditor
 	instanceVariableNames: 'attributes'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAAttributeEditor subclass: #WAExpiringCacheAttributeEditor
 	instanceVariableNames: 'handler maximumSize maximumAbsoluteAge maximumRelativeAge overflowAction overflowActionLabels'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAAttributeEditor subclass: #WAFileAttributeEditor
 	instanceVariableNames: 'handler'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAAttributeEditor subclass: #WAFilterAttributeEditor
 	instanceVariableNames: 'handler'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAExpiringCacheAttributeEditor subclass: #WABulkReapingCacheAttributeEditor
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAExpiringCacheAttributeEditor subclass: #WAHashCacheAttributeEditor
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WACollectionAttributeEditor subclass: #WAClassBindingCollectionAttributeEditor
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WADispatcherBrowser subclass: #WAConfigurationBrowser
 	instanceVariableNames: 'selection editor'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WADispatcherSubPage subclass: #WADispatcherAddPage
 	instanceVariableNames: 'name type dispatcher'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WADispatcherSubPage subclass: #WADispatcherCopyPage
 	instanceVariableNames: 'name handler'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WADispatcherSubPage subclass: #WADispatcherEmptyPage
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAHandlerEditor subclass: #WADispatcherEditor
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAHandlerEditor subclass: #WAFileHandlerEditor
 	instanceVariableNames: 'fileEditor'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAHandlerEditor subclass: #WARegistryEditor
 	instanceVariableNames: 'cacheEditor'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAStringLibraryEditor subclass: #WAFileLibraryEditor
 	instanceVariableNames: 'renamingFile newName'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAAttributeVisitor subclass: #WAUserConfigurationEditorVisitor
 	instanceVariableNames: 'configuration canvas'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-"Global Aliases"!
-
-
 "Loose Methods"!
-
-!GRPackage class methodsFor!
-
-seasideToolsWeb	^ self new		name: 'Seaside-Tools-Web';		description: 'Web-based tools for administering Seaside.';		addDependency: 'Seaside-Tools-Core';		addDependency: 'Seaside-RenderLoop';		addDependency: 'Seaside-Widgets';		url: #seasideUrl;		yourself! !
-!GRPackage class categoriesFor: #seasideToolsWeb!*seaside/tools/web!public! !
 
 !WAAbstractFileLibrary methodsFor!
 
 configurationComponent	^ WAFileLibraryEditor new		library: self;		yourself! !
-!WAAbstractFileLibrary categoriesFor: #configurationComponent!*seaside/tools/web!public! !
+
+!WAAbstractFileLibrary categoriesForMethods!
+configurationComponent!*seaside/tools/web!public! !
+!
 
 !WAApplication methodsFor!
 
 cloneHandler	^ super cloneHandler		clear;		yourself! !
-!WAApplication categoriesFor: #cloneHandler!*seaside/tools/web!public! !
+
+!WAApplication categoriesForMethods!
+cloneHandler!*seaside/tools/web!public! !
+!
 
 !WABulkReapingCache methodsFor!
 
 editorClass	^ WABulkReapingCacheAttributeEditor! !
-!WABulkReapingCache categoriesFor: #editorClass!*seaside/tools/web!public! !
+
+!WABulkReapingCache categoriesForMethods!
+editorClass!*seaside/tools/web!public! !
+!
 
 !WAClassBindingCollectionAttribute methodsFor!
 
 attributeEditor	^ WAClassBindingCollectionAttributeEditor! !
-!WAClassBindingCollectionAttribute categoriesFor: #attributeEditor!*seaside/tools/web!public! !
+
+!WAClassBindingCollectionAttribute categoriesForMethods!
+attributeEditor!*seaside/tools/web!public! !
+!
 
 !WACollectionAttribute methodsFor!
 
 attributeEditor	^ WACollectionAttributeEditor! !
-!WACollectionAttribute categoriesFor: #attributeEditor!*seaside/tools/web!public! !
+
+!WACollectionAttribute categoriesForMethods!
+attributeEditor!*seaside/tools/web!public! !
+!
 
 !WAConfiguredRequestFilter methodsFor!
 
 configurationComponent	^ WAUserConfigurationEditor on: self configuration! !
-!WAConfiguredRequestFilter categoriesFor: #configurationComponent!*seaside/tools/web!public! !
+
+!WAConfiguredRequestFilter categoriesForMethods!
+configurationComponent!*seaside/tools/web!public! !
+!
 
 !WADispatcher methodsFor!
 
 configurationComponent	^ WADispatcherEditor on: self! !
-!WADispatcher categoriesFor: #configurationComponent!*seaside/tools/web!public! !
+
+!WADispatcher categoriesForMethods!
+configurationComponent!*seaside/tools/web!public! !
+!
 
 !WAFileHandler methodsFor!
 
 configurationComponent	^ WAFileHandlerEditor on: self! !
-!WAFileHandler categoriesFor: #configurationComponent!*seaside/tools/web!public! !
+
+!WAFileHandler categoriesForMethods!
+configurationComponent!*seaside/tools/web!public! !
+!
 
 !WAHashCache methodsFor!
 
 editorClass	^ WAHashCacheAttributeEditor! !
-!WAHashCache categoriesFor: #editorClass!*seaside/tools/web!public! !
+
+!WAHashCache categoriesForMethods!
+editorClass!*seaside/tools/web!public! !
+!
 
 !WAMutualExclusionCache methodsFor!
 
 editorClass	^ cache editorClass! !
-!WAMutualExclusionCache categoriesFor: #editorClass!*seaside/tools/web!public! !
+
+!WAMutualExclusionCache categoriesForMethods!
+editorClass!*seaside/tools/web!public! !
+!
 
 !WARegistry methodsFor!
 
 configurationComponent	^ WARegistryEditor on: self! !
-!WARegistry categoriesFor: #configurationComponent!*seaside/tools/web!public! !
+
+!WARegistry categoriesForMethods!
+configurationComponent!*seaside/tools/web!public! !
+!
 
 !WARequestHandler methodsFor!
 
@@ -339,18 +397,24 @@ configurationComponent	^ WAHandlerEditor on: self!
 hierarchyNames	self isRoot ifTrue: [ ^ #() ].	^ self parent hierarchyNames copyWith: self name!
 
 hierarchyPathString	^ String streamContents: [ :stream |		stream nextPut: $/.		self hierarchyNames			do: [ :each | stream nextPutAll: each ]			separatedBy: [ stream nextPut: $/ ] ]! !
-!WARequestHandler categoriesFor: #cloneHandler!*seaside/tools/web!public! !
-!WARequestHandler categoriesFor: #configurationComponent!*seaside/tools/web!public! !
-!WARequestHandler categoriesFor: #hierarchyNames!*seaside/tools/web!public! !
-!WARequestHandler categoriesFor: #hierarchyPathString!*seaside/tools/web!public! !
+
+!WARequestHandler categoriesForMethods!
+cloneHandler!*seaside/tools/web!public! !
+configurationComponent!*seaside/tools/web!public! !
+hierarchyNames!*seaside/tools/web!public! !
+hierarchyPathString!*seaside/tools/web!public! !
+!
 
 !WAUserConfiguration methodsFor!
 
 configurationComponent	^ WAUserConfigurationEditor on: self!
 
 currentCollectionAt: key	"get the currently defined values with infos for collection attributes"		| expression attributeCollection |	expression := self expressionAt: key ifAbsent: [ nil ].	expression isNil		ifTrue: [ attributeCollection := (self at: key) collect: [ :each | #inherited -> each ] ]		ifFalse: [			(expression isKindOf: WAValueExpression)				ifTrue: [ attributeCollection := (expression value collect: [ :each | #self -> each ]) asOrderedCollection ]				ifFalse: [ attributeCollection := (expression additions collect: [ :each | #add -> each ]) asOrderedCollection.							attributeCollection addAll: (expression removals collect: [ :each | #remove -> each ]).							(self at: key) reverse								do: [ :each |										(attributeCollection detect: [ :assoc | assoc value = each ] ifNone: [ ]) isNil												ifTrue: [ attributeCollection addFirst: #inherited -> each ] ] ] ].	^ attributeCollection! !
-!WAUserConfiguration categoriesFor: #configurationComponent!*seaside/tools/web!public! !
-!WAUserConfiguration categoriesFor: #currentCollectionAt:!*seaside/tools/web!public! !
+
+!WAUserConfiguration categoriesForMethods!
+configurationComponent!*seaside/tools/web!public! !
+currentCollectionAt:!*seaside/tools/web!public! !
+!
 
 "End of package definition"!
 
