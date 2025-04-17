@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WACallback subclass: #WAActionCallback
 	instanceVariableNames: 'block'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAActionCallback guid: (GUID fromString: '{65eef03b-b0dc-4f63-8314-a1925e883607}')!
+
+WAActionCallback guid: (GUID fromString: '{4c705280-0e52-4126-baac-bee4ffb20c68}')!
+
 WAActionCallback comment: ''!
-!WAActionCallback categoriesForClass!Seaside-Core-Callbacks! !
+
+!WAActionCallback categoriesForClass!Callbacks! !
+
 !WAActionCallback methodsFor!
 
 block: aZeroOrOneArgBlock	block := aZeroOrOneArgBlock!
@@ -19,9 +23,12 @@ isEnabledFor: aRequestContext	^ aRequestContext request isXmlHttpRequest not!
 priority	^ 5!
 
 signalRenderNotification	WARenderNotification signal! !
-!WAActionCallback categoriesFor: #block:!accessing!public! !
-!WAActionCallback categoriesFor: #evaluateWithArgument:!evaluation!public! !
-!WAActionCallback categoriesFor: #isEnabledFor:!public!testing! !
-!WAActionCallback categoriesFor: #priority!accessing!public! !
-!WAActionCallback categoriesFor: #signalRenderNotification!evaluation!public! !
+
+!WAActionCallback categoriesForMethods!
+block:!accessing!public! !
+evaluateWithArgument:!evaluation!public! !
+isEnabledFor:!public!testing! !
+priority!accessing!public! !
+signalRenderNotification!evaluation!public! !
+!
 

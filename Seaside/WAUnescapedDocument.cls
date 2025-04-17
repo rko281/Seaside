@@ -1,15 +1,22 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAXmlDocument subclass: #WAUnescapedDocument
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAUnescapedDocument guid: (GUID fromString: '{87a38824-eeb4-4ff7-b42f-8b95b2f645aa}')!
+
+WAUnescapedDocument guid: (GUID fromString: '{aa75a92c-b365-4886-9494-399161f29db2}')!
+
 WAUnescapedDocument comment: 'A WAUnescapedDocument does not do any escaping.'!
-!WAUnescapedDocument categoriesForClass!Seaside-Core-Document! !
+
+!WAUnescapedDocument categoriesForClass!Document! !
+
 !WAUnescapedDocument methodsFor!
 
 initializeWithStream: aStream codec: aCodec	super initializeWithStream: aStream codec: aCodec.	xmlEncoder := aStream! !
-!WAUnescapedDocument categoriesFor: #initializeWithStream:codec:!initialization!public! !
+
+!WAUnescapedDocument categoriesForMethods!
+initializeWithStream:codec:!initialization!public! !
+!
 

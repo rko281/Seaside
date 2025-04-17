@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAContentElement subclass: #WALinkElement
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WALinkElement guid: (GUID fromString: '{deab7539-6245-412d-8e7e-1d54a78e6580}')!
+
+WALinkElement guid: (GUID fromString: '{e6ab0903-3c0c-4c20-8494-6f5b8e183a12}')!
+
 WALinkElement comment: 'Defines either a link or style sheet rules. If it has children then it defines style sheet rules, else it defines a link.= if link =This element defines a link. Unlike A, it may only appear in the HEAD section of a document, although it may appear any number of times. Although LINK has no content, it conveys relationship information that may be rendered by user agents in a variety of ways (e.g., a tool-bar with a drop-down menu of links).= style sheet rules =The STYLE element allows authors to put style sheet rules in the head of the document. HTML permits any number of STYLE elements in the HEAD section of a document.User agents that don''t support style sheets, or don''t support the specific style sheet language used by a STYLE element, must hide the contents of the STYLE element. It is an error to render the content as part of the document''s text. Some style sheet languages support syntax for hiding the content from non-conforming user agents.'!
-!WALinkElement categoriesForClass!Seaside-Core-Document-Elements! !
+
+!WALinkElement categoriesForClass!Document-Elements! !
+
 !WALinkElement methodsFor!
 
 add: anElement	super add: anElement.	attributes isNil ifFalse: [		attributes removeKey: 'rel' ifAbsent: [ "ignore" ] ]!
@@ -49,8 +53,6 @@ beBookmark	self relationship: 'bookmark'!
 beCanonical	"Used to specify a canonical URL."	self relationship: 'canonical'!
 
 beChapter	self relationship: 'chapter'!
-
-beClossary	self relationship: 'lossary'!
 
 beCopyright	self relationship: 'copyright'!
 
@@ -100,60 +102,62 @@ media: aString	"This attribute specifies the intended destination medium for st
 
 relationship: aString	"This attribute describes the relationship from the current document to the anchor specified by the href attribute. The value of this attribute is a space-separated list of link types."		self attributes at: 'rel' append: aString!
 
-reverse: aString	"This attribute is used to describe a reverse link from the anchor specified by the href attribute to the current document. The value of this attribute is a space-separated list of link types."	self attributeAt: 'rev' put: aString!
+reverse: aString	"This attribute is used to describe a reverse link from the anchor specified by the href attribute to the current document. The value of this attribute is a space-separated list of link types."	self		greaseDeprecatedApi: 'WALinkElement>>reverse:'		details: 'Use the rel attribute. https://www.geeksforgeeks.org/what-are-the-html-tags-that-deprecated-in-html5/'.		self attributeAt: 'rev' put: aString!
 
 tag	^ children isEmptyOrNil		ifTrue: [ 'link' ]		ifFalse: [ 'style' ]!
 
 title: aString	self attributeAt: 'title' put: aString!
 
 url: aString	self attributeAt: 'href' put: aString! !
-!WALinkElement categoriesFor: #add:!accessing/children!public! !
-!WALinkElement categoriesFor: #addAll!media!public! !
-!WALinkElement categoriesFor: #addAural!media!public! !
-!WALinkElement categoriesFor: #addBraille!media!public! !
-!WALinkElement categoriesFor: #addHandheld!media!public! !
-!WALinkElement categoriesFor: #addMedia:!media!public! !
-!WALinkElement categoriesFor: #addPrint!media!public! !
-!WALinkElement categoriesFor: #addProjection!media!public! !
-!WALinkElement categoriesFor: #addScreen!media!public! !
-!WALinkElement categoriesFor: #addTeletype!media!public! !
-!WALinkElement categoriesFor: #addTelevision!media!public! !
-!WALinkElement categoriesFor: #beAlternate!public!relationship! !
-!WALinkElement categoriesFor: #beAlternateStylesheet!public!relationship! !
-!WALinkElement categoriesFor: #beAppendix!public!relationship! !
-!WALinkElement categoriesFor: #beArchives!public!relationship! !
-!WALinkElement categoriesFor: #beAtom!public!type! !
-!WALinkElement categoriesFor: #beAuthor!public!relationship! !
-!WALinkElement categoriesFor: #beBookmark!public!relationship! !
-!WALinkElement categoriesFor: #beCanonical!public!relationship! !
-!WALinkElement categoriesFor: #beChapter!public!relationship! !
-!WALinkElement categoriesFor: #beClossary!public!relationship! !
-!WALinkElement categoriesFor: #beCopyright!public!relationship! !
-!WALinkElement categoriesFor: #beCss!public!type! !
-!WALinkElement categoriesFor: #beFirst!public!relationship! !
-!WALinkElement categoriesFor: #beFontDefinition!public!relationship! !
-!WALinkElement categoriesFor: #beGlossary!public!relationship! !
-!WALinkElement categoriesFor: #beHelp!public!relationship! !
-!WALinkElement categoriesFor: #beIndex!public!relationship! !
-!WALinkElement categoriesFor: #beLast!public!relationship! !
-!WALinkElement categoriesFor: #beMicrosummary!public!relationship! !
-!WALinkElement categoriesFor: #beNext!public!relationship! !
-!WALinkElement categoriesFor: #bePrevious!public!relationship! !
-!WALinkElement categoriesFor: #beRss!public!type! !
-!WALinkElement categoriesFor: #beSearch!public!relationship! !
-!WALinkElement categoriesFor: #beSection!public!relationship! !
-!WALinkElement categoriesFor: #beShortcutIcon!public!relationship! !
-!WALinkElement categoriesFor: #beStart!public!relationship! !
-!WALinkElement categoriesFor: #beStylesheet!public!relationship! !
-!WALinkElement categoriesFor: #beSubsection!public!relationship! !
-!WALinkElement categoriesFor: #beTableOfContents!public!relationship! !
-!WALinkElement categoriesFor: #beTop!public!relationship! !
-!WALinkElement categoriesFor: #beUp!public!relationship! !
-!WALinkElement categoriesFor: #isClosed!public!testing! !
-!WALinkElement categoriesFor: #media:!attributes!public! !
-!WALinkElement categoriesFor: #relationship:!attributes!public! !
-!WALinkElement categoriesFor: #reverse:!attributes!public! !
-!WALinkElement categoriesFor: #tag!accessing!public! !
-!WALinkElement categoriesFor: #title:!attributes!public! !
-!WALinkElement categoriesFor: #url:!attributes!public! !
+
+!WALinkElement categoriesForMethods!
+add:!accessing/children!public! !
+addAll!media!public! !
+addAural!media!public! !
+addBraille!media!public! !
+addHandheld!media!public! !
+addMedia:!media!public! !
+addPrint!media!public! !
+addProjection!media!public! !
+addScreen!media!public! !
+addTeletype!media!public! !
+addTelevision!media!public! !
+beAlternate!public!relationship! !
+beAlternateStylesheet!public!relationship! !
+beAppendix!public!relationship! !
+beArchives!public!relationship! !
+beAtom!public!type! !
+beAuthor!public!relationship! !
+beBookmark!public!relationship! !
+beCanonical!public!relationship! !
+beChapter!public!relationship! !
+beCopyright!public!relationship! !
+beCss!public!type! !
+beFirst!public!relationship! !
+beFontDefinition!public!relationship! !
+beGlossary!public!relationship! !
+beHelp!public!relationship! !
+beIndex!public!relationship! !
+beLast!public!relationship! !
+beMicrosummary!public!relationship! !
+beNext!public!relationship! !
+bePrevious!public!relationship! !
+beRss!public!type! !
+beSearch!public!relationship! !
+beSection!public!relationship! !
+beShortcutIcon!public!relationship! !
+beStart!public!relationship! !
+beStylesheet!public!relationship! !
+beSubsection!public!relationship! !
+beTableOfContents!public!relationship! !
+beTop!public!relationship! !
+beUp!public!relationship! !
+isClosed!public!testing! !
+media:!attributes!public! !
+relationship:!attributes!public! !
+reverse:!attributes!public! !
+tag!accessing!public! !
+title:!attributes!public! !
+url:!attributes!public! !
+!
 

@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAPainterVisitor subclass: #WAPluggablePresenterVisitor
 	instanceVariableNames: 'block'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAPluggablePresenterVisitor guid: (GUID fromString: '{de780873-1837-4c0f-8e98-f6edbff7ecc2}')!
+
+WAPluggablePresenterVisitor guid: (GUID fromString: '{e93b03d5-94f0-417f-9bad-9c868774c058}')!
+
 WAPluggablePresenterVisitor comment: ''!
-!WAPluggablePresenterVisitor categoriesForClass!Seaside-Component-Visitors! !
+
+!WAPluggablePresenterVisitor categoriesForClass!Visitors! !
+
 !WAPluggablePresenterVisitor methodsFor!
 
 block	^ block!
@@ -15,15 +19,21 @@ block	^ block!
 initializeWithBlock: aBlock	self initialize.	block := aBlock!
 
 visitPresenter: aPresenter	self block value: aPresenter! !
-!WAPluggablePresenterVisitor categoriesFor: #block!accessing!public! !
-!WAPluggablePresenterVisitor categoriesFor: #initializeWithBlock:!initialization!public! !
-!WAPluggablePresenterVisitor categoriesFor: #visitPresenter:!public!visiting! !
+
+!WAPluggablePresenterVisitor categoriesForMethods!
+block!accessing!public! !
+initializeWithBlock:!initialization!public! !
+visitPresenter:!public!visiting! !
+!
 
 !WAPluggablePresenterVisitor class methodsFor!
 
 block: aBlock	^ self basicNew initializeWithBlock: aBlock; yourself!
 
 new	^ self block: [ :presenter | ]! !
-!WAPluggablePresenterVisitor class categoriesFor: #block:!instance creation!public! !
-!WAPluggablePresenterVisitor class categoriesFor: #new!instance creation!public! !
+
+!WAPluggablePresenterVisitor class categoriesForMethods!
+block:!instance creation!public! !
+new!instance creation!public! !
+!
 

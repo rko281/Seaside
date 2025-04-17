@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAObject subclass: #WAFileLibraryResource
 	instanceVariableNames: 'filepath mimeType cacheDuration contents'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAFileLibraryResource guid: (GUID fromString: '{34d5242d-fefe-4b32-b303-5b6bfdbdbec3}')!
-WAFileLibraryResource comment: ''!
-!WAFileLibraryResource categoriesForClass!Seaside-Core-Libraries! !
+
+WAFileLibraryResource guid: (GUID fromString: '{64ad3d44-e49b-44db-8633-97156041ee7c}')!
+
+WAFileLibraryResource comment: 'A resource within a Seaside file library'!
+
+!WAFileLibraryResource categoriesForClass!Libraries! !
+
 !WAFileLibraryResource methodsFor!
 
 cacheDuration	^ cacheDuration!
@@ -27,21 +31,27 @@ mimeType	^ mimeType!
 mimeType: anObject	mimeType := anObject!
 
 printOn: aStream	super printOn: aStream.	aStream		nextPutAll: ' cacheDuration: ';		print: self cacheDuration.	aStream		nextPutAll: ' filepath: ';		print: self filepath.	aStream		nextPutAll: ' mimeType: ';		print: self mimeType.	aStream		nextPutAll: ' contents: ';		print: (self contents greaseString truncateWithElipsisTo: 100)! !
-!WAFileLibraryResource categoriesFor: #cacheDuration!accessing!public! !
-!WAFileLibraryResource categoriesFor: #cacheDuration:!accessing!public! !
-!WAFileLibraryResource categoriesFor: #contents!accessing!public! !
-!WAFileLibraryResource categoriesFor: #contents:!accessing!public! !
-!WAFileLibraryResource categoriesFor: #filepath!accessing!public! !
-!WAFileLibraryResource categoriesFor: #filepath:!accessing!public! !
-!WAFileLibraryResource categoriesFor: #mimeType!accessing!public! !
-!WAFileLibraryResource categoriesFor: #mimeType:!accessing!public! !
-!WAFileLibraryResource categoriesFor: #printOn:!printing!public! !
+
+!WAFileLibraryResource categoriesForMethods!
+cacheDuration!accessing!public! !
+cacheDuration:!accessing!public! !
+contents!accessing!public! !
+contents:!accessing!public! !
+filepath!accessing!public! !
+filepath:!accessing!public! !
+mimeType!accessing!public! !
+mimeType:!accessing!public! !
+printOn:!printing!public! !
+!
 
 !WAFileLibraryResource class methodsFor!
 
 emptyInstance	^ self filepath: '' mimeType: WAMimeType textPlain cacheDuration: Duration zero contents: ''!
 
 filepath: filepath mimeType: aMimeType cacheDuration: cacheDuration contents: contents	^ self new		filepath: filepath;		mimeType: aMimeType;		cacheDuration: cacheDuration;		contents: contents;		yourself! !
-!WAFileLibraryResource class categoriesFor: #emptyInstance!instance creation!public! !
-!WAFileLibraryResource class categoriesFor: #filepath:mimeType:cacheDuration:contents:!instance creation!public! !
+
+!WAFileLibraryResource class categoriesForMethods!
+emptyInstance!instance creation!public! !
+filepath:mimeType:cacheDuration:contents:!instance creation!public! !
+!
 

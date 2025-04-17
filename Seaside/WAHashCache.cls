@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAExpiringCache subclass: #WAHashCache
 	instanceVariableNames: 'keyTable size byAccessStart byAccessEnd byCreationStart byCreationEnd'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAHashCache guid: (GUID fromString: '{64a17b27-aebf-4a66-9417-adaa899bb8b6}')!
+
+WAHashCache guid: (GUID fromString: '{10cd7813-e44b-4649-8862-8f16cf881305}')!
+
 WAHashCache comment: 'WAHashCache is a hash table based implementation of WACache.The characteristics of WAHashCache are:- supports both absolute and relative timeouts at the same time https://www.owasp.org/index.php/Session_Management_Cheat_Sheet#Automatic_Session_Expiration- supports a maximum size with definable overflow action (expire oldest, expire least recently used, signal exception)- access by key is fast (O(1) average case O(n) worst case)- reaping expired sessions is proportional (O(n)) to the number of expired session and independent of the total number of sessions (O(1))- creating a new session independent of the total number of sessions- does not guard against hash collision attacks, you should not use user generated keysInstance Variables:	keyTable 				<Array<WACacheKeyEntry>>	size					<Integer>	byAccessStart			<WACacheListEntry>	byAccessEnd			<WACacheListEntry>	byCreationStart		<WACacheListEntry>	byCreationEnd			<WACacheListEntry>keyTable:	Open hash table of  WACacheKeyEntrybyAccessStart	Head of the linked list sorted by access timebyAccessEnd		Tail of the linked list sorted by access timebyCreationStart	Head of the linked list sorted by creation timebyCreationEnd	Tail of the linked list sorted by creation timeThe implementation is a combination of:- an open hash table, used for look ups by key - a linked list of cache entries sorted by creation time, used for reaping by absolute age- a linked list of cache entries sorted by access time, used for reaping by relative ageFor every cache entry there is a node in the hash table and a node in both of the linked lists. It is possible to navigate from every node for a key to every other node of the same key. This is required for removing and updating entries.'!
-!WAHashCache categoriesForClass!Seaside-Core-Cache! !
+
+!WAHashCache categoriesForClass!Cache! !
+
 !WAHashCache methodsFor!
 
 addToAccessEnd: aCacheListEntry	| currentLast |	currentLast := byAccessEnd.	currentLast isNil ifFalse: [		currentLast next: aCacheListEntry.		aCacheListEntry previous: currentLast ].	aCacheListEntry initializeTime.	byAccessEnd := aCacheListEntry.	byAccessStart isNil ifTrue: [		byAccessStart := aCacheListEntry ]!
@@ -59,31 +63,34 @@ store: anObject	| candidateKey |	[ 		candidateKey := WAKeyGenerator current k
 sweep: aListRoot maximumAge: anNumberOfSeconds now: currentSeconds	| current |	current := aListRoot.	[ current isNil ] whileFalse: [		(currentSeconds - current time) > anNumberOfSeconds			ifTrue: [				self removeCacheEntry: current cacheEntry.				current := current next ]			ifFalse: [				"the list is ordered so we can stop scanning"				^ self ] ]!
 
 sweepIncrementally	| now |	now := Time totalSeconds.		"absolute timeout sweep"	maximumAbsoluteAge > 0 ifTrue: [		self sweep: byCreationStart maximumAge: maximumAbsoluteAge now: now ].		"relative timeout sweep"	maximumRelativeAge > 0 ifTrue: [		self sweep: byAccessStart maximumAge: maximumRelativeAge now: now ]! !
-!WAHashCache categoriesFor: #addToAccessEnd:!private! !
-!WAHashCache categoriesFor: #addToCreationEnd:!private! !
-!WAHashCache categoriesFor: #at:ifAbsent:!accessing!public! !
-!WAHashCache categoriesFor: #at:put:!public!putting! !
-!WAHashCache categoriesFor: #at:put:overwrite:!private! !
-!WAHashCache categoriesFor: #clear!public! !
-!WAHashCache categoriesFor: #copy!copying!public! !
-!WAHashCache categoriesFor: #errorAlreadyMapped!private! !
-!WAHashCache categoriesFor: #errorKeyNotFound!private! !
-!WAHashCache categoriesFor: #errorNotMapped!private! !
-!WAHashCache categoriesFor: #expunge:!private! !
-!WAHashCache categoriesFor: #findEntryOrNilWithKey:hash:index:!private! !
-!WAHashCache categoriesFor: #growCheck!private! !
-!WAHashCache categoriesFor: #initializeWithInitialSize:maximumSize:maximumAbsoluteAge:maximumRelativeAge:overflowAction:!initialization!public! !
-!WAHashCache categoriesFor: #insertKeyEntry:!private! !
-!WAHashCache categoriesFor: #keysAndValuesDo:!enumerating!public! !
-!WAHashCache categoriesFor: #loadFactor!private! !
-!WAHashCache categoriesFor: #performOverflowAction!private! !
-!WAHashCache categoriesFor: #removeCacheEntry:!private! !
-!WAHashCache categoriesFor: #removeFromKeyTable:!private! !
-!WAHashCache categoriesFor: #removeKey:!public!removing! !
-!WAHashCache categoriesFor: #size!accessing!public! !
-!WAHashCache categoriesFor: #store:!public!putting! !
-!WAHashCache categoriesFor: #sweep:maximumAge:now:!private! !
-!WAHashCache categoriesFor: #sweepIncrementally!private! !
+
+!WAHashCache categoriesForMethods!
+addToAccessEnd:!private! !
+addToCreationEnd:!private! !
+at:ifAbsent:!accessing!public! !
+at:put:!public!putting! !
+at:put:overwrite:!private! !
+clear!public! !
+copy!copying!public! !
+errorAlreadyMapped!private! !
+errorKeyNotFound!private! !
+errorNotMapped!private! !
+expunge:!private! !
+findEntryOrNilWithKey:hash:index:!private! !
+growCheck!private! !
+initializeWithInitialSize:maximumSize:maximumAbsoluteAge:maximumRelativeAge:overflowAction:!initialization!public! !
+insertKeyEntry:!private! !
+keysAndValuesDo:!enumerating!public! !
+loadFactor!private! !
+performOverflowAction!private! !
+removeCacheEntry:!private! !
+removeFromKeyTable:!private! !
+removeKey:!public!removing! !
+size!accessing!public! !
+store:!public!putting! !
+sweep:maximumAge:now:!private! !
+sweepIncrementally!private! !
+!
 
 !WAHashCache class methodsFor!
 
@@ -94,8 +101,11 @@ removeAbsoluteOldest	^ #removeAbsoluteOldest!
 removeRelativeOldest	^ #removeRelativeOldest!
 
 signalError	^ #signalError! !
-!WAHashCache class categoriesFor: #overflowActions!accessing!public! !
-!WAHashCache class categoriesFor: #removeAbsoluteOldest!accessing!public! !
-!WAHashCache class categoriesFor: #removeRelativeOldest!accessing!public! !
-!WAHashCache class categoriesFor: #signalError!accessing!public! !
+
+!WAHashCache class categoriesForMethods!
+overflowActions!accessing!public! !
+removeAbsoluteOldest!accessing!public! !
+removeRelativeOldest!accessing!public! !
+signalError!accessing!public! !
+!
 

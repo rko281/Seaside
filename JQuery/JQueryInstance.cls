@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQuery subclass: #JQueryInstance
 	instanceVariableNames: 'arguments'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQueryInstance guid: (GUID fromString: '{717936ce-6384-4f70-90ae-a1d71c5243c1}')!
+
+JQueryInstance guid: (GUID fromString: '{16277944-1b26-4bd2-813d-f0110b957da4}')!
+
 JQueryInstance comment: ''!
-!JQueryInstance categoriesForClass!JQuery-Core-Objects! !
+
+!JQueryInstance categoriesForClass!Objects! !
+
 !JQueryInstance methodsFor!
 
 add: anObject	"Add elements to the set of matched elements."		self call: 'add' with: anObject!
@@ -98,6 +102,8 @@ end	"End the most recent filtering operation in the current chain and return th
 
 eq: anInteger	"Reduce the set of matched elements to the one at the specified index."		self call: 'eq' with: anInteger!
 
+even 	"Reduce the set of matched elements to the even ones in the set, numbered from zero."	self call: 'even'!
+
 fade: aDuration to: anNumber	"Adjust the opacity of the matched elements."		self call: 'fadeTo' with: aDuration with: anNumber!
 
 fade: aDuration to: anNumber callback: anObject	"Adjust the opacity of the matched elements."		self call: 'fadeTo' with: aDuration with: anNumber with: anObject asFunction!
@@ -183,6 +189,8 @@ nextAll: aString	"Get all following siblings of each element in the set of matc
 nextUntil: aString	"Get all following siblings of each element up to but not including the element matched by the selector."		self call: 'nextUntil' with: aString!
 
 not: aString	"Remove elements from the set of matched elements."		self call: 'not' with: aString!
+
+odd 	"Reduce the set of matched elements to the odd ones in the set, numbered from zero."	self call: 'odd'!
 
 off: aString	"Remove an event handler."		self call: 'off' with: aString!
 
@@ -292,9 +300,9 @@ previous	"Get the immediately preceding sibling of each element in the set of m
 
 previous: aString	"Get the immediately preceding sibling of each element in the set of matched elements, optionally filtered by a selector."		self call: 'prev' with: aString!
 
-previousAll	"Get all preceding siblings of each element in the set of matched elements, optionally filtered by a selector."		self call: 'prevAll'!
+previousAll	"Get all preceding siblings of each element in the set of matched elements, optionally filtered by a selector, in the reverse document order."		self call: 'prevAll'!
 
-previousAll: aString	"Get all preceding siblings of each element in the set of matched elements, optionally filtered by a selector."		self call: 'prevAll' with: aString!
+previousAll: aString	"Get all preceding siblings of each element in the set of matched elements, optionally filtered by a selector, in the reverse document order."		self call: 'prevAll' with: aString!
 
 previousUntil: aString	"Get all preceding siblings of each element up to but not including the element matched by the selector."		self call: 'prevUntil' with: aString!
 
@@ -416,6 +424,8 @@ undelegate	"Remove a handler from the event for all elements which match the cu
 
 undelegate: aSelectorString on: anEventString	"Remove a handler from the event for all elements which match the current selector, now or in the future, based upon a specific set of root elements."	self 		greaseDeprecatedApi: 'JQueryInstance>>#bind:do:'		details: 'See https://jquery.com/upgrade-guide/3.0/#deprecated-bind-and-delegate'.		self call: 'undelegate' with: aSelectorString with: anEventString!
 
+uniqueSort	"Sorts a jQuery object of DOM elements, in place, with the duplicates removed. Note that this only works on jQuery objects consisting of DOM elements, not strings or numbers."	self call: 'uniqueSort'!
+
 unwrap	"Remove the parents of the set of matched elements from the DOM, leaving the matched elements in their place."		self call: 'unwrap'!
 
 value	"Get the current value of the first element in the set of matched elements."		self call: 'val'!
@@ -431,220 +441,229 @@ wrap: aRenderable 	"Wrap an HTML structure around each element in the set of ma
 wrapAll: aRenderable 	"Wrap an HTML structure around all elements in the set of matched elements."		self call: 'wrapAll' with: (self render: aRenderable)!
 
 wrapInner: aRenderable 	"Wrap an HTML structure around the content of each element in the set of matched elements."		self call: 'wrapInner' with: (self render: aRenderable)! !
-!JQueryInstance categoriesFor: #add:!navigation!public! !
-!JQueryInstance categoriesFor: #add:context:!navigation!public! !
-!JQueryInstance categoriesFor: #addBack!chaining!public! !
-!JQueryInstance categoriesFor: #addClass:!classes!public! !
-!JQueryInstance categoriesFor: #after:!modifying!public! !
-!JQueryInstance categoriesFor: #animate!effects!public! !
-!JQueryInstance categoriesFor: #append:!modifying!public! !
-!JQueryInstance categoriesFor: #appendTo:!modifying!public! !
-!JQueryInstance categoriesFor: #at:!accessors/smalltalk!public! !
-!JQueryInstance categoriesFor: #atAll!accessors/smalltalk!public! !
-!JQueryInstance categoriesFor: #attributeAt:!attributes!public! !
-!JQueryInstance categoriesFor: #attributeAt:put:!attributes!public! !
-!JQueryInstance categoriesFor: #attributes:!attributes!public! !
-!JQueryInstance categoriesFor: #before:!modifying!public! !
-!JQueryInstance categoriesFor: #bind:data:do:!events!public! !
-!JQueryInstance categoriesFor: #bind:do:!events!public! !
-!JQueryInstance categoriesFor: #children!navigation!public! !
-!JQueryInstance categoriesFor: #children:!navigation!public! !
-!JQueryInstance categoriesFor: #clearQueue!effects!public! !
-!JQueryInstance categoriesFor: #clearQueue:!effects!public! !
-!JQueryInstance categoriesFor: #clone!copying!public! !
-!JQueryInstance categoriesFor: #cloneAll!copying!public! !
-!JQueryInstance categoriesFor: #closest!navigation!public! !
-!JQueryInstance categoriesFor: #closest:!navigation!public! !
-!JQueryInstance categoriesFor: #collect:!accessors/smalltalk!public! !
-!JQueryInstance categoriesFor: #contents!navigation!public! !
-!JQueryInstance categoriesFor: #css:!css!public! !
-!JQueryInstance categoriesFor: #cssAt:!css!public! !
-!JQueryInstance categoriesFor: #cssAt:put:!css!public! !
-!JQueryInstance categoriesFor: #dataAt:!data!public! !
-!JQueryInstance categoriesFor: #dataAt:put:!data!public! !
-!JQueryInstance categoriesFor: #delay:!effects!public! !
-!JQueryInstance categoriesFor: #delay:queue:!effects!public! !
-!JQueryInstance categoriesFor: #delegate:on:data:do:!events!public! !
-!JQueryInstance categoriesFor: #delegate:on:do:!events!public! !
-!JQueryInstance categoriesFor: #dequeue!data!public! !
-!JQueryInstance categoriesFor: #dequeue:!data!public! !
-!JQueryInstance categoriesFor: #detach!modifying!public! !
-!JQueryInstance categoriesFor: #detach:!modifying!public! !
-!JQueryInstance categoriesFor: #do:!accessors/smalltalk!public! !
-!JQueryInstance categoriesFor: #each:!accessors!public! !
-!JQueryInstance categoriesFor: #empty!modifying!public! !
-!JQueryInstance categoriesFor: #end!chaining!public! !
-!JQueryInstance categoriesFor: #eq:!accessors!public! !
-!JQueryInstance categoriesFor: #fade:to:!effects!public! !
-!JQueryInstance categoriesFor: #fade:to:callback:!effects!public! !
-!JQueryInstance categoriesFor: #fadeIn:!effects!public! !
-!JQueryInstance categoriesFor: #fadeIn:callback:!effects!public! !
-!JQueryInstance categoriesFor: #fadeOut:!effects!public! !
-!JQueryInstance categoriesFor: #fadeOut:callback:!effects!public! !
-!JQueryInstance categoriesFor: #fadeToggle:!effects!public! !
-!JQueryInstance categoriesFor: #fadeToggle:callback:!effects!public! !
-!JQueryInstance categoriesFor: #filter:!filtering!public! !
-!JQueryInstance categoriesFor: #find:!navigation!public! !
-!JQueryInstance categoriesFor: #first!filtering!public! !
-!JQueryInstance categoriesFor: #get!accessors!public! !
-!JQueryInstance categoriesFor: #get:!accessors!public! !
-!JQueryInstance categoriesFor: #has:!filtering!public! !
-!JQueryInstance categoriesFor: #hasClass:!classes!public! !
-!JQueryInstance categoriesFor: #height!css!public! !
-!JQueryInstance categoriesFor: #height:!css!public! !
-!JQueryInstance categoriesFor: #hide!effects!public! !
-!JQueryInstance categoriesFor: #hide:!effects!public! !
-!JQueryInstance categoriesFor: #hide:callback:!effects!public! !
-!JQueryInstance categoriesFor: #hover:out:!events!public! !
-!JQueryInstance categoriesFor: #html!manipulating!public! !
-!JQueryInstance categoriesFor: #html:!manipulating!public! !
-!JQueryInstance categoriesFor: #id:!private! !
-!JQueryInstance categoriesFor: #index!accessors!public! !
-!JQueryInstance categoriesFor: #index:!accessors!public! !
-!JQueryInstance categoriesFor: #innerHeight!css!public! !
-!JQueryInstance categoriesFor: #innerWidth!css!public! !
-!JQueryInstance categoriesFor: #insertAfter:!modifying!public! !
-!JQueryInstance categoriesFor: #insertBefore:!modifying!public! !
-!JQueryInstance categoriesFor: #is:!filtering!public! !
-!JQueryInstance categoriesFor: #iteratorFor:return:!private! !
-!JQueryInstance categoriesFor: #javascriptContentOn:!printing!public! !
-!JQueryInstance categoriesFor: #last!filtering!public! !
-!JQueryInstance categoriesFor: #length!private! !
-!JQueryInstance categoriesFor: #load!ajax!public! !
-!JQueryInstance categoriesFor: #map:!accessors!public! !
-!JQueryInstance categoriesFor: #next!navigation!public! !
-!JQueryInstance categoriesFor: #next:!navigation!public! !
-!JQueryInstance categoriesFor: #nextAll!navigation!public! !
-!JQueryInstance categoriesFor: #nextAll:!navigation!public! !
-!JQueryInstance categoriesFor: #nextUntil:!navigation!public! !
-!JQueryInstance categoriesFor: #not:!filtering!public! !
-!JQueryInstance categoriesFor: #off:!events!public! !
-!JQueryInstance categoriesFor: #off:selector:!events!public! !
-!JQueryInstance categoriesFor: #offset!css!public! !
-!JQueryInstance categoriesFor: #offsetLeft!css!public! !
-!JQueryInstance categoriesFor: #offsetParent!css!public! !
-!JQueryInstance categoriesFor: #offsetTop!css!public! !
-!JQueryInstance categoriesFor: #on:do:!events!public! !
-!JQueryInstance categoriesFor: #on:selector:do:!events!public! !
-!JQueryInstance categoriesFor: #onAjaxComplete:!ajax/events!public! !
-!JQueryInstance categoriesFor: #onAjaxError:!ajax/events!public! !
-!JQueryInstance categoriesFor: #onAjaxSend:!ajax/events!public! !
-!JQueryInstance categoriesFor: #onAjaxStart:!ajax/events!public! !
-!JQueryInstance categoriesFor: #onAjaxStop:!ajax/events!public! !
-!JQueryInstance categoriesFor: #onAjaxSuccess:!ajax/events!public! !
-!JQueryInstance categoriesFor: #onBlur:!events/register!public! !
-!JQueryInstance categoriesFor: #onChange:!events/register!public! !
-!JQueryInstance categoriesFor: #onClick:!events/register!public! !
-!JQueryInstance categoriesFor: #onDoubleClick:!events/register!public! !
-!JQueryInstance categoriesFor: #one:do:!events!public! !
-!JQueryInstance categoriesFor: #onError:!events/register!public! !
-!JQueryInstance categoriesFor: #onFocus:!events/register!public! !
-!JQueryInstance categoriesFor: #onFocusIn:!events/register!public! !
-!JQueryInstance categoriesFor: #onFocusOut:!events/register!public! !
-!JQueryInstance categoriesFor: #onInput:!events/register!public! !
-!JQueryInstance categoriesFor: #onKeyDown:!events/register!public! !
-!JQueryInstance categoriesFor: #onKeyPress:!events/register!public! !
-!JQueryInstance categoriesFor: #onKeyUp:!events/register!public! !
-!JQueryInstance categoriesFor: #onLoad:!events/register!public! !
-!JQueryInstance categoriesFor: #onMouseDown:!events/register!public! !
-!JQueryInstance categoriesFor: #onMouseEnter:!events/register!public! !
-!JQueryInstance categoriesFor: #onMouseLeave:!events/register!public! !
-!JQueryInstance categoriesFor: #onMouseMove:!events/register!public! !
-!JQueryInstance categoriesFor: #onMouseOut:!events/register!public! !
-!JQueryInstance categoriesFor: #onMouseOver:!events/register!public! !
-!JQueryInstance categoriesFor: #onMouseUp:!events/register!public! !
-!JQueryInstance categoriesFor: #onResize:!events/register!public! !
-!JQueryInstance categoriesFor: #onScroll:!events/register!public! !
-!JQueryInstance categoriesFor: #onSelect:!events/register!public! !
-!JQueryInstance categoriesFor: #onSubmit:!events/register!public! !
-!JQueryInstance categoriesFor: #onUnload:!events/register!public! !
-!JQueryInstance categoriesFor: #outerHeight!css!public! !
-!JQueryInstance categoriesFor: #outerWidth!css!public! !
-!JQueryInstance categoriesFor: #parent!navigation!public! !
-!JQueryInstance categoriesFor: #parent:!navigation!public! !
-!JQueryInstance categoriesFor: #parents!navigation!public! !
-!JQueryInstance categoriesFor: #parents:!navigation!public! !
-!JQueryInstance categoriesFor: #parentsUntil:!navigation!public! !
-!JQueryInstance categoriesFor: #position!css!public! !
-!JQueryInstance categoriesFor: #positionLeft!css!public! !
-!JQueryInstance categoriesFor: #positionTop!css!public! !
-!JQueryInstance categoriesFor: #prepend:!modifying!public! !
-!JQueryInstance categoriesFor: #prependTo:!modifying!public! !
-!JQueryInstance categoriesFor: #previous!navigation!public! !
-!JQueryInstance categoriesFor: #previous:!navigation!public! !
-!JQueryInstance categoriesFor: #previousAll!navigation!public! !
-!JQueryInstance categoriesFor: #previousAll:!navigation!public! !
-!JQueryInstance categoriesFor: #previousUntil:!navigation!public! !
-!JQueryInstance categoriesFor: #properties:!attributes!public! !
-!JQueryInstance categoriesFor: #propertyAt:!attributes!public! !
-!JQueryInstance categoriesFor: #propertyAt:put:!attributes!public! !
-!JQueryInstance categoriesFor: #queue!data!public! !
-!JQueryInstance categoriesFor: #queue:!data!public! !
-!JQueryInstance categoriesFor: #queue:do:!data!public! !
-!JQueryInstance categoriesFor: #remove!modifying!public! !
-!JQueryInstance categoriesFor: #remove:!modifying!public! !
-!JQueryInstance categoriesFor: #removeAttribute:!attributes!public! !
-!JQueryInstance categoriesFor: #removeClass:!classes!public! !
-!JQueryInstance categoriesFor: #removeDataAt:!data!public! !
-!JQueryInstance categoriesFor: #removeProperty:!attributes!public! !
-!JQueryInstance categoriesFor: #replaceAll:!modifying!public! !
-!JQueryInstance categoriesFor: #replaceWith:!modifying!public! !
-!JQueryInstance categoriesFor: #scrollLeft!css!public! !
-!JQueryInstance categoriesFor: #scrollLeft:!css!public! !
-!JQueryInstance categoriesFor: #scrollTop!css!public! !
-!JQueryInstance categoriesFor: #scrollTop:!css!public! !
-!JQueryInstance categoriesFor: #serialize!ajax!public! !
-!JQueryInstance categoriesFor: #serializeArray!ajax!public! !
-!JQueryInstance categoriesFor: #setArguments:!initialization!public! !
-!JQueryInstance categoriesFor: #show!effects!public! !
-!JQueryInstance categoriesFor: #show:!effects!public! !
-!JQueryInstance categoriesFor: #show:callback:!effects!public! !
-!JQueryInstance categoriesFor: #siblings!navigation!public! !
-!JQueryInstance categoriesFor: #siblings:!navigation!public! !
-!JQueryInstance categoriesFor: #sliceFrom:!filtering!public! !
-!JQueryInstance categoriesFor: #sliceFrom:to:!filtering!public! !
-!JQueryInstance categoriesFor: #slideDown:!effects!public! !
-!JQueryInstance categoriesFor: #slideDown:callback:!effects!public! !
-!JQueryInstance categoriesFor: #slideToggle:!effects!public! !
-!JQueryInstance categoriesFor: #slideToggle:callback:!effects!public! !
-!JQueryInstance categoriesFor: #slideUp:!effects!public! !
-!JQueryInstance categoriesFor: #slideUp:callback:!effects!public! !
-!JQueryInstance categoriesFor: #stop!effects!public! !
-!JQueryInstance categoriesFor: #text!manipulating!public! !
-!JQueryInstance categoriesFor: #text:!manipulating!public! !
-!JQueryInstance categoriesFor: #toArray!accessors!public! !
-!JQueryInstance categoriesFor: #toggle!effects!public! !
-!JQueryInstance categoriesFor: #toggle:!effects!public! !
-!JQueryInstance categoriesFor: #toggle:callback:!effects!public! !
-!JQueryInstance categoriesFor: #toggleClass:!classes!public! !
-!JQueryInstance categoriesFor: #toggleClass:state:!classes!public! !
-!JQueryInstance categoriesFor: #trigger:!events!public! !
-!JQueryInstance categoriesFor: #triggerBlur!events/trigger!public! !
-!JQueryInstance categoriesFor: #triggerChange!events/trigger!public! !
-!JQueryInstance categoriesFor: #triggerClick!events/trigger!public! !
-!JQueryInstance categoriesFor: #triggerDoubleClick!events/trigger!public! !
-!JQueryInstance categoriesFor: #triggerError!events/trigger!public! !
-!JQueryInstance categoriesFor: #triggerFocus!events/trigger!public! !
-!JQueryInstance categoriesFor: #triggerHandler:!events!public! !
-!JQueryInstance categoriesFor: #triggerKeyDown!events/trigger!public! !
-!JQueryInstance categoriesFor: #triggerKeyPress!events/trigger!public! !
-!JQueryInstance categoriesFor: #triggerKeyUp!events/trigger!public! !
-!JQueryInstance categoriesFor: #triggerSelect!events/trigger!public! !
-!JQueryInstance categoriesFor: #triggerSubmit!events/trigger!public! !
-!JQueryInstance categoriesFor: #unbind:!events!public! !
-!JQueryInstance categoriesFor: #undelegate!events!public! !
-!JQueryInstance categoriesFor: #undelegate:on:!events!public! !
-!JQueryInstance categoriesFor: #unwrap!modifying!public! !
-!JQueryInstance categoriesFor: #value!manipulating!public! !
-!JQueryInstance categoriesFor: #value:!manipulating!public! !
-!JQueryInstance categoriesFor: #width!css!public! !
-!JQueryInstance categoriesFor: #width:!css!public! !
-!JQueryInstance categoriesFor: #wrap:!modifying!public! !
-!JQueryInstance categoriesFor: #wrapAll:!modifying!public! !
-!JQueryInstance categoriesFor: #wrapInner:!modifying!public! !
+
+!JQueryInstance categoriesForMethods!
+add:!navigation!public! !
+add:context:!navigation!public! !
+addBack!chaining!public! !
+addClass:!classes!public! !
+after:!modifying!public! !
+animate!effects!public! !
+append:!modifying!public! !
+appendTo:!modifying!public! !
+at:!accessors/smalltalk!public! !
+atAll!accessors/smalltalk!public! !
+attributeAt:!attributes!public! !
+attributeAt:put:!attributes!public! !
+attributes:!attributes!public! !
+before:!modifying!public! !
+bind:data:do:!events!public! !
+bind:do:!events!public! !
+children!navigation!public! !
+children:!navigation!public! !
+clearQueue!effects!public! !
+clearQueue:!effects!public! !
+clone!copying!public! !
+cloneAll!copying!public! !
+closest!navigation!public! !
+closest:!navigation!public! !
+collect:!accessors/smalltalk!public! !
+contents!navigation!public! !
+css:!css!public! !
+cssAt:!css!public! !
+cssAt:put:!css!public! !
+dataAt:!data!public! !
+dataAt:put:!data!public! !
+delay:!effects!public! !
+delay:queue:!effects!public! !
+delegate:on:data:do:!events!public! !
+delegate:on:do:!events!public! !
+dequeue!data!public! !
+dequeue:!data!public! !
+detach!modifying!public! !
+detach:!modifying!public! !
+do:!accessors/smalltalk!public! !
+each:!accessors!public! !
+empty!modifying!public! !
+end!chaining!public! !
+eq:!accessors!public! !
+even!filtering!public! !
+fade:to:!effects!public! !
+fade:to:callback:!effects!public! !
+fadeIn:!effects!public! !
+fadeIn:callback:!effects!public! !
+fadeOut:!effects!public! !
+fadeOut:callback:!effects!public! !
+fadeToggle:!effects!public! !
+fadeToggle:callback:!effects!public! !
+filter:!filtering!public! !
+find:!navigation!public! !
+first!filtering!public! !
+get!accessors!public! !
+get:!accessors!public! !
+has:!filtering!public! !
+hasClass:!classes!public! !
+height!css!public! !
+height:!css!public! !
+hide!effects!public! !
+hide:!effects!public! !
+hide:callback:!effects!public! !
+hover:out:!events!public! !
+html!manipulating!public! !
+html:!manipulating!public! !
+id:!private! !
+index!accessors!public! !
+index:!accessors!public! !
+innerHeight!css!public! !
+innerWidth!css!public! !
+insertAfter:!modifying!public! !
+insertBefore:!modifying!public! !
+is:!filtering!public! !
+iteratorFor:return:!private! !
+javascriptContentOn:!printing!public! !
+last!filtering!public! !
+length!private! !
+load!ajax!public! !
+map:!accessors!public! !
+next!navigation!public! !
+next:!navigation!public! !
+nextAll!navigation!public! !
+nextAll:!navigation!public! !
+nextUntil:!navigation!public! !
+not:!filtering!public! !
+odd!filtering!public! !
+off:!events!public! !
+off:selector:!events!public! !
+offset!css!public! !
+offsetLeft!css!public! !
+offsetParent!css!public! !
+offsetTop!css!public! !
+on:do:!events!public! !
+on:selector:do:!events!public! !
+onAjaxComplete:!ajax/events!public! !
+onAjaxError:!ajax/events!public! !
+onAjaxSend:!ajax/events!public! !
+onAjaxStart:!ajax/events!public! !
+onAjaxStop:!ajax/events!public! !
+onAjaxSuccess:!ajax/events!public! !
+onBlur:!events/register!public! !
+onChange:!events/register!public! !
+onClick:!events/register!public! !
+onDoubleClick:!events/register!public! !
+one:do:!events!public! !
+onError:!events/register!public! !
+onFocus:!events/register!public! !
+onFocusIn:!events/register!public! !
+onFocusOut:!events/register!public! !
+onInput:!events/register!public! !
+onKeyDown:!events/register!public! !
+onKeyPress:!events/register!public! !
+onKeyUp:!events/register!public! !
+onLoad:!events/register!public! !
+onMouseDown:!events/register!public! !
+onMouseEnter:!events/register!public! !
+onMouseLeave:!events/register!public! !
+onMouseMove:!events/register!public! !
+onMouseOut:!events/register!public! !
+onMouseOver:!events/register!public! !
+onMouseUp:!events/register!public! !
+onResize:!events/register!public! !
+onScroll:!events/register!public! !
+onSelect:!events/register!public! !
+onSubmit:!events/register!public! !
+onUnload:!events/register!public! !
+outerHeight!css!public! !
+outerWidth!css!public! !
+parent!navigation!public! !
+parent:!navigation!public! !
+parents!navigation!public! !
+parents:!navigation!public! !
+parentsUntil:!navigation!public! !
+position!css!public! !
+positionLeft!css!public! !
+positionTop!css!public! !
+prepend:!modifying!public! !
+prependTo:!modifying!public! !
+previous!navigation!public! !
+previous:!navigation!public! !
+previousAll!navigation!public! !
+previousAll:!navigation!public! !
+previousUntil:!navigation!public! !
+properties:!attributes!public! !
+propertyAt:!attributes!public! !
+propertyAt:put:!attributes!public! !
+queue!data!public! !
+queue:!data!public! !
+queue:do:!data!public! !
+remove!modifying!public! !
+remove:!modifying!public! !
+removeAttribute:!attributes!public! !
+removeClass:!classes!public! !
+removeDataAt:!data!public! !
+removeProperty:!attributes!public! !
+replaceAll:!modifying!public! !
+replaceWith:!modifying!public! !
+scrollLeft!css!public! !
+scrollLeft:!css!public! !
+scrollTop!css!public! !
+scrollTop:!css!public! !
+serialize!ajax!public! !
+serializeArray!ajax!public! !
+setArguments:!initialization!public! !
+show!effects!public! !
+show:!effects!public! !
+show:callback:!effects!public! !
+siblings!navigation!public! !
+siblings:!navigation!public! !
+sliceFrom:!filtering!public! !
+sliceFrom:to:!filtering!public! !
+slideDown:!effects!public! !
+slideDown:callback:!effects!public! !
+slideToggle:!effects!public! !
+slideToggle:callback:!effects!public! !
+slideUp:!effects!public! !
+slideUp:callback:!effects!public! !
+stop!effects!public! !
+text!manipulating!public! !
+text:!manipulating!public! !
+toArray!accessors!public! !
+toggle!effects!public! !
+toggle:!effects!public! !
+toggle:callback:!effects!public! !
+toggleClass:!classes!public! !
+toggleClass:state:!classes!public! !
+trigger:!events!public! !
+triggerBlur!events/trigger!public! !
+triggerChange!events/trigger!public! !
+triggerClick!events/trigger!public! !
+triggerDoubleClick!events/trigger!public! !
+triggerError!events/trigger!public! !
+triggerFocus!events/trigger!public! !
+triggerHandler:!events!public! !
+triggerKeyDown!events/trigger!public! !
+triggerKeyPress!events/trigger!public! !
+triggerKeyUp!events/trigger!public! !
+triggerSelect!events/trigger!public! !
+triggerSubmit!events/trigger!public! !
+unbind:!events!public! !
+undelegate!events!public! !
+undelegate:on:!events!public! !
+uniqueSort!data!public! !
+unwrap!modifying!public! !
+value!manipulating!public! !
+value:!manipulating!public! !
+width!css!public! !
+width:!css!public! !
+wrap:!modifying!public! !
+wrapAll:!modifying!public! !
+wrapInner:!modifying!public! !
+!
 
 !JQueryInstance class methodsFor!
 
 context: aRenderContext constructor: anArray	^ (self context: aRenderContext) setArguments: anArray! !
-!JQueryInstance class categoriesFor: #context:constructor:!instance creation!public! !
+
+!JQueryInstance class categoriesForMethods!
+context:constructor:!instance creation!public! !
+!
 

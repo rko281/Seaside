@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAResponseTest subclass: #WABufferedResponseTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WABufferedResponseTest guid: (GUID fromString: '{bc3b9ee0-ff6f-4344-be51-4f3090c6f34c}')!
+
+WABufferedResponseTest guid: (GUID fromString: '{2d45f368-e90c-4d7b-baaa-4c20f5a0bedd}')!
+
 WABufferedResponseTest comment: ''!
-!WABufferedResponseTest categoriesForClass!Seaside-Tests-Core-HTTP! !
+
+!WABufferedResponseTest categoriesForClass!HTTP! !
+
 !WABufferedResponseTest methodsFor!
 
 contents	| stream |	stream := WriteStream on: String new.	self response writeOn: stream.	^ stream contents!
@@ -19,9 +23,12 @@ testEmptyAfterReset	| resetPossible |	resetPossible := self response		status:
 testIsCommitted	super testIsCommitted.	self deny: self response isCommitted!
 
 testResetThenWrite	| resetPossible |	resetPossible := self response		status: WAResponse statusNotFound;		attachmentWithFileName: 'upload.csv';		nextPutAll: 'the wrong content';		resetIfPossible.	self assert: resetPossible.	self response		status: WAResponse statusImATeapot;		headerAt: 'X-The-Header' put: 'the value';		nextPutAll: 'the real content'.	self assertLines: #('HTTP/1.1 418 I''m a teapot' 'X-The-Header: the value' 'Content-Length: 16' '' 'the real content')! !
-!WABufferedResponseTest categoriesFor: #contents!accessing!public! !
-!WABufferedResponseTest categoriesFor: #response!accessing!public! !
-!WABufferedResponseTest categoriesFor: #testEmptyAfterReset!public!tests/conveniance! !
-!WABufferedResponseTest categoriesFor: #testIsCommitted!public!tests! !
-!WABufferedResponseTest categoriesFor: #testResetThenWrite!public!tests/conveniance! !
+
+!WABufferedResponseTest categoriesForMethods!
+contents!accessing!public! !
+response!accessing!public! !
+testEmptyAfterReset!public!tests/conveniance! !
+testIsCommitted!public!tests! !
+testResetThenWrite!public!tests/conveniance! !
+!
 

@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQAllFunctionalTests subclass: #JQUiAllFunctionalTests
 	instanceVariableNames: 'themes theme'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQUiAllFunctionalTests guid: (GUID fromString: '{0dc5d086-f10d-404e-bd19-d8ae66621410}')!
+
+JQUiAllFunctionalTests guid: (GUID fromString: '{0c753766-a970-4ce5-bc86-a4881ab1d434}')!
+
 JQUiAllFunctionalTests comment: ''!
-!JQUiAllFunctionalTests categoriesForClass!JQuery-Tests-UI-Functional! !
+
+!JQUiAllFunctionalTests categoriesForClass!Functional! !
+
 !JQUiAllFunctionalTests methodsFor!
 
 default	^ JQUiWelcomeFunctionalTest new!
@@ -31,23 +35,29 @@ title	^ 'jQuery UI for Seaside'!
 updateRoot: anHtmlRoot	super updateRoot: anHtmlRoot.	self theme updateRoot: anHtmlRoot.	JQUiAllFunctionalTestsLibrary default 		updateRoot: anHtmlRoot!
 
 url	^ 'http://ui.jquery.com/'! !
-!JQUiAllFunctionalTests categoriesFor: #default!configuration!public! !
-!JQUiAllFunctionalTests categoriesFor: #initialize!initialization!public! !
-!JQUiAllFunctionalTests categoriesFor: #menu!configuration!public! !
-!JQUiAllFunctionalTests categoriesFor: #renderHeaderOn:!public!rendering! !
-!JQUiAllFunctionalTests categoriesFor: #renderThemeOn:!public!rendering! !
-!JQUiAllFunctionalTests categoriesFor: #tests!configuration!public! !
-!JQUiAllFunctionalTests categoriesFor: #theme!configuration!public! !
-!JQUiAllFunctionalTests categoriesFor: #themes!configuration!public! !
-!JQUiAllFunctionalTests categoriesFor: #title!configuration!public! !
-!JQUiAllFunctionalTests categoriesFor: #updateRoot:!public!updating! !
-!JQUiAllFunctionalTests categoriesFor: #url!configuration!public! !
+
+!JQUiAllFunctionalTests categoriesForMethods!
+default!configuration!public! !
+initialize!initialization!public! !
+menu!configuration!public! !
+renderHeaderOn:!public!rendering! !
+renderThemeOn:!public!rendering! !
+tests!configuration!public! !
+theme!configuration!public! !
+themes!configuration!public! !
+title!configuration!public! !
+updateRoot:!public!updating! !
+url!configuration!public! !
+!
 
 !JQUiAllFunctionalTests class methodsFor!
 
 description	^ 'jQuery UI Functional Test Suite'!
 
 initialize	| application |	application := WAAdmin register: self asApplicationAt: 'javascript/jquery-ui'.	application preferenceAt: #scriptGeneratorClass put: JQScriptGenerator.	application		addLibrary: JQDeploymentLibrary;		addLibrary: JQUiDeploymentLibrary! !
-!JQUiAllFunctionalTests class categoriesFor: #description!accessing!public! !
-!JQUiAllFunctionalTests class categoriesFor: #initialize!initialization!public! !
+
+!JQUiAllFunctionalTests class categoriesForMethods!
+description!accessing!public! !
+initialize!initialization!public! !
+!
 

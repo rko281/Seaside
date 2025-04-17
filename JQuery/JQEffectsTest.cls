@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQueryTest subclass: #JQEffectsTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQEffectsTest guid: (GUID fromString: '{50e1bb63-ad87-4c71-a36e-0857c527a51c}')!
+
+JQEffectsTest guid: (GUID fromString: '{68f5b39f-bcf1-41dd-a62d-eac6bc06d15f}')!
+
 JQEffectsTest comment: ''!
-!JQEffectsTest categoriesForClass!JQuery-Tests-Core-Unit! !
+
+!JQEffectsTest categoriesForClass!Unit! !
+
 !JQEffectsTest methodsFor!
 
 animate	^ self target animate!
@@ -43,21 +47,24 @@ testSlideUp	self 		assert: (self target slideUp: 'slow')		equals: self functi
 testStop	self 		assert: (self target stop)		equals: self function , '("div").stop()'!
 
 testToggle	self 		assert: (self target toggle)		equals: self function , '("div").toggle()'.	self 		assert: (self target toggle: 'slow')		equals: self function , '("div").toggle("slow")'.	self 		assert: (self target toggle: 'fast' callback: 'done')		equals: self function , '("div").toggle("fast",function(){done})'! !
-!JQEffectsTest categoriesFor: #animate!accessing!public! !
-!JQEffectsTest categoriesFor: #target!accessing!public! !
-!JQEffectsTest categoriesFor: #testAnimateEvents!public!tests/animation! !
-!JQEffectsTest categoriesFor: #testAnimateOptions!public!tests/animation! !
-!JQEffectsTest categoriesFor: #testAnimateParams!public!tests/animation! !
-!JQEffectsTest categoriesFor: #testFadeIn!public!tests/effects! !
-!JQEffectsTest categoriesFor: #testFadeOut!public!tests/effects! !
-!JQEffectsTest categoriesFor: #testFadeTo!public!tests/effects! !
-!JQEffectsTest categoriesFor: #testFadeToggle!public!tests/effects! !
-!JQEffectsTest categoriesFor: #testHide!public!tests/effects! !
-!JQEffectsTest categoriesFor: #testId!public!tests! !
-!JQEffectsTest categoriesFor: #testShow!public!tests/effects! !
-!JQEffectsTest categoriesFor: #testSlideDown!public!tests/effects! !
-!JQEffectsTest categoriesFor: #testSlideToggle!public!tests/effects! !
-!JQEffectsTest categoriesFor: #testSlideUp!public!tests/effects! !
-!JQEffectsTest categoriesFor: #testStop!public!tests! !
-!JQEffectsTest categoriesFor: #testToggle!public!tests/effects! !
+
+!JQEffectsTest categoriesForMethods!
+animate!accessing!public! !
+target!accessing!public! !
+testAnimateEvents!public!tests/animation! !
+testAnimateOptions!public!tests/animation! !
+testAnimateParams!public!tests/animation! !
+testFadeIn!public!tests/effects! !
+testFadeOut!public!tests/effects! !
+testFadeTo!public!tests/effects! !
+testFadeToggle!public!tests/effects! !
+testHide!public!tests/effects! !
+testId!public!tests! !
+testShow!public!tests/effects! !
+testSlideDown!public!tests/effects! !
+testSlideToggle!public!tests/effects! !
+testSlideUp!public!tests/effects! !
+testStop!public!tests! !
+testToggle!public!tests/effects! !
+!
 

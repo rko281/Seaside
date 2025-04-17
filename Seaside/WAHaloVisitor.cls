@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAPainterVisitor subclass: #WAHaloVisitor
 	instanceVariableNames: 'toolDecoration renderContext visitor'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAHaloVisitor guid: (GUID fromString: '{c59b4d32-846c-46d8-bb7b-8c0899c32598}')!
+
+WAHaloVisitor guid: (GUID fromString: '{ae792879-7385-4525-b14f-e19b238fdb3d}')!
+
 WAHaloVisitor comment: ''!
-!WAHaloVisitor categoriesForClass!Seaside-Development-Core! !
+
+!WAHaloVisitor categoriesForClass!Core! !
+
 !WAHaloVisitor methodsFor!
 
 initializeWithToolDecoration: aToolDecoration renderContext: aRenderContext	self initialize.	toolDecoration := aToolDecoration.	renderContext := aRenderContext!
@@ -22,17 +26,23 @@ visitor	^ visitor!
 
 visitor: anObject	visitor := anObject!
 
-visitPainter: aPainter 	| halo |	(self renderContext halosEnabled and: [ aPainter canHaveHalo ]) 		ifTrue: [			halo := self toolDecoration haloFor: aPainter.			halo renderWithContext: self renderContext visitor: visitor ]		ifFalse: [ visitor visit: aPainter ]	! !
-!WAHaloVisitor categoriesFor: #initializeWithToolDecoration:renderContext:!initialization!public! !
-!WAHaloVisitor categoriesFor: #postCopyForRenderContext:!copying!public! !
-!WAHaloVisitor categoriesFor: #renderContext!accessing!public! !
-!WAHaloVisitor categoriesFor: #toolDecoration!accessing!public! !
-!WAHaloVisitor categoriesFor: #visitor!accessing!public! !
-!WAHaloVisitor categoriesFor: #visitor:!accessing!public! !
-!WAHaloVisitor categoriesFor: #visitPainter:!public!visiting! !
+visitPainter: aPainter 	| halo |	(self renderContext halosEnabled and: [ aPainter canHaveHalo ]) 		ifTrue: [			halo := self toolDecoration haloFor: aPainter.			halo renderWithContext: self renderContext visitor: visitor ]		ifFalse: [ visitor visit: aPainter ]! !
+
+!WAHaloVisitor categoriesForMethods!
+initializeWithToolDecoration:renderContext:!initialization!public! !
+postCopyForRenderContext:!copying!public! !
+renderContext!accessing!public! !
+toolDecoration!accessing!public! !
+visitor!accessing!public! !
+visitor:!accessing!public! !
+visitPainter:!public!visiting! !
+!
 
 !WAHaloVisitor class methodsFor!
 
 decoration: aToolDecoration context: aRenderContext	^ self basicNew		initializeWithToolDecoration: aToolDecoration renderContext: aRenderContext;		yourself! !
-!WAHaloVisitor class categoriesFor: #decoration:context:!instance creation!public! !
+
+!WAHaloVisitor class categoriesForMethods!
+decoration:context:!instance creation!public! !
+!
 

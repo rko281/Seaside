@@ -1,16 +1,20 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 TestCase subclass: #WAResponseTest
 	instanceVariableNames: 'response'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAResponseTest guid: (GUID fromString: '{3be6c903-2cdd-43af-b649-18fd8bb58fc0}')!
+
+WAResponseTest guid: (GUID fromString: '{457cdcea-aa3f-4822-9910-7da7ee06c7e9}')!
+
 WAResponseTest comment: ''!
-!WAResponseTest categoriesForClass!Seaside-Tests-Core-HTTP! !
+
+!WAResponseTest categoriesForClass!HTTP! !
+
 !WAResponseTest methodsFor!
 
-assertLines: anArray	self assert: self lines = anArray!
+assertLines: anArray	self assert: self lines equals: anArray!
 
 contents	"Answer a string of the complete response as it is sent to the client."		self subclassResponsibility!
 
@@ -58,7 +62,7 @@ testInlineWithFileName	self response inlineWithFileName: 'bar.txt'.	self asser
 
 testIsCommitted	self deny: self response isCommitted.	self response contentType: 'text/html'.	self deny: self response isCommitted.	self response nextPutAll: 'Visit <a href="http://www.seaside.st">seaside.st</a>.'.	self assertLines: #('HTTP/1.1 200 OK' 'Content-Type: text/html' 'Content-Length: 53' '' 'Visit <a href="http://www.seaside.st">seaside.st</a>.')!
 
-testMessage	self assert: self response message = 'OK'.		self response status: 404.	self assert: self response message = 'Not Found'.		self response status: 290.	self assert: self response message isNil.		self response status: 290 message: 'Seaside Rocks'.	self assert: self response message = 'Seaside Rocks'	!
+testMessage	self assert: self response message = 'OK'.		self response status: 404.	self assert: self response message = 'Not Found'.		self response status: 290.	self assert: self response message isNil.		self response status: 290 message: 'Seaside Rocks'.	self assert: self response message = 'Seaside Rocks'!
 
 testRedirectTo	self response redirectTo: 'http://www.seaside.st/'.	self assertLines:  #('HTTP/1.1 302 Found' 'Location: http://www.seaside.st/' 'Content-Length: 0' '')!
 
@@ -69,39 +73,45 @@ testStatus	self assert: self response status = 200.	self response status: 404.
 testStreaming	| stream |	self response notFound.		" This is a normal write stream that supports the standard WriteStream protocol. All Smalltalk dialects should support common messages such as #nextPut:, #nextPutAll:, #print:, #crlf, etc."	stream := self response stream.	stream nextPutAll: 'A long long way from home.'.	stream crlf.	stream nextPut: $!!.	stream print: 123.		self assertLines: #('HTTP/1.1 404 Not Found' 'Content-Length: 32' '' 'A long long way from home.' '!!123')!
 
 testStrictTransportSecurity	self response strictTransportSecurity: 500 includeSubDomains: true.	self assert: (self response headerAt: 'Strict-Transport-Security') = 'max-age=500; includeSubDomains'.		self response strictTransportSecurity: 500 includeSubDomains: false.	self assert: (self response headerAt: 'Strict-Transport-Security') = 'max-age=500'! !
-!WAResponseTest categoriesFor: #assertLines:!private! !
-!WAResponseTest categoriesFor: #contents!accessing!public! !
-!WAResponseTest categoriesFor: #lines!accessing!public! !
-!WAResponseTest categoriesFor: #response!accessing!public! !
-!WAResponseTest categoriesFor: #testAttachmentWithFileName!public!tests/conveniance! !
-!WAResponseTest categoriesFor: #testBasicAuthentication!public!tests/conveniance! !
-!WAResponseTest categoriesFor: #testCacheFor!public!tests/cache! !
-!WAResponseTest categoriesFor: #testCacheForever!public!tests/cache! !
-!WAResponseTest categoriesFor: #testCacheForeverExpiryDate!public!tests/cache! !
-!WAResponseTest categoriesFor: #testCodes!public!tests/status! !
-!WAResponseTest categoriesFor: #testContentType!public!tests! !
-!WAResponseTest categoriesFor: #testDefaultCache!public!tests/cache! !
-!WAResponseTest categoriesFor: #testDeleteCookie!public!tests/cache! !
-!WAResponseTest categoriesFor: #testDocumentMimeType!public!tests/documents! !
-!WAResponseTest categoriesFor: #testDocumentMimeTypeFileName!public!tests/documents! !
-!WAResponseTest categoriesFor: #testDoNotCache!public!tests/cache! !
-!WAResponseTest categoriesFor: #testDoNotCacheExpiryDate!public!tests/cache! !
-!WAResponseTest categoriesFor: #testHeadersAt!public!tests/headers! !
-!WAResponseTest categoriesFor: #testHeadersAtAppend!public!tests/headers! !
-!WAResponseTest categoriesFor: #testHeadersAtIfAbsent!public!tests/headers! !
-!WAResponseTest categoriesFor: #testHeadersAtPut!public!tests/headers! !
-!WAResponseTest categoriesFor: #testHeadersRemoveAt!public!tests/headers! !
-!WAResponseTest categoriesFor: #testInlineWithFileName!public!tests/conveniance! !
-!WAResponseTest categoriesFor: #testIsCommitted!public!tests! !
-!WAResponseTest categoriesFor: #testMessage!public!tests/status! !
-!WAResponseTest categoriesFor: #testRedirectTo!public!tests/conveniance! !
-!WAResponseTest categoriesFor: #testRefreshAfterLocation!public!tests/conveniance! !
-!WAResponseTest categoriesFor: #testStatus!public!tests/status! !
-!WAResponseTest categoriesFor: #testStreaming!public!tests! !
-!WAResponseTest categoriesFor: #testStrictTransportSecurity!public!tests/conveniance! !
+
+!WAResponseTest categoriesForMethods!
+assertLines:!private! !
+contents!accessing!public! !
+lines!accessing!public! !
+response!accessing!public! !
+testAttachmentWithFileName!public!tests/conveniance! !
+testBasicAuthentication!public!tests/conveniance! !
+testCacheFor!public!tests/cache! !
+testCacheForever!public!tests/cache! !
+testCacheForeverExpiryDate!public!tests/cache! !
+testCodes!public!tests/status! !
+testContentType!public!tests! !
+testDefaultCache!public!tests/cache! !
+testDeleteCookie!public!tests/cache! !
+testDocumentMimeType!public!tests/documents! !
+testDocumentMimeTypeFileName!public!tests/documents! !
+testDoNotCache!public!tests/cache! !
+testDoNotCacheExpiryDate!public!tests/cache! !
+testHeadersAt!public!tests/headers! !
+testHeadersAtAppend!public!tests/headers! !
+testHeadersAtIfAbsent!public!tests/headers! !
+testHeadersAtPut!public!tests/headers! !
+testHeadersRemoveAt!public!tests/headers! !
+testInlineWithFileName!public!tests/conveniance! !
+testIsCommitted!public!tests! !
+testMessage!public!tests/status! !
+testRedirectTo!public!tests/conveniance! !
+testRefreshAfterLocation!public!tests/conveniance! !
+testStatus!public!tests/status! !
+testStreaming!public!tests! !
+testStrictTransportSecurity!public!tests/conveniance! !
+!
 
 !WAResponseTest class methodsFor!
 
 isAbstract	^ self name = #WAResponseTest! !
-!WAResponseTest class categoriesFor: #isAbstract!public!testing! !
+
+!WAResponseTest class categoriesForMethods!
+isAbstract!public!testing! !
+!
 

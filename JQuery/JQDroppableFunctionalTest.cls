@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQUiFunctionalTest subclass: #JQDroppableFunctionalTest
 	instanceVariableNames: 'selected'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQDroppableFunctionalTest guid: (GUID fromString: '{904cfc6b-e96c-4bd7-829c-7de24b209937}')!
+
+JQDroppableFunctionalTest guid: (GUID fromString: '{dd9fd80d-45b5-4be1-bba1-ec813d7a2396}')!
+
 JQDroppableFunctionalTest comment: ''!
-!JQDroppableFunctionalTest categoriesForClass!JQuery-Tests-UI-Functional! !
+
+!JQDroppableFunctionalTest categoriesForClass!Functional! !
+
 !JQDroppableFunctionalTest methodsFor!
 
 colors	^ #(red green blue)!
@@ -33,16 +37,19 @@ style	^ '.inventory, .selected { 	height: 4em;	padding: 0.5em;	margin-bottom
 title	^ 'Droppable Interaction'!
 
 url	^ 'http://docs.jquery.com/UI/Droppable'! !
-!JQDroppableFunctionalTest categoriesFor: #colors!accessing!public! !
-!JQDroppableFunctionalTest categoriesFor: #initialize!initialization!public! !
-!JQDroppableFunctionalTest categoriesFor: #renderContentOn:!public!rendering! !
-!JQDroppableFunctionalTest categoriesFor: #renderInstructionsOn:!public!rendering! !
-!JQDroppableFunctionalTest categoriesFor: #renderInventoryOn:!public!rendering! !
-!JQDroppableFunctionalTest categoriesFor: #renderSelectedItemsOn:!public!rendering! !
-!JQDroppableFunctionalTest categoriesFor: #renderSelectedOn:!public!rendering! !
-!JQDroppableFunctionalTest categoriesFor: #selected!accessing!public! !
-!JQDroppableFunctionalTest categoriesFor: #selectors!accessing!public! !
-!JQDroppableFunctionalTest categoriesFor: #style!hooks!public! !
-!JQDroppableFunctionalTest categoriesFor: #title!accessing!public! !
-!JQDroppableFunctionalTest categoriesFor: #url!accessing!public! !
+
+!JQDroppableFunctionalTest categoriesForMethods!
+colors!accessing!public! !
+initialize!initialization!public! !
+renderContentOn:!public!rendering! !
+renderInstructionsOn:!public!rendering! !
+renderInventoryOn:!public!rendering! !
+renderSelectedItemsOn:!public!rendering! !
+renderSelectedOn:!public!rendering! !
+selected!accessing!public! !
+selectors!accessing!public! !
+style!hooks!public! !
+title!accessing!public! !
+url!accessing!public! !
+!
 

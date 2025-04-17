@@ -1,15 +1,22 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAListTag subclass: #WAUnorderedListTag
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAUnorderedListTag guid: (GUID fromString: '{96b9d685-6599-48bd-9695-f8333bdf2247}')!
+
+WAUnorderedListTag guid: (GUID fromString: '{3687fa04-f003-41f9-936e-ea6dfdd2f234}')!
+
 WAUnorderedListTag comment: 'See superclass comment.'!
-!WAUnorderedListTag categoriesForClass!Seaside-Canvas-Tags! !
+
+!WAUnorderedListTag categoriesForClass!Tags! !
+
 !WAUnorderedListTag methodsFor!
 
 tag	^ 'ul'! !
-!WAUnorderedListTag categoriesFor: #tag!accessing!public! !
+
+!WAUnorderedListTag categoriesForMethods!
+tag!accessing!public! !
+!
 

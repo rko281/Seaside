@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAFunctionalTest subclass: #WAExceptionFunctionalTest
 	instanceVariableNames: 'renderError'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAExceptionFunctionalTest guid: (GUID fromString: '{135337d0-7828-43cb-b4c6-42774bda355b}')!
+
+WAExceptionFunctionalTest guid: (GUID fromString: '{f0436602-9442-47ff-b975-a5aaef7f8b43}')!
+
 WAExceptionFunctionalTest comment: ''!
-!WAExceptionFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
+
+!WAExceptionFunctionalTest categoriesForClass!Unclassified! !
+
 !WAExceptionFunctionalTest methodsFor!
 
 exceptionFilter	^ self application filters detect: [ :each | each isExceptionFilter ] ifNone: [ nil ]!
@@ -32,32 +36,35 @@ renderErrorOn: html 	html heading: 'Error'.	html paragraph: 'Behaviour is exce
 
 renderHaltOn: html 	html heading: 'Halt'.	html paragraph: 'Behaviour is handler-dependent. In most cases, a Debugger should open in in the image. There are comments in the #raiseHalt method suggesting other things that should be tested from within the Debugger. Clicking on proceed should display the information message "To be displayed".'.	html anchor		callback: [ self raiseHalt ];		with: 'Halt execution'!
 
-renderHandlerConfigurationOn: html	| attribute filter |	filter := self exceptionFilter.	filter isNil ifTrue: [		html paragraph: 'Exception handler configuration attribute not found!!'.		^ self ].	attribute := filter configuration attributeAt: #exceptionHandler.	html form: [		html div: [			html select				beOptional;				optionalLabel: '(inherited default)';				list: attribute options asArray;				selected: (filter configuration at: attribute key);				callback: [ :value | 					value isNil						ifTrue: [ filter configuration removeExpressionAt: attribute key ifAbsent: [ ] ]						ifFalse: [ filter configuration takeValue: value forAttribute: attribute ] ].			html submitButton with: 'Set Handler' ] ]!
+renderHandlerConfigurationOn: html	| attribute filter |	filter := self exceptionFilter.	filter ifNil: [		html paragraph: 'Exception handler configuration attribute not found!!'.		^ self ].	attribute := filter configuration attributeAt: #exceptionHandler.	html form: [		html div: [			html select				id: #handlerselect;				beOptional;				optionalLabel: '(inherited default)';				list: attribute options asArray;				selected: (filter configuration at: attribute key);				callback: [ :value | 					value						ifNil: [ filter configuration removeExpressionAt: attribute key ifAbsent: [ ] ]						ifNotNil: [ filter configuration takeValue: value forAttribute: attribute ] ].			html submitButton 				id: #sethandler; 				with: 'Set Handler' ] ]!
 
 renderPartsOn: html	self renderHaltOn: html.	self renderErrorOn: html.	self renderPostErrorOn: html.	self renderRenderErrorOn: html.	self renderResumableErrorOn: html.	self renderWarningOn: html.	self renderDeprecatedOn: html!
 
-renderPostErrorOn: html 	html heading: 'POST Error'.	html paragraph: 'Behaviour should be like ''Error''.'.	html form		post;		with: [			html button				callback: [ self raiseError ];			with: 'Raise error' ]!
+renderPostErrorOn: html 	html heading: 'POST Error'.	html paragraph: 'Behaviour should be like ''Error''.'.	html form		post;		with: [			html button				callback: [ self raiseError ];			with: 'Raise error in POST' ]!
 
-renderRenderErrorOn: html	"This is really hacky. We're trying to avoid depending on Flow here. Don't try this	at home kids."	renderError ifTrue: [		"To fix the 'bug' evaluate the line below		renderError := false. "		self error: 'Error during rendering.' ].		html heading: 'Error During Rendering'.	html paragraph: 'This will trigger an error during the next render phase.'.	html anchor		callback: [ renderError := true ];		with: 'Raise error'!
+renderRenderErrorOn: html	"This is really hacky. We're trying to avoid depending on Flow here. Don't try this	at home kids."	renderError ifTrue: [		"To fix the 'bug' evaluate the line below		renderError := false. "		self error: 'Error during rendering.' ].		html heading: 'Error During Rendering'.	html paragraph: 'This will trigger an error during the next render phase.'.	html anchor		callback: [ renderError := true ];		with: 'Raise error during rendering'!
 
 renderResumableErrorOn: html 	html heading: 'Resumable error'.	html paragraph: 'Behaviour is handler-dependent. If a Debugger is opened, clicking on proceed should display the message "To be displayed".'.	html anchor		callback: [ self raiseResumable ];		with: 'Raise zero divide'!
 
 renderWarningOn: html 	html heading: 'Warning'.	html paragraph: 'In Pharo and GemStone the warning test works the same as the resumable error test.'.	html paragraph: 'In VisualWorks the warning test works the same as the halt test.'.	html anchor		callback: [ self raiseWarning ];		with: 'Raise warning'! !
-!WAExceptionFunctionalTest categoriesFor: #exceptionFilter!accessing!public! !
-!WAExceptionFunctionalTest categoriesFor: #initialize!initialization!public! !
-!WAExceptionFunctionalTest categoriesFor: #raiseDeprecated!actions!public! !
-!WAExceptionFunctionalTest categoriesFor: #raiseError!actions!public! !
-!WAExceptionFunctionalTest categoriesFor: #raiseHalt!actions!public! !
-!WAExceptionFunctionalTest categoriesFor: #raiseResumable!actions!public! !
-!WAExceptionFunctionalTest categoriesFor: #raiseWarning!actions!public! !
-!WAExceptionFunctionalTest categoriesFor: #renderContentOn:!public!rendering! !
-!WAExceptionFunctionalTest categoriesFor: #renderDeprecatedOn:!public!rendering! !
-!WAExceptionFunctionalTest categoriesFor: #renderErrorOn:!public!rendering! !
-!WAExceptionFunctionalTest categoriesFor: #renderHaltOn:!public!rendering! !
-!WAExceptionFunctionalTest categoriesFor: #renderHandlerConfigurationOn:!public!rendering! !
-!WAExceptionFunctionalTest categoriesFor: #renderPartsOn:!public!rendering! !
-!WAExceptionFunctionalTest categoriesFor: #renderPostErrorOn:!public!rendering! !
-!WAExceptionFunctionalTest categoriesFor: #renderRenderErrorOn:!public!rendering! !
-!WAExceptionFunctionalTest categoriesFor: #renderResumableErrorOn:!public!rendering! !
-!WAExceptionFunctionalTest categoriesFor: #renderWarningOn:!public!rendering! !
+
+!WAExceptionFunctionalTest categoriesForMethods!
+exceptionFilter!accessing!public! !
+initialize!initialization!public! !
+raiseDeprecated!actions!public! !
+raiseError!actions!public! !
+raiseHalt!actions!public! !
+raiseResumable!actions!public! !
+raiseWarning!actions!public! !
+renderContentOn:!public!rendering! !
+renderDeprecatedOn:!public!rendering! !
+renderErrorOn:!public!rendering! !
+renderHaltOn:!public!rendering! !
+renderHandlerConfigurationOn:!public!rendering! !
+renderPartsOn:!public!rendering! !
+renderPostErrorOn:!public!rendering! !
+renderRenderErrorOn:!public!rendering! !
+renderResumableErrorOn:!public!rendering! !
+renderWarningOn:!public!rendering! !
+!
 

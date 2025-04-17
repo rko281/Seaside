@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAObject subclass: #WAServerManager
 	instanceVariableNames: 'adaptors'
-	classVariableNames: ''
+	classVariableNames: 'Default'
 	poolDictionaries: ''
-	classInstanceVariableNames: 'default'!
-WAServerManager guid: (GUID fromString: '{796dd5a9-7f88-4a7f-853b-41cbcf75627c}')!
-WAServerManager comment: ''!
-!WAServerManager categoriesForClass!Seaside-Core-Server! !
+	classInstanceVariableNames: ''!
+
+WAServerManager guid: (GUID fromString: '{4b4eddf0-a103-4437-adbb-7453ffb8743a}')!
+
+WAServerManager comment: 'A server manager cares on the available Seaside server adopters'!
+
+!WAServerManager categoriesForClass!Server! !
+
 !WAServerManager methodsFor!
 
 adaptors	^ adaptors copy!
@@ -33,36 +37,48 @@ stop: aServerAdaptor	(self canStop: aServerAdaptor) ifTrue: [ aServerAdaptor ba
 stopAll	adaptors do: [ :each | each stop ]!
 
 unregister: aServerAdaptor	self stop: aServerAdaptor.	adaptors remove: aServerAdaptor.	aServerAdaptor unregistered.	^ aServerAdaptor! !
-!WAServerManager categoriesFor: #adaptors!accessing!public! !
-!WAServerManager categoriesFor: #canStart:!private! !
-!WAServerManager categoriesFor: #canStop:!private! !
-!WAServerManager categoriesFor: #initialize!initialization!public! !
-!WAServerManager categoriesFor: #register:!accessing!public! !
-!WAServerManager categoriesFor: #restart:!public!starting/stopping! !
-!WAServerManager categoriesFor: #restartAll!public!starting/stopping! !
-!WAServerManager categoriesFor: #start:!public!starting/stopping! !
-!WAServerManager categoriesFor: #startAll!public!starting/stopping! !
-!WAServerManager categoriesFor: #stop:!public!starting/stopping! !
-!WAServerManager categoriesFor: #stopAll!public!starting/stopping! !
-!WAServerManager categoriesFor: #unregister:!accessing!public! !
+
+!WAServerManager categoriesForMethods!
+adaptors!accessing!public! !
+canStart:!private! !
+canStop:!private! !
+initialize!initialization!public! !
+register:!accessing!public! !
+restart:!public!starting/stopping! !
+restartAll!public!starting/stopping! !
+start:!public!starting/stopping! !
+startAll!public!starting/stopping! !
+stop:!public!starting/stopping! !
+stopAll!public!starting/stopping! !
+unregister:!accessing!public! !
+!
 
 !WAServerManager class methodsFor!
 
-default	default contents ifNil: [ default contents: self new ].	^ default contents!
+beDefault	"Set an instance of receiver to be the default Server Manager."		self setDefault: self new!
 
-initialize	self initializeDefaultValueHolder.	GRPlatform current		addToStartUpList: self;		addToShutDownList: self!
+default	self ensureDefaultValueHolder.	Default contents ifNil: [ Default contents: self new ].	^ Default contents!
 
-initializeDefaultValueHolder	default isNil ifTrue: [ 		default := GRPlatform current newTransientValueHolder ]!
+ensureDefaultValueHolder	Default isNil ifTrue: [ 		Default := GRPlatform current newTransientValueHolder ]!
+
+initialize	self ensureDefaultValueHolder.	GRPlatform current		addToStartUpList: self;		addToShutDownList: self!
+
+setDefault: aWAServerManager	"Private - Sets aWAServerManager as the default instance of receiver."	self ensureDefaultValueHolder.	Default contents: aWAServerManager.!
 
 shutDown	self default adaptors do: [ :each | each shutDown ]!
 
 startUp	self default adaptors do: [ :each | each startUp ]!
 
 unload	GRPlatform current		removeFromStartUpList: self;		removeFromShutDownList: self! !
-!WAServerManager class categoriesFor: #default!accessing!public! !
-!WAServerManager class categoriesFor: #initialize!class initialization!public! !
-!WAServerManager class categoriesFor: #initializeDefaultValueHolder!class initialization!public! !
-!WAServerManager class categoriesFor: #shutDown!public!system startup! !
-!WAServerManager class categoriesFor: #startUp!public!system startup! !
-!WAServerManager class categoriesFor: #unload!class initialization!public! !
+
+!WAServerManager class categoriesForMethods!
+beDefault!configuring!public! !
+default!accessing!public! !
+ensureDefaultValueHolder!class initialization!public! !
+initialize!class initialization!public! !
+setDefault:!configuring!public! !
+shutDown!public!system startup! !
+startUp!public!system startup! !
+unload!class initialization!public! !
+!
 

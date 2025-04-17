@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WACollectionTag subclass: #WASelectTag
 	instanceVariableNames: 'enabledBlock isOptional optionalLabel titleBlock values'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WASelectTag guid: (GUID fromString: '{65e84d60-b5eb-4f9c-beb3-856c6ee5d617}')!
+
+WASelectTag guid: (GUID fromString: '{9bfd03ca-ed79-4733-a24f-7bc43b360d3f}')!
+
 WASelectTag comment: 'This element allows the use to select one (in single selection mode) or multiple (in single selection mode) elements. Default is single selection. Multiple selection can be triggered with #beMultiple.Single selection is in general a drop-down list, so make sure the list of options is not too big.Multiple selection has in general crappy browser support and a list of checkboxes is in general the better option.If in single selection mode and you want enable "no selection" see #beOptional.If you absolutely need to you can render the options yourself with ''html option'' inside #with:Make sure to check the superclass for more methods.See WAInputTest >> #renderSingleSelectionOn: and WAInputTest >> #renderMultiSelectionOn: for examples.'!
-!WASelectTag categoriesForClass!Seaside-Canvas-Tags! !
+
+!WASelectTag categoriesForClass!Tags! !
+
 !WASelectTag methodsFor!
 
 before	self isOptional ifTrue: [ self renderOptional ].	super before!
@@ -24,7 +28,7 @@ enabled: aOneArgumentBlock	"Enable only those elements for selection for whom a
 
 hasCallback	^ values notNil!
 
-initialize	super initialize.	isOptional := false	!
+initialize	super initialize.	isOptional := false!
 
 isEnabled: anObject	"Test if anObject is enabled." 	^ enabledBlock isNil or: [ enabledBlock value: anObject ]!
 
@@ -34,7 +38,7 @@ listId: aString	"aString is the id of a datalist"	self attributeAt: 'list' put
 
 name: aString	"This attribute assigns the control name."	self attributes at: 'name' put: aString!
 
-nextKey	^ values size + 1!
+nextKey	^ values size + 1!
 
 optionalLabel: aString	"The label for the nil element. See #beOptional."	optionalLabel := aString!
 
@@ -53,26 +57,29 @@ titles: aOneArgumentBlock	"The given block will be used to generated title attr
 valueFor: anObject	^ self valuesAt: self nextKey put: anObject!
 
 valuesAt: key put: anObject	values at: key put: anObject.	^ values size! !
-!WASelectTag categoriesFor: #before!private! !
-!WASelectTag categoriesFor: #beOptional!attributes!public! !
-!WASelectTag categoriesFor: #callback:!callbacks!public! !
-!WASelectTag categoriesFor: #callbackClass!accessing!public! !
-!WASelectTag categoriesFor: #dispatchCallback!callbacks!public! !
-!WASelectTag categoriesFor: #enabled:!callbacks!public! !
-!WASelectTag categoriesFor: #hasCallback!accessing!public! !
-!WASelectTag categoriesFor: #initialize!initialization!public! !
-!WASelectTag categoriesFor: #isEnabled:!public!testing! !
-!WASelectTag categoriesFor: #isOptional!public!testing! !
-!WASelectTag categoriesFor: #listId:!attributes!public! !
-!WASelectTag categoriesFor: #name:!attributes!public! !
-!WASelectTag categoriesFor: #nextKey!private! !
-!WASelectTag categoriesFor: #optionalLabel:!attributes!public! !
-!WASelectTag categoriesFor: #renderListItem:labelled:!private! !
-!WASelectTag categoriesFor: #renderOptional!private! !
-!WASelectTag categoriesFor: #size:!attributes!public! !
-!WASelectTag categoriesFor: #tag!accessing!public! !
-!WASelectTag categoriesFor: #titleFor:!private! !
-!WASelectTag categoriesFor: #titles:!callbacks!public! !
-!WASelectTag categoriesFor: #valueFor:!private! !
-!WASelectTag categoriesFor: #valuesAt:put:!accessing!public! !
+
+!WASelectTag categoriesForMethods!
+before!private! !
+beOptional!attributes!public! !
+callback:!callbacks!public! !
+callbackClass!accessing!public! !
+dispatchCallback!callbacks!public! !
+enabled:!callbacks!public! !
+hasCallback!accessing!public! !
+initialize!initialization!public! !
+isEnabled:!public!testing! !
+isOptional!public!testing! !
+listId:!attributes!public! !
+name:!attributes!public! !
+nextKey!private! !
+optionalLabel:!attributes!public! !
+renderListItem:labelled:!private! !
+renderOptional!private! !
+size:!attributes!public! !
+tag!accessing!public! !
+titleFor:!private! !
+titles:!callbacks!public! !
+valueFor:!private! !
+valuesAt:put:!accessing!public! !
+!
 

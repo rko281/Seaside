@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAFunctionalTest subclass: #WAHtml5InputTest
 	instanceVariableNames: 'required autofocus pattern search range email url number datetimelocal datetime date time month week color telephone'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAHtml5InputTest guid: (GUID fromString: '{55c7a265-776c-4fb6-ab67-e0ea63534cbe}')!
+
+WAHtml5InputTest guid: (GUID fromString: '{c97356b9-ec9a-409f-aa3e-9f1a7ad545b1}')!
+
 WAHtml5InputTest comment: ''!
-!WAHtml5InputTest categoriesForClass!Seaside-Tests-Functional! !
+
+!WAHtml5InputTest categoriesForClass!Unclassified! !
+
 !WAHtml5InputTest methodsFor!
 
 autofocus	^ autofocus!
@@ -77,38 +81,41 @@ url: anObject	url := anObject!
 week	^ week!
 
 week: anObject	week := anObject! !
-!WAHtml5InputTest categoriesFor: #autofocus!accessing!public! !
-!WAHtml5InputTest categoriesFor: #autofocus:!accessing!public! !
-!WAHtml5InputTest categoriesFor: #color!accessing!public! !
-!WAHtml5InputTest categoriesFor: #color:!accessing!public! !
-!WAHtml5InputTest categoriesFor: #date!accessing!public! !
-!WAHtml5InputTest categoriesFor: #date:!accessing!public! !
-!WAHtml5InputTest categoriesFor: #datetime!accessing!public! !
-!WAHtml5InputTest categoriesFor: #datetime:!accessing!public! !
-!WAHtml5InputTest categoriesFor: #datetimelocal!accessing!public! !
-!WAHtml5InputTest categoriesFor: #datetimelocal:!accessing!public! !
-!WAHtml5InputTest categoriesFor: #email!accessing!public! !
-!WAHtml5InputTest categoriesFor: #email:!accessing!public! !
-!WAHtml5InputTest categoriesFor: #label!accessing!public! !
-!WAHtml5InputTest categoriesFor: #month!accessing!public! !
-!WAHtml5InputTest categoriesFor: #month:!accessing!public! !
-!WAHtml5InputTest categoriesFor: #number!accessing!public! !
-!WAHtml5InputTest categoriesFor: #number:!accessing!public! !
-!WAHtml5InputTest categoriesFor: #pattern!accessing!public! !
-!WAHtml5InputTest categoriesFor: #pattern:!accessing!public! !
-!WAHtml5InputTest categoriesFor: #range!accessing!public! !
-!WAHtml5InputTest categoriesFor: #range:!accessing!public! !
-!WAHtml5InputTest categoriesFor: #renderContentOn:!public!rendering! !
-!WAHtml5InputTest categoriesFor: #required!accessing!public! !
-!WAHtml5InputTest categoriesFor: #required:!accessing!public! !
-!WAHtml5InputTest categoriesFor: #search!accessing!public! !
-!WAHtml5InputTest categoriesFor: #search:!accessing!public! !
-!WAHtml5InputTest categoriesFor: #telephone!accessing!public! !
-!WAHtml5InputTest categoriesFor: #telephone:!accessing!public! !
-!WAHtml5InputTest categoriesFor: #time!accessing!public! !
-!WAHtml5InputTest categoriesFor: #time:!accessing!public! !
-!WAHtml5InputTest categoriesFor: #url!accessing!public! !
-!WAHtml5InputTest categoriesFor: #url:!accessing!public! !
-!WAHtml5InputTest categoriesFor: #week!accessing!public! !
-!WAHtml5InputTest categoriesFor: #week:!accessing!public! !
+
+!WAHtml5InputTest categoriesForMethods!
+autofocus!accessing!public! !
+autofocus:!accessing!public! !
+color!accessing!public! !
+color:!accessing!public! !
+date!accessing!public! !
+date:!accessing!public! !
+datetime!accessing!public! !
+datetime:!accessing!public! !
+datetimelocal!accessing!public! !
+datetimelocal:!accessing!public! !
+email!accessing!public! !
+email:!accessing!public! !
+label!accessing!public! !
+month!accessing!public! !
+month:!accessing!public! !
+number!accessing!public! !
+number:!accessing!public! !
+pattern!accessing!public! !
+pattern:!accessing!public! !
+range!accessing!public! !
+range:!accessing!public! !
+renderContentOn:!public!rendering! !
+required!accessing!public! !
+required:!accessing!public! !
+search!accessing!public! !
+search:!accessing!public! !
+telephone!accessing!public! !
+telephone:!accessing!public! !
+time!accessing!public! !
+time:!accessing!public! !
+url!accessing!public! !
+url:!accessing!public! !
+week!accessing!public! !
+week:!accessing!public! !
+!
 

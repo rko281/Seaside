@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAObject subclass: #WAMimeType
 	instanceVariableNames: 'main sub parameters'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAMimeType guid: (GUID fromString: '{8d5d0ef4-5e85-4430-be52-2fa2d3c7c996}')!
+
+WAMimeType guid: (GUID fromString: '{318f92a0-9a6d-4c37-9b58-7f7fbff9ee78}')!
+
 WAMimeType comment: 'A WAMimeType abstracts a Internet media type, it is a two-part identifier for file formats on the Internet.Instance Variables	main:			<String>	parameters:	<GRSmallDictionary>	sub:			<String>main	- the main typeparameters	- a lazily initialized dictionary of optional parameterssub	- the subtype'!
-!WAMimeType categoriesForClass!Seaside-Core-HTTP! !
+
+!WAMimeType categoriesForClass!HTTP! !
+
 !WAMimeType methodsFor!
 
 = other	^ (other isKindOf: WAMimeType)		and: [ self main = other main		and: [ self sub = other sub ] ]!
@@ -20,7 +24,7 @@ greaseString	| stringSize string stream |	stringSize := main size + 1 + sub si
 
 hash	^ self main hash bitXor: self sub hash!
 
-isBinary	"answers whether the contents of a document of the receiving mime type are binary"	self main = 'text' ifTrue: [ ^ false ].	self main = 'application'		ifTrue: [			"application/json is text"			self sub = 'json' ifTrue: [ ^ false ] ].	GRPlatform subStringsIn: self sub splitBy: $+ do: [ :each |		"application/javascript and application/xml are text"		(#('javascript' 'xml') includes: each)			ifTrue: [ ^ false ] ].	^ true!
+isBinary	"answers whether the contents of a document of the receiving mime type are binary"	self main = 'text' ifTrue: [ ^ false ].	self main = 'application'		ifTrue: [			"application/json is text"			(#('json' 'x-www-form-urlencoded') includes: self sub) ifTrue: [ ^ false ] ].	GRPlatform subStringsIn: self sub splitBy: $+ do: [ :each |		"application/(x-)javascript and application/xml are text"		(#('x-javascript' 'javascript' 'xml') includes: each)			ifTrue: [ ^ false ] ].	^ true!
 
 isNonStandard	"tests if the receiver is a non-standard mime type that is not registered with IANA"	^ (self main beginsWithSubCollection: 'x-')		or: [ (self main beginsWithSubCollection: 'X-')		or: [ (self sub beginsWithSubCollection: 'x-')		or: [ self sub beginsWithSubCollection: 'X-' ] ] ]!
 
@@ -45,24 +49,27 @@ seasideMimeType	^ self!
 sub	^ sub!
 
 sub: aString	sub := aString! !
-!WAMimeType categoriesFor: #=!comparing!public! !
-!WAMimeType categoriesFor: #charSet!parameters!public! !
-!WAMimeType categoriesFor: #charset:!parameters!public! !
-!WAMimeType categoriesFor: #greaseString!converting!public! !
-!WAMimeType categoriesFor: #hash!comparing!public! !
-!WAMimeType categoriesFor: #isBinary!public!testing! !
-!WAMimeType categoriesFor: #isNonStandard!public!testing! !
-!WAMimeType categoriesFor: #isVendorSpecific!public!testing! !
-!WAMimeType categoriesFor: #main!accessing!public! !
-!WAMimeType categoriesFor: #main:!accessing!public! !
-!WAMimeType categoriesFor: #matches:!public!testing! !
-!WAMimeType categoriesFor: #parameterAt:put:!parameters!public! !
-!WAMimeType categoriesFor: #parameters!accessing!public! !
-!WAMimeType categoriesFor: #parameters:!accessing!public! !
-!WAMimeType categoriesFor: #printOn:!printing!public! !
-!WAMimeType categoriesFor: #seasideMimeType!converting!public! !
-!WAMimeType categoriesFor: #sub!accessing!public! !
-!WAMimeType categoriesFor: #sub:!accessing!public! !
+
+!WAMimeType categoriesForMethods!
+=!comparing!public! !
+charSet!parameters!public! !
+charset:!parameters!public! !
+greaseString!converting!public! !
+hash!comparing!public! !
+isBinary!public!testing! !
+isNonStandard!public!testing! !
+isVendorSpecific!public!testing! !
+main!accessing!public! !
+main:!accessing!public! !
+matches:!public!testing! !
+parameterAt:put:!parameters!public! !
+parameters!accessing!public! !
+parameters:!accessing!public! !
+printOn:!printing!public! !
+seasideMimeType!converting!public! !
+sub!accessing!public! !
+sub:!accessing!public! !
+!
 
 !WAMimeType class methodsFor!
 
@@ -95,19 +102,22 @@ textHtml	^ self main: 'text' sub: 'html'!
 textJavascript	^ self main: 'text' sub: 'javascript'!
 
 textPlain	^ self main: 'text' sub: 'plain'! !
-!WAMimeType class categoriesFor: #applicationAtomXml!convenience!public! !
-!WAMimeType class categoriesFor: #applicationJson!convenience!public! !
-!WAMimeType class categoriesFor: #applicationOctetStream!convenience!public! !
-!WAMimeType class categoriesFor: #applicationRssXml!convenience!public! !
-!WAMimeType class categoriesFor: #formUrlencoded!convenience!public! !
-!WAMimeType class categoriesFor: #fromString:!instance creation!public! !
-!WAMimeType class categoriesFor: #imageGif!convenience!public! !
-!WAMimeType class categoriesFor: #imageJpeg!convenience!public! !
-!WAMimeType class categoriesFor: #imagePng!convenience!public! !
-!WAMimeType class categoriesFor: #main:sub:!instance creation!public! !
-!WAMimeType class categoriesFor: #main:sub:parameters:!instance creation!public! !
-!WAMimeType class categoriesFor: #textCss!convenience!public! !
-!WAMimeType class categoriesFor: #textHtml!convenience!public! !
-!WAMimeType class categoriesFor: #textJavascript!convenience!public! !
-!WAMimeType class categoriesFor: #textPlain!convenience!public! !
+
+!WAMimeType class categoriesForMethods!
+applicationAtomXml!convenience!public! !
+applicationJson!convenience!public! !
+applicationOctetStream!convenience!public! !
+applicationRssXml!convenience!public! !
+formUrlencoded!convenience!public! !
+fromString:!instance creation!public! !
+imageGif!convenience!public! !
+imageJpeg!convenience!public! !
+imagePng!convenience!public! !
+main:sub:!instance creation!public! !
+main:sub:parameters:!instance creation!public! !
+textCss!convenience!public! !
+textHtml!convenience!public! !
+textJavascript!convenience!public! !
+textPlain!convenience!public! !
+!
 

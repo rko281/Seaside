@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WALabelledFormDialog subclass: #WAViewer
 	instanceVariableNames: 'presenter'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAViewer guid: (GUID fromString: '{6eab7e40-2557-4be2-bb38-6fa5cbeb92cb}')!
+
+WAViewer guid: (GUID fromString: '{0bd865c7-c1aa-4631-83a2-6be98a19d164}')!
+
 WAViewer comment: ''!
-!WAViewer categoriesForClass!Seaside-Development-Core! !
+
+!WAViewer categoriesForClass!Core! !
+
 !WAViewer methodsFor!
 
 buttons	^ #(save)!
@@ -25,17 +29,23 @@ renderCssOn: html	html textArea		rows: 20;		columns: 80;		value: presenter s
 rows	^ #(css)!
 
 save! !
-!WAViewer categoriesFor: #buttons!accessing!public! !
-!WAViewer categoriesFor: #compile:!actions!public! !
-!WAViewer categoriesFor: #model!accessing!public! !
-!WAViewer categoriesFor: #presenter:!accessing!public! !
-!WAViewer categoriesFor: #renderContentOn:!public!rendering! !
-!WAViewer categoriesFor: #renderCssOn:!public!rendering! !
-!WAViewer categoriesFor: #rows!accessing!public! !
-!WAViewer categoriesFor: #save!actions!public! !
+
+!WAViewer categoriesForMethods!
+buttons!accessing!public! !
+compile:!actions!public! !
+model!accessing!public! !
+presenter:!accessing!public! !
+renderContentOn:!public!rendering! !
+renderCssOn:!public!rendering! !
+rows!accessing!public! !
+save!actions!public! !
+!
 
 !WAViewer class methodsFor!
 
 on: aPresenter	^ self new presenter: aPresenter! !
-!WAViewer class categoriesFor: #on:!instance creation!public! !
+
+!WAViewer class categoriesForMethods!
+on:!instance creation!public! !
+!
 

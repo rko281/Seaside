@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAExpiringCache subclass: #WABulkReapingCache
 	instanceVariableNames: 'dictionary'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WABulkReapingCache guid: (GUID fromString: '{04049083-c660-481a-9372-6bef4ec2ab09}')!
+
+WABulkReapingCache guid: (GUID fromString: '{8be2f38c-54cc-4f3a-84bb-642be4484f26}')!
+
 WABulkReapingCache comment: 'I am a cache that reaps all elements at once instead of incrementally.I am intended to be used in GemStone/S instead of WAHashCache. A background process should send #reap to me.    Instance Variables	dictionary:		<Dictionary>'!
-!WABulkReapingCache categoriesForClass!Seaside-Core-Cache! !
+
+!WABulkReapingCache categoriesForClass!Cache! !
+
 !WABulkReapingCache methodsFor!
 
 at: aKey ifAbsent: aBlock	| entry |	entry := dictionary at: aKey ifAbsent: [ ^ aBlock value ].	entry incrementCount.	^ entry value!
@@ -33,16 +37,19 @@ removeKey: aKey	| entry value |	entry := dictionary removeKey: aKey.	value :=
 size	^ dictionary size!
 
 store: anObject	| candidateKey value |	value := WABulkReapingCacheEntry value: anObject.	[ 		| written |		written := false.		candidateKey := WAKeyGenerator current keyOfLength: self keySize.		dictionary at: candidateKey ifAbsentPut: [ written := true. value ].		written ] whileFalse.	^ candidateKey! !
-!WABulkReapingCache categoriesFor: #at:ifAbsent:!accessing!public! !
-!WABulkReapingCache categoriesFor: #at:put:!public!putting! !
-!WABulkReapingCache categoriesFor: #clear!public! !
-!WABulkReapingCache categoriesFor: #initializeWithInitialSize:maximumSize:maximumAbsoluteAge:maximumRelativeAge:overflowAction:!initialization!public! !
-!WABulkReapingCache categoriesFor: #isExpired:!private! !
-!WABulkReapingCache categoriesFor: #isExpired:now:!private! !
-!WABulkReapingCache categoriesFor: #keysAndValuesDo:!enumerating!public! !
-!WABulkReapingCache categoriesFor: #postCopy!copying!public! !
-!WABulkReapingCache categoriesFor: #reap!public! !
-!WABulkReapingCache categoriesFor: #removeKey:!public!removing! !
-!WABulkReapingCache categoriesFor: #size!accessing!public! !
-!WABulkReapingCache categoriesFor: #store:!public!putting! !
+
+!WABulkReapingCache categoriesForMethods!
+at:ifAbsent:!accessing!public! !
+at:put:!public!putting! !
+clear!public! !
+initializeWithInitialSize:maximumSize:maximumAbsoluteAge:maximumRelativeAge:overflowAction:!initialization!public! !
+isExpired:!private! !
+isExpired:now:!private! !
+keysAndValuesDo:!enumerating!public! !
+postCopy!copying!public! !
+reap!public! !
+removeKey:!public!removing! !
+size!accessing!public! !
+store:!public!putting! !
+!
 

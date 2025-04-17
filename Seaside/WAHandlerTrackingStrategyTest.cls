@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAContextTest subclass: #WAHandlerTrackingStrategyTest
 	instanceVariableNames: 'strategy'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAHandlerTrackingStrategyTest guid: (GUID fromString: '{d2b9d12e-ab6c-4222-94fc-de5d319c3e5f}')!
+
+WAHandlerTrackingStrategyTest guid: (GUID fromString: '{26cbd9bd-d43d-48da-ad14-3078c7518735}')!
+
 WAHandlerTrackingStrategyTest comment: ''!
-!WAHandlerTrackingStrategyTest categoriesForClass!Seaside-Tests-Core-RequestHandling! !
+
+!WAHandlerTrackingStrategyTest categoriesForClass!RequestHandling! !
+
 !WAHandlerTrackingStrategyTest methodsFor!
 
 assertCookieInContext: aRequestContext withValue: aString	| cookies cookie |	cookies := aRequestContext response cookies.	self assert: cookies size = 1.	cookie := cookies first.	self assert: cookie key = strategy keyCookieName.	self assert: cookie value = aString!
@@ -21,15 +25,21 @@ newDocumentHandler	^ WADocumentHandler document: 'WADocumentHandler document: d
 newStrategy	self subclassResponsibility!
 
 setUp	super setUp.	strategy := self newStrategy! !
-!WAHandlerTrackingStrategyTest categoriesFor: #assertCookieInContext:withValue:!private! !
-!WAHandlerTrackingStrategyTest categoriesFor: #assertNoCookies:!private! !
-!WAHandlerTrackingStrategyTest categoriesFor: #createRequest!configuration!public! !
-!WAHandlerTrackingStrategyTest categoriesFor: #newDocumentHandler!private! !
-!WAHandlerTrackingStrategyTest categoriesFor: #newStrategy!private! !
-!WAHandlerTrackingStrategyTest categoriesFor: #setUp!public!running! !
+
+!WAHandlerTrackingStrategyTest categoriesForMethods!
+assertCookieInContext:withValue:!private! !
+assertNoCookies:!private! !
+createRequest!configuration!public! !
+newDocumentHandler!private! !
+newStrategy!private! !
+setUp!public!running! !
+!
 
 !WAHandlerTrackingStrategyTest class methodsFor!
 
 isAbstract	^ self name = #WAHandlerTrackingStrategyTest! !
-!WAHandlerTrackingStrategyTest class categoriesFor: #isAbstract!public!testing! !
+
+!WAHandlerTrackingStrategyTest class categoriesForMethods!
+isAbstract!public!testing! !
+!
 

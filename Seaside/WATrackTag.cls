@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WATagBrush subclass: #WATrackTag
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WATrackTag guid: (GUID fromString: '{1e319fca-c137-481f-9ec9-300865a7bd5c}')!
+
+WATrackTag guid: (GUID fromString: '{2aa25ec8-620e-4dec-be70-0f60b700cb3e}')!
+
 WATrackTag comment: 'The <track> tag specifies text tracks for media elements This element is used to specify subtitles, caption files or other files containing text, that should be visible when the media is playing.'!
-!WATrackTag categoriesForClass!Seaside-Canvas-Tags! !
+
+!WATrackTag categoriesForClass!Tags! !
+
 !WATrackTag methodsFor!
 
 beCaptions	"Transcription or translation of the dialogue, sound effects, relevant musical cues, and other relevant audio information, suitable for when the soundtrack is unavailable or not clearly audible (e.g. because it is muted, drowned-out by ambient noise, or because the user is deaf). Overlaid on the video; labeled as appropriate for the hard-of-hearing."	self kind: 'captions'!
@@ -33,16 +37,19 @@ sourceLanguage: aString	"The srclang attribute gives the language of the text t
 tag	^ 'track'!
 
 url: aUrlOrString	"The src attribute gives the address of the text track data. The value must be a valid non-empty URL potentially surrounded by spaces. This attribute must be present."	self attributeAt: 'src' put: aUrlOrString! !
-!WATrackTag categoriesFor: #beCaptions!attributes/kind!public! !
-!WATrackTag categoriesFor: #beChapters!attributes/kind!public! !
-!WATrackTag categoriesFor: #beDefault!attributes!public! !
-!WATrackTag categoriesFor: #beDescriptions!attributes/kind!public! !
-!WATrackTag categoriesFor: #beMetadata!attributes/kind!public! !
-!WATrackTag categoriesFor: #beSubtitles!attributes/kind!public! !
-!WATrackTag categoriesFor: #default:!attributes!public! !
-!WATrackTag categoriesFor: #kind:!attributes/kind!public! !
-!WATrackTag categoriesFor: #label:!attributes!public! !
-!WATrackTag categoriesFor: #sourceLanguage:!attributes!public! !
-!WATrackTag categoriesFor: #tag!accessing!public! !
-!WATrackTag categoriesFor: #url:!attributes!public! !
+
+!WATrackTag categoriesForMethods!
+beCaptions!attributes/kind!public! !
+beChapters!attributes/kind!public! !
+beDefault!attributes!public! !
+beDescriptions!attributes/kind!public! !
+beMetadata!attributes/kind!public! !
+beSubtitles!attributes/kind!public! !
+default:!attributes!public! !
+kind:!attributes/kind!public! !
+label:!attributes!public! !
+sourceLanguage:!attributes!public! !
+tag!accessing!public! !
+url:!attributes!public! !
+!
 

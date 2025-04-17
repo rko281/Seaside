@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQPlugin subclass: #JQEffect
 	instanceVariableNames: 'method effect speed complete'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQEffect guid: (GUID fromString: '{f71d8be2-8706-4362-ba3b-e85792898c7c}')!
+
+JQEffect guid: (GUID fromString: '{93966a26-9015-4af2-9436-6c8ee5784714}')!
+
 JQEffect comment: 'This is the core dependency of the effects of jQuery UI. This file is needed by all other effects and can also be used as stand-alone. Please note that ui.core.js is not a dependency for the effects to work.'!
-!JQEffect categoriesForClass!JQuery-UI-Objects! !
+
+!JQEffect categoriesForClass!Objects! !
+
 !JQEffect methodsFor!
 
 arguments	| result |	result := OrderedCollection with: effect.	(options isEmpty and: [ speed isNil and: [ complete isNil ] ])		ifFalse: [ result addLast: options ].	(speed isNil and: [ complete isNil ])		ifFalse: [ result addLast: speed ].	(complete isNil)		ifFalse: [ result addLast: complete ].	^ result!
@@ -105,52 +109,55 @@ toHeight: anInteger	self to at: 'height' put: anInteger!
 toWidth: anInteger	self to at: 'width' put: anInteger!
 
 transfer	"Transfers the outline of an element to another."		self effect: 'transfer'! !
-!JQEffect categoriesFor: #arguments!private! !
-!JQEffect categoriesFor: #blind!effects/toggle!public! !
-!JQEffect categoriesFor: #bounce!effects!public! !
-!JQEffect categoriesFor: #className:!options!public! !
-!JQEffect categoriesFor: #clip!effects/toggle!public! !
-!JQEffect categoriesFor: #color:!options!public! !
-!JQEffect categoriesFor: #direction:!options!public! !
-!JQEffect categoriesFor: #distance:!options!public! !
-!JQEffect categoriesFor: #drop!effects/toggle!public! !
-!JQEffect categoriesFor: #easing:!options!public! !
-!JQEffect categoriesFor: #effect!methods!public! !
-!JQEffect categoriesFor: #effect:!accessing!public! !
-!JQEffect categoriesFor: #explode!effects/toggle!public! !
-!JQEffect categoriesFor: #fade!effects/toggle!public! !
-!JQEffect categoriesFor: #fast!accessing/speed!public! !
-!JQEffect categoriesFor: #fold!effects/toggle!public! !
-!JQEffect categoriesFor: #from!options!public! !
-!JQEffect categoriesFor: #from:!options!public! !
-!JQEffect categoriesFor: #fromHeight:!convenience!public! !
-!JQEffect categoriesFor: #fromWidth:!convenience!public! !
-!JQEffect categoriesFor: #hide!methods!public! !
-!JQEffect categoriesFor: #highlight!effects!public! !
-!JQEffect categoriesFor: #initialize!initialization!public! !
-!JQEffect categoriesFor: #method!private! !
-!JQEffect categoriesFor: #method:!accessing!public! !
-!JQEffect categoriesFor: #normal!accessing/speed!public! !
-!JQEffect categoriesFor: #onComplete:!events!public! !
-!JQEffect categoriesFor: #origin:!options!public! !
-!JQEffect categoriesFor: #percent:!options!public! !
-!JQEffect categoriesFor: #pieces:!options!public! !
-!JQEffect categoriesFor: #puff!effects/toggle!public! !
-!JQEffect categoriesFor: #pulsate!effects!public! !
-!JQEffect categoriesFor: #scale!effects/toggle!public! !
-!JQEffect categoriesFor: #scale:!options!public! !
-!JQEffect categoriesFor: #shake!effects!public! !
-!JQEffect categoriesFor: #show!methods!public! !
-!JQEffect categoriesFor: #size!effects!public! !
-!JQEffect categoriesFor: #size:!options!public! !
-!JQEffect categoriesFor: #slide!effects/toggle!public! !
-!JQEffect categoriesFor: #slow!accessing/speed!public! !
-!JQEffect categoriesFor: #speed:!accessing!public! !
-!JQEffect categoriesFor: #times:!options!public! !
-!JQEffect categoriesFor: #to!options!public! !
-!JQEffect categoriesFor: #to:!options!public! !
-!JQEffect categoriesFor: #toggle!methods!public! !
-!JQEffect categoriesFor: #toHeight:!convenience!public! !
-!JQEffect categoriesFor: #toWidth:!convenience!public! !
-!JQEffect categoriesFor: #transfer!effects!public! !
+
+!JQEffect categoriesForMethods!
+arguments!private! !
+blind!effects/toggle!public! !
+bounce!effects!public! !
+className:!options!public! !
+clip!effects/toggle!public! !
+color:!options!public! !
+direction:!options!public! !
+distance:!options!public! !
+drop!effects/toggle!public! !
+easing:!options!public! !
+effect!methods!public! !
+effect:!accessing!public! !
+explode!effects/toggle!public! !
+fade!effects/toggle!public! !
+fast!accessing/speed!public! !
+fold!effects/toggle!public! !
+from!options!public! !
+from:!options!public! !
+fromHeight:!convenience!public! !
+fromWidth:!convenience!public! !
+hide!methods!public! !
+highlight!effects!public! !
+initialize!initialization!public! !
+method!private! !
+method:!accessing!public! !
+normal!accessing/speed!public! !
+onComplete:!events!public! !
+origin:!options!public! !
+percent:!options!public! !
+pieces:!options!public! !
+puff!effects/toggle!public! !
+pulsate!effects!public! !
+scale!effects/toggle!public! !
+scale:!options!public! !
+shake!effects!public! !
+show!methods!public! !
+size!effects!public! !
+size:!options!public! !
+slide!effects/toggle!public! !
+slow!accessing/speed!public! !
+speed:!accessing!public! !
+times:!options!public! !
+to!options!public! !
+to:!options!public! !
+toggle!methods!public! !
+toHeight:!convenience!public! !
+toWidth:!convenience!public! !
+transfer!effects!public! !
+!
 

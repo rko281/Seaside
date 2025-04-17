@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAFunctionalTest subclass: #WAFilterFunctionalTest
 	instanceVariableNames: 'child'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAFilterFunctionalTest guid: (GUID fromString: '{32537297-4837-4f30-ada2-0bfff0fcaefc}')!
+
+WAFilterFunctionalTest guid: (GUID fromString: '{f9212fdf-5b35-4c64-9fe3-4fdf395a07f5}')!
+
 WAFilterFunctionalTest comment: ''!
-!WAFilterFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
+
+!WAFilterFunctionalTest categoriesForClass!Unclassified! !
+
 !WAFilterFunctionalTest methodsFor!
 
 authentication	| filter |	"We could use #filterWith:during: but that requires Flow."	filter := WAAuthenticationFilter new			authenticator: self;			yourself.	self session addFilter: filter.	child inform: 'Congratulations, you have been authenticated. The new filter should be visible in the list above. Clicking on "ok" should remove the filter. Using the back button and hitting refresh should show the filter again.' onAnswer: [ self session removeFilter: filter ]!
@@ -27,13 +31,16 @@ renderContentOn: html	self renderFiltersOn: html.	self renderActionsOn: html!
 renderFiltersOn: html	html paragraph: 'Below a list of filters wrapping the current session:'.	html orderedList list: self session filters!
 
 verifyPassword: aPasswordString forUser: aUserString	^ aUserString = 'admin' and: [ aPasswordString = 'seaside' ]! !
-!WAFilterFunctionalTest categoriesFor: #authentication!actions!public! !
-!WAFilterFunctionalTest categoriesFor: #children!hooks!public! !
-!WAFilterFunctionalTest categoriesFor: #initialize!initialization!public! !
-!WAFilterFunctionalTest categoriesFor: #protectorByBrowserSessionCookie!actions!public! !
-!WAFilterFunctionalTest categoriesFor: #protectorByRemoteAddress!actions!public! !
-!WAFilterFunctionalTest categoriesFor: #renderActionsOn:!public!rendering! !
-!WAFilterFunctionalTest categoriesFor: #renderContentOn:!public!rendering! !
-!WAFilterFunctionalTest categoriesFor: #renderFiltersOn:!public!rendering! !
-!WAFilterFunctionalTest categoriesFor: #verifyPassword:forUser:!private! !
+
+!WAFilterFunctionalTest categoriesForMethods!
+authentication!actions!public! !
+children!hooks!public! !
+initialize!initialization!public! !
+protectorByBrowserSessionCookie!actions!public! !
+protectorByRemoteAddress!actions!public! !
+renderActionsOn:!public!rendering! !
+renderContentOn:!public!rendering! !
+renderFiltersOn:!public!rendering! !
+verifyPassword:forUser:!private! !
+!
 

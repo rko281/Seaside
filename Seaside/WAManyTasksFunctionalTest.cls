@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAFunctionalTest subclass: #WAManyTasksFunctionalTest
 	instanceVariableNames: 'tasks selection'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAManyTasksFunctionalTest guid: (GUID fromString: '{57b617cd-2b71-4a0a-b2ce-ae60dd7609b1}')!
+
+WAManyTasksFunctionalTest guid: (GUID fromString: '{3a2a8623-e61b-4932-b162-334fb5a97003}')!
+
 WAManyTasksFunctionalTest comment: ''!
-!WAManyTasksFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
+
+!WAManyTasksFunctionalTest categoriesForClass!Unclassified! !
+
 !WAManyTasksFunctionalTest methodsFor!
 
 addTask	selection contents notNil ifTrue: [ tasks add: selection contents new ]!
@@ -25,12 +29,15 @@ showTask	selection contents notNil ifTrue: [ self show: selection contents new 
 states	^ Array with: tasks!
 
 taskClasses	^ WATask allSubclasses select: [ :each | each subclasses isEmpty ]! !
-!WAManyTasksFunctionalTest categoriesFor: #addTask!actions!public! !
-!WAManyTasksFunctionalTest categoriesFor: #children!hooks!public! !
-!WAManyTasksFunctionalTest categoriesFor: #initialize!initialization!public! !
-!WAManyTasksFunctionalTest categoriesFor: #renderContentOn:!public!rendering! !
-!WAManyTasksFunctionalTest categoriesFor: #renderTasksOn:!public!rendering! !
-!WAManyTasksFunctionalTest categoriesFor: #showTask!actions!public! !
-!WAManyTasksFunctionalTest categoriesFor: #states!hooks!public! !
-!WAManyTasksFunctionalTest categoriesFor: #taskClasses!accessing!public! !
+
+!WAManyTasksFunctionalTest categoriesForMethods!
+addTask!actions!public! !
+children!hooks!public! !
+initialize!initialization!public! !
+renderContentOn:!public!rendering! !
+renderTasksOn:!public!rendering! !
+showTask!actions!public! !
+states!hooks!public! !
+taskClasses!accessing!public! !
+!
 

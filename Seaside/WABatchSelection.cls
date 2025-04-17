@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WACanvasWidget subclass: #WABatchSelection
 	instanceVariableNames: 'batcher linkSelector textSelector'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WABatchSelection guid: (GUID fromString: '{f9fbdff2-93c7-4588-8a58-7ab4f959f881}')!
+
+WABatchSelection guid: (GUID fromString: '{00e9f67a-6745-43a1-bdbb-b4e93d454d26}')!
+
 WABatchSelection comment: 'WABatchSelection displays a list of objects. The list is show N (currently 8) items per page, with links to navigate to other pages if needed. Objects in the list must implement one method that returns text description of the item and one method that returns a name or label used as the link users click to select the item. The text description is displayed below the link.Example	items := OrderedCollection new.	1 to: 20 do: [:each | items add: (Contact new name: each; phoneNumber: ''54321'';yourself)].	selection := WABatchSelection items: items link: #name text: #phoneNumber.	result := self call: selection.	where the Contact class has methodsinstance vars "phoneNumber" and "name", with	setter & getter methods.Instance Variables:	batcher	<WABatchedList>	description of batcher	linkSelector	<Symbol>	method sent to items in list for link text	textSelector	<Symbol>	method sent to items in list for text description'!
-!WABatchSelection categoriesForClass!Seaside-Widgets-Components! !
+
+!WABatchSelection categoriesForClass!Components! !
+
 !WABatchSelection methodsFor!
 
 batchSize	^ batcher batchSize!
@@ -25,17 +29,23 @@ linkSelector: aSymbol	linkSelector := aSymbol!
 renderContentOn: html	html unorderedList: [		batcher batch do: [ :each |			html anchor				callback: [ self choose: each ];				with: (each perform: linkSelector).			html break.			html text: (each perform: textSelector).			html paragraph ] ].	html div		style: 'text-align: center';		with: batcher!
 
 textSelector: aSymbol	textSelector := aSymbol! !
-!WABatchSelection categoriesFor: #batchSize!accessing!public! !
-!WABatchSelection categoriesFor: #batchSize:!accessing!public! !
-!WABatchSelection categoriesFor: #children!hooks!public! !
-!WABatchSelection categoriesFor: #choose:!commands!public! !
-!WABatchSelection categoriesFor: #items:!accessing!public! !
-!WABatchSelection categoriesFor: #linkSelector:!accessing!public! !
-!WABatchSelection categoriesFor: #renderContentOn:!public!rendering! !
-!WABatchSelection categoriesFor: #textSelector:!accessing!public! !
+
+!WABatchSelection categoriesForMethods!
+batchSize!accessing!public! !
+batchSize:!accessing!public! !
+children!hooks!public! !
+choose:!commands!public! !
+items:!accessing!public! !
+linkSelector:!accessing!public! !
+renderContentOn:!public!rendering! !
+textSelector:!accessing!public! !
+!
 
 !WABatchSelection class methodsFor!
 
 items: aCollection link: linkSelector text: textSelector	^ self new		items: aCollection;		linkSelector: linkSelector;		textSelector: textSelector;		yourself! !
-!WABatchSelection class categoriesFor: #items:link:text:!instance creation!public! !
+
+!WABatchSelection class categoriesForMethods!
+items:link:text:!instance creation!public! !
+!
 

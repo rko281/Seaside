@@ -1,15 +1,22 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAValueCallback subclass: #WAUploadCallback
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAUploadCallback guid: (GUID fromString: '{798eb770-b813-4691-961a-090236b2e8c9}')!
+
+WAUploadCallback guid: (GUID fromString: '{292b4cf6-e375-40a6-9cb3-1b0684a3d00a}')!
+
 WAUploadCallback comment: ''!
-!WAUploadCallback categoriesForClass!Seaside-Core-Callbacks! !
+
+!WAUploadCallback categoriesForClass!Callbacks! !
+
 !WAUploadCallback methodsFor!
 
-valueForField: anObject	^ (anObject isKindOf: WAFile) ifTrue: [ anObject ]! !
-!WAUploadCallback categoriesFor: #valueForField:!converting!public! !
+valueForField: anObject	^ (anObject isKindOf: WAAbstractFile) ifTrue: [ anObject ]! !
+
+!WAUploadCallback categoriesForMethods!
+valueForField:!converting!public! !
+!
 

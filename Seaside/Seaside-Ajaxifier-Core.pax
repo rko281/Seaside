@@ -1,0 +1,30 @@
+﻿| package |
+package := Package name: 'Seaside-Ajaxifier-Core'.
+package paxVersion: 1;
+	basicComment: ''.
+
+package classNames
+	add: #WAAjaxifierLibrary;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: #(
+	'Seaside-Core').
+
+package!
+
+"Class Definitions"!
+
+WAFileLibrary subclass: #WAAjaxifierLibrary
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+"End of package definition"!
+

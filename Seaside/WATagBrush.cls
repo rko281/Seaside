@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WABrush subclass: #WATagBrush
 	instanceVariableNames: 'attributes'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WATagBrush guid: (GUID fromString: '{7ef52439-50d7-47ce-b08a-a9235e4a87de}')!
+
+WATagBrush guid: (GUID fromString: '{026ac22e-117b-4650-ad63-5f0d10ac82bb}')!
+
 WATagBrush comment: 'This is the superclass for all XML element classes. Its main additions are- element name (#tag)- attributes (instance of WAHtmlAttributes)- common events (onXXX), this is a hack and would better be solved with traits'!
-!WATagBrush categoriesForClass!Seaside-Canvas-Base! !
+
+!WATagBrush categoriesForClass!Base! !
+
 !WATagBrush methodsFor!
 
 accessKey: aString	"Set a keyboard shortcut to access an element. An access key is a single character from the document character set.	Pressing an access key assigned to an element gives focus to the element. The action that occurs when an element receives focus depends on the element. For example, when a user activates a link defined by the A element, the user agent generally follows the link. When a user activates a radio button, the user agent changes the value of the radio button. When the user activates a text field, it allows input, etc.The following elements support the accesskey attribute: A, AREA, BUTTON, INPUT, LABEL, and LEGEND, and TEXTAREA.	The invocation of access keys depends on the underlying system. For instance, on machines running MS Windows, one generally has to press the 'alt' key in addition to the access key. On Apple systems, one generally has to press the 'cmd' key in addition to the access key."	self attributes at: 'accesskey' put: aString!
@@ -37,6 +41,10 @@ class: aString	"This attribute assigns one or more class names to an element; t
 class: aString if: aBoolean	"Adds the class aString to the receiving element if aBoolean is true. 		Example:		html div		class: 'error' if: self hasError;		with: self errorMessage"	aBoolean		ifTrue: [ self class: aString ]!
 
 closeTag	"Close the receiving tag onto the document."	self document closeTag: self tag!
+
+dataAttributeAt: aString put: aValue	self attributeAt: 'data-',aString put: aValue!
+
+dataAttributeAt: aString put: aValue if: aBoolean	aBoolean ifTrue:[ self dataAttributeAt: aString put: aValue ]!
 
 direction: aString	"Set the text direction ltr (left-to-right) or right-to-left (rtl).	Not supported on:	APPLET, BASE, BASEFONT, BR, FRAME, FRAMESET, IFRAME, PARAM, SCRIPT"	self attributes at: 'dir' put: aString!
 
@@ -154,6 +162,8 @@ openTag	"Open the receiving and all associated attributes onto the document."
 
 required	"supported on:	- Opera 9"	self attributeAt: 'required' put: true!
 
+slot: aString	"The slot global attribute assigns a slot in a shadow DOM shadow tree to an element: An element with a slot attribute is assigned to the slot created by the <slot> element whose name attribute's value matches that slot attribute's value."	self attributes at: 'slot' put: aString!
+
 storeCallback: aCallback	^ canvas callbacks store: aCallback!
 
 style: aString	"This attribute offers optional CSS style information. The attribute is deprecated and should be avoided in favor of an external stylesheet. Multiple styles might be added to one brush."	self attributes addStyle: aString!
@@ -167,88 +177,100 @@ title: aString	"This attribute offers advisory information about the element fo
 with: anObject	"Render anObject into the receiver. Make sure that you call #with: last in the cascade, as this method will serialize the tag onto the output document."	self openTag.	super with: [		self before.		canvas render: anObject.		self after ].	self isClosed		ifFalse: [ self closeTag ]!
 
 withLineBreaks: aString	"Renders text preserving line breaks."	self with: [ canvas withLineBreaks: aString ]! !
-!WATagBrush categoriesFor: #accessKey:!attributes/keyboard!public! !
-!WATagBrush categoriesFor: #after!private! !
-!WATagBrush categoriesFor: #attributeAt:!accessing/attributes!public! !
-!WATagBrush categoriesFor: #attributeAt:ifAbsent:!accessing/attributes!public! !
-!WATagBrush categoriesFor: #attributeAt:ifAbsentPut:!accessing/attributes!public! !
-!WATagBrush categoriesFor: #attributeAt:ifPresent:!accessing/attributes!public! !
-!WATagBrush categoriesFor: #attributeAt:put:!accessing/attributes!public! !
-!WATagBrush categoriesFor: #attributes!accessing!public! !
-!WATagBrush categoriesFor: #attributes:!accessing!public! !
-!WATagBrush categoriesFor: #autofocus!attributes!public! !
-!WATagBrush categoriesFor: #before!private! !
-!WATagBrush categoriesFor: #class:!attributes/core!public! !
-!WATagBrush categoriesFor: #class:if:!convenience!public! !
-!WATagBrush categoriesFor: #closeTag!private! !
-!WATagBrush categoriesFor: #direction:!attributes/language!public! !
-!WATagBrush categoriesFor: #disabled!attributes!public! !
-!WATagBrush categoriesFor: #disabled:!attributes!public! !
-!WATagBrush categoriesFor: #document!accessing!public! !
-!WATagBrush categoriesFor: #ensureId!public! !
-!WATagBrush categoriesFor: #id!accessing!public! !
-!WATagBrush categoriesFor: #id:!attributes/core!public! !
-!WATagBrush categoriesFor: #irrelevant!attributes!public! !
-!WATagBrush categoriesFor: #isClosed!public!testing! !
-!WATagBrush categoriesFor: #isDisabled!attributes!public! !
-!WATagBrush categoriesFor: #language:!attributes/language!public! !
-!WATagBrush categoriesFor: #onAbort:!attributes/events!public! !
-!WATagBrush categoriesFor: #onAuxiliaryClick:!attributes/events!public! !
-!WATagBrush categoriesFor: #onBlur:!attributes/events!public! !
-!WATagBrush categoriesFor: #onCancel:!attributes/events!public! !
-!WATagBrush categoriesFor: #onChange:!attributes/events!public! !
-!WATagBrush categoriesFor: #onClick:!attributes/events!public! !
-!WATagBrush categoriesFor: #onClose:!attributes/events!public! !
-!WATagBrush categoriesFor: #onContextMenu:!attributes/events!public! !
-!WATagBrush categoriesFor: #onCopy:!attributes/events!public! !
-!WATagBrush categoriesFor: #onCueChange:!attributes/events!public! !
-!WATagBrush categoriesFor: #onCut:!attributes/events!public! !
-!WATagBrush categoriesFor: #onDoubleClick:!attributes/events!public! !
-!WATagBrush categoriesFor: #onDrag:!attributes/events!public! !
-!WATagBrush categoriesFor: #onDragEnd:!attributes/events!public! !
-!WATagBrush categoriesFor: #onDragEnter:!attributes/events!public! !
-!WATagBrush categoriesFor: #onDragExit:!attributes/events!public! !
-!WATagBrush categoriesFor: #onDragLeave:!attributes/events!public! !
-!WATagBrush categoriesFor: #onDragOver:!attributes/events!public! !
-!WATagBrush categoriesFor: #onDragStart:!attributes/events!public! !
-!WATagBrush categoriesFor: #onDrop:!attributes/events!public! !
-!WATagBrush categoriesFor: #onError:!attributes/events!public! !
-!WATagBrush categoriesFor: #onFocus:!attributes/events!public! !
-!WATagBrush categoriesFor: #onInput:!attributes/events!public! !
-!WATagBrush categoriesFor: #onInvalid:!attributes/events!public! !
-!WATagBrush categoriesFor: #onKeyDown:!attributes/events!public! !
-!WATagBrush categoriesFor: #onKeyPress:!attributes/events!public! !
-!WATagBrush categoriesFor: #onKeyUp:!attributes/events!public! !
-!WATagBrush categoriesFor: #onLoad:!attributes/events!public! !
-!WATagBrush categoriesFor: #onMouseDown:!attributes/events!public! !
-!WATagBrush categoriesFor: #onMouseEnter:!attributes/events!public! !
-!WATagBrush categoriesFor: #onMouseLeave:!attributes/events!public! !
-!WATagBrush categoriesFor: #onMouseMove:!attributes/events!public! !
-!WATagBrush categoriesFor: #onMouseOut:!attributes/events!public! !
-!WATagBrush categoriesFor: #onMouseOver:!attributes/events!public! !
-!WATagBrush categoriesFor: #onMouseUp:!attributes/events!public! !
-!WATagBrush categoriesFor: #onPaste:!attributes/events!public! !
-!WATagBrush categoriesFor: #onReset:!attributes/events!public! !
-!WATagBrush categoriesFor: #onResize:!attributes/events!public! !
-!WATagBrush categoriesFor: #onScroll:!attributes/events!public! !
-!WATagBrush categoriesFor: #onSecurityPolicyViolation:!attributes/events!public! !
-!WATagBrush categoriesFor: #onSelect:!attributes/events!public! !
-!WATagBrush categoriesFor: #onSubmit:!attributes/events!public! !
-!WATagBrush categoriesFor: #onToggle:!attributes/events!public! !
-!WATagBrush categoriesFor: #onUnload:!attributes/events!public! !
-!WATagBrush categoriesFor: #onWheel:!attributes/events!public! !
-!WATagBrush categoriesFor: #openTag!private! !
-!WATagBrush categoriesFor: #required!attributes!public! !
-!WATagBrush categoriesFor: #storeCallback:!private! !
-!WATagBrush categoriesFor: #style:!attributes/core!public! !
-!WATagBrush categoriesFor: #tabIndex:!attributes/keyboard!public! !
-!WATagBrush categoriesFor: #tag!accessing!public! !
-!WATagBrush categoriesFor: #title:!attributes/core!public! !
-!WATagBrush categoriesFor: #with:!public! !
-!WATagBrush categoriesFor: #withLineBreaks:!convenience!public! !
+
+!WATagBrush categoriesForMethods!
+accessKey:!attributes/keyboard!public! !
+after!private! !
+attributeAt:!accessing/attributes!public! !
+attributeAt:ifAbsent:!accessing/attributes!public! !
+attributeAt:ifAbsentPut:!accessing/attributes!public! !
+attributeAt:ifPresent:!accessing/attributes!public! !
+attributeAt:put:!accessing/attributes!public! !
+attributes!accessing!public! !
+attributes:!accessing!public! !
+autofocus!attributes!public! !
+before!private! !
+class:!attributes/core!public! !
+class:if:!convenience!public! !
+closeTag!private! !
+dataAttributeAt:put:!attributes!public! !
+dataAttributeAt:put:if:!attributes!public! !
+direction:!attributes/language!public! !
+disabled!attributes!public! !
+disabled:!attributes!public! !
+document!accessing!public! !
+ensureId!public! !
+id!accessing!public! !
+id:!attributes/core!public! !
+irrelevant!attributes!public! !
+isClosed!public!testing! !
+isDisabled!attributes!public! !
+language:!attributes/language!public! !
+onAbort:!attributes/events!public! !
+onAuxiliaryClick:!attributes/events!public! !
+onBlur:!attributes/events!public! !
+onCancel:!attributes/events!public! !
+onChange:!attributes/events!public! !
+onClick:!attributes/events!public! !
+onClose:!attributes/events!public! !
+onContextMenu:!attributes/events!public! !
+onCopy:!attributes/events!public! !
+onCueChange:!attributes/events!public! !
+onCut:!attributes/events!public! !
+onDoubleClick:!attributes/events!public! !
+onDrag:!attributes/events!public! !
+onDragEnd:!attributes/events!public! !
+onDragEnter:!attributes/events!public! !
+onDragExit:!attributes/events!public! !
+onDragLeave:!attributes/events!public! !
+onDragOver:!attributes/events!public! !
+onDragStart:!attributes/events!public! !
+onDrop:!attributes/events!public! !
+onError:!attributes/events!public! !
+onFocus:!attributes/events!public! !
+onInput:!attributes/events!public! !
+onInvalid:!attributes/events!public! !
+onKeyDown:!attributes/events!public! !
+onKeyPress:!attributes/events!public! !
+onKeyUp:!attributes/events!public! !
+onLoad:!attributes/events!public! !
+onMouseDown:!attributes/events!public! !
+onMouseEnter:!attributes/events!public! !
+onMouseLeave:!attributes/events!public! !
+onMouseMove:!attributes/events!public! !
+onMouseOut:!attributes/events!public! !
+onMouseOver:!attributes/events!public! !
+onMouseUp:!attributes/events!public! !
+onPaste:!attributes/events!public! !
+onReset:!attributes/events!public! !
+onResize:!attributes/events!public! !
+onScroll:!attributes/events!public! !
+onSecurityPolicyViolation:!attributes/events!public! !
+onSelect:!attributes/events!public! !
+onSubmit:!attributes/events!public! !
+onToggle:!attributes/events!public! !
+onUnload:!attributes/events!public! !
+onWheel:!attributes/events!public! !
+openTag!private! !
+required!attributes!public! !
+slot:!attributes/webcomponents!public! !
+storeCallback:!private! !
+style:!attributes/core!public! !
+tabIndex:!attributes/keyboard!public! !
+tag!accessing!public! !
+title:!attributes/core!public! !
+with:!public! !
+withLineBreaks:!convenience!public! !
+!
 
 !WATagBrush class methodsFor!
 
+isAbstract 	^ self == WATagBrush!
+
 tag	"WASelectTag tag"	"WAGenericTag tag"	^ (self selectors includes: #tag)		ifTrue: [ self new tag ]		ifFalse: [ nil ]! !
-!WATagBrush class categoriesFor: #tag!code generation!public! !
+
+!WATagBrush class categoriesForMethods!
+isAbstract!public!testing! !
+tag!code generation!public! !
+!
 

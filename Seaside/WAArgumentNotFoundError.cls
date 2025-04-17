@@ -1,10 +1,14 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAError subclass: #WAArgumentNotFoundError
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAArgumentNotFoundError guid: (GUID fromString: '{930dd93d-e9a9-48b2-b47a-bb05ca31f1aa}')!
+
+WAArgumentNotFoundError guid: (GUID fromString: '{ad4494b1-899b-44dd-8134-9c7fe89edcb7}')!
+
 WAArgumentNotFoundError comment: ''!
-!WAArgumentNotFoundError categoriesForClass!Seaside-REST-Core-Route! !
+
+!WAArgumentNotFoundError categoriesForClass!Route! !
+

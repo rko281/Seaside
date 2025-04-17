@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAComponent subclass: #WAConfigurationTool
 	instanceVariableNames: 'component'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAConfigurationTool guid: (GUID fromString: '{0db556eb-995d-4114-8249-7591b397a2fe}')!
+
+WAConfigurationTool guid: (GUID fromString: '{38eedfb6-42aa-46cc-9d56-2d7971be2680}')!
+
 WAConfigurationTool comment: ''!
-!WAConfigurationTool categoriesForClass!Seaside-Tools-Web! !
+
+!WAConfigurationTool categoriesForClass!Unclassified! !
+
 !WAConfigurationTool methodsFor!
 
 children	^ Array with: component!
@@ -27,15 +31,18 @@ renderLogoOn: html	html anchor		url: (WAUrl new 			host: 'www.seaside.st';		
 renderTopBarOn: html 	| handler |	html div		class: 'topbar';		with: [			| selectedTools |			handler := component selection.			selectedTools := ((WAConfigurationToolPlugin 				allSubclassesOn: handler				for: component)					select: [ :each | each isActive ]).								(selectedTools	select: [ :each | each priority < 0 ])				do: [ :each | html render: each ]				separatedBy: [ html space ].			html text: ' | '.				(selectedTools	select: [ :each | each priority >= 0 ])				do: [ :each | html render: each ]				separatedBy: [ html space ] ]!
 
 title	^ self component title! !
-!WAConfigurationTool categoriesFor: #children!hooks!public! !
-!WAConfigurationTool categoriesFor: #component!accessing!public! !
-!WAConfigurationTool categoriesFor: #initializeOn:!initialization!public! !
-!WAConfigurationTool categoriesFor: #renderComponentOn:!public!rendering! !
-!WAConfigurationTool categoriesFor: #renderContentOn:!public!rendering! !
-!WAConfigurationTool categoriesFor: #renderHeadingOn:!public!rendering! !
-!WAConfigurationTool categoriesFor: #renderLogoOn:!public!rendering! !
-!WAConfigurationTool categoriesFor: #renderTopBarOn:!public!rendering! !
-!WAConfigurationTool categoriesFor: #title!accessing!public! !
+
+!WAConfigurationTool categoriesForMethods!
+children!hooks!public! !
+component!accessing!public! !
+initializeOn:!initialization!public! !
+renderComponentOn:!public!rendering! !
+renderContentOn:!public!rendering! !
+renderHeadingOn:!public!rendering! !
+renderLogoOn:!public!rendering! !
+renderTopBarOn:!public!rendering! !
+title!accessing!public! !
+!
 
 !WAConfigurationTool class methodsFor!
 
@@ -48,9 +55,12 @@ initialize	(WAAdmin register: self asApplicationAt: 'config') addLibrary: WAToo
 new	^ self on: WAAdmin defaultDispatcher!
 
 on: anEntryPoint	^ self basicNew initializeOn: anEntryPoint; yourself! !
-!WAConfigurationTool class categoriesFor: #canBeRoot!public!testing! !
-!WAConfigurationTool class categoriesFor: #description!accessing!public! !
-!WAConfigurationTool class categoriesFor: #initialize!class initialization!public! !
-!WAConfigurationTool class categoriesFor: #new!instance creation!public! !
-!WAConfigurationTool class categoriesFor: #on:!instance creation!public! !
+
+!WAConfigurationTool class categoriesForMethods!
+canBeRoot!public!testing! !
+description!accessing!public! !
+initialize!class initialization!public! !
+new!instance creation!public! !
+on:!instance creation!public! !
+!
 

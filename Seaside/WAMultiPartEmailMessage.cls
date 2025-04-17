@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAEmailMessage subclass: #WAMultiPartEmailMessage
 	instanceVariableNames: 'parts boundary'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAMultiPartEmailMessage guid: (GUID fromString: '{28553805-3737-4bef-83f0-3f12e7ff5ccc}')!
+
+WAMultiPartEmailMessage guid: (GUID fromString: '{f35c6fbf-e012-4e08-8125-8e4edcd1d0ba}')!
+
 WAMultiPartEmailMessage comment: 'I am a  multi part email message.'!
-!WAMultiPartEmailMessage categoriesForClass!Seaside-Email-Base! !
+
+!WAMultiPartEmailMessage categoriesForClass!Base! !
+
 !WAMultiPartEmailMessage methodsFor!
 
 addPart: aWAEmailBody	self parts add: aWAEmailBody!
@@ -29,19 +33,25 @@ writeBodyOn: stream	self parts asArray sort		do: [ :eachPart | 			self writeM
 writeEndBoundaryOn: stream	stream		nextPut: Character cr;		nextPutAll: '--';		nextPutAll: self boundary;		nextPutAll: '--';		nextPut: Character cr!
 
 writeMiddleBoundaryOn: stream	stream		nextPut: Character cr;		nextPutAll: '--';		nextPutAll: self boundary;		nextPut: Character cr! !
-!WAMultiPartEmailMessage categoriesFor: #addPart:!public! !
-!WAMultiPartEmailMessage categoriesFor: #boundary!accessing!public! !
-!WAMultiPartEmailMessage categoriesFor: #initialize!initialization!public! !
-!WAMultiPartEmailMessage categoriesFor: #isMultipart!public!testing! !
-!WAMultiPartEmailMessage categoriesFor: #parts!accessing!public! !
-!WAMultiPartEmailMessage categoriesFor: #setHtmlBody:!accessing!public! !
-!WAMultiPartEmailMessage categoriesFor: #setStringBody:wrap:!accessing!public! !
-!WAMultiPartEmailMessage categoriesFor: #writeBodyOn:!public!writing! !
-!WAMultiPartEmailMessage categoriesFor: #writeEndBoundaryOn:!public!writing! !
-!WAMultiPartEmailMessage categoriesFor: #writeMiddleBoundaryOn:!public!writing! !
+
+!WAMultiPartEmailMessage categoriesForMethods!
+addPart:!public! !
+boundary!accessing!public! !
+initialize!initialization!public! !
+isMultipart!public!testing! !
+parts!accessing!public! !
+setHtmlBody:!accessing!public! !
+setStringBody:wrap:!accessing!public! !
+writeBodyOn:!public!writing! !
+writeEndBoundaryOn:!public!writing! !
+writeMiddleBoundaryOn:!public!writing! !
+!
 
 !WAMultiPartEmailMessage class methodsFor!
 
 newBoundary	^ String		streamContents: [ :s | 			s nextPutAll: 'SeasideEmail'.			s nextPutAll: (10000 to: 999999) atRandom greaseString ]! !
-!WAMultiPartEmailMessage class categoriesFor: #newBoundary!private! !
+
+!WAMultiPartEmailMessage class categoriesForMethods!
+newBoundary!private! !
+!
 

@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQFunctionalTest subclass: #JQFormFunctionalTest
 	instanceVariableNames: 'textInput textArea checkBox radioButton selectList multiSelectList fileInput fileInputs'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQFormFunctionalTest guid: (GUID fromString: '{5c148b23-15e9-4c1c-abc0-36d920b7a869}')!
+
+JQFormFunctionalTest guid: (GUID fromString: '{97b89972-9bb6-4265-aad5-50110615a89d}')!
+
 JQFormFunctionalTest comment: ''!
-!JQFormFunctionalTest categoriesForClass!JQuery-Tests-Core-Functional! !
+
+!JQFormFunctionalTest categoriesForClass!Functional! !
+
 !JQFormFunctionalTest methodsFor!
 
 initialize	super initialize.	textInput := 'Text Input'.	textArea := 'Text Area'.	checkBox := false.	radioButton := 1.	selectList := 1.	multiSelectList := 1 to: 2!
@@ -34,21 +38,24 @@ renderTextInputOn: html	self		renderLabel: 'Text-Input'		control: [ :id :scri
 
 selectors	^ #(renderLabel:control:model:on: renderTextInputOn: renderTextAreaOn: renderCheckBoxOn: renderRadioButtonOn: renderSelectListOn: renderMultiSelectListOn: #renderFileUploadOn:)!
 
-style	^ 'fieldset { border: none; margin: 1em 0; padding: 0; }fieldset label, fieldset span, fieldset p { display: block; float: left; width: 33%; margin: 0; padding: 0; }fieldset span label { display: inline; float: none; }fieldset span input.text, fieldset span select, fieldset span textarea { width: 80% }fieldset p { background-color: #ddd; padding: 2px; }'!
+style	^ 'fieldset { border: none; margin: 1em 0; padding: 0; }fieldset label, fieldset span, fieldset p { display: block; float: left; width: 33%; margin: 0; padding: 0; }fieldset span label { display: inline; float: none; }fieldset span input[type=text], fieldset span select, fieldset span textarea { width: 80% }fieldset p { background-color: #ddd; padding: 2px; }'!
 
 title	^ 'Form and Form Elements'! !
-!JQFormFunctionalTest categoriesFor: #initialize!initialization!public! !
-!JQFormFunctionalTest categoriesFor: #renderCheckBoxOn:!public!rendering/elements! !
-!JQFormFunctionalTest categoriesFor: #renderContentOn:!public!rendering! !
-!JQFormFunctionalTest categoriesFor: #renderFileUploadOn:!public!rendering/elements! !
-!JQFormFunctionalTest categoriesFor: #renderLabel:control:model:on:!public!rendering/utilities! !
-!JQFormFunctionalTest categoriesFor: #renderMultiFileUploadOn:!public!rendering/elements! !
-!JQFormFunctionalTest categoriesFor: #renderMultiSelectListOn:!public!rendering/elements! !
-!JQFormFunctionalTest categoriesFor: #renderRadioButtonOn:!public!rendering/elements! !
-!JQFormFunctionalTest categoriesFor: #renderSelectListOn:!public!rendering/elements! !
-!JQFormFunctionalTest categoriesFor: #renderTextAreaOn:!public!rendering/elements! !
-!JQFormFunctionalTest categoriesFor: #renderTextInputOn:!public!rendering/elements! !
-!JQFormFunctionalTest categoriesFor: #selectors!accessing!public! !
-!JQFormFunctionalTest categoriesFor: #style!hooks!public! !
-!JQFormFunctionalTest categoriesFor: #title!accessing!public! !
+
+!JQFormFunctionalTest categoriesForMethods!
+initialize!initialization!public! !
+renderCheckBoxOn:!public!rendering/elements! !
+renderContentOn:!public!rendering! !
+renderFileUploadOn:!public!rendering/elements! !
+renderLabel:control:model:on:!public!rendering/utilities! !
+renderMultiFileUploadOn:!public!rendering/elements! !
+renderMultiSelectListOn:!public!rendering/elements! !
+renderRadioButtonOn:!public!rendering/elements! !
+renderSelectListOn:!public!rendering/elements! !
+renderTextAreaOn:!public!rendering/elements! !
+renderTextInputOn:!public!rendering/elements! !
+selectors!accessing!public! !
+style!hooks!public! !
+title!accessing!public! !
+!
 

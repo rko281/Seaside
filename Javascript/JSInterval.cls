@@ -1,15 +1,22 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JSTimed subclass: #JSInterval
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSInterval guid: (GUID fromString: '{bc3a200b-5284-42b3-92a8-43bfe5a4b3b4}')!
+
+JSInterval guid: (GUID fromString: '{e5f80ac9-622d-4069-815c-b7465fbd95f1}')!
+
 JSInterval comment: 'I periodically execute the decorated object.'!
-!JSInterval categoriesForClass!Javascript-Core-Decorations! !
+
+!JSInterval categoriesForClass!Decorations! !
+
 !JSInterval methodsFor!
 
 javascriptContentOn: aStream	aStream nextPutAll: 'setInterval(function(){'.	super javascriptContentOn: aStream.	aStream		nextPutAll: '},';		javascript: self duration;		nextPut: $)! !
-!JSInterval categoriesFor: #javascriptContentOn:!printing!public! !
+
+!JSInterval categoriesForMethods!
+javascriptContentOn:!printing!public! !
+!
 

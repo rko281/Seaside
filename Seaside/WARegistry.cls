@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WARequestHandler subclass: #WARegistry
 	instanceVariableNames: 'cache'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WARegistry guid: (GUID fromString: '{88c2ab85-8685-4268-bd4d-3db1f8e3ab49}')!
+
+WARegistry guid: (GUID fromString: '{4ac359e0-41ea-4c14-a30a-dfca79ad3630}')!
+
 WARegistry comment: 'WARegistry maintains a set of handlers indexed by a key which it assigns when the handler is registerd. WARegistry checks incoming request URLs for a key and looks for a matching active request handler. If one exists, the request is sent to the proper handler. If not, the request is either a new request (in which case #handleDefaultRequest: is called) or a request to a now-inactive handler (in which case #handleExpiredRequest: is called). These two methods allow subclasses to properly handle these requests.Subclasses must implement the following messages:	handleDefaultRequest:		Handle a request without a session key, ie a new request.	handlerField		The URL parameter in which to store the request handler key.Instance Variables:	cache - an instance of WACache to hold the stored request handlers'!
-!WARegistry categoriesForClass!Seaside-Core-RequestHandling! !
+
+!WARegistry categoriesForClass!RequestHandling! !
+
 !WARegistry methodsFor!
 
 cache	^ cache!
@@ -22,7 +26,7 @@ createCache	^ WAMutualExclusionCache on: WABidirectionalCache new!
 
 defaultConfiguration	^ super defaultConfiguration		removeParent: WARequestHandlingConfiguration instance;		addParent: WARegistryConfiguration instance;		yourself!
 
-dispatch: aRequestContext to: aRequestHandler key: aString	"This method is used by the handling methods to trigger the dispatch of a request	to the specified handler."		self trackingStrategy addKey: aString toContext: aRequestContext.	aRequestHandler handle: aRequestContext!
+dispatch: aRequestContext to: aRequestHandler key: aString	"This method is used by the handling methods to trigger the dispatch of a request	to the specified handler."		self trackingStrategy addKey: aString toContext: aRequestContext.	aRequestHandler handle: aRequestContext!
 
 handle: aRequestContext registering: aRequestHandler	"Register a new handler and then dispatch the request to it. A cookie may need	to be added to the response with the handler's key."		| key |	key := self register: aRequestHandler.	self dispatch: aRequestContext to: aRequestHandler key: key!
 
@@ -65,37 +69,43 @@ unregistered	super unregistered.	self clear!
 urlFor: aRequestHandler	^ self		urlFor: aRequestHandler		ifAbsent: [ WAUnregisteredHandlerError signal ]!
 
 urlFor: aRequestHandler ifAbsent: absentBlock	"Return the URL for the given request handler. If the handler is not registered, return	the result of absentBlock.	This URL will include the handler's key; if you don't want this, use #url instead."	| key url |	key := self keyFor: aRequestHandler ifAbsent: [ ^ absentBlock value ].	url := self url.	self trackingStrategy addKey: key toUrl: url.	^ url! !
-!WARegistry categoriesFor: #cache!accessing!public! !
-!WARegistry categoriesFor: #cache:!accessing!public! !
-!WARegistry categoriesFor: #childrenDo:!parent/child!public! !
-!WARegistry categoriesFor: #clear!parent/child!public! !
-!WARegistry categoriesFor: #createCache!initialization!public! !
-!WARegistry categoriesFor: #defaultConfiguration!configuration!public! !
-!WARegistry categoriesFor: #dispatch:to:key:!handling/helpers!public! !
-!WARegistry categoriesFor: #handle:registering:!handling/helpers!public! !
-!WARegistry categoriesFor: #handle:registering:at:!handling/helpers!public! !
-!WARegistry categoriesFor: #handleDefault:!handling!public! !
-!WARegistry categoriesFor: #handleExpired:!handling!public! !
-!WARegistry categoriesFor: #handleFiltered:!handling!public! !
-!WARegistry categoriesFor: #handleKeyed:with:context:!handling!public! !
-!WARegistry categoriesFor: #handlersDo:!enumerating!public! !
-!WARegistry categoriesFor: #initialize!initialization!public! !
-!WARegistry categoriesFor: #initializeCache!initialization!public! !
-!WARegistry categoriesFor: #isRegistry!public!testing! !
-!WARegistry categoriesFor: #keyFor:ifAbsent:!parent/child!public! !
-!WARegistry categoriesFor: #keysAndHandlersDo:!enumerating!public! !
-!WARegistry categoriesFor: #postCopy!copying!public! !
-!WARegistry categoriesFor: #register:!parent/child!public! !
-!WARegistry categoriesFor: #register:at:!parent/child!public! !
-!WARegistry categoriesFor: #trackingStrategy!configuration!public! !
-!WARegistry categoriesFor: #unregister:!parent/child!public! !
-!WARegistry categoriesFor: #unregisterAt:!parent/child!public! !
-!WARegistry categoriesFor: #unregistered!parent/child!public! !
-!WARegistry categoriesFor: #urlFor:!accessing!public! !
-!WARegistry categoriesFor: #urlFor:ifAbsent:!accessing!public! !
+
+!WARegistry categoriesForMethods!
+cache!accessing!public! !
+cache:!accessing!public! !
+childrenDo:!parent/child!public! !
+clear!parent/child!public! !
+createCache!initialization!public! !
+defaultConfiguration!configuration!public! !
+dispatch:to:key:!handling/helpers!public! !
+handle:registering:!handling/helpers!public! !
+handle:registering:at:!handling/helpers!public! !
+handleDefault:!handling!public! !
+handleExpired:!handling!public! !
+handleFiltered:!handling!public! !
+handleKeyed:with:context:!handling!public! !
+handlersDo:!enumerating!public! !
+initialize!initialization!public! !
+initializeCache!initialization!public! !
+isRegistry!public!testing! !
+keyFor:ifAbsent:!parent/child!public! !
+keysAndHandlersDo:!enumerating!public! !
+postCopy!copying!public! !
+register:!parent/child!public! !
+register:at:!parent/child!public! !
+trackingStrategy!configuration!public! !
+unregister:!parent/child!public! !
+unregisterAt:!parent/child!public! !
+unregistered!parent/child!public! !
+urlFor:!accessing!public! !
+urlFor:ifAbsent:!accessing!public! !
+!
 
 !WARegistry class methodsFor!
 
 isAbstract	^ self name = #WARegistry! !
-!WARegistry class categoriesFor: #isAbstract!public!testing! !
+
+!WARegistry class categoriesForMethods!
+isAbstract!public!testing! !
+!
 

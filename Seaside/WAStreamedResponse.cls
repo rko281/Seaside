@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAResponse subclass: #WAStreamedResponse
 	instanceVariableNames: 'committed externalStream'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAStreamedResponse guid: (GUID fromString: '{400ae55c-84d9-487e-b952-ca8604447a09}')!
+
+WAStreamedResponse guid: (GUID fromString: '{bc15c870-f7dc-45e9-bb39-1e5cd272ed8e}')!
+
 WAStreamedResponse comment: 'A WAStreamedResponse is a HTTP response that directly writes to an external write stream. This response class is used to implement efficient HTTP response streaming, as it can directly write do the socket while content is still generated.Instance Variables	committed:		<Boolean>	Whether the status and header was written to the stream.	externalStream:		<WriteStream>	The external stream to write to.'!
-!WAStreamedResponse categoriesForClass!Seaside-Core-HTTP! !
+
+!WAStreamedResponse categoriesForClass!HTTP! !
+
 !WAStreamedResponse methodsFor!
 
 addCookie: aCookie	self committedCheck.	^ super addCookie: aCookie!
@@ -38,25 +42,34 @@ status: aNumber message: aString	self committedCheck.	super status: aNumber me
 
 stream	self flush.	^ externalStream!
 
+writeContentAsStringOn: aStream	committed := true!
+
 writeContentOn: aStream 	committed := true! !
-!WAStreamedResponse categoriesFor: #addCookie:!accessing/cookies!public! !
-!WAStreamedResponse categoriesFor: #binary!public!streaming! !
-!WAStreamedResponse categoriesFor: #committedCheck!private! !
-!WAStreamedResponse categoriesFor: #destroy!initialization!public! !
-!WAStreamedResponse categoriesFor: #flush!public! !
-!WAStreamedResponse categoriesFor: #headerAt:append:!accessing/headers!public! !
-!WAStreamedResponse categoriesFor: #headerAt:put:!accessing/headers!public! !
-!WAStreamedResponse categoriesFor: #initializeOn:!initialization!public! !
-!WAStreamedResponse categoriesFor: #isCommitted!public!testing! !
-!WAStreamedResponse categoriesFor: #isStreamingResponse!public!testing! !
-!WAStreamedResponse categoriesFor: #removeHeaderAt:!accessing/headers!public! !
-!WAStreamedResponse categoriesFor: #resetIfPossible!convenience!public! !
-!WAStreamedResponse categoriesFor: #status:message:!accessing/status!public! !
-!WAStreamedResponse categoriesFor: #stream!accessing!public! !
-!WAStreamedResponse categoriesFor: #writeContentOn:!public!writing! !
+
+!WAStreamedResponse categoriesForMethods!
+addCookie:!accessing/cookies!public! !
+binary!public!streaming! !
+committedCheck!private! !
+destroy!initialization!public! !
+flush!public! !
+headerAt:append:!accessing/headers!public! !
+headerAt:put:!accessing/headers!public! !
+initializeOn:!initialization!public! !
+isCommitted!public!testing! !
+isStreamingResponse!public!testing! !
+removeHeaderAt:!accessing/headers!public! !
+resetIfPossible!convenience!public! !
+status:message:!accessing/status!public! !
+stream!accessing!public! !
+writeContentAsStringOn:!public!writing! !
+writeContentOn:!public!writing! !
+!
 
 !WAStreamedResponse class methodsFor!
 
 on: aStream	^ self basicNew initializeOn: aStream! !
-!WAStreamedResponse class categoriesFor: #on:!instance creation!public! !
+
+!WAStreamedResponse class categoriesForMethods!
+on:!instance creation!public! !
+!
 

@@ -1,15 +1,22 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAVisiblePresenterGuide subclass: #WAAllPresenterGuide
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAAllPresenterGuide guid: (GUID fromString: '{3e80bd3a-7eca-4857-99c6-426a4e353f84}')!
+
+WAAllPresenterGuide guid: (GUID fromString: '{84f9d922-dbb5-4fef-a6d4-b8d52429bd2a}')!
+
 WAAllPresenterGuide comment: 'Visit the tree of all Presenters and their registered #children.'!
-!WAAllPresenterGuide categoriesForClass!Seaside-Component-Visitors! !
+
+!WAAllPresenterGuide categoriesForClass!Visitors! !
+
 !WAAllPresenterGuide methodsFor!
 
 shouldVisitNextPresenterOf: aDecoration	^ true! !
-!WAAllPresenterGuide categoriesFor: #shouldVisitNextPresenterOf:!private! !
+
+!WAAllPresenterGuide categoriesForMethods!
+shouldVisitNextPresenterOf:!private! !
+!
 

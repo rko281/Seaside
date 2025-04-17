@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAComponent subclass: #WAComponentStub
 	instanceVariableNames: 'initialRequestBlock updateRootBlock updateUrlBlock updateStatesBlock renderBlock childrenBlock'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAComponentStub guid: (GUID fromString: '{1a773d85-ce45-4528-b26e-c70747226d9d}')!
+
+WAComponentStub guid: (GUID fromString: '{d46ad05b-5905-4c54-a4a7-6a6f510f1fc9}')!
+
 WAComponentStub comment: ''!
-!WAComponentStub categoriesForClass!Seaside-Tests-Component-Stubs! !
+
+!WAComponentStub categoriesForClass!Stubs! !
+
 !WAComponentStub methodsFor!
 
 children	^ childrenBlock isNil		ifTrue: [ super children ]		ifFalse: [ childrenBlock value ]!
@@ -33,16 +37,19 @@ updateRoot: anHtmlRoot	super updateRoot: anHtmlRoot.	updateRootBlock isNil		i
 updateStates: aSnapshot	super updateStates: aSnapshot.	updateStatesBlock isNil		ifFalse: [ updateStatesBlock value: aSnapshot ]!
 
 updateUrl: aUrl	super updateUrl: aUrl.	updateUrlBlock isNil		ifFalse: [ updateUrlBlock value: aUrl ]! !
-!WAComponentStub categoriesFor: #children!hooks!public! !
-!WAComponentStub categoriesFor: #initialRequest:!hooks!public! !
-!WAComponentStub categoriesFor: #onChildren:!events!public! !
-!WAComponentStub categoriesFor: #onInitialRequest:!events!public! !
-!WAComponentStub categoriesFor: #onRender:!events!public! !
-!WAComponentStub categoriesFor: #onUpdateRoot:!events!public! !
-!WAComponentStub categoriesFor: #onUpdateStates:!events!public! !
-!WAComponentStub categoriesFor: #onUpdateUrl:!events!public! !
-!WAComponentStub categoriesFor: #renderContentOn:!public!rendering! !
-!WAComponentStub categoriesFor: #updateRoot:!public!updating! !
-!WAComponentStub categoriesFor: #updateStates:!public!updating! !
-!WAComponentStub categoriesFor: #updateUrl:!public!updating! !
+
+!WAComponentStub categoriesForMethods!
+children!hooks!public! !
+initialRequest:!hooks!public! !
+onChildren:!events!public! !
+onInitialRequest:!events!public! !
+onRender:!events!public! !
+onUpdateRoot:!events!public! !
+onUpdateStates:!events!public! !
+onUpdateUrl:!events!public! !
+renderContentOn:!public!rendering! !
+updateRoot:!public!updating! !
+updateStates:!public!updating! !
+updateUrl:!public!updating! !
+!
 

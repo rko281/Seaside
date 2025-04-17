@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAComponent subclass: #WAHandlerEditor
 	instanceVariableNames: 'handler filterEditor configurationEditor'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAHandlerEditor guid: (GUID fromString: '{a5c62fb8-4464-464d-8023-2b5a8e6648bc}')!
+
+WAHandlerEditor guid: (GUID fromString: '{f3118e6b-02d5-494c-8701-68d9967f23f2}')!
+
 WAHandlerEditor comment: ''!
-!WAHandlerEditor categoriesForClass!Seaside-Tools-Web! !
+
+!WAHandlerEditor categoriesForClass!Unclassified! !
+
 !WAHandlerEditor methodsFor!
 
 children	^ Array with: filterEditor with: configurationEditor!
@@ -28,23 +32,29 @@ renderFiltersOn: html	html render: filterEditor!
 
 renderHandlerOn: html	self renderConfigurationOn: html!
 
-renderSubItemsOn: html! !
-!WAHandlerEditor categoriesFor: #children!hooks!public! !
-!WAHandlerEditor categoriesFor: #editor!accessing!public! !
-!WAHandlerEditor categoriesFor: #handler!accessing!public! !
-!WAHandlerEditor categoriesFor: #initializeOn:!initialization!public! !
-!WAHandlerEditor categoriesFor: #parent!accessing!public! !
-!WAHandlerEditor categoriesFor: #renderConfigurationOn:!public!rendering! !
-!WAHandlerEditor categoriesFor: #renderContentOn:!public!rendering! !
-!WAHandlerEditor categoriesFor: #renderFiltersOn:!public!rendering! !
-!WAHandlerEditor categoriesFor: #renderHandlerOn:!public!rendering! !
-!WAHandlerEditor categoriesFor: #renderSubItemsOn:!public!rendering! !
+renderSubItemsOn: html! !
+
+!WAHandlerEditor categoriesForMethods!
+children!hooks!public! !
+editor!accessing!public! !
+handler!accessing!public! !
+initializeOn:!initialization!public! !
+parent!accessing!public! !
+renderConfigurationOn:!public!rendering! !
+renderContentOn:!public!rendering! !
+renderFiltersOn:!public!rendering! !
+renderHandlerOn:!public!rendering! !
+renderSubItemsOn:!public!rendering! !
+!
 
 !WAHandlerEditor class methodsFor!
 
 new	^ self on: nil!
 
 on: anEntryPoint	^ self basicNew initializeOn: anEntryPoint; yourself! !
-!WAHandlerEditor class categoriesFor: #new!instance creation!public! !
-!WAHandlerEditor class categoriesFor: #on:!instance creation!public! !
+
+!WAHandlerEditor class categoriesForMethods!
+new!instance creation!public! !
+on:!instance creation!public! !
+!
 

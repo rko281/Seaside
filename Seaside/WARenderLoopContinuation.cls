@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WASessionContinuation subclass: #WARenderLoopContinuation
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WARenderLoopContinuation guid: (GUID fromString: '{ba5c7f5e-b0ec-4530-a1a6-19cbdf620777}')!
+
+WARenderLoopContinuation guid: (GUID fromString: '{6db1e54d-8d3c-4ac2-8bd7-63c15b73d5f0}')!
+
 WARenderLoopContinuation comment: ''!
-!WARenderLoopContinuation categoriesForClass!Seaside-RenderLoop! !
+
+!WARenderLoopContinuation categoriesForClass!Continuations! !
+
 !WARenderLoopContinuation methodsFor!
 
 actionPhaseContinuationClass	^ (self application preferenceAt: #actionPhaseContinuationClass) value!
@@ -34,20 +38,23 @@ updateStates: aSnapshot	super updateStates: aSnapshot.	(WAAllPresenterGuide cl
 
 updateUrl: aUrl	super updateUrl: aUrl.	(WAVisiblePresenterGuide client: (WAUpdateUrlVisitor url: aUrl))		start: self presenter!
 
-withNotificationHandlerDo: aBlock	| currentHandler |	currentHandler := WACurrentExceptionHandler value.	^ currentHandler isNil		ifTrue: [			aBlock on: WARenderNotification do: [ :n | ] ]		ifFalse: [			"For platforms with ANSI exceptions we have to nest exception handlers						with ANSI exceptions			When signaling an exception from an exception handler block the look up of			the new exception handler starts in the exception handler block.						without ANSI exceptions			When signaling an exception from an exception handler block the look up of			the new exception handler starts where the original exception was signaled.						platforms without ANSI exceptions: Pharo<4, Squeak, GS2.x			platforms with ANSI exception: Pharo>=4, VAST, VW, GS3.x"			[ currentHandler handleExceptionsDuring: aBlock ]				on: WARenderNotification				 do: [ :n | ] ]		! !
-!WARenderLoopContinuation categoriesFor: #actionPhaseContinuationClass!private! !
-!WARenderLoopContinuation categoriesFor: #createActionContinuation!private! !
-!WARenderLoopContinuation categoriesFor: #createActionContinuationWithContext:!private! !
-!WARenderLoopContinuation categoriesFor: #createRenderContinuation!private! !
-!WARenderLoopContinuation categoriesFor: #isActionContinuation!public!testing! !
-!WARenderLoopContinuation categoriesFor: #isRenderContinuation!public!testing! !
-!WARenderLoopContinuation categoriesFor: #presenter!accessing!public! !
-!WARenderLoopContinuation categoriesFor: #scriptGeneratorClass!private! !
-!WARenderLoopContinuation categoriesFor: #toPresenterSendRoot:!public!updating! !
-!WARenderLoopContinuation categoriesFor: #updateRoot:!public!updating! !
-!WARenderLoopContinuation categoriesFor: #updateStates:!public!updating! !
-!WARenderLoopContinuation categoriesFor: #updateUrl:!public!updating! !
-!WARenderLoopContinuation categoriesFor: #withNotificationHandlerDo:!private! !
+withNotificationHandlerDo: aBlock	| currentHandler |	currentHandler := WACurrentExceptionHandler value.	^ currentHandler isNil		ifTrue: [			aBlock on: WARenderNotification do: [ :n | ] ]		ifFalse: [			"For platforms with ANSI exceptions we have to nest exception handlers						with ANSI exceptions			When signaling an exception from an exception handler block the look up of			the new exception handler starts in the exception handler block.						without ANSI exceptions			When signaling an exception from an exception handler block the look up of			the new exception handler starts where the original exception was signaled.						platforms without ANSI exceptions: Pharo<4, Squeak, GS2.x			platforms with ANSI exception: Pharo>=4, VAST, VW, GS3.x"			[ currentHandler handleExceptionsDuring: aBlock ]				on: WARenderNotification				 do: [ :n | ] ]! !
+
+!WARenderLoopContinuation categoriesForMethods!
+actionPhaseContinuationClass!private! !
+createActionContinuation!private! !
+createActionContinuationWithContext:!private! !
+createRenderContinuation!private! !
+isActionContinuation!public!testing! !
+isRenderContinuation!public!testing! !
+presenter!accessing!public! !
+scriptGeneratorClass!private! !
+toPresenterSendRoot:!public!updating! !
+updateRoot:!public!updating! !
+updateStates:!public!updating! !
+updateUrl:!public!updating! !
+withNotificationHandlerDo:!private! !
+!
 
 !WARenderLoopContinuation class methodsFor!
 
@@ -56,7 +63,10 @@ isActionContinuation	^ false!
 isRenderContinuation	^ false!
 
 isRenderLoopContinuation	^ true! !
-!WARenderLoopContinuation class categoriesFor: #isActionContinuation!public!testing! !
-!WARenderLoopContinuation class categoriesFor: #isRenderContinuation!public!testing! !
-!WARenderLoopContinuation class categoriesFor: #isRenderLoopContinuation!public!testing! !
+
+!WARenderLoopContinuation class categoriesForMethods!
+isActionContinuation!public!testing! !
+isRenderContinuation!public!testing! !
+isRenderLoopContinuation!public!testing! !
+!
 

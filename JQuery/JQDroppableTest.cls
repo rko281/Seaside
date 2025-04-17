@@ -1,15 +1,22 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQueryUiTest subclass: #JQDroppableTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQDroppableTest guid: (GUID fromString: '{afe24212-3f3f-4e34-8cc5-427ff0a4cff0}')!
+
+JQDroppableTest guid: (GUID fromString: '{c4325625-a911-4f8b-9963-7964a2637c23}')!
+
 JQDroppableTest comment: ''!
-!JQDroppableTest categoriesForClass!JQuery-Tests-UI-Unit! !
+
+!JQDroppableTest categoriesForClass!Unit! !
+
 !JQDroppableTest methodsFor!
 
 testEvents	self		assert: ((self jQuery: 'div') droppable onActivate: 1)		equals: self function , '("div").droppable({"activate":function(){1}})'.	self		assert: ((self jQuery: 'div') droppable onDeactivate: 2)		equals: self function , '("div").droppable({"deactivate":function(){2}})'.	self		assert: ((self jQuery: 'div') droppable onDrop: 3)		equals: self function , '("div").droppable({"drop":function(){3}})'.	self		assert: ((self jQuery: 'div') droppable onOut: 4)		equals: self function , '("div").droppable({"out":function(){4}})'.	self		assert: ((self jQuery: 'div') droppable onOver: 5)		equals: self function , '("div").droppable({"over":function(){5}})'! !
-!JQDroppableTest categoriesFor: #testEvents!public!tests! !
+
+!JQDroppableTest categoriesForMethods!
+testEvents!public!tests! !
+!
 

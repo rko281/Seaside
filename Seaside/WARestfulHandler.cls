@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WARequestHandler subclass: #WARestfulHandler
 	instanceVariableNames: 'routes'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WARestfulHandler guid: (GUID fromString: '{07f5e0f4-2fa0-461f-bf82-26fa60287889}')!
+
+WARestfulHandler guid: (GUID fromString: '{70dd9c6a-5388-45b7-a0da-bafe912539ee}')!
+
 WARestfulHandler comment: ''!
-!WARestfulHandler categoriesForClass!Seaside-REST-Core-Handler! !
+
+!WARestfulHandler categoriesForClass!Handler! !
+
 !WARestfulHandler methodsFor!
 
 createRoutes	"Creates a collection of routes for the receiver. Override this method in subclasses to explicitely create the routes instead of using the default implementation that builds the routes using annotated methods (pragmas)."	^ GRPlatform current createRoutesFrom: self class to: WARestfulHandler!
@@ -27,13 +31,16 @@ routes	"Answer a collection of routes for the receiver."	^ self shouldCacheRo
 shouldCacheRoutes	"Answer a boolean if the routes should be cached by the receiver.	Subclasses are supposed to override this method in such a way that routes are cached in production. This way the overhead of recreating the routes on every request is avoided. Recreating the routes may involve decompilation or parsing to get the method parameter names which may not be thread-safe.	For development recreating the routes on every request makes for a better development experience as changes are immediately visible."	^ false!
 
 shouldConsumePath	"Answer whether the request path should be consumed if a route is found."	^ true! !
-!WARestfulHandler categoriesFor: #createRoutes!private! !
-!WARestfulHandler categoriesFor: #executeResult:!handling!public! !
-!WARestfulHandler categoriesFor: #handleFiltered:!handling!public! !
-!WARestfulHandler categoriesFor: #isImplemented:!private! !
-!WARestfulHandler categoriesFor: #noRouteFound:!handling!public! !
-!WARestfulHandler categoriesFor: #routeForContext:ifAbsent:!private! !
-!WARestfulHandler categoriesFor: #routes!accessing!public! !
-!WARestfulHandler categoriesFor: #shouldCacheRoutes!private! !
-!WARestfulHandler categoriesFor: #shouldConsumePath!private! !
+
+!WARestfulHandler categoriesForMethods!
+createRoutes!private! !
+executeResult:!handling!public! !
+handleFiltered:!handling!public! !
+isImplemented:!private! !
+noRouteFound:!handling!public! !
+routeForContext:ifAbsent:!private! !
+routes!accessing!public! !
+shouldCacheRoutes!private! !
+shouldConsumePath!private! !
+!
 

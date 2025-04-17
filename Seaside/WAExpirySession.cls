@@ -1,20 +1,27 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WASession subclass: #WAExpirySession
 	instanceVariableNames: ''
 	classVariableNames: 'Created Unregistered'
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAExpirySession guid: (GUID fromString: '{d741fc13-2b3e-4375-ac8f-cde8a2bf1f0a}')!
+
+WAExpirySession guid: (GUID fromString: '{b5cdd68e-30e2-40e7-9d15-d8b9bb9cc51d}')!
+
 WAExpirySession comment: ''!
-!WAExpirySession categoriesForClass!Seaside-Tests-Functional! !
+
+!WAExpirySession categoriesForClass!Unclassified! !
+
 !WAExpirySession methodsFor!
 
 initialize	super initialize.	Created := Created + 1!
 
 unregistered	super unregistered.	Unregistered := Unregistered + 1! !
-!WAExpirySession categoriesFor: #initialize!initialization!public! !
-!WAExpirySession categoriesFor: #unregistered!parent/child!public! !
+
+!WAExpirySession categoriesForMethods!
+initialize!initialization!public! !
+unregistered!parent/child!public! !
+!
 
 !WAExpirySession class methodsFor!
 
@@ -25,8 +32,11 @@ initialize	self resetCounters!
 resetCounters	Unregistered := 0.	Created := 0!
 
 unregistered	^ Unregistered! !
-!WAExpirySession class categoriesFor: #created!accessing!public! !
-!WAExpirySession class categoriesFor: #initialize!class initialization!public! !
-!WAExpirySession class categoriesFor: #resetCounters!actions!public! !
-!WAExpirySession class categoriesFor: #unregistered!accessing!public! !
+
+!WAExpirySession class categoriesForMethods!
+created!accessing!public! !
+initialize!class initialization!public! !
+resetCounters!actions!public! !
+unregistered!accessing!public! !
+!
 

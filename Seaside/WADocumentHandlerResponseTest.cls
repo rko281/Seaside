@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAContextTest subclass: #WADocumentHandlerResponseTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WADocumentHandlerResponseTest guid: (GUID fromString: '{8120e3e1-7833-4496-acb5-c5f40e56ad96}')!
+
+WADocumentHandlerResponseTest guid: (GUID fromString: '{1049ef68-b33e-4aad-b2c5-27735a0887ab}')!
+
 WADocumentHandlerResponseTest comment: ''!
-!WADocumentHandlerResponseTest categoriesForClass!Seaside-Tests-Core-RequestHandling! !
+
+!WADocumentHandlerResponseTest categoriesForClass!RequestHandling! !
+
 !WADocumentHandlerResponseTest methodsFor!
 
 assertHttpResponseFrom: aResponse matches: aHandler	| expectedContents actualContents |	self assert: aResponse status = 200.	self assert: aResponse contentType = aHandler document mimeType.	expectedContents := aHandler document contents.	actualContents := aResponse contents.	self assert: actualContents size = expectedContents size.	self assert: actualContents species = expectedContents species.	self assert: aResponse cookies isEmpty!
@@ -27,13 +31,16 @@ testByteArrayWithoutFilename	self		createAndVerifyBinaryDocumentNamed: nil		h
 testStringWithFilename	self		createAndVerifyTextDocumentNamed: 'toolbar.css'		hasAttachment: 'attachment; filename="toolbar.css"'!
 
 testStringWithoutFilename	self		createAndVerifyTextDocumentNamed: nil		hasAttachment: nil! !
-!WADocumentHandlerResponseTest categoriesFor: #assertHttpResponseFrom:matches:!private! !
-!WADocumentHandlerResponseTest categoriesFor: #createAndVerifyBinaryDocumentNamed:hasAttachment:!private! !
-!WADocumentHandlerResponseTest categoriesFor: #createAndVerifyDocumentNamed:content:mimeType:hasAttachment:!private! !
-!WADocumentHandlerResponseTest categoriesFor: #createAndVerifyTextDocumentNamed:hasAttachment:!private! !
-!WADocumentHandlerResponseTest categoriesFor: #headerAt:forResponse:!private! !
-!WADocumentHandlerResponseTest categoriesFor: #testByteArrayWithFilename!public!tests! !
-!WADocumentHandlerResponseTest categoriesFor: #testByteArrayWithoutFilename!public!tests! !
-!WADocumentHandlerResponseTest categoriesFor: #testStringWithFilename!public!tests! !
-!WADocumentHandlerResponseTest categoriesFor: #testStringWithoutFilename!public!tests! !
+
+!WADocumentHandlerResponseTest categoriesForMethods!
+assertHttpResponseFrom:matches:!private! !
+createAndVerifyBinaryDocumentNamed:hasAttachment:!private! !
+createAndVerifyDocumentNamed:content:mimeType:hasAttachment:!private! !
+createAndVerifyTextDocumentNamed:hasAttachment:!private! !
+headerAt:forResponse:!private! !
+testByteArrayWithFilename!public!tests! !
+testByteArrayWithoutFilename!public!tests! !
+testStringWithFilename!public!tests! !
+testStringWithoutFilename!public!tests! !
+!
 

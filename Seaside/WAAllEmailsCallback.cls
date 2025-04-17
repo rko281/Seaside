@@ -1,15 +1,22 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAAllValuesCallback subclass: #WAAllEmailsCallback
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAAllEmailsCallback guid: (GUID fromString: '{7cddfad2-5e77-4432-9ed1-b89fdd16d862}')!
+
+WAAllEmailsCallback guid: (GUID fromString: '{b8ab4bcc-9adc-4aed-b0b4-487e9c3e3905}')!
+
 WAAllEmailsCallback comment: ''!
-!WAAllEmailsCallback categoriesForClass!Seaside-Core-Callbacks! !
+
+!WAAllEmailsCallback categoriesForClass!Callbacks! !
+
 !WAAllEmailsCallback methodsFor!
 
 valueForField: anObject	^ anObject isEmptyOrNil		ifTrue: [ nil ]		ifFalse: [ WAEmailAddress address: anObject ]! !
-!WAAllEmailsCallback categoriesFor: #valueForField:!converting!public! !
+
+!WAAllEmailsCallback categoriesForMethods!
+valueForField:!converting!public! !
+!
 

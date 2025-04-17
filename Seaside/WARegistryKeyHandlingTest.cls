@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 TestCase subclass: #WARegistryKeyHandlingTest
 	instanceVariableNames: 'registry registrySize'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WARegistryKeyHandlingTest guid: (GUID fromString: '{fef0ed23-da34-4e15-afe9-3cdd868ce2aa}')!
+
+WARegistryKeyHandlingTest guid: (GUID fromString: '{97d5bd74-e1a9-4e62-ac19-2ffbae0612fc}')!
+
 WARegistryKeyHandlingTest comment: ''!
-!WARegistryKeyHandlingTest categoriesForClass!Seaside-Tests-Core-RequestHandling! !
+
+!WARegistryKeyHandlingTest categoriesForClass!RequestHandling! !
+
 !WARegistryKeyHandlingTest methodsFor!
 
 assertCookieAddition: aResponse	| cookie |	self assert: aResponse cookies size = 1.	cookie := aResponse cookies first.	self assert: cookie path = self path.	self assert: cookie key = self cookieKey.	self assert: cookie discard!
@@ -65,32 +69,35 @@ testCookiesDisabledNoFieldCookieHandlerPresent	"Cookies are DISABLED.	There is
 testCookiesDisabledNoKey	"Cookies are DISABLED.	There is no URL field and no cookie. This is a new request to the Registry."		| response context |	registry := self createRegistry.	context := self createRequestContextWithFieldKey: nil cookieKey: nil.	response := self dispatch: context to: registry.		"Behaviour should be the same as #testNoKey."	self assertNoCookies: response.	self assertDefault: response!
 
 testNoKey	"Cookies are DISABLED.	There is no URL field and no cookie. This is a new request to the Registry."		| response context |	registry := self createRegistry.	context := self createRequestContextWithFieldKey: nil cookieKey: nil.	response := self dispatch: context to: registry.		self assertNoCookies: response.	self assertDefault: response! !
-!WARegistryKeyHandlingTest categoriesFor: #assertCookieAddition:!private! !
-!WARegistryKeyHandlingTest categoriesFor: #assertCookieAddition:key:!private! !
-!WARegistryKeyHandlingTest categoriesFor: #assertCookieDeletion:!private! !
-!WARegistryKeyHandlingTest categoriesFor: #assertDefault:!private! !
-!WARegistryKeyHandlingTest categoriesFor: #assertDispatched:!private! !
-!WARegistryKeyHandlingTest categoriesFor: #assertExpired:!private! !
-!WARegistryKeyHandlingTest categoriesFor: #assertNoCookies:!private! !
-!WARegistryKeyHandlingTest categoriesFor: #cookieKey!private! !
-!WARegistryKeyHandlingTest categoriesFor: #createRegistry!private! !
-!WARegistryKeyHandlingTest categoriesFor: #createRegistryWithCookiesEnabled!private! !
-!WARegistryKeyHandlingTest categoriesFor: #createRequestContextWithFieldKey:cookieKey:!private! !
-!WARegistryKeyHandlingTest categoriesFor: #dispatch:to:!private! !
-!WARegistryKeyHandlingTest categoriesFor: #fieldName!private! !
-!WARegistryKeyHandlingTest categoriesFor: #path!private! !
-!WARegistryKeyHandlingTest categoriesFor: #registerNewHandler!private! !
-!WARegistryKeyHandlingTest categoriesFor: #registryName!private! !
-!WARegistryKeyHandlingTest categoriesFor: #testCookiesDisabledFieldNoCookieHandlerAbsent!public!tests! !
-!WARegistryKeyHandlingTest categoriesFor: #testCookiesDisabledFieldNoCookieHandlerPresent!public!tests! !
-!WARegistryKeyHandlingTest categoriesFor: #testCookiesDisabledMatchingHandlerAbsent!public!tests! !
-!WARegistryKeyHandlingTest categoriesFor: #testCookiesDisabledMatchingHandlerPresent!public!tests! !
-!WARegistryKeyHandlingTest categoriesFor: #testCookiesDisabledMismatchingWithBothHandlers!public!tests! !
-!WARegistryKeyHandlingTest categoriesFor: #testCookiesDisabledMismatchingWithCookieHandler!public!tests! !
-!WARegistryKeyHandlingTest categoriesFor: #testCookiesDisabledMismatchingWithNoHandlers!public!tests! !
-!WARegistryKeyHandlingTest categoriesFor: #testCookiesDisabledMismatchingWithUrlHandler!public!tests! !
-!WARegistryKeyHandlingTest categoriesFor: #testCookiesDisabledNoFieldCookieHandlerAbsent!public!tests! !
-!WARegistryKeyHandlingTest categoriesFor: #testCookiesDisabledNoFieldCookieHandlerPresent!public!tests! !
-!WARegistryKeyHandlingTest categoriesFor: #testCookiesDisabledNoKey!public!tests! !
-!WARegistryKeyHandlingTest categoriesFor: #testNoKey!public!tests! !
+
+!WARegistryKeyHandlingTest categoriesForMethods!
+assertCookieAddition:!private! !
+assertCookieAddition:key:!private! !
+assertCookieDeletion:!private! !
+assertDefault:!private! !
+assertDispatched:!private! !
+assertExpired:!private! !
+assertNoCookies:!private! !
+cookieKey!private! !
+createRegistry!private! !
+createRegistryWithCookiesEnabled!private! !
+createRequestContextWithFieldKey:cookieKey:!private! !
+dispatch:to:!private! !
+fieldName!private! !
+path!private! !
+registerNewHandler!private! !
+registryName!private! !
+testCookiesDisabledFieldNoCookieHandlerAbsent!public!tests! !
+testCookiesDisabledFieldNoCookieHandlerPresent!public!tests! !
+testCookiesDisabledMatchingHandlerAbsent!public!tests! !
+testCookiesDisabledMatchingHandlerPresent!public!tests! !
+testCookiesDisabledMismatchingWithBothHandlers!public!tests! !
+testCookiesDisabledMismatchingWithCookieHandler!public!tests! !
+testCookiesDisabledMismatchingWithNoHandlers!public!tests! !
+testCookiesDisabledMismatchingWithUrlHandler!public!tests! !
+testCookiesDisabledNoFieldCookieHandlerAbsent!public!tests! !
+testCookiesDisabledNoFieldCookieHandlerPresent!public!tests! !
+testCookiesDisabledNoKey!public!tests! !
+testNoKey!public!tests! !
+!
 

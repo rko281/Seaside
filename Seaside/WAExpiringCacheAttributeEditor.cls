@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAAttributeEditor subclass: #WAExpiringCacheAttributeEditor
 	instanceVariableNames: 'handler maximumSize maximumAbsoluteAge maximumRelativeAge overflowAction overflowActionLabels'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAExpiringCacheAttributeEditor guid: (GUID fromString: '{593419ed-9456-48d2-b06f-4c33ffd86612}')!
+
+WAExpiringCacheAttributeEditor guid: (GUID fromString: '{079dc7de-5cc8-491c-b329-b4572abe49e5}')!
+
 WAExpiringCacheAttributeEditor comment: ''!
-!WAExpiringCacheAttributeEditor categoriesForClass!Seaside-Tools-Web! !
+
+!WAExpiringCacheAttributeEditor categoriesForClass!Unclassified! !
+
 !WAExpiringCacheAttributeEditor methodsFor!
 
 createCache	self subclassResponsibility!
@@ -20,19 +24,19 @@ initialize	super initialize.	overflowActionLabels := Dictionary new: 3.	overf
 
 maximumAbsoluteAge	^ maximumAbsoluteAge!
 
-maximumAbsoluteAge: aStringOrAnInteger	maximumAbsoluteAge := aStringOrAnInteger asUnsignedInteger!
+maximumAbsoluteAge: aStringOrAnInteger	maximumAbsoluteAge := aStringOrAnInteger asUnsignedInteger!
 
 maximumRelativeAge	^ maximumRelativeAge!
 
-maximumRelativeAge: aStringOrAnInteger	maximumRelativeAge := aStringOrAnInteger asUnsignedInteger!
+maximumRelativeAge: aStringOrAnInteger	maximumRelativeAge := aStringOrAnInteger asUnsignedInteger!
 
 maximumSize	^ maximumSize!
 
-maximumSize: aStringOrAnInteger	maximumSize := aStringOrAnInteger asUnsignedInteger!
+maximumSize: aStringOrAnInteger	maximumSize := aStringOrAnInteger asUnsignedInteger!
 
 overflowAction	^ overflowAction!
 
-overflowAction: aSymbol	overflowAction := aSymbol!
+overflowAction: aSymbol	overflowAction := aSymbol!
 
 renderCacheReplaceOn: html	html paragraph: [		html button			class: 'large';			title: 'Replace the cache';			callback: [ self replaceCache ];			with: 'Replace cache' ]!
 
@@ -47,23 +51,26 @@ renderOverflowActionOn: html	html tableRow: [		html tableHeading: [			html la
 replaceCache	self		confirm: 'This will clear all existing sessions in the current cache. Are you sure you want to continue?'		onAnswer: [ :answer |			answer ifTrue: [				self storeConfigurationValues.				self handler cache: self createCache ] ]!
 
 storeConfigurationValues		handler configuration at: #maximumSize put: maximumSize.	handler configuration at: #maximumRelativeAge put: maximumRelativeAge.	handler configuration at: #maximumAbsoluteAge put: maximumAbsoluteAge.	handler configuration at: #overflowAction put: overflowAction! !
-!WAExpiringCacheAttributeEditor categoriesFor: #createCache!private! !
-!WAExpiringCacheAttributeEditor categoriesFor: #handler!accessing!public! !
-!WAExpiringCacheAttributeEditor categoriesFor: #handler:!accessing!public! !
-!WAExpiringCacheAttributeEditor categoriesFor: #initialize!initialization!public! !
-!WAExpiringCacheAttributeEditor categoriesFor: #maximumAbsoluteAge!accessing!public! !
-!WAExpiringCacheAttributeEditor categoriesFor: #maximumAbsoluteAge:!accessing!public! !
-!WAExpiringCacheAttributeEditor categoriesFor: #maximumRelativeAge!accessing!public! !
-!WAExpiringCacheAttributeEditor categoriesFor: #maximumRelativeAge:!accessing!public! !
-!WAExpiringCacheAttributeEditor categoriesFor: #maximumSize!accessing!public! !
-!WAExpiringCacheAttributeEditor categoriesFor: #maximumSize:!accessing!public! !
-!WAExpiringCacheAttributeEditor categoriesFor: #overflowAction!accessing!public! !
-!WAExpiringCacheAttributeEditor categoriesFor: #overflowAction:!accessing!public! !
-!WAExpiringCacheAttributeEditor categoriesFor: #renderCacheReplaceOn:!public!rendering! !
-!WAExpiringCacheAttributeEditor categoriesFor: #renderMaximumAbsoluteAgeOn:!public!rendering! !
-!WAExpiringCacheAttributeEditor categoriesFor: #renderMaximumRelativeAgeOn:!public!rendering! !
-!WAExpiringCacheAttributeEditor categoriesFor: #renderMaximumSizeOn:!public!rendering! !
-!WAExpiringCacheAttributeEditor categoriesFor: #renderOverflowActionOn:!public!rendering! !
-!WAExpiringCacheAttributeEditor categoriesFor: #replaceCache!actions!public! !
-!WAExpiringCacheAttributeEditor categoriesFor: #storeConfigurationValues!private! !
+
+!WAExpiringCacheAttributeEditor categoriesForMethods!
+createCache!private! !
+handler!accessing!public! !
+handler:!accessing!public! !
+initialize!initialization!public! !
+maximumAbsoluteAge!accessing!public! !
+maximumAbsoluteAge:!accessing!public! !
+maximumRelativeAge!accessing!public! !
+maximumRelativeAge:!accessing!public! !
+maximumSize!accessing!public! !
+maximumSize:!accessing!public! !
+overflowAction!accessing!public! !
+overflowAction:!accessing!public! !
+renderCacheReplaceOn:!public!rendering! !
+renderMaximumAbsoluteAgeOn:!public!rendering! !
+renderMaximumRelativeAgeOn:!public!rendering! !
+renderMaximumSizeOn:!public!rendering! !
+renderOverflowActionOn:!public!rendering! !
+replaceCache!actions!public! !
+storeConfigurationValues!private! !
+!
 

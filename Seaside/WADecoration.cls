@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAPresenter subclass: #WADecoration
 	instanceVariableNames: 'next'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WADecoration guid: (GUID fromString: '{cb38bced-e187-42fb-8f5e-8d16f13b86ce}')!
+
+WADecoration guid: (GUID fromString: '{acbc12bf-1062-40ad-9baf-3d6b7030c06d}')!
+
 WADecoration comment: 'I am an abstract decoration around instances of WAComponent. I can be added to aComponent by calling #addDecoration: and I change the basic behaviour or look of a component. There are several methods that can be overriden to archive this:- #renderContentOn: to emit xhtml around the decorated component. Call #renderOwnerOn: to let the owner emit its output.- #handleAnswer: to intercept the answer processing.'!
-!WADecoration categoriesForClass!Seaside-Component-Base! !
+
+!WADecoration categoriesForClass!Base! !
+
 !WADecoration methodsFor!
 
 accept: aVisitor	aVisitor visitDecoration: self!
@@ -39,24 +43,33 @@ renderNextOn: html	self next renderUndecoratedWithContext: html context!
 setNext: aDecoration	next contents: aDecoration!
 
 updateStates: aSnapshot	super updateStates: aSnapshot.	aSnapshot register: next! !
-!WADecoration categoriesFor: #accept:!public!visiting! !
-!WADecoration categoriesFor: #decoratedComponent!decorations!public! !
-!WADecoration categoriesFor: #handleAnswer:!delegation!public! !
-!WADecoration categoriesFor: #handleAnswer:continueWith:!processing!public! !
-!WADecoration categoriesFor: #initialize!initialization!public! !
-!WADecoration categoriesFor: #isDecoration!public!testing! !
-!WADecoration categoriesFor: #isDelegation!public!testing! !
-!WADecoration categoriesFor: #isGlobal!public!testing! !
-!WADecoration categoriesFor: #isLocal!public!testing! !
-!WADecoration categoriesFor: #next!accessing!public! !
-!WADecoration categoriesFor: #remove!actions!public! !
-!WADecoration categoriesFor: #renderContentOn:!public!rendering! !
-!WADecoration categoriesFor: #renderNextOn:!public!rendering! !
-!WADecoration categoriesFor: #setNext:!initialization!public! !
-!WADecoration categoriesFor: #updateStates:!public!updating! !
+
+!WADecoration categoriesForMethods!
+accept:!public!visiting! !
+decoratedComponent!decorations!public! !
+handleAnswer:!delegation!public! !
+handleAnswer:continueWith:!processing!public! !
+initialize!initialization!public! !
+isDecoration!public!testing! !
+isDelegation!public!testing! !
+isGlobal!public!testing! !
+isLocal!public!testing! !
+next!accessing!public! !
+remove!actions!public! !
+renderContentOn:!public!rendering! !
+renderNextOn:!public!rendering! !
+setNext:!initialization!public! !
+updateStates:!public!updating! !
+!
 
 !WADecoration class methodsFor!
 
-canBeRoot	^ false! !
-!WADecoration class categoriesFor: #canBeRoot!public!testing! !
+canBeRoot	^ false!
+
+isAbstract 	^ self == WADecoration! !
+
+!WADecoration class categoriesForMethods!
+canBeRoot!public!testing! !
+isAbstract!public!testing! !
+!
 

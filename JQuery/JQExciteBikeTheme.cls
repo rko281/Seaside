@@ -1,15 +1,22 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQBaseTheme subclass: #JQExciteBikeTheme
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQExciteBikeTheme guid: (GUID fromString: '{03fcd616-8b1e-43ed-8546-63bf95b6f4bc}')!
+
+JQExciteBikeTheme guid: (GUID fromString: '{8098634e-cb31-4c50-9942-68fcdfebdac9}')!
+
 JQExciteBikeTheme comment: ''!
-!JQExciteBikeTheme categoriesForClass!JQuery-UI-Libraries! !
+
+!JQExciteBikeTheme categoriesForClass!Libraries! !
+
 !JQExciteBikeTheme methodsFor!
 
 themeName	^ 'excite-bike'! !
-!JQExciteBikeTheme categoriesFor: #themeName!accessing!public! !
+
+!JQExciteBikeTheme categoriesForMethods!
+themeName!accessing!public! !
+!
 

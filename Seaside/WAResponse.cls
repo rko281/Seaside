@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAObject subclass: #WAResponse
 	instanceVariableNames: 'headers cookies status message'
 	classVariableNames: 'StatusMessages'
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAResponse guid: (GUID fromString: '{0ca293fc-0a13-4e20-a169-3eaa2f8e9995}')!
+
+WAResponse guid: (GUID fromString: '{a52387ce-528f-4d8f-872e-b29bc9205ba5}')!
+
 WAResponse comment: 'A WAResponse is an abstract HTTP response objects. It is independent of the used server adapter.Instance Variables	status:		<Integer> The HTTP status code.	message:	<String> The HTTP status message.	headers:	<WAHeaderFields> A dictionary with the header fields.	cookies:	<OrderedCollection> A collection of cookies.'!
-!WAResponse categoriesForClass!Seaside-Core-HTTP! !
+
+!WAResponse categoriesForClass!HTTP! !
+
 !WAResponse methodsFor!
 
 addCookie: aCookie	"Add the cookie to the receiver."	^ self cookies add: aCookie!
@@ -50,9 +54,11 @@ document: anObject mimeType: aMimeType	self document: (anObject seasideMimeDocu
 
 document: anObject mimeType: aMimeType fileName: aString	self document: (anObject seasideMimeDocument 		mimeType: aMimeType;		fileName: aString;		yourself)!
 
-doNotCache	"Configure the receiver to not be cached at all."		self headerAt: 'Pragma' put: 'no-cache'. "Proxies"	self headerAt: 'Expires' putDate: self doNotCacheExpiryDate. "HTTP 1.0"	"http://blog.55minutes.com/2011/10/how-to-defeat-the-browser-back-button-cache/"	"https://code.google.com/p/seaside/issues/detail?id=772"	self headerAt: 'Cache-Control' put: 'no-cache, max-age=0, must-revalidate, no-store' "HTTP 1.1"	!
+doNotCache	"Configure the receiver to not be cached at all."		self headerAt: 'Pragma' put: 'no-cache'. "Proxies"	self headerAt: 'Expires' putDate: self doNotCacheExpiryDate. "HTTP 1.0"	"http://blog.55minutes.com/2011/10/how-to-defeat-the-browser-back-button-cache/"	"https://code.google.com/p/seaside/issues/detail?id=772"	self headerAt: 'Cache-Control' put: 'no-cache, max-age=0, must-revalidate, no-store' "HTTP 1.1"!
 
 doNotCacheExpiryDate	"Answer the expiry date that should be used if the response should not be cached at all."		^ DateAndTime year: 2000 month: 1 day: 1 hour: 0 minute: 0 second: 0!
+
+entityTag: aString	"The ETag (or entity tag) HTTP response header is an identifier for a specific version of a resource."	self headerAt: 'ETag' put: aString!
 
 flush	"Flush the receiver and send partial content	By default do nothing"!
 
@@ -106,6 +112,8 @@ notFound	"Indicate that the requested resource is not available."		self statu
 
 notImplemented	"Indicate the HTTP server does not support the functionality needed to fulfill the request."		self status: WAResponse statusNotImplemented!
 
+notModified	"ndicate that there is no need to retransmit the requested resources. It is an implicit redirection to a cached resource."		self status: WAResponse statusNotModified!
+
 preconditionFailed	"The precondition given in one or more of the request-header fields evaluated to false when it was tested on the server. This response code allows the client to place preconditions on the current resource metainformation (header field data) and thus prevent the requested method from being applied to a resource other than the one intended."		self status: WAResponse statusPreconditionFailed!
 
 printOn: aStream 	super printOn: aStream.	aStream nextPutAll: ' status: '; print: self status.	aStream nextPutAll: ' message: '; print: self message!
@@ -130,80 +138,88 @@ stream	"Answer a write stream, this is where contents should be written to."	
 
 strictTransportSecurity: maxAge includeSubDomains: aBoolean	"Implements Strict Transport Security (STS).		http://lists.w3.org/Archives/Public/www-archive/2009Dec/att-0048/draft-hodges-strict-transport-sec-06.plain.html	Use only over secure connections (HTTPS)."		self		headerAt: 'Strict-Transport-Security'		put: 'max-age=', maxAge greaseString,			(aBoolean ifTrue: [ '; includeSubDomains' ] ifFalse: [ '' ])!
 
+writeContentAsStringOn: aStream	self subclassResponsibility!
+
 writeContentOn: aStream	self subclassResponsibility!
 
 writeCookiesOn: aStream	cookies do: [ :each | 		aStream nextPutAll: 'Set-Cookie: '.		each writeOn: aStream.		aStream crlf ]!
 
 writeHeadersOn: aStream 	headers keysAndValuesDo: [ :key :value | 		aStream			nextPutAll: key;			nextPutAll: ': ';			nextPutAll: value greaseString;			crlf ]!
 
-writeOn: aStream	self writeStatusOn: aStream.	self writeHeadersOn: aStream.	self writeCookiesOn: aStream.	aStream crlf.	self writeContentOn: aStream!
+writeOn: aStream	"Note: only works if the stream's collection class is a String (used for test/development purposes only"	self writeStatusOn: aStream.	self writeHeadersOn: aStream.	self writeCookiesOn: aStream.	aStream crlf.	self writeContentAsStringOn: aStream!
 
-writeStatusOn: aStream 	aStream nextPutAll: self httpVersion.	aStream		nextPut: $ ;		nextPutAll: self status greaseString.	self message isNil ifFalse:  [		aStream			nextPut: $ ;			nextPutAll: self message ].	aStream crlf! !
-!WAResponse categoriesFor: #addCookie:!accessing/cookies!public! !
-!WAResponse categoriesFor: #attachmentWithFileName:!convenience/headers!public! !
-!WAResponse categoriesFor: #authenticationFailed!public!status! !
-!WAResponse categoriesFor: #badRequest!public!status! !
-!WAResponse categoriesFor: #basicAuthenticationRealm:!convenience/status!public! !
-!WAResponse categoriesFor: #binary!public!streaming! !
-!WAResponse categoriesFor: #cacheFor:!convenience/caching!public! !
-!WAResponse categoriesFor: #cacheForever!convenience/caching!public! !
-!WAResponse categoriesFor: #cacheForeverExpiryDate!configuration!public! !
-!WAResponse categoriesFor: #contentType!convenience/accessing!public! !
-!WAResponse categoriesFor: #contentType:!convenience/accessing!public! !
-!WAResponse categoriesFor: #cookies!accessing!public! !
-!WAResponse categoriesFor: #created!public!status! !
-!WAResponse categoriesFor: #deleteCookie:!accessing/cookies!public! !
-!WAResponse categoriesFor: #deleteCookie:path:domain:!accessing/cookies!public! !
-!WAResponse categoriesFor: #deleteCookieAt:!accessing/cookies!public! !
-!WAResponse categoriesFor: #destroy!initialization!public! !
-!WAResponse categoriesFor: #document:!documents!public! !
-!WAResponse categoriesFor: #document:mimeType:!documents!public! !
-!WAResponse categoriesFor: #document:mimeType:fileName:!documents!public! !
-!WAResponse categoriesFor: #doNotCache!convenience/caching!public! !
-!WAResponse categoriesFor: #doNotCacheExpiryDate!configuration!public! !
-!WAResponse categoriesFor: #flush!public! !
-!WAResponse categoriesFor: #forbidden!public!status! !
-!WAResponse categoriesFor: #found!public!status! !
-!WAResponse categoriesFor: #frameOptions:!convenience/headers!public! !
-!WAResponse categoriesFor: #gone!public!status! !
-!WAResponse categoriesFor: #headerAt:!accessing/headers!public! !
-!WAResponse categoriesFor: #headerAt:append:!accessing/headers!public! !
-!WAResponse categoriesFor: #headerAt:ifAbsent:!accessing/headers!public! !
-!WAResponse categoriesFor: #headerAt:put:!accessing/headers!public! !
-!WAResponse categoriesFor: #headerAt:putDate:!accessing/headers!public! !
-!WAResponse categoriesFor: #headers!accessing!public! !
-!WAResponse categoriesFor: #httpVersion!configuration!public! !
-!WAResponse categoriesFor: #initialize!initialization!public! !
-!WAResponse categoriesFor: #initializeFields!initialization!public! !
-!WAResponse categoriesFor: #initializeOn:!initialization!public! !
-!WAResponse categoriesFor: #inlineWithFileName:!convenience/headers!public! !
-!WAResponse categoriesFor: #internalError!public!status! !
-!WAResponse categoriesFor: #isCommitted!public!testing! !
-!WAResponse categoriesFor: #isStreamingResponse!public!testing! !
-!WAResponse categoriesFor: #location:!convenience/headers!public! !
-!WAResponse categoriesFor: #message!accessing!public! !
-!WAResponse categoriesFor: #movedPermanently!public!status! !
-!WAResponse categoriesFor: #nextPut:!public!streaming! !
-!WAResponse categoriesFor: #nextPutAll:!public!streaming! !
-!WAResponse categoriesFor: #notFound!public!status! !
-!WAResponse categoriesFor: #notImplemented!public!status! !
-!WAResponse categoriesFor: #preconditionFailed!public!status! !
-!WAResponse categoriesFor: #printOn:!printing!public! !
-!WAResponse categoriesFor: #redirectTo:!convenience/status!public! !
-!WAResponse categoriesFor: #refreshAfter:location:!convenience/status!public! !
-!WAResponse categoriesFor: #removeHeaderAt:!accessing/headers!public! !
-!WAResponse categoriesFor: #resetIfPossible!convenience!public! !
-!WAResponse categoriesFor: #respond!convenience!public! !
-!WAResponse categoriesFor: #status!accessing!public! !
-!WAResponse categoriesFor: #status:!accessing/status!public! !
-!WAResponse categoriesFor: #status:message:!accessing/status!public! !
-!WAResponse categoriesFor: #stream!accessing!public! !
-!WAResponse categoriesFor: #strictTransportSecurity:includeSubDomains:!convenience/headers!public! !
-!WAResponse categoriesFor: #writeContentOn:!public!writing! !
-!WAResponse categoriesFor: #writeCookiesOn:!public!writing! !
-!WAResponse categoriesFor: #writeHeadersOn:!public!writing! !
-!WAResponse categoriesFor: #writeOn:!public!writing! !
-!WAResponse categoriesFor: #writeStatusOn:!public!writing! !
+writeStatusOn: aStream 	aStream nextPutAll: self httpVersion.	aStream		space;		nextPutAll: self status greaseString.	self message isNil ifFalse:  [		aStream			space;			nextPutAll: self message ].	aStream crlf! !
+
+!WAResponse categoriesForMethods!
+addCookie:!accessing/cookies!public! !
+attachmentWithFileName:!convenience/headers!public! !
+authenticationFailed!public!status! !
+badRequest!public!status! !
+basicAuthenticationRealm:!convenience/status!public! !
+binary!public!streaming! !
+cacheFor:!convenience/caching!public! !
+cacheForever!convenience/caching!public! !
+cacheForeverExpiryDate!configuration!public! !
+contentType!convenience/accessing!public! !
+contentType:!convenience/accessing!public! !
+cookies!accessing!public! !
+created!public!status! !
+deleteCookie:!accessing/cookies!public! !
+deleteCookie:path:domain:!accessing/cookies!public! !
+deleteCookieAt:!accessing/cookies!public! !
+destroy!initialization!public! !
+document:!documents!public! !
+document:mimeType:!documents!public! !
+document:mimeType:fileName:!documents!public! !
+doNotCache!convenience/caching!public! !
+doNotCacheExpiryDate!configuration!public! !
+entityTag:!convenience/caching!public! !
+flush!public! !
+forbidden!public!status! !
+found!public!status! !
+frameOptions:!convenience/headers!public! !
+gone!public!status! !
+headerAt:!accessing/headers!public! !
+headerAt:append:!accessing/headers!public! !
+headerAt:ifAbsent:!accessing/headers!public! !
+headerAt:put:!accessing/headers!public! !
+headerAt:putDate:!accessing/headers!public! !
+headers!accessing!public! !
+httpVersion!configuration!public! !
+initialize!initialization!public! !
+initializeFields!initialization!public! !
+initializeOn:!initialization!public! !
+inlineWithFileName:!convenience/headers!public! !
+internalError!public!status! !
+isCommitted!public!testing! !
+isStreamingResponse!public!testing! !
+location:!convenience/headers!public! !
+message!accessing!public! !
+movedPermanently!public!status! !
+nextPut:!public!streaming! !
+nextPutAll:!public!streaming! !
+notFound!public!status! !
+notImplemented!public!status! !
+notModified!public!status! !
+preconditionFailed!public!status! !
+printOn:!printing!public! !
+redirectTo:!convenience/status!public! !
+refreshAfter:location:!convenience/status!public! !
+removeHeaderAt:!accessing/headers!public! !
+resetIfPossible!convenience!public! !
+respond!convenience!public! !
+status!accessing!public! !
+status:!accessing/status!public! !
+status:message:!accessing/status!public! !
+stream!accessing!public! !
+strictTransportSecurity:includeSubDomains:!convenience/headers!public! !
+writeContentAsStringOn:!public!writing! !
+writeContentOn:!public!writing! !
+writeCookiesOn:!public!writing! !
+writeHeadersOn:!public!writing! !
+writeOn:!public!writing! !
+writeStatusOn:!public!writing! !
+!
 
 !WAResponse class methodsFor!
 
@@ -334,68 +350,71 @@ statusUpgradeRequired	^ 426!
 statusUseProxy	^ 305!
 
 statusVariantAlsoNegotiates	^ 506! !
-!WAResponse class categoriesFor: #initialize!initialization!public! !
-!WAResponse class categoriesFor: #initializeStatusMessages!initialization!public! !
-!WAResponse class categoriesFor: #messageForStatus:!accessing!public! !
-!WAResponse class categoriesFor: #statusAccepted!public!status/success! !
-!WAResponse class categoriesFor: #statusAlreadyReported!public!status/success! !
-!WAResponse class categoriesFor: #statusBadGateway!public!status/server/error! !
-!WAResponse class categoriesFor: #statusBadRequest!public!status/client/error! !
-!WAResponse class categoriesFor: #statusBandwidthLimitExceeded!public!status/server/error! !
-!WAResponse class categoriesFor: #statusConflict!public!status/client/error! !
-!WAResponse class categoriesFor: #statusContinue!public!status/informal! !
-!WAResponse class categoriesFor: #statusCreated!public!status/success! !
-!WAResponse class categoriesFor: #statusExpectationFailed!public!status/client/error! !
-!WAResponse class categoriesFor: #statusFailedDependency!public!status/client/error! !
-!WAResponse class categoriesFor: #statusForbidden!public!status/client/error! !
-!WAResponse class categoriesFor: #statusFound!public!status/redirection! !
-!WAResponse class categoriesFor: #statusGatewayTimeout!public!status/server/error! !
-!WAResponse class categoriesFor: #statusGone!public!status/client/error! !
-!WAResponse class categoriesFor: #statusHttpVersionNotSupported!public!status/server/error! !
-!WAResponse class categoriesFor: #statusImATeapot!public!status/client/error! !
-!WAResponse class categoriesFor: #statusInstanceManipulationUsed!public!status/success! !
-!WAResponse class categoriesFor: #statusInsufficientStorage!public!status/server/error! !
-!WAResponse class categoriesFor: #statusInternalServerError!public!status/server/error! !
-!WAResponse class categoriesFor: #statusLengthRequired!public!status/client/error! !
-!WAResponse class categoriesFor: #statusLocked!public!status/client/error! !
-!WAResponse class categoriesFor: #statusLoopDetected!public!status/server/error! !
-!WAResponse class categoriesFor: #statusMethodNotAllowed!public!status/client/error! !
-!WAResponse class categoriesFor: #statusMovedPermanently!public!status/redirection! !
-!WAResponse class categoriesFor: #statusMultipleChoices!public!status/redirection! !
-!WAResponse class categoriesFor: #statusMultiStatus!public!status/success! !
-!WAResponse class categoriesFor: #statusNetworkAuthenticationRequired!public!status/server/error! !
-!WAResponse class categoriesFor: #statusNoContent!public!status/success! !
-!WAResponse class categoriesFor: #statusNonAuthoritativeInformation!public!status/success! !
-!WAResponse class categoriesFor: #statusNotAcceptable!public!status/client/error! !
-!WAResponse class categoriesFor: #statusNotExtended!public!status/server/error! !
-!WAResponse class categoriesFor: #statusNotFound!public!status/client/error! !
-!WAResponse class categoriesFor: #statusNotImplemented!public!status/server/error! !
-!WAResponse class categoriesFor: #statusNotModified!public!status/redirection! !
-!WAResponse class categoriesFor: #statusOk!public!status/success! !
-!WAResponse class categoriesFor: #statusPartialContent!public!status/success! !
-!WAResponse class categoriesFor: #statusPaymentRequired!public!status/client/error! !
-!WAResponse class categoriesFor: #statusPermanentRedirect!public!status/redirection! !
-!WAResponse class categoriesFor: #statusPreconditionFailed!public!status/client/error! !
-!WAResponse class categoriesFor: #statusPreconditionRequired!public!status/client/error! !
-!WAResponse class categoriesFor: #statusProcessing!public!status/informal! !
-!WAResponse class categoriesFor: #statusProxyAuthenticationRequired!public!status/client/error! !
-!WAResponse class categoriesFor: #statusRequestedRangeNotSatisfiable!public!status/client/error! !
-!WAResponse class categoriesFor: #statusRequestEntityTooLarge!public!status/client/error! !
-!WAResponse class categoriesFor: #statusRequestHeaderFieldsTooLarge!public!status/client/error! !
-!WAResponse class categoriesFor: #statusRequestTimeout!public!status/client/error! !
-!WAResponse class categoriesFor: #statusRequestUriTooLong!public!status/client/error! !
-!WAResponse class categoriesFor: #statusResetContent!public!status/success! !
-!WAResponse class categoriesFor: #statusSeeOther!public!status/redirection! !
-!WAResponse class categoriesFor: #statusServiceUnavailable!public!status/server/error! !
-!WAResponse class categoriesFor: #statusSwitchingProtocols!public!status/informal! !
-!WAResponse class categoriesFor: #statusSwitchProxy!public!status/redirection! !
-!WAResponse class categoriesFor: #statusTemporaryRedirect!public!status/redirection! !
-!WAResponse class categoriesFor: #statusTooManyRequests!public!status/client/error! !
-!WAResponse class categoriesFor: #statusUnauthorized!public!status/client/error! !
-!WAResponse class categoriesFor: #statusUnorderedCollection!public!status/client/error! !
-!WAResponse class categoriesFor: #statusUnprocessableEntity!public!status/client/error! !
-!WAResponse class categoriesFor: #statusUnsupportedMediaType!public!status/client/error! !
-!WAResponse class categoriesFor: #statusUpgradeRequired!public!status/client/error! !
-!WAResponse class categoriesFor: #statusUseProxy!public!status/redirection! !
-!WAResponse class categoriesFor: #statusVariantAlsoNegotiates!public!status/server/error! !
+
+!WAResponse class categoriesForMethods!
+initialize!initialization!public! !
+initializeStatusMessages!initialization!public! !
+messageForStatus:!accessing!public! !
+statusAccepted!public!status/success! !
+statusAlreadyReported!public!status/success! !
+statusBadGateway!public!status/server/error! !
+statusBadRequest!public!status/client/error! !
+statusBandwidthLimitExceeded!public!status/server/error! !
+statusConflict!public!status/client/error! !
+statusContinue!public!status/informal! !
+statusCreated!public!status/success! !
+statusExpectationFailed!public!status/client/error! !
+statusFailedDependency!public!status/client/error! !
+statusForbidden!public!status/client/error! !
+statusFound!public!status/redirection! !
+statusGatewayTimeout!public!status/server/error! !
+statusGone!public!status/client/error! !
+statusHttpVersionNotSupported!public!status/server/error! !
+statusImATeapot!public!status/client/error! !
+statusInstanceManipulationUsed!public!status/success! !
+statusInsufficientStorage!public!status/server/error! !
+statusInternalServerError!public!status/server/error! !
+statusLengthRequired!public!status/client/error! !
+statusLocked!public!status/client/error! !
+statusLoopDetected!public!status/server/error! !
+statusMethodNotAllowed!public!status/client/error! !
+statusMovedPermanently!public!status/redirection! !
+statusMultipleChoices!public!status/redirection! !
+statusMultiStatus!public!status/success! !
+statusNetworkAuthenticationRequired!public!status/server/error! !
+statusNoContent!public!status/success! !
+statusNonAuthoritativeInformation!public!status/success! !
+statusNotAcceptable!public!status/client/error! !
+statusNotExtended!public!status/server/error! !
+statusNotFound!public!status/client/error! !
+statusNotImplemented!public!status/server/error! !
+statusNotModified!public!status/redirection! !
+statusOk!public!status/success! !
+statusPartialContent!public!status/success! !
+statusPaymentRequired!public!status/client/error! !
+statusPermanentRedirect!public!status/redirection! !
+statusPreconditionFailed!public!status/client/error! !
+statusPreconditionRequired!public!status/client/error! !
+statusProcessing!public!status/informal! !
+statusProxyAuthenticationRequired!public!status/client/error! !
+statusRequestedRangeNotSatisfiable!public!status/client/error! !
+statusRequestEntityTooLarge!public!status/client/error! !
+statusRequestHeaderFieldsTooLarge!public!status/client/error! !
+statusRequestTimeout!public!status/client/error! !
+statusRequestUriTooLong!public!status/client/error! !
+statusResetContent!public!status/success! !
+statusSeeOther!public!status/redirection! !
+statusServiceUnavailable!public!status/server/error! !
+statusSwitchingProtocols!public!status/informal! !
+statusSwitchProxy!public!status/redirection! !
+statusTemporaryRedirect!public!status/redirection! !
+statusTooManyRequests!public!status/client/error! !
+statusUnauthorized!public!status/client/error! !
+statusUnorderedCollection!public!status/client/error! !
+statusUnprocessableEntity!public!status/client/error! !
+statusUnsupportedMediaType!public!status/client/error! !
+statusUpgradeRequired!public!status/client/error! !
+statusUseProxy!public!status/redirection! !
+statusVariantAlsoNegotiates!public!status/server/error! !
+!
 

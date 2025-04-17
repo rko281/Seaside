@@ -1,24 +1,31 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAConfigurationToolPlugin subclass: #WAOpenHandlerPlugin
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAOpenHandlerPlugin guid: (GUID fromString: '{707c6ed4-a9f5-4e52-a694-d39e722d1816}')!
+
+WAOpenHandlerPlugin guid: (GUID fromString: '{dfc3beb2-548e-4770-b72d-af4fc94d91fb}')!
+
 WAOpenHandlerPlugin comment: ''!
-!WAOpenHandlerPlugin categoriesForClass!Seaside-Tools-Web! !
+
+!WAOpenHandlerPlugin categoriesForClass!Unclassified! !
+
 !WAOpenHandlerPlugin methodsFor!
 
-execute	self requestContext redirectTo: self handler url!
+execute	self requestContext redirectTo: self handler url!
 
 isActive	^ self handler notNil!
 
 label	^ 'Open'!
 
 priority	^ 10! !
-!WAOpenHandlerPlugin categoriesFor: #execute!actions!public! !
-!WAOpenHandlerPlugin categoriesFor: #isActive!public!testing! !
-!WAOpenHandlerPlugin categoriesFor: #label!accessing!public! !
-!WAOpenHandlerPlugin categoriesFor: #priority!accessing!public! !
+
+!WAOpenHandlerPlugin categoriesForMethods!
+execute!actions!public! !
+isActive!public!testing! !
+label!accessing!public! !
+priority!accessing!public! !
+!
 

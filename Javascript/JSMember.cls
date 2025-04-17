@@ -1,23 +1,33 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JSDecoration subclass: #JSMember
 	instanceVariableNames: 'name'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSMember guid: (GUID fromString: '{9a1aa933-6773-458b-a112-f9520f7caea1}')!
+
+JSMember guid: (GUID fromString: '{3f1d0f3a-67bb-41dd-a446-4d120882b64e}')!
+
 JSMember comment: ''!
-!JSMember categoriesForClass!Javascript-Core-Decorations! !
+
+!JSMember categoriesForClass!Decorations! !
+
 !JSMember methodsFor!
 
 name	^ name!
 
 name: aString	name := aString! !
-!JSMember categoriesFor: #name!accessing!public! !
-!JSMember categoriesFor: #name:!accessing!public! !
+
+!JSMember categoriesForMethods!
+name!accessing!public! !
+name:!accessing!public! !
+!
 
 !JSMember class methodsFor!
 
 named: anObject	^ self new name: anObject! !
-!JSMember class categoriesFor: #named:!instance creation!public! !
+
+!JSMember class categoriesForMethods!
+named:!instance creation!public! !
+!
 

@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WATagBrush subclass: #WAObjectTag
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAObjectTag guid: (GUID fromString: '{d66b6af6-eba6-4e45-a911-3513ed156a16}')!
+
+WAObjectTag guid: (GUID fromString: '{44c213de-86d2-4673-9303-c7bac5ac968d}')!
+
 WAObjectTag comment: 'Defines an embedded object. Use this element to add multimedia to your XHTML page.This element allows you to specify the data and parameters for objects inserted into HTML documents, and the code that can be used to display/manipulate that data.'!
-!WAObjectTag categoriesForClass!Seaside-Canvas-Tags! !
+
+!WAObjectTag categoriesForClass!Tags! !
+
 !WAObjectTag methodsFor!
 
 archive: aUrl 	self attributes 		at: 'archive'		put: aUrl!
@@ -31,15 +35,18 @@ type: aString 	self attributes 		at: 'type'		put: aString!
 url: aUrl 	self attributes 		at: 'data'		put: aUrl!
 
 width: anInteger 	self attributes 		at: 'width'		put: anInteger! !
-!WAObjectTag categoriesFor: #archive:!attributes!public! !
-!WAObjectTag categoriesFor: #classId:!attributes!public! !
-!WAObjectTag categoriesFor: #codebase:!attributes!public! !
-!WAObjectTag categoriesFor: #codetype:!attributes!public! !
-!WAObjectTag categoriesFor: #declare:!attributes!public! !
-!WAObjectTag categoriesFor: #height:!attributes!public! !
-!WAObjectTag categoriesFor: #standby:!attributes!public! !
-!WAObjectTag categoriesFor: #tag!accessing!public! !
-!WAObjectTag categoriesFor: #type:!attributes!public! !
-!WAObjectTag categoriesFor: #url:!attributes!public! !
-!WAObjectTag categoriesFor: #width:!attributes!public! !
+
+!WAObjectTag categoriesForMethods!
+archive:!attributes!public! !
+classId:!attributes!public! !
+codebase:!attributes!public! !
+codetype:!attributes!public! !
+declare:!attributes!public! !
+height:!attributes!public! !
+standby:!attributes!public! !
+tag!accessing!public! !
+type:!attributes!public! !
+url:!attributes!public! !
+width:!attributes!public! !
+!
 

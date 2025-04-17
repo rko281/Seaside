@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAContextTest subclass: #WAInteractionTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAInteractionTest guid: (GUID fromString: '{a5b04b3f-62d1-495e-8b8c-68ac722d3856}')!
+
+WAInteractionTest guid: (GUID fromString: '{03bfce3f-3bfd-4931-af99-a71d7efeb057}')!
+
 WAInteractionTest comment: 'The purpose of WAInteractionTest is to provide a fully initialized WARequestContext all the necessary objects are are normally there in a Seaside application like request, response, dispatcher application, session and so forth.'!
-!WAInteractionTest categoriesForClass!Seaside-Tests-Session! !
+
+!WAInteractionTest categoriesForClass!Unclassified! !
+
 !WAInteractionTest methodsFor!
 
 application	^ self requestContext application!
@@ -21,10 +25,13 @@ testDeleteNetscapeCookie	| requestCookie responseCookies responseCookie |	self
 testDeleteRfc2965Cookie	| requestCookie responseCookies responseCookie |	requestCookie := (WARequestCookie key: 'password' value: 'sex')		path: '/en/private_kunden/wealth_management';		version: 1;		yourself.	self requestContextWithUrl: '/' cookies: (Array with: requestCookie).	self requestContext response deleteCookie: requestCookie.		responseCookies := self requestContext response cookies.	self assert: responseCookies size = 1.	responseCookie := responseCookies any.		self assert: (responseCookie isKindOf: WACookie).	self assert: responseCookie value = ''.	self assert: responseCookie path = '/en/private_kunden/wealth_management'!
 
 testNewCookie	| cookie |	cookie := self requestContext newCookie.	self assert: cookie path = self application url pathStringUnencoded.	self assert: cookie ports isNil.	self assert: cookie httpOnly.	self deny: cookie secure.	self assert: cookie domain isNil.		self application preferenceAt: #serverPath put: '/en/private_kunden/wealth_management'.	cookie := self requestContext newCookie.	self assert: cookie path = '/en/private_kunden/wealth_management'.	self assert: cookie ports isNil.	self assert: cookie httpOnly.	self deny: cookie secure.	self assert: cookie domain isNil.		self application preferenceAt: #serverPort put: 8080.	self application preferenceAt: #serverProtocol put: 'https'.	self application preferenceAt: #serverHostname put: 'www.lgt.com'.	cookie := self requestContext newCookie.	self assert: cookie path = '/en/private_kunden/wealth_management'.	self deny: cookie ports isNil.	self assert: cookie ports size = 1.	self assert: cookie ports first = 8080.	self assert: cookie httpOnly.	self assert: cookie secure.	self assert: cookie domain = 'www.lgt.com'! !
-!WAInteractionTest categoriesFor: #application!accessing!public! !
-!WAInteractionTest categoriesFor: #createHandlers!configuration!public! !
-!WAInteractionTest categoriesFor: #session!accessing!public! !
-!WAInteractionTest categoriesFor: #testDeleteNetscapeCookie!public!tests! !
-!WAInteractionTest categoriesFor: #testDeleteRfc2965Cookie!public!tests! !
-!WAInteractionTest categoriesFor: #testNewCookie!public!tests! !
+
+!WAInteractionTest categoriesForMethods!
+application!accessing!public! !
+createHandlers!configuration!public! !
+session!accessing!public! !
+testDeleteNetscapeCookie!public!tests! !
+testDeleteRfc2965Cookie!public!tests! !
+testNewCookie!public!tests! !
+!
 

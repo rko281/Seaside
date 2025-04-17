@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WACookieIfSupportedSessionTrackingStrategy subclass: #WAEnterpriseAuberginesStrategy
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAEnterpriseAuberginesStrategy guid: (GUID fromString: '{4f30167f-4878-4848-b83f-8265d95e54b4}')!
+
+WAEnterpriseAuberginesStrategy guid: (GUID fromString: '{ce821859-6a4b-4cd8-929e-cf15c3ed2f05}')!
+
 WAEnterpriseAuberginesStrategy comment: 'I implement a session tracking strategy that emulates common JavaEE application servers (Tomcat, WildFly AS). I am similar to WACookieIfSupportedSessionTrackingStrategy.I will do the following- add a cookie named JSESSIONID- add a path parameter named jsessionid until we see a cookie, eg. /;jsessionid=1234?_k=5678'!
-!WAEnterpriseAuberginesStrategy categoriesForClass!Seaside-Session! !
+
+!WAEnterpriseAuberginesStrategy categoriesForClass!Tracking! !
+
 !WAEnterpriseAuberginesStrategy methodsFor!
 
 addKey: aString toUrl: aUrl	"Only add a query field if there isn't already a cookie"	self		cookieFromContext: self requestContext		ifAbsent: [ self addPathParameterWithValue: aString to: aUrl ]!
@@ -21,10 +25,13 @@ keyField	"Parameter is lower case"		^ 'jsessionid'!
 keyFromContext: aRequestContext	"If a query field is present it overrides a cookie."	| key |	key := self pathParameterKeyFromContext: aRequestContext.	^ key isNil		ifTrue: [ (self cookieFromContext: aRequestContext ifAbsent: [ ^ nil ]) value ]		ifFalse: [ key ]!
 
 noHandlerFoundForKey: aString in: anApplication context: aRequestContext	self deleteOldOrConflictingCookieIn: anApplication context: aRequestContext.	super noHandlerFoundForKey: aString in: anApplication context: aRequestContext! !
-!WAEnterpriseAuberginesStrategy categoriesFor: #addKey:toUrl:!public! !
-!WAEnterpriseAuberginesStrategy categoriesFor: #deleteOldOrConflictingCookieIn:context:!private! !
-!WAEnterpriseAuberginesStrategy categoriesFor: #keyCookieName!private! !
-!WAEnterpriseAuberginesStrategy categoriesFor: #keyField!private! !
-!WAEnterpriseAuberginesStrategy categoriesFor: #keyFromContext:!public! !
-!WAEnterpriseAuberginesStrategy categoriesFor: #noHandlerFoundForKey:in:context:!public! !
+
+!WAEnterpriseAuberginesStrategy categoriesForMethods!
+addKey:toUrl:!public! !
+deleteOldOrConflictingCookieIn:context:!private! !
+keyCookieName!private! !
+keyField!private! !
+keyFromContext:!public! !
+noHandlerFoundForKey:in:context:!public! !
+!
 

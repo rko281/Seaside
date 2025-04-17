@@ -1,15 +1,22 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQBaseTheme subclass: #JQPepperGrinderTheme
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQPepperGrinderTheme guid: (GUID fromString: '{f43e91cb-02b8-4462-947f-28f079b845ac}')!
+
+JQPepperGrinderTheme guid: (GUID fromString: '{70d3dc2e-223b-49c5-9ac2-370145767010}')!
+
 JQPepperGrinderTheme comment: ''!
-!JQPepperGrinderTheme categoriesForClass!JQuery-UI-Libraries! !
+
+!JQPepperGrinderTheme categoriesForClass!Libraries! !
+
 !JQPepperGrinderTheme methodsFor!
 
 themeName	^ 'pepper-grinder'! !
-!JQPepperGrinderTheme categoriesFor: #themeName!accessing!public! !
+
+!JQPepperGrinderTheme categoriesForMethods!
+themeName!accessing!public! !
+!
 

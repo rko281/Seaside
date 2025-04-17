@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAVisitor subclass: #WAPainterVisitor
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAPainterVisitor guid: (GUID fromString: '{63fef6f7-f3a1-42b0-8b21-7d537957a582}')!
+
+WAPainterVisitor guid: (GUID fromString: '{f02226e0-85af-4a6c-a261-70deb5e9bdd3}')!
+
 WAPainterVisitor comment: 'An implementation of the Visitor pattern for Painter subclasses.'!
-!WAPainterVisitor categoriesForClass!Seaside-Core-Rendering! !
+
+!WAPainterVisitor categoriesForClass!Rendering! !
+
 !WAPainterVisitor methodsFor!
 
 copyForRenderContext: aRenderContext 	"Return a copy, making sure that references to a RenderContext are replaced	with aRenderContext."		^ self copy		postCopyForRenderContext: aRenderContext;		yourself!
@@ -15,7 +19,10 @@ copyForRenderContext: aRenderContext 	"Return a copy, making sure that referenc
 postCopyForRenderContext: aRenderContext	"self is a shallow copy. Subclasses should copy fields as necessary to complete	the full copy and ensure that all references to the old RenderContext are replaced	with aRenderContext. Note that #postCopy is also called prior to this method being called."!
 
 visitPainter: aPainter! !
-!WAPainterVisitor categoriesFor: #copyForRenderContext:!copying!public! !
-!WAPainterVisitor categoriesFor: #postCopyForRenderContext:!copying!public! !
-!WAPainterVisitor categoriesFor: #visitPainter:!public!visiting! !
+
+!WAPainterVisitor categoriesForMethods!
+copyForRenderContext:!copying!public! !
+postCopyForRenderContext:!copying!public! !
+visitPainter:!public!visiting! !
+!
 

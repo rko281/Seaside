@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQWidget subclass: #JQButton
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQButton guid: (GUID fromString: '{2d9132d8-e02e-4599-a1a8-255a34a3eec9}')!
+
+JQButton guid: (GUID fromString: '{e0657975-5b16-4ced-973b-35b0fe087b14}')!
+
 JQButton comment: 'Button enhances standard form elements like button, input of type submit or reset or anchors to themable buttons with appropiate mouseover and active styles.In addition to basic push buttons, radio buttons and checkboxes (inputs of type radio and checkbox) can be converted to buttons: Their associated label is styled to appear as the button, while the underlying input is updated on click.Buttons can be grouped using the buttonSet method, which should be always applied for radio buttons.'!
-!JQButton categoriesForClass!JQuery-UI-Widgets! !
+
+!JQButton categoriesForClass!Widgets! !
+
 !JQButton methodsFor!
 
 disabled: aBoolean	"Disables (true) or enables (false) the button. Can be set when initialising (first creating) the button."	self optionAt: 'disabled' put: aBoolean!
@@ -25,12 +29,15 @@ primaryIcon: aString	self icons at: 'primary' put: aString!
 secondaryIcon: aString	self icons at: 'secondary' put: aString!
 
 text: aBoolean	"Whether to show any text - when set to false (display no text), icons (see icons option) must be enabled, otherwise it'll be ignored."	self optionAt: 'text' put: aBoolean! !
-!JQButton categoriesFor: #disabled:!options!public! !
-!JQButton categoriesFor: #icons!accessing!public! !
-!JQButton categoriesFor: #icons:!options/generated!public! !
-!JQButton categoriesFor: #label:!options/generated!public! !
-!JQButton categoriesFor: #method!accessing!public! !
-!JQButton categoriesFor: #primaryIcon:!options!public! !
-!JQButton categoriesFor: #secondaryIcon:!options!public! !
-!JQButton categoriesFor: #text:!options/generated!public! !
+
+!JQButton categoriesForMethods!
+disabled:!options!public! !
+icons!accessing!public! !
+icons:!options/generated!public! !
+label:!options/generated!public! !
+method!accessing!public! !
+primaryIcon:!options!public! !
+secondaryIcon:!options!public! !
+text:!options/generated!public! !
+!
 

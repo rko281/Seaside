@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQWidget subclass: #JQSelectable
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQSelectable guid: (GUID fromString: '{7315c072-2f3d-4659-9627-ed9d98a7705c}')!
+
+JQSelectable guid: (GUID fromString: '{14ffd6ad-7a4f-47ac-962a-fa97f2b64938}')!
+
 JQSelectable comment: 'Creates new selectable on the nodeset supplied by the query.'!
-!JQSelectable categoriesForClass!JQuery-UI-Interaction! !
+
+!JQSelectable categoriesForClass!Interaction! !
+
 !JQSelectable methodsFor!
 
 autoRefresh: aBoolean	"This determines whether to refresh (recalculate) the position and size of each selectee at the beginning of each select operation. If you have many many items, you may want to set this to false and call the refresh method manually."	self optionAt: 'autoRefresh' put: aBoolean!
@@ -37,18 +41,21 @@ onUnselecting: anObject	"This event is triggered during the select operation, o
 refresh	"Refresh the position and size of each selectee element."		self action: 'refresh'!
 
 tolerance: aString	"Possible values: 'touch', 'fit'.  ''fit'': draggable overlaps the droppable entirely ''touch'': draggable overlaps the droppable any amount "	self optionAt: 'tolerance' put: aString! !
-!JQSelectable categoriesFor: #autoRefresh:!options/generated!public! !
-!JQSelectable categoriesFor: #cancel:!options/generated!public! !
-!JQSelectable categoriesFor: #delay:!options/generated!public! !
-!JQSelectable categoriesFor: #distance:!options/generated!public! !
-!JQSelectable categoriesFor: #filter:!options/generated!public! !
-!JQSelectable categoriesFor: #method!accessing!public! !
-!JQSelectable categoriesFor: #onSelected:!events/generated!public! !
-!JQSelectable categoriesFor: #onSelecting:!events/generated!public! !
-!JQSelectable categoriesFor: #onStart:!events/generated!public! !
-!JQSelectable categoriesFor: #onStop:!events/generated!public! !
-!JQSelectable categoriesFor: #onUnselected:!events/generated!public! !
-!JQSelectable categoriesFor: #onUnselecting:!events/generated!public! !
-!JQSelectable categoriesFor: #refresh!actions!public! !
-!JQSelectable categoriesFor: #tolerance:!options/generated!public! !
+
+!JQSelectable categoriesForMethods!
+autoRefresh:!options/generated!public! !
+cancel:!options/generated!public! !
+delay:!options/generated!public! !
+distance:!options/generated!public! !
+filter:!options/generated!public! !
+method!accessing!public! !
+onSelected:!events/generated!public! !
+onSelecting:!events/generated!public! !
+onStart:!events/generated!public! !
+onStop:!events/generated!public! !
+onUnselected:!events/generated!public! !
+onUnselecting:!events/generated!public! !
+refresh!actions!public! !
+tolerance:!options/generated!public! !
+!
 

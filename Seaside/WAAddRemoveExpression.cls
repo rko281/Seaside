@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAAttributeExpression subclass: #WAAddRemoveExpression
 	instanceVariableNames: 'additions removals'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAAddRemoveExpression guid: (GUID fromString: '{10f633e0-4e95-474f-a5a9-9e07d685c45b}')!
+
+WAAddRemoveExpression guid: (GUID fromString: '{3a4742d4-b025-4862-ba17-9e3ab8e13aef}')!
+
 WAAddRemoveExpression comment: ''!
-!WAAddRemoveExpression categoriesForClass!Seaside-Core-Configuration! !
+
+!WAAddRemoveExpression categoriesForClass!Configuration! !
+
 !WAAddRemoveExpression methodsFor!
 
 additions	^ additions!
@@ -19,9 +23,12 @@ determineValueWithContext: aContext configuration: aConfiguration	| collection 
 removals	^ removals!
 
 removals: anObject	removals := anObject! !
-!WAAddRemoveExpression categoriesFor: #additions!accessing!public! !
-!WAAddRemoveExpression categoriesFor: #additions:!accessing!public! !
-!WAAddRemoveExpression categoriesFor: #determineValueWithContext:configuration:!public!values! !
-!WAAddRemoveExpression categoriesFor: #removals!accessing!public! !
-!WAAddRemoveExpression categoriesFor: #removals:!accessing!public! !
+
+!WAAddRemoveExpression categoriesForMethods!
+additions!accessing!public! !
+additions:!accessing!public! !
+determineValueWithContext:configuration:!public!values! !
+removals!accessing!public! !
+removals:!accessing!public! !
+!
 

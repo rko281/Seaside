@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JSObjectTest subclass: #JSLoggingTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSLoggingTest guid: (GUID fromString: '{28bb7bcb-8bf1-4b7b-bbdd-7e6259e6f968}')!
+
+JSLoggingTest guid: (GUID fromString: '{c8ac0406-4835-4681-82ec-e5dde9c73bca}')!
+
 JSLoggingTest comment: ''!
-!JSLoggingTest categoriesForClass!Javascript-Tests-Core! !
+
+!JSLoggingTest categoriesForClass!Unclassified! !
+
 !JSLoggingTest methodsFor!
 
 logger	^ JSLogger context: self renderContext!
@@ -19,9 +23,12 @@ testComparison	self		assert: (self logger assert: 1 equals: 1)		equals: 'cons
 testLogging	self		assert: (self logger log: 'done')		equals: 'console.log("done")'.	self		assert: (self logger log: 'done %s and %s' format: #( 'this' 'that' ))		equals: 'console.log("done %s and %s","this","that")'!
 
 testMessages	self		assert: (self logger debug: 3)		equals: 'console.debug(3)'.	self		assert: (self logger info: 'eye m here 2')		equals: 'console.info("eye m here 2")'.	self		assert: (self logger warn: 'don"t 4get ur grlfrnd')		equals: 'console.warn("don\"t 4get ur grlfrnd")'.	self		assert: (self logger error: 'gone gone gone')		equals: 'console.error("gone gone gone")'! !
-!JSLoggingTest categoriesFor: #logger!accessing!public! !
-!JSLoggingTest categoriesFor: #testAssert!public!tests! !
-!JSLoggingTest categoriesFor: #testComparison!public!tests! !
-!JSLoggingTest categoriesFor: #testLogging!public!tests! !
-!JSLoggingTest categoriesFor: #testMessages!public!tests! !
+
+!JSLoggingTest categoriesForMethods!
+logger!accessing!public! !
+testAssert!public!tests! !
+testComparison!public!tests! !
+testLogging!public!tests! !
+testMessages!public!tests! !
+!
 

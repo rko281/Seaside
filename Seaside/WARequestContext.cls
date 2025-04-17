@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAObject subclass: #WARequestContext
 	instanceVariableNames: 'handlers request response codec consumer properties'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WARequestContext guid: (GUID fromString: '{97e95204-62af-482b-aa88-3e290979bd51}')!
+
+WARequestContext guid: (GUID fromString: '{19de1bf5-7c50-4ff7-83f5-f1d39150d871}')!
+
 WARequestContext comment: 'WARequestContext encapsulates all the knowledge that should be available while processing a single request. It does not matter if this is a request to a static file, an AJAX request, a long Comet request or a normal Seaside requestion.The request context is valid only during the request that caused it. It should not be stored. Neither within instance variables, nor within the execution stack so that it might be captured by a continuation. In both cases this might lead to memory leaks.'!
-!WARequestContext categoriesForClass!Seaside-Core-RequestHandling! !
+
+!WARequestContext categoriesForClass!RequestHandling! !
+
 !WARequestContext methodsFor!
 
 charSet	"Answer the character set to be used for the response.	First try to take the one from the codec.	If it is a GRNullCodec take the one from the handler.	If there's no handler answer nil."	| codecName handler |	codecName := self codec name.	codecName = GRNullCodec codecName		ifFalse: [ ^ codecName ].	handler := self handler.	self handler isNil		ifFalse: [ ^ handler charSet ].	^ nil!
@@ -28,7 +32,9 @@ initializeWithRequest: aRequest response: aResponse codec: aCodec	self initiali
 
 newCookie	"Create a new cookie. Try to restrict it as much as possible to make stealing it as hard as possible. Some of these restrictions may be too severe for some applications, in which case the sender can relax them."		| cookie baseUrl |	baseUrl := self handler url.	cookie := WACookie new		pathUnencoded: baseUrl pathStringUnencoded		encoded: (baseUrl pathStringEncodedWith: self codec);		httpOnly: true;		yourself.	baseUrl host isNil ifFalse: [ cookie domain: baseUrl host ].	baseUrl scheme = 'https' ifTrue: [ cookie secure: true ].	(baseUrl port notNil and: [ baseUrl host notNil ]) ifTrue: [ cookie port: baseUrl port ].	^ cookie!
 
-newDocument	"Answer a new Document configured to write onto our Response's stream using the	current Codec. Try to use the Document class specified by the closest Handler	but fall back on WAHtmlDocument if there is none."		^ self handler isNil		ifTrue: [			(WAHtmlDocument				on: self response stream codec: self codec)				scriptGenerator: WADefaultScriptGenerator new;				yourself  ]		ifFalse: [			(self handler documentClass				on: self response stream codec: self codec)				scriptGenerator: self handler scriptGeneratorClass new;				yourself ]!
+newDocument	"Answer a new Document configured to write onto our Response's stream using the	current Codec. Try to use the Document class specified by the closest Handler	but fall back on WAHtmlDocument if there is none."	^ self newDocumentOn: self response stream!
+
+newDocumentOn: outputStream	"Answer a new Document configured to write onto outputStream using the	current Codec. Try to use the Document class specified by the closest Handler	but fall back on WAHtmlDocument if there is none."	^ self handler isNil		  ifTrue: [ 			  (WAHtmlDocument on: outputStream codec: self codec)				  scriptGenerator: WADefaultScriptGenerator new;				  yourself ]		  ifFalse: [ 			  (self handler documentClass on: outputStream codec: self codec)				  scriptGenerator: self handler scriptGeneratorClass new;				  yourself ]!
 
 printOn: aStream 	super printOn: aStream.	self request isNil 		ifTrue: [ aStream nextPutAll: ' url: <nil>' ]		ifFalse: [			aStream				nextPutAll: ' url: ';				print: self request url greaseString ]!
 
@@ -49,26 +55,30 @@ response	"Answer the current Response object."		^ response!
 responseGenerator	"Answer a ResponseGenerator as configured in the closest RequestHandler."	^ (self handler isNil 		ifTrue: [ WAResponseGenerator ]		ifFalse: [ self handler responseGenerator ])			on: self!
 
 shouldDestroy	^ self properties at: #shouldDestroy ifAbsent: [ true ]! !
-!WARequestContext categoriesFor: #charSet!accessing!public! !
-!WARequestContext categoriesFor: #codec!accessing!public! !
-!WARequestContext categoriesFor: #consumer!accessing!public! !
-!WARequestContext categoriesFor: #destroy!initialization!public! !
-!WARequestContext categoriesFor: #dontDestroy!actions!public! !
-!WARequestContext categoriesFor: #handler!accessing/dynamic!public! !
-!WARequestContext categoriesFor: #handlers!accessing!public! !
-!WARequestContext categoriesFor: #initializeWithRequest:response:codec:!initialization!public! !
-!WARequestContext categoriesFor: #newCookie!accessing/dynamic!public! !
-!WARequestContext categoriesFor: #newDocument!accessing/dynamic!public! !
-!WARequestContext categoriesFor: #printOn:!printing!public! !
-!WARequestContext categoriesFor: #properties!accessing!public! !
-!WARequestContext categoriesFor: #push:during:!actions!public! !
-!WARequestContext categoriesFor: #registry!accessing/dynamic!public! !
-!WARequestContext categoriesFor: #request!accessing!public! !
-!WARequestContext categoriesFor: #respond!actions!public! !
-!WARequestContext categoriesFor: #respond:!actions!public! !
-!WARequestContext categoriesFor: #response!accessing!public! !
-!WARequestContext categoriesFor: #responseGenerator!accessing/dynamic!public! !
-!WARequestContext categoriesFor: #shouldDestroy!accessing!public! !
+
+!WARequestContext categoriesForMethods!
+charSet!accessing!public! !
+codec!accessing!public! !
+consumer!accessing!public! !
+destroy!initialization!public! !
+dontDestroy!actions!public! !
+handler!accessing/dynamic!public! !
+handlers!accessing!public! !
+initializeWithRequest:response:codec:!initialization!public! !
+newCookie!accessing/dynamic!public! !
+newDocument!accessing/dynamic!public! !
+newDocumentOn:!accessing/dynamic!public! !
+printOn:!printing!public! !
+properties!accessing!public! !
+push:during:!actions!public! !
+registry!accessing/dynamic!public! !
+request!accessing!public! !
+respond!actions!public! !
+respond:!actions!public! !
+response!accessing!public! !
+responseGenerator!accessing/dynamic!public! !
+shouldDestroy!accessing!public! !
+!
 
 !WARequestContext class methodsFor!
 
@@ -77,7 +87,10 @@ new	self error: self name , ' has to be instantiated with a request and respons
 request: aRequest response: aResponse	^ self 		request: aRequest		response: aResponse		codec: GRNullCodec new!
 
 request: aRequest response: aResponse codec: aCodec	^ self basicNew initializeWithRequest: aRequest response: aResponse codec: aCodec! !
-!WARequestContext class categoriesFor: #new!instance creation!public! !
-!WARequestContext class categoriesFor: #request:response:!instance creation!public! !
-!WARequestContext class categoriesFor: #request:response:codec:!instance creation!public! !
+
+!WARequestContext class categoriesForMethods!
+new!instance creation!public! !
+request:response:!instance creation!public! !
+request:response:codec:!instance creation!public! !
+!
 

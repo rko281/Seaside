@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAComponent subclass: #WAWelcomeExample
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAWelcomeExample guid: (GUID fromString: '{49ddd07e-0ec3-4256-9faa-7962904b3418}')!
+
+WAWelcomeExample guid: (GUID fromString: '{fb9ff325-1af3-46e3-80e9-23234a8a7e7a}')!
+
 WAWelcomeExample comment: ''!
-!WAWelcomeExample categoriesForClass!Seaside-Welcome! !
+
+!WAWelcomeExample categoriesForClass!Examples! !
+
 !WAWelcomeExample methodsFor!
 
 renderContentOn: html	html heading level1 with: 'Example: ', self title.	html anchor		class: 'goback';		callback: [ self answer ];		with: '[ go back ]'.	self renderExampleOn: html.			html div		class: 'buttons';		with: [			html anchor				callback: [ self answer ];				script: (html jQuery this button					primaryIcon: 'ui-icon-arrowreturnthick-1-w');				title: 'Go back';				with: 'Back' ]!
@@ -15,7 +19,10 @@ renderContentOn: html	html heading level1 with: 'Example: ', self title.	html 
 renderExampleOn: html	self subclassResponsibility!
 
 title	self subclassResponsibility! !
-!WAWelcomeExample categoriesFor: #renderContentOn:!public!rendering! !
-!WAWelcomeExample categoriesFor: #renderExampleOn:!public!rendering! !
-!WAWelcomeExample categoriesFor: #title!private! !
+
+!WAWelcomeExample categoriesForMethods!
+renderContentOn:!public!rendering! !
+renderExampleOn:!public!rendering! !
+title!private! !
+!
 

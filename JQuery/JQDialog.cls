@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQWidget subclass: #JQDialog
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQDialog guid: (GUID fromString: '{a0fd742c-3b68-4253-ae8e-21f2427e8f40}')!
+
+JQDialog guid: (GUID fromString: '{141d51e6-d22b-487f-810f-40d64bdedd29}')!
+
 JQDialog comment: 'Make the selected elements Dialog boxes.'!
-!JQDialog categoriesForClass!JQuery-UI-Widgets! !
+
+!JQDialog categoriesForClass!Widgets! !
+
 !JQDialog methodsFor!
 
 addButton: aString do: anObject 	"Adds a new button with the label aString and the action anObject."	(self options 		at: 'buttons'		ifAbsentPut: [ GRSmallDictionary2 new ]) 		at: aString		put: anObject asFunction!
@@ -81,40 +85,43 @@ show: aStringOrObject	"The effect to be used when the dialog is opened."	self
 title: aString	"Specifies the title of the dialog. Any valid HTML may be set as the title. The title can also be specified by the title attribute on the dialog source element."	self optionAt: 'title' put: aString!
 
 width: aNumber	"The width of the dialog, in pixels."	self optionAt: 'width' put: aNumber! !
-!JQDialog categoriesFor: #addButton:do:!convenience!public! !
-!JQDialog categoriesFor: #appendTo:!options/generated!public! !
-!JQDialog categoriesFor: #autoOpen:!options/generated!public! !
-!JQDialog categoriesFor: #buttons:!options/generated!public! !
-!JQDialog categoriesFor: #close!actions!public! !
-!JQDialog categoriesFor: #closeOnEscape:!options/generated!public! !
-!JQDialog categoriesFor: #closeText:!options/generated!public! !
-!JQDialog categoriesFor: #dialogClass:!options/generated!public! !
-!JQDialog categoriesFor: #draggable:!options/generated!public! !
-!JQDialog categoriesFor: #height:!options/generated!public! !
-!JQDialog categoriesFor: #hide:!options/generated!public! !
-!JQDialog categoriesFor: #html:!callbacks!public! !
-!JQDialog categoriesFor: #isOpen!actions!public! !
-!JQDialog categoriesFor: #maxHeight:!options/generated!public! !
-!JQDialog categoriesFor: #maxWidth:!options/generated!public! !
-!JQDialog categoriesFor: #method!accessing!public! !
-!JQDialog categoriesFor: #minHeight:!options/generated!public! !
-!JQDialog categoriesFor: #minWidth:!options/generated!public! !
-!JQDialog categoriesFor: #modal:!options/generated!public! !
-!JQDialog categoriesFor: #moveToTop!actions!public! !
-!JQDialog categoriesFor: #onBeforeClose:!events/generated!public! !
-!JQDialog categoriesFor: #onClose:!events/generated!public! !
-!JQDialog categoriesFor: #onDrag:!events/generated!public! !
-!JQDialog categoriesFor: #onDragStart:!events/generated!public! !
-!JQDialog categoriesFor: #onDragStop:!events/generated!public! !
-!JQDialog categoriesFor: #onFocus:!events/generated!public! !
-!JQDialog categoriesFor: #onOpen:!events/generated!public! !
-!JQDialog categoriesFor: #onResize:!events/generated!public! !
-!JQDialog categoriesFor: #onResizeStart:!events/generated!public! !
-!JQDialog categoriesFor: #onResizeStop:!events/generated!public! !
-!JQDialog categoriesFor: #open!actions!public! !
-!JQDialog categoriesFor: #position:!options/generated!public! !
-!JQDialog categoriesFor: #resizable:!options/generated!public! !
-!JQDialog categoriesFor: #show:!options/generated!public! !
-!JQDialog categoriesFor: #title:!options/generated!public! !
-!JQDialog categoriesFor: #width:!options/generated!public! !
+
+!JQDialog categoriesForMethods!
+addButton:do:!convenience!public! !
+appendTo:!options/generated!public! !
+autoOpen:!options/generated!public! !
+buttons:!options/generated!public! !
+close!actions!public! !
+closeOnEscape:!options/generated!public! !
+closeText:!options/generated!public! !
+dialogClass:!options/generated!public! !
+draggable:!options/generated!public! !
+height:!options/generated!public! !
+hide:!options/generated!public! !
+html:!callbacks!public! !
+isOpen!actions!public! !
+maxHeight:!options/generated!public! !
+maxWidth:!options/generated!public! !
+method!accessing!public! !
+minHeight:!options/generated!public! !
+minWidth:!options/generated!public! !
+modal:!options/generated!public! !
+moveToTop!actions!public! !
+onBeforeClose:!events/generated!public! !
+onClose:!events/generated!public! !
+onDrag:!events/generated!public! !
+onDragStart:!events/generated!public! !
+onDragStop:!events/generated!public! !
+onFocus:!events/generated!public! !
+onOpen:!events/generated!public! !
+onResize:!events/generated!public! !
+onResizeStart:!events/generated!public! !
+onResizeStop:!events/generated!public! !
+open!actions!public! !
+position:!options/generated!public! !
+resizable:!options/generated!public! !
+show:!options/generated!public! !
+title:!options/generated!public! !
+width:!options/generated!public! !
+!
 

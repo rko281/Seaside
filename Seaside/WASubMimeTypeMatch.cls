@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAMimeTypeMatch subclass: #WASubMimeTypeMatch
 	instanceVariableNames: 'sub'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WASubMimeTypeMatch guid: (GUID fromString: '{0b7414e6-e962-4f60-b986-e3be301461f2}')!
+
+WASubMimeTypeMatch guid: (GUID fromString: '{1e134a45-3c16-4649-a251-7c90e475c905}')!
+
 WASubMimeTypeMatch comment: ''!
-!WASubMimeTypeMatch categoriesForClass!Seaside-REST-Core-Route! !
+
+!WASubMimeTypeMatch categoriesForClass!Route! !
+
 !WASubMimeTypeMatch methodsFor!
 
 initializeWithSub: aSubString	self initialize.	sub := aSubString!
@@ -19,14 +23,20 @@ printOn: aStream	super printOn: aStream.	aStream 		nextPutAll: ' (mimeType: 
 priority	^ 2!
 
 priorityFor: aMimeType	^ aMimeType sub = sub			ifTrue: [ self priority ]			ifFalse: [ -1 ]! !
-!WASubMimeTypeMatch categoriesFor: #initializeWithSub:!initialization!public! !
-!WASubMimeTypeMatch categoriesFor: #matches:!public!testing! !
-!WASubMimeTypeMatch categoriesFor: #printOn:!printing!public! !
-!WASubMimeTypeMatch categoriesFor: #priority!accessing!public! !
-!WASubMimeTypeMatch categoriesFor: #priorityFor:!accessing!public! !
+
+!WASubMimeTypeMatch categoriesForMethods!
+initializeWithSub:!initialization!public! !
+matches:!public!testing! !
+printOn:!printing!public! !
+priority!accessing!public! !
+priorityFor:!accessing!public! !
+!
 
 !WASubMimeTypeMatch class methodsFor!
 
 sub: aSubString	^ self basicNew initializeWithSub: aSubString! !
-!WASubMimeTypeMatch class categoriesFor: #sub:!instance creation!public! !
+
+!WASubMimeTypeMatch class categoriesForMethods!
+sub:!instance creation!public! !
+!
 

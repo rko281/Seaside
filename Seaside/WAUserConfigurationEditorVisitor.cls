@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAAttributeVisitor subclass: #WAUserConfigurationEditorVisitor
 	instanceVariableNames: 'configuration canvas'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAUserConfigurationEditorVisitor guid: (GUID fromString: '{ec5517d0-9fbf-437d-b0da-ce73f9d1cdbf}')!
+
+WAUserConfigurationEditorVisitor guid: (GUID fromString: '{0520a7eb-e43b-4ff5-98ee-cf21507e502a}')!
+
 WAUserConfigurationEditorVisitor comment: ''!
-!WAUserConfigurationEditorVisitor categoriesForClass!Seaside-Tools-Web! !
+
+!WAUserConfigurationEditorVisitor categoriesForClass!Unclassified! !
+
 !WAUserConfigurationEditorVisitor methodsFor!
 
 configuration	^ configuration!
@@ -35,22 +39,28 @@ visitPasswordAttribute: anAttribute	self html passwordInput 		callback: [ :val
 visitStringAttribute: anAttribute	self html textInput		value: (anAttribute stringForValue: (self configuration at: anAttribute key));		callback: [ :value | self configuration takeValueFromString: value forAttribute: anAttribute ]!
 
 visitUrlAttribute: anAttribute	self html textInput		size: 40;		callback: [ :value | self configuration takeValueFromString: value forAttribute: anAttribute ];		value: (anAttribute stringForValue: (self configuration at: anAttribute key))! !
-!WAUserConfigurationEditorVisitor categoriesFor: #configuration!accessing!public! !
-!WAUserConfigurationEditorVisitor categoriesFor: #html!accessing!public! !
-!WAUserConfigurationEditorVisitor categoriesFor: #initializeWithConfiguration:canvas:!initialization!public! !
-!WAUserConfigurationEditorVisitor categoriesFor: #visitBooleanAttribute:!public!visiting! !
-!WAUserConfigurationEditorVisitor categoriesFor: #visitClassBindingAttribute:!public!visiting! !
-!WAUserConfigurationEditorVisitor categoriesFor: #visitClassBindingCollectionAttribute:!public!visiting! !
-!WAUserConfigurationEditorVisitor categoriesFor: #visitClassListAttribute:!public!visiting! !
-!WAUserConfigurationEditorVisitor categoriesFor: #visitCollectionAttribute:!public!visiting! !
-!WAUserConfigurationEditorVisitor categoriesFor: #visitListAttribute:!public!visiting! !
-!WAUserConfigurationEditorVisitor categoriesFor: #visitNumberAttribute:!public!visiting! !
-!WAUserConfigurationEditorVisitor categoriesFor: #visitPasswordAttribute:!public!visiting! !
-!WAUserConfigurationEditorVisitor categoriesFor: #visitStringAttribute:!public!visiting! !
-!WAUserConfigurationEditorVisitor categoriesFor: #visitUrlAttribute:!public!visiting! !
+
+!WAUserConfigurationEditorVisitor categoriesForMethods!
+configuration!accessing!public! !
+html!accessing!public! !
+initializeWithConfiguration:canvas:!initialization!public! !
+visitBooleanAttribute:!public!visiting! !
+visitClassBindingAttribute:!public!visiting! !
+visitClassBindingCollectionAttribute:!public!visiting! !
+visitClassListAttribute:!public!visiting! !
+visitCollectionAttribute:!public!visiting! !
+visitListAttribute:!public!visiting! !
+visitNumberAttribute:!public!visiting! !
+visitPasswordAttribute:!public!visiting! !
+visitStringAttribute:!public!visiting! !
+visitUrlAttribute:!public!visiting! !
+!
 
 !WAUserConfigurationEditorVisitor class methodsFor!
 
 configuration: aUserConfiguration canvas: aRenderCanvas	^ self basicNew		initializeWithConfiguration: aUserConfiguration canvas: aRenderCanvas;		yourself! !
-!WAUserConfigurationEditorVisitor class categoriesFor: #configuration:canvas:!instance creation!public! !
+
+!WAUserConfigurationEditorVisitor class categoriesForMethods!
+configuration:canvas:!instance creation!public! !
+!
 

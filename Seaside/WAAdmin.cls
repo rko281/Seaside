@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAObject subclass: #WAAdmin
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: 'configuredApplicationDefaults configuredExceptionHandlingDefaults'!
-WAAdmin guid: (GUID fromString: '{eee7523b-87e0-4c93-a90d-7ef68f446ad7}')!
+
+WAAdmin guid: (GUID fromString: '{a1a59433-0614-487f-a1fd-c15afef785a6}')!
+
 WAAdmin comment: ''!
-!WAAdmin categoriesForClass!Seaside-Tools-Core! !
+
+!WAAdmin categoriesForClass!Unclassified! !
+
 !WAAdmin class methodsFor!
 
 applicationDefaults	| config |	config := WASharedConfiguration named: 'Application Defaults'.	(configuredApplicationDefaults ifNil: [ false ]) ifFalse: [		self configureApplicationDefaults: config.		configuredApplicationDefaults := true ].	^ config!
@@ -47,23 +51,26 @@ serverAdaptors	"Return a collection of Server Adaptors that are currently regis
 unregister: aString	"Unregister the application aString in the default dispatcher."	^ self unregister: aString in: self defaultDispatcher!
 
 unregister: aString in: aDispatcher	"Unregister the application aString in aDispatcher."	| dispatcher |	dispatcher := aDispatcher.	GRPlatform subStringsIn: aString splitBy: $/ do: [ :each |		dispatcher := dispatcher handlers				at: each				ifAbsent: [ ^ nil ] ].	^ dispatcher parent		unregister: dispatcher! !
-!WAAdmin class categoriesFor: #applicationDefaults!configuration!public! !
-!WAAdmin class categoriesFor: #applicationExceptionHandlingDefaults!configuration!public! !
-!WAAdmin class categoriesFor: #clearAll!development!public! !
-!WAAdmin class categoriesFor: #clearConfigurationCaches!development!public! !
-!WAAdmin class categoriesFor: #clearDefaultDispatcher!development!public! !
-!WAAdmin class categoriesFor: #clearSessions!development!public! !
-!WAAdmin class categoriesFor: #configureApplicationDefaults:!initialization!public! !
-!WAAdmin class categoriesFor: #configureApplicationExceptionHandlingDefaults:!initialization!public! !
-!WAAdmin class categoriesFor: #configureNewApplication:!public!registration! !
-!WAAdmin class categoriesFor: #defaultDispatcher!configuration!public! !
-!WAAdmin class categoriesFor: #defaultServerManager!public!server adaptors! !
-!WAAdmin class categoriesFor: #register:asApplicationAt:!public!registration! !
-!WAAdmin class categoriesFor: #register:asApplicationAt:in:!public!registration! !
-!WAAdmin class categoriesFor: #register:asApplicationAt:user:password:!public!registration! !
-!WAAdmin class categoriesFor: #register:at:!public!registration! !
-!WAAdmin class categoriesFor: #register:at:in:!public!registration! !
-!WAAdmin class categoriesFor: #serverAdaptors!public!server adaptors! !
-!WAAdmin class categoriesFor: #unregister:!public!registration! !
-!WAAdmin class categoriesFor: #unregister:in:!public!registration! !
+
+!WAAdmin class categoriesForMethods!
+applicationDefaults!configuration!public! !
+applicationExceptionHandlingDefaults!configuration!public! !
+clearAll!development!public! !
+clearConfigurationCaches!development!public! !
+clearDefaultDispatcher!development!public! !
+clearSessions!development!public! !
+configureApplicationDefaults:!initialization!public! !
+configureApplicationExceptionHandlingDefaults:!initialization!public! !
+configureNewApplication:!public!registration! !
+defaultDispatcher!configuration!public! !
+defaultServerManager!public!server adaptors! !
+register:asApplicationAt:!public!registration! !
+register:asApplicationAt:in:!public!registration! !
+register:asApplicationAt:user:password:!public!registration! !
+register:at:!public!registration! !
+register:at:in:!public!registration! !
+serverAdaptors!public!server adaptors! !
+unregister:!public!registration! !
+unregister:in:!public!registration! !
+!
 

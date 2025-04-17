@@ -1,15 +1,22 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WATask subclass: #WAEmptyTestTask
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAEmptyTestTask guid: (GUID fromString: '{0460cfdf-bc57-4122-b582-d49f47d48982}')!
+
+WAEmptyTestTask guid: (GUID fromString: '{e6f434f4-0e90-445d-8f3e-bd3a3559ba5b}')!
+
 WAEmptyTestTask comment: ''!
-!WAEmptyTestTask categoriesForClass!Seaside-Tests-Functional! !
+
+!WAEmptyTestTask categoriesForClass!Unclassified! !
+
 !WAEmptyTestTask methodsFor!
 
 go	"do nothing. I wonder what happens?"! !
-!WAEmptyTestTask categoriesFor: #go!public!running! !
+
+!WAEmptyTestTask categoriesForMethods!
+go!public!running! !
+!
 

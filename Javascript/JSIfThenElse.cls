@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JSDecoration subclass: #JSIfThenElse
 	instanceVariableNames: 'trueStatement falseStatement'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSIfThenElse guid: (GUID fromString: '{d54ef196-7bab-4953-8869-68d416c758f0}')!
+
+JSIfThenElse guid: (GUID fromString: '{f88c8cf9-3b63-4a68-ac81-60b80be12b6c}')!
+
 JSIfThenElse comment: 'I execute different code snippets depending if the receiver is true (defined) or false (null).'!
-!JSIfThenElse categoriesForClass!Javascript-Core-Decorations! !
+
+!JSIfThenElse categoriesForClass!Decorations! !
+
 !JSIfThenElse methodsFor!
 
 falseStatement	^ falseStatement!
@@ -19,9 +23,12 @@ javascriptContentOn: aStream	aStream nextPut: $(.	super javascriptContentOn: a
 trueStatement	^ trueStatement!
 
 trueStatement: anObject	trueStatement := anObject! !
-!JSIfThenElse categoriesFor: #falseStatement!accessing!public! !
-!JSIfThenElse categoriesFor: #falseStatement:!accessing!public! !
-!JSIfThenElse categoriesFor: #javascriptContentOn:!printing!public! !
-!JSIfThenElse categoriesFor: #trueStatement!accessing!public! !
-!JSIfThenElse categoriesFor: #trueStatement:!accessing!public! !
+
+!JSIfThenElse categoriesForMethods!
+falseStatement!accessing!public! !
+falseStatement:!accessing!public! !
+javascriptContentOn:!printing!public! !
+trueStatement!accessing!public! !
+trueStatement:!accessing!public! !
+!
 

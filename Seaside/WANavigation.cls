@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WACanvasWidget subclass: #WANavigation
 	instanceVariableNames: 'selection'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WANavigation guid: (GUID fromString: '{5093b5da-75d2-40ce-b219-6f781252ca88}')!
+
+WANavigation guid: (GUID fromString: '{98a0158d-49db-440c-a1b3-f73bbd67156c}')!
+
 WANavigation comment: ''!
-!WANavigation categoriesForClass!Seaside-Widgets-Components! !
+
+!WANavigation categoriesForClass!Components! !
+
 !WANavigation methodsFor!
 
 initialize	super initialize.	selection := WAValueHolder new!
@@ -29,14 +33,17 @@ selection	^ selection contents!
 selectionChanged!
 
 states	^ Array with: selection! !
-!WANavigation categoriesFor: #initialize!initialization!public! !
-!WANavigation categoriesFor: #labelForOption:!public!query! !
-!WANavigation categoriesFor: #options!accessing!public! !
-!WANavigation categoriesFor: #renderContentOn:!public!rendering! !
-!WANavigation categoriesFor: #renderOptionsOn:!public!rendering! !
-!WANavigation categoriesFor: #renderSelectionOn:!public!rendering! !
-!WANavigation categoriesFor: #select:!public!selection! !
-!WANavigation categoriesFor: #selection!public!selection! !
-!WANavigation categoriesFor: #selectionChanged!public!selection! !
-!WANavigation categoriesFor: #states!hooks!public! !
+
+!WANavigation categoriesForMethods!
+initialize!initialization!public! !
+labelForOption:!public!query! !
+options!accessing!public! !
+renderContentOn:!public!rendering! !
+renderOptionsOn:!public!rendering! !
+renderSelectionOn:!public!rendering! !
+select:!public!selection! !
+selection!public!selection! !
+selectionChanged!public!selection! !
+states!hooks!public! !
+!
 

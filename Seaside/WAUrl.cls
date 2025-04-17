@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAObject subclass: #WAUrl
 	instanceVariableNames: 'scheme user password host port path slash queryFields fragment pathParameters'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAUrl guid: (GUID fromString: '{b7631763-bd2a-4f8c-8151-8dcd6b1d271b}')!
+
+WAUrl guid: (GUID fromString: '{571970e8-0873-4951-a8c9-3f1f9e316168}')!
+
 WAUrl comment: 'I represent all portions of an URL as described by the RFC 1738 and updated by RFC 3986. I include scheme, userinfo, host, port, path, parameter, query, and fragment.Instance Variables	scheme:			<String> or nil	user:				<String> or nil	password:			<String> or nil	host:				<String> or nil	port:				<Integer> or nil	path:				<OrderedCollection> or nil	slash:				<Boolean>	queryFields:		<WARequestFields> or nil	fragment:			<String> or nil	pathParameters:	<GROrderedMultiMap> or nil		A Primer on URL encoding:http://blog.lunatech.com/2009/02/03/what-every-web-developer-must-know-about-url-encoding		Path Parameters:http://doriantaylor.com/policy/http-url-path-parameter-syntaxyou can have multiple name without values/path/name;param1;p2;p3or names with multiple values;param=val1,val2,val3'!
-!WAUrl categoriesForClass!Seaside-Core-HTTP! !
+
+!WAUrl categoriesForClass!HTTP! !
+
 !WAUrl methodsFor!
 
 = aUrl	^ self class = aUrl class and: [ self printString = aUrl printString ]!
@@ -18,9 +22,9 @@ addField: aKey	"Add the query field aKey to the receiving url."	self addField
 
 addField: aKey value: aValue	"Add the query field aKey with aValue to the receiving url."		aKey isEmpty 		ifFalse: [ self queryFields at: aKey add: aValue ]!
 
-addPathParameterAt: anIndex key: aKey	"Add the path parameter aKey to the path element at anIndex."	(self privatePathParameterMapAt: anIndex) at: aKey put: nil !
+addPathParameterAt: anIndex key: aKey	"Add the path parameter aKey to the path element at anIndex."	(self privatePathParameterMapAt: anIndex) at: aKey put: nil!
 
-addPathParameterAt: anIndex key: aKey value: aValue	"Add the path parameter aKey with aKey to the path element at anIndex."	(self privatePathParameterMapAt: anIndex) at: aKey add: aValue !
+addPathParameterAt: anIndex key: aKey value: aValue	"Add the path parameter aKey with aKey to the path element at anIndex."	(self privatePathParameterMapAt: anIndex) at: aKey add: aValue!
 
 addToPath: aString	"Adds the argument as a path element. If the argument contains $/ it is split into multiple elements."	| p |	p := self path.	self pathElementsIn: aString do: [ :each |		p add: each ].	self slash: (aString notEmpty and: [ aString last = $/ ])!
 
@@ -28,7 +32,7 @@ decode: aString	"percent decodes the given String"	^ self class decodePercent
 
 decodedWith: aCodec	"answers a copy of the receiver decoded with the given codec	http://www.ietf.org/rfc/rfc3987.txt"	| url |	url := self copy.		"scheme, host, port cannot include escaped characters (%FF) and so should not	be able to include characters that need decoding"		"userinfo (username + password) can be percent encoded"	self user isNil ifFalse: [		url user: (aCodec url decode: self user) ].	self password isNil ifFalse: [		url password: (aCodec url decode: self password) ].		self path isEmpty ifFalse: [		url path: (self path collect: [ :each | aCodec url decode: each ]) ].	url queryFields: nil.	self queryFields keysAndValuesDo: [ :key :value |		url			addField: (aCodec url decode: key)			value: (value isNil ifFalse: [ aCodec url decode: value ]) ].	self fragment isNil ifFalse: [		url fragment: (aCodec url decode: self fragment) ].		^ url!
 
-detectCommonPathElementClass	"Detect if all path elements are of the same class. Answer that class if that is the case.	Answer nil otherwise.		If all the elements are of the same class we can avoid sending #contents to the wirte stream	because we can allocate a collection of the right size and type. This is important because	#contents does an additional copy which shows up in benchmarks.	If the lements are not of the same class we can not know the type of the target collection	(in a portable way) and have to use stream #contents."	| firstSpecies |	path isEmptyOrNil ifTrue: [		^ '' species ].	firstSpecies := (path at: 1) species.	2 to: path size do: [ :index |		(path at: index) species ~= firstSpecies			ifTrue: [ ^ nil ] ].	^ firstSpecies!
+detectCommonPathElementClass	"Detect if all path elements are of the same class. Answer that class if that is the case.	Answer nil otherwise.		If all the elements are of the same class we can avoid sending #contents to the wirte stream	because we can allocate a collection of the right size and type. This is important because	#contents does an additional copy which shows up in benchmarks.	If the lements are not of the same class we can not know the type of the target collection	(in a portable way) and have to use stream #contents."	| firstSpecies |	path isEmptyOrNil ifTrue: [		^ '' species ].	firstSpecies := (path at: 1) species.	2 to: path size do: [ :index |		(path at: index) species ~= firstSpecies			ifTrue: [ ^ nil ] ].	^ firstSpecies!
 
 encodeFragmentOn: aDocument	aDocument urlEncoder nextPutAll: fragment!
 
@@ -36,7 +40,7 @@ encodeOn: aDocument	self encodeSchemeAndAuthorityOn: aDocument.	self encodePat
 
 encodePathOn: aDocument	path isNil ifFalse: [		path keysAndValuesDo: [ :index :each |			aDocument nextPut: $/.			aDocument urlEncoder nextPutAll: each.			pathParameters isNil ifFalse: [				self encodePathParametersAt: index on: aDocument ] ] ].	(path isNil or: [ path isEmpty or: [ slash ] ])		ifTrue: [ aDocument nextPut: $/ ]!
 
-encodePathParametersAt: anIndex on: aDocument	self		privatePathParameterMapAt: anIndex		ifPresentDo: [ :parameters |			parameters keysAndAllValuesDo: [ :key :values |				aDocument nextPut: $;.				aDocument urlEncoder nextPutAll: key.				(values size = 1 and: [ values first isNil ]) ifFalse: [					aDocument nextPut: $=.					values						do: [ :value | aDocument urlEncoder nextPutAll: value greaseString ]						separatedBy: [ aDocument nextPut: $, ] ] ] ]		ifAbsent: [ "ignore" ] !
+encodePathParametersAt: anIndex on: aDocument	self		privatePathParameterMapAt: anIndex		ifPresentDo: [ :parameters |			parameters keysAndAllValuesDo: [ :key :values |				aDocument nextPut: $;.				aDocument urlEncoder nextPutAll: key.				(values size = 1 and: [ values first isNil ]) ifFalse: [					aDocument nextPut: $=.					values						do: [ :value | aDocument urlEncoder nextPutAll: value greaseString ]						separatedBy: [ aDocument nextPut: $, ] ] ] ]		ifAbsent: [ "ignore" ]!
 
 encodeQueryOn: aDocument 	| first |	first := true.	self queryFields keysAndValuesDo: [ :key :value |		first ifFalse: [ aDocument xmlEncoder nextPut: $& ].		first := false.		aDocument urlEncoder nextPutAll: key.		value isNil ifFalse: [			aDocument nextPut: $=.			aDocument urlEncoder nextPutAll: value greaseString ] ]!
 
@@ -54,7 +58,7 @@ host: aString	host := aString isNil		ifFalse: [ aString greaseString asLowerca
 
 initialize	super initialize.	slash := false!
 
-initializeFromString: aString	| fragmentIndex queryIndex schemeIndex pathStart stringSize pathEnd authorityStart authorityEnd startWithPath |	self initialize.	stringSize := aString size.	fragmentIndex := aString indexOf: $#.	fragmentIndex > 0 ifTrue: [		self			parseFragment: aString			from: fragmentIndex + 1 ].	queryIndex := aString indexOf: $?.	(queryIndex > 0 and: [ fragmentIndex = 0 or: [ queryIndex < fragmentIndex ] ]) ifTrue: [		self			parseQuery: aString 			from: queryIndex + 1			to: (fragmentIndex = 0 ifTrue: [ stringSize + 1 ] ifFalse: [ fragmentIndex ]) ].	schemeIndex := aString indexOfSubCollection: '://'.		(schemeIndex > 0 and: [ fragmentIndex = 0 or: [ schemeIndex < fragmentIndex ] ])		ifTrue: [			startWithPath := false.			self scheme: (aString copyFrom: 1 to: schemeIndex - 1).			pathStart := aString indexOf: $/ startingAt: schemeIndex + 3.			authorityStart := schemeIndex + 3 ]		ifFalse: [			startWithPath := true.			pathStart := aString indexOf: $/ startingAt: 1.			authorityStart := 0 ].		pathStart > 0		ifTrue: [			(pathStart > fragmentIndex and: [ fragmentIndex > 0 ]) ifTrue: [				WAInvalidUrlSyntaxError signal: aString ].			(pathStart > queryIndex and: [ queryIndex > 0 ]) ifTrue: [				WAInvalidUrlSyntaxError signal: aString ].			authorityEnd := pathStart ]		ifFalse: [			(fragmentIndex > 0 or: [ queryIndex > 0 ]) ifTrue: [				WAInvalidUrlSyntaxError signal: aString ].			authorityEnd := stringSize + 1 ].		authorityStart > 0 ifTrue: [		self parseAuthority: aString from: authorityStart to: authorityEnd ].		pathEnd := stringSize + 1.	fragmentIndex > 0 ifTrue: [		pathEnd := fragmentIndex ].	(queryIndex > 0 and: [ fragmentIndex = 0 or: [ queryIndex < fragmentIndex ] ]) ifTrue: [		pathEnd := queryIndex ].		startWithPath		ifTrue: [			(stringSize > 0 and: [ (aString at: 1) = $/ ])				ifTrue: [ self parsePath: aString absolute: true from: 2 to: pathEnd ]				ifFalse: [ self parsePath: aString absolute: false from: 1 to: pathEnd ] ]		ifFalse: [			pathStart > 0 ifTrue: [				self parsePath: aString absolute: true from: pathStart + 1 to: pathEnd ] ]!
+initializeFromString: aString	| fragmentIndex queryIndex schemeIndex pathStart stringSize pathEnd authorityStart authorityEnd startWithPath |	self initialize.	stringSize := aString size.	fragmentIndex := aString indexOf: $#.	fragmentIndex > 0 ifTrue: [		self			parseFragment: aString			from: fragmentIndex + 1 ].	queryIndex := aString indexOf: $?.	(queryIndex > 0 and: [ fragmentIndex = 0 or: [ queryIndex < fragmentIndex ] ]) ifTrue: [		self			parseQuery: aString 			from: queryIndex + 1			to: (fragmentIndex = 0 ifTrue: [ stringSize + 1 ] ifFalse: [ fragmentIndex ]) ].	schemeIndex := aString indexOfSubCollection: '://'.		(schemeIndex > 0 and: [ (fragmentIndex = 0 or: [ schemeIndex < fragmentIndex ]) and: [ queryIndex = 0 or: [ schemeIndex < queryIndex ] ] ])		ifTrue: [			startWithPath := false.			self scheme: (aString copyFrom: 1 to: schemeIndex - 1).			pathStart := aString indexOf: $/ startingAt: schemeIndex + 3.			authorityStart := schemeIndex + 3 ]		ifFalse: [			startWithPath := true.			pathStart := aString indexOf: $/ startingAt: 1.			authorityStart := 0 ].		pathStart > 0		ifTrue: [			(pathStart > fragmentIndex and: [ fragmentIndex > 0 ]) ifTrue: [				WAInvalidUrlSyntaxError signal: aString ].			(pathStart > queryIndex and: [ queryIndex > 0 ]) ifTrue: [				WAInvalidUrlSyntaxError signal: aString ].			authorityEnd := pathStart ]		ifFalse: [			(fragmentIndex > 0 or: [ queryIndex > 0 ]) ifTrue: [				WAInvalidUrlSyntaxError signal: aString ].			authorityEnd := stringSize + 1 ].		authorityStart > 0 ifTrue: [		self parseAuthority: aString from: authorityStart to: authorityEnd ].		pathEnd := stringSize + 1.	fragmentIndex > 0 ifTrue: [		pathEnd := fragmentIndex ].	(queryIndex > 0 and: [ fragmentIndex = 0 or: [ queryIndex < fragmentIndex ] ]) ifTrue: [		pathEnd := queryIndex ].		startWithPath		ifTrue: [			(stringSize > 0 and: [ (aString at: 1) = $/ ])				ifTrue: [ self parsePath: aString absolute: true from: 2 to: pathEnd ]				ifFalse: [ self parsePath: aString absolute: false from: 1 to: pathEnd ] ]		ifFalse: [			pathStart > 0 ifTrue: [				self parsePath: aString absolute: true from: pathStart + 1 to: pathEnd ] ]!
 
 isSeasideField: aString	^ aString notEmpty		and: [ aString first = $_		or: [ aString allSatisfy: [ :each | each isDigit ] ] ]!
 
@@ -108,7 +112,7 @@ port	"Answer the port number part of the URL."	^ port!
 
 port: aNumber	port := aNumber!
 
-postCopy	super postCopy.	path := path copy.	queryFields := queryFields copy.	pathParameters := pathParameters copy!
+postCopy	super postCopy.	path := path ifNotNil: [ :p | p copy ].	queryFields := queryFields ifNotNil: [ :f | f copy ].	pathParameters := pathParameters ifNotNil: [ :p | p copy ]!
 
 printOn: aStream 	| document codec |	codec := [ self requestContext codec ] 		on: WARequestContextNotFound		do: [ :e | GRNullCodec new ].	document := WAUnescapedDocument 		on: aStream		codec: codec.	self encodeOn: document!
 
@@ -156,81 +160,90 @@ withField: aString value: valueString	^ self copy		addField: aString value: va
 
 withoutFragment	^ self copy		fragment: nil;		yourself!
 
-withoutQuery	^ self copy		queryFields: nil;		yourself! !
-!WAUrl categoriesFor: #=!comparing!public! !
-!WAUrl categoriesFor: #addAllToPath:!adding!public! !
-!WAUrl categoriesFor: #addField:!adding!public! !
-!WAUrl categoriesFor: #addField:value:!adding!public! !
-!WAUrl categoriesFor: #addPathParameterAt:key:!adding!public! !
-!WAUrl categoriesFor: #addPathParameterAt:key:value:!adding!public! !
-!WAUrl categoriesFor: #addToPath:!adding!public! !
-!WAUrl categoriesFor: #decode:!private! !
-!WAUrl categoriesFor: #decodedWith:!converting!public! !
-!WAUrl categoriesFor: #detectCommonPathElementClass!private! !
-!WAUrl categoriesFor: #encodeFragmentOn:!encoding!public! !
-!WAUrl categoriesFor: #encodeOn:!encoding!public! !
-!WAUrl categoriesFor: #encodePathOn:!encoding!public! !
-!WAUrl categoriesFor: #encodePathParametersAt:on:!encoding!public! !
-!WAUrl categoriesFor: #encodeQueryOn:!encoding!public! !
-!WAUrl categoriesFor: #encodeSchemeAndAuthorityOn:!encoding!public! !
-!WAUrl categoriesFor: #fragment!accessing!public! !
-!WAUrl categoriesFor: #fragment:!accessing!public! !
-!WAUrl categoriesFor: #hash!comparing!public! !
-!WAUrl categoriesFor: #host!accessing!public! !
-!WAUrl categoriesFor: #host:!accessing!public! !
-!WAUrl categoriesFor: #initialize!initialization!public! !
-!WAUrl categoriesFor: #initializeFromString:!initialization!public! !
-!WAUrl categoriesFor: #isSeasideField:!private! !
-!WAUrl categoriesFor: #isSsl!public!testing! !
-!WAUrl categoriesFor: #parseAuthority:from:to:!parsing!public! !
-!WAUrl categoriesFor: #parseFragment:from:!parsing!public! !
-!WAUrl categoriesFor: #parseHostPort:from:to:!parsing!public! !
-!WAUrl categoriesFor: #parsePath:!parsing!public! !
-!WAUrl categoriesFor: #parsePath:absolute:from:to:!parsing!public! !
-!WAUrl categoriesFor: #parsePathParameters:at:from:to:!parsing!public! !
-!WAUrl categoriesFor: #parsePort:from:to:!parsing!public! !
-!WAUrl categoriesFor: #parseQuery:from:to:!parsing!public! !
-!WAUrl categoriesFor: #parseUserPassword:from:to:!parsing!public! !
-!WAUrl categoriesFor: #password!accessing!public! !
-!WAUrl categoriesFor: #password:!accessing!public! !
-!WAUrl categoriesFor: #path!accessing!public! !
-!WAUrl categoriesFor: #path:!accessing!public! !
-!WAUrl categoriesFor: #pathElementsIn:do:!private! !
-!WAUrl categoriesFor: #pathEncodedWith:on:!converting!public! !
-!WAUrl categoriesFor: #pathParameterAllAt:key:ifAbsent:!accessing!public! !
-!WAUrl categoriesFor: #pathParameterAt:key:ifAbsent:!accessing!public! !
-!WAUrl categoriesFor: #pathStringEncodedWith:!converting!public! !
-!WAUrl categoriesFor: #pathStringSafeUnencoded!converting!public! !
-!WAUrl categoriesFor: #pathStringUnencoded!converting!public! !
-!WAUrl categoriesFor: #pathStringUnencodedSize!private! !
-!WAUrl categoriesFor: #pathUnencodedOn:!converting!public! !
-!WAUrl categoriesFor: #port!accessing!public! !
-!WAUrl categoriesFor: #port:!accessing!public! !
-!WAUrl categoriesFor: #postCopy!copying!public! !
-!WAUrl categoriesFor: #printOn:!printing!public! !
-!WAUrl categoriesFor: #privatePathParameterMapAt:!private! !
-!WAUrl categoriesFor: #privatePathParameterMapAt:ifPresentDo:ifAbsent:!private! !
-!WAUrl categoriesFor: #queryFields!accessing!public! !
-!WAUrl categoriesFor: #queryFields:!accessing!public! !
-!WAUrl categoriesFor: #queryString!converting!public! !
-!WAUrl categoriesFor: #rawAddAllToPath:!adding!public! !
-!WAUrl categoriesFor: #rawAddToPath:!adding!public! !
-!WAUrl categoriesFor: #relativeTo:!converting!public! !
-!WAUrl categoriesFor: #scheme!accessing!public! !
-!WAUrl categoriesFor: #scheme:!accessing!public! !
-!WAUrl categoriesFor: #seasideUrl!converting!public! !
-!WAUrl categoriesFor: #slash!accessing!public! !
-!WAUrl categoriesFor: #slash:!accessing!public! !
-!WAUrl categoriesFor: #takeServerParametersFromRequest:!private! !
-!WAUrl categoriesFor: #user!accessing!public! !
-!WAUrl categoriesFor: #user:!accessing!public! !
-!WAUrl categoriesFor: #userinfo!accessing!public! !
-!WAUrl categoriesFor: #userinfo:!accessing!public! !
-!WAUrl categoriesFor: #with:!copying!public! !
-!WAUrl categoriesFor: #withField:!copying!public! !
-!WAUrl categoriesFor: #withField:value:!copying!public! !
-!WAUrl categoriesFor: #withoutFragment!copying!public! !
-!WAUrl categoriesFor: #withoutQuery!copying!public! !
+withoutQuery	^ self copy		queryFields: nil;		yourself!
+
+withoutResource	^ self copy		  path: OrderedCollection new;		  queryFields: nil;		  fragment: nil;		  yourself!
+
+withoutSeasideQueryFields	"Returns a copy of receiver without Seaside query fields (which are prefixed with `_`)"	| newUrl |	newUrl := self copy.	(self queryFields keys select: [ :f | self isSeasideField: f ]) 		do: [ :f | newUrl queryFields removeKey: f ifAbsent: [  ] ].	^ newUrl! !
+
+!WAUrl categoriesForMethods!
+=!comparing!public! !
+addAllToPath:!adding!public! !
+addField:!adding!public! !
+addField:value:!adding!public! !
+addPathParameterAt:key:!adding!public! !
+addPathParameterAt:key:value:!adding!public! !
+addToPath:!adding!public! !
+decode:!private! !
+decodedWith:!converting!public! !
+detectCommonPathElementClass!private! !
+encodeFragmentOn:!encoding!public! !
+encodeOn:!encoding!public! !
+encodePathOn:!encoding!public! !
+encodePathParametersAt:on:!encoding!public! !
+encodeQueryOn:!encoding!public! !
+encodeSchemeAndAuthorityOn:!encoding!public! !
+fragment!accessing!public! !
+fragment:!accessing!public! !
+hash!comparing!public! !
+host!accessing!public! !
+host:!accessing!public! !
+initialize!initialization!public! !
+initializeFromString:!initialization!public! !
+isSeasideField:!private! !
+isSsl!public!testing! !
+parseAuthority:from:to:!parsing!public! !
+parseFragment:from:!parsing!public! !
+parseHostPort:from:to:!parsing!public! !
+parsePath:!parsing!public! !
+parsePath:absolute:from:to:!parsing!public! !
+parsePathParameters:at:from:to:!parsing!public! !
+parsePort:from:to:!parsing!public! !
+parseQuery:from:to:!parsing!public! !
+parseUserPassword:from:to:!parsing!public! !
+password!accessing!public! !
+password:!accessing!public! !
+path!accessing!public! !
+path:!accessing!public! !
+pathElementsIn:do:!private! !
+pathEncodedWith:on:!converting!public! !
+pathParameterAllAt:key:ifAbsent:!accessing!public! !
+pathParameterAt:key:ifAbsent:!accessing!public! !
+pathStringEncodedWith:!converting!public! !
+pathStringSafeUnencoded!converting!public! !
+pathStringUnencoded!converting!public! !
+pathStringUnencodedSize!private! !
+pathUnencodedOn:!converting!public! !
+port!accessing!public! !
+port:!accessing!public! !
+postCopy!copying!public! !
+printOn:!printing!public! !
+privatePathParameterMapAt:!private! !
+privatePathParameterMapAt:ifPresentDo:ifAbsent:!private! !
+queryFields!accessing!public! !
+queryFields:!accessing!public! !
+queryString!converting!public! !
+rawAddAllToPath:!adding!public! !
+rawAddToPath:!adding!public! !
+relativeTo:!converting!public! !
+scheme!accessing!public! !
+scheme:!accessing!public! !
+seasideUrl!converting!public! !
+slash!accessing!public! !
+slash:!accessing!public! !
+takeServerParametersFromRequest:!private! !
+user!accessing!public! !
+user:!accessing!public! !
+userinfo!accessing!public! !
+userinfo:!accessing!public! !
+with:!copying!public! !
+withField:!copying!public! !
+withField:value:!copying!public! !
+withoutFragment!copying!public! !
+withoutQuery!copying!public! !
+withoutResource!copying!public! !
+withoutSeasideQueryFields!copying!public! !
+!
 
 !WAUrl class methodsFor!
 
@@ -242,16 +255,19 @@ decodePercent: aString	"percent decodes the given String"	| input output char 
 
 decodePercent: aString from: start	"percent decodes the fragment string starting at the given index	/?:@-._~!!$&'()*+,;= are allowed unescaped anywhere within a fragment part"	^ self decodePercent: aString from: start to: aString size + 1!
 
-decodePercent: aString from: start to: end	"percent decodes the string starting at the given index"	| input output index left |	index := aString indexOf: $% startingAt: start.	(index = 0 or: [ index >= end ])		ifTrue: [ ^ aString copyFrom: start to: end - 1 ].	input := aString readStream.	input skip: start - 1. "start index 1 -> skip 0"	output := WriteStream on: (String new: aString size).	left := end - start.	[ left > 0 and: [ input atEnd not ] ] whileTrue: [		| char |		char := input next.		output nextPut: (char = $%			ifTrue: [				| firstByte secondByte |				firstByte :=  input atEnd ifTrue: [ WAInvalidUrlSyntaxError signal: aString ] ifFalse: [ input next asUppercase digitValue ].				secondByte :=  input atEnd ifTrue: [ WAInvalidUrlSyntaxError signal: aString ] ifFalse: [ input next asUppercase digitValue ].				left := left - 3.				Character codePoint:firstByte * 16 + secondByte ]			ifFalse: [				left := left - 1.				char ]) ].	^ output contents!
+decodePercent: aString from: start to: end	"percent decodes the string starting at the given index"	| input output index left |	index := aString indexOf: $% startingAt: start.	(index = 0 or: [ index >= end ])		ifTrue: [ ^ aString copyFrom: start to: end - 1 ].	input := aString readStream.	input skip: start - 1. "start index 1 -> skip 0"	output := WriteStream on: (String new: aString size).	left := end - start.	[ left > 0 and: [ input atEnd not ] ] whileTrue: [		| char |		char := input next.		output nextPut: (char = $%			ifTrue: [				| firstByte secondByte |				firstByte :=  self readHexFrom: input errorDetail: aString.				secondByte :=  self readHexFrom: input errorDetail: aString.				left := left - 3.				Character codePoint:firstByte * 16 + secondByte ]			ifFalse: [				left := left - 1.				char ]) ].	^ output contents!
 
-decodePercentAndPlus: aString from: start to: end	"percent decodes the given String"	| percentIndex input output left |	"check if we contain %"	percentIndex := aString indexOf: $% startingAt: start.	(percentIndex = 0 or: [ percentIndex >= end ]) ifTrue: [		| plusIndex |		"check if we contain +"		plusIndex := aString indexOf: $+ startingAt: start.		(plusIndex = 0 or: [ plusIndex >= end ]) ifTrue: [			^ aString copyFrom: start to: end - 1 ] ].		"we contain either % or +"	input := aString readStream.	input skip: start - 1. "start index 1 -> skip 0"	output := WriteStream on: (String new: aString size).	left := end - start.	[ left > 0 and: [ input atEnd not ] ] whileTrue: [		| char |		char := input next.		output nextPut: (char = $+			ifTrue: [				left := left - 1.				Character space ]			ifFalse: [				char = $%					ifTrue: [						| firstByte secondByte |						firstByte :=  input atEnd ifTrue: [ WAInvalidUrlSyntaxError signal: aString ] ifFalse: [ input next asUppercase digitValue ].						secondByte :=  input atEnd ifTrue: [ WAInvalidUrlSyntaxError signal: aString ] ifFalse: [ input next asUppercase digitValue ].						left := left - 3.						Character codePoint:firstByte * 16 + secondByte ]					ifFalse: [						left := left - 1.						char ] ]) ].	^ output contents!
+decodePercentAndPlus: aString from: start to: end	"percent decodes the given String"	| percentIndex input output left |	"check if we contain %"	percentIndex := aString indexOf: $% startingAt: start.	(percentIndex = 0 or: [ percentIndex >= end ]) ifTrue: [		| plusIndex |		"check if we contain +"		plusIndex := aString indexOf: $+ startingAt: start.		(plusIndex = 0 or: [ plusIndex >= end ]) ifTrue: [			^ aString copyFrom: start to: end - 1 ] ].		"we contain either % or +"	input := aString readStream.	input skip: start - 1. "start index 1 -> skip 0"	output := WriteStream on: (String new: aString size).	left := end - start.	[ left > 0 and: [ input atEnd not ] ] whileTrue: [		| char |		char := input next.		output nextPut: (char = $+			ifTrue: [				left := left - 1.				Character space ]			ifFalse: [				char = $%					ifTrue: [						| firstByte secondByte |						firstByte :=  self readHexFrom: input errorDetail: aString.						secondByte :=  self readHexFrom: input errorDetail: aString.						left := left - 3.						Character codePoint:firstByte * 16 + secondByte ]					ifFalse: [						left := left - 1.						char ] ]) ].	^ output contents!
 
-readHexFrom: aStream errorDetail: aString	| hexChar |	aStream atEnd ifTrue: [		WAInvalidUrlSyntaxError signal: aString ].	hexChar := aStream next.	((hexChar between: $0 and: $9)		or: [ (hexChar between: $a and: $f)		or: [ hexChar between: $A and: $F ] ]) ifFalse: [ WAInvalidUrlSyntaxError signal: aString ].	^ hexChar digitValue! !
-!WAUrl class categoriesFor: #absolute:!parsing!public! !
-!WAUrl class categoriesFor: #absolute:relative:!parsing!public! !
-!WAUrl class categoriesFor: #decodePercent:!decoding!public! !
-!WAUrl class categoriesFor: #decodePercent:from:!decoding!public! !
-!WAUrl class categoriesFor: #decodePercent:from:to:!decoding!public! !
-!WAUrl class categoriesFor: #decodePercentAndPlus:from:to:!decoding!public! !
-!WAUrl class categoriesFor: #readHexFrom:errorDetail:!private! !
+readHexFrom: aStream errorDetail: aString	| hexChar |	aStream atEnd ifTrue: [		WAInvalidUrlSyntaxError signal: aString ].	hexChar := aStream next.	((hexChar between: $0 and: $9)		or: [ (hexChar between: $a and: $f)		or: [ hexChar between: $A and: $F ] ]) ifFalse: [ WAInvalidUrlSyntaxError signal: aString ].	^ hexChar asUppercase digitValue! !
+
+!WAUrl class categoriesForMethods!
+absolute:!parsing!public! !
+absolute:relative:!parsing!public! !
+decodePercent:!decoding!public! !
+decodePercent:from:!decoding!public! !
+decodePercent:from:to:!decoding!public! !
+decodePercentAndPlus:from:to:!decoding!public! !
+readHexFrom:errorDetail:!private! !
+!
 

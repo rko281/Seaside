@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQueryTest subclass: #JQEventTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQEventTest guid: (GUID fromString: '{6dff5890-c45f-485b-80b9-8402e275e7e3}')!
+
+JQEventTest guid: (GUID fromString: '{4dc33423-971c-42b3-b2c8-e6a996036d99}')!
+
 JQEventTest comment: ''!
-!JQEventTest categoriesForClass!JQuery-Tests-Core-Unit! !
+
+!JQEventTest categoriesForClass!Unit! !
+
 !JQEventTest methodsFor!
 
 clickEvent	^ self jQuery event: 'click'!
@@ -47,23 +51,26 @@ testTarget	self		assert: self newEvent target		equals: 'arguments[0].target'.
 testTimeStamp	self		assert: self newEvent timeStamp		equals: 'arguments[0].timeStamp'.	self		assert: self clickEvent timeStamp		equals: self function , '.Event("click").timeStamp'!
 
 testType	self		assert: self newEvent type		equals: 'arguments[0].type'.	self		assert: self clickEvent type		equals: self function , '.Event("click").type'! !
-!JQEventTest categoriesFor: #clickEvent!accessing!public! !
-!JQEventTest categoriesFor: #newEvent!accessing!public! !
-!JQEventTest categoriesFor: #testCurrentTarget!public!tests/accessing! !
-!JQEventTest categoriesFor: #testData!public!tests/accessing! !
-!JQEventTest categoriesFor: #testIsDefaultPrevented!public!tests/testing! !
-!JQEventTest categoriesFor: #testIsImmediatePropagationStopped!public!tests/testing! !
-!JQEventTest categoriesFor: #testIsPropagationStopped!public!tests/testing! !
-!JQEventTest categoriesFor: #testNamespace!public!tests/accessing! !
-!JQEventTest categoriesFor: #testPageX!public!tests/accessing! !
-!JQEventTest categoriesFor: #testPageY!public!tests/accessing! !
-!JQEventTest categoriesFor: #testPlain!public!tests! !
-!JQEventTest categoriesFor: #testPreventDefault!public!tests/actions! !
-!JQEventTest categoriesFor: #testRelatedTarget!public!tests/accessing! !
-!JQEventTest categoriesFor: #testResult!public!tests/accessing! !
-!JQEventTest categoriesFor: #testStopImmediatePropagation!public!tests/actions! !
-!JQEventTest categoriesFor: #testStopPropagation!public!tests/actions! !
-!JQEventTest categoriesFor: #testTarget!public!tests/accessing! !
-!JQEventTest categoriesFor: #testTimeStamp!public!tests/accessing! !
-!JQEventTest categoriesFor: #testType!public!tests/accessing! !
+
+!JQEventTest categoriesForMethods!
+clickEvent!accessing!public! !
+newEvent!accessing!public! !
+testCurrentTarget!public!tests/accessing! !
+testData!public!tests/accessing! !
+testIsDefaultPrevented!public!tests/testing! !
+testIsImmediatePropagationStopped!public!tests/testing! !
+testIsPropagationStopped!public!tests/testing! !
+testNamespace!public!tests/accessing! !
+testPageX!public!tests/accessing! !
+testPageY!public!tests/accessing! !
+testPlain!public!tests! !
+testPreventDefault!public!tests/actions! !
+testRelatedTarget!public!tests/accessing! !
+testResult!public!tests/accessing! !
+testStopImmediatePropagation!public!tests/actions! !
+testStopPropagation!public!tests/actions! !
+testTarget!public!tests/accessing! !
+testTimeStamp!public!tests/accessing! !
+testType!public!tests/accessing! !
+!
 

@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAPainter subclass: #WAPresenter
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAPresenter guid: (GUID fromString: '{af63a994-4f04-458f-bf1f-e2515591ef89}')!
+
+WAPresenter guid: (GUID fromString: '{a3c04003-fbb4-4f6b-9a98-9e2aa4ab8ff0}')!
+
 WAPresenter comment: 'WAPresenter holds the functionality that is common to WAComponent and WADecoration. Subclasses of this class may have state and can be stored in instance variables of other Presenters.You might want to subclass WAPresenter if you do not need the special abilities (decoration and call/answer) of WAComponent but do need one or more of the following:	+ The ability to specify objects whose state should be backtracked (#states)	+ The ability to provide CSS and JavaScript for the component (#style, #script)	+ The ability to "embed" other persistent Presenters within this one (#children)WAPresenter does not support call/answer or the addition of Decorations. If you need either of these features, you should subclass WAComponent instead.Child Presenters:It is common for a Presenter to display instances of other Presenters while rendering itself.  It does this by passing them into the #render: method of a renderer (typically an instance of WACanvas).  For example, this #renderContentOn: method simply renders a heading and then displays a counter component immediately below it:	renderContentOn: html		html heading level3; with: ''My Counter''.		html render: myCounter.It''s important that you use #render:, rather than directly calling the #renderContentOn: method of the subcomponent. The following is *not* correct:	renderContentOn: html		html heading level3; with: ''My Counter''.		myCounter renderContentOn: html.   "DON''T DO THIS".These sub-Presenters are usually instance variables of the Presenter that is "embedding" them.  They are commonly created as part of the Presenter''s #initialize method:	initialize		myCounter := WACounter new.They may also be stored in a collection. One fairly common pattern is to keep a lazily initialized dictionary of sub-presenters that match a collection of model items. For example, if you wanted a BudgetItemRow subcomponent for each member of budgetItems, you might do something like this:	initialize		budgetRows := Dictionary new.	rowForItem: anItem		^budgetRows at: anItem ifAbsentPut: [ BudgetItemRow item: anItem ].	renderContentOn: html		self budgetItems			do: [ :each | html render: (self rowForItem: each) ]			separatedBy: [ html horizontalLine ].Each parent Presenter *must* implement a #children method that returns a collection of all of the sub-Presenters that it might display on the next render. For the above two examples, #children might look like this:	children		^Array with: myCounteror this:	children		^self budgetItems collect: [ :each | self rowForItem: each ].		Visibility:A Presenter is visible if it is:- the root of an application- a child of a visible Presenter (returned by #children) that has not been #call:''d'!
-!WAPresenter categoriesForClass!Seaside-Component-Base! !
+
+!WAPresenter categoriesForClass!Base! !
+
 !WAPresenter methodsFor!
 
 accept: aVisitor	aVisitor visitPresenter: self!
@@ -41,20 +45,31 @@ updateRoot: anHtmlRoot	"This method allows you customize the <head> section of 
 updateStates: aSnapshot	"This method allows to register objects for backtracking. Don't forget to send super in all cases."	self states do: [ :each | aSnapshot register: each ]!
 
 visiblePresentersDo: aBlock	(WAVisiblePresenterGuide client:		(WAPluggablePresenterVisitor block: aBlock))		start: self! !
-!WAPresenter categoriesFor: #accept:!public!visiting! !
-!WAPresenter categoriesFor: #allPresentersDo:!convenience!public! !
-!WAPresenter categoriesFor: #children!hooks!public! !
-!WAPresenter categoriesFor: #childrenDo:!iterating!public! !
-!WAPresenter categoriesFor: #decoratedComponent!decorations!public! !
-!WAPresenter categoriesFor: #handleAnswer:!delegation!public! !
-!WAPresenter categoriesFor: #initialRequest:!hooks!public! !
-!WAPresenter categoriesFor: #isDecoration!public!testing! !
-!WAPresenter categoriesFor: #renderContentOn:!public!rendering! !
-!WAPresenter categoriesFor: #renderUndecoratedWithContext:!public!rendering! !
-!WAPresenter categoriesFor: #script!hooks!public! !
-!WAPresenter categoriesFor: #states!hooks!public! !
-!WAPresenter categoriesFor: #style!hooks!public! !
-!WAPresenter categoriesFor: #updateRoot:!public!updating! !
-!WAPresenter categoriesFor: #updateStates:!public!updating! !
-!WAPresenter categoriesFor: #visiblePresentersDo:!convenience!public! !
+
+!WAPresenter categoriesForMethods!
+accept:!public!visiting! !
+allPresentersDo:!convenience!public! !
+children!hooks!public! !
+childrenDo:!iterating!public! !
+decoratedComponent!decorations!public! !
+handleAnswer:!delegation!public! !
+initialRequest:!hooks!public! !
+isDecoration!public!testing! !
+renderContentOn:!public!rendering! !
+renderUndecoratedWithContext:!public!rendering! !
+script!hooks!public! !
+states!hooks!public! !
+style!hooks!public! !
+updateRoot:!public!updating! !
+updateStates:!public!updating! !
+visiblePresentersDo:!convenience!public! !
+!
+
+!WAPresenter class methodsFor!
+
+isAbstract 	^ self == WAPresenter! !
+
+!WAPresenter class categoriesForMethods!
+isAbstract!public!testing! !
+!
 

@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQAjax subclass: #JQGet
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQGet guid: (GUID fromString: '{81c10a19-d4d5-405a-bc3c-d3a9eaea13cf}')!
+
+JQGet guid: (GUID fromString: '{da8c3cf7-5bdb-4622-a849-edabeda787a7}')!
+
 JQGet comment: 'Load a remote page using an HTTP GET request.'!
-!JQGet categoriesForClass!JQuery-Core-Objects! !
+
+!JQGet categoriesForClass!Objects! !
+
 !JQGet methodsFor!
 
 arguments	| arguments |	arguments := OrderedCollection with: self url.	self options		at: 'data'		ifPresent: [ :value | arguments add: value ].	self options		at: 'success'		ifPresent: [ :value | arguments add: value ].	self options		at: 'dataType'		ifPresent: [ :value | arguments add: value ].	^ arguments!
@@ -15,7 +19,10 @@ arguments	| arguments |	arguments := OrderedCollection with: self url.	self o
 isSupportedOption: aString	^ #('url' 'data' 'success' 'dataType') includes: aString!
 
 method	^ 'get'! !
-!JQGet categoriesFor: #arguments!accessing!public! !
-!JQGet categoriesFor: #isSupportedOption:!options!public! !
-!JQGet categoriesFor: #method!accessing!public! !
+
+!JQGet categoriesForMethods!
+arguments!accessing!public! !
+isSupportedOption:!options!public! !
+method!accessing!public! !
+!
 

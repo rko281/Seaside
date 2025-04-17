@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JSObject subclass: #JQPlugin
 	instanceVariableNames: 'owner options'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQPlugin guid: (GUID fromString: '{2979554e-210d-4e48-b8f3-a81371ffe6e0}')!
+
+JQPlugin guid: (GUID fromString: '{31f137a2-6c7f-42b0-8b92-425c7f2774d6}')!
+
 JQPlugin comment: ''!
-!JQPlugin categoriesForClass!JQuery-Core-Objects! !
+
+!JQPlugin categoriesForClass!Objects! !
+
 !JQPlugin methodsFor!
 
 arguments	^ options isNil		ifTrue: [ Array new ]		ifFalse: [ Array with: options ]!
@@ -27,18 +31,24 @@ options	^ options ifNil: [ options := GRSmallDictionary2 new ]!
 owner	^ owner!
 
 setOwner: aQuery	owner := aQuery! !
-!JQPlugin categoriesFor: #arguments!accessing!public! !
-!JQPlugin categoriesFor: #id:!private! !
-!JQPlugin categoriesFor: #javascriptContentOn:!printing!public! !
-!JQPlugin categoriesFor: #jQuery!private! !
-!JQPlugin categoriesFor: #method!accessing!public! !
-!JQPlugin categoriesFor: #optionAt:put:!options!public! !
-!JQPlugin categoriesFor: #options!options!public! !
-!JQPlugin categoriesFor: #owner!accessing!public! !
-!JQPlugin categoriesFor: #setOwner:!initialization!public! !
+
+!JQPlugin categoriesForMethods!
+arguments!accessing!public! !
+id:!private! !
+javascriptContentOn:!printing!public! !
+jQuery!private! !
+method!accessing!public! !
+optionAt:put:!options!public! !
+options!options!public! !
+owner!accessing!public! !
+setOwner:!initialization!public! !
+!
 
 !JQPlugin class methodsFor!
 
 context: aRenderContext owner: aQuery	^ (self context: aRenderContext)		setOwner: aQuery;		yourself! !
-!JQPlugin class categoriesFor: #context:owner:!instance creation!public! !
+
+!JQPlugin class categoriesForMethods!
+context:owner:!instance creation!public! !
+!
 

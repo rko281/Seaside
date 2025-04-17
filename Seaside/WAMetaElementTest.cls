@@ -1,15 +1,22 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAAbstractHtmlElementTest subclass: #WAMetaElementTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAMetaElementTest guid: (GUID fromString: '{d07eb801-774b-491c-a77d-ab4ab516ad68}')!
+
+WAMetaElementTest guid: (GUID fromString: '{3d5d1227-c18c-49e6-b01b-b490cb1c02a0}')!
+
 WAMetaElementTest comment: ''!
-!WAMetaElementTest categoriesForClass!Seaside-Tests-Core-Document! !
+
+!WAMetaElementTest categoriesForClass!Document! !
+
 !WAMetaElementTest methodsFor!
 
 testLeftToRight	self		assert: [ :root | root meta beLeftToRight ]		gives: '<meta dir="LTR"/>'! !
-!WAMetaElementTest categoriesFor: #testLeftToRight!public!tests! !
+
+!WAMetaElementTest categoriesForMethods!
+testLeftToRight!public!tests! !
+!
 

@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JSObject subclass: #JSScript
 	instanceVariableNames: 'statements'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSScript guid: (GUID fromString: '{a048b694-3fef-4c88-a9b0-00af0a734c0e}')!
+
+JSScript guid: (GUID fromString: '{80533016-23f7-4faf-aa9a-3932adfd8dfb}')!
+
 JSScript comment: 'I represent a sequence of JavaScript statements.'!
-!JSScript categoriesForClass!Javascript-Core-Base! !
+
+!JSScript categoriesForClass!Base! !
+
 !JSScript methodsFor!
 
 , anObject	self add: anObject!
@@ -33,16 +37,19 @@ javascriptContentOn: aStream	statements do: [ :each | aStream javascript: each 
 logger	^ self add: ((JSLogger context: self renderContext)		rendererClass: self rendererClass;		yourself)!
 
 refresh	self goto: self renderContext actionUrl! !
-!JSScript categoriesFor: #,!adding!public! !
-!JSScript categoriesFor: #<<!adding!public! !
-!JSScript categoriesFor: #add:!adding!public! !
-!JSScript categoriesFor: #addAll:!adding!public! !
-!JSScript categoriesFor: #alert:!convenience!public! !
-!JSScript categoriesFor: #callback:!convenience!public! !
-!JSScript categoriesFor: #goto:!convenience!public! !
-!JSScript categoriesFor: #initialize!initialization!public! !
-!JSScript categoriesFor: #javascript!convenience!public! !
-!JSScript categoriesFor: #javascriptContentOn:!printing!public! !
-!JSScript categoriesFor: #logger!convenience!public! !
-!JSScript categoriesFor: #refresh!convenience!public! !
+
+!JSScript categoriesForMethods!
+,!adding!public! !
+<<!adding!public! !
+add:!adding!public! !
+addAll:!adding!public! !
+alert:!convenience!public! !
+callback:!convenience!public! !
+goto:!convenience!public! !
+initialize!initialization!public! !
+javascript!convenience!public! !
+javascriptContentOn:!printing!public! !
+logger!convenience!public! !
+refresh!convenience!public! !
+!
 

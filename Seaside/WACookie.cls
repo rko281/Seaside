@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WARequestCookie subclass: #WACookie
 	instanceVariableNames: 'expiry secure discard comment commentUrl httpOnly sameSite maxAge'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WACookie guid: (GUID fromString: '{7a6dcddc-a93c-4662-9d26-b482a25cc697}')!
+
+WACookie guid: (GUID fromString: '{3d8c3e97-3003-4c16-8e7e-6e44cf222d3f}')!
+
 WACookie comment: 'I represent a cookie, a piece of information that is stored on the client and read and writable by the server. I am basically a key/value pair of strings.You can never trust information in a cookie, the client is free to edit it.I model only a part of the full cookie specification.Browser support:http://www.mnot.net/blog/2006/10/27/cookie_funNetscape spechttp://cgi.netscape.com/newsref/std/cookie_spec.htmlCookie spechttp://tools.ietf.org/html/rfc2109Cookie 2 spechttps://tools.ietf.org/html/rfc6265HttpOnlyhttp://msdn2.microsoft.com/en-us/library/ms533046.aspxhttps://bugzilla.mozilla.org/show_bug.cgi?id=178993Compared to WARequestCookie I represent the information that is sent to the user agent.'!
-!WACookie categoriesForClass!Seaside-Core-HTTP! !
+
+!WACookie categoriesForClass!HTTP! !
+
 !WACookie methodsFor!
 
 comment	^ comment!
@@ -85,47 +89,53 @@ writeSameSiteOn: aStream	sameSite isNil		ifTrue: [ ^ self ].	aStream		nextPu
 writeSecureOn: aStream	self secure		ifTrue: [ aStream nextPutAll: '; Secure' ]!
 
 writeVersionOn: aStream	aStream nextPutAll: '; Version='.	aStream print: self version! !
-!WACookie categoriesFor: #comment!accessing!public! !
-!WACookie categoriesFor: #comment:!accessing!public! !
-!WACookie categoriesFor: #commentUrl!accessing!public! !
-!WACookie categoriesFor: #commentUrl:!accessing!public! !
-!WACookie categoriesFor: #discard!accessing!public! !
-!WACookie categoriesFor: #discard:!accessing!public! !
-!WACookie categoriesFor: #expireIn:!api!public! !
-!WACookie categoriesFor: #expireInPast!api!public! !
-!WACookie categoriesFor: #expireInSeconds:!api!public! !
-!WACookie categoriesFor: #expiry!accessing!public! !
-!WACookie categoriesFor: #expiry:!accessing!public! !
-!WACookie categoriesFor: #expiryString!private! !
-!WACookie categoriesFor: #httpOnly!accessing!public! !
-!WACookie categoriesFor: #httpOnly:!accessing!public! !
-!WACookie categoriesFor: #initialize!initialization!public! !
-!WACookie categoriesFor: #maxAge!accessing!public! !
-!WACookie categoriesFor: #maxAge:!accessing!public! !
-!WACookie categoriesFor: #rfc6265String!public!writing! !
-!WACookie categoriesFor: #sameSite!accessing!public! !
-!WACookie categoriesFor: #sameSite:!accessing!public! !
-!WACookie categoriesFor: #secure!accessing!public! !
-!WACookie categoriesFor: #secure:!accessing!public! !
-!WACookie categoriesFor: #write:asQuotedStringOn:!public!writing/private! !
-!WACookie categoriesFor: #write:quoted:on:!public!writing/private! !
-!WACookie categoriesFor: #writeCommentOn:!public!writing/private! !
-!WACookie categoriesFor: #writeCommentUrlOn:!public!writing/private! !
-!WACookie categoriesFor: #writeDiscardOn:!public!writing/private! !
-!WACookie categoriesFor: #writeDomainQuoted:on:!public!writing/private! !
-!WACookie categoriesFor: #writeExpiresOn:!public!writing/private! !
-!WACookie categoriesFor: #writeHttpOnlyOn:!public!writing/private! !
-!WACookie categoriesFor: #writeKeyValueQuoted:on:!public!writing/private! !
-!WACookie categoriesFor: #writeMaxAgeQuoted:on:!public!writing/private! !
-!WACookie categoriesFor: #writeOn:!public!writing! !
-!WACookie categoriesFor: #writePathQuoted:on:!public!writing/private! !
-!WACookie categoriesFor: #writePortsOn:!public!writing/private! !
-!WACookie categoriesFor: #writeSameSiteOn:!public!writing/private! !
-!WACookie categoriesFor: #writeSecureOn:!public!writing/private! !
-!WACookie categoriesFor: #writeVersionOn:!public!writing/private! !
+
+!WACookie categoriesForMethods!
+comment!accessing!public! !
+comment:!accessing!public! !
+commentUrl!accessing!public! !
+commentUrl:!accessing!public! !
+discard!accessing!public! !
+discard:!accessing!public! !
+expireIn:!api!public! !
+expireInPast!api!public! !
+expireInSeconds:!api!public! !
+expiry!accessing!public! !
+expiry:!accessing!public! !
+expiryString!private! !
+httpOnly!accessing!public! !
+httpOnly:!accessing!public! !
+initialize!initialization!public! !
+maxAge!accessing!public! !
+maxAge:!accessing!public! !
+rfc6265String!public!writing! !
+sameSite!accessing!public! !
+sameSite:!accessing!public! !
+secure!accessing!public! !
+secure:!accessing!public! !
+write:asQuotedStringOn:!public!writing/private! !
+write:quoted:on:!public!writing/private! !
+writeCommentOn:!public!writing/private! !
+writeCommentUrlOn:!public!writing/private! !
+writeDiscardOn:!public!writing/private! !
+writeDomainQuoted:on:!public!writing/private! !
+writeExpiresOn:!public!writing/private! !
+writeHttpOnlyOn:!public!writing/private! !
+writeKeyValueQuoted:on:!public!writing/private! !
+writeMaxAgeQuoted:on:!public!writing/private! !
+writeOn:!public!writing! !
+writePathQuoted:on:!public!writing/private! !
+writePortsOn:!public!writing/private! !
+writeSameSiteOn:!public!writing/private! !
+writeSecureOn:!public!writing/private! !
+writeVersionOn:!public!writing/private! !
+!
 
 !WACookie class methodsFor!
 
 combine: aCollectionOfCookies using: aOneArgumentBlock	"combines several cookies into one HTTP header line	aOneArgumentBlock takes a cookie as an argument and returns a string,	it is supposed to send one of #oldNetscapeString #rfc2109String #rfc2965String to the argument"	^ String streamContents: [ :stream |		aCollectionOfCookies			do: [ :each |				stream nextPutAll: (aOneArgumentBlock value: each) ]			separatedBy: [ stream nextPutAll: ', ' ] ]! !
-!WACookie class categoriesFor: #combine:using:!convenience!public! !
+
+!WACookie class categoriesForMethods!
+combine:using:!convenience!public! !
+!
 

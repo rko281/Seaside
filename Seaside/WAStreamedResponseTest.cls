@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAResponseTest subclass: #WAStreamedResponseTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAStreamedResponseTest guid: (GUID fromString: '{d87de351-047e-41c4-ad43-4dd731d60486}')!
+
+WAStreamedResponseTest guid: (GUID fromString: '{861de7ce-697f-4f56-985e-35700787de32}')!
+
 WAStreamedResponseTest comment: ''!
-!WAStreamedResponseTest categoriesForClass!Seaside-Tests-Core-HTTP! !
+
+!WAStreamedResponseTest categoriesForClass!HTTP! !
+
 !WAStreamedResponseTest methodsFor!
 
 assertLines: anArray	"Streamed responses don't have content length information. They simply can't know."		super assertLines: (anArray reject: [ :each | each beginsWithSubCollection: 'Content-Length' ])!
@@ -33,16 +37,19 @@ testHeaderAfterCommit	self response flush.	self 		should: [ self response hea
 testIsCommitted	super testIsCommitted.	self assert: self response isCommitted!
 
 testStatusAfterCommit	self response flush.	self 		should: [ self response forbidden ]		raise: WAIllegalStateException.	self 		should: [ self response status: 404 message: 'Almost found' ]		raise: WAIllegalStateException! !
-!WAStreamedResponseTest categoriesFor: #assertLines:!private! !
-!WAStreamedResponseTest categoriesFor: #contents!accessing!public! !
-!WAStreamedResponseTest categoriesFor: #response!accessing!public! !
-!WAStreamedResponseTest categoriesFor: #testCanResetIfNoBody!public!tests/conveniance! !
-!WAStreamedResponseTest categoriesFor: #testCantReset!public!tests/conveniance! !
-!WAStreamedResponseTest categoriesFor: #testCookieAfterCommit!public!tests/state! !
-!WAStreamedResponseTest categoriesFor: #testFlushDelay!public!tests/flush! !
-!WAStreamedResponseTest categoriesFor: #testFlushNextPutAll!public!tests/flush! !
-!WAStreamedResponseTest categoriesFor: #testFlushStream!public!tests/flush! !
-!WAStreamedResponseTest categoriesFor: #testHeaderAfterCommit!public!tests/state! !
-!WAStreamedResponseTest categoriesFor: #testIsCommitted!public!tests! !
-!WAStreamedResponseTest categoriesFor: #testStatusAfterCommit!public!tests/state! !
+
+!WAStreamedResponseTest categoriesForMethods!
+assertLines:!private! !
+contents!accessing!public! !
+response!accessing!public! !
+testCanResetIfNoBody!public!tests/conveniance! !
+testCantReset!public!tests/conveniance! !
+testCookieAfterCommit!public!tests/state! !
+testFlushDelay!public!tests/flush! !
+testFlushNextPutAll!public!tests/flush! !
+testFlushStream!public!tests/flush! !
+testHeaderAfterCommit!public!tests/state! !
+testIsCommitted!public!tests! !
+testStatusAfterCommit!public!tests/state! !
+!
 

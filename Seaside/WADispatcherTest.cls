@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WARequestHandlerTest subclass: #WADispatcherTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WADispatcherTest guid: (GUID fromString: '{07b12c71-4659-4e35-ac38-f1859829aa98}')!
+
+WADispatcherTest guid: (GUID fromString: '{fa9caf6e-c949-4fff-a05a-43b7b117600a}')!
+
 WADispatcherTest comment: ''!
-!WADispatcherTest categoriesForClass!Seaside-Tests-Core-RequestHandling! !
+
+!WADispatcherTest categoriesForClass!RequestHandling! !
+
 !WADispatcherTest methodsFor!
 
 createRequest	^ WARequest		method: 'GET'		uri: '/tweets/kentbeck'!
@@ -19,9 +23,12 @@ testCopyDispatcher	| copy originalHandler |	copy := handler copy.	self deny: 
 testEmptyPathConsumption	| root |	root := WADispatcher new.	dispatcher := root register: WADispatcher new at: 'tweets'.	handler := dispatcher register: WANextUnconsumedPathElementRequestHandler new at: 'kentbeck'.	[ root handle: self requestContext ]		on: WAResponseNotification		do: [ :notification | "everything is fine" ].	self assert: handler nextUnconsumedPathElement isNil!
 
 testPathConsumption	dispatcher := WADispatcher new.	handler := dispatcher register: WANextUnconsumedPathElementRequestHandler new at: 'tweets'.	[ dispatcher handle: self requestContext ]		on: WAResponseNotification		do: [ :notification | "everything is fine" ].	self assert: handler nextUnconsumedPathElement = 'kentbeck'! !
-!WADispatcherTest categoriesFor: #createRequest!configuration!public! !
-!WADispatcherTest categoriesFor: #newHandler!private! !
-!WADispatcherTest categoriesFor: #testCopyDispatcher!public!tests! !
-!WADispatcherTest categoriesFor: #testEmptyPathConsumption!public!tests! !
-!WADispatcherTest categoriesFor: #testPathConsumption!public!tests! !
+
+!WADispatcherTest categoriesForMethods!
+createRequest!configuration!public! !
+newHandler!private! !
+testCopyDispatcher!public!tests! !
+testEmptyPathConsumption!public!tests! !
+testPathConsumption!public!tests! !
+!
 

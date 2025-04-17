@@ -1,22 +1,26 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQPlugin subclass: #JQAnimate
 	instanceVariableNames: 'parameters'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQAnimate guid: (GUID fromString: '{6f1349ea-ef1d-455e-bdf4-4272818e401a}')!
+
+JQAnimate guid: (GUID fromString: '{100b3e30-1b8d-4f79-ab99-4e67e8d98538}')!
+
 JQAnimate comment: ''!
-!JQAnimate categoriesForClass!JQuery-Core-Objects! !
+
+!JQAnimate categoriesForClass!Objects! !
+
 !JQAnimate methodsFor!
 
 arguments	^ Array with: self parameters with: self options!
 
 doesNotUnderstand: aMessage	"A nasty trick to allow to define the animation properties more easily."	^ aMessage selector numArgs = 1		ifFalse: [ super doesNotUnderstand: aMessage ]		ifTrue: [ self parameterAt: aMessage selector allButLast put: aMessage arguments first ]!
 
-duration: aDuration	"A string representing one of the three predefined speeds (slow, normal, or fast) or the number of milliseconds to run the animation (e.g. 1000)."		self optionAt: 'duration' put: aDuration!
+duration: aDuration	"A string representing one of the three predefined speeds (slow, normal, or fast) or the number of milliseconds to run the animation (e.g. 1000)."		self optionAt: 'duration' put: aDuration!
 
-easing: aString	"The name of the easing effect that you want to use (plugin required). There are two built-in values, linear and swing."		self optionAt: 'easing' put: aString!
+easing: aString	"The name of the easing effect that you want to use (plugin required). There are two built-in values, linear and swing."		self optionAt: 'easing' put: aString!
 
 method	^ 'animate'!
 
@@ -30,16 +34,19 @@ parameters	^ parameters ifNil: [ parameters := GRSmallDictionary2 new ]!
 
 parameters: aDictionary	"A set of style attributes that you wish to animate, and to what end."		parameters := aDictionary!
 
-queue: aBoolean	"Setting this to false will make the animation skip the queue and begin running immediately."		self optionAt: 'queue' put: aBoolean! !
-!JQAnimate categoriesFor: #arguments!accessing!public! !
-!JQAnimate categoriesFor: #doesNotUnderstand:!private! !
-!JQAnimate categoriesFor: #duration:!options!public! !
-!JQAnimate categoriesFor: #easing:!options!public! !
-!JQAnimate categoriesFor: #method!accessing!public! !
-!JQAnimate categoriesFor: #onComplete:!events!public! !
-!JQAnimate categoriesFor: #onStep:!events!public! !
-!JQAnimate categoriesFor: #parameterAt:put:!parameters!public! !
-!JQAnimate categoriesFor: #parameters!parameters!public! !
-!JQAnimate categoriesFor: #parameters:!parameters!public! !
-!JQAnimate categoriesFor: #queue:!options!public! !
+queue: aBoolean	"Setting this to false will make the animation skip the queue and begin running immediately."		self optionAt: 'queue' put: aBoolean! !
+
+!JQAnimate categoriesForMethods!
+arguments!accessing!public! !
+doesNotUnderstand:!private! !
+duration:!options!public! !
+easing:!options!public! !
+method!accessing!public! !
+onComplete:!events!public! !
+onStep:!events!public! !
+parameterAt:put:!parameters!public! !
+parameters!parameters!public! !
+parameters:!parameters!public! !
+queue:!options!public! !
+!
 

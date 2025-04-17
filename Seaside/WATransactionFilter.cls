@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WARequestFilter subclass: #WATransactionFilter
 	instanceVariableNames: 'closed'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WATransactionFilter guid: (GUID fromString: '{cf4c951f-e9a2-4775-a0b9-2c8217e1f4d2}')!
+
+WATransactionFilter guid: (GUID fromString: '{f71a6f90-823d-4704-8077-860de92a67aa}')!
+
 WATransactionFilter comment: 'This filter provides the implementation of WAComponent>>#isolate:. It rejects all requests as soon as the filter has been closed.'!
-!WATransactionFilter categoriesForClass!Seaside-Core-Filter! !
+
+!WATransactionFilter categoriesForClass!Filter! !
+
 !WATransactionFilter methodsFor!
 
 close	closed := true!
@@ -17,8 +21,11 @@ handleFiltered: aRequestContext 	self isClosed 		ifFalse: [ super handleFilter
 initialize	super initialize.	closed := false!
 
 isClosed	^ closed! !
-!WATransactionFilter categoriesFor: #close!actions!public! !
-!WATransactionFilter categoriesFor: #handleFiltered:!processing!public! !
-!WATransactionFilter categoriesFor: #initialize!initialization!public! !
-!WATransactionFilter categoriesFor: #isClosed!public!testing! !
+
+!WATransactionFilter categoriesForMethods!
+close!actions!public! !
+handleFiltered:!processing!public! !
+initialize!initialization!public! !
+isClosed!public!testing! !
+!
 

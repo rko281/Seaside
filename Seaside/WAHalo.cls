@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAObject subclass: #WAHalo
 	instanceVariableNames: 'root mode plugins'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAHalo guid: (GUID fromString: '{01553e67-5f0b-4e15-aa22-87a17ca6f691}')!
+
+WAHalo guid: (GUID fromString: '{823bfe1f-b7e2-4bd5-aa47-d9cc7e22a3d5}')!
+
 WAHalo comment: ''!
-!WAHalo categoriesForClass!Seaside-Development-Core! !
+
+!WAHalo categoriesForClass!Core! !
+
 !WAHalo methodsFor!
 
 initializeOn: aComponent	self initialize.	root := aComponent.	mode := WAValueHolder with: self modes first.	plugins := WAHaloPlugin allSubclassesOn: self root for: self!
@@ -31,20 +35,26 @@ root	^ root!
 source: html visitor: aPainterVisitor	"Render the HTML source of the object we are wrapping using a pretty printed	document. See #modes.	Because we are using a new RenderContext, we can't use the passed-in visitor.	Since we know we want to immediately render, we create a new WARenderVisitor to get	things rolling. Rendering will then continue with the visitors in the context."		| context |	html div class: 'wa-halo-source'; with: [		context := html context copy.		context disableHalos.		context document: (WAPrettyPrintedDocument context: html context).		(WARenderVisitor context: context) start: self root.		context document close ]!
 
 updateStates: aSnapshot	"This class is not a Presenter but WAToolDecoration will make sure we get a chance	to update the snapshot whenever it does."		aSnapshot register: mode! !
-!WAHalo categoriesFor: #initializeOn:!initialization!public! !
-!WAHalo categoriesFor: #mode!accessing!public! !
-!WAHalo categoriesFor: #mode:!accessing!public! !
-!WAHalo categoriesFor: #modes!accessing!public! !
-!WAHalo categoriesFor: #modeSelector!accessing!public! !
-!WAHalo categoriesFor: #plugins!accessing!public! !
-!WAHalo categoriesFor: #render:visitor:!public!rendering/modes! !
-!WAHalo categoriesFor: #renderWithContext:visitor:!public!rendering! !
-!WAHalo categoriesFor: #root!accessing!public! !
-!WAHalo categoriesFor: #source:visitor:!public!rendering/modes! !
-!WAHalo categoriesFor: #updateStates:!public!updating! !
+
+!WAHalo categoriesForMethods!
+initializeOn:!initialization!public! !
+mode!accessing!public! !
+mode:!accessing!public! !
+modes!accessing!public! !
+modeSelector!accessing!public! !
+plugins!accessing!public! !
+render:visitor:!public!rendering/modes! !
+renderWithContext:visitor:!public!rendering! !
+root!accessing!public! !
+source:visitor:!public!rendering/modes! !
+updateStates:!public!updating! !
+!
 
 !WAHalo class methodsFor!
 
 on: aComponent	^ self basicNew initializeOn: aComponent; yourself! !
-!WAHalo class categoriesFor: #on:!instance creation!public! !
+
+!WAHalo class categoriesForMethods!
+on:!instance creation!public! !
+!
 

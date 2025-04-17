@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAComponent subclass: #WAStatusItem
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAStatusItem guid: (GUID fromString: '{bf098994-8e0c-40ff-b5e4-1f63550f84e8}')!
+
+WAStatusItem guid: (GUID fromString: '{eaa4641a-ce8b-4c32-a953-3dda6b183811}')!
+
 WAStatusItem comment: ''!
-!WAStatusItem categoriesForClass!Seaside-Tools-Web! !
+
+!WAStatusItem categoriesForClass!Unclassified! !
+
 !WAStatusItem methodsFor!
 
 <= otherStatusItem	^ (self priority < otherStatusItem priority) or: [		(self priority = otherStatusItem priority) and: [			self label <= otherStatusItem label ] ]!
@@ -39,27 +43,33 @@ renderValuesOn: html		self subclassResponsibility!
 tableBodyCssClass	^ 'left'!
 
 title	self subclassResponsibility! !
-!WAStatusItem categoriesFor: #<=!comparing!public! !
-!WAStatusItem categoriesFor: #isSupported!public!testing! !
-!WAStatusItem categoriesFor: #label!accessing!public! !
-!WAStatusItem categoriesFor: #priority!accessing!public! !
-!WAStatusItem categoriesFor: #renderContentOn:!public!rendering! !
-!WAStatusItem categoriesFor: #renderFooterOn:!public!rendering! !
-!WAStatusItem categoriesFor: #renderHeaderOn:!public!rendering! !
-!WAStatusItem categoriesFor: #renderLabel:on:!public!rendering! !
-!WAStatusItem categoriesFor: #renderLabel:value:on:!public!rendering! !
-!WAStatusItem categoriesFor: #renderLabel:value:value:on:!public!rendering! !
-!WAStatusItem categoriesFor: #renderLabel:value:value:value:on:!public!rendering! !
-!WAStatusItem categoriesFor: #renderValue:on:!public!rendering! !
-!WAStatusItem categoriesFor: #renderValuesOn:!public!rendering! !
-!WAStatusItem categoriesFor: #tableBodyCssClass!accessing!public! !
-!WAStatusItem categoriesFor: #title!accessing!public! !
+
+!WAStatusItem categoriesForMethods!
+<=!comparing!public! !
+isSupported!public!testing! !
+label!accessing!public! !
+priority!accessing!public! !
+renderContentOn:!public!rendering! !
+renderFooterOn:!public!rendering! !
+renderHeaderOn:!public!rendering! !
+renderLabel:on:!public!rendering! !
+renderLabel:value:on:!public!rendering! !
+renderLabel:value:value:on:!public!rendering! !
+renderLabel:value:value:value:on:!public!rendering! !
+renderValue:on:!public!rendering! !
+renderValuesOn:!public!rendering! !
+tableBodyCssClass!accessing!public! !
+title!accessing!public! !
+!
 
 !WAStatusItem class methodsFor!
 
 isAbstract	^ self name = #WAStatusItem!
 
 sortedConcreteSubinstances	^ ((self allSubclasses		reject: [ :each | each isAbstract ])		collect: [ :each | each new ])			sorted! !
-!WAStatusItem class categoriesFor: #isAbstract!public!testing! !
-!WAStatusItem class categoriesFor: #sortedConcreteSubinstances!instance creation!public! !
+
+!WAStatusItem class categoriesForMethods!
+isAbstract!public!testing! !
+sortedConcreteSubinstances!instance creation!public! !
+!
 

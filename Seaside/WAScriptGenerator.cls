@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAObject subclass: #WAScriptGenerator
 	instanceVariableNames: 'loadScripts'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAScriptGenerator guid: (GUID fromString: '{4f40285d-2207-4084-abe5-78cf7c1c81bd}')!
+
+WAScriptGenerator guid: (GUID fromString: '{c3913eaf-2503-44ba-962e-8f2bb7e965c6}')!
+
 WAScriptGenerator comment: 'I am responsible to render the loadscripts and make them run on page load. See subclasses for different strategies.'!
-!WAScriptGenerator categoriesForClass!Seaside-Core-Document! !
+
+!WAScriptGenerator categoriesForClass!Document! !
+
 !WAScriptGenerator methodsFor!
 
 addLoadScript: anObject	"Add a script anObject to the receiver. This method ensures all scripts to run in the added order when the DOM is ready. Note that the default implementation calls the scripts when the page has finished loading."		^ loadScripts addLast: anObject!
@@ -29,14 +33,17 @@ open: aHtmlRoot on: aDocument	"This method is called before the document is ope
 writeLoadScriptsOn: aDocument	"Utility method to write the receivers load scripts onto aDocument."	self loadScripts do: [ :each |		aDocument stream javascript: each.		aDocument nextPut: $; ]!
 
 writeScriptTag: aBlock on: aDocument	"Utitlity method to properly wrap the script generation code in aBlock onto aDocument."	| attributes |	attributes := WAHtmlAttributes new.	attributes at: 'type' put: 'text/javascript'.	aDocument openTag: 'script' attributes: attributes.	aBlock value.	aDocument closeTag: 'script'! !
-!WAScriptGenerator categoriesFor: #addLoadScript:!accessing!public! !
-!WAScriptGenerator categoriesFor: #addLoadScriptFirst:!accessing!public! !
-!WAScriptGenerator categoriesFor: #close:on:!actions!public! !
-!WAScriptGenerator categoriesFor: #closeOn:!actions!public! !
-!WAScriptGenerator categoriesFor: #event:do:on:!public! !
-!WAScriptGenerator categoriesFor: #initialize!initialization!public! !
-!WAScriptGenerator categoriesFor: #loadScripts!accessing!public! !
-!WAScriptGenerator categoriesFor: #open:on:!actions!public! !
-!WAScriptGenerator categoriesFor: #writeLoadScriptsOn:!private! !
-!WAScriptGenerator categoriesFor: #writeScriptTag:on:!private! !
+
+!WAScriptGenerator categoriesForMethods!
+addLoadScript:!accessing!public! !
+addLoadScriptFirst:!accessing!public! !
+close:on:!actions!public! !
+closeOn:!actions!public! !
+event:do:on:!public! !
+initialize!initialization!public! !
+loadScripts!accessing!public! !
+open:on:!actions!public! !
+writeLoadScriptsOn:!private! !
+writeScriptTag:on:!private! !
+!
 

@@ -1,15 +1,22 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQBaseTheme subclass: #JQLeFrogTheme
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQLeFrogTheme guid: (GUID fromString: '{d77371d1-3e45-4033-8dbc-3f28db456239}')!
+
+JQLeFrogTheme guid: (GUID fromString: '{6164413f-868f-41bb-b313-b6301e840686}')!
+
 JQLeFrogTheme comment: ''!
-!JQLeFrogTheme categoriesForClass!JQuery-UI-Libraries! !
+
+!JQLeFrogTheme categoriesForClass!Libraries! !
+
 !JQLeFrogTheme methodsFor!
 
 themeName	^ 'le-frog'! !
-!JQLeFrogTheme categoriesFor: #themeName!accessing!public! !
+
+!JQLeFrogTheme categoriesForMethods!
+themeName!accessing!public! !
+!
 

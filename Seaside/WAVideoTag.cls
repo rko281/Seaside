@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAMediaElementTag subclass: #WAVideoTag
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAVideoTag guid: (GUID fromString: '{cb1e31f5-d457-49ba-8ab8-a23ecd0a22e5}')!
+
+WAVideoTag guid: (GUID fromString: '{a3e3fff3-a090-40a8-b03f-bf52263b8597}')!
+
 WAVideoTag comment: 'Supported only on experimental Operahttp://people.opera.com/howcome/2007/video/A video element represents a video or movie, with an alternate representation given by its contents.http://www.whatwg.org/specs/web-apps/current-work/#videohttp://lists.whatwg.org/pipermail/whatwg-whatwg.org/attachments/20070228/6a0cdddc/attachment.txt'!
-!WAVideoTag categoriesForClass!Seaside-Canvas-Tags! !
+
+!WAVideoTag categoriesForClass!Tags! !
+
 !WAVideoTag methodsFor!
 
 height: anInteger	"The videoHeight  DOM attribute must return the native height of the video in CSS pixels. In the absence of resolution information, user agents may assume that one pixel in the video corresponds to one CSS pixel."	self attributeAt: 'height' put: anInteger!
@@ -17,8 +21,11 @@ poster: aString	"The poster attribute gives the address of an image file that t
 tag	^ 'video'!
 
 width: anInteger	"The videoWidth DOM attribute must return the native width of the video in CSS pixels. In the absence of resolution information, user agents may assume that one pixel in the video corresponds to one CSS pixel."	self attributeAt: 'width' put: anInteger! !
-!WAVideoTag categoriesFor: #height:!attributes!public! !
-!WAVideoTag categoriesFor: #poster:!attributes!public! !
-!WAVideoTag categoriesFor: #tag!accessing!public! !
-!WAVideoTag categoriesFor: #width:!attributes!public! !
+
+!WAVideoTag categoriesForMethods!
+height:!attributes!public! !
+poster:!attributes!public! !
+tag!accessing!public! !
+width:!attributes!public! !
+!
 

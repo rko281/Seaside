@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WACanvasWidget subclass: #WABatchedList
 	instanceVariableNames: 'items batchSize currentPage'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WABatchedList guid: (GUID fromString: '{1e579d45-985e-41b5-85f0-e09250671a55}')!
+
+WABatchedList guid: (GUID fromString: '{75040b44-43b7-4b0b-995c-03d8f70302bf}')!
+
 WABatchedList comment: 'WABatchedList helps display a collection of items across multiple pages. WABatchedList organizes a collection into pages (or batches) of batchSize items each and renders navigation links for a user to moved between pages. WABatchedList>>batch returns the items to display in the current page or batch. Your code has to display the items.See WABatchSelection for example of usage.Instance Variables:	batchSize	<Integer>	number of items to display on a single page	currentPage	<Integer>	 index of current page, starts a 1	items	<SequenceableCollection of Objects>	objects organized into pages for display'!
-!WABatchedList categoriesForClass!Seaside-Widgets-Components! !
+
+!WABatchedList categoriesForClass!Components! !
+
 !WABatchedList methodsFor!
 
 batch	^ self items copyFrom: self startIndex to: self endIndex!
@@ -57,33 +61,39 @@ renderPreviousOn: html	self isOnFirstPage		ifFalse: [ html anchor callback: [ 
 startIndex	^ (self currentPage - 1) * self batchSize + 1!
 
 states	^ Array with: self! !
-!WABatchedList categoriesFor: #batch!accessing/calculated!public! !
-!WABatchedList categoriesFor: #batchSize!accessing!public! !
-!WABatchedList categoriesFor: #batchSize:!accessing!public! !
-!WABatchedList categoriesFor: #currentPage!accessing!public! !
-!WABatchedList categoriesFor: #currentPage:!accessing!public! !
-!WABatchedList categoriesFor: #endIndex!accessing/calculated!public! !
-!WABatchedList categoriesFor: #hasMultiplePages!public!testing! !
-!WABatchedList categoriesFor: #initialize!initialization!public! !
-!WABatchedList categoriesFor: #isOnFirstPage!public!testing! !
-!WABatchedList categoriesFor: #isOnLastPage!public!testing! !
-!WABatchedList categoriesFor: #items!accessing!public! !
-!WABatchedList categoriesFor: #items:!accessing!public! !
-!WABatchedList categoriesFor: #maxPages!accessing/calculated!public! !
-!WABatchedList categoriesFor: #nextPage!actions!public! !
-!WABatchedList categoriesFor: #pageRange!accessing/calculated!public! !
-!WABatchedList categoriesFor: #pageRangeEnd!accessing/calculated!public! !
-!WABatchedList categoriesFor: #pageRangeStart!accessing/calculated!public! !
-!WABatchedList categoriesFor: #previousPage!actions!public! !
-!WABatchedList categoriesFor: #renderContentOn:!public!rendering! !
-!WABatchedList categoriesFor: #renderNextOn:!public!rendering! !
-!WABatchedList categoriesFor: #renderPagesOn:!public!rendering! !
-!WABatchedList categoriesFor: #renderPreviousOn:!public!rendering! !
-!WABatchedList categoriesFor: #startIndex!accessing/calculated!public! !
-!WABatchedList categoriesFor: #states!hooks!public! !
+
+!WABatchedList categoriesForMethods!
+batch!accessing/calculated!public! !
+batchSize!accessing!public! !
+batchSize:!accessing!public! !
+currentPage!accessing!public! !
+currentPage:!accessing!public! !
+endIndex!accessing/calculated!public! !
+hasMultiplePages!public!testing! !
+initialize!initialization!public! !
+isOnFirstPage!public!testing! !
+isOnLastPage!public!testing! !
+items!accessing!public! !
+items:!accessing!public! !
+maxPages!accessing/calculated!public! !
+nextPage!actions!public! !
+pageRange!accessing/calculated!public! !
+pageRangeEnd!accessing/calculated!public! !
+pageRangeStart!accessing/calculated!public! !
+previousPage!actions!public! !
+renderContentOn:!public!rendering! !
+renderNextOn:!public!rendering! !
+renderPagesOn:!public!rendering! !
+renderPreviousOn:!public!rendering! !
+startIndex!accessing/calculated!public! !
+states!hooks!public! !
+!
 
 !WABatchedList class methodsFor!
 
 exampleComponent	^ self new		items: (1 to: 100);		yourself! !
-!WABatchedList class categoriesFor: #exampleComponent!accessing!public! !
+
+!WABatchedList class categoriesForMethods!
+exampleComponent!accessing!public! !
+!
 

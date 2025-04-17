@@ -1,20 +1,30 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 GRObject subclass: #WAObject
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAObject guid: (GUID fromString: '{ee26ad50-3c29-4ada-982d-5db365333efc}')!
+
+WAObject guid: (GUID fromString: '{7209d6eb-25f3-4ceb-91c9-1d9508981535}')!
+
 WAObject comment: 'A WAObject is the base class for all portable Seaside classes. It provides convenience methods for accessing the current request context, session and application.'!
-!WAObject categoriesForClass!Seaside-Core-Base! !
+
+!WAObject categoriesForClass!Base! !
+
 !WAObject methodsFor!
 
 requestContext	"Answer the current WARequestContext instance."	^ WACurrentRequestContext value! !
-!WAObject categoriesFor: #requestContext!dynamic variables!public! !
+
+!WAObject categoriesForMethods!
+requestContext!dynamic variables!public! !
+!
 
 !WAObject class methodsFor!
 
 defaultErrorClass	^ WAError! !
-!WAObject class categoriesFor: #defaultErrorClass!error handling!public! !
+
+!WAObject class categoriesForMethods!
+defaultErrorClass!error handling!public! !
+!
 

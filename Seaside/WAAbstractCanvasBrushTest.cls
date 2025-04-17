@@ -1,26 +1,36 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAContextTest subclass: #WAAbstractCanvasBrushTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAAbstractCanvasBrushTest guid: (GUID fromString: '{f941c43f-c5d6-44f6-bad2-df9b7c806acd}')!
+
+WAAbstractCanvasBrushTest guid: (GUID fromString: '{6585ea30-29c8-4de1-9f65-6e6c243c0f78}')!
+
 WAAbstractCanvasBrushTest comment: ''!
-!WAAbstractCanvasBrushTest categoriesForClass!Seaside-Tests-Canvas! !
+
+!WAAbstractCanvasBrushTest categoriesForClass!Brushes! !
+
 !WAAbstractCanvasBrushTest methodsFor!
 
 assert: aBlock gives: aString	| html |	html := self builder		render: aBlock.	self		assert: html = aString		description:	 'Expected: ', aString printString, ', Actual: ', html printString		resumable: true!
 
 builder	^ WAHtmlCanvas builder! !
-!WAAbstractCanvasBrushTest categoriesFor: #assert:gives:!private! !
-!WAAbstractCanvasBrushTest categoriesFor: #builder!private! !
+
+!WAAbstractCanvasBrushTest categoriesForMethods!
+assert:gives:!private! !
+builder!private! !
+!
 
 !WAAbstractCanvasBrushTest class methodsFor!
 
 isAbstract	^ self name = #WAAbstractCanvasBrushTest!
 
 packageNamesUnderTest	^ #('Seaside-Canvas')! !
-!WAAbstractCanvasBrushTest class categoriesFor: #isAbstract!public!testing! !
-!WAAbstractCanvasBrushTest class categoriesFor: #packageNamesUnderTest!accessing!public! !
+
+!WAAbstractCanvasBrushTest class categoriesForMethods!
+isAbstract!public!testing! !
+packageNamesUnderTest!accessing!public! !
+!
 

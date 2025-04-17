@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAObject subclass: #WACache
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WACache guid: (GUID fromString: '{9a9a690f-2346-4227-8e3d-de95e50867f5}')!
+
+WACache guid: (GUID fromString: '{aa234fe5-38fe-43d1-837b-83cb8fb70062}')!
+
 WACache comment: 'WACacheis the abstract base class for session and continuation stores in Seaside. The default implementation is WAHashCache.'!
-!WACache categoriesForClass!Seaside-Core-Cache! !
+
+!WACache categoriesForClass!Cache! !
+
 !WACache methodsFor!
 
 at: aKey ifAbsent: aBlock	self subclassResponsibility!
@@ -27,13 +31,16 @@ remove: anObject	self subclassResponsibility!
 size	self subclassResponsibility!
 
 store: anObject	"Store anObject in the cache, generating a new random key. Return the key."	self subclassResponsibility! !
-!WACache categoriesFor: #at:ifAbsent:!accessing!public! !
-!WACache categoriesFor: #at:put:!public!putting! !
-!WACache categoriesFor: #clear!public! !
-!WACache categoriesFor: #keyAtValue:ifAbsent:!accessing!public! !
-!WACache categoriesFor: #keysAndValuesDo:!enumerating!public! !
-!WACache categoriesFor: #keySize!accessing!public! !
-!WACache categoriesFor: #remove:!public!removing! !
-!WACache categoriesFor: #size!accessing!public! !
-!WACache categoriesFor: #store:!public!putting! !
+
+!WACache categoriesForMethods!
+at:ifAbsent:!accessing!public! !
+at:put:!public!putting! !
+clear!public! !
+keyAtValue:ifAbsent:!accessing!public! !
+keysAndValuesDo:!enumerating!public! !
+keySize!accessing!public! !
+remove:!public!removing! !
+size!accessing!public! !
+store:!public!putting! !
+!
 

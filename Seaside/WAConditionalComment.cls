@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAObject subclass: #WAConditionalComment
 	instanceVariableNames: 'condition root'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAConditionalComment guid: (GUID fromString: '{61cfb97d-ef21-4f3d-94f3-fbc79bdd4a88}')!
+
+WAConditionalComment guid: (GUID fromString: '{55cb4b39-4cfd-4284-a36d-ff270622c72b}')!
+
 WAConditionalComment comment: 'A WAConditionalComment is an implementation of Downlevel-hidden Conditional Comments:http://msdn2.microsoft.com/en-us/library/ms537512.aspxThese are only visible for the IE family of browsers.See also WAOpeningConditionalComment and WAClosingConditionalComment.'!
-!WAConditionalComment categoriesForClass!Seaside-Core-Document-Elements! !
+
+!WAConditionalComment categoriesForClass!Document-Elements! !
+
 !WAConditionalComment methodsFor!
 
 addToCondition: aString	condition := condition , aString!
@@ -47,28 +51,34 @@ not	self addToCondition: ' !!'!
 openingConditionClass	^ WAOpeningConditionalComment!
 
 orEqual	self addToCondition: 'e'! !
-!WAConditionalComment categoriesFor: #addToCondition:!private! !
-!WAConditionalComment categoriesFor: #closingConditionClass!private! !
-!WAConditionalComment categoriesFor: #do:!public! !
-!WAConditionalComment categoriesFor: #equal!operators!public! !
-!WAConditionalComment categoriesFor: #greaterThan!operators!public! !
-!WAConditionalComment categoriesFor: #ie!features!public! !
-!WAConditionalComment categoriesFor: #ie:!features!public! !
-!WAConditionalComment categoriesFor: #ie5!features!public! !
-!WAConditionalComment categoriesFor: #ie50!features!public! !
-!WAConditionalComment categoriesFor: #ie55!features!public! !
-!WAConditionalComment categoriesFor: #ie6!features!public! !
-!WAConditionalComment categoriesFor: #ie7!features!public! !
-!WAConditionalComment categoriesFor: #ie8!features!public! !
-!WAConditionalComment categoriesFor: #ie9!features!public! !
-!WAConditionalComment categoriesFor: #initializeWithRoot:!initialization!public! !
-!WAConditionalComment categoriesFor: #lessThan!operators!public! !
-!WAConditionalComment categoriesFor: #not!operators!public! !
-!WAConditionalComment categoriesFor: #openingConditionClass!private! !
-!WAConditionalComment categoriesFor: #orEqual!operators!public! !
+
+!WAConditionalComment categoriesForMethods!
+addToCondition:!private! !
+closingConditionClass!private! !
+do:!public! !
+equal!operators!public! !
+greaterThan!operators!public! !
+ie!features!public! !
+ie:!features!public! !
+ie5!features!public! !
+ie50!features!public! !
+ie55!features!public! !
+ie6!features!public! !
+ie7!features!public! !
+ie8!features!public! !
+ie9!features!public! !
+initializeWithRoot:!initialization!public! !
+lessThan!operators!public! !
+not!operators!public! !
+openingConditionClass!private! !
+orEqual!operators!public! !
+!
 
 !WAConditionalComment class methodsFor!
 
 root: anHtmlRoot	^ self basicNew initializeWithRoot: anHtmlRoot! !
-!WAConditionalComment class categoriesFor: #root:!instance creation!public! !
+
+!WAConditionalComment class categoriesForMethods!
+root:!instance creation!public! !
+!
 

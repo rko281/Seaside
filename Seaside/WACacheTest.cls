@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 TestCase subclass: #WACacheTest
 	instanceVariableNames: 'cache'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WACacheTest guid: (GUID fromString: '{6664c3bc-46a7-41fe-9b93-7ce09af1d1cc}')!
+
+WACacheTest guid: (GUID fromString: '{e09ed4ef-25a3-40c2-9fe9-f307dbb7f0a2}')!
+
 WACacheTest comment: ''!
-!WACacheTest categoriesForClass!Seaside-Tests-Core-Cache! !
+
+!WACacheTest categoriesForClass!Cache! !
+
 !WACacheTest methodsFor!
 
 createCache	self subclassResponsibility!
@@ -21,15 +25,21 @@ testAtPutOverwrite	1 to: 100 do: [ :i |		| absent mapped |		absent := false.
 testKeysAndValuesDo	| reference readBack |	reference := Dictionary new.	1 to: 100 do: [ :i |		cache at: i put: i greaseString.		reference at: i put: i greaseString ].		readBack := Dictionary new.	cache keysAndValuesDo: [ :key :value |		readBack at: key put: value ].		self assert: readBack = reference!
 
 testStore	| generator |	generator := WAPrecomputedKeyGenerator keys: #(1 1 1 2 2 2 3).	WAKeyGenerator		use: generator		during: [			self assert: (cache store: 'key1') = 1.			self assert: (cache store: 'key2') = 2.			self assert: (cache store: 'key3') = 3 ]! !
-!WACacheTest categoriesFor: #createCache!private! !
-!WACacheTest categoriesFor: #setUp!public!running! !
-!WACacheTest categoriesFor: #testAtPut!public!testing! !
-!WACacheTest categoriesFor: #testAtPutOverwrite!public!testing! !
-!WACacheTest categoriesFor: #testKeysAndValuesDo!public!testing! !
-!WACacheTest categoriesFor: #testStore!public!testing! !
+
+!WACacheTest categoriesForMethods!
+createCache!private! !
+setUp!public!running! !
+testAtPut!public!testing! !
+testAtPutOverwrite!public!testing! !
+testKeysAndValuesDo!public!testing! !
+testStore!public!testing! !
+!
 
 !WACacheTest class methodsFor!
 
 isAbstract	^ self name = #WACacheTest! !
-!WACacheTest class categoriesFor: #isAbstract!public!testing! !
+
+!WACacheTest class categoriesForMethods!
+isAbstract!public!testing! !
+!
 

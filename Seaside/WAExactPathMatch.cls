@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAPPathMatch subclass: #WAExactPathMatch
 	instanceVariableNames: 'element'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAExactPathMatch guid: (GUID fromString: '{eaa554d5-69eb-4a8a-af1c-f0ba52e281f3}')!
+
+WAExactPathMatch guid: (GUID fromString: '{5e7c2210-9e35-423d-85a9-34b7dec42481}')!
+
 WAExactPathMatch comment: ''!
-!WAExactPathMatch categoriesForClass!Seaside-REST-Core-Route! !
+
+!WAExactPathMatch categoriesForClass!Route! !
+
 !WAExactPathMatch methodsFor!
 
 argumentCount	^ 0!
@@ -19,17 +23,23 @@ mapArgumentsWithElements: aCollection into: anArray usingOffset: anInteger	"ign
 matches: aString	^ element = aString!
 
 priority	^ 3! !
-!WAExactPathMatch categoriesFor: #argumentCount!accessing!public! !
-!WAExactPathMatch categoriesFor: #inititializeWith:!initialization!public! !
-!WAExactPathMatch categoriesFor: #mapArgumentsWithElements:into:usingOffset:!public! !
-!WAExactPathMatch categoriesFor: #matches:!public!testing! !
-!WAExactPathMatch categoriesFor: #priority!accessing!public! !
+
+!WAExactPathMatch categoriesForMethods!
+argumentCount!accessing!public! !
+inititializeWith:!initialization!public! !
+mapArgumentsWithElements:into:usingOffset:!public! !
+matches:!public!testing! !
+priority!accessing!public! !
+!
 
 !WAExactPathMatch class methodsFor!
 
 fromString: aString	^ self basicNew inititializeWith: aString!
 
 fromString: aString index: anInteger arguments: aCollectionOfStrings	^ self fromString: aString! !
-!WAExactPathMatch class categoriesFor: #fromString:!instance creation!public! !
-!WAExactPathMatch class categoriesFor: #fromString:index:arguments:!instance creation!public! !
+
+!WAExactPathMatch class categoriesForMethods!
+fromString:!instance creation!public! !
+fromString:index:arguments:!instance creation!public! !
+!
 

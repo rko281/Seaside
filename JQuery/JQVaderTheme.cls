@@ -1,15 +1,22 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQBaseTheme subclass: #JQVaderTheme
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQVaderTheme guid: (GUID fromString: '{575228f1-ec60-45b7-a897-214d2097f7a0}')!
+
+JQVaderTheme guid: (GUID fromString: '{528aa55e-769c-46bd-9a2c-af6c045e3cda}')!
+
 JQVaderTheme comment: ''!
-!JQVaderTheme categoriesForClass!JQuery-UI-Libraries! !
+
+!JQVaderTheme categoriesForClass!Libraries! !
+
 !JQVaderTheme methodsFor!
 
 themeName	^ 'vader'! !
-!JQVaderTheme categoriesFor: #themeName!accessing!public! !
+
+!JQVaderTheme categoriesForMethods!
+themeName!accessing!public! !
+!
 

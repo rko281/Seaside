@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAFunctionalTest subclass: #WAButtonFunctionalTest
 	instanceVariableNames: 'input'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAButtonFunctionalTest guid: (GUID fromString: '{4008b8fe-f6d6-4f4a-9e94-854fd3ec30e6}')!
+
+WAButtonFunctionalTest guid: (GUID fromString: '{2ff0fadb-28cd-4d49-920d-7f352ddcd6f7}')!
+
 WAButtonFunctionalTest comment: ''!
-!WAButtonFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
+
+!WAButtonFunctionalTest categoriesForClass!Unclassified! !
+
 !WAButtonFunctionalTest methodsFor!
 
 initialize	super initialize.	self input: 'a text'!
@@ -25,12 +29,15 @@ renderPushOn: html	html heading level2 with: 'Push'.	html paragraph: 'Clicking
 renderResetOn: html	html heading level2 with: 'Reset'.	html paragraph: 'Clicking the button should not submit the form and reset the value in "Input"'.	html button beReset; with: 'Reset'!
 
 renderSubmitOn: html	html heading level2 with: 'Submit'.	html paragraph: 'Clicking the button should submit the form and update the value in "Value:" with the value in "Input"'.	html button with: 'Submit'! !
-!WAButtonFunctionalTest categoriesFor: #initialize!initialization!public! !
-!WAButtonFunctionalTest categoriesFor: #input!accessing!public! !
-!WAButtonFunctionalTest categoriesFor: #input:!accessing!public! !
-!WAButtonFunctionalTest categoriesFor: #renderContentOn:!public!rendering! !
-!WAButtonFunctionalTest categoriesFor: #renderInputOn:!public!rendering! !
-!WAButtonFunctionalTest categoriesFor: #renderPushOn:!public!rendering! !
-!WAButtonFunctionalTest categoriesFor: #renderResetOn:!public!rendering! !
-!WAButtonFunctionalTest categoriesFor: #renderSubmitOn:!public!rendering! !
+
+!WAButtonFunctionalTest categoriesForMethods!
+initialize!initialization!public! !
+input!accessing!public! !
+input:!accessing!public! !
+renderContentOn:!public!rendering! !
+renderInputOn:!public!rendering! !
+renderPushOn:!public!rendering! !
+renderResetOn:!public!rendering! !
+renderSubmitOn:!public!rendering! !
+!
 

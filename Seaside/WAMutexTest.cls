@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 TestCase subclass: #WAMutexTest
 	instanceVariableNames: 'mutex process process2'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAMutexTest guid: (GUID fromString: '{b7788aea-a492-4cff-b4ab-24b53981fb04}')!
+
+WAMutexTest guid: (GUID fromString: '{6a3088f9-d8d2-4b3f-874c-2ce2ba57899c}')!
+
 WAMutexTest comment: ''!
-!WAMutexTest categoriesForClass!Seaside-Tests-Core-Utilities! !
+
+!WAMutexTest categoriesForClass!Utilities! !
+
 !WAMutexTest methodsFor!
 
 setUp	super setUp.	mutex := WAMutex new!
@@ -20,17 +24,20 @@ testExclusion	| value semaphore1 semaphore2 semaphore3 semaphore4 |	value := n
 
 testMultipleEntry	| value |	value := mutex critical: [ mutex critical: [ 1 ] ].		self assert: value = 1.	self assert: mutex owner isNil!
 
-testSelfTerminate	| value semaphore |	value := nil.	semaphore := GRPlatform current semaphoreClass new.	process := 	[ value := mutex critical: 		[ semaphore signal.		mutex terminateOwner.		1 ] ] newProcess.	process resume.	semaphore wait.	self assert: mutex owner isNil.	self assert: value isNil.	self assert: (GRPlatform current isProcessTerminated: process)!
+testSelfTerminate	| value |	value := nil.	process := 	[ value := mutex critical: 		[ mutex terminateOwner.        1 ] ] newProcess.	process 		priority: Processor activeProcess priority + 1;		resume.	Processor yield.  "<--- required for GemStone prior to 3.7"	self assert: mutex owner isNil.	self assert: value isNil.	self assert: (GRPlatform current isProcessTerminated: process)!
 
 testSimple	| value |	value := mutex critical: [ 1 ].		self assert: value = 1.	self assert: mutex owner isNil!
 
 testTerminate	| value semaphore1 semaphore2 semaphore3 |	value := nil.	semaphore1 := GRPlatform current semaphoreClass new.	semaphore2 := GRPlatform current semaphoreClass new.	semaphore3 := GRPlatform current semaphoreClass new.	process := 	[ value := [ mutex critical: 		[ semaphore1 signal.		semaphore2 wait.		1 ] ] ensure: [ semaphore3 signal ] ] newProcess.	process resume.	semaphore1 wait.	self assert: mutex owner == process.	mutex terminateOwner.	semaphore3 wait.	self assert: mutex owner isNil.	self assert: value isNil.	self assert: (GRPlatform current isProcessTerminated: process)! !
-!WAMutexTest categoriesFor: #setUp!public!running! !
-!WAMutexTest categoriesFor: #tearDown!public!running! !
-!WAMutexTest categoriesFor: #testCopy!public!tests! !
-!WAMutexTest categoriesFor: #testExclusion!public!tests! !
-!WAMutexTest categoriesFor: #testMultipleEntry!public!tests! !
-!WAMutexTest categoriesFor: #testSelfTerminate!public!tests! !
-!WAMutexTest categoriesFor: #testSimple!public!tests! !
-!WAMutexTest categoriesFor: #testTerminate!public!tests! !
+
+!WAMutexTest categoriesForMethods!
+setUp!public!running! !
+tearDown!public!running! !
+testCopy!public!tests! !
+testExclusion!public!tests! !
+testMultipleEntry!public!tests! !
+testSelfTerminate!public!tests! !
+testSimple!public!tests! !
+testTerminate!public!tests! !
+!
 

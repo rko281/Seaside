@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAToolPlugin subclass: #WATerminateToolPlugin
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WATerminateToolPlugin guid: (GUID fromString: '{07324c79-dcfa-4cfb-b38c-b271d63c08b9}')!
+
+WATerminateToolPlugin guid: (GUID fromString: '{b9525d43-daf7-4c6a-80e8-db5b2aa741ad}')!
+
 WATerminateToolPlugin comment: 'I try to terminate the process handling this session. This can work of you''re at 100% CPU.'!
-!WATerminateToolPlugin categoriesForClass!Seaside-Development-Plugins! !
+
+!WATerminateToolPlugin categoriesForClass!Plugins! !
+
 !WATerminateToolPlugin methodsFor!
 
 isActive	^ self application preferenceAt: #sessionAllowTermination!
@@ -17,8 +21,11 @@ label	^ 'Terminate'!
 priority	^ 600!
 
 renderContentOn: html	html anchor		class: self cssClass;		url: (html actionUrl			withField: 'terminate');		with: self label! !
-!WATerminateToolPlugin categoriesFor: #isActive!public!testing! !
-!WATerminateToolPlugin categoriesFor: #label!accessing!public! !
-!WATerminateToolPlugin categoriesFor: #priority!accessing!public! !
-!WATerminateToolPlugin categoriesFor: #renderContentOn:!public!rendering! !
+
+!WATerminateToolPlugin categoriesForMethods!
+isActive!public!testing! !
+label!accessing!public! !
+priority!accessing!public! !
+renderContentOn:!public!rendering! !
+!
 

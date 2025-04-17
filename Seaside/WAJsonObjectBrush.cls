@@ -1,18 +1,25 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAJsonBrush subclass: #WAJsonObjectBrush
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAJsonObjectBrush guid: (GUID fromString: '{fb36eb2a-0fda-43de-bc88-c0403a70f213}')!
-WAJsonObjectBrush comment: ''!
-!WAJsonObjectBrush categoriesForClass!Seaside-JSON-Core! !
+
+WAJsonObjectBrush guid: (GUID fromString: '{8992538d-5fe7-4834-8234-64bd27d77573}')!
+
+WAJsonObjectBrush comment: 'A brush to generate a JSON object'!
+
+!WAJsonObjectBrush categoriesForClass!Brushes! !
+
 !WAJsonObjectBrush methodsFor!
 
 closeBrush	self document closeObject!
 
 openBrush	canvas writeIfNotFirst: ', '.	self document openObject! !
-!WAJsonObjectBrush categoriesFor: #closeBrush!private! !
-!WAJsonObjectBrush categoriesFor: #openBrush!private! !
+
+!WAJsonObjectBrush categoriesForMethods!
+closeBrush!private! !
+openBrush!private! !
+!
 

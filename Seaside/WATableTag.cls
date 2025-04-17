@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WATagBrush subclass: #WATableTag
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WATableTag guid: (GUID fromString: '{4b6da81f-d213-42de-ae26-292fd7a06bb1}')!
+
+WATableTag guid: (GUID fromString: '{834116de-711a-4101-9f89-8812ec42606a}')!
+
 WATableTag comment: 'The <table> tag defines a table. Inside a <table> tag you can put table headers, table rows, table cells, and other tables.'!
-!WATableTag categoriesForClass!Seaside-Canvas-Tags! !
+
+!WATableTag categoriesForClass!Tags! !
+
 !WATableTag methodsFor!
 
 cellpadding: anInteger	self attributes at: 'cellpadding' put: anInteger!
@@ -21,10 +25,13 @@ rules: aString	"rules = none|groups|rows|cols|all [CI]    This attribute speci
 summary: aString	self attributes at: 'summary' put: aString!
 
 tag	^ 'table'! !
-!WATableTag categoriesFor: #cellpadding:!attributes!public! !
-!WATableTag categoriesFor: #cellspacing:!attributes!public! !
-!WATableTag categoriesFor: #frame:!attributes!public! !
-!WATableTag categoriesFor: #rules:!attributes!public! !
-!WATableTag categoriesFor: #summary:!attributes!public! !
-!WATableTag categoriesFor: #tag!accessing!public! !
+
+!WATableTag categoriesForMethods!
+cellpadding:!attributes!public! !
+cellspacing:!attributes!public! !
+frame:!attributes!public! !
+rules:!attributes!public! !
+summary:!attributes!public! !
+tag!accessing!public! !
+!
 

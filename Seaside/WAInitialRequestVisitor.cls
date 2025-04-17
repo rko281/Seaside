@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAPainterVisitor subclass: #WAInitialRequestVisitor
 	instanceVariableNames: 'request'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAInitialRequestVisitor guid: (GUID fromString: '{9b077440-4398-4f1c-a3a9-2ddb2615c8bf}')!
+
+WAInitialRequestVisitor guid: (GUID fromString: '{41d0e5f5-58bc-4b3a-95f4-546e13d6f88d}')!
+
 WAInitialRequestVisitor comment: ''!
-!WAInitialRequestVisitor categoriesForClass!Seaside-Component-Visitors! !
+
+!WAInitialRequestVisitor categoriesForClass!Visitors! !
+
 !WAInitialRequestVisitor methodsFor!
 
 initializeWithRequest: aRequest	self initialize.	request := aRequest!
@@ -15,15 +19,21 @@ initializeWithRequest: aRequest	self initialize.	request := aRequest!
 request	^ request!
 
 visitPresenter: aPresenter	aPresenter initialRequest: self request! !
-!WAInitialRequestVisitor categoriesFor: #initializeWithRequest:!initialization!public! !
-!WAInitialRequestVisitor categoriesFor: #request!accessing!public! !
-!WAInitialRequestVisitor categoriesFor: #visitPresenter:!public!visiting! !
+
+!WAInitialRequestVisitor categoriesForMethods!
+initializeWithRequest:!initialization!public! !
+request!accessing!public! !
+visitPresenter:!public!visiting! !
+!
 
 !WAInitialRequestVisitor class methodsFor!
 
 new	^ self request: nil!
 
 request: aRequest	^ self basicNew initializeWithRequest: aRequest; yourself! !
-!WAInitialRequestVisitor class categoriesFor: #new!instance creation!public! !
-!WAInitialRequestVisitor class categoriesFor: #request:!instance creation!public! !
+
+!WAInitialRequestVisitor class categoriesForMethods!
+new!instance creation!public! !
+request:!instance creation!public! !
+!
 

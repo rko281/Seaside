@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 TestCase subclass: #WAConfigurationTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAConfigurationTest guid: (GUID fromString: '{c7ee439e-3c49-4042-9abd-962b4317bfb5}')!
+
+WAConfigurationTest guid: (GUID fromString: '{88095bdd-7674-4cf5-83f0-3275e1f6e363}')!
+
 WAConfigurationTest comment: ''!
-!WAConfigurationTest categoriesForClass!Seaside-Tests-Core-Configuration! !
+
+!WAConfigurationTest categoriesForClass!Configuration! !
+
 !WAConfigurationTest methodsFor!
 
 basicSystemConfiguration	^ WAConfigurationMock new		description: [ :config | (config string: #a) default: #default ];		yourself!
@@ -35,17 +39,20 @@ testValueWithoutAttribute2	"A user configuration should not be able to provide 
 testValueWithoutAttributeWithIfAbsentBlock	"A user configuration should not be able to provide a value if it does not inherit the attribute."	| root top mirror user1 user2 absent |	root := self basicSystemConfiguration.	user1 := WAUserConfiguration new		addParent: root;		yourself.	user1 		at: #a		put: 1.	user2 := WAUserConfiguration new		addParent: root;		yourself.	user2 		at: #a		put: 2.	user2 removeParent: root.	top := WAUserConfiguration new		addParent: user1;		addParent: user2;		yourself.	mirror := WAUserConfiguration new		addParent: user2;		addParent: user1;		yourself.	self assert: (root at: #a) = #default.	self assert: (user1 at: #a) = 1.	absent := false.	user2 at: #a ifAbsent: [ absent := true ].	self assert: absent.	self assert: (top at: #a) = 1.	self assert: (mirror at: #a) = 1!
 
 testValueWithoutDefault	"Make sure that a configuration can specify a local value even if the attribute doesn't have a default value." 		| root1 root2 user |	root1 := WAConfigurationMock new		description: [ :config | config string: #a ];		yourself.	root2 := WAConfigurationMock new		description: [ :config | config string: #b ];		yourself.		user := WAUserConfiguration new addParent: root1; addParent: root2; yourself.	user at: #a put: 1.	user at: #b put: 2.		self assert: (root1 at: #a) isNil.	self assert: (root2 at: #b) isNil.	self assert: (user at: #a) = 1.	self assert: (user at: #b) = 2! !
-!WAConfigurationTest categoriesFor: #basicSystemConfiguration!accessing!public! !
-!WAConfigurationTest categoriesFor: #testCircular!public!tests! !
-!WAConfigurationTest categoriesFor: #testCollectionInheritance!public!tests! !
-!WAConfigurationTest categoriesFor: #testDefaultNeverOverrides!public!tests! !
-!WAConfigurationTest categoriesFor: #testHasExpressionAt!public!tests! !
-!WAConfigurationTest categoriesFor: #testLastAddedOverrides!public!tests! !
-!WAConfigurationTest categoriesFor: #testLastAddedOverrides2!public!tests! !
-!WAConfigurationTest categoriesFor: #testOverrides!public!tests! !
-!WAConfigurationTest categoriesFor: #testSearchContextsCaching!public!tests! !
-!WAConfigurationTest categoriesFor: #testValueWithoutAttribute!public!tests! !
-!WAConfigurationTest categoriesFor: #testValueWithoutAttribute2!public!tests! !
-!WAConfigurationTest categoriesFor: #testValueWithoutAttributeWithIfAbsentBlock!public!tests! !
-!WAConfigurationTest categoriesFor: #testValueWithoutDefault!public!tests! !
+
+!WAConfigurationTest categoriesForMethods!
+basicSystemConfiguration!accessing!public! !
+testCircular!public!tests! !
+testCollectionInheritance!public!tests! !
+testDefaultNeverOverrides!public!tests! !
+testHasExpressionAt!public!tests! !
+testLastAddedOverrides!public!tests! !
+testLastAddedOverrides2!public!tests! !
+testOverrides!public!tests! !
+testSearchContextsCaching!public!tests! !
+testValueWithoutAttribute!public!tests! !
+testValueWithoutAttribute2!public!tests! !
+testValueWithoutAttributeWithIfAbsentBlock!public!tests! !
+testValueWithoutDefault!public!tests! !
+!
 

@@ -3,10 +3,8 @@ package := Package name: 'JQuery-Core'.
 package paxVersion: 1;
 	basicComment: ''.
 
-
 package classNames
 	add: #JQAjax;
-	add: #JQAjaxifierLibrary;
 	add: #JQAjaxSetup;
 	add: #JQAnimate;
 	add: #JQDeploymentLibrary;
@@ -30,7 +28,6 @@ package methodNames
 	add: #JSScript -> #jQuery:;
 	add: #WARenderer -> #jQuery;
 	add: #WARenderer -> #jQuery:;
-	add: 'GRPackage class' -> #jQueryCore;
 	yourself.
 
 package binaryGlobalNames: (Set new
@@ -43,7 +40,9 @@ package setPrerequisites: #(
 	'..\..\Core\Object Arts\Dolphin\Base\Dolphin'
 	'..\..\Grease\Grease-Core'
 	'..\Javascript\Javascript-Core'
-	'..\Seaside\Seaside-Core').
+	'..\..\Portishead\Portishead-Pragmas'
+	'..\Seaside\Seaside-Core'
+	'..\Seaside\Seaside-JSON-Core').
 
 package!
 
@@ -54,117 +53,126 @@ JSObject subclass: #JQEvent
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JSObject subclass: #JQPlugin
 	instanceVariableNames: 'owner options'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JSObject subclass: #JQuery
 	instanceVariableNames: ''
 	classVariableNames: 'FunctionName'
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JQPlugin subclass: #JQAjaxSetup
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JQPlugin subclass: #JQAnimate
 	instanceVariableNames: 'parameters'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JQAjaxSetup subclass: #JQAjax
 	instanceVariableNames: 'callback callbackId'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JQAjax subclass: #JQGet
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JQAjax subclass: #JQGetJson
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JQAjax subclass: #JQGetScript
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JQAjax subclass: #JQLoad
 	instanceVariableNames: 'selector'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JQAjax subclass: #JQPost
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JQuery subclass: #JQueryClass
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JQuery subclass: #JQueryInstance
 	instanceVariableNames: 'arguments'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAFileLibrary subclass: #JQAjaxifierLibrary
-	instanceVariableNames: ''
-	classVariableNames: ''
-	poolDictionaries: ''
-	classInstanceVariableNames: ''!
+
 WAFileLibrary subclass: #JQDeploymentLibrary
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAFileLibrary subclass: #JQDevelopmentLibrary
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAFileLibrary subclass: #JQGoogleLibrary
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAScriptGenerator subclass: #JQScriptGenerator
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-"Global Aliases"!
-
-
 "Loose Methods"!
-
-!GRPackage class methodsFor!
-
-jQueryCore	^ self new		name: 'JQuery-Core';		description: 'jQuery integration for Seaside. Designed to change the way you write Javascript.';		addDependency: 'Javascript-Core';		url: #seasideUrl;		yourself! !
-!GRPackage class categoriesFor: #jQueryCore!*jquery/core!public! !
 
 !JSScript methodsFor!
 
 jQuery	^ (JQueryClass context: self renderContext)		rendererClass: self rendererClass;		yourself!
 
 jQuery: anObject	^ self jQuery with: anObject! !
-!JSScript categoriesFor: #jQuery!*jquery/core!public! !
-!JSScript categoriesFor: #jQuery:!*jquery/core!public! !
+
+!JSScript categoriesForMethods!
+jQuery!*jquery/core!public! !
+jQuery:!*jquery/core!public! !
+!
 
 !WARenderer methodsFor!
 
 jQuery	^ (JQueryClass context: self context)		rendererClass: self species;		yourself!
 
 jQuery: anObject	^ self jQuery with: anObject! !
-!WARenderer categoriesFor: #jQuery!*jquery/core!public! !
-!WARenderer categoriesFor: #jQuery:!*jquery/core!public! !
+
+!WARenderer categoriesForMethods!
+jQuery!*jquery/core!public! !
+jQuery:!*jquery/core!public! !
+!
 
 "End of package definition"!
 

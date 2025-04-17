@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WARenderer subclass: #WACanvas
 	instanceVariableNames: 'currentBrush parentBrush'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WACanvas guid: (GUID fromString: '{86490d64-8696-4071-b8cb-90abffb23110}')!
+
+WACanvas guid: (GUID fromString: '{74498936-eccb-44d6-84d2-4216f5e783a3}')!
+
 WACanvas comment: 'This is the superclass of all canvas. It''s a rendering interface that generates brushes (see WABrush).Subclass WAXmlCanvas, if you want to generate an XML dialect.'!
-!WACanvas categoriesForClass!Seaside-Canvas-Canvas! !
+
+!WACanvas categoriesForClass!Canvas! !
+
 !WACanvas methodsFor!
 
 brush: aBrush	self flush.	currentBrush := aBrush.	aBrush setParent: parentBrush canvas: self.	^ aBrush!
@@ -21,10 +25,21 @@ nest: aBlock	parentBrush := currentBrush.	currentBrush := nil.	self render: a
 render: anObject	self flush.	super render: anObject!
 
 text: anObject	self flush.	super text: anObject! !
-!WACanvas categoriesFor: #brush:!public! !
-!WACanvas categoriesFor: #flush!private! !
-!WACanvas categoriesFor: #insert:!private! !
-!WACanvas categoriesFor: #nest:!private! !
-!WACanvas categoriesFor: #render:!public! !
-!WACanvas categoriesFor: #text:!public! !
+
+!WACanvas categoriesForMethods!
+brush:!public! !
+flush!private! !
+insert:!private! !
+nest:!private! !
+render:!public! !
+text:!public! !
+!
+
+!WACanvas class methodsFor!
+
+isAbstract 	^ self == WACanvas! !
+
+!WACanvas class categoriesForMethods!
+isAbstract!public!testing! !
+!
 

@@ -1,18 +1,25 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WACollectionAttributeEditor subclass: #WAClassBindingCollectionAttributeEditor
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAClassBindingCollectionAttributeEditor guid: (GUID fromString: '{89ecad9e-8201-49af-9f3c-0daf304a636f}')!
+
+WAClassBindingCollectionAttributeEditor guid: (GUID fromString: '{16b2c50e-c162-43af-80fd-ed1c85514105}')!
+
 WAClassBindingCollectionAttributeEditor comment: ''!
-!WAClassBindingCollectionAttributeEditor categoriesForClass!Seaside-Tools-Web! !
+
+!WAClassBindingCollectionAttributeEditor categoriesForClass!Unclassified! !
+
 !WAClassBindingCollectionAttributeEditor methodsFor!
 
 optionForValue: anObject	^ anObject value!
 
 valueForOption: anObject	^ GRPlatform current bindingOf: anObject! !
-!WAClassBindingCollectionAttributeEditor categoriesFor: #optionForValue:!private! !
-!WAClassBindingCollectionAttributeEditor categoriesFor: #valueForOption:!private! !
+
+!WAClassBindingCollectionAttributeEditor categoriesForMethods!
+optionForValue:!private! !
+valueForOption:!private! !
+!
 

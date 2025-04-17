@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAFunctionalTest subclass: #WAUploadFunctionalTest
 	instanceVariableNames: 'file'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAUploadFunctionalTest guid: (GUID fromString: '{a37e2dec-e220-43cb-9ad4-02b71aa2677a}')!
+
+WAUploadFunctionalTest guid: (GUID fromString: '{5bc7f890-91b0-4772-8e59-bef633fcf447}')!
+
 WAUploadFunctionalTest comment: ''!
-!WAUploadFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
+
+!WAUploadFunctionalTest categoriesForClass!Unclassified! !
+
 !WAUploadFunctionalTest methodsFor!
 
 renderContentOn: html	html heading: 'Upload File'.	self renderExplanationOn: html.	self renderUploadOn: html.	file isNil ifTrue: [ ^ self ].	self renderDownloadLinksOn: html.	self renderFileContentsOn: html!
@@ -21,10 +25,13 @@ renderFileContentsOn: html 	file size <= 16r10000		ifTrue: [ html preformatted
 renderIsByteArray: aCollection on: html	aCollection isString ifTrue: [		html strong: 'fail: raw contents of WAFile should be a ByteArray not a String' ]!
 
 renderUploadOn: html	html form		multipart;		with: [			html div: [				"div for HTML validation"				html fileUpload callback: [ :f | file := f ].				html submitButton text: 'Load' ] ]! !
-!WAUploadFunctionalTest categoriesFor: #renderContentOn:!public!rendering! !
-!WAUploadFunctionalTest categoriesFor: #renderDownloadLinksOn:!public!rendering! !
-!WAUploadFunctionalTest categoriesFor: #renderExplanationOn:!public!rendering! !
-!WAUploadFunctionalTest categoriesFor: #renderFileContentsOn:!public!rendering! !
-!WAUploadFunctionalTest categoriesFor: #renderIsByteArray:on:!public!rendering! !
-!WAUploadFunctionalTest categoriesFor: #renderUploadOn:!public!rendering! !
+
+!WAUploadFunctionalTest categoriesForMethods!
+renderContentOn:!public!rendering! !
+renderDownloadLinksOn:!public!rendering! !
+renderExplanationOn:!public!rendering! !
+renderFileContentsOn:!public!rendering! !
+renderIsByteArray:on:!public!rendering! !
+renderUploadOn:!public!rendering! !
+!
 

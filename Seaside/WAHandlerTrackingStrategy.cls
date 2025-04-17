@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAObject subclass: #WAHandlerTrackingStrategy
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAHandlerTrackingStrategy guid: (GUID fromString: '{3906af3c-6476-4b2d-b779-30bd648c8ad5}')!
+
+WAHandlerTrackingStrategy guid: (GUID fromString: '{fcddbd56-a6d8-4683-9fa3-1db1dd030a70}')!
+
 WAHandlerTrackingStrategy comment: 'I am a strategy of how request handlers should be tracked by a WARegistry or subclass.One important thing to remember a WARegistry can contain all kinds of request handlers. The most common case is a WAApplication that contains both WADocumentHandlers and WASessions. Some tracking methods may not be appropriate for some kinds of handlers (eg. a WADocumentHandler should never be tracked using a cookie). Some requests may have multiple keys (eg. a query field for a WADocumentHandler and a cookie for a WASession). It''s the job of the strategy to take this into consideration.The ''public'' protocol contains the methods that a tracking strategy must implement. The ''private'' protocol contains some utility methods that may be helpful implementing these methods.'!
-!WAHandlerTrackingStrategy categoriesForClass!Seaside-Core-RequestHandling! !
+
+!WAHandlerTrackingStrategy categoriesForClass!RequestHandling! !
+
 !WAHandlerTrackingStrategy methodsFor!
 
 addKey: aString toContext: aRequestContext	"Add the key of the handler to the request context. This is mostly used for adding a cookie to the response."	self subclassResponsibility!
@@ -27,18 +31,24 @@ noHandlerFoundForKey: aString in: anApplication context: aRequestContext	"This 
 pathParameterKeyFromContext: aRequestContext	| url |	url := aRequestContext request url.	1 to: url path size do: [ :index |		| key |		key := url pathParameterAt: index key: self keyField ifAbsent: [ nil ].		key isNil ifFalse: [			^ key ] ].	^ nil!
 
 queryFieldKeyFromContext: aRequestContext	^ aRequestContext request at: self keyField ifAbsent: [ nil ]! !
-!WAHandlerTrackingStrategy categoriesFor: #addKey:toContext:!public! !
-!WAHandlerTrackingStrategy categoriesFor: #addKey:toUrl:!public! !
-!WAHandlerTrackingStrategy categoriesFor: #addPathParameterWithValue:to:!private! !
-!WAHandlerTrackingStrategy categoriesFor: #addQueryFieldWithValue:to:!private! !
-!WAHandlerTrackingStrategy categoriesFor: #keyField!private! !
-!WAHandlerTrackingStrategy categoriesFor: #keyFromContext:!public! !
-!WAHandlerTrackingStrategy categoriesFor: #noHandlerFoundForKey:in:context:!public! !
-!WAHandlerTrackingStrategy categoriesFor: #pathParameterKeyFromContext:!private! !
-!WAHandlerTrackingStrategy categoriesFor: #queryFieldKeyFromContext:!private! !
+
+!WAHandlerTrackingStrategy categoriesForMethods!
+addKey:toContext:!public! !
+addKey:toUrl:!public! !
+addPathParameterWithValue:to:!private! !
+addQueryFieldWithValue:to:!private! !
+keyField!private! !
+keyFromContext:!public! !
+noHandlerFoundForKey:in:context:!public! !
+pathParameterKeyFromContext:!private! !
+queryFieldKeyFromContext:!private! !
+!
 
 !WAHandlerTrackingStrategy class methodsFor!
 
 isAbstract	^ self name = #WAHandlerTrackingStrategy! !
-!WAHandlerTrackingStrategy class categoriesFor: #isAbstract!public!testing! !
+
+!WAHandlerTrackingStrategy class categoriesForMethods!
+isAbstract!public!testing! !
+!
 

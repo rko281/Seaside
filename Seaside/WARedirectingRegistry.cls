@@ -1,15 +1,22 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WARegistry subclass: #WARedirectingRegistry
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WARedirectingRegistry guid: (GUID fromString: '{6385436d-6e6e-475e-859d-b8fa300d97c5}')!
+
+WARedirectingRegistry guid: (GUID fromString: '{fd2655a0-a591-4b61-b43f-3dda96d96ffd}')!
+
 WARedirectingRegistry comment: 'I revert to the old < 3.3.0 behavior which is easier for tests.'!
-!WARedirectingRegistry categoriesForClass!Seaside-Tests-Core-RequestHandling! !
+
+!WARedirectingRegistry categoriesForClass!RequestHandling! !
+
 !WARedirectingRegistry methodsFor!
 
 handleExpired: aRequestContext		aRequestContext responseGenerator		expiredRegistryKey;		respond! !
-!WARedirectingRegistry categoriesFor: #handleExpired:!handling!public! !
+
+!WARedirectingRegistry categoriesForMethods!
+handleExpired:!handling!public! !
+!
 

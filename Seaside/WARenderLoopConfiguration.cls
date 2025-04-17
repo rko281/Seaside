@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WASystemConfiguration subclass: #WARenderLoopConfiguration
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WARenderLoopConfiguration guid: (GUID fromString: '{f78ffac1-e531-4c89-9c59-35aa91cff3f4}')!
+
+WARenderLoopConfiguration guid: (GUID fromString: '{6ff4f047-f561-45c0-9770-d0e4dd23b6a3}')!
+
 WARenderLoopConfiguration comment: 'WARenderLoopConfiguration defines attributes required by the Render Loop classes (see the Seaside-Core-RenderLoop category). Any application using these classes should include this configuration (this is done by default for new applications).See #addAttributes: for details on provided attributes.'!
-!WARenderLoopConfiguration categoriesForClass!Seaside-RenderLoop! !
+
+!WARenderLoopConfiguration categoriesForClass!Base! !
+
 !WARenderLoopConfiguration methodsFor!
 
 actionPhaseContinuationClasses	^ self continuationClasses select: [ :each | each isRenderLoopContinuation and: [ each isActionContinuation ] ]!
@@ -23,11 +27,14 @@ renderPhaseContinuationClasses	^ self continuationClasses select: [ :each | eac
 rootClasses	^ (WAComponent allSubclasses select: [ :each | each canBeRoot ])		asSortedCollection: [ :a :b | a name <= b name ]!
 
 rootDecorationClasses	^ (WADecoration allSubclasses select: [ :each | each canBeRoot ])		asSortedCollection: [ :a :b | a name <= b name ]! !
-!WARenderLoopConfiguration categoriesFor: #actionPhaseContinuationClasses!description!public! !
-!WARenderLoopConfiguration categoriesFor: #continuationClasses!description!public! !
-!WARenderLoopConfiguration categoriesFor: #describeOn:!description!public! !
-!WARenderLoopConfiguration categoriesFor: #parents!ancestry!public! !
-!WARenderLoopConfiguration categoriesFor: #renderPhaseContinuationClasses!description!public! !
-!WARenderLoopConfiguration categoriesFor: #rootClasses!description!public! !
-!WARenderLoopConfiguration categoriesFor: #rootDecorationClasses!description!public! !
+
+!WARenderLoopConfiguration categoriesForMethods!
+actionPhaseContinuationClasses!description!public! !
+continuationClasses!description!public! !
+describeOn:!description!public! !
+parents!ancestry!public! !
+renderPhaseContinuationClasses!description!public! !
+rootClasses!description!public! !
+rootDecorationClasses!description!public! !
+!
 

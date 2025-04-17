@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAAttributeEditor subclass: #WAConfigAttributeEditor
 	instanceVariableNames: 'attributes'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAConfigAttributeEditor guid: (GUID fromString: '{8a8df463-138b-4b0b-8816-130dcb34e492}')!
+
+WAConfigAttributeEditor guid: (GUID fromString: '{6240fcbd-15f7-40f3-a87e-c5a19bdb157a}')!
+
 WAConfigAttributeEditor comment: ''!
-!WAConfigAttributeEditor categoriesForClass!Seaside-Tools-Web! !
+
+!WAConfigAttributeEditor categoriesForClass!Unclassified! !
+
 !WAConfigAttributeEditor methodsFor!
 
 attributes	^ attributes!
@@ -36,28 +40,31 @@ renderAttribute: anAttribute on: html	[ (anAttribute isAdvanced not or: [ self 
 
 renderCollectionFieldForAttribute: anAttribute on: html 	self visitAttribute: anAttribute on: html.	html tableData:  [		html anchor			onClick: 'return submitForm(this)';			title: 'Configure collection attribute';			callback: [ self configureCollectionAttribute: anAttribute ];			with: 'Configure' ]!
 
-renderConfigurationOn: html	html table: [		attributes do: [ :attribute |			self renderAttribute: attribute on: html ] ] !
+renderConfigurationOn: html	html table: [		attributes do: [ :attribute |			self renderAttribute: attribute on: html ] ]!
 
 renderFieldForAttribute: anAttribute on: html 	(self configuration at: anAttribute key) isNil 		ifTrue:  [			self 				visitAttribute: anAttribute				on: html ]		ifFalse: [			(self hasLocalValueForAttribute: anAttribute) 				ifTrue:  [					self 						visitAttribute: anAttribute						on: html ]				ifFalse: [					self 						renderInheritedAttribute: anAttribute						on: html ] ].	self 		renderActionsForAttribute: anAttribute		on: html!
 
 renderInheritedAttribute: anAttribute on: html 	html text: (anAttribute stringForValue: (self configuration at: anAttribute key))!
 
 visitAttribute: anAttribute on: html 	(WAUserConfigurationEditorVisitor 		configuration: self configuration		canvas: html) start: anAttribute! !
-!WAConfigAttributeEditor categoriesFor: #attributes!accessing!public! !
-!WAConfigAttributeEditor categoriesFor: #attributes:!accessing!public! !
-!WAConfigAttributeEditor categoriesFor: #canClear!public!testing! !
-!WAConfigAttributeEditor categoriesFor: #clearAttribute:!actions!public! !
-!WAConfigAttributeEditor categoriesFor: #configureCollectionAttribute:!public!rendering! !
-!WAConfigAttributeEditor categoriesFor: #hasLocalValueForAttribute:!private! !
-!WAConfigAttributeEditor categoriesFor: #inheritedValueAndSourceAt:do:!private! !
-!WAConfigAttributeEditor categoriesFor: #isCollectionAttribute:!private! !
-!WAConfigAttributeEditor categoriesFor: #modifyCollectionAttribute:!actions!public! !
-!WAConfigAttributeEditor categoriesFor: #overrideAttribute:!actions!public! !
-!WAConfigAttributeEditor categoriesFor: #renderActionsForAttribute:on:!public!rendering! !
-!WAConfigAttributeEditor categoriesFor: #renderAttribute:on:!public!rendering! !
-!WAConfigAttributeEditor categoriesFor: #renderCollectionFieldForAttribute:on:!public!rendering! !
-!WAConfigAttributeEditor categoriesFor: #renderConfigurationOn:!public!rendering! !
-!WAConfigAttributeEditor categoriesFor: #renderFieldForAttribute:on:!public!rendering! !
-!WAConfigAttributeEditor categoriesFor: #renderInheritedAttribute:on:!public!rendering! !
-!WAConfigAttributeEditor categoriesFor: #visitAttribute:on:!public!rendering! !
+
+!WAConfigAttributeEditor categoriesForMethods!
+attributes!accessing!public! !
+attributes:!accessing!public! !
+canClear!public!testing! !
+clearAttribute:!actions!public! !
+configureCollectionAttribute:!public!rendering! !
+hasLocalValueForAttribute:!private! !
+inheritedValueAndSourceAt:do:!private! !
+isCollectionAttribute:!private! !
+modifyCollectionAttribute:!actions!public! !
+overrideAttribute:!actions!public! !
+renderActionsForAttribute:on:!public!rendering! !
+renderAttribute:on:!public!rendering! !
+renderCollectionFieldForAttribute:on:!public!rendering! !
+renderConfigurationOn:!public!rendering! !
+renderFieldForAttribute:on:!public!rendering! !
+renderInheritedAttribute:on:!public!rendering! !
+visitAttribute:on:!public!rendering! !
+!
 

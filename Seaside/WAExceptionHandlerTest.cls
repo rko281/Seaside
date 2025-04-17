@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 TestCase subclass: #WAExceptionHandlerTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAExceptionHandlerTest guid: (GUID fromString: '{5925ec93-0c2d-475e-9528-9e68c266bb81}')!
+
+WAExceptionHandlerTest guid: (GUID fromString: '{0095abf4-b704-47f4-885b-7774ff0cefb4}')!
+
 WAExceptionHandlerTest comment: ''!
-!WAExceptionHandlerTest categoriesForClass!Seaside-Tests-Core-RequestHandling! !
+
+!WAExceptionHandlerTest categoriesForClass!RequestHandling! !
+
 !WAExceptionHandlerTest methodsFor!
 
 assertHandles: anObject	self assertHandles: anObject returnsSatisfying: [ :result | result ]!
@@ -32,20 +36,23 @@ testInternalError	| context |	context := self createRequestContext.	[ self ha
 
 testInternalErrorWithMessage	| context |	context := self createRequestContext.	[ self handlerClass			internalError: (WATestError new messageText: 'test'; yourself)			context: context ]		on: WAResponseNotification		do: [ :n |			self assert: (context response isKindOf: WAResponse).			self assert: context response status = 500.			^ self ].			self assert: false!
 
-testUnhandledException	[ self handlerClass		handleExceptionsDuring: [ self unhandledExceptionClass signal ]		context: self requestContext ]			on: self unhandledExceptionClass			do: [ :exception | "success" ^ self ].		self assert: false	!
+testUnhandledException	[ self handlerClass		handleExceptionsDuring: [ self unhandledExceptionClass signal ]		context: self requestContext ]			on: self unhandledExceptionClass			do: [ :exception | "success" ^ self ].		self assert: false!
 
 unhandledExceptionClass	"An exception that is not handled by #handlerClass"	^ Exception! !
-!WAExceptionHandlerTest categoriesFor: #assertHandles:!public!testing! !
-!WAExceptionHandlerTest categoriesFor: #assertHandles:returnsSatisfying:!public!testing! !
-!WAExceptionHandlerTest categoriesFor: #createHandler!accessing!public! !
-!WAExceptionHandlerTest categoriesFor: #createRequestContext!accessing!public! !
-!WAExceptionHandlerTest categoriesFor: #handlerClass!accessing!public! !
-!WAExceptionHandlerTest categoriesFor: #testCommaReturnsExceptionSet!public!testing! !
-!WAExceptionHandlerTest categoriesFor: #testHandlerClassValidExceptionSelector!public!testing! !
-!WAExceptionHandlerTest categoriesFor: #testHandlerInstanceValidExceptionSelector!public!testing! !
-!WAExceptionHandlerTest categoriesFor: #testHandlesReturnsBool!public!testing! !
-!WAExceptionHandlerTest categoriesFor: #testInternalError!public!testing! !
-!WAExceptionHandlerTest categoriesFor: #testInternalErrorWithMessage!public!testing! !
-!WAExceptionHandlerTest categoriesFor: #testUnhandledException!public!testing! !
-!WAExceptionHandlerTest categoriesFor: #unhandledExceptionClass!accessing!public! !
+
+!WAExceptionHandlerTest categoriesForMethods!
+assertHandles:!public!testing! !
+assertHandles:returnsSatisfying:!public!testing! !
+createHandler!accessing!public! !
+createRequestContext!accessing!public! !
+handlerClass!accessing!public! !
+testCommaReturnsExceptionSet!public!testing! !
+testHandlerClassValidExceptionSelector!public!testing! !
+testHandlerInstanceValidExceptionSelector!public!testing! !
+testHandlesReturnsBool!public!testing! !
+testInternalError!public!testing! !
+testInternalErrorWithMessage!public!testing! !
+testUnhandledException!public!testing! !
+unhandledExceptionClass!accessing!public! !
+!
 

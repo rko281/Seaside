@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAUserConfiguration subclass: #WASharedConfiguration
 	instanceVariableNames: 'name'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: 'instances'!
-WASharedConfiguration guid: (GUID fromString: '{b3f55147-3b0d-46a4-b402-9d7048881470}')!
+
+WASharedConfiguration guid: (GUID fromString: '{1ac12482-6519-4a54-8428-d5a22ed0e93a}')!
+
 WASharedConfiguration comment: ''!
-!WASharedConfiguration categoriesForClass!Seaside-Core-Configuration! !
+
+!WASharedConfiguration categoriesForClass!Configuration! !
+
 !WASharedConfiguration methodsFor!
 
 initializeWithName: aString	self initialize.	name := aString!
@@ -17,10 +21,13 @@ isShared	^ true!
 name	^ name!
 
 unregister	self class unregister: self! !
-!WASharedConfiguration categoriesFor: #initializeWithName:!initialization!public! !
-!WASharedConfiguration categoriesFor: #isShared!public!testing! !
-!WASharedConfiguration categoriesFor: #name!accessing!public! !
-!WASharedConfiguration categoriesFor: #unregister!actions!public! !
+
+!WASharedConfiguration categoriesForMethods!
+initializeWithName:!initialization!public! !
+isShared!public!testing! !
+name!accessing!public! !
+unregister!actions!public! !
+!
 
 !WASharedConfiguration class methodsFor!
 
@@ -33,9 +40,12 @@ named: aString	"Answer a shared configuration with the given name aString or an
 new	self error: 'Create or retrieve shared configurations by sending the message #named:'!
 
 unregister: aConfiguration	"Removes aConfiguration from the list of known configurations."		^ instances remove: aConfiguration ifAbsent: [ nil ]! !
-!WASharedConfiguration class categoriesFor: #configurations!accessing!public! !
-!WASharedConfiguration class categoriesFor: #initialize!initialization!public! !
-!WASharedConfiguration class categoriesFor: #named:!instance creation!public! !
-!WASharedConfiguration class categoriesFor: #new!instance creation!public! !
-!WASharedConfiguration class categoriesFor: #unregister:!instance creation!public! !
+
+!WASharedConfiguration class categoriesForMethods!
+configurations!accessing!public! !
+initialize!initialization!public! !
+named:!instance creation!public! !
+new!instance creation!public! !
+unregister:!instance creation!public! !
+!
 

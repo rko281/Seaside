@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAObject subclass: #WARadioGroup
 	instanceVariableNames: 'canvas key values selected'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WARadioGroup guid: (GUID fromString: '{86f9427e-f454-4eaf-b78d-d523fb830aed}')!
+
+WARadioGroup guid: (GUID fromString: '{c3515f62-360e-4370-adea-0f7262c7b3ac}')!
+
 WARadioGroup comment: 'A WARadioGroup is a container for several related radio buttons. It must be used to create radio buttons.Example:| group |group := html radioGroup.group radioButton	selected: aBoolean;	callback: [ self someThing ].'!
-!WARadioGroup categoriesForClass!Seaside-Canvas-Base! !
+
+!WARadioGroup categoriesForClass!Base! !
+
 !WARadioGroup methodsFor!
 
 callback: aBlock	values := Dictionary new.	key := canvas callbacks store: (WAValuesCallback on: aBlock values: values)!
@@ -31,20 +35,26 @@ selected: anObject	"Set anObject to be selected."	selected := anObject!
 valuesAt: aKey put: anObject	values at: aKey put: anObject.	^ values size!
 
 with: aBlock	^ aBlock value: self! !
-!WARadioGroup categoriesFor: #callback:!private! !
-!WARadioGroup categoriesFor: #callbackValue:!private! !
-!WARadioGroup categoriesFor: #hasCallback!private! !
-!WARadioGroup categoriesFor: #hasSelection!public!testing! !
-!WARadioGroup categoriesFor: #initializeWithCanvas:!initialization!public! !
-!WARadioGroup categoriesFor: #isSelected:!public!testing! !
-!WARadioGroup categoriesFor: #key!accessing!public! !
-!WARadioGroup categoriesFor: #radioButton!public!public api! !
-!WARadioGroup categoriesFor: #selected:!accessing!public! !
-!WARadioGroup categoriesFor: #valuesAt:put:!private! !
-!WARadioGroup categoriesFor: #with:!public!public api! !
+
+!WARadioGroup categoriesForMethods!
+callback:!private! !
+callbackValue:!private! !
+hasCallback!private! !
+hasSelection!public!testing! !
+initializeWithCanvas:!initialization!public! !
+isSelected:!public!testing! !
+key!accessing!public! !
+radioButton!public!public api! !
+selected:!accessing!public! !
+valuesAt:put:!private! !
+with:!public!public api! !
+!
 
 !WARadioGroup class methodsFor!
 
 canvas: aRenderCanvas	^ self basicNew initializeWithCanvas: aRenderCanvas! !
-!WARadioGroup class categoriesFor: #canvas:!accessing!public! !
+
+!WARadioGroup class categoriesForMethods!
+canvas:!accessing!public! !
+!
 

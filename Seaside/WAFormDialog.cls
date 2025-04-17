@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WACanvasWidget subclass: #WAFormDialog
 	instanceVariableNames: 'validationError form'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAFormDialog guid: (GUID fromString: '{ed80b7eb-6cef-4e1e-ba7f-02816e6142c5}')!
+
+WAFormDialog guid: (GUID fromString: '{1a4dac45-5c8f-486f-897c-4ad5a4cb3e15}')!
+
 WAFormDialog comment: 'WAFormDialog is an empty html form. Used in WAComponent>>inform: to create a dialog component that displays text and an "Ok" button to close the component. See subclasses for sample usage & more functionality.Instance Variables:	form	<WAFormDecoration> Decorator that generates form tags	validationError	<String>	Text descriping invalid data entered by user. Displayed when not nil. Set to nil when user submits form.'!
-!WAFormDialog categoriesForClass!Seaside-Widgets-Components! !
+
+!WAFormDialog categoriesForClass!Components! !
+
 !WAFormDialog methodsFor!
 
 addForm	form := WAFormDecoration new buttons: self buttons.	self addDecoration: form!
@@ -39,19 +43,22 @@ renderSpacerRowOn: html	html div class: 'dialog-spacer'; with: [ html space ]!
 renderValidationError: aString on: html	html span class: 'dialog-validation'; with: aString!
 
 validationError: aString	validationError := aString! !
-!WAFormDialog categoriesFor: #addForm!actions!public! !
-!WAFormDialog categoriesFor: #addFormByDefault!public!testing! !
-!WAFormDialog categoriesFor: #buttons!accessing!public! !
-!WAFormDialog categoriesFor: #defaultButton!accessing!public! !
-!WAFormDialog categoriesFor: #divClass!accessing!public! !
-!WAFormDialog categoriesFor: #initialize!initialization!public! !
-!WAFormDialog categoriesFor: #isValid!public!testing! !
-!WAFormDialog categoriesFor: #model!accessing!public! !
-!WAFormDialog categoriesFor: #ok!actions!public! !
-!WAFormDialog categoriesFor: #removeForm!actions!public! !
-!WAFormDialog categoriesFor: #renderContentOn:!public!rendering! !
-!WAFormDialog categoriesFor: #renderDialogOn:!public!rendering! !
-!WAFormDialog categoriesFor: #renderSpacerRowOn:!public!rendering! !
-!WAFormDialog categoriesFor: #renderValidationError:on:!public!rendering! !
-!WAFormDialog categoriesFor: #validationError:!public!validation! !
+
+!WAFormDialog categoriesForMethods!
+addForm!actions!public! !
+addFormByDefault!public!testing! !
+buttons!accessing!public! !
+defaultButton!accessing!public! !
+divClass!accessing!public! !
+initialize!initialization!public! !
+isValid!public!testing! !
+model!accessing!public! !
+ok!actions!public! !
+removeForm!actions!public! !
+renderContentOn:!public!rendering! !
+renderDialogOn:!public!rendering! !
+renderSpacerRowOn:!public!rendering! !
+renderValidationError:on:!public!rendering! !
+validationError:!public!validation! !
+!
 

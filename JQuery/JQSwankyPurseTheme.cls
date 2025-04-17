@@ -1,15 +1,22 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQBaseTheme subclass: #JQSwankyPurseTheme
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQSwankyPurseTheme guid: (GUID fromString: '{c3361421-0893-4878-9d42-4bac99c85cae}')!
+
+JQSwankyPurseTheme guid: (GUID fromString: '{110ec827-cf17-4ce5-b5c8-200610810083}')!
+
 JQSwankyPurseTheme comment: ''!
-!JQSwankyPurseTheme categoriesForClass!JQuery-UI-Libraries! !
+
+!JQSwankyPurseTheme categoriesForClass!Libraries! !
+
 !JQSwankyPurseTheme methodsFor!
 
 themeName	^ 'swanky-purse'! !
-!JQSwankyPurseTheme categoriesFor: #themeName!accessing!public! !
+
+!JQSwankyPurseTheme categoriesForMethods!
+themeName!accessing!public! !
+!
 

@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAObject subclass: #WACacheKeyEntry
 	instanceVariableNames: 'key keyHash value next byAccessListEntry byCreationListEntry'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WACacheKeyEntry guid: (GUID fromString: '{5612de66-d845-4e45-8b85-83e0882f430a}')!
+
+WACacheKeyEntry guid: (GUID fromString: '{b5acaaba-1265-42c4-b248-8186052753e8}')!
+
 WACacheKeyEntry comment: 'I am an entry in the table of WAHashCache.Besides keys and values I keep track of linked list entries so they can be removed without scanning the list. Internal Representation and Key Implementation Points.    Instance Variables	byAccessListEntry:		<WACacheListEntry>	byCreationListEntry:		<WACacheListEntry>	key:		<Object>	keyHash:		<Integer>	next:		<WACacheKeyEntry>	value:		<Object>'!
-!WACacheKeyEntry categoriesForClass!Seaside-Core-Cache! !
+
+!WACacheKeyEntry categoriesForClass!Cache! !
+
 !WACacheKeyEntry methodsFor!
 
 byAccessListEntry	^ byAccessListEntry!
@@ -33,21 +37,27 @@ printOn: aStream	super printOn: aStream.	aStream nextPut: $(.	key printOn: aS
 value	^ value!
 
 value: anObject	value := anObject! !
-!WACacheKeyEntry categoriesFor: #byAccessListEntry!accessing!public! !
-!WACacheKeyEntry categoriesFor: #byAccessListEntry:!accessing!public! !
-!WACacheKeyEntry categoriesFor: #byCreationListEntry!accessing!public! !
-!WACacheKeyEntry categoriesFor: #byCreationListEntry:!accessing!public! !
-!WACacheKeyEntry categoriesFor: #initializeWithKey:value:!initialization!public! !
-!WACacheKeyEntry categoriesFor: #key!accessing!public! !
-!WACacheKeyEntry categoriesFor: #keyHash!accessing!public! !
-!WACacheKeyEntry categoriesFor: #next!accessing!public! !
-!WACacheKeyEntry categoriesFor: #next:!accessing!public! !
-!WACacheKeyEntry categoriesFor: #printOn:!printing!public! !
-!WACacheKeyEntry categoriesFor: #value!accessing!public! !
-!WACacheKeyEntry categoriesFor: #value:!accessing!public! !
+
+!WACacheKeyEntry categoriesForMethods!
+byAccessListEntry!accessing!public! !
+byAccessListEntry:!accessing!public! !
+byCreationListEntry!accessing!public! !
+byCreationListEntry:!accessing!public! !
+initializeWithKey:value:!initialization!public! !
+key!accessing!public! !
+keyHash!accessing!public! !
+next!accessing!public! !
+next:!accessing!public! !
+printOn:!printing!public! !
+value!accessing!public! !
+value:!accessing!public! !
+!
 
 !WACacheKeyEntry class methodsFor!
 
 key: aKey value: anObject	^ self basicNew		initializeWithKey: aKey value: anObject;		yourself! !
-!WACacheKeyEntry class categoriesFor: #key:value:!instance creation!public! !
+
+!WACacheKeyEntry class categoriesForMethods!
+key:value:!instance creation!public! !
+!
 

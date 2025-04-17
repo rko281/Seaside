@@ -1,56 +1,66 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WACache subclass: #WAMutualExclusionCache
 	instanceVariableNames: 'mutex cache'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAMutualExclusionCache guid: (GUID fromString: '{599ea004-bd71-47ad-9c69-9b31c612d7d9}')!
+
+WAMutualExclusionCache guid: (GUID fromString: '{79765655-aaca-4b3a-be46-dd4ddee6d6b4}')!
+
 WAMutualExclusionCache comment: 'WAMutualExclusionCacheNG is a wrapper around a WACacheNG that wraps all messages in a mutex.Instance Variables:	mutex	<WAMutex>	cache	<WACache>'!
-!WAMutualExclusionCache categoriesForClass!Seaside-Core-Cache! !
+
+!WAMutualExclusionCache categoriesForClass!Cache! !
+
 !WAMutualExclusionCache methodsFor!
 
-at: aKey ifAbsent: aBlock	^ mutex critical: [		cache at: aKey ifAbsent: aBlock ]	!
+at: aKey ifAbsent: aBlock	^ mutex critical: [		cache at: aKey ifAbsent: aBlock ]!
 
-at: aKey put: anObject	^ mutex critical: [		cache at: aKey put: anObject ]	!
+at: aKey put: anObject	^ mutex critical: [		cache at: aKey put: anObject ]!
 
-clear	^ mutex critical: [		cache clear ]	!
+clear	^ mutex critical: [		cache clear ]!
 
 initializeOn: aCache	self initialize.	mutex := WAMutex new.	cache := aCache!
 
-keyAtValue: anObject ifAbsent: aBlock	^ mutex critical: [		cache keyAtValue: anObject ifAbsent: aBlock ]	!
+keyAtValue: anObject ifAbsent: aBlock	^ mutex critical: [		cache keyAtValue: anObject ifAbsent: aBlock ]!
 
-keysAndValuesDo: aTwoArgumentBlock	^ mutex critical: [		cache keysAndValuesDo: aTwoArgumentBlock ]	!
+keysAndValuesDo: aTwoArgumentBlock	^ mutex critical: [		cache keysAndValuesDo: aTwoArgumentBlock ]!
 
-keySize	^ mutex critical: [		cache keySize ]	!
+keySize	^ mutex critical: [		cache keySize ]!
 
 postCopy	super postCopy.	mutex := WAMutex new.	cache := cache copy!
 
-remove: anObject	^ mutex critical: [		cache remove: anObject ]	!
+remove: anObject	^ mutex critical: [		cache remove: anObject ]!
 
-removeKey: aKey	^ mutex critical: [		cache removeKey: aKey ]	!
+removeKey: aKey	^ mutex critical: [		cache removeKey: aKey ]!
 
-size	^ mutex critical: [		cache size ]	!
+size	^ mutex critical: [		cache size ]!
 
-store: anObject	^ mutex critical: [		cache store: anObject ]	!
+store: anObject	^ mutex critical: [		cache store: anObject ]!
 
 underlyingCache	^ cache! !
-!WAMutualExclusionCache categoriesFor: #at:ifAbsent:!accessing!public! !
-!WAMutualExclusionCache categoriesFor: #at:put:!public!putting! !
-!WAMutualExclusionCache categoriesFor: #clear!public! !
-!WAMutualExclusionCache categoriesFor: #initializeOn:!initialization!public! !
-!WAMutualExclusionCache categoriesFor: #keyAtValue:ifAbsent:!accessing!public! !
-!WAMutualExclusionCache categoriesFor: #keysAndValuesDo:!enumerating!public! !
-!WAMutualExclusionCache categoriesFor: #keySize!accessing!public! !
-!WAMutualExclusionCache categoriesFor: #postCopy!copying!public! !
-!WAMutualExclusionCache categoriesFor: #remove:!public!removing! !
-!WAMutualExclusionCache categoriesFor: #removeKey:!public!removing! !
-!WAMutualExclusionCache categoriesFor: #size!accessing!public! !
-!WAMutualExclusionCache categoriesFor: #store:!public!putting! !
-!WAMutualExclusionCache categoriesFor: #underlyingCache!accessing!public! !
+
+!WAMutualExclusionCache categoriesForMethods!
+at:ifAbsent:!accessing!public! !
+at:put:!public!putting! !
+clear!public! !
+initializeOn:!initialization!public! !
+keyAtValue:ifAbsent:!accessing!public! !
+keysAndValuesDo:!enumerating!public! !
+keySize!accessing!public! !
+postCopy!copying!public! !
+remove:!public!removing! !
+removeKey:!public!removing! !
+size!accessing!public! !
+store:!public!putting! !
+underlyingCache!accessing!public! !
+!
 
 !WAMutualExclusionCache class methodsFor!
 
 on: aCache	^ self basicNew initializeOn: aCache; yourself! !
-!WAMutualExclusionCache class categoriesFor: #on:!instance creation!public! !
+
+!WAMutualExclusionCache class categoriesForMethods!
+on:!instance creation!public! !
+!
 

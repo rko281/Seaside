@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAObject subclass: #WABuilder
 	instanceVariableNames: 'fullDocument rootBlock rootClass documentClass scriptGeneratorClass rendererClass codec actionUrl resourceUrl'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WABuilder guid: (GUID fromString: '{bf6fd7b3-387e-4c58-90a0-59166c28da14}')!
+
+WABuilder guid: (GUID fromString: '{0af61882-d49b-4169-84ba-5ebc175084c8}')!
+
 WABuilder comment: 'This is a convenience class which provides a result of a rendering operation as a string. It is expected to be used like this:WAHtmlCanvas builder render: [ :html |	html anchor		url: ''htttp://www.seaside.st'';		with: ''Seaside Homepage'' ]See WABuilderCanvasTest for more examples.'!
-!WABuilder categoriesForClass!Seaside-Core-Rendering! !
+
+!WABuilder categoriesForClass!Rendering! !
+
 !WABuilder methodsFor!
 
 actionUrl	^ actionUrl ifNil: [ actionUrl := WAUrl new ]!
@@ -34,7 +38,7 @@ openDocument: aDocument context: aContext 	| documentRoot |	self fullDocument 
 
 render: anObject	^ String streamContents: [ :stream |		self			render: anObject			on: stream ]!
 
-render: anObject on: aStream	"Render anObject and return the contents of the resulting Document as a String.	anObject must understand #renderOn:. Commonly anObject will be a one-argument	block, which will be evaluated with the appropriate renderer."	| context document renderer |	document := self documentClass on: aStream codec: self codec.	document scriptGenerator: self scriptGeneratorClass new.	context := WARenderContext new.	context document: document.	context actionUrl: self actionUrl; resourceUrl: self resourceUrl.	renderer := self rendererClass context: context.		self openDocument: document context: context.	renderer render: anObject; flush.	self closeDocument: document!
+render: anObject on: aStream	"Render anObject and return the contents of the resulting Document as a String.	anObject must understand #renderOn:. Commonly anObject will be a one-argument	block, which will be evaluated with the appropriate renderer."	| context document renderer |	document := self documentClass on: aStream codec: self codec.	document scriptGenerator: self scriptGeneratorClass new.	context := WARenderContext new.	self rendererClass configureRenderContext: context.	context document: document.	context actionUrl: self actionUrl; resourceUrl: self resourceUrl.	renderer := self rendererClass context: context.		self openDocument: document context: context.	renderer render: anObject; flush.	self closeDocument: document!
 
 rendererClass	^ rendererClass!
 
@@ -55,32 +59,38 @@ rootClass: aRootClass	rootClass := aRootClass!
 scriptGeneratorClass	^ scriptGeneratorClass ifNil: [ scriptGeneratorClass := WADefaultScriptGenerator  ]!
 
 scriptGeneratorClass: aScriptGeneratorClass	scriptGeneratorClass := aScriptGeneratorClass! !
-!WABuilder categoriesFor: #actionUrl!accessing!public! !
-!WABuilder categoriesFor: #actionUrl:!accessing!public! !
-!WABuilder categoriesFor: #closeDocument:!private! !
-!WABuilder categoriesFor: #codec!accessing!public! !
-!WABuilder categoriesFor: #codec:!accessing!public! !
-!WABuilder categoriesFor: #documentClass!accessing!public! !
-!WABuilder categoriesFor: #documentClass:!accessing!public! !
-!WABuilder categoriesFor: #fullDocument!accessing!public! !
-!WABuilder categoriesFor: #fullDocument:!accessing!public! !
-!WABuilder categoriesFor: #initialize!initialization!public! !
-!WABuilder categoriesFor: #openDocument:context:!private! !
-!WABuilder categoriesFor: #render:!public!rendering! !
-!WABuilder categoriesFor: #render:on:!public!rendering! !
-!WABuilder categoriesFor: #rendererClass!accessing!public! !
-!WABuilder categoriesFor: #rendererClass:!accessing!public! !
-!WABuilder categoriesFor: #resourceUrl!accessing!public! !
-!WABuilder categoriesFor: #resourceUrl:!accessing!public! !
-!WABuilder categoriesFor: #rootBlock!accessing!public! !
-!WABuilder categoriesFor: #rootBlock:!accessing!public! !
-!WABuilder categoriesFor: #rootClass!accessing!public! !
-!WABuilder categoriesFor: #rootClass:!accessing!public! !
-!WABuilder categoriesFor: #scriptGeneratorClass!accessing!public! !
-!WABuilder categoriesFor: #scriptGeneratorClass:!accessing!public! !
+
+!WABuilder categoriesForMethods!
+actionUrl!accessing!public! !
+actionUrl:!accessing!public! !
+closeDocument:!private! !
+codec!accessing!public! !
+codec:!accessing!public! !
+documentClass!accessing!public! !
+documentClass:!accessing!public! !
+fullDocument!accessing!public! !
+fullDocument:!accessing!public! !
+initialize!initialization!public! !
+openDocument:context:!private! !
+render:!public!rendering! !
+render:on:!public!rendering! !
+rendererClass!accessing!public! !
+rendererClass:!accessing!public! !
+resourceUrl!accessing!public! !
+resourceUrl:!accessing!public! !
+rootBlock!accessing!public! !
+rootBlock:!accessing!public! !
+rootClass!accessing!public! !
+rootClass:!accessing!public! !
+scriptGeneratorClass!accessing!public! !
+scriptGeneratorClass:!accessing!public! !
+!
 
 !WABuilder class methodsFor!
 
 on: aRendererClass	^ self new		rendererClass: aRendererClass;		yourself! !
-!WABuilder class categoriesFor: #on:!instance creation!public! !
+
+!WABuilder class categoriesForMethods!
+on:!instance creation!public! !
+!
 

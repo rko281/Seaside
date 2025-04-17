@@ -1,15 +1,30 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAAbstractTextAreaTag subclass: #WASteppedTag
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WASteppedTag guid: (GUID fromString: '{b6b1b161-6761-48f4-bdab-2bf3421ade9a}')!
+
+WASteppedTag guid: (GUID fromString: '{1c2c2a64-25b6-4384-98d1-8af8b4f5f9b3}')!
+
 WASteppedTag comment: 'Common superclass for step related tags'!
-!WASteppedTag categoriesForClass!Seaside-Canvas-Tags! !
+
+!WASteppedTag categoriesForClass!Tags! !
+
 !WASteppedTag methodsFor!
 
 step: anInteger	self attributeAt: 'step' put: anInteger! !
-!WASteppedTag categoriesFor: #step:!attributes!public! !
+
+!WASteppedTag categoriesForMethods!
+step:!attributes!public! !
+!
+
+!WASteppedTag class methodsFor!
+
+isAbstract 	^ self == WASteppedTag! !
+
+!WASteppedTag class categoriesForMethods!
+isAbstract!public!testing! !
+!
 

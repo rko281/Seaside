@@ -1,15 +1,22 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 GROrderedMultiMapTest subclass: #WARequestFieldsTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WARequestFieldsTest guid: (GUID fromString: '{b4a05b32-5b96-4400-89f1-010db2c3e993}')!
+
+WARequestFieldsTest guid: (GUID fromString: '{23e08c77-605d-4e98-af04-5d6c4a0bf6c8}')!
+
 WARequestFieldsTest comment: ''!
-!WARequestFieldsTest categoriesForClass!Seaside-Tests-Core-HTTP! !
+
+!WARequestFieldsTest categoriesForClass!HTTP! !
+
 !WARequestFieldsTest methodsFor!
 
 collectionClass	^ WARequestFields! !
-!WARequestFieldsTest categoriesFor: #collectionClass!configuration!public! !
+
+!WARequestFieldsTest categoriesForMethods!
+collectionClass!configuration!public! !
+!
 

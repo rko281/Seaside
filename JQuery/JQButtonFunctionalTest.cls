@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQUiFunctionalTest subclass: #JQButtonFunctionalTest
 	instanceVariableNames: 'locked number'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQButtonFunctionalTest guid: (GUID fromString: '{9b04e0fa-b042-4814-b2b8-12c5599d946e}')!
+
+JQButtonFunctionalTest guid: (GUID fromString: '{afca53df-f730-441e-a94f-874f62cc463b}')!
+
 JQButtonFunctionalTest comment: ''!
-!JQButtonFunctionalTest categoriesForClass!JQuery-Tests-UI-Functional! !
+
+!JQButtonFunctionalTest categoriesForClass!Functional! !
+
 !JQButtonFunctionalTest methodsFor!
 
 initialize	super initialize.	locked := false.	number := 1!
@@ -22,18 +26,21 @@ renderOptionOn: html	html span		script: (html jQuery this buttonset);		with: 
 
 selectors	^ #(renderContentOn: renderAnchorOn: renderCheckboxOn: renderOptionOn:)!
 
-style	^ '#toolbar { padding: 4px 4px; }.ui-button { margin-right: 4px; }'	!
+style	^ '#toolbar { padding: 4px 4px; }.ui-button { margin-right: 4px; }'!
 
 title	^ 'Button'!
 
 url	^ 'http://docs.jquery.com/UI/Button'! !
-!JQButtonFunctionalTest categoriesFor: #initialize!initialization!public! !
-!JQButtonFunctionalTest categoriesFor: #renderAnchorOn:!public!rendering! !
-!JQButtonFunctionalTest categoriesFor: #renderCheckboxOn:!public!rendering! !
-!JQButtonFunctionalTest categoriesFor: #renderContentOn:!public!rendering! !
-!JQButtonFunctionalTest categoriesFor: #renderOptionOn:!public!rendering! !
-!JQButtonFunctionalTest categoriesFor: #selectors!accessing!public! !
-!JQButtonFunctionalTest categoriesFor: #style!hooks!public! !
-!JQButtonFunctionalTest categoriesFor: #title!accessing!public! !
-!JQButtonFunctionalTest categoriesFor: #url!accessing!public! !
+
+!JQButtonFunctionalTest categoriesForMethods!
+initialize!initialization!public! !
+renderAnchorOn:!public!rendering! !
+renderCheckboxOn:!public!rendering! !
+renderContentOn:!public!rendering! !
+renderOptionOn:!public!rendering! !
+selectors!accessing!public! !
+style!hooks!public! !
+title!accessing!public! !
+url!accessing!public! !
+!
 

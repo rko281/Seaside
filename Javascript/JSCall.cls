@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JSDecoration subclass: #JSCall
 	instanceVariableNames: 'name arguments'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSCall guid: (GUID fromString: '{cebdf770-96ba-4c93-adcc-45d2867175d3}')!
+
+JSCall guid: (GUID fromString: '{4d3c477e-3f23-4cd8-b2a3-c68cfbfe4e2a}')!
+
 JSCall comment: 'I represent a function call or method invocation to the decorated object.'!
-!JSCall categoriesForClass!Javascript-Core-Decorations! !
+
+!JSCall categoriesForClass!Decorations! !
+
 !JSCall methodsFor!
 
 arguments	^ arguments!
@@ -19,9 +23,12 @@ javascriptContentOn: aStream	super javascriptContentOn: aStream.	(self name is
 name	^ name!
 
 name: aString 	name := aString! !
-!JSCall categoriesFor: #arguments!accessing!public! !
-!JSCall categoriesFor: #arguments:!accessing!public! !
-!JSCall categoriesFor: #javascriptContentOn:!printing!public! !
-!JSCall categoriesFor: #name!accessing!public! !
-!JSCall categoriesFor: #name:!accessing!public! !
+
+!JSCall categoriesForMethods!
+arguments!accessing!public! !
+arguments:!accessing!public! !
+javascriptContentOn:!printing!public! !
+name!accessing!public! !
+name:!accessing!public! !
+!
 

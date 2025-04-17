@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAContextTest subclass: #JSObjectTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSObjectTest guid: (GUID fromString: '{7dfc97d6-a22d-403b-a772-3af0bc52aa6b}')!
+
+JSObjectTest guid: (GUID fromString: '{b7c6dea8-47cd-4f95-91d1-ad47a73913b6}')!
+
 JSObjectTest comment: ''!
-!JSObjectTest categoriesForClass!Javascript-Tests-Core! !
+
+!JSObjectTest categoriesForClass!Unclassified! !
+
 !JSObjectTest methodsFor!
 
 assert: anObject equals: aString	self		assert: anObject asJavascript = aString		description: anObject asJavascript printString , ' expected to be ' , aString printString		resumable: true!
@@ -23,13 +27,16 @@ mock	^ JSStream on: 'mock'!
 renderContext	^ WARenderContext new		actionUrl: (WAUrl absolute: 'http://www.seaside.st/?_s=1&_k=a');		document: (WAHtmlDocument 			on: (WriteStream on: String new)			codec: self requestContext codec);		yourself!
 
 stream	^ JSStream new! !
-!JSObjectTest categoriesFor: #assert:equals:!asserting!public! !
-!JSObjectTest categoriesFor: #assert:renders:!public!utilities! !
-!JSObjectTest categoriesFor: #createHandlers!configuration!public! !
-!JSObjectTest categoriesFor: #javascript!accessing/javascript!public! !
-!JSObjectTest categoriesFor: #mock!accessing/javascript!public! !
-!JSObjectTest categoriesFor: #renderContext!accessing!public! !
-!JSObjectTest categoriesFor: #stream!accessing/javascript!public! !
+
+!JSObjectTest categoriesForMethods!
+assert:equals:!asserting!public! !
+assert:renders:!public!utilities! !
+createHandlers!configuration!public! !
+javascript!accessing/javascript!public! !
+mock!accessing/javascript!public! !
+renderContext!accessing!public! !
+stream!accessing/javascript!public! !
+!
 
 !JSObjectTest class methodsFor!
 
@@ -38,7 +45,10 @@ isAbstract	^ self name = #JSObjectTest!
 packageNamesUnderTest	^ #('Javascript-Core')!
 
 shouldInheritSelectors	^ true! !
-!JSObjectTest class categoriesFor: #isAbstract!public!testing! !
-!JSObjectTest class categoriesFor: #packageNamesUnderTest!accessing!public! !
-!JSObjectTest class categoriesFor: #shouldInheritSelectors!public!testing! !
+
+!JSObjectTest class categoriesForMethods!
+isAbstract!public!testing! !
+packageNamesUnderTest!accessing!public! !
+shouldInheritSelectors!public!testing! !
+!
 

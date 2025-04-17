@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQWidget subclass: #JQPosition
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQPosition guid: (GUID fromString: '{d67c9cd7-850e-40c1-b289-72a0c69c4f72}')!
+
+JQPosition guid: (GUID fromString: '{229f0c18-5bd5-4c10-b352-7573b2f5a7b2}')!
+
 JQPosition comment: ''!
-!JQPosition categoriesForClass!JQuery-UI-Utility! !
+
+!JQPosition categoriesForClass!Utility! !
+
 !JQPosition methodsFor!
 
 at: aString	"Defines which position on the target element to align the positioned element against: 'horizontal vertical' alignment. See the my option for full details on possible values. Percentage offsets are relative to the target element."	self optionAt: 'at' put: aString!
@@ -27,13 +31,16 @@ of: aSelector	"Element to position against. You can use a browser event object 
 using: aJSObject	"When specified, the actual property setting is delegated to this callback. Receives two parameters: The first is a hash of top and left values for the position that should be set and can be forwarded to .css() or .animate().The second provides feedback about the position and dimensions of both elements, as well as calculations to their relative position. Both target and element have these properties: element, left, top, width, height. In addition, there's horizontal, vertical and important, giving you twelve potential directions like { horizontal: 'center', vertical: 'left', important: 'horizontal' }"	self optionAt: 'using' put: aJSObject asFunction!
 
 within: aString	"Element to position within, affecting collision detection. If you provide a selector or jQuery object, the first matching element will be used."	self optionAt: 'within' put: aString! !
-!JQPosition categoriesFor: #at:!options/generated!public! !
-!JQPosition categoriesFor: #bgiframe:!options/generated!public! !
-!JQPosition categoriesFor: #by:!options/generated!public! !
-!JQPosition categoriesFor: #collision:!options/generated!public! !
-!JQPosition categoriesFor: #method!accessing!public! !
-!JQPosition categoriesFor: #my:!options/generated!public! !
-!JQPosition categoriesFor: #of:!options/generated!public! !
-!JQPosition categoriesFor: #using:!options/generated!public! !
-!JQPosition categoriesFor: #within:!options/generated!public! !
+
+!JQPosition categoriesForMethods!
+at:!options/generated!public! !
+bgiframe:!options/generated!public! !
+by:!options/generated!public! !
+collision:!options/generated!public! !
+method!accessing!public! !
+my:!options/generated!public! !
+of:!options/generated!public! !
+using:!options/generated!public! !
+within:!options/generated!public! !
+!
 

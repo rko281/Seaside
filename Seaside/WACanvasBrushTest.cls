@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAAbstractCanvasBrushTest subclass: #WACanvasBrushTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WACanvasBrushTest guid: (GUID fromString: '{bd92bac0-636e-4562-82d7-0b792ed44adf}')!
+
+WACanvasBrushTest guid: (GUID fromString: '{0fdde26e-6957-43c1-abf0-2d4ea31d6f74}')!
+
 WACanvasBrushTest comment: ''!
-!WACanvasBrushTest categoriesForClass!Seaside-Tests-Canvas! !
+
+!WACanvasBrushTest categoriesForClass!Brushes! !
+
 !WACanvasBrushTest methodsFor!
 
 createHandlers	^ Array with: (WARegistry new		 cache: WAPredictableCache new;		yourself)!
@@ -34,7 +38,7 @@ testCanvasWithLineBreaks	self		assert: [ :html | html withLineBreaks: 'abc' 
 
 testCanvasWithLineBreaksAndUrls	self		assert: [ :html | html withLineBreaksAndUrls: '1. This is http://www.seaside.st online.2. This is http://www.squeak.org online.' ]		gives: '1. This is <a href="http://www.seaside.st">http://www.seaside.st</a> online.<br/>2. This is <a href="http://www.squeak.org">http://www.squeak.org</a> online.'!
 
-testCanvasWithLineBreaksGemStoneIssue289	"http://code.google.com/p/glassdb/issues/detail?id=289"	| testBlock |	testBlock := [ :breakString |		| stream |		stream := WriteStream on: String new.		stream 			nextPut: $a;			nextPutAll: breakString;			nextPut: $b;			nextPutAll: breakString;			nextPut: $c.		self			assert: [ :html | html withLineBreaks: stream contents ] gives: 'a<br/>b<br/>c' ].	testBlock value: (String with: Character cr).	testBlock value: (String with: Character cr with: Character lf).	testBlock value: (String with: Character lf)!
+testCanvasWithLineBreaksGemStoneIssue289	"http://code.google.com/p/glassdb/issues/detail?id=289"	| testBlock |	testBlock := [ :breakString |		| stream |		stream := WriteStream on: String new.		stream 			nextPut: $a;			nextPutAll: breakString;			nextPut: $b;			nextPutAll: breakString;			nextPut: $c.		self			assert: [ :html | html withLineBreaks: stream contents ] gives: 'a<br/>b<br/>c' ].	testBlock value: (String with: Character cr).	testBlock value: (String with: Character cr with: Character lf).	testBlock value: (String with: Character lf)!
 
 testCanvasWithUrls	self		assert: [ :html | html withUrls: 'This is http://www.seaside.st online.' ]		gives: 'This is <a href="http://www.seaside.st">http://www.seaside.st</a> online.'!
 
@@ -49,6 +53,8 @@ testCoreAttributesId	self		assert: [ :html | html div id: 'foo' ]		gives: '<d
 testCoreAttributesStyle	self		assert: [ :html | html div style: 'left: 0' ]		gives: '<div style="left: 0"></div>'.	self		assert: [ :html | html div style: 'left: 0'; style: 'top: 2' ]		gives: '<div style="left: 0;top: 2"></div>'!
 
 testCoreAttributesTitle	self		assert: [ :html | html div title: 'Seaside' ]		gives: '<div title="Seaside"></div>'!
+
+testDataAttributes	self		assert: [ :html | html div dataAttributeAt: 'foo' put: 'bar' ]		gives: '<div data-foo="bar"></div>'.	self		assert: [ :html | html div dataAttributeAt: 'foo' put: 'bar' if: true ]		gives: '<div data-foo="bar"></div>'.	self		assert: [ :html | html div dataAttributeAt: 'foo' put: 'bar' if: false ]		gives: '<div></div>'.	self		assert: [ :html | html div dataAttributeAt: 'boolean' put: true ]		gives: '<div data-boolean></div>'.	self		assert: [ :html | html div dataAttributeAt: 'boolean' put: false ]		gives: '<div></div>'!
 
 testEditTag	self		assert: [ :html | html inserted: 'foo' ]		gives: '<ins>foo</ins>'.	self		assert: [ :html | html deleted: 'bar' ]		gives: '<del>bar</del>'!
 
@@ -88,7 +94,7 @@ testParagraphTag	self		assert: [ :html | html paragraph ]		gives: '<p></p>'.
 
 testPasswordInput	self		assert: [ :html | html passwordInput ]		gives: '<input type="password"/>'.	self		assert: [ :html | html passwordInput callback: [ :value | ] ]		gives: '<input name="1" type="password"/>'.	self		assert: [ :html | html passwordInput: 'foo' ]		gives: '<input value="foo" type="password"/>'.	self		assert: [ :html | html passwordInput value: 'bar' ]		gives: '<input value="bar" type="password"/>'.	self		assert: [ :html | html passwordInput text: 'zork' ]		gives: '<input value="zork" type="password"/>'.	self		assert: [ :html | html passwordInput callback: [ :value | ]; value: 'foo bar&zork' ]		gives: '<input name="1" value="foo bar&amp;zork" type="password"/>'!
 
-testScriptTag	self		assert: [ :html | html script: 'alert("<foo>")' ]		gives: '<script type="text/javascript">alert("<foo>")</script>'.	self		assert: [ :html | html script: 'true & false' ]		gives: '<script type="text/javascript">true & false</script>'.	self		assert: [ :html | html script defer; with: 'alert("<foo>")' ]		gives: '<script defer type="text/javascript">alert("<foo>")</script>'!
+testScriptTag	self		assert: [ :html | html script: 'alert("<foo>")' ]		gives: '<script type="text/javascript">alert("<foo>")</script>'.	self		assert: [ :html | html script: 'true & false' ]		gives: '<script type="text/javascript">true & false</script>'.	self		assert: [ :html | html script defer; with: 'alert("<foo>")' ]		gives: '<script defer type="text/javascript">alert("<foo>")</script>'.	self		assert: [ :html | html script type: 'module'; with: 'alert("<foo>")' ]		gives: '<script type="module">alert("<foo>")</script>'!
 
 testSelectTag	self		assert: [ :html | html select ]		gives: '<select></select>'.	self		assert: [ :html | html select list: #(1 2) ]		gives: '<select><option>1</option><option>2</option></select>'.	self		assert: [ :html | html select list: #(1 2); labels: [ :v | 2 * v ] ]		gives: '<select><option>2</option><option>4</option></select>'.	self		assert: [ :html | html select list: #(1 2); enabled: [ :v | v even ] ]		gives: '<select><option disabled>1</option><option>2</option></select>'.	self		assert: [ :html | html select list: #(1 2); callback: [ :v | ] ]		gives: '<select name="1"><option value="1">1</option><option value="2">2</option></select>'!
 
@@ -102,7 +108,7 @@ testTableColumn	self		assert: [ :html | html tableColumn ]		gives: '<col/>'.
 
 testTableColumnGroup	self		assert: [ :html | html tableColumnGroup ]		gives: '<colgroup></colgroup>'.	self		assert: [ :html | html tableColumnGroup character: '.'; characterOffset: 2 ]		gives: '<colgroup char="." charoff="2"></colgroup>'.	self		assert: [ :html | html tableColumnGroup align: 'right'; verticalAlign: 'top' ]		gives: '<colgroup align="right" valign="top"></colgroup>'.	self		assert: [ :html | html tableColumnGroup span: 3; width: '20' ]		gives: '<colgroup span="3" width="20"></colgroup>'!
 
-testTableData	self		assert: [ :html | html tableData ]		gives: '<td></td>'.	self		assert: [ :html | html tableData character: '.'; characterOffset: 2 ]		gives: '<td char="." charoff="2"></td>'.	self		assert: [ :html | html tableData align: 'right'; verticalAlign: 'top' ]		gives: '<td align="right" valign="top"></td>'.	self		assert: [ :html | html tableData abbreviation: 'short'; with: 'longer' ]		gives: '<td abbr="short">longer</td>'.	self		assert: [ :html | html tableData axis: 'time' ]		gives: '<td axis="time"></td>'.	self		assert: [ :html | html tableData colSpan: 2; rowSpan: 3 ]		gives: '<td colspan="2" rowspan="3"></td>'.	self		assert: [ :html | html tableData headers: 'zork' ]		gives: '<td headers="zork"></td>'.	self		assert: [ :html | html tableData scope: 'colgroup' ]		gives: '<td scope="colgroup"></td>'!
+testTableData	self		assert: [ :html | html tableData ]		gives: '<td></td>'.	self		assert: [ :html | html tableData character: '.'; characterOffset: 2 ]		gives: '<td char="." charoff="2"></td>'.	self		assert: [ :html | html tableData align: 'right'; verticalAlign: 'top' ]		gives: '<td align="right" valign="top"></td>'.	self		assert: [ :html | html tableData abbreviation: 'short'; with: 'longer' ]		gives: '<td abbr="short">longer</td>'.	self		assert: [ :html | html tableData axis: 'time' ]		gives: '<td axis="time"></td>'.	self		assert: [ :html | html tableData colSpan: 2; rowSpan: 3 ]		gives: '<td colspan="2" rowspan="3"></td>'.	self		assert: [ :html | html tableData headers: 'zork' ]		gives: '<td headers="zork"></td>'!
 
 testTableFull	self		assert: [ :html | 			html table: [				html tableCaption: 'title'.				html tableColumnGroup: [					html tableColumn.					html tableColumn ].				html tableHead: [					html tableRow: [ 						html tableHeading: 'a1'.						html tableHeading: 'a2' ] ].				html tableFoot: [					html tableRow: [ 						html tableData: 'b1'.						html tableData: 'b2' ] ].				html tableBody: [					html tableRow: [ 						html tableData: 'c1'.						html tableData: 'c2' ].					html tableRow: [ 						html tableData: 'd1'.						html tableData: 'd2' ] ] ] ]		gives: '<table><caption>title</caption><colgroup><col/><col/></colgroup><thead><tr><th>a1</th><th>a2</th></tr></thead><tfoot><tr><td>b1</td><td>b2</td></tr></tfoot><tbody><tr><td>c1</td><td>c2</td></tr><tr><td>d1</td><td>d2</td></tr></tbody></table>'!
 
@@ -113,56 +119,60 @@ testTextArea	self		assert: [ :html | html textArea ]		gives: '<textarea rows=
 testTextInput	self		assert: [ :html | html textInput ]		gives: '<input type="text"/>'.	self		assert: [ :html | html textInput callback: [ :value | ] ]		gives: '<input name="1" type="text"/>'.	self		assert: [ :html | html textInput: 'foo' ]		gives: '<input value="foo" type="text"/>'.	self		assert: [ :html | html textInput value: 'bar' ]		gives: '<input value="bar" type="text"/>'.	self		assert: [ :html | html textInput text: 'zork' ]		gives: '<input value="zork" type="text"/>'.	self		assert: [ :html | html textInput callback: [ :value | ]; value: 'foo bar&zork' ]		gives: '<input name="1" value="foo bar&amp;zork" type="text"/>'!
 
 testUnorderedListTag	self		assert: [ :html | html unorderedList ]		gives: '<ul></ul>'.	self		assert: [ :html | html unorderedList add: 1 ]		gives: '<ul><li>1</li></ul>'.	self		assert: [ :html | html unorderedList addAll: #( 1 2 ) ]		gives: '<ul><li>1</li><li>2</li></ul>'.	self		assert: [ :html | html unorderedList list: #( 1 2 ) ]		gives: '<ul><li>1</li><li>2</li></ul>'.	self		assert: [ :html | html unorderedList list: #( 1 2 ); with: [ html listItem: 3 ] ]		gives: '<ul><li>1</li><li>2</li><li>3</li></ul>'.	self		assert: [ :html | html unorderedList add: 2; labels: [ :e | 2 * e ] ]		gives: '<ul><li>4</li></ul>'.	self		assert: [ :html | html unorderedList add: 2; labels: [ :e | 2 * e ]; with: [ html listItem: 5 ] ]		gives: '<ul><li>4</li><li>5</li></ul>'! !
-!WACanvasBrushTest categoriesFor: #createHandlers!configuration!public! !
-!WACanvasBrushTest categoriesFor: #testArticle!public!tests/tags! !
-!WACanvasBrushTest categoriesFor: #testBasicNesting!public!tests! !
-!WACanvasBrushTest categoriesFor: #testBlock!public!tests/tags! !
-!WACanvasBrushTest categoriesFor: #testBreakTag!public!tests/tags! !
-!WACanvasBrushTest categoriesFor: #testButton!public!tests/tags/forms! !
-!WACanvasBrushTest categoriesFor: #testCancelButton!public!tests/tags/forms! !
-!WACanvasBrushTest categoriesFor: #testCanvasHtml!public!tests/encoding! !
-!WACanvasBrushTest categoriesFor: #testCanvasNil!public!tests/encoding! !
-!WACanvasBrushTest categoriesFor: #testCanvasText!public!tests/encoding! !
-!WACanvasBrushTest categoriesFor: #testCanvasWithLineBreaks!public!tests/encoding! !
-!WACanvasBrushTest categoriesFor: #testCanvasWithLineBreaksAndUrls!public!tests/encoding! !
-!WACanvasBrushTest categoriesFor: #testCanvasWithLineBreaksGemStoneIssue289!public!tests/encoding! !
-!WACanvasBrushTest categoriesFor: #testCanvasWithUrls!public!tests/encoding! !
-!WACanvasBrushTest categoriesFor: #testCheckboxTag!public!tests/tags/forms! !
-!WACanvasBrushTest categoriesFor: #testClosingTimes!public!tests! !
-!WACanvasBrushTest categoriesFor: #testCoreAttributesClass!public!tests/attributes! !
-!WACanvasBrushTest categoriesFor: #testCoreAttributesId!public!tests/attributes! !
-!WACanvasBrushTest categoriesFor: #testCoreAttributesStyle!public!tests/attributes! !
-!WACanvasBrushTest categoriesFor: #testCoreAttributesTitle!public!tests/attributes! !
-!WACanvasBrushTest categoriesFor: #testEditTag!public!tests/tags! !
-!WACanvasBrushTest categoriesFor: #testEnsureId!public!tests! !
-!WACanvasBrushTest categoriesFor: #testEventAttributes!public!tests/attributes! !
-!WACanvasBrushTest categoriesFor: #testExtendedNesting!public!tests! !
-!WACanvasBrushTest categoriesFor: #testFieldSetTag!public!tests/tags! !
-!WACanvasBrushTest categoriesFor: #testHeadingTag!public!tests/tags! !
-!WACanvasBrushTest categoriesFor: #testHorizontalRuleTag!public!tests/tags! !
-!WACanvasBrushTest categoriesFor: #testImageButton!public!tests/tags/forms! !
-!WACanvasBrushTest categoriesFor: #testImageTag!public!tests/tags! !
-!WACanvasBrushTest categoriesFor: #testKeyboardAttributes!public!tests/attributes! !
-!WACanvasBrushTest categoriesFor: #testLabelTag!public!tests/tags! !
-!WACanvasBrushTest categoriesFor: #testLastId!public!tests! !
-!WACanvasBrushTest categoriesFor: #testMain!public!tests/tags! !
-!WACanvasBrushTest categoriesFor: #testMapTag!public!tests/tags/anchors! !
-!WACanvasBrushTest categoriesFor: #testMultiSelectTag!public!tests/tags/forms! !
-!WACanvasBrushTest categoriesFor: #testNextId!public!tests! !
-!WACanvasBrushTest categoriesFor: #testOrderedListTag!public!tests/tags! !
-!WACanvasBrushTest categoriesFor: #testParagraphTag!public!tests/tags! !
-!WACanvasBrushTest categoriesFor: #testPasswordInput!public!tests/tags/forms! !
-!WACanvasBrushTest categoriesFor: #testScriptTag!public!tests/tags! !
-!WACanvasBrushTest categoriesFor: #testSelectTag!public!tests/tags/forms! !
-!WACanvasBrushTest categoriesFor: #testSubmitButton!public!tests/tags/forms! !
-!WACanvasBrushTest categoriesFor: #testSymbolRendering!public!tests/encoding! !
-!WACanvasBrushTest categoriesFor: #testTable!public!tests/tags/tables! !
-!WACanvasBrushTest categoriesFor: #testTableColumn!public!tests/tags/tables! !
-!WACanvasBrushTest categoriesFor: #testTableColumnGroup!public!tests/tags/tables! !
-!WACanvasBrushTest categoriesFor: #testTableData!public!tests/tags/tables! !
-!WACanvasBrushTest categoriesFor: #testTableFull!public!tests/tags/tables! !
-!WACanvasBrushTest categoriesFor: #testTableHeading!public!tests/tags/tables! !
-!WACanvasBrushTest categoriesFor: #testTextArea!public!tests/tags/forms! !
-!WACanvasBrushTest categoriesFor: #testTextInput!public!tests/tags/forms! !
-!WACanvasBrushTest categoriesFor: #testUnorderedListTag!public!tests/tags! !
+
+!WACanvasBrushTest categoriesForMethods!
+createHandlers!configuration!public! !
+testArticle!public!tests/tags! !
+testBasicNesting!public!tests! !
+testBlock!public!tests/tags! !
+testBreakTag!public!tests/tags! !
+testButton!public!tests/tags/forms! !
+testCancelButton!public!tests/tags/forms! !
+testCanvasHtml!public!tests/encoding! !
+testCanvasNil!public!tests/encoding! !
+testCanvasText!public!tests/encoding! !
+testCanvasWithLineBreaks!public!tests/encoding! !
+testCanvasWithLineBreaksAndUrls!public!tests/encoding! !
+testCanvasWithLineBreaksGemStoneIssue289!public!tests/encoding! !
+testCanvasWithUrls!public!tests/encoding! !
+testCheckboxTag!public!tests/tags/forms! !
+testClosingTimes!public!tests! !
+testCoreAttributesClass!public!tests/attributes! !
+testCoreAttributesId!public!tests/attributes! !
+testCoreAttributesStyle!public!tests/attributes! !
+testCoreAttributesTitle!public!tests/attributes! !
+testDataAttributes!public!tests/attributes! !
+testEditTag!public!tests/tags! !
+testEnsureId!public!tests! !
+testEventAttributes!public!tests/attributes! !
+testExtendedNesting!public!tests! !
+testFieldSetTag!public!tests/tags! !
+testHeadingTag!public!tests/tags! !
+testHorizontalRuleTag!public!tests/tags! !
+testImageButton!public!tests/tags/forms! !
+testImageTag!public!tests/tags! !
+testKeyboardAttributes!public!tests/attributes! !
+testLabelTag!public!tests/tags! !
+testLastId!public!tests! !
+testMain!public!tests/tags! !
+testMapTag!public!tests/tags/anchors! !
+testMultiSelectTag!public!tests/tags/forms! !
+testNextId!public!tests! !
+testOrderedListTag!public!tests/tags! !
+testParagraphTag!public!tests/tags! !
+testPasswordInput!public!tests/tags/forms! !
+testScriptTag!public!tests/tags! !
+testSelectTag!public!tests/tags/forms! !
+testSubmitButton!public!tests/tags/forms! !
+testSymbolRendering!public!tests/encoding! !
+testTable!public!tests/tags/tables! !
+testTableColumn!public!tests/tags/tables! !
+testTableColumnGroup!public!tests/tags/tables! !
+testTableData!public!tests/tags/tables! !
+testTableFull!public!tests/tags/tables! !
+testTableHeading!public!tests/tags/tables! !
+testTextArea!public!tests/tags/forms! !
+testTextInput!public!tests/tags/forms! !
+testUnorderedListTag!public!tests/tags! !
+!
 

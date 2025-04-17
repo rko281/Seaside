@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAObject subclass: #WAConfiguration
 	instanceVariableNames: 'cachedSearchContexts'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAConfiguration guid: (GUID fromString: '{91727974-2c31-4626-9b3c-699a83619707}')!
+
+WAConfiguration guid: (GUID fromString: '{b09ac8a1-f822-439a-8fe7-bc235cbce09b}')!
+
 WAConfiguration comment: 'A configuration for a Seaside application contains attributes which can be used by Seaside and the application. WAConfiguration hierarchy uses the composite pattern.Subclasses of WASystemConfiguration define and configure related groups of attributes. See WASystemConfiguration class comment for information on defining your own attributes.WAUserConfiguration is a composite of configurations. The set of configurations contained in WAUserConfiguration is called the ancestors. Attribute values in a configuration override the attribute values in the ancestors. WAUserConfiguration also holds the non-default values of attributes.Seaside applications start with a WAUserConfiguration (see WAApplication>>configuration) a single parent: WARenderLoopConfiguration. The full ancestry also includes WASessionConfiguration WAGlobalConfiguration. Other configurations can be added to an application on the Seaside configuration page for the application or in your application. Values for the attributes can be given in either location. See Seaside documentation (http://www.seaside.st/documentation) on configuration and preferences (http://www.seaside.st/documentation/Configuration%20and%20Preferences) for more information.Example of setting attributes and adding configurations in codeASubclassOfWAComponent class>>initialize	"self initialize"	| application |	application := self registerAsApplication: ''GlorpExample''.	"set a standard attribute"	application preferenceAt: #sessionClass put: Glorp.WAGlorpSession. 	"add a configuration"	application configuration addParent: GlorpConfiguration new.	application preferenceAt: #databaseLogin put: ''foo''. "set attribute defined in GlorpConfiguration"Subclasses must implement the following messages:	name		return the name of the configuration	localValueAt:ifAbsent:		return the value of the attribute given as first argument'!
-!WAConfiguration categoriesForClass!Seaside-Core-Configuration! !
+
+!WAConfiguration categoriesForClass!Configuration! !
+
 !WAConfiguration methodsFor!
 
 allAttributes	| attributes |	attributes := IdentityDictionary new.		self ancestorsDo: [ :each |		each localAttributesDo: [ :attr |			attributes at: attr key put: attr ] ].		^ attributes!
@@ -59,29 +63,32 @@ retrieveSearchContext: aSymbol default: defaultValue	"Answer the cached search 
 retrieveSearchContext: aSymbol ifAbsentPut: aBlock	"Answers a search context. If the context resides in the cache, the value from the cache is returned. If not, a new cache entry is created using aBlock."	| context |	cachedSearchContexts isNil ifTrue: [		cachedSearchContexts := IdentityDictionary new ].	context := cachedSearchContexts at: aSymbol ifAbsentPut: aBlock.	^ context attribute isNil		ifTrue: [ cachedSearchContexts at: aSymbol put: aBlock value ]		ifFalse: [ context ]!
 
 valueForContext: aContext	aContext at: self ifPresent: [ :v | ^ v ].		self expressionAt: aContext key ifPresent: [ :expression |		^ aContext			at: self			put: (expression determineValueWithContext: aContext configuration: self) ].		(aContext isAttributeLocalOn: self) ifTrue: [ ^ aContext at: self put: nil ].	^ aContext at: self put: (self inheritedValueForContext: aContext)! !
-!WAConfiguration categoriesFor: #allAttributes!attributes!public! !
-!WAConfiguration categoriesFor: #ancestors!ancestry!public! !
-!WAConfiguration categoriesFor: #ancestorsDo:!ancestry!public! !
-!WAConfiguration categoriesFor: #ancestorsDo:seen:!ancestry/private!public! !
-!WAConfiguration categoriesFor: #at:!public!values! !
-!WAConfiguration categoriesFor: #at:ifAbsent:!public!values! !
-!WAConfiguration categoriesFor: #attributeAt:!attributes!public! !
-!WAConfiguration categoriesFor: #attributeAt:ifAbsent:!attributes!public! !
-!WAConfiguration categoriesFor: #clearSearchContexts!attributes/private!public! !
-!WAConfiguration categoriesFor: #expressionAt:ifAbsent:!public!values! !
-!WAConfiguration categoriesFor: #expressionAt:ifPresent:!public!values! !
-!WAConfiguration categoriesFor: #getSearchContextFor:!attributes/private!public! !
-!WAConfiguration categoriesFor: #getSearchContextFor:ifAbsent:!attributes/private!public! !
-!WAConfiguration categoriesFor: #hasExpressionAt:!public!values! !
-!WAConfiguration categoriesFor: #inheritedValueForContext:!public!values/private! !
-!WAConfiguration categoriesFor: #inheritsFrom:!ancestry!public! !
-!WAConfiguration categoriesFor: #isShared!public!testing! !
-!WAConfiguration categoriesFor: #localAttributeAt:ifAbsent:!attributes!public! !
-!WAConfiguration categoriesFor: #localAttributeAt:ifPresent:!attributes!public! !
-!WAConfiguration categoriesFor: #localAttributesDo:!attributes!public! !
-!WAConfiguration categoriesFor: #name!accessing!public! !
-!WAConfiguration categoriesFor: #parents!ancestry!public! !
-!WAConfiguration categoriesFor: #retrieveSearchContext:default:!attributes/private!public! !
-!WAConfiguration categoriesFor: #retrieveSearchContext:ifAbsentPut:!attributes/private!public! !
-!WAConfiguration categoriesFor: #valueForContext:!public!values/private! !
+
+!WAConfiguration categoriesForMethods!
+allAttributes!attributes!public! !
+ancestors!ancestry!public! !
+ancestorsDo:!ancestry!public! !
+ancestorsDo:seen:!ancestry/private!public! !
+at:!public!values! !
+at:ifAbsent:!public!values! !
+attributeAt:!attributes!public! !
+attributeAt:ifAbsent:!attributes!public! !
+clearSearchContexts!attributes/private!public! !
+expressionAt:ifAbsent:!public!values! !
+expressionAt:ifPresent:!public!values! !
+getSearchContextFor:!attributes/private!public! !
+getSearchContextFor:ifAbsent:!attributes/private!public! !
+hasExpressionAt:!public!values! !
+inheritedValueForContext:!public!values/private! !
+inheritsFrom:!ancestry!public! !
+isShared!public!testing! !
+localAttributeAt:ifAbsent:!attributes!public! !
+localAttributeAt:ifPresent:!attributes!public! !
+localAttributesDo:!attributes!public! !
+name!accessing!public! !
+parents!ancestry!public! !
+retrieveSearchContext:default:!attributes/private!public! !
+retrieveSearchContext:ifAbsentPut:!attributes/private!public! !
+valueForContext:!public!values/private! !
+!
 

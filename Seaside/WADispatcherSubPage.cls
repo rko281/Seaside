@@ -1,18 +1,25 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAComponent subclass: #WADispatcherSubPage
 	instanceVariableNames: 'parent'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WADispatcherSubPage guid: (GUID fromString: '{6c9b9942-fdc0-4c8f-8e4d-6b21e7b020c0}')!
+
+WADispatcherSubPage guid: (GUID fromString: '{43a491de-6f65-41ba-87ce-1be21e35db3b}')!
+
 WADispatcherSubPage comment: ''!
-!WADispatcherSubPage categoriesForClass!Seaside-Tools-Web! !
+
+!WADispatcherSubPage categoriesForClass!Unclassified! !
+
 !WADispatcherSubPage methodsFor!
 
 parent	^ parent!
 
 parent: anObject	parent := anObject! !
-!WADispatcherSubPage categoriesFor: #parent!accessing!public! !
-!WADispatcherSubPage categoriesFor: #parent:!accessing!public! !
+
+!WADispatcherSubPage categoriesForMethods!
+parent!accessing!public! !
+parent:!accessing!public! !
+!
 

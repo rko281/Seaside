@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAHaloPlugin subclass: #WAStylesHaloPlugin
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAStylesHaloPlugin guid: (GUID fromString: '{b013ad3e-f2a3-4219-89c2-0139e41c16ff}')!
+
+WAStylesHaloPlugin guid: (GUID fromString: '{9f26ddf9-5b28-400e-96e9-ac3031c12ea7}')!
+
 WAStylesHaloPlugin comment: 'I open the style editor on the component class.'!
-!WAStylesHaloPlugin categoriesForClass!Seaside-Development-Plugins! !
+
+!WAStylesHaloPlugin categoriesForClass!Plugins! !
+
 !WAStylesHaloPlugin methodsFor!
 
 execute	self open: (WAPluggableTool on: (WAViewer on: self root))!
@@ -17,8 +21,11 @@ label	^ 'Styles'!
 priority	^ 700!
 
 tooltip	^ 'CSS Style Editor'! !
-!WAStylesHaloPlugin categoriesFor: #execute!actions!public! !
-!WAStylesHaloPlugin categoriesFor: #label!accessing!public! !
-!WAStylesHaloPlugin categoriesFor: #priority!accessing!public! !
-!WAStylesHaloPlugin categoriesFor: #tooltip!accessing!public! !
+
+!WAStylesHaloPlugin categoriesForMethods!
+execute!actions!public! !
+label!accessing!public! !
+priority!accessing!public! !
+tooltip!accessing!public! !
+!
 

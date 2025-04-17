@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAComponent subclass: #WAStringLibraryEditor
 	instanceVariableNames: 'library'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAStringLibraryEditor guid: (GUID fromString: '{b4573a28-0b82-4a40-8d50-970b49597b92}')!
+
+WAStringLibraryEditor guid: (GUID fromString: '{1713e0af-c344-435f-9669-ea2f4c2bb200}')!
+
 WAStringLibraryEditor comment: ''!
-!WAStringLibraryEditor categoriesForClass!Seaside-Tools-Web! !
+
+!WAStringLibraryEditor categoriesForClass!Unclassified! !
+
 !WAStringLibraryEditor methodsFor!
 
 library	^ library!
@@ -25,12 +29,15 @@ renderHeadingsOn: html	html heading level2; with: self library name!
 renderWriteToDiskOn: html	html anchor		class: 'large';		callback: [ self library deployFiles ];		title: 'Wite all the files to disk';		with: 'Write to disk'!
 
 urlFor: aFilename	^ self library urlForFile: aFilename! !
-!WAStringLibraryEditor categoriesFor: #library!accessing!public! !
-!WAStringLibraryEditor categoriesFor: #library:!accessing!public! !
-!WAStringLibraryEditor categoriesFor: #renderContentOn:!public!rendering! !
-!WAStringLibraryEditor categoriesFor: #renderDoneOn:!public!rendering! !
-!WAStringLibraryEditor categoriesFor: #renderFilesOn:!public!rendering! !
-!WAStringLibraryEditor categoriesFor: #renderHeadingsOn:!public!rendering! !
-!WAStringLibraryEditor categoriesFor: #renderWriteToDiskOn:!public!rendering! !
-!WAStringLibraryEditor categoriesFor: #urlFor:!private! !
+
+!WAStringLibraryEditor categoriesForMethods!
+library!accessing!public! !
+library:!accessing!public! !
+renderContentOn:!public!rendering! !
+renderDoneOn:!public!rendering! !
+renderFilesOn:!public!rendering! !
+renderHeadingsOn:!public!rendering! !
+renderWriteToDiskOn:!public!rendering! !
+urlFor:!private! !
+!
 

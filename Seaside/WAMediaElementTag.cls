@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WATagBrush subclass: #WAMediaElementTag
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAMediaElementTag guid: (GUID fromString: '{65036303-c710-42b3-80b6-754cdac35ea2}')!
+
+WAMediaElementTag guid: (GUID fromString: '{02378a8a-5a04-4c25-82a3-d05b64604fcf}')!
+
 WAMediaElementTag comment: 'WAMediaElementTag is an abstract class for all the media elements providing common media attributes.See: http://www.w3.org/TR/html5/video.html#media-element'!
-!WAMediaElementTag categoriesForClass!Seaside-Canvas-Tags! !
+
+!WAMediaElementTag categoriesForClass!Tags! !
+
 !WAMediaElementTag methodsFor!
 
 autoplay: aBoolean	"The autoplay attribute is a boolean attribute. When present, the user agent (as described in the algorithm described herein) will automatically begin playback of the media resource as soon as it can do so without stopping."	self attributeAt: 'autoplay' put: aBoolean!
@@ -59,29 +63,40 @@ onWaiting: anObject	"Playback has stopped because the next frame is not availab
 preload: aString	"The preload attribute is intended to provide a hint to the user agent about what the author thinks will lead to the best user experience.	See: http://www.w3.org/TR/html5/video.html#attr-media-preload		The preload attribute can have one of three values: 'none', 'metadata', 'auto'.	Providing an empty string defaults the value of the attribute to be 'auto'."	self attributeAt: 'preload' put: aString!
 
 url: aString	self attributeAt: 'src' put: aString! !
-!WAMediaElementTag categoriesFor: #autoplay:!attributes!public! !
-!WAMediaElementTag categoriesFor: #controls:!attributes!public! !
-!WAMediaElementTag categoriesFor: #loop:!attributes!public! !
-!WAMediaElementTag categoriesFor: #onCanPlay:!attributes/events!public! !
-!WAMediaElementTag categoriesFor: #onCanPlayThrough:!attributes/events!public! !
-!WAMediaElementTag categoriesFor: #onDurationChange:!attributes/events!public! !
-!WAMediaElementTag categoriesFor: #onEmptied:!attributes/events!public! !
-!WAMediaElementTag categoriesFor: #onEnded:!attributes/events!public! !
-!WAMediaElementTag categoriesFor: #onLoadedData:!attributes/events!public! !
-!WAMediaElementTag categoriesFor: #onLoadedMetadata:!attributes/events!public! !
-!WAMediaElementTag categoriesFor: #onLoadStart:!attributes/events!public! !
-!WAMediaElementTag categoriesFor: #onPause:!attributes/events!public! !
-!WAMediaElementTag categoriesFor: #onPlay:!attributes/events!public! !
-!WAMediaElementTag categoriesFor: #onPlaying:!attributes/events!public! !
-!WAMediaElementTag categoriesFor: #onProgress:!attributes/events!public! !
-!WAMediaElementTag categoriesFor: #onRateChange:!attributes/events!public! !
-!WAMediaElementTag categoriesFor: #onSeeked:!attributes/events!public! !
-!WAMediaElementTag categoriesFor: #onSeeking:!attributes/events!public! !
-!WAMediaElementTag categoriesFor: #onStalled:!attributes/events!public! !
-!WAMediaElementTag categoriesFor: #onSuspend:!attributes/events!public! !
-!WAMediaElementTag categoriesFor: #onTimeUpdate:!attributes/events!public! !
-!WAMediaElementTag categoriesFor: #onVolumeChange:!attributes/events!public! !
-!WAMediaElementTag categoriesFor: #onWaiting:!attributes/events!public! !
-!WAMediaElementTag categoriesFor: #preload:!attributes!public! !
-!WAMediaElementTag categoriesFor: #url:!attributes!public! !
+
+!WAMediaElementTag categoriesForMethods!
+autoplay:!attributes!public! !
+controls:!attributes!public! !
+loop:!attributes!public! !
+onCanPlay:!attributes/events!public! !
+onCanPlayThrough:!attributes/events!public! !
+onDurationChange:!attributes/events!public! !
+onEmptied:!attributes/events!public! !
+onEnded:!attributes/events!public! !
+onLoadedData:!attributes/events!public! !
+onLoadedMetadata:!attributes/events!public! !
+onLoadStart:!attributes/events!public! !
+onPause:!attributes/events!public! !
+onPlay:!attributes/events!public! !
+onPlaying:!attributes/events!public! !
+onProgress:!attributes/events!public! !
+onRateChange:!attributes/events!public! !
+onSeeked:!attributes/events!public! !
+onSeeking:!attributes/events!public! !
+onStalled:!attributes/events!public! !
+onSuspend:!attributes/events!public! !
+onTimeUpdate:!attributes/events!public! !
+onVolumeChange:!attributes/events!public! !
+onWaiting:!attributes/events!public! !
+preload:!attributes!public! !
+url:!attributes!public! !
+!
+
+!WAMediaElementTag class methodsFor!
+
+isAbstract 	^ self == WAMediaElementTag! !
+
+!WAMediaElementTag class categoriesForMethods!
+isAbstract!public!testing! !
+!
 

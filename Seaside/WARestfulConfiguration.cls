@@ -1,10 +1,14 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WASystemConfiguration subclass: #WARestfulConfiguration
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WARestfulConfiguration guid: (GUID fromString: '{c59fa079-1991-423d-a141-984ac146e1bb}')!
+
+WARestfulConfiguration guid: (GUID fromString: '{47981d96-a305-4e2d-99db-97c21870d703}')!
+
 WARestfulConfiguration comment: ''!
-!WARestfulConfiguration categoriesForClass!Seaside-REST-Core-Handler! !
+
+!WARestfulConfiguration categoriesForClass!Handler! !
+

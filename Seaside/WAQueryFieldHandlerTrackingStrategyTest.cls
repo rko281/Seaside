@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAHandlerTrackingStrategyTest subclass: #WAQueryFieldHandlerTrackingStrategyTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAQueryFieldHandlerTrackingStrategyTest guid: (GUID fromString: '{7869fe60-6b61-475d-98da-485790671da6}')!
+
+WAQueryFieldHandlerTrackingStrategyTest guid: (GUID fromString: '{535b1c74-9d6f-4ec8-885d-4af6becacfc3}')!
+
 WAQueryFieldHandlerTrackingStrategyTest comment: ''!
-!WAQueryFieldHandlerTrackingStrategyTest categoriesForClass!Seaside-Tests-Core-RequestHandling! !
+
+!WAQueryFieldHandlerTrackingStrategyTest categoriesForClass!RequestHandling! !
+
 !WAQueryFieldHandlerTrackingStrategyTest methodsFor!
 
 newStrategy	^ WAQueryFieldHandlerTrackingStrategy new!
@@ -21,10 +25,13 @@ testKeyButNotValue	| context actual |	context := self requestContext.	context
 testKeyPresent	| context actual |	context := self requestContext.	context request uri addField: strategy keyField value: '4e232e46-003d2-04324-d3ac8fa8'.	actual := strategy keyFromContext: context.	self assert: actual = '4e232e46-003d2-04324-d3ac8fa8'!
 
 testNoKey	| actual |	actual := strategy keyFromContext: self requestContext.	self assert: actual isNil! !
-!WAQueryFieldHandlerTrackingStrategyTest categoriesFor: #newStrategy!private! !
-!WAQueryFieldHandlerTrackingStrategyTest categoriesFor: #testAddKeyToContext!public!tests! !
-!WAQueryFieldHandlerTrackingStrategyTest categoriesFor: #testAddKeyToUrl!public!tests! !
-!WAQueryFieldHandlerTrackingStrategyTest categoriesFor: #testKeyButNotValue!public!tests! !
-!WAQueryFieldHandlerTrackingStrategyTest categoriesFor: #testKeyPresent!public!tests! !
-!WAQueryFieldHandlerTrackingStrategyTest categoriesFor: #testNoKey!public!tests! !
+
+!WAQueryFieldHandlerTrackingStrategyTest categoriesForMethods!
+newStrategy!private! !
+testAddKeyToContext!public!tests! !
+testAddKeyToUrl!public!tests! !
+testKeyButNotValue!public!tests! !
+testKeyPresent!public!tests! !
+testNoKey!public!tests! !
+!
 

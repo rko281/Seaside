@@ -1,15 +1,22 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQBaseTheme subclass: #JQSmoothnessTheme
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQSmoothnessTheme guid: (GUID fromString: '{fd543481-22c2-42c8-98ca-dd52130bf4c2}')!
+
+JQSmoothnessTheme guid: (GUID fromString: '{571777ad-a58a-4194-85a3-062485f064e5}')!
+
 JQSmoothnessTheme comment: ''!
-!JQSmoothnessTheme categoriesForClass!JQuery-UI-Libraries! !
+
+!JQSmoothnessTheme categoriesForClass!Libraries! !
+
 !JQSmoothnessTheme methodsFor!
 
 themeName	^ 'smoothness'! !
-!JQSmoothnessTheme categoriesFor: #themeName!accessing!public! !
+
+!JQSmoothnessTheme categoriesForMethods!
+themeName!accessing!public! !
+!
 

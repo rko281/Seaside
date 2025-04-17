@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAAnchorTag subclass: #WAPopupAnchorTag
 	instanceVariableNames: 'windowTitle features'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAPopupAnchorTag guid: (GUID fromString: '{335550cf-0afd-4847-9a20-51c02b55dccb}')!
+
+WAPopupAnchorTag guid: (GUID fromString: '{d2b2cbd5-fdc8-4f7b-af0d-1597f3c2505d}')!
+
 WAPopupAnchorTag comment: 'I am used to create a link that opens in a new window. A name can be specified using #name: and many features can be configured. Note, that not all features are supported on all web browser platforms. If Javascript is disabled the link will behave like any other anchor.Most of the time a popup-anchor is created like this:	html popupAnchor		callback: [ self session presenter			show: WACounter new ];		with: ''Open the counter within a new window''This code creates a new render-loop and displays a new instance of WACounter within the new browser window.		'!
-!WAPopupAnchorTag categoriesForClass!Seaside-Canvas-Tags! !
+
+!WAPopupAnchorTag categoriesForClass!Tags! !
+
 !WAPopupAnchorTag methodsFor!
 
 dependent: aBoolean	"Specifies whether the new window is closed as well when the parent window gets closed."	features at: #dependent put: aBoolean!
@@ -45,22 +49,25 @@ windowTitle	^ windowTitle!
 windowTitle: aString	"String specifying the name of the new window. If a window with this name already exists, then the new content will be displayed in that existing window, rather than creating a new one."	windowTitle := aString!
 
 with: aBlock	self onClick: 'window.open(this.href,' , self windowTitle printString , ',' , self featureString printString , ');return false'.	super with: aBlock! !
-!WAPopupAnchorTag categoriesFor: #dependent:!features!public! !
-!WAPopupAnchorTag categoriesFor: #extent:!features!public! !
-!WAPopupAnchorTag categoriesFor: #featureString!private! !
-!WAPopupAnchorTag categoriesFor: #height:!features!public! !
-!WAPopupAnchorTag categoriesFor: #initialize!initialization!public! !
-!WAPopupAnchorTag categoriesFor: #left:!features!public! !
-!WAPopupAnchorTag categoriesFor: #location:!features!public! !
-!WAPopupAnchorTag categoriesFor: #menubar:!features!public! !
-!WAPopupAnchorTag categoriesFor: #position:!features!public! !
-!WAPopupAnchorTag categoriesFor: #resizable:!features!public! !
-!WAPopupAnchorTag categoriesFor: #scrollbars:!features!public! !
-!WAPopupAnchorTag categoriesFor: #status:!features!public! !
-!WAPopupAnchorTag categoriesFor: #toolbar:!features!public! !
-!WAPopupAnchorTag categoriesFor: #top:!features!public! !
-!WAPopupAnchorTag categoriesFor: #width:!features!public! !
-!WAPopupAnchorTag categoriesFor: #windowTitle!accessing!public! !
-!WAPopupAnchorTag categoriesFor: #windowTitle:!accessing!public! !
-!WAPopupAnchorTag categoriesFor: #with:!public! !
+
+!WAPopupAnchorTag categoriesForMethods!
+dependent:!features!public! !
+extent:!features!public! !
+featureString!private! !
+height:!features!public! !
+initialize!initialization!public! !
+left:!features!public! !
+location:!features!public! !
+menubar:!features!public! !
+position:!features!public! !
+resizable:!features!public! !
+scrollbars:!features!public! !
+status:!features!public! !
+toolbar:!features!public! !
+top:!features!public! !
+width:!features!public! !
+windowTitle!accessing!public! !
+windowTitle:!accessing!public! !
+with:!public! !
+!
 

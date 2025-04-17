@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAFunctionalTest subclass: #WACookieFunctionalTest
 	instanceVariableNames: 'firstKey firstValue firstPath secondKey secondValue secondPath'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WACookieFunctionalTest guid: (GUID fromString: '{76fc873b-9f97-497b-aa1b-ac1400570e3d}')!
+
+WACookieFunctionalTest guid: (GUID fromString: '{0058a636-9a35-48c2-b010-cd32041decfa}')!
+
 WACookieFunctionalTest comment: ''!
-!WACookieFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
+
+!WACookieFunctionalTest categoriesForClass!Unclassified! !
+
 !WACookieFunctionalTest methodsFor!
 
 addBoth	self requestContext response addCookie: self firstCookie.	self requestContext response addCookie: self secondCookie.		self resetFirst.	self resetSecond!
@@ -46,13 +50,13 @@ renderFirefoxOn: html	html listItem: 'On Firefox the path is not supposed to wo
 
 renderHeadingsOn: html	html tableRow: [		html tableHeading: 'Key'.		html tableHeading: 'Value'.		html tableHeading: 'Path'.		html tableHeading: 'Domain'.		html tableHeading: 'Ports'.		html tableHeading ]!
 
-renderInputFirstOn: html	html tableRow: [		self renderInputForCookie: #first on: html.		html tableData: [			html submitButton				on: #addFirst of: self ] ]!
+renderInputFirstOn: html	html tableRow: [		self renderInputForCookie: #first on: html.		html tableData: [			html submitButton				id: #addFirstCookie;				on: #addFirst of: self ] ]!
 
 renderInputForCookie: aSymbol on: html	html tableData: [		html textInput			on: (aSymbol, #Key) asSymbol of: self ].	html tableData: [		html textInput			on: (aSymbol, #Value) asSymbol of: self ].	html tableData: [		html textInput			on: (aSymbol, #Path) asSymbol of: self ].	html tableData.	html tableData!
 
 renderInputOn: html	self renderInputFirstOn: html.	self renderInputSecondOn: html!
 
-renderInputSecondOn: html	html tableRow: [		self renderInputForCookie: #second on: html.		html tableData: [			html submitButton				on: #addBoth of: self ] ]!
+renderInputSecondOn: html	html tableRow: [		self renderInputForCookie: #second on: html.		html tableData: [			html submitButton				id: #addSecondCookie;				on: #addBoth of: self ] ]!
 
 renderOperaOn: html	html listItem: 'Opera is supposed to work perfectly.'!
 
@@ -77,38 +81,41 @@ secondPath: aString	secondPath := aString!
 secondValue	^ secondValue!
 
 secondValue: aString	secondValue := aString! !
-!WACookieFunctionalTest categoriesFor: #addBoth!actions!public! !
-!WACookieFunctionalTest categoriesFor: #addFirst!actions!public! !
-!WACookieFunctionalTest categoriesFor: #cookies!accessing!public! !
-!WACookieFunctionalTest categoriesFor: #firstCookie!accessing!public! !
-!WACookieFunctionalTest categoriesFor: #firstKey!accessing!public! !
-!WACookieFunctionalTest categoriesFor: #firstKey:!accessing!public! !
-!WACookieFunctionalTest categoriesFor: #firstPath!accessing!public! !
-!WACookieFunctionalTest categoriesFor: #firstPath:!accessing!public! !
-!WACookieFunctionalTest categoriesFor: #firstValue!accessing!public! !
-!WACookieFunctionalTest categoriesFor: #firstValue:!accessing!public! !
-!WACookieFunctionalTest categoriesFor: #initialize!initialization!public! !
-!WACookieFunctionalTest categoriesFor: #remove:!actions!public! !
-!WACookieFunctionalTest categoriesFor: #renderCombiningOn:!public!rendering/explanation! !
-!WACookieFunctionalTest categoriesFor: #renderContentOn:!public!rendering! !
-!WACookieFunctionalTest categoriesFor: #renderCookiesOn:!public!rendering! !
-!WACookieFunctionalTest categoriesFor: #renderExplanationOn:!public!rendering! !
-!WACookieFunctionalTest categoriesFor: #renderFirefoxOn:!public!rendering/explanation! !
-!WACookieFunctionalTest categoriesFor: #renderHeadingsOn:!public!rendering! !
-!WACookieFunctionalTest categoriesFor: #renderInputFirstOn:!public!rendering! !
-!WACookieFunctionalTest categoriesFor: #renderInputForCookie:on:!public!rendering! !
-!WACookieFunctionalTest categoriesFor: #renderInputOn:!public!rendering! !
-!WACookieFunctionalTest categoriesFor: #renderInputSecondOn:!public!rendering! !
-!WACookieFunctionalTest categoriesFor: #renderOperaOn:!public!rendering/explanation! !
-!WACookieFunctionalTest categoriesFor: #renderRemoveOn:!public!rendering/explanation! !
-!WACookieFunctionalTest categoriesFor: #renderSafariOn:!public!rendering/explanation! !
-!WACookieFunctionalTest categoriesFor: #resetFirst!private! !
-!WACookieFunctionalTest categoriesFor: #resetSecond!private! !
-!WACookieFunctionalTest categoriesFor: #secondCookie!accessing!public! !
-!WACookieFunctionalTest categoriesFor: #secondKey!accessing!public! !
-!WACookieFunctionalTest categoriesFor: #secondKey:!accessing!public! !
-!WACookieFunctionalTest categoriesFor: #secondPath!accessing!public! !
-!WACookieFunctionalTest categoriesFor: #secondPath:!accessing!public! !
-!WACookieFunctionalTest categoriesFor: #secondValue!accessing!public! !
-!WACookieFunctionalTest categoriesFor: #secondValue:!accessing!public! !
+
+!WACookieFunctionalTest categoriesForMethods!
+addBoth!actions!public! !
+addFirst!actions!public! !
+cookies!accessing!public! !
+firstCookie!accessing!public! !
+firstKey!accessing!public! !
+firstKey:!accessing!public! !
+firstPath!accessing!public! !
+firstPath:!accessing!public! !
+firstValue!accessing!public! !
+firstValue:!accessing!public! !
+initialize!initialization!public! !
+remove:!actions!public! !
+renderCombiningOn:!public!rendering/explanation! !
+renderContentOn:!public!rendering! !
+renderCookiesOn:!public!rendering! !
+renderExplanationOn:!public!rendering! !
+renderFirefoxOn:!public!rendering/explanation! !
+renderHeadingsOn:!public!rendering! !
+renderInputFirstOn:!public!rendering! !
+renderInputForCookie:on:!public!rendering! !
+renderInputOn:!public!rendering! !
+renderInputSecondOn:!public!rendering! !
+renderOperaOn:!public!rendering/explanation! !
+renderRemoveOn:!public!rendering/explanation! !
+renderSafariOn:!public!rendering/explanation! !
+resetFirst!private! !
+resetSecond!private! !
+secondCookie!accessing!public! !
+secondKey!accessing!public! !
+secondKey:!accessing!public! !
+secondPath!accessing!public! !
+secondPath:!accessing!public! !
+secondValue!accessing!public! !
+secondValue:!accessing!public! !
+!
 

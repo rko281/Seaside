@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JSObject subclass: #JSJoin
 	instanceVariableNames: 'collection'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSJoin guid: (GUID fromString: '{d20376c8-017b-421d-b8b5-b02f57ce193a}')!
+
+JSJoin guid: (GUID fromString: '{b2483a6f-00cd-44f1-bb36-e67a85eb43b3}')!
+
 JSJoin comment: 'I join a collection of JavaScript statements with the given string.'!
-!JSJoin categoriesForClass!Javascript-Core-Base! !
+
+!JSJoin categoriesForClass!Base! !
+
 !JSJoin methodsFor!
 
 collection	^ collection!
@@ -21,18 +25,24 @@ encodeOn: aDocument	self collection isEmpty		ifTrue: [ ^ self encodeEmptyOn: a
 initializeOn: aCollection	self initialize.	collection := aCollection!
 
 javascriptContentOn: aStream	| document codec |	codec := [ self requestContext codec ] 		on: WARequestContextNotFound		do: [ :e | GRNullCodec new ].	document := WAUnescapedDocument 		on: aStream		codec: codec.	self encodeOn: document! !
-!JSJoin categoriesFor: #collection!accessing!public! !
-!JSJoin categoriesFor: #encodeElement:on:!encoding!public! !
-!JSJoin categoriesFor: #encodeEmptyOn:!encoding!public! !
-!JSJoin categoriesFor: #encodeOn:!encoding!public! !
-!JSJoin categoriesFor: #initializeOn:!initialization!public! !
-!JSJoin categoriesFor: #javascriptContentOn:!printing!public! !
+
+!JSJoin categoriesForMethods!
+collection!accessing!public! !
+encodeElement:on:!encoding!public! !
+encodeEmptyOn:!encoding!public! !
+encodeOn:!encoding!public! !
+initializeOn:!initialization!public! !
+javascriptContentOn:!printing!public! !
+!
 
 !JSJoin class methodsFor!
 
 new	^ self on: OrderedCollection new!
 
 on: aCollection	^ self basicNew initializeOn: aCollection! !
-!JSJoin class categoriesFor: #new!instance creation!public! !
-!JSJoin class categoriesFor: #on:!instance creation!public! !
+
+!JSJoin class categoriesForMethods!
+new!instance creation!public! !
+on:!instance creation!public! !
+!
 

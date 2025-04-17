@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JSObjectTest subclass: #JSScriptTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSScriptTest guid: (GUID fromString: '{fdfc4c82-a1ff-48d1-a7ed-61c01c2205de}')!
+
+JSScriptTest guid: (GUID fromString: '{8a83c67f-bc56-4f10-ad50-55dafb1f18d8}')!
+
 JSScriptTest comment: ''!
-!JSScriptTest categoriesForClass!Javascript-Tests-Core! !
+
+!JSScriptTest categoriesForClass!Unclassified! !
+
 !JSScriptTest methodsFor!
 
 function	^ JSFunction context: self renderContext!
@@ -43,21 +47,24 @@ testRefresh	self assert: self script refresh equals: 'window.location="http://w
 testReturn	| function |	function := self function.	function add: (self stream nextPutAll: 'foo').	function add: (self stream nextPutAll: 'bar').	function add: (self stream nextPutAll: 'baz').	self assert: function equals: 'function(){foo;bar;baz}'.	function := self function return: true.	function add: (self stream nextPutAll: 'foo').	function add: (self stream nextPutAll: 'bar').	function add: (self stream nextPutAll: 'baz').	self assert: function equals: 'function(){foo;bar;return baz}'!
 
 testShift	| script element |	script := self script.	element := self stream nextPutAll: 'foo'.	self assert: (script << element) == element.	self assert: script equals: 'foo'.	element := self stream nextPutAll: 'bar'.	self assert: (script << element) == element.	self assert: script equals: 'foo;bar'! !
-!JSScriptTest categoriesFor: #function!accessing!public! !
-!JSScriptTest categoriesFor: #script!accessing!public! !
-!JSScriptTest categoriesFor: #testAdd!public!tests/compose! !
-!JSScriptTest categoriesFor: #testAddAll!public!tests/compose! !
-!JSScriptTest categoriesFor: #testAlert!public!tests/utilities! !
-!JSScriptTest categoriesFor: #testArgument!public!tests/function! !
-!JSScriptTest categoriesFor: #testArguments!public!tests/function! !
-!JSScriptTest categoriesFor: #testAsFunction!public!tests/function! !
-!JSScriptTest categoriesFor: #testCallback!public!tests/utilities! !
-!JSScriptTest categoriesFor: #testComma!public!tests/compose! !
-!JSScriptTest categoriesFor: #testConvert!public!tests! !
-!JSScriptTest categoriesFor: #testEmpty!public!tests! !
-!JSScriptTest categoriesFor: #testGoto!public!tests/utilities! !
-!JSScriptTest categoriesFor: #testLogger!public!tests/utilities! !
-!JSScriptTest categoriesFor: #testRefresh!public!tests/utilities! !
-!JSScriptTest categoriesFor: #testReturn!public!tests/function! !
-!JSScriptTest categoriesFor: #testShift!public!tests/compose! !
+
+!JSScriptTest categoriesForMethods!
+function!accessing!public! !
+script!accessing!public! !
+testAdd!public!tests/compose! !
+testAddAll!public!tests/compose! !
+testAlert!public!tests/utilities! !
+testArgument!public!tests/function! !
+testArguments!public!tests/function! !
+testAsFunction!public!tests/function! !
+testCallback!public!tests/utilities! !
+testComma!public!tests/compose! !
+testConvert!public!tests! !
+testEmpty!public!tests! !
+testGoto!public!tests/utilities! !
+testLogger!public!tests/utilities! !
+testRefresh!public!tests/utilities! !
+testReturn!public!tests/function! !
+testShift!public!tests/compose! !
+!
 

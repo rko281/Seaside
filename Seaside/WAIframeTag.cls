@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WATagBrush subclass: #WAIframeTag
 	instanceVariableNames: 'rootBlock url'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAIframeTag guid: (GUID fromString: '{d3722425-5d0a-4351-8310-d7e517e9daa8}')!
+
+WAIframeTag guid: (GUID fromString: '{923c94f6-4982-4b23-9b1a-871ea98a1d3d}')!
+
 WAIframeTag comment: 'The IFRAME element allows authors to insert a frame within a block of text. Inserting an inline frame within a section of text is much like inserting an object via the OBJECT element: they both allow you to insert an HTML document in the middle of another, they may both be aligned with surrounding text, etc. The information to be inserted inline is designated by the src attribute of this element. The contents of the IFRAME element, on the other hand, should only be displayed by user agents that do not support frames or are configured not to display frames.Inline frames may not be resized.'!
-!WAIframeTag categoriesForClass!Seaside-Canvas-Tags! !
+
+!WAIframeTag categoriesForClass!Tags! !
+
 !WAIframeTag methodsFor!
 
 callback: aNiladicValuable	"Evaluates the given valuable when the content of the iframe is loaded.	You probably want to switch the presenter of the switch the presenter of the session. See WAIframeFunctionalTest for an example.	In Seaside 3.1 this may be replaced by a dedicated continuation."	aNiladicValuable argumentCount > 0 ifTrue: [ GRInvalidArgumentCount signal: 'Iframes expect a niladic callback.' ].	self url addField: (self storeCallback: (WAActionCallback on: aNiladicValuable))!
@@ -33,16 +37,19 @@ url: aUrlOrString 	url := aUrlOrString!
 width: anInteger	"The width of the inline frame."	self attributes at: 'width' put: anInteger!
 
 with: aBlock	url isNil		ifFalse: [ self attributes at: 'src' put: url ].	super with: aBlock! !
-!WAIframeTag categoriesFor: #callback:!callbacks!public! !
-!WAIframeTag categoriesFor: #contents:!convenience!public! !
-!WAIframeTag categoriesFor: #height:!attributes!public! !
-!WAIframeTag categoriesFor: #name:!attributes!public! !
-!WAIframeTag categoriesFor: #performRendering:!private! !
-!WAIframeTag categoriesFor: #rootBlock!accessing!public! !
-!WAIframeTag categoriesFor: #rootBlock:!accessing!public! !
-!WAIframeTag categoriesFor: #tag!accessing!public! !
-!WAIframeTag categoriesFor: #url!attributes!public! !
-!WAIframeTag categoriesFor: #url:!attributes!public! !
-!WAIframeTag categoriesFor: #width:!attributes!public! !
-!WAIframeTag categoriesFor: #with:!public! !
+
+!WAIframeTag categoriesForMethods!
+callback:!callbacks!public! !
+contents:!convenience!public! !
+height:!attributes!public! !
+name:!attributes!public! !
+performRendering:!private! !
+rootBlock!accessing!public! !
+rootBlock:!accessing!public! !
+tag!accessing!public! !
+url!attributes!public! !
+url:!attributes!public! !
+width:!attributes!public! !
+with:!public! !
+!
 

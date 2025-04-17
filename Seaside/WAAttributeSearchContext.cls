@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAObject subclass: #WAAttributeSearchContext
 	instanceVariableNames: 'key attribute cachedValues attributeHolders attributeInheritors'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAAttributeSearchContext guid: (GUID fromString: '{f1fe9722-366e-4a6e-838c-638b776c625f}')!
+
+WAAttributeSearchContext guid: (GUID fromString: '{8ea481ac-c58b-4ca5-b40b-0faabcb3bb87}')!
+
 WAAttributeSearchContext comment: 'This class makes attribute searching more efficient by traversing the ancestry once and caching which Configurations hold the attribute. It is then passed through search functions which cache values for the attribute.'!
-!WAAttributeSearchContext categoriesForClass!Seaside-Core-Configuration! !
+
+!WAAttributeSearchContext categoriesForClass!Configuration! !
+
 !WAAttributeSearchContext methodsFor!
 
 at: aConfiguration ifPresent: aBlock	^ self cachedValues at: aConfiguration ifPresent: aBlock!
@@ -29,19 +33,25 @@ isAttributeInheritedOn: aConfiguration 	^ attributeInheritors includes: aConfig
 isAttributeLocalOn: aConfiguration 	^ attributeHolders includes: aConfiguration!
 
 key	^ key! !
-!WAAttributeSearchContext categoriesFor: #at:ifPresent:!accessing!public! !
-!WAAttributeSearchContext categoriesFor: #at:put:!accessing!public! !
-!WAAttributeSearchContext categoriesFor: #attribute!accessing!public! !
-!WAAttributeSearchContext categoriesFor: #cachedValues!private! !
-!WAAttributeSearchContext categoriesFor: #findAttributeAndSelectAncestorsOf:!private! !
-!WAAttributeSearchContext categoriesFor: #initializeWithKey:!initialization!public! !
-!WAAttributeSearchContext categoriesFor: #isAttributeFoundOn:!public!testing! !
-!WAAttributeSearchContext categoriesFor: #isAttributeInheritedOn:!public!testing! !
-!WAAttributeSearchContext categoriesFor: #isAttributeLocalOn:!public!testing! !
-!WAAttributeSearchContext categoriesFor: #key!accessing!public! !
+
+!WAAttributeSearchContext categoriesForMethods!
+at:ifPresent:!accessing!public! !
+at:put:!accessing!public! !
+attribute!accessing!public! !
+cachedValues!private! !
+findAttributeAndSelectAncestorsOf:!private! !
+initializeWithKey:!initialization!public! !
+isAttributeFoundOn:!public!testing! !
+isAttributeInheritedOn:!public!testing! !
+isAttributeLocalOn:!public!testing! !
+key!accessing!public! !
+!
 
 !WAAttributeSearchContext class methodsFor!
 
 key: keySymbol target: targetConfiguration	^ self basicNew		initializeWithKey: keySymbol;		findAttributeAndSelectAncestorsOf: targetConfiguration;		yourself! !
-!WAAttributeSearchContext class categoriesFor: #key:target:!instance creation!public! !
+
+!WAAttributeSearchContext class categoriesForMethods!
+key:target:!instance creation!public! !
+!
 

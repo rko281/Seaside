@@ -1,23 +1,33 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JSDecoration subclass: #JSStatement
 	instanceVariableNames: 'statement'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSStatement guid: (GUID fromString: '{44a54d40-89c4-4a15-b8cc-a48d6671f8d9}')!
+
+JSStatement guid: (GUID fromString: '{5e676942-5b82-4b6e-ae80-9b424d128c06}')!
+
 JSStatement comment: ''!
-!JSStatement categoriesForClass!Javascript-Core-Decorations! !
+
+!JSStatement categoriesForClass!Decorations! !
+
 !JSStatement methodsFor!
 
 statement	^ statement!
 
 statement: anObject	statement := anObject! !
-!JSStatement categoriesFor: #statement!accessing!public! !
-!JSStatement categoriesFor: #statement:!accessing!public! !
+
+!JSStatement categoriesForMethods!
+statement!accessing!public! !
+statement:!accessing!public! !
+!
 
 !JSStatement class methodsFor!
 
 on: anObject	^ self new statement: anObject! !
-!JSStatement class categoriesFor: #on:!instance creation!public! !
+
+!JSStatement class categoriesForMethods!
+on:!instance creation!public! !
+!
 

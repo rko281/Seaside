@@ -1,18 +1,25 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 TestCase subclass: #WACurrentRequestContextTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WACurrentRequestContextTest guid: (GUID fromString: '{85575d17-9d4c-40c3-a7dc-42ea19523844}')!
+
+WACurrentRequestContextTest guid: (GUID fromString: '{9fd3e868-ea00-4288-ab4a-7792e2c05f16}')!
+
 WACurrentRequestContextTest comment: ''!
-!WACurrentRequestContextTest categoriesForClass!Seaside-Tests-Core-RequestHandling! !
+
+!WACurrentRequestContextTest categoriesForClass!RequestHandling! !
+
 !WACurrentRequestContextTest methodsFor!
 
 testWithoutValue	self should: [ WACurrentRequestContext value ] raise: WARequestContextNotFound!
 
 testWithValue	WACurrentRequestContext		use: 1		during: [ self assert: WACurrentRequestContext value = 1 ]! !
-!WACurrentRequestContextTest categoriesFor: #testWithoutValue!public!tests! !
-!WACurrentRequestContextTest categoriesFor: #testWithValue!public!tests! !
+
+!WACurrentRequestContextTest categoriesForMethods!
+testWithoutValue!public!tests! !
+testWithValue!public!tests! !
+!
 

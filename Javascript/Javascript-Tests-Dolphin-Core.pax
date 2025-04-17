@@ -1,0 +1,34 @@
+﻿| package |
+package := Package name: 'Javascript-Tests-Dolphin-Core'.
+package paxVersion: 1;
+	basicComment: ''.
+
+package methodNames
+	add: #JSConversionTest -> #testColor;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: #(
+	'..\..\Core\Object Arts\Dolphin\MVP\Base\Dolphin MVP Base'
+	'Javascript-Tests-Core').
+
+package!
+
+"Loose Methods"!
+
+!JSConversionTest methodsFor!
+
+testColor
+	self assert: Color red equals: '"#FF0000"'! !
+
+!JSConversionTest categoriesForMethods!
+testColor!public!tests! !
+!
+
+"End of package definition"!
+

@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WARequestHandler subclass: #WAFileHandler
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: 'default'!
-WAFileHandler guid: (GUID fromString: '{cd749086-42f9-4f41-9a21-9141cf02493b}')!
+
+WAFileHandler guid: (GUID fromString: '{450f6204-1fdb-4a05-a7dc-9e97d05676b9}')!
+
 WAFileHandler comment: 'Seaside serves static files using WAFileLibrary subclasses. WAFileHandler handles all requests for WALibrary files (or methods) for all applications on the Seaside server. WAFileHandler is registered with the default WADispatcher automatically.'!
-!WAFileHandler categoriesForClass!Seaside-Core-Libraries! !
+
+!WAFileHandler categoriesForClass!Libraries! !
+
 !WAFileHandler methodsFor!
 
 baseUrlForLibrary	| resourceBaseUrl |	resourceBaseUrl := self resourceBaseUrl.	^ resourceBaseUrl isNil		ifTrue: [ self url ]		ifFalse: [ resourceBaseUrl copy ]!
@@ -29,16 +33,19 @@ responseForContext: aRequestContext	| libraryClass consumer |	consumer := aReq
 useXSendfile	^ self preferenceAt: #useXSendfile!
 
 xSendfileBaseDirectory	^ self preferenceAt: #xSendfileBaseDirectory! !
-!WAFileHandler categoriesFor: #baseUrlForLibrary!accessing!public! !
-!WAFileHandler categoriesFor: #defaultConfiguration!configuration!public! !
-!WAFileHandler categoriesFor: #fileHandlerListingClass!configuration!public! !
-!WAFileHandler categoriesFor: #handleFiltered:!handling!public! !
-!WAFileHandler categoriesFor: #libraries!accessing!public! !
-!WAFileHandler categoriesFor: #libraryAt:ifAbsent:!accessing!public! !
-!WAFileHandler categoriesFor: #resourceBaseUrl!configuration!public! !
-!WAFileHandler categoriesFor: #responseForContext:!private! !
-!WAFileHandler categoriesFor: #useXSendfile!configuration!public! !
-!WAFileHandler categoriesFor: #xSendfileBaseDirectory!configuration!public! !
+
+!WAFileHandler categoriesForMethods!
+baseUrlForLibrary!accessing!public! !
+defaultConfiguration!configuration!public! !
+fileHandlerListingClass!configuration!public! !
+handleFiltered:!handling!public! !
+libraries!accessing!public! !
+libraryAt:ifAbsent:!accessing!public! !
+resourceBaseUrl!configuration!public! !
+responseForContext:!private! !
+useXSendfile!configuration!public! !
+xSendfileBaseDirectory!configuration!public! !
+!
 
 !WAFileHandler class methodsFor!
 
@@ -47,7 +54,10 @@ default	default isNil ifTrue: [ default := self new ].	^ default!
 default: aFileHandler	default := aFileHandler!
 
 description	^ 'File Library'! !
-!WAFileHandler class categoriesFor: #default!accessing!public! !
-!WAFileHandler class categoriesFor: #default:!accessing!public! !
-!WAFileHandler class categoriesFor: #description!accessing!public! !
+
+!WAFileHandler class categoriesForMethods!
+default!accessing!public! !
+default:!accessing!public! !
+description!accessing!public! !
+!
 

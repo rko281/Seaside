@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WADocument subclass: #WAJsonDocument
 	instanceVariableNames: 'jsonEncoder'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAJsonDocument guid: (GUID fromString: '{6033511d-e94b-4bff-8665-28bb01a63e78}')!
+
+WAJsonDocument guid: (GUID fromString: '{ef13cb30-e4ee-4764-82d7-283d8e220127}')!
+
 WAJsonDocument comment: 'I add the possibility to generate JSON.'!
-!WAJsonDocument categoriesForClass!Seaside-JSON-Core! !
+
+!WAJsonDocument categoriesForClass!Base! !
+
 !WAJsonDocument methodsFor!
 
 closeArray	stream nextPut: $]!
@@ -21,10 +25,13 @@ openArray	stream nextPut: $[!
 openObject	stream nextPut: ${!
 
 string: aString	stream nextPut: $".	jsonEncoder nextPutAll: aString.	stream nextPut: $"! !
-!WAJsonDocument categoriesFor: #closeArray!public!writing! !
-!WAJsonDocument categoriesFor: #closeObject!public!writing! !
-!WAJsonDocument categoriesFor: #initializeWithStream:codec:!initialization!public! !
-!WAJsonDocument categoriesFor: #openArray!public!writing! !
-!WAJsonDocument categoriesFor: #openObject!public!writing! !
-!WAJsonDocument categoriesFor: #string:!public!writing! !
+
+!WAJsonDocument categoriesForMethods!
+closeArray!public!writing! !
+closeObject!public!writing! !
+initializeWithStream:codec:!initialization!public! !
+openArray!public!writing! !
+openObject!public!writing! !
+string:!public!writing! !
+!
 

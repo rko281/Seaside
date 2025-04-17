@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WADecoration subclass: #WADelegation
 	instanceVariableNames: 'delegate'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WADelegation guid: (GUID fromString: '{1f86a5ae-8986-440f-9ba0-d02d860dd1f5}')!
+
+WADelegation guid: (GUID fromString: '{59a87648-77fb-4b76-9559-cd411667580d}')!
+
 WADelegation comment: 'I work as a container to delegate the rendering to another object.'!
-!WADelegation categoriesForClass!Seaside-Component-Base! !
+
+!WADelegation categoriesForClass!Base! !
+
 !WADelegation methodsFor!
 
 accept: aVisitor	aVisitor visitDelegation: self!
@@ -21,10 +25,13 @@ delegate: aComponent	delegate := aComponent!
 isDelegation	^ true!
 
 renderContentOn: html	html render: self delegate! !
-!WADelegation categoriesFor: #accept:!public!visiting! !
-!WADelegation categoriesFor: #children!hooks!public! !
-!WADelegation categoriesFor: #delegate!accessing!public! !
-!WADelegation categoriesFor: #delegate:!accessing!public! !
-!WADelegation categoriesFor: #isDelegation!public!testing! !
-!WADelegation categoriesFor: #renderContentOn:!public!rendering! !
+
+!WADelegation categoriesForMethods!
+accept:!public!visiting! !
+children!hooks!public! !
+delegate!accessing!public! !
+delegate:!accessing!public! !
+isDelegation!public!testing! !
+renderContentOn:!public!rendering! !
+!
 

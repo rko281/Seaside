@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQUiFunctionalTest subclass: #JQVisualsFunctionalTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQVisualsFunctionalTest guid: (GUID fromString: '{95dee9fe-9f00-4ccb-a027-47fc80d435be}')!
+
+JQVisualsFunctionalTest guid: (GUID fromString: '{82bdeb9c-5ce2-4b32-a3a0-c8d3178a66b0}')!
+
 JQVisualsFunctionalTest comment: ''!
-!JQVisualsFunctionalTest categoriesForClass!JQuery-Tests-UI-Functional! !
+
+!JQVisualsFunctionalTest categoriesForClass!Functional! !
+
 !JQVisualsFunctionalTest methodsFor!
 
 renderContentOn: html	self renderHighlightOn: html.	self renderErrorOn: html!
@@ -23,11 +27,14 @@ style	^ '.ui-corner-all { padding: 0.1em 0.5em; margin: 1em auto; width: 500px;
 title	^ 'Visual Theming'!
 
 url	^ 'http://docs.jquery.com/UI/Theming/API'! !
-!JQVisualsFunctionalTest categoriesFor: #renderContentOn:!public!rendering! !
-!JQVisualsFunctionalTest categoriesFor: #renderErrorOn:!public!rendering! !
-!JQVisualsFunctionalTest categoriesFor: #renderHighlightOn:!public!rendering! !
-!JQVisualsFunctionalTest categoriesFor: #selectors!accessing!public! !
-!JQVisualsFunctionalTest categoriesFor: #style!hooks!public! !
-!JQVisualsFunctionalTest categoriesFor: #title!accessing!public! !
-!JQVisualsFunctionalTest categoriesFor: #url!accessing!public! !
+
+!JQVisualsFunctionalTest categoriesForMethods!
+renderContentOn:!public!rendering! !
+renderErrorOn:!public!rendering! !
+renderHighlightOn:!public!rendering! !
+selectors!accessing!public! !
+style!hooks!public! !
+title!accessing!public! !
+url!accessing!public! !
+!
 

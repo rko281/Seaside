@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WASessionTrackingStrategy subclass: #WACookieForBrowserIPForCrawlerTrackingStrategy
 	instanceVariableNames: 'cookieStrategy ipStrategy'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WACookieForBrowserIPForCrawlerTrackingStrategy guid: (GUID fromString: '{51e0e17b-7e43-473c-b3f2-4c5d070d6c39}')!
+
+WACookieForBrowserIPForCrawlerTrackingStrategy guid: (GUID fromString: '{7c46f013-7006-416d-a8d0-97a47119374c}')!
+
 WACookieForBrowserIPForCrawlerTrackingStrategy comment: 'WACookieForBrowserIPForCrawlerTrackingStrategy uses cookie based session tracking for browsers and IPs for crawlers (they don''t support cookies). This way there is never a session key in any URL.This is inspired by:http://www.tomcatexpert.com/blog/2011/05/18/crawler-session-manager-valve'!
-!WACookieForBrowserIPForCrawlerTrackingStrategy categoriesForClass!Seaside-Session! !
+
+!WACookieForBrowserIPForCrawlerTrackingStrategy categoriesForClass!Tracking! !
+
 !WACookieForBrowserIPForCrawlerTrackingStrategy methodsFor!
 
 addKey: aString toContext: aRequestContext	^ (self strategyFor: aRequestContext)		addKey: aString toContext: aRequestContext!
@@ -25,12 +29,15 @@ keyFromContext: aRequestContext	^ (self strategyFor: aRequestContext)		keyFrom
 noHandlerFoundForKey: aString in: anApplication context: aRequestContext	^ (self strategyFor: aRequestContext)		noHandlerFoundForKey: aString in: anApplication context: aRequestContext!
 
 strategyFor: aRequestContext	^ (self isFromCrawler: aRequestContext)		ifTrue: [ ipStrategy ]		ifFalse: [ cookieStrategy ]! !
-!WACookieForBrowserIPForCrawlerTrackingStrategy categoriesFor: #addKey:toContext:!public! !
-!WACookieForBrowserIPForCrawlerTrackingStrategy categoriesFor: #addKey:toUrl:!public! !
-!WACookieForBrowserIPForCrawlerTrackingStrategy categoriesFor: #crawlerSubStrings!private! !
-!WACookieForBrowserIPForCrawlerTrackingStrategy categoriesFor: #initialize!initialization!public! !
-!WACookieForBrowserIPForCrawlerTrackingStrategy categoriesFor: #isFromCrawler:!private! !
-!WACookieForBrowserIPForCrawlerTrackingStrategy categoriesFor: #keyFromContext:!public! !
-!WACookieForBrowserIPForCrawlerTrackingStrategy categoriesFor: #noHandlerFoundForKey:in:context:!public! !
-!WACookieForBrowserIPForCrawlerTrackingStrategy categoriesFor: #strategyFor:!private! !
+
+!WACookieForBrowserIPForCrawlerTrackingStrategy categoriesForMethods!
+addKey:toContext:!public! !
+addKey:toUrl:!public! !
+crawlerSubStrings!private! !
+initialize!initialization!public! !
+isFromCrawler:!private! !
+keyFromContext:!public! !
+noHandlerFoundForKey:in:context:!public! !
+strategyFor:!private! !
+!
 

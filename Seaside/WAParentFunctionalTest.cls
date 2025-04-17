@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAFunctionalTest subclass: #WAParentFunctionalTest
 	instanceVariableNames: 'parent'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAParentFunctionalTest guid: (GUID fromString: '{748d5607-15b7-4b63-b466-6171e034daa2}')!
+
+WAParentFunctionalTest guid: (GUID fromString: '{456eaaae-cdaf-49d3-90a3-d130eed4f632}')!
+
 WAParentFunctionalTest comment: ''!
-!WAParentFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
+
+!WAParentFunctionalTest categoriesForClass!Unclassified! !
+
 !WAParentFunctionalTest methodsFor!
 
 parent: aComponent	parent := aComponent!
@@ -19,9 +23,12 @@ renderExplanationOn: html	html paragraph: 'This regression tests checks if #cal
 renderSwapParentOn: html	html paragraph: [		html anchor			callback: [ self swap ];			with: 'swap parent' ]!
 
 swap	parent inform: 'Test passes!!' onAnswer: [ ]! !
-!WAParentFunctionalTest categoriesFor: #parent:!accessing!public! !
-!WAParentFunctionalTest categoriesFor: #renderContentOn:!public!rendering! !
-!WAParentFunctionalTest categoriesFor: #renderExplanationOn:!public!rendering! !
-!WAParentFunctionalTest categoriesFor: #renderSwapParentOn:!public!rendering! !
-!WAParentFunctionalTest categoriesFor: #swap!actions!public! !
+
+!WAParentFunctionalTest categoriesForMethods!
+parent:!accessing!public! !
+renderContentOn:!public!rendering! !
+renderExplanationOn:!public!rendering! !
+renderSwapParentOn:!public!rendering! !
+swap!actions!public! !
+!
 

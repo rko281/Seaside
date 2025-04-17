@@ -1,15 +1,22 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQBaseTheme subclass: #JQBlitzerTheme
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQBlitzerTheme guid: (GUID fromString: '{d83186ed-9a8c-49bf-b25e-f9be5f068914}')!
+
+JQBlitzerTheme guid: (GUID fromString: '{da396897-2715-4105-8519-ef73aa12dcd2}')!
+
 JQBlitzerTheme comment: ''!
-!JQBlitzerTheme categoriesForClass!JQuery-UI-Libraries! !
+
+!JQBlitzerTheme categoriesForClass!Libraries! !
+
 !JQBlitzerTheme methodsFor!
 
 themeName	^ 'blitzer'! !
-!JQBlitzerTheme categoriesFor: #themeName!accessing!public! !
+
+!JQBlitzerTheme categoriesForMethods!
+themeName!accessing!public! !
+!
 

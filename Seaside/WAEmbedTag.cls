@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WATagBrush subclass: #WAEmbedTag
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAEmbedTag guid: (GUID fromString: '{af50c9c0-7b13-4b42-89d0-6db3f2943fa7}')!
+
+WAEmbedTag guid: (GUID fromString: '{8b151c8f-3b57-49b4-8cbd-2c5e83553f1b}')!
+
 WAEmbedTag comment: 'The <embed> tag defines a container for an external application or interactive content (a plug-in).'!
-!WAEmbedTag categoriesForClass!Seaside-Canvas-Tags! !
+
+!WAEmbedTag categoriesForClass!Tags! !
+
 !WAEmbedTag methodsFor!
 
 height: anInteger	self attributeAt: 'height' put: anInteger!
@@ -19,9 +23,12 @@ type: aMimeType	self attributeAt: 'type' put: aMimeType!
 url: aString	"The src attribute gives the address of the resource being embedded."	self attributeAt: 'src' put: aString!
 
 width: anInteger	self attributeAt: 'width' put: anInteger! !
-!WAEmbedTag categoriesFor: #height:!attributes!public! !
-!WAEmbedTag categoriesFor: #tag!accessing!public! !
-!WAEmbedTag categoriesFor: #type:!attributes!public! !
-!WAEmbedTag categoriesFor: #url:!attributes!public! !
-!WAEmbedTag categoriesFor: #width:!attributes!public! !
+
+!WAEmbedTag categoriesForMethods!
+height:!attributes!public! !
+tag!accessing!public! !
+type:!attributes!public! !
+url:!attributes!public! !
+width:!attributes!public! !
+!
 

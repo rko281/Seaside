@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAAttributeExpression subclass: #WAValueExpression
 	instanceVariableNames: 'value'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAValueExpression guid: (GUID fromString: '{c3cea142-b732-404a-8b56-a6e131313885}')!
+
+WAValueExpression guid: (GUID fromString: '{1974edd8-9b84-4c09-b0a5-be861dbf6279}')!
+
 WAValueExpression comment: ''!
-!WAValueExpression categoriesForClass!Seaside-Core-Configuration! !
+
+!WAValueExpression categoriesForClass!Configuration! !
+
 !WAValueExpression methodsFor!
 
 determineValueWithContext: aContext configuration: aConfiguration	^ self value!
@@ -15,7 +19,10 @@ determineValueWithContext: aContext configuration: aConfiguration	^ self value!
 value	^ value!
 
 value: anObject	value := anObject! !
-!WAValueExpression categoriesFor: #determineValueWithContext:configuration:!public!values! !
-!WAValueExpression categoriesFor: #value!accessing!public! !
-!WAValueExpression categoriesFor: #value:!accessing!public! !
+
+!WAValueExpression categoriesForMethods!
+determineValueWithContext:configuration:!public!values! !
+value!accessing!public! !
+value:!accessing!public! !
+!
 

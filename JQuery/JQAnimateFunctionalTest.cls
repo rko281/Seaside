@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQFunctionalTest subclass: #JQAnimateFunctionalTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQAnimateFunctionalTest guid: (GUID fromString: '{c9591841-8036-4259-86ea-79e3ae10361b}')!
+
+JQAnimateFunctionalTest guid: (GUID fromString: '{f5311227-758b-42d7-a702-f0d87e33f145}')!
+
 JQAnimateFunctionalTest comment: ''!
-!JQAnimateFunctionalTest categoriesForClass!JQuery-Tests-Core-Functional! !
+
+!JQAnimateFunctionalTest categoriesForClass!Functional! !
+
 !JQAnimateFunctionalTest methodsFor!
 
 renderAbsoluteOn: html	html anchor		onClick: ((html jQuery: #seastar) animate opacity: 0.0);		with: 'Opacity 0%'.	html anchor		onClick: ((html jQuery: #seastar) animate opacity: 0.5);		with: 'Opacity 50%'.	html anchor		onClick: ((html jQuery: #seastar) animate opacity: 1.0);		with: 'Opacity 100%'!
@@ -21,10 +25,13 @@ renderToggleOn: html	html anchor		onClick: ((html jQuery: #seastar) animate wi
 selectors	^ #(renderContentOn: renderRelativeOn: renderAbsoluteOn: renderToggleOn: renderSeastarOn:)!
 
 title	^ 'Animations'! !
-!JQAnimateFunctionalTest categoriesFor: #renderAbsoluteOn:!public!rendering! !
-!JQAnimateFunctionalTest categoriesFor: #renderContentOn:!public!rendering! !
-!JQAnimateFunctionalTest categoriesFor: #renderRelativeOn:!public!rendering! !
-!JQAnimateFunctionalTest categoriesFor: #renderToggleOn:!public!rendering! !
-!JQAnimateFunctionalTest categoriesFor: #selectors!accessing!public! !
-!JQAnimateFunctionalTest categoriesFor: #title!accessing!public! !
+
+!JQAnimateFunctionalTest categoriesForMethods!
+renderAbsoluteOn:!public!rendering! !
+renderContentOn:!public!rendering! !
+renderRelativeOn:!public!rendering! !
+renderToggleOn:!public!rendering! !
+selectors!accessing!public! !
+title!accessing!public! !
+!
 

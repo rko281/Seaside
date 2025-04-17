@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAObject subclass: #WAMimeDocument
 	instanceVariableNames: 'contents mimeType fileName'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAMimeDocument guid: (GUID fromString: '{7416d3c6-8f2b-49b6-b7ca-2a7391115ede}')!
+
+WAMimeDocument guid: (GUID fromString: '{71baa915-f6a3-4407-b659-0908a1228c65}')!
+
 WAMimeDocument comment: 'WAMimeDocument is the abstract base class for mime documents. It is intended as a very basic, mime documents. Implementations are free to use more advance, native implementations as long as they conform to the protocol.Instance Variables	contentType:		<WAMimeType>mimeType	- the mime type of this document'!
-!WAMimeDocument categoriesForClass!Seaside-Core-HTTP! !
+
+!WAMimeDocument categoriesForClass!HTTP! !
+
 !WAMimeDocument methodsFor!
 
 = anObject	^ (anObject isKindOf: WAMimeDocument)		and: [ self mimeType = anObject mimeType		and: [ self fileName = anObject fileName		and: [ self contents = anObject contents ] ] ]!
@@ -35,19 +39,22 @@ mimeType	"Answer the file name of this document, or nil."		^ mimeType!
 mimeType: aMimeType	mimeType := aMimeType isNil		ifFalse: [ aMimeType seasideMimeType ]		ifTrue: [ WAMimeType applicationOctetStream ]!
 
 seasideMimeDocument	^ self! !
-!WAMimeDocument categoriesFor: #=!comparing!public! !
-!WAMimeDocument categoriesFor: #content!compatibility!public! !
-!WAMimeDocument categoriesFor: #contents!accessing!public! !
-!WAMimeDocument categoriesFor: #contents:!accessing!public! !
-!WAMimeDocument categoriesFor: #contentStream!compatibility!public! !
-!WAMimeDocument categoriesFor: #contentType!compatibility!public! !
-!WAMimeDocument categoriesFor: #fileName!accessing!public! !
-!WAMimeDocument categoriesFor: #fileName:!accessing!public! !
-!WAMimeDocument categoriesFor: #hash!comparing!public! !
-!WAMimeDocument categoriesFor: #initializeOn:mimeType:fileName:!initialization!public! !
-!WAMimeDocument categoriesFor: #mimeType!accessing!public! !
-!WAMimeDocument categoriesFor: #mimeType:!accessing!public! !
-!WAMimeDocument categoriesFor: #seasideMimeDocument!converting!public! !
+
+!WAMimeDocument categoriesForMethods!
+=!comparing!public! !
+content!compatibility!public! !
+contents!accessing!public! !
+contents:!accessing!public! !
+contentStream!compatibility!public! !
+contentType!compatibility!public! !
+fileName!accessing!public! !
+fileName:!accessing!public! !
+hash!comparing!public! !
+initializeOn:mimeType:fileName:!initialization!public! !
+mimeType!accessing!public! !
+mimeType:!accessing!public! !
+seasideMimeDocument!converting!public! !
+!
 
 !WAMimeDocument class methodsFor!
 
@@ -56,7 +63,10 @@ on: aCollection	^ self on: aCollection mimeType: nil!
 on: aCollection mimeType: aMimeType	^ self on: aCollection mimeType: aMimeType fileName: nil!
 
 on: aCollection mimeType: aMimeType fileName: aString	^ self basicNew initializeOn: aCollection mimeType: aMimeType fileName: aString; yourself! !
-!WAMimeDocument class categoriesFor: #on:!instance creation!public! !
-!WAMimeDocument class categoriesFor: #on:mimeType:!instance creation!public! !
-!WAMimeDocument class categoriesFor: #on:mimeType:fileName:!instance creation!public! !
+
+!WAMimeDocument class categoriesForMethods!
+on:!instance creation!public! !
+on:mimeType:!instance creation!public! !
+on:mimeType:fileName:!instance creation!public! !
+!
 

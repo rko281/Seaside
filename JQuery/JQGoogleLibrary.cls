@@ -1,15 +1,22 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAFileLibrary subclass: #JQGoogleLibrary
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQGoogleLibrary guid: (GUID fromString: '{5b0169a4-4975-47df-a50e-5f775f444ef6}')!
+
+JQGoogleLibrary guid: (GUID fromString: '{39667c27-8a39-4483-868a-264a506b1b0b}')!
+
 JQGoogleLibrary comment: ''!
-!JQGoogleLibrary categoriesForClass!JQuery-Core-Libraries! !
+
+!JQGoogleLibrary categoriesForClass!Libraries! !
+
 !JQGoogleLibrary methodsFor!
 
-updateRoot: anHtmlRoot	super updateRoot: anHtmlRoot.	anHtmlRoot javascript		url: 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'! !
-!JQGoogleLibrary categoriesFor: #updateRoot:!public!updating! !
+updateRoot: anHtmlRoot	super updateRoot: anHtmlRoot.	anHtmlRoot javascript		url: 'https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js'! !
+
+!JQGoogleLibrary categoriesForMethods!
+updateRoot:!public!updating! !
+!
 

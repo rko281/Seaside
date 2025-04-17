@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAVisitor subclass: #WAAttributeVisitor
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAAttributeVisitor guid: (GUID fromString: '{31c7ef20-0fd7-4e2a-a5f2-fa7dedec7e61}')!
-WAAttributeVisitor comment: ''!
-!WAAttributeVisitor categoriesForClass!Seaside-Core-Configuration! !
+
+WAAttributeVisitor guid: (GUID fromString: '{e73e8fa3-971e-4a8f-a88b-9c41d6c266ba}')!
+
+WAAttributeVisitor comment: 'A visitor of attributes'!
+
+!WAAttributeVisitor categoriesForClass!Configuration! !
+
 !WAAttributeVisitor methodsFor!
 
 visitAttribute: anAttribute!
@@ -33,16 +37,19 @@ visitPasswordAttribute: anAttribute	self visitAttribute: anAttribute!
 visitStringAttribute: anAttribute	self visitAttribute: anAttribute!
 
 visitUrlAttribute: anAttribute	self visitAttribute: anAttribute! !
-!WAAttributeVisitor categoriesFor: #visitAttribute:!public!visiting! !
-!WAAttributeVisitor categoriesFor: #visitBooleanAttribute:!public!visiting! !
-!WAAttributeVisitor categoriesFor: #visitClassBindingAttribute:!public!visiting! !
-!WAAttributeVisitor categoriesFor: #visitClassBindingCollectionAttribute:!public!visiting! !
-!WAAttributeVisitor categoriesFor: #visitClassListAttribute:!public!visiting! !
-!WAAttributeVisitor categoriesFor: #visitCollectionAttribute:!public!visiting! !
-!WAAttributeVisitor categoriesFor: #visitIntegerAttribute:!public!visiting! !
-!WAAttributeVisitor categoriesFor: #visitListAttribute:!public!visiting! !
-!WAAttributeVisitor categoriesFor: #visitNumberAttribute:!public!visiting! !
-!WAAttributeVisitor categoriesFor: #visitPasswordAttribute:!public!visiting! !
-!WAAttributeVisitor categoriesFor: #visitStringAttribute:!public!visiting! !
-!WAAttributeVisitor categoriesFor: #visitUrlAttribute:!public!visiting! !
+
+!WAAttributeVisitor categoriesForMethods!
+visitAttribute:!public!visiting! !
+visitBooleanAttribute:!public!visiting! !
+visitClassBindingAttribute:!public!visiting! !
+visitClassBindingCollectionAttribute:!public!visiting! !
+visitClassListAttribute:!public!visiting! !
+visitCollectionAttribute:!public!visiting! !
+visitIntegerAttribute:!public!visiting! !
+visitListAttribute:!public!visiting! !
+visitNumberAttribute:!public!visiting! !
+visitPasswordAttribute:!public!visiting! !
+visitStringAttribute:!public!visiting! !
+visitUrlAttribute:!public!visiting! !
+!
 

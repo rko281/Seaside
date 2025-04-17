@@ -1,15 +1,22 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAAbstractTextAreaTag subclass: #WAColorInputTag
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAColorInputTag guid: (GUID fromString: '{e472a6b7-be41-4764-ba11-dc9900bdfd1e}')!
+
+WAColorInputTag guid: (GUID fromString: '{fe6188f9-5eb3-48da-9c64-b53d79e29d91}')!
+
 WAColorInputTag comment: 'Provide a user interface element that lets a user specify a color'!
-!WAColorInputTag categoriesForClass!Seaside-Canvas-Tags! !
+
+!WAColorInputTag categoriesForClass!Tags! !
+
 !WAColorInputTag methodsFor!
 
 type	^ 'color'! !
-!WAColorInputTag categoriesFor: #type!accessing!public! !
+
+!WAColorInputTag categoriesForMethods!
+type!accessing!public! !
+!
 

@@ -1,15 +1,22 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WASession subclass: #WATestSession
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WATestSession guid: (GUID fromString: '{0bbc594c-2f44-4a7e-9e62-363a1076fe03}')!
+
+WATestSession guid: (GUID fromString: '{a5a850a7-4f6a-4cd2-b94c-db5067979880}')!
+
 WATestSession comment: ''!
-!WATestSession categoriesForClass!Seaside-Tests-Session! !
+
+!WATestSession categoriesForClass!Unclassified! !
+
 !WATestSession methodsFor!
 
 start	(self requestContext response)		nextPutAll: 'start: ';		nextPutAll: self key! !
-!WATestSession categoriesFor: #start!handling!public! !
+
+!WATestSession categoriesForMethods!
+start!handling!public! !
+!
 

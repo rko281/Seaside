@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQUiFunctionalTest subclass: #JQDialogFunctionalTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQDialogFunctionalTest guid: (GUID fromString: '{a08ecf9a-c851-428a-bc66-1f2ab9348919}')!
+
+JQDialogFunctionalTest guid: (GUID fromString: '{640a7578-d92c-43bd-a5b8-5360a71133b5}')!
+
 JQDialogFunctionalTest comment: ''!
-!JQDialogFunctionalTest categoriesForClass!JQuery-Tests-UI-Functional! !
+
+!JQDialogFunctionalTest categoriesForClass!Functional! !
+
 !JQDialogFunctionalTest methodsFor!
 
 renderContentOn: html	self renderWindowOn: html.	self renderLightboxOn: html!
@@ -23,11 +27,14 @@ selectors	^ #(renderWindowOn: renderLightboxOn:)!
 title	^ 'Dialog Widget'!
 
 url	^ 'http://docs.jquery.com/UI/Dialog'! !
-!JQDialogFunctionalTest categoriesFor: #renderContentOn:!public!rendering! !
-!JQDialogFunctionalTest categoriesFor: #renderDialog:on:!public!utilities! !
-!JQDialogFunctionalTest categoriesFor: #renderLightboxOn:!public!rendering! !
-!JQDialogFunctionalTest categoriesFor: #renderWindowOn:!public!rendering! !
-!JQDialogFunctionalTest categoriesFor: #selectors!accessing!public! !
-!JQDialogFunctionalTest categoriesFor: #title!accessing!public! !
-!JQDialogFunctionalTest categoriesFor: #url!accessing!public! !
+
+!JQDialogFunctionalTest categoriesForMethods!
+renderContentOn:!public!rendering! !
+renderDialog:on:!public!utilities! !
+renderLightboxOn:!public!rendering! !
+renderWindowOn:!public!rendering! !
+selectors!accessing!public! !
+title!accessing!public! !
+url!accessing!public! !
+!
 

@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAFunctionalTest subclass: #WAExpiryFunctionalTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAExpiryFunctionalTest guid: (GUID fromString: '{6adf9568-bebb-4a1e-83d2-adbfb5826d4b}')!
+
+WAExpiryFunctionalTest guid: (GUID fromString: '{eb3dbcd8-f500-43b1-b8f4-4ac0852ed4ef}')!
+
 WAExpiryFunctionalTest comment: ''!
-!WAExpiryFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
+
+!WAExpiryFunctionalTest categoriesForClass!Unclassified! !
+
 !WAExpiryFunctionalTest methodsFor!
 
 redirect	"we need to build the url we redirect to because we just expired the session in this test"	| url |	url := self application url.	url addAllToPath: self requestContext consumer upToEnd.	^ self requestContext responseGenerator		redirectTo: url;		respond!
@@ -17,8 +21,11 @@ renderActionsOn: html	html		paragraph: [ 			html anchor				url: (self applic
 renderContentOn: html	self renderStatsOn: html.	self renderActionsOn: html!
 
 renderStatsOn: html	html table: [		html tableRow: [			html tableHeading: 'Total session instances'.			html tableData: WAExpirySession allInstances size ].		html tableRow: [			html tableHeading: 'Cached session instances for this Application'.			html tableData: self application cache size ].		html tableRow: [			html tableHeading: 'Total component instances'.			html tableData: self class allInstances size ].		html tableRow: [			html tableHeading: 'Sessions created'.			html tableData: WAExpirySession created ].		html tableRow: [			html tableHeading: 'Sessions unregistered'.			html tableData: WAExpirySession unregistered ] ]! !
-!WAExpiryFunctionalTest categoriesFor: #redirect!public!rendering! !
-!WAExpiryFunctionalTest categoriesFor: #renderActionsOn:!public!rendering! !
-!WAExpiryFunctionalTest categoriesFor: #renderContentOn:!public!rendering! !
-!WAExpiryFunctionalTest categoriesFor: #renderStatsOn:!public!rendering! !
+
+!WAExpiryFunctionalTest categoriesForMethods!
+redirect!public!rendering! !
+renderActionsOn:!public!rendering! !
+renderContentOn:!public!rendering! !
+renderStatsOn:!public!rendering! !
+!
 

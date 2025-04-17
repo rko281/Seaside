@@ -1,16 +1,20 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAHtmlElement subclass: #WAContentElement
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAContentElement guid: (GUID fromString: '{9003e6e3-84af-47d9-a132-f64157575abb}')!
+
+WAContentElement guid: (GUID fromString: '{f585e120-cd3e-4213-993a-75d56cfa8281}')!
+
 WAContentElement comment: 'Common superclass of all elements inside a <head> that can have content. Either between the start and end tag or a (mime) document pointed to by an URL.'!
-!WAContentElement categoriesForClass!Seaside-Core-Document-Elements! !
+
+!WAContentElement categoriesForClass!Document-Elements! !
+
 !WAContentElement methodsFor!
 
-charset: aString	self attributeAt: 'charset' put: aString!
+charset: aString	self		greaseDeprecatedApi: 'WAContentElement>>charset:'		details: 'Use an HTTP Content-Type header on the linked resource instead. https://www.geeksforgeeks.org/what-are-the-html-tags-that-deprecated-in-html5/'.		self attributeAt: 'charset' put: aString!
 
 contents: aString	self document: aString!
 
@@ -25,12 +29,15 @@ type: aMimeTypeOrString	self attributeAt: 'type' put: aMimeTypeOrString!
 typeOrNil	^ self attributeAt: 'type' ifAbsent:  [ nil ]!
 
 url: aString	self subclassResponsibility! !
-!WAContentElement categoriesFor: #charset:!attributes!public! !
-!WAContentElement categoriesFor: #contents:!attributes!public! !
-!WAContentElement categoriesFor: #encodeChildrenOn:!printing!public! !
-!WAContentElement categoriesFor: #isClosed!public!testing! !
-!WAContentElement categoriesFor: #resourceUrl:!attributes!public! !
-!WAContentElement categoriesFor: #type:!attributes!public! !
-!WAContentElement categoriesFor: #typeOrNil!private! !
-!WAContentElement categoriesFor: #url:!attributes!public! !
+
+!WAContentElement categoriesForMethods!
+charset:!attributes!public! !
+contents:!attributes!public! !
+encodeChildrenOn:!printing!public! !
+isClosed!public!testing! !
+resourceUrl:!attributes!public! !
+type:!attributes!public! !
+typeOrNil!private! !
+url:!attributes!public! !
+!
 

@@ -1,0 +1,35 @@
+﻿| package |
+package := Package name: 'Seaside-Tests-Dolphin-Canvas'.
+package paxVersion: 1;
+	basicComment: ''.
+
+package methodNames
+	add: #WARenderingTest -> #testScaledDecimal;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: #(
+	'Seaside-Tests-Canvas').
+
+package!
+
+"Loose Methods"!
+
+!WARenderingTest methodsFor!
+
+testScaledDecimal
+	self
+		assert: [ :canvas | canvas render: 123.4s1 ]
+		gives: '123.4'! !
+
+!WARenderingTest categoriesForMethods!
+testScaledDecimal!public!tests! !
+!
+
+"End of package definition"!
+

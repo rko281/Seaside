@@ -1,15 +1,22 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQBaseTheme subclass: #JQTrontasticTheme
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQTrontasticTheme guid: (GUID fromString: '{9851573c-c9de-460c-a992-42ea133de79c}')!
+
+JQTrontasticTheme guid: (GUID fromString: '{18355fcb-12a2-4402-92ef-a6b4d4a86487}')!
+
 JQTrontasticTheme comment: ''!
-!JQTrontasticTheme categoriesForClass!JQuery-UI-Libraries! !
+
+!JQTrontasticTheme categoriesForClass!Libraries! !
+
 !JQTrontasticTheme methodsFor!
 
 themeName	^ 'trontastic'! !
-!JQTrontasticTheme categoriesFor: #themeName!accessing!public! !
+
+!JQTrontasticTheme categoriesForMethods!
+themeName!accessing!public! !
+!
 

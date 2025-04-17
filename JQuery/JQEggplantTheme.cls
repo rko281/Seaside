@@ -1,15 +1,22 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQBaseTheme subclass: #JQEggplantTheme
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQEggplantTheme guid: (GUID fromString: '{aff51d15-f8be-45f2-958a-7e4d90bb8fc3}')!
+
+JQEggplantTheme guid: (GUID fromString: '{24065628-5086-4e35-906c-7b022a3623a5}')!
+
 JQEggplantTheme comment: ''!
-!JQEggplantTheme categoriesForClass!JQuery-UI-Libraries! !
+
+!JQEggplantTheme categoriesForClass!Libraries! !
+
 !JQEggplantTheme methodsFor!
 
 themeName	^ 'eggplant'! !
-!JQEggplantTheme categoriesFor: #themeName!accessing!public! !
+
+!JQEggplantTheme categoriesForMethods!
+themeName!accessing!public! !
+!
 

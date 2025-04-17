@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAObject subclass: #WAEmailAddress
 	instanceVariableNames: 'username address'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAEmailAddress guid: (GUID fromString: '{3afb79bb-ae6d-4018-a58d-ed694d5aa012}')!
+
+WAEmailAddress guid: (GUID fromString: '{3aa26b47-10b2-4028-9228-83a96d46098a}')!
+
 WAEmailAddress comment: ''!
-!WAEmailAddress categoriesForClass!Seaside-Core-HTTP! !
+
+!WAEmailAddress categoriesForClass!HTTP! !
+
 !WAEmailAddress methodsFor!
 
 address	^ address!
@@ -27,21 +31,27 @@ sanitize: aString	"prevents SMTP header injection"	| newlineIndex |	newlineIn
 username	^ username!
 
 username: aString	username := self sanitize: aString! !
-!WAEmailAddress categoriesFor: #address!accessing!public! !
-!WAEmailAddress categoriesFor: #address:!accessing!public! !
-!WAEmailAddress categoriesFor: #encodeOn:!displaying!public! !
-!WAEmailAddress categoriesFor: #encodeOn:usingQuotes:!private! !
-!WAEmailAddress categoriesFor: #greaseString!displaying!public! !
-!WAEmailAddress categoriesFor: #printOn:!printing!public! !
-!WAEmailAddress categoriesFor: #sanitize:!private! !
-!WAEmailAddress categoriesFor: #username!accessing!public! !
-!WAEmailAddress categoriesFor: #username:!accessing!public! !
+
+!WAEmailAddress categoriesForMethods!
+address!accessing!public! !
+address:!accessing!public! !
+encodeOn:!displaying!public! !
+encodeOn:usingQuotes:!private! !
+greaseString!displaying!public! !
+printOn:!printing!public! !
+sanitize:!private! !
+username!accessing!public! !
+username:!accessing!public! !
+!
 
 !WAEmailAddress class methodsFor!
 
 address: aString	^ self new		address: aString;		yourself!
 
 address: anAddressString username: aUsernameString	^ self new		address: anAddressString;		username: aUsernameString;		yourself! !
-!WAEmailAddress class categoriesFor: #address:!instance creation!public! !
-!WAEmailAddress class categoriesFor: #address:username:!instance creation!public! !
+
+!WAEmailAddress class categoriesForMethods!
+address:!instance creation!public! !
+address:username:!instance creation!public! !
+!
 

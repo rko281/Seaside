@@ -1,15 +1,22 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAComponent subclass: #WACallDuringRenderTestComponent
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WACallDuringRenderTestComponent guid: (GUID fromString: '{65e14de4-44f2-46a3-b7e9-2c11de62fff8}')!
+
+WACallDuringRenderTestComponent guid: (GUID fromString: '{8324b447-4b0a-47af-b41a-883a28a6fa71}')!
+
 WACallDuringRenderTestComponent comment: ''!
-!WACallDuringRenderTestComponent categoriesForClass!Seaside-Tests-Flow-Functional! !
+
+!WACallDuringRenderTestComponent categoriesForClass!Functional! !
+
 !WACallDuringRenderTestComponent methodsFor!
 
 renderContentOn: html	self call: WAMiniCalendar new! !
-!WACallDuringRenderTestComponent categoriesFor: #renderContentOn:!public!rendering! !
+
+!WACallDuringRenderTestComponent categoriesForMethods!
+renderContentOn:!public!rendering! !
+!
 

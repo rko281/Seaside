@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQuery subclass: #JQueryClass
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQueryClass guid: (GUID fromString: '{7d369d43-24ce-4033-b645-3a08b6c281b2}')!
+
+JQueryClass guid: (GUID fromString: '{f74565e5-d92b-4f38-9db8-f6a0c54561cc}')!
+
 JQueryClass comment: ''!
-!JQueryClass categoriesForClass!JQuery-Core-Objects! !
+
+!JQueryClass categoriesForClass!Objects! !
+
 !JQueryClass methodsFor!
 
 ajax	"Perform an asynchronous HTTP (Ajax) request."		^ self create: JQAjax!
@@ -73,36 +77,39 @@ unique: anArray	"Create a copy of an array of DOM elements with the duplicates 
 uniqueSort: anArray	"Create a copy of an array of DOM elements with the duplicates removed. Note that this only works on arrays of DOM elements, not strings or numbers."		self call: 'uniqueSort' with: anArray!
 
 with: anObject	"Convenience method that answers a jQuery (instance) object. Pass it a symbol to reference an DOM id, a block to render new HTML nodes, a javascript object to be run at load time or a string to be used as a CSS query."		anObject isNil		ifTrue: [ ^ self new ].	anObject isSymbol		ifTrue: [ ^ self id: anObject ].	anObject isBlock		ifTrue: [ ^ self html: anObject ].	anObject isJavascript		ifTrue: [ ^ self ready: anObject ].	^ self expression: anObject! !
-!JQueryClass categoriesFor: #ajax!ajax!public! !
-!JQueryClass categoriesFor: #ajaxSetup!ajax!public! !
-!JQueryClass categoriesFor: #all!convenience!public! !
-!JQueryClass categoriesFor: #class:!convenience!public! !
-!JQueryClass categoriesFor: #contains:in:!public!utilities! !
-!JQueryClass categoriesFor: #document!convenience!public! !
-!JQueryClass categoriesFor: #error:!public!utilities! !
-!JQueryClass categoriesFor: #escapeSelector:!public!utilities! !
-!JQueryClass categoriesFor: #event!creation!public! !
-!JQueryClass categoriesFor: #event:!creation!public! !
-!JQueryClass categoriesFor: #expression:!creation!public! !
-!JQueryClass categoriesFor: #expression:context:!creation!public! !
-!JQueryClass categoriesFor: #get!ajax!public! !
-!JQueryClass categoriesFor: #getJson!ajax!public! !
-!JQueryClass categoriesFor: #getScript!ajax!public! !
-!JQueryClass categoriesFor: #holdReady:!public!utilities! !
-!JQueryClass categoriesFor: #html:!creation!public! !
-!JQueryClass categoriesFor: #id:!convenience!public! !
-!JQueryClass categoriesFor: #isEmptyObject:!public!utilities! !
-!JQueryClass categoriesFor: #isPlainObject:!public!utilities! !
-!JQueryClass categoriesFor: #isWindow:!public!utilities! !
-!JQueryClass categoriesFor: #new!creation!public! !
-!JQueryClass categoriesFor: #noop!accessing!public! !
-!JQueryClass categoriesFor: #parseJSON:!public!utilities! !
-!JQueryClass categoriesFor: #post!ajax!public! !
-!JQueryClass categoriesFor: #ready:!creation!public! !
-!JQueryClass categoriesFor: #support!agent!public! !
-!JQueryClass categoriesFor: #this!convenience!public! !
-!JQueryClass categoriesFor: #type:!public!utilities! !
-!JQueryClass categoriesFor: #unique:!public!utilities! !
-!JQueryClass categoriesFor: #uniqueSort:!public!utilities! !
-!JQueryClass categoriesFor: #with:!convenience!public! !
+
+!JQueryClass categoriesForMethods!
+ajax!ajax!public! !
+ajaxSetup!ajax!public! !
+all!convenience!public! !
+class:!convenience!public! !
+contains:in:!public!utilities! !
+document!convenience!public! !
+error:!public!utilities! !
+escapeSelector:!public!utilities! !
+event!creation!public! !
+event:!creation!public! !
+expression:!creation!public! !
+expression:context:!creation!public! !
+get!ajax!public! !
+getJson!ajax!public! !
+getScript!ajax!public! !
+holdReady:!public!utilities! !
+html:!creation!public! !
+id:!convenience!public! !
+isEmptyObject:!public!utilities! !
+isPlainObject:!public!utilities! !
+isWindow:!public!utilities! !
+new!creation!public! !
+noop!accessing!public! !
+parseJSON:!public!utilities! !
+post!ajax!public! !
+ready:!creation!public! !
+support!agent!public! !
+this!convenience!public! !
+type:!public!utilities! !
+unique:!public!utilities! !
+uniqueSort:!public!utilities! !
+with:!convenience!public! !
+!
 

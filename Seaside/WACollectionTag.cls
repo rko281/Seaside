@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WATagBrush subclass: #WACollectionTag
 	instanceVariableNames: 'list selected labelBlock'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WACollectionTag guid: (GUID fromString: '{833f25d7-814f-4df4-a4ff-812279c082ab}')!
+
+WACollectionTag guid: (GUID fromString: '{a5f13eb1-968a-42e5-afc2-d47e8140b17c}')!
+
 WACollectionTag comment: 'This element allows the use to select one (in single selection mode) or multiple (in single selection mode) elements. Multiple selection can be triggered with #beMultiple, single selection can be triggered with #beSingle .Default is single selection.The general idea is that you pass the collection of options to #list: and use #labels: to customize their rendering. The selected option(s) can be set with: #selected:.This whole class is kind of an awkward hack, but nobody needs MI anyway. You can always get a way with composition and delegation'!
-!WACollectionTag categoriesForClass!Seaside-Canvas-Tags! !
+
+!WACollectionTag categoriesForClass!Tags! !
+
 !WACollectionTag methodsFor!
 
 add: anObject	self list add: anObject!
@@ -30,22 +34,33 @@ list	^ list ifNil: [ list := OrderedCollection new ]!
 
 list: aCollection	"Append aCollection of items to display. The rendering can be customized using #labels:."	aCollection isNil		ifFalse: [ self addAll: aCollection ]!
 
-on: aSelector of: anObject 	self selected: (anObject perform: aSelector).	self callback: (GRDelayedSend 			receiver: anObject			selector: aSelector asMutator)!
+on: aSelector of: anObject 	self selected: (anObject perform: aSelector).	self callback: (GRDelayedSend 			receiver: anObject			selector: aSelector greaseAsMutator)!
 
 renderListItem: anObject labelled: aString	self subclassResponsibility!
 
 selected: anObject	"Set anObject to be selected."	selected := anObject! !
-!WACollectionTag categoriesFor: #add:!adding!public! !
-!WACollectionTag categoriesFor: #addAll:!adding!public! !
-!WACollectionTag categoriesFor: #before!private! !
-!WACollectionTag categoriesFor: #callback:!callbacks!public! !
-!WACollectionTag categoriesFor: #hasList!public!testing! !
-!WACollectionTag categoriesFor: #isSelected:!public!testing! !
-!WACollectionTag categoriesFor: #labelForOption:!private! !
-!WACollectionTag categoriesFor: #labels:!callbacks!public! !
-!WACollectionTag categoriesFor: #list!accessing!public! !
-!WACollectionTag categoriesFor: #list:!accessing!public! !
-!WACollectionTag categoriesFor: #on:of:!callbacks!public! !
-!WACollectionTag categoriesFor: #renderListItem:labelled:!private! !
-!WACollectionTag categoriesFor: #selected:!accessing!public! !
+
+!WACollectionTag categoriesForMethods!
+add:!adding!public! !
+addAll:!adding!public! !
+before!private! !
+callback:!callbacks!public! !
+hasList!public!testing! !
+isSelected:!public!testing! !
+labelForOption:!private! !
+labels:!callbacks!public! !
+list!accessing!public! !
+list:!accessing!public! !
+on:of:!callbacks!public! !
+renderListItem:labelled:!private! !
+selected:!accessing!public! !
+!
+
+!WACollectionTag class methodsFor!
+
+isAbstract 	^ self == WACollectionTag! !
+
+!WACollectionTag class categoriesForMethods!
+isAbstract!public!testing! !
+!
 

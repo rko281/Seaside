@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAExampleComponent subclass: #WAExampleBrowser
 	instanceVariableNames: 'class selector component hasAnswer answer'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAExampleBrowser guid: (GUID fromString: '{f44e185b-ead5-4779-a205-30823ba17248}')!
+
+WAExampleBrowser guid: (GUID fromString: '{78717a44-723d-4adb-87e1-007e56acc944}')!
+
 WAExampleBrowser comment: 'I browse all the examples available in the system ie all the results of class side methods beginning with #exampleComponent... If you want to see these examples point your browser to localhost:xxx/examples/examplebrowser'!
-!WAExampleBrowser categoriesForClass!Seaside-Examples-Misc! !
+
+!WAExampleBrowser categoriesForClass!Misc! !
+
 !WAExampleBrowser methodsFor!
 
 allClasses	^ (WAComponent allSubclasses		select: [ :each |			each class selectors				anySatisfy: [ :sel | sel beginsWithSubCollection: self selectorPrefix ] ])		asSortedCollection: [ :a :b | a name < b name ]!
@@ -35,25 +39,31 @@ selectorPrefix	^ 'exampleComponent'!
 states	^ Array with: self!
 
 style	^ '.chooser {	background-color: #eee;	padding: 5px;}.chooser form,.chooser form div {	display: inline;}.chooser form select {	margin-right: 5px;}.component {	padding: 5px;}.answer {	background-color: #eee;	padding: 5px;}'! !
-!WAExampleBrowser categoriesFor: #allClasses!helper!public! !
-!WAExampleBrowser categoriesFor: #allSelectors!helper!public! !
-!WAExampleBrowser categoriesFor: #children!hooks!public! !
-!WAExampleBrowser categoriesFor: #class:!accessing!public! !
-!WAExampleBrowser categoriesFor: #component:!accessing!public! !
-!WAExampleBrowser categoriesFor: #initialize!initialization!public! !
-!WAExampleBrowser categoriesFor: #renderChooserOn:!public!rendering! !
-!WAExampleBrowser categoriesFor: #renderComponentOn:!public!rendering! !
-!WAExampleBrowser categoriesFor: #renderContentOn:!public!rendering! !
-!WAExampleBrowser categoriesFor: #selector:!accessing!public! !
-!WAExampleBrowser categoriesFor: #selectorPrefix!helper!public! !
-!WAExampleBrowser categoriesFor: #states!hooks!public! !
-!WAExampleBrowser categoriesFor: #style!hooks!public! !
+
+!WAExampleBrowser categoriesForMethods!
+allClasses!helper!public! !
+allSelectors!helper!public! !
+children!hooks!public! !
+class:!accessing!public! !
+component:!accessing!public! !
+initialize!initialization!public! !
+renderChooserOn:!public!rendering! !
+renderComponentOn:!public!rendering! !
+renderContentOn:!public!rendering! !
+selector:!accessing!public! !
+selectorPrefix!helper!public! !
+states!hooks!public! !
+style!hooks!public! !
+!
 
 !WAExampleBrowser class methodsFor!
 
 description	^ 'Browse through Seaside examples'!
 
 initialize	WAAdmin register: self asApplicationAt: 'examples/examplebrowser'! !
-!WAExampleBrowser class categoriesFor: #description!accessing!public! !
-!WAExampleBrowser class categoriesFor: #initialize!class initialization!public! !
+
+!WAExampleBrowser class categoriesForMethods!
+description!accessing!public! !
+initialize!class initialization!public! !
+!
 

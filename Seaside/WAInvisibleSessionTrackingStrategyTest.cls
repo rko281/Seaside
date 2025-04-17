@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WASessionTrackingStrategyTest subclass: #WAInvisibleSessionTrackingStrategyTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAInvisibleSessionTrackingStrategyTest guid: (GUID fromString: '{2ea863c5-bfd0-490c-8423-9b3ca7541c92}')!
+
+WAInvisibleSessionTrackingStrategyTest guid: (GUID fromString: '{685eb06d-9606-4317-a3fe-83ce0aba56b8}')!
+
 WAInvisibleSessionTrackingStrategyTest comment: ''!
-!WAInvisibleSessionTrackingStrategyTest categoriesForClass!Seaside-Tests-Session! !
+
+!WAInvisibleSessionTrackingStrategyTest categoriesForClass!Unclassified! !
+
 !WAInvisibleSessionTrackingStrategyTest methodsFor!
 
 sessionId	self subclassResponsibility!
@@ -23,16 +27,22 @@ testKeyFromQueryField	| context actual |	context := self requestContext.	cont
 testNoHandlerFoundForDocumentHandlerKey	| context notified |	context := self requestContext.	strategy		addKey: 'The_Birthday_Massacre'		toUrl: context request uri copy.	notified := false.	[ strategy		noHandlerFoundForKey: 'The_Birthday_Massacre'		in: self newApplication		context: context ]		on: WAResponseNotification		do: [ :notification | notified := true ].	self assert: notified.	self assertNotFound: context!
 
 testNoHandlerFoundForSessionKey	| context application cache session |	context := self requestContext.	application := self newApplication.	[ strategy		noHandlerFoundForKey: self sessionId		in: application		context: context ]		on: WAResponseNotification		do: [ :notification | "ignore" ].	self assertOk: context.	cache := application cache.	self assert: cache size = 1.	session := cache at: self sessionId ifAbsent: [ nil ].	self deny: session isNil.	self assert: session isSession! !
-!WAInvisibleSessionTrackingStrategyTest categoriesFor: #sessionId!private! !
-!WAInvisibleSessionTrackingStrategyTest categoriesFor: #testAddKeyOfSessionToContext!public!tests! !
-!WAInvisibleSessionTrackingStrategyTest categoriesFor: #testAddKeyOfSessionToUrl!public!tests! !
-!WAInvisibleSessionTrackingStrategyTest categoriesFor: #testKeyFromIpAddress!public!tests! !
-!WAInvisibleSessionTrackingStrategyTest categoriesFor: #testKeyFromQueryField!public!tests! !
-!WAInvisibleSessionTrackingStrategyTest categoriesFor: #testNoHandlerFoundForDocumentHandlerKey!public!tests! !
-!WAInvisibleSessionTrackingStrategyTest categoriesFor: #testNoHandlerFoundForSessionKey!public!tests! !
+
+!WAInvisibleSessionTrackingStrategyTest categoriesForMethods!
+sessionId!private! !
+testAddKeyOfSessionToContext!public!tests! !
+testAddKeyOfSessionToUrl!public!tests! !
+testKeyFromIpAddress!public!tests! !
+testKeyFromQueryField!public!tests! !
+testNoHandlerFoundForDocumentHandlerKey!public!tests! !
+testNoHandlerFoundForSessionKey!public!tests! !
+!
 
 !WAInvisibleSessionTrackingStrategyTest class methodsFor!
 
 isAbstract	^ self name = #WAInvisibleSessionTrackingStrategyTest! !
-!WAInvisibleSessionTrackingStrategyTest class categoriesFor: #isAbstract!public!testing! !
+
+!WAInvisibleSessionTrackingStrategyTest class categoriesForMethods!
+isAbstract!public!testing! !
+!
 

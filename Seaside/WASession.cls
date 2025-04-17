@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WARequestHandler subclass: #WASession
 	instanceVariableNames: 'continuations properties documentHandlers key'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WASession guid: (GUID fromString: '{9d1de8e8-3327-4920-8651-0673dc503b8e}')!
-WASession comment: 'I am a Seaside session. A new instance of me gets created when an user accesses an application for the first time and is persistent as long as the user is interacting with it.This class is intended to be subclasses by applications that need global state, like a user. Custom state can be added by creating instance variables and storing it there. The session can be retrieved by #session if inside a component or task or by evaluating: WACurrentRequestContext sessionIf the session has not been used for #defaultTimeoutSeconds, it is garbage collected by the system. To manually expire a session call #expire.A good way to clear all sessions is the following code:WARegistry clearAllHandlers.WAPlatform current garbageCollect'!
-!WASession categoriesForClass!Seaside-Session! !
+
+WASession guid: (GUID fromString: '{a4aada7f-491e-49f8-bc74-ecbbf80d0c01}')!
+
+WASession comment: 'I am a Seaside session. A new instance of me gets created when an user accesses an application for the first time and is persistent as long as the user is interacting with it.This class is intended to be subclassed by applications that need global state (e.g. a logged-in user). Custom state can be added by creating instance variables and storing it there. The session can be retrieved by #session if inside a component or task or by evaluating: `WACurrentRequestContext session`Session expiry is controlled by the `WAHashCache` instance holding on to the `WASession` instances in a `WAApplication` instance. If the session is expired, it is garbage collected by the system. To manually expire a session call #unregister.A good way to clear all sessions is the following code:WARegistry clearSessions.WAPlatform current garbageCollect'!
+
+!WASession categoriesForClass!Base! !
+
 !WASession methodsFor!
 
 actionField	^ '_k'!
@@ -61,30 +65,33 @@ updateRoot: anHtmlRoot!
 updateStates: aSnapshot	self filters do: [ :each | each updateStates: aSnapshot ].	aSnapshot register: filter!
 
 updateUrl: aUrl! !
-!WASession categoriesFor: #actionField!accessing!public! !
-!WASession categoriesFor: #actionUrlForContinuation:!accessing!public! !
-!WASession categoriesFor: #actionUrlForKey:!accessing!public! !
-!WASession categoriesFor: #application!accessing!public! !
-!WASession categoriesFor: #basicUrl!private! !
-!WASession categoriesFor: #createContinuationCache!initialization!public! !
-!WASession categoriesFor: #createDocumentHandlerCache!initialization!public! !
-!WASession categoriesFor: #documentHandlerFieldName!private! !
-!WASession categoriesFor: #documentHandlers!accessing!public! !
-!WASession categoriesFor: #documentHandlers:!accessing!public! !
-!WASession categoriesFor: #handleFiltered:!handling!public! !
-!WASession categoriesFor: #initialize!initialization!public! !
-!WASession categoriesFor: #initializeFilters!initialization!public! !
-!WASession categoriesFor: #isSession!public!testing! !
-!WASession categoriesFor: #jumpToAnchor:!public!scripts! !
-!WASession categoriesFor: #key!accessing!public! !
-!WASession categoriesFor: #key:!accessing!public! !
-!WASession categoriesFor: #postCopy!copying!public! !
-!WASession categoriesFor: #properties!accessing!public! !
-!WASession categoriesFor: #register:!parent/child!public! !
-!WASession categoriesFor: #start!handling!public! !
-!WASession categoriesFor: #unknownRequest!handling!public! !
-!WASession categoriesFor: #unregister!parent/child!public! !
-!WASession categoriesFor: #updateRoot:!public!updating! !
-!WASession categoriesFor: #updateStates:!public!updating! !
-!WASession categoriesFor: #updateUrl:!public!updating! !
+
+!WASession categoriesForMethods!
+actionField!accessing!public! !
+actionUrlForContinuation:!accessing!public! !
+actionUrlForKey:!accessing!public! !
+application!accessing!public! !
+basicUrl!private! !
+createContinuationCache!initialization!public! !
+createDocumentHandlerCache!initialization!public! !
+documentHandlerFieldName!private! !
+documentHandlers!accessing!public! !
+documentHandlers:!accessing!public! !
+handleFiltered:!handling!public! !
+initialize!initialization!public! !
+initializeFilters!initialization!public! !
+isSession!public!testing! !
+jumpToAnchor:!public!scripts! !
+key!accessing!public! !
+key:!accessing!public! !
+postCopy!copying!public! !
+properties!accessing!public! !
+register:!parent/child!public! !
+start!handling!public! !
+unknownRequest!handling!public! !
+unregister!parent/child!public! !
+updateRoot:!public!updating! !
+updateStates:!public!updating! !
+updateUrl:!public!updating! !
+!
 

@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WATagBrush subclass: #WACommandTag
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WACommandTag guid: (GUID fromString: '{cb18c9fc-9665-47c6-a92f-7cb704d16830}')!
+
+WACommandTag guid: (GUID fromString: '{8730dd0b-bad3-48c4-a735-b8d2c1234353}')!
+
 WACommandTag comment: 'The command element represents a command that the user can invoke.'!
-!WACommandTag categoriesForClass!Seaside-Canvas-Tags! !
+
+!WACommandTag categoriesForClass!Tags! !
+
 !WACommandTag methodsFor!
 
 beCheckbox	self type: 'checkbox'!
@@ -35,17 +39,20 @@ label: aString	"The label  attribute gives the name of the command, as shown to
 tag	^ 'command'!
 
 type: aString	"The type  attribute indicates the kind of command: either a normal command with an associated action, or a state or option that can be toggled, or a selection of one item from a list of items.The attribute's value must be either 'command', 'checkbox', or 'radio', denoting each of these three types of commands respectively. The attribute may also be omitted if the element is to represent the first of these types, a simple command. "	self attributeAt: 'type' put: aString! !
-!WACommandTag categoriesFor: #beCheckbox!attributes!public! !
-!WACommandTag categoriesFor: #beChecked!attributes!public! !
-!WACommandTag categoriesFor: #beCommand!attributes!public! !
-!WACommandTag categoriesFor: #beDisabled!attributes!public! !
-!WACommandTag categoriesFor: #beHidden!attributes!public! !
-!WACommandTag categoriesFor: #beRadio!attributes!public! !
-!WACommandTag categoriesFor: #checked:!attributes!public! !
-!WACommandTag categoriesFor: #disabled:!attributes!public! !
-!WACommandTag categoriesFor: #hidden:!attributes!public! !
-!WACommandTag categoriesFor: #icon:!attributes!public! !
-!WACommandTag categoriesFor: #label:!attributes!public! !
-!WACommandTag categoriesFor: #tag!accessing!public! !
-!WACommandTag categoriesFor: #type:!attributes!public! !
+
+!WACommandTag categoriesForMethods!
+beCheckbox!attributes!public! !
+beChecked!attributes!public! !
+beCommand!attributes!public! !
+beDisabled!attributes!public! !
+beHidden!attributes!public! !
+beRadio!attributes!public! !
+checked:!attributes!public! !
+disabled:!attributes!public! !
+hidden:!attributes!public! !
+icon:!attributes!public! !
+label:!attributes!public! !
+tag!accessing!public! !
+type:!attributes!public! !
+!
 

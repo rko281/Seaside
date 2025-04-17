@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQWidget subclass: #JQSortable
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQSortable guid: (GUID fromString: '{657a138d-b445-40ba-94b7-bdf9bf9210fe}')!
+
+JQSortable guid: (GUID fromString: '{d7367b7e-ae0f-43a4-98b6-9c853b78e27c}')!
+
 JQSortable comment: 'Creates new sortable on the nodeset supplied by the query.'!
-!JQSortable categoriesForClass!JQuery-UI-Interaction! !
+
+!JQSortable categoriesForClass!Interaction! !
+
 !JQSortable methodsFor!
 
 appendTo: aString	"Defines where the helper that moves with the mouse is being appended to during the drag (for example, to resolve overlap/zIndex issues)."	self optionAt: 'appendTo' put: aString!
@@ -87,43 +91,46 @@ scrollSensitivity: anInteger	"Defines how near the mouse must be to an edge to 
 scrollSpeed: anInteger	"The speed at which the window should scroll once the mouse pointer gets within the scrollSensitivity distance."	self optionAt: 'scrollSpeed' put: anInteger!
 
 tolerance: aString	"This is the way the reordering behaves during drag. Possible values: 'intersect', 'pointer'. In some setups, 'pointer' is more natural.  ''intersect'': draggable overlaps the droppable at least 50% ''pointer'': mouse pointer overlaps the droppable "	self optionAt: 'tolerance' put: aString! !
-!JQSortable categoriesFor: #appendTo:!options/generated!public! !
-!JQSortable categoriesFor: #axis:!options/generated!public! !
-!JQSortable categoriesFor: #cancel!actions!public! !
-!JQSortable categoriesFor: #cancel:!options/generated!public! !
-!JQSortable categoriesFor: #connectWith:!options/generated!public! !
-!JQSortable categoriesFor: #containment:!options/generated!public! !
-!JQSortable categoriesFor: #cursor:!options/generated!public! !
-!JQSortable categoriesFor: #cursorAt:!options/generated!public! !
-!JQSortable categoriesFor: #delay:!options/generated!public! !
-!JQSortable categoriesFor: #distance:!options/generated!public! !
-!JQSortable categoriesFor: #dropOnEmpty:!options/generated!public! !
-!JQSortable categoriesFor: #forceHelperSize:!options/generated!public! !
-!JQSortable categoriesFor: #forcePlaceholderSize:!options/generated!public! !
-!JQSortable categoriesFor: #grid:!options/generated!public! !
-!JQSortable categoriesFor: #handle:!options/generated!public! !
-!JQSortable categoriesFor: #helper:!options/generated!public! !
-!JQSortable categoriesFor: #items:!options/generated!public! !
-!JQSortable categoriesFor: #method!accessing!public! !
-!JQSortable categoriesFor: #onActivate:!events/generated!public! !
-!JQSortable categoriesFor: #onBeforeStop:!events/generated!public! !
-!JQSortable categoriesFor: #onChange:!events/generated!public! !
-!JQSortable categoriesFor: #onDeactivate:!events/generated!public! !
-!JQSortable categoriesFor: #onOut:!events/generated!public! !
-!JQSortable categoriesFor: #onOver:!events/generated!public! !
-!JQSortable categoriesFor: #onReceive:!events/generated!public! !
-!JQSortable categoriesFor: #onRemove:!events/generated!public! !
-!JQSortable categoriesFor: #onSort:!events/generated!public! !
-!JQSortable categoriesFor: #onStart:!events/generated!public! !
-!JQSortable categoriesFor: #onStop:!events/generated!public! !
-!JQSortable categoriesFor: #onUpdate:!events/generated!public! !
-!JQSortable categoriesFor: #opacity:!options/generated!public! !
-!JQSortable categoriesFor: #placeholder:!options/generated!public! !
-!JQSortable categoriesFor: #refresh!actions!public! !
-!JQSortable categoriesFor: #refreshPositions!actions!public! !
-!JQSortable categoriesFor: #revert:!options/generated!public! !
-!JQSortable categoriesFor: #scroll:!options/generated!public! !
-!JQSortable categoriesFor: #scrollSensitivity:!options/generated!public! !
-!JQSortable categoriesFor: #scrollSpeed:!options/generated!public! !
-!JQSortable categoriesFor: #tolerance:!options/generated!public! !
+
+!JQSortable categoriesForMethods!
+appendTo:!options/generated!public! !
+axis:!options/generated!public! !
+cancel!actions!public! !
+cancel:!options/generated!public! !
+connectWith:!options/generated!public! !
+containment:!options/generated!public! !
+cursor:!options/generated!public! !
+cursorAt:!options/generated!public! !
+delay:!options/generated!public! !
+distance:!options/generated!public! !
+dropOnEmpty:!options/generated!public! !
+forceHelperSize:!options/generated!public! !
+forcePlaceholderSize:!options/generated!public! !
+grid:!options/generated!public! !
+handle:!options/generated!public! !
+helper:!options/generated!public! !
+items:!options/generated!public! !
+method!accessing!public! !
+onActivate:!events/generated!public! !
+onBeforeStop:!events/generated!public! !
+onChange:!events/generated!public! !
+onDeactivate:!events/generated!public! !
+onOut:!events/generated!public! !
+onOver:!events/generated!public! !
+onReceive:!events/generated!public! !
+onRemove:!events/generated!public! !
+onSort:!events/generated!public! !
+onStart:!events/generated!public! !
+onStop:!events/generated!public! !
+onUpdate:!events/generated!public! !
+opacity:!options/generated!public! !
+placeholder:!options/generated!public! !
+refresh!actions!public! !
+refreshPositions!actions!public! !
+revert:!options/generated!public! !
+scroll:!options/generated!public! !
+scrollSensitivity:!options/generated!public! !
+scrollSpeed:!options/generated!public! !
+tolerance:!options/generated!public! !
+!
 

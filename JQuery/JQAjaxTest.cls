@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQueryTest subclass: #JQAjaxTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQAjaxTest guid: (GUID fromString: '{f34a0065-fe74-47f6-aeb1-4be36758409c}')!
+
+JQAjaxTest guid: (GUID fromString: '{3ec0a27d-884b-4da2-9ee4-91d122241c73}')!
+
 JQAjaxTest comment: ''!
-!JQAjaxTest categoriesForClass!JQuery-Tests-Core-Unit! !
+
+!JQAjaxTest categoriesForClass!Unit! !
+
 !JQAjaxTest methodsFor!
 
 ajax	^ self jQuery ajax!
@@ -113,56 +117,59 @@ testType	self		assert: (self ajax type: 'post')		equals: self function, '.aja
 testUrl	self 		assert: self ajax url		equals: '"/"'.	self		assert: (self ajax callback: [ ]; url)		equals: '"http://www.seaside.st/"'.	self		assert: (self ajax callback: [ ] value: $a; url)		equals: '"http://www.seaside.st/"'.	self		assert: (self ajax callback: [ ] value: self mock; url)		equals: '"http://www.seaside.st/"'!
 
 testUsername	self		assert: (self ajax username: 'seaside')		equals: self function, '.ajax({"username":"seaside"})'! !
-!JQAjaxTest categoriesFor: #ajax!accessing!public! !
-!JQAjaxTest categoriesFor: #ajaxSetup!accessing!public! !
-!JQAjaxTest categoriesFor: #testAddParameter!public!tests/parameters! !
-!JQAjaxTest categoriesFor: #testAddParameterValue!public!tests/parameters! !
-!JQAjaxTest categoriesFor: #testAjax!public!tests! !
-!JQAjaxTest categoriesFor: #testAjaxSetup!public!tests! !
-!JQAjaxTest categoriesFor: #testAsync!public!tests/options! !
-!JQAjaxTest categoriesFor: #testCache!public!tests/options! !
-!JQAjaxTest categoriesFor: #testCallback!public!tests/callbacks! !
-!JQAjaxTest categoriesFor: #testCallbackForEvent!public!tests/callbacks! !
-!JQAjaxTest categoriesFor: #testCallbackValue!public!tests/callbacks! !
-!JQAjaxTest categoriesFor: #testContentType!public!tests/options! !
-!JQAjaxTest categoriesFor: #testContext!public!tests/options! !
-!JQAjaxTest categoriesFor: #testData!public!tests/options! !
-!JQAjaxTest categoriesFor: #testDataFilter!public!tests/options! !
-!JQAjaxTest categoriesFor: #testDataType!public!tests/options! !
-!JQAjaxTest categoriesFor: #testFullUrl!public!tests/accessing! !
-!JQAjaxTest categoriesFor: #testGet!public!tests! !
-!JQAjaxTest categoriesFor: #testGetJson!public!tests! !
-!JQAjaxTest categoriesFor: #testGetScript!public!tests! !
-!JQAjaxTest categoriesFor: #testGlobal!public!tests/options! !
-!JQAjaxTest categoriesFor: #testHtml!public!tests/callbacks! !
-!JQAjaxTest categoriesFor: #testIfModified!public!tests/options! !
-!JQAjaxTest categoriesFor: #testJavascriptUrl!public!tests/accessing! !
-!JQAjaxTest categoriesFor: #testJsonp!public!tests/options! !
-!JQAjaxTest categoriesFor: #testJsonpCallback!public!tests/options! !
-!JQAjaxTest categoriesFor: #testLoad!public!tests! !
-!JQAjaxTest categoriesFor: #testMultiple!public!tests/callbacks! !
-!JQAjaxTest categoriesFor: #testOnBeforeSend!public!tests/events! !
-!JQAjaxTest categoriesFor: #testOnComplete!public!tests/events! !
-!JQAjaxTest categoriesFor: #testOnError!public!tests/events! !
-!JQAjaxTest categoriesFor: #testOnSuccess!public!tests/events! !
-!JQAjaxTest categoriesFor: #testOnXhr!public!tests/events! !
-!JQAjaxTest categoriesFor: #testPassword!public!tests/options! !
-!JQAjaxTest categoriesFor: #testPost!public!tests! !
-!JQAjaxTest categoriesFor: #testProcessData!public!tests/options! !
-!JQAjaxTest categoriesFor: #testScript!public!tests/callbacks! !
-!JQAjaxTest categoriesFor: #testScriptCharset!public!tests/options! !
-!JQAjaxTest categoriesFor: #testSerialize!public!tests/convenience! !
-!JQAjaxTest categoriesFor: #testSerializeArray!public!tests/convenience! !
-!JQAjaxTest categoriesFor: #testSerializeChildren!public!tests/convenience! !
-!JQAjaxTest categoriesFor: #testSerializeFileUpload!public!tests/convenience! !
-!JQAjaxTest categoriesFor: #testSerializeForm!public!tests/convenience! !
-!JQAjaxTest categoriesFor: #testSerializeThis!public!tests/convenience! !
-!JQAjaxTest categoriesFor: #testSerializeThisWithHidden!public!tests/convenience! !
-!JQAjaxTest categoriesFor: #testSerializeWithHidden!public!tests/convenience! !
-!JQAjaxTest categoriesFor: #testText!public!tests/callbacks! !
-!JQAjaxTest categoriesFor: #testTimeout!public!tests/options! !
-!JQAjaxTest categoriesFor: #testTraditional!public!tests/options! !
-!JQAjaxTest categoriesFor: #testType!public!tests/options! !
-!JQAjaxTest categoriesFor: #testUrl!public!tests/accessing! !
-!JQAjaxTest categoriesFor: #testUsername!public!tests/options! !
+
+!JQAjaxTest categoriesForMethods!
+ajax!accessing!public! !
+ajaxSetup!accessing!public! !
+testAddParameter!public!tests/parameters! !
+testAddParameterValue!public!tests/parameters! !
+testAjax!public!tests! !
+testAjaxSetup!public!tests! !
+testAsync!public!tests/options! !
+testCache!public!tests/options! !
+testCallback!public!tests/callbacks! !
+testCallbackForEvent!public!tests/callbacks! !
+testCallbackValue!public!tests/callbacks! !
+testContentType!public!tests/options! !
+testContext!public!tests/options! !
+testData!public!tests/options! !
+testDataFilter!public!tests/options! !
+testDataType!public!tests/options! !
+testFullUrl!public!tests/accessing! !
+testGet!public!tests! !
+testGetJson!public!tests! !
+testGetScript!public!tests! !
+testGlobal!public!tests/options! !
+testHtml!public!tests/callbacks! !
+testIfModified!public!tests/options! !
+testJavascriptUrl!public!tests/accessing! !
+testJsonp!public!tests/options! !
+testJsonpCallback!public!tests/options! !
+testLoad!public!tests! !
+testMultiple!public!tests/callbacks! !
+testOnBeforeSend!public!tests/events! !
+testOnComplete!public!tests/events! !
+testOnError!public!tests/events! !
+testOnSuccess!public!tests/events! !
+testOnXhr!public!tests/events! !
+testPassword!public!tests/options! !
+testPost!public!tests! !
+testProcessData!public!tests/options! !
+testScript!public!tests/callbacks! !
+testScriptCharset!public!tests/options! !
+testSerialize!public!tests/convenience! !
+testSerializeArray!public!tests/convenience! !
+testSerializeChildren!public!tests/convenience! !
+testSerializeFileUpload!public!tests/convenience! !
+testSerializeForm!public!tests/convenience! !
+testSerializeThis!public!tests/convenience! !
+testSerializeThisWithHidden!public!tests/convenience! !
+testSerializeWithHidden!public!tests/convenience! !
+testText!public!tests/callbacks! !
+testTimeout!public!tests/options! !
+testTraditional!public!tests/options! !
+testType!public!tests/options! !
+testUrl!public!tests/accessing! !
+testUsername!public!tests/options! !
+!
 

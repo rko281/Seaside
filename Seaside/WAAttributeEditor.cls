@@ -1,18 +1,22 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAComponent subclass: #WAAttributeEditor
 	instanceVariableNames: 'configuration group properties parent'
 	classVariableNames: 'HelpTexts PropertiesCache'
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAAttributeEditor guid: (GUID fromString: '{37a9ddd0-7e25-42f6-a969-9d2e2122b828}')!
+
+WAAttributeEditor guid: (GUID fromString: '{cf1cfc50-93c0-425c-b319-33890f2a4377}')!
+
 WAAttributeEditor comment: ''!
-!WAAttributeEditor categoriesForClass!Seaside-Tools-Web! !
+
+!WAAttributeEditor categoriesForClass!Unclassified! !
+
 !WAAttributeEditor methodsFor!
 
 collapsed	^ self propertyAt: #collapsed ifAbsent: [ false ]!
 
-collapsed: aBoolean	^ self propertyAt: #collapsed put: aBoolean !
+collapsed: aBoolean	^ self propertyAt: #collapsed put: aBoolean!
 
 collapsedByDefault	^ false!
 
@@ -22,21 +26,21 @@ configuration: anObject	configuration := anObject!
 
 displayAdvancedAttributes	^ self propertyAt: #displayAdvanced ifAbsent: [ false ]!
 
-displayAdvancedAttributes: aBoolean	self propertyAt: #displayAdvanced put: aBoolean !
+displayAdvancedAttributes: aBoolean	self propertyAt: #displayAdvanced put: aBoolean!
 
 group	^ group!
 
-group: anObject	group := anObject.	self setCachedProperties.	self showHelp: false!
+group: anObject	group := anObject.	self setCachedProperties.	self showHelp: false!
 
 hasAdvancedAttributes	^ self propertyAt: #hasAdvanced ifAbsent: [ false ]!
 
-hasAdvancedAttributes: aBoolean	self propertyAt: #hasAdvanced put: aBoolean !
+hasAdvancedAttributes: aBoolean	self propertyAt: #hasAdvanced put: aBoolean!
 
 hasAdvancedAttributesDefault	^ false!
 
 helpEnabled	^ self propertyAt: #helpEnabled ifAbsent: [ false ]!
 
-initialize 	super initialize.	properties := Dictionary new.	self hasAdvancedAttributes: self hasAdvancedAttributesDefault.	self displayAdvancedAttributes: false.	self collapsed: self collapsedByDefault.	self showHelp: false!
+initialize 	super initialize.	properties := Dictionary new.	self hasAdvancedAttributes: self hasAdvancedAttributesDefault.	self displayAdvancedAttributes: false.	self collapsed: self collapsedByDefault.	self showHelp: false!
 
 parent	^ parent!
 
@@ -52,56 +56,59 @@ propertyAt: aSymbol put: anObject	properties at: aSymbol put: anObject.	group
 
 renderActionsOn: html	html span		class: 'action';		with: [			self hasAdvancedAttributes ifTrue: [				html anchor					class: 'minus' if: self displayAdvancedAttributes;					class: 'plus' if: self displayAdvancedAttributes not;					title: (self displayAdvancedAttributes						ifTrue: [ 'Hide advanced attributes' ]						ifFalse: [ 'Show advanced attributes' ]);					callback: [ self toggleAdvanced ].				html space ].			html anchor				class: 'down' if: self collapsed;				class: 'up' if: self collapsed not;				title: (self collapsed					ifTrue: [ 'Expand' ]					 ifFalse: [ 'Collapse' ]);				callback: [ self toggleVisbility ].			(self class helpTextFor: group) isNil ifFalse: [				html space.				html anchor					class: 'help';					title: (self showHelp						ifTrue: [ 'Hide Help' ]						ifFalse: [ 'Show Help' ]);					callback: [ self toggleHelp ] ] ]!
 
-renderConfigurationOn: html	self subclassResponsibility !
+renderConfigurationOn: html	self subclassResponsibility!
 
-renderContentOn: html	self		renderGroup: [ self renderConfigurationOn: html ]		named: (self labelForSelector: group)		on: html				!
+renderContentOn: html	self		renderGroup: [ self renderConfigurationOn: html ]		named: (self labelForSelector: group)		on: html!
 
 renderGroup: aBlock named: aName on: html	html div class: 'group';		 with: [			html div				class: 'groupTitle';				with: [					html label: aName.					self renderActionsOn: html ].			self collapsed 				ifFalse: [					self showHelp 						ifTrue: [							html div								class: 'help';								with: [									html code: (self class helpTextFor: group) ] ]						ifFalse: [							html div								class: 'groupContent';								with: aBlock ] ] ]!
 
-setCachedProperties	| props | 	props := self class propertiesCache at: group ifAbsent: [ nil ].	props isNil ifFalse: [		self properties: props.		self showHelp: false ] !
+setCachedProperties	| props | 	props := self class propertiesCache at: group ifAbsent: [ nil ].	props isNil ifFalse: [		self properties: props.		self showHelp: false ]!
 
 show: aComponent onAnswer: aBlock	^ parent isNil		ifFalse: [ parent parent show: aComponent onAnswer: aBlock ]		ifTrue: [ super show: aComponent onAnswer: aBlock ]!
 
 showHelp	^ self propertyAt: #showHelp ifAbsent: [ false ]!
 
-showHelp: aBoolean	^ self propertyAt: #showHelp put: aBoolean !
+showHelp: aBoolean	^ self propertyAt: #showHelp put: aBoolean!
 
 toggleAdvanced	self displayAdvancedAttributes: self displayAdvancedAttributes not.	self displayAdvancedAttributes		ifTrue: [ self collapsed: false ]!
 
 toggleHelp	self showHelp: self showHelp not.	self showHelp		ifTrue: [ self collapsed: false ]!
 
 toggleVisbility	self collapsed: self collapsed not.	self collapsed		ifTrue: [ self showHelp: false ]! !
-!WAAttributeEditor categoriesFor: #collapsed!public!settings! !
-!WAAttributeEditor categoriesFor: #collapsed:!public!settings! !
-!WAAttributeEditor categoriesFor: #collapsedByDefault!accessing!public! !
-!WAAttributeEditor categoriesFor: #configuration!accessing!public! !
-!WAAttributeEditor categoriesFor: #configuration:!accessing!public! !
-!WAAttributeEditor categoriesFor: #displayAdvancedAttributes!public!settings! !
-!WAAttributeEditor categoriesFor: #displayAdvancedAttributes:!public!settings! !
-!WAAttributeEditor categoriesFor: #group!accessing!public! !
-!WAAttributeEditor categoriesFor: #group:!accessing!public! !
-!WAAttributeEditor categoriesFor: #hasAdvancedAttributes!public!settings! !
-!WAAttributeEditor categoriesFor: #hasAdvancedAttributes:!public!settings! !
-!WAAttributeEditor categoriesFor: #hasAdvancedAttributesDefault!accessing!public! !
-!WAAttributeEditor categoriesFor: #helpEnabled!public!settings! !
-!WAAttributeEditor categoriesFor: #initialize!initialization!public! !
-!WAAttributeEditor categoriesFor: #parent!accessing!public! !
-!WAAttributeEditor categoriesFor: #parent:!accessing!public! !
-!WAAttributeEditor categoriesFor: #properties!accessing!public! !
-!WAAttributeEditor categoriesFor: #properties:!accessing!public! !
-!WAAttributeEditor categoriesFor: #propertyAt:ifAbsent:!accessing!public! !
-!WAAttributeEditor categoriesFor: #propertyAt:put:!accessing!public! !
-!WAAttributeEditor categoriesFor: #renderActionsOn:!public!rendering! !
-!WAAttributeEditor categoriesFor: #renderConfigurationOn:!public!rendering! !
-!WAAttributeEditor categoriesFor: #renderContentOn:!public!rendering! !
-!WAAttributeEditor categoriesFor: #renderGroup:named:on:!public!rendering! !
-!WAAttributeEditor categoriesFor: #setCachedProperties!public!settings! !
-!WAAttributeEditor categoriesFor: #show:onAnswer:!delegation!public! !
-!WAAttributeEditor categoriesFor: #showHelp!public!settings! !
-!WAAttributeEditor categoriesFor: #showHelp:!public!settings! !
-!WAAttributeEditor categoriesFor: #toggleAdvanced!actions!public! !
-!WAAttributeEditor categoriesFor: #toggleHelp!actions!public! !
-!WAAttributeEditor categoriesFor: #toggleVisbility!actions!public! !
+
+!WAAttributeEditor categoriesForMethods!
+collapsed!public!settings! !
+collapsed:!public!settings! !
+collapsedByDefault!accessing!public! !
+configuration!accessing!public! !
+configuration:!accessing!public! !
+displayAdvancedAttributes!public!settings! !
+displayAdvancedAttributes:!public!settings! !
+group!accessing!public! !
+group:!accessing!public! !
+hasAdvancedAttributes!public!settings! !
+hasAdvancedAttributes:!public!settings! !
+hasAdvancedAttributesDefault!accessing!public! !
+helpEnabled!public!settings! !
+initialize!initialization!public! !
+parent!accessing!public! !
+parent:!accessing!public! !
+properties!accessing!public! !
+properties:!accessing!public! !
+propertyAt:ifAbsent:!accessing!public! !
+propertyAt:put:!accessing!public! !
+renderActionsOn:!public!rendering! !
+renderConfigurationOn:!public!rendering! !
+renderContentOn:!public!rendering! !
+renderGroup:named:on:!public!rendering! !
+setCachedProperties!public!settings! !
+show:onAnswer:!delegation!public! !
+showHelp!public!settings! !
+showHelp:!public!settings! !
+toggleAdvanced!actions!public! !
+toggleHelp!actions!public! !
+toggleVisbility!actions!public! !
+!
 
 !WAAttributeEditor class methodsFor!
 
@@ -113,10 +120,13 @@ initHelpTexts	HelpTexts := Dictionary new.	HelpTexts at: #inheritedConfigurati
 
 propertiesCache	^ PropertiesCache ifNil: [ PropertiesCache := Dictionary new ]!
 
-updatePropertiesCacheFor: anEditor	 self propertiesCache at: anEditor group put: anEditor properties ! !
-!WAAttributeEditor class categoriesFor: #helpTextFor:!accessing!public! !
-!WAAttributeEditor class categoriesFor: #helpTexts!accessing!public! !
-!WAAttributeEditor class categoriesFor: #initHelpTexts!accessing!public! !
-!WAAttributeEditor class categoriesFor: #propertiesCache!accessing!public! !
-!WAAttributeEditor class categoriesFor: #updatePropertiesCacheFor:!accessing!public! !
+updatePropertiesCacheFor: anEditor	 self propertiesCache at: anEditor group put: anEditor properties! !
+
+!WAAttributeEditor class categoriesForMethods!
+helpTextFor:!accessing!public! !
+helpTexts!accessing!public! !
+initHelpTexts!accessing!public! !
+propertiesCache!accessing!public! !
+updatePropertiesCacheFor:!accessing!public! !
+!
 

@@ -1,10 +1,14 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAError subclass: #WAInvalidUrlSyntaxError
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAInvalidUrlSyntaxError guid: (GUID fromString: '{1c24d61e-ce3e-434d-83bc-b4c893bb5397}')!
+
+WAInvalidUrlSyntaxError guid: (GUID fromString: '{1bda828c-aa2e-480f-96d3-d0aa07ea292a}')!
+
 WAInvalidUrlSyntaxError comment: ''!
-!WAInvalidUrlSyntaxError categoriesForClass!Seaside-Core-HTTP! !
+
+!WAInvalidUrlSyntaxError categoriesForClass!HTTP! !
+

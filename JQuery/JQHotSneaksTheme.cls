@@ -1,15 +1,22 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQBaseTheme subclass: #JQHotSneaksTheme
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQHotSneaksTheme guid: (GUID fromString: '{2348491e-e1d0-4c8d-8b2c-94a89297ff4e}')!
+
+JQHotSneaksTheme guid: (GUID fromString: '{fff86b4e-0cbc-41b0-a567-aa7893abfa5c}')!
+
 JQHotSneaksTheme comment: ''!
-!JQHotSneaksTheme categoriesForClass!JQuery-UI-Libraries! !
+
+!JQHotSneaksTheme categoriesForClass!Libraries! !
+
 !JQHotSneaksTheme methodsFor!
 
 themeName	^ 'hot-sneaks'! !
-!JQHotSneaksTheme categoriesFor: #themeName!accessing!public! !
+
+!JQHotSneaksTheme categoriesForMethods!
+themeName!accessing!public! !
+!
 

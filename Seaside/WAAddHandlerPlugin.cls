@@ -1,24 +1,31 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAConfigurationToolPlugin subclass: #WAAddHandlerPlugin
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAAddHandlerPlugin guid: (GUID fromString: '{7df3ab7f-6233-47f4-a99a-eca566bb06a8}')!
+
+WAAddHandlerPlugin guid: (GUID fromString: '{8d8f991d-d14d-4e03-972b-b6d50e688536}')!
+
 WAAddHandlerPlugin comment: ''!
-!WAAddHandlerPlugin categoriesForClass!Seaside-Tools-Web! !
+
+!WAAddHandlerPlugin categoriesForClass!Unclassified! !
+
 !WAAddHandlerPlugin methodsFor!
 
-execute	self requestor 		show: (WADispatcherAddPage new dispatcher: self requestor dispatcher; yourself)		onAnswer: [ :newHandler |			newHandler isNil 				ifFalse: [ self requestor configure: newHandler ] ]!
+execute	self requestor 		show: (WADispatcherAddPage new dispatcher: self requestor dispatcher; yourself)		onAnswer: [ :newHandler |			newHandler isNil 				ifFalse: [ self requestor configure: newHandler ] ]!
 
 isActive	^ self requestor dispatcher notNil!
 
 label	^ 'Add'!
 
 priority	^ -100! !
-!WAAddHandlerPlugin categoriesFor: #execute!actions!public! !
-!WAAddHandlerPlugin categoriesFor: #isActive!public!testing! !
-!WAAddHandlerPlugin categoriesFor: #label!accessing!public! !
-!WAAddHandlerPlugin categoriesFor: #priority!accessing!public! !
+
+!WAAddHandlerPlugin categoriesForMethods!
+execute!actions!public! !
+isActive!public!testing! !
+label!accessing!public! !
+priority!accessing!public! !
+!
 

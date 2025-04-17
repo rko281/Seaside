@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WACallback subclass: #JSAjaxCallback
 	instanceVariableNames: 'block'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSAjaxCallback guid: (GUID fromString: '{01e01d47-3bec-48d1-ba50-9e61798364f8}')!
+
+JSAjaxCallback guid: (GUID fromString: '{ea9dfb69-0448-41eb-ad53-a978753e57f5}')!
+
 JSAjaxCallback comment: ''!
-!JSAjaxCallback categoriesForClass!Javascript-Core-Base! !
+
+!JSAjaxCallback categoriesForClass!Base! !
+
 !JSAjaxCallback methodsFor!
 
 block: aZeroOrOneArgBlock	block := aZeroOrOneArgBlock!
@@ -15,7 +19,10 @@ block: aZeroOrOneArgBlock	block := aZeroOrOneArgBlock!
 evaluateWithArgument: anObject	block isNil		ifFalse: [ block valueWithPossibleArguments: (Array with: anObject) ].	self requestContext		respond: [ :response | response doNotCache ]!
 
 priority	^ 5! !
-!JSAjaxCallback categoriesFor: #block:!accessing!public! !
-!JSAjaxCallback categoriesFor: #evaluateWithArgument:!evaluation!public! !
-!JSAjaxCallback categoriesFor: #priority!accessing!public! !
+
+!JSAjaxCallback categoriesForMethods!
+block:!accessing!public! !
+evaluateWithArgument:!evaluation!public! !
+priority!accessing!public! !
+!
 

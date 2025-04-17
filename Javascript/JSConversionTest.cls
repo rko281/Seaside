@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JSObjectTest subclass: #JSConversionTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSConversionTest guid: (GUID fromString: '{5a772019-8768-4ecb-be62-5206c995b94b}')!
+
+JSConversionTest guid: (GUID fromString: '{fd75b8fd-18e6-4521-a473-649e379efc50}')!
+
 JSConversionTest comment: ''!
-!JSConversionTest categoriesForClass!Javascript-Tests-Core! !
+
+!JSConversionTest categoriesForClass!Unclassified! !
+
 !JSConversionTest methodsFor!
 
 testArray	self assert: #(1 2 3) equals: '[1,2,3]'.	self assert: (GRSmallOrderedSet withAll: #(1 2 3)) equals: '[1,2,3]'!
@@ -43,21 +47,24 @@ testStringSpecial	self assert: (String with: Character cr) equals: '"\r"'.	sel
 testStringSpecialLineTerminator	"		ECMA-262 v5.1 (June 2011) section 7.8.4 says that string literals cannot contain an unescaped LineTerminator, which is defined in		section 7.3 as the four characters <LF>, <CR>,  <LS> and  <PS> (U+000A, U+u000D, U+2028 and U+2029)				See also:			http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf			http://timelessrepo.com/json-isnt-a-javascript-subset	"	"<LF>"	self assert: (String with: (Character codePoint: 16r000A)) equals: '"\n"'.		"<CR>"	self assert: (String with: (Character codePoint: 16r000D)) equals: '"\r"'.		"<LS>"	self assert: (String with: (Character codePoint: 16r2028)) equals: '"\u2028"'.		"<PS>"	self assert: (String with: (Character codePoint: 16r2029)) equals: '"\u2029"'!
 
 testUrl	self		assert: (WAUrl absolute: 'http://www.seaside.st/?1=a&2=b')		equals: '"http://www.seaside.st/?1=a&2=b"'! !
-!JSConversionTest categoriesFor: #testArray!public!tests! !
-!JSConversionTest categoriesFor: #testCharacter!public!tests! !
-!JSConversionTest categoriesFor: #testDateAndTime!public!tests! !
-!JSConversionTest categoriesFor: #testDictionary!public!tests! !
-!JSConversionTest categoriesFor: #testDuration!public!tests! !
-!JSConversionTest categoriesFor: #testIsJavascript!public!tests/tools! !
-!JSConversionTest categoriesFor: #testJoinAssocation!public!tests! !
-!JSConversionTest categoriesFor: #testJoinEmpty!public!tests! !
-!JSConversionTest categoriesFor: #testJoinMultiple!public!tests! !
-!JSConversionTest categoriesFor: #testJoinString!public!tests! !
-!JSConversionTest categoriesFor: #testLiteral!public!tests! !
-!JSConversionTest categoriesFor: #testNumber!public!tests! !
-!JSConversionTest categoriesFor: #testStringBasic!public!tests! !
-!JSConversionTest categoriesFor: #testStringEscaping!public!tests! !
-!JSConversionTest categoriesFor: #testStringSpecial!public!tests! !
-!JSConversionTest categoriesFor: #testStringSpecialLineTerminator!public!tests! !
-!JSConversionTest categoriesFor: #testUrl!public!tests! !
+
+!JSConversionTest categoriesForMethods!
+testArray!public!tests! !
+testCharacter!public!tests! !
+testDateAndTime!public!tests! !
+testDictionary!public!tests! !
+testDuration!public!tests! !
+testIsJavascript!public!tests/tools! !
+testJoinAssocation!public!tests! !
+testJoinEmpty!public!tests! !
+testJoinMultiple!public!tests! !
+testJoinString!public!tests! !
+testLiteral!public!tests! !
+testNumber!public!tests! !
+testStringBasic!public!tests! !
+testStringEscaping!public!tests! !
+testStringSpecial!public!tests! !
+testStringSpecialLineTerminator!public!tests! !
+testUrl!public!tests! !
+!
 

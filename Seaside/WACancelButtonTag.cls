@@ -1,15 +1,22 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WASubmitButtonTag subclass: #WACancelButtonTag
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WACancelButtonTag guid: (GUID fromString: '{5283ff55-4eb1-461a-b19a-afb73249b577}')!
+
+WACancelButtonTag guid: (GUID fromString: '{8947dc9e-3a01-4285-ae5a-de536f7e9856}')!
+
 WACancelButtonTag comment: 'Creates a Cancel submit button.'!
-!WACancelButtonTag categoriesForClass!Seaside-Canvas-Tags! !
+
+!WACancelButtonTag categoriesForClass!Tags! !
+
 !WACancelButtonTag methodsFor!
 
 callback: aBlock	self name: (self storeCallback: (WACancelActionCallback on: aBlock))! !
-!WACancelButtonTag categoriesFor: #callback:!callbacks!public! !
+
+!WACancelButtonTag categoriesForMethods!
+callback:!callbacks!public! !
+!
 

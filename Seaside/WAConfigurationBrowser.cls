@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WADispatcherBrowser subclass: #WAConfigurationBrowser
 	instanceVariableNames: 'selection editor'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAConfigurationBrowser guid: (GUID fromString: '{f8e5c5f3-b2cd-4dc8-bc96-4f9ac1366d8e}')!
+
+WAConfigurationBrowser guid: (GUID fromString: '{7c2a2a96-a871-433c-bc99-29805806cac2}')!
+
 WAConfigurationBrowser comment: ''!
-!WAConfigurationBrowser categoriesForClass!Seaside-Tools-Web! !
+
+!WAConfigurationBrowser categoriesForClass!Unclassified! !
+
 !WAConfigurationBrowser methodsFor!
 
 children	^ Array with: editor!
@@ -18,13 +22,13 @@ defaultDispatcher	^ WAAdmin defaultDispatcher!
 
 editor	^ editor!
 
-editor: aComponent	editor := aComponent !
+editor: aComponent	editor := aComponent!
 
-emptyPage	self selection: nil.	self editor home!
+emptyPage	self selection: nil.	self editor home!
 
 handlerClasses	^ WARequestHandler concreteSubclasses asSortedCollection: [ :a :b | a name < b name ]!
 
-initializeOn: aDispatcher	super initializeOn: aDispatcher.	self setEmptyPage.	self configure: aDispatcher!
+initializeOn: aDispatcher	super initializeOn: aDispatcher.	self setEmptyPage.	self configure: aDispatcher!
 
 openHandler: aHandler	super openHandler: aHandler.	aHandler isNil ifFalse: [ self configure: aHandler ]!
 
@@ -34,7 +38,7 @@ renderEditorOn: html	html heading		class: 'selection-title';		with: self sele
 
 renderRow: aHandler named: aString on: html	html tableRow: [		html tableData: [ self renderRowName: aHandler named: aString on: html ].		html tableData: [ self renderRowDescription: aHandler on: html ] ]!
 
-renderRowDescription: aHandler  on: html	 html render: aHandler class description !
+renderRowDescription: aHandler  on: html	 html render: aHandler class description!
 
 renderRowName: aHandler named: aString on: html	html anchor		class: 'handler-name';		class: 'selected' if: aHandler = selection;		callback: [ self configure: aHandler ];		with: [			html text: aString.			aHandler isDispatcher ifTrue: [ html text: '/' ].			self dispatcher defaultHandler == aHandler				ifTrue: [ html span							title: 'Default handler';							with: ' (*)' ] ]!
 
@@ -47,23 +51,26 @@ setEmptyPage	editor := WADispatcherEmptyPage on: self!
 show: aComponent onAnswer: aBlock	self editor show: aComponent onAnswer: aBlock!
 
 updateUrlHandler	^ self selection! !
-!WAConfigurationBrowser categoriesFor: #children!hooks!public! !
-!WAConfigurationBrowser categoriesFor: #configure:!actions!public! !
-!WAConfigurationBrowser categoriesFor: #defaultDispatcher!accessing!public! !
-!WAConfigurationBrowser categoriesFor: #editor!accessing!public! !
-!WAConfigurationBrowser categoriesFor: #editor:!accessing!public! !
-!WAConfigurationBrowser categoriesFor: #emptyPage!actions!public! !
-!WAConfigurationBrowser categoriesFor: #handlerClasses!accessing!public! !
-!WAConfigurationBrowser categoriesFor: #initializeOn:!initialization!public! !
-!WAConfigurationBrowser categoriesFor: #openHandler:!actions!public! !
-!WAConfigurationBrowser categoriesFor: #renderContentOn:!public!rendering! !
-!WAConfigurationBrowser categoriesFor: #renderEditorOn:!public!rendering! !
-!WAConfigurationBrowser categoriesFor: #renderRow:named:on:!public!rendering/rows! !
-!WAConfigurationBrowser categoriesFor: #renderRowDescription:on:!public!rendering/rows! !
-!WAConfigurationBrowser categoriesFor: #renderRowName:named:on:!public!rendering/rows! !
-!WAConfigurationBrowser categoriesFor: #selection!accessing!public! !
-!WAConfigurationBrowser categoriesFor: #selection:!accessing!public! !
-!WAConfigurationBrowser categoriesFor: #setEmptyPage!actions!public! !
-!WAConfigurationBrowser categoriesFor: #show:onAnswer:!delegation!public! !
-!WAConfigurationBrowser categoriesFor: #updateUrlHandler!processing!public! !
+
+!WAConfigurationBrowser categoriesForMethods!
+children!hooks!public! !
+configure:!actions!public! !
+defaultDispatcher!accessing!public! !
+editor!accessing!public! !
+editor:!accessing!public! !
+emptyPage!actions!public! !
+handlerClasses!accessing!public! !
+initializeOn:!initialization!public! !
+openHandler:!actions!public! !
+renderContentOn:!public!rendering! !
+renderEditorOn:!public!rendering! !
+renderRow:named:on:!public!rendering/rows! !
+renderRowDescription:on:!public!rendering/rows! !
+renderRowName:named:on:!public!rendering/rows! !
+selection!accessing!public! !
+selection:!accessing!public! !
+setEmptyPage!actions!public! !
+show:onAnswer:!delegation!public! !
+updateUrlHandler!processing!public! !
+!
 

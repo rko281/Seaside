@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQPlugin subclass: #JQAjaxSetup
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQAjaxSetup guid: (GUID fromString: '{1021bf26-cabd-4a86-a527-869fefcdcd89}')!
+
+JQAjaxSetup guid: (GUID fromString: '{96c649e2-c166-4485-9cc8-e5cd97fc2e04}')!
+
 JQAjaxSetup comment: 'Setup global settings for AJAX requests.'!
-!JQAjaxSetup categoriesForClass!JQuery-Core-Objects! !
+
+!JQAjaxSetup categoriesForClass!Objects! !
+
 !JQAjaxSetup methodsFor!
 
 async: aBoolean	"By default, all requests are sent asynchronous (i.e. this is set to true by default). If you need synchronous requests, set this option to false. Note that synchronous requests may temporarily lock the browser, disabling any actions while the request is active."		self optionAt: 'async' put: aBoolean!
@@ -59,29 +63,32 @@ type: aString	"The type of request to make ('POST' or 'GET'), default is 'GET'.
 url: aUrl	"A string containing the URL to which the request is sent."		self optionAt: 'url' put: aUrl!
 
 username: aString	"A username to be used in response to an HTTP access authentication request."		self optionAt: 'username' put: aString! !
-!JQAjaxSetup categoriesFor: #async:!options!public! !
-!JQAjaxSetup categoriesFor: #cache:!options!public! !
-!JQAjaxSetup categoriesFor: #contentType:!options!public! !
-!JQAjaxSetup categoriesFor: #context:!options!public! !
-!JQAjaxSetup categoriesFor: #data:!options!public! !
-!JQAjaxSetup categoriesFor: #dataFilter:!options!public! !
-!JQAjaxSetup categoriesFor: #dataType:!options!public! !
-!JQAjaxSetup categoriesFor: #global:!options!public! !
-!JQAjaxSetup categoriesFor: #ifModified:!options!public! !
-!JQAjaxSetup categoriesFor: #jsonp:!options!public! !
-!JQAjaxSetup categoriesFor: #jsonpCallback:!options!public! !
-!JQAjaxSetup categoriesFor: #method!accessing!public! !
-!JQAjaxSetup categoriesFor: #onBeforeSend:!events!public! !
-!JQAjaxSetup categoriesFor: #onComplete:!events!public! !
-!JQAjaxSetup categoriesFor: #onError:!events!public! !
-!JQAjaxSetup categoriesFor: #onSuccess:!events!public! !
-!JQAjaxSetup categoriesFor: #onXhr:!events!public! !
-!JQAjaxSetup categoriesFor: #password:!options!public! !
-!JQAjaxSetup categoriesFor: #processData:!options!public! !
-!JQAjaxSetup categoriesFor: #scriptCharset:!options!public! !
-!JQAjaxSetup categoriesFor: #timeout:!options!public! !
-!JQAjaxSetup categoriesFor: #traditional:!options!public! !
-!JQAjaxSetup categoriesFor: #type:!options!public! !
-!JQAjaxSetup categoriesFor: #url:!options!public! !
-!JQAjaxSetup categoriesFor: #username:!options!public! !
+
+!JQAjaxSetup categoriesForMethods!
+async:!options!public! !
+cache:!options!public! !
+contentType:!options!public! !
+context:!options!public! !
+data:!options!public! !
+dataFilter:!options!public! !
+dataType:!options!public! !
+global:!options!public! !
+ifModified:!options!public! !
+jsonp:!options!public! !
+jsonpCallback:!options!public! !
+method!accessing!public! !
+onBeforeSend:!events!public! !
+onComplete:!events!public! !
+onError:!events!public! !
+onSuccess:!events!public! !
+onXhr:!events!public! !
+password:!options!public! !
+processData:!options!public! !
+scriptCharset:!options!public! !
+timeout:!options!public! !
+traditional:!options!public! !
+type:!options!public! !
+url:!options!public! !
+username:!options!public! !
+!
 

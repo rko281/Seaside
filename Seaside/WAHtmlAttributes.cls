@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 GRSmallDictionary subclass: #WAHtmlAttributes
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAHtmlAttributes guid: (GUID fromString: '{7274c76b-d6ca-439b-8474-87321fdb29bf}')!
+
+WAHtmlAttributes guid: (GUID fromString: '{bf562950-b615-4109-babf-688528b97dbe}')!
+
 WAHtmlAttributes comment: 'I represent the attributes of a (X)(HT)ML tag. Compared to my superclass I ignore requests to add a nil-values. I also don''t throw an exception when accessing a key that doesn''t exist, but instead return nil.'!
-!WAHtmlAttributes categoriesForClass!Seaside-Core-Document! !
+
+!WAHtmlAttributes categoriesForClass!Document! !
+
 !WAHtmlAttributes methodsFor!
 
 addClass: aString	"Add an additional CSS class aString to the receiver."	self at: 'class' append: aString separator: Character space!
@@ -25,12 +29,15 @@ encodeOn: aDocument	"Encode the receivers attribute onto aDocument. Note that t
 errorKeyNotFound	^ nil!
 
 privateAt: aKey put: aValue	aValue ifNil: [ ^ nil ].	^ super privateAt: aKey put: aValue! !
-!WAHtmlAttributes categoriesFor: #addClass:!convenience!public! !
-!WAHtmlAttributes categoriesFor: #addMedia:!convenience!public! !
-!WAHtmlAttributes categoriesFor: #addStyle:!convenience!public! !
-!WAHtmlAttributes categoriesFor: #at:append:!accessing!public! !
-!WAHtmlAttributes categoriesFor: #at:append:separator:!accessing!public! !
-!WAHtmlAttributes categoriesFor: #encodeOn:!encoding!public! !
-!WAHtmlAttributes categoriesFor: #errorKeyNotFound!private! !
-!WAHtmlAttributes categoriesFor: #privateAt:put:!private! !
+
+!WAHtmlAttributes categoriesForMethods!
+addClass:!convenience!public! !
+addMedia:!convenience!public! !
+addStyle:!convenience!public! !
+at:append:!accessing!public! !
+at:append:separator:!accessing!public! !
+encodeOn:!encoding!public! !
+errorKeyNotFound!private! !
+privateAt:put:!private! !
+!
 

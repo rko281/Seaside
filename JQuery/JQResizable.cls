@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQWidget subclass: #JQResizable
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQResizable guid: (GUID fromString: '{37522ca2-eb13-4de0-8105-51b2cac33d81}')!
+
+JQResizable guid: (GUID fromString: '{1416d07f-a6af-47ce-870e-eac4092e4031}')!
+
 JQResizable comment: 'Creates new resizables on the nodeset supplied by the query.'!
-!JQResizable categoriesForClass!JQuery-UI-Interaction! !
+
+!JQResizable categoriesForClass!Interaction! !
+
 !JQResizable methodsFor!
 
 alsoResize: aSelectorOrjQueryOrElement	"Resize these elements synchronous when resizing."	self optionAt: 'alsoResize' put: aSelectorOrjQueryOrElement!
@@ -53,26 +57,29 @@ onResize: anObject	"This event is triggered during the resize, on the drag of t
 onStart: anObject	"This event is triggered at the start of a resize operation."	self optionAt: 'start' put: anObject asFunction!
 
 onStop: anObject	"This event is triggered at the end of a resize operation."	self optionAt: 'stop' put: anObject asFunction! !
-!JQResizable categoriesFor: #alsoResize:!options/generated!public! !
-!JQResizable categoriesFor: #animate:!options/generated!public! !
-!JQResizable categoriesFor: #animateDuration:!options/generated!public! !
-!JQResizable categoriesFor: #animateEasing:!options/generated!public! !
-!JQResizable categoriesFor: #aspectRatio:!options/generated!public! !
-!JQResizable categoriesFor: #autoHide:!options/generated!public! !
-!JQResizable categoriesFor: #cancel:!options/generated!public! !
-!JQResizable categoriesFor: #containment:!options/generated!public! !
-!JQResizable categoriesFor: #delay:!options/generated!public! !
-!JQResizable categoriesFor: #distance:!options/generated!public! !
-!JQResizable categoriesFor: #ghost:!options/generated!public! !
-!JQResizable categoriesFor: #grid:!options/generated!public! !
-!JQResizable categoriesFor: #handles:!options/generated!public! !
-!JQResizable categoriesFor: #helper:!options/generated!public! !
-!JQResizable categoriesFor: #maxHeight:!options/generated!public! !
-!JQResizable categoriesFor: #maxWidth:!options/generated!public! !
-!JQResizable categoriesFor: #method!accessing!public! !
-!JQResizable categoriesFor: #minHeight:!options/generated!public! !
-!JQResizable categoriesFor: #minWidth:!options/generated!public! !
-!JQResizable categoriesFor: #onResize:!events/generated!public! !
-!JQResizable categoriesFor: #onStart:!events/generated!public! !
-!JQResizable categoriesFor: #onStop:!events/generated!public! !
+
+!JQResizable categoriesForMethods!
+alsoResize:!options/generated!public! !
+animate:!options/generated!public! !
+animateDuration:!options/generated!public! !
+animateEasing:!options/generated!public! !
+aspectRatio:!options/generated!public! !
+autoHide:!options/generated!public! !
+cancel:!options/generated!public! !
+containment:!options/generated!public! !
+delay:!options/generated!public! !
+distance:!options/generated!public! !
+ghost:!options/generated!public! !
+grid:!options/generated!public! !
+handles:!options/generated!public! !
+helper:!options/generated!public! !
+maxHeight:!options/generated!public! !
+maxWidth:!options/generated!public! !
+method!accessing!public! !
+minHeight:!options/generated!public! !
+minWidth:!options/generated!public! !
+onResize:!events/generated!public! !
+onStart:!events/generated!public! !
+onStop:!events/generated!public! !
+!
 

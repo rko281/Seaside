@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JSCondition subclass: #JSConditionElse
 	instanceVariableNames: 'elseStatement'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSConditionElse guid: (GUID fromString: '{e26821d7-e197-4bac-a2b9-4222c2157371}')!
+
+JSConditionElse guid: (GUID fromString: '{5ca1c088-f758-4ad5-9904-47f73c5e272a}')!
+
 JSConditionElse comment: ''!
-!JSConditionElse categoriesForClass!Javascript-Core-Decorations! !
+
+!JSConditionElse categoriesForClass!Decorations! !
+
 !JSConditionElse methodsFor!
 
 elseStatement	^ elseStatement!
@@ -15,12 +19,18 @@ elseStatement	^ elseStatement!
 elseStatement: anObject	elseStatement := anObject!
 
 javascriptContentOn: aStream	super javascriptContentOn: aStream.	aStream 		nextPutAll: 'else{';		javascript: self elseStatement.	aStream nextPut: $}! !
-!JSConditionElse categoriesFor: #elseStatement!accessing!public! !
-!JSConditionElse categoriesFor: #elseStatement:!accessing!public! !
-!JSConditionElse categoriesFor: #javascriptContentOn:!accessing!public! !
+
+!JSConditionElse categoriesForMethods!
+elseStatement!accessing!public! !
+elseStatement:!accessing!public! !
+javascriptContentOn:!accessing!public! !
+!
 
 !JSConditionElse class methodsFor!
 
 on: statement else: elseStatement	^ (super on: statement)		elseStatement: elseStatement;		yourself! !
-!JSConditionElse class categoriesFor: #on:else:!instance creation!public! !
+
+!JSConditionElse class categoriesForMethods!
+on:else:!instance creation!public! !
+!
 

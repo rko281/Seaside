@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAObject subclass: #WARouteBuilder
 	instanceVariableNames: 'compiled method path produces consumes'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: 'configuration'!
-WARouteBuilder guid: (GUID fromString: '{a082cc20-8033-4c73-a7b6-cd3f52108cdf}')!
+
+WARouteBuilder guid: (GUID fromString: '{8c9893a7-8e20-46d4-8fb9-297331e86047}')!
+
 WARouteBuilder comment: 'I am a builder for building WARoute instances from a CompiledMethod.Instance Variables:	compiled	<CompiledMethod>	method		<String>	path		<String>	produces	<WAWildcardMimeTypeMatch|WAMimeTypeMatch>	consumes	<Collection<WAWildcardMimeTypeMatch|WAMimeTypeMatch>>Class Instance Variables:	configuration	<Collection>'!
-!WARouteBuilder categoriesForClass!Seaside-REST-Core-Route! !
+
+!WARouteBuilder categoriesForClass!Route! !
+
 !WARouteBuilder methodsFor!
 
 consumes: aString	##(Pragma configuration).		consumes add: (WAMimeTypeMatch fromString: aString)!
@@ -43,35 +47,41 @@ post	##(Pragma configuration).		self method: 'POST'!
 produces: aString	##(Pragma configuration).		produces := WAMimeTypeMatch fromString: aString!
 
 put	##(Pragma configuration).		self method: 'PUT'! !
-!WARouteBuilder categoriesFor: #consumes:!configuration!public! !
-!WARouteBuilder categoriesFor: #copy!configuration methods!public! !
-!WARouteBuilder categoriesFor: #create!private! !
-!WARouteBuilder categoriesFor: #createComplexRoute!private! !
-!WARouteBuilder categoriesFor: #createMimeTypeMatch:!private! !
-!WARouteBuilder categoriesFor: #createSimpleRoute!private! !
-!WARouteBuilder categoriesFor: #delete!configuration methods!public! !
-!WARouteBuilder categoriesFor: #get!configuration methods!public! !
-!WARouteBuilder categoriesFor: #initializeOn:!initialization!public! !
-!WARouteBuilder categoriesFor: #method:!configuration!public! !
-!WARouteBuilder categoriesFor: #move!configuration methods!public! !
-!WARouteBuilder categoriesFor: #options!configuration methods!public! !
-!WARouteBuilder categoriesFor: #patch!configuration methods!public! !
-!WARouteBuilder categoriesFor: #path:!configuration!public! !
-!WARouteBuilder categoriesFor: #post!configuration methods!public! !
-!WARouteBuilder categoriesFor: #produces:!configuration!public! !
-!WARouteBuilder categoriesFor: #put!configuration methods!public! !
+
+!WARouteBuilder categoriesForMethods!
+consumes:!configuration!public! !
+copy!configuration methods!public! !
+create!private! !
+createComplexRoute!private! !
+createMimeTypeMatch:!private! !
+createSimpleRoute!private! !
+delete!configuration methods!public! !
+get!configuration methods!public! !
+initializeOn:!initialization!public! !
+method:!configuration!public! !
+move!configuration methods!public! !
+options!configuration methods!public! !
+patch!configuration methods!public! !
+path:!configuration!public! !
+post!configuration methods!public! !
+produces:!configuration!public! !
+put!configuration methods!public! !
+!
 
 !WARouteBuilder class methodsFor!
 
 createRoutesFor: aClass	^ self createRoutesFrom: aClass to: aClass!
 
-createRoutesFrom: aClass to: aSuperClass	| current seen routes |	current := aClass.	seen := IdentitySet new.	routes := OrderedCollection new.	[ current notNil ] whileTrue: [ 		current selectorsAndMethodsDo: [ :selector :method |			(seen includes: selector) ifFalse: [				| pragmas |				pragmas := method pragmas					select: [ :pragma | configuration includes: pragma keyword ].				pragmas isEmpty ifFalse: [					routes add: (pragmas						inject: (self on: method)						into: [ :builder :pragma | builder perform: pragma keyword withArguments: pragma arguments ])							create ].				seen add: selector ] ].		current = aSuperClass			ifTrue: [ ^ routes ].		current := current superclass ].	^ routes!
+createRoutesFrom: aClass to: aSuperClass	| current seen routes |	current := aClass.	seen := IdentitySet new.	routes := OrderedCollection new.	[ current notNil ] whileTrue: [ 		current selectorsAndMethodsDo: [ :selector :method |			(seen includes: selector) ifFalse: [				| pragmas |				pragmas := method pragmas					select: [ :pragma | configuration includes: (GRPlatform current selectorOfPragma: pragma) ].				pragmas isEmpty ifFalse: [					routes add: (pragmas						inject: (self on: method)						into: [ :builder :pragma | builder perform: (GRPlatform current selectorOfPragma: pragma) withArguments: pragma arguments ])							create ].				seen add: selector ] ].		current = aSuperClass			ifTrue: [ ^ routes ].		current := current superclass ].	^ routes!
 
 initialize	configuration := IdentitySet new.	(Pragma allNamed: #configuration in: self)		do: [ :pragma | configuration add: pragma method selector ]!
 
 on: aCompiledMethod	^ self basicNew initializeOn: aCompiledMethod! !
-!WARouteBuilder class categoriesFor: #createRoutesFor:!public! !
-!WARouteBuilder class categoriesFor: #createRoutesFrom:to:!public! !
-!WARouteBuilder class categoriesFor: #initialize!initialization!public! !
-!WARouteBuilder class categoriesFor: #on:!instance creation!public! !
+
+!WARouteBuilder class categoriesForMethods!
+createRoutesFor:!public! !
+createRoutesFrom:to:!public! !
+initialize!initialization!public! !
+on:!instance creation!public! !
+!
 

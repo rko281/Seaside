@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WACacheTest subclass: #WABidirectionalCacheTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WABidirectionalCacheTest guid: (GUID fromString: '{3a1b2bd6-86dd-4e8b-9994-c0e333d7ee33}')!
+
+WABidirectionalCacheTest guid: (GUID fromString: '{ae17e8c8-f52f-4f82-b733-a61644319a94}')!
+
 WABidirectionalCacheTest comment: ''!
-!WABidirectionalCacheTest categoriesForClass!Seaside-Tests-Core-Cache! !
+
+!WABidirectionalCacheTest categoriesForClass!Cache! !
+
 !WABidirectionalCacheTest methodsFor!
 
 createCache	^ WABidirectionalCache new!
@@ -21,10 +25,13 @@ testMultipleMappings	cache at: 'key1' put: 'value'.	self should: [ cache at: '
 testRemove	1 to: 100 do: [ :i |		cache at: i put: i greaseString ].		1 to: 100 do: [ :i |		| absent |		self assert: (cache at: i ifAbsent: [ self assert: false ]) = i greaseString.		cache remove: i greaseString.		absent := false.		cache at: i ifAbsent: [ absent := true ].		self assert: absent ]!
 
 testValuesCollect	| values |	cache at: 1 put: '1'.	cache at: 2 put: '2'.		values := cache valuesCollect: [ :each |		each, each ].	self assert: values class == cache class.	self assert: values size = 2.	self assert: ((values at: 1 ifAbsent: [ nil ]) = '11').	self assert: ((values at: 2 ifAbsent: [ nil ]) = '22')! !
-!WABidirectionalCacheTest categoriesFor: #createCache!public!running! !
-!WABidirectionalCacheTest categoriesFor: #testCopy!public!testing! !
-!WABidirectionalCacheTest categoriesFor: #testKeyAtValue!public!testing! !
-!WABidirectionalCacheTest categoriesFor: #testMultipleMappings!public!testing! !
-!WABidirectionalCacheTest categoriesFor: #testRemove!public!testing! !
-!WABidirectionalCacheTest categoriesFor: #testValuesCollect!public!testing! !
+
+!WABidirectionalCacheTest categoriesForMethods!
+createCache!public!running! !
+testCopy!public!testing! !
+testKeyAtValue!public!testing! !
+testMultipleMappings!public!testing! !
+testRemove!public!testing! !
+testValuesCollect!public!testing! !
+!
 

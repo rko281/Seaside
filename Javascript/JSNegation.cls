@@ -1,15 +1,22 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JSDecoration subclass: #JSNegation
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSNegation guid: (GUID fromString: '{acc70a10-2dc6-47f3-8f31-a15c96099409}')!
+
+JSNegation guid: (GUID fromString: '{b40a72ec-7c89-4c7b-87e7-710821f856f3}')!
+
 JSNegation comment: 'I negate the decorated object and yield a boolean value.'!
-!JSNegation categoriesForClass!Javascript-Core-Decorations! !
+
+!JSNegation categoriesForClass!Decorations! !
+
 !JSNegation methodsFor!
 
 javascriptContentOn: aStream	aStream nextPut: $!!.	super javascriptContentOn: aStream! !
-!JSNegation categoriesFor: #javascriptContentOn:!printing!public! !
+
+!JSNegation categoriesForMethods!
+javascriptContentOn:!printing!public! !
+!
 

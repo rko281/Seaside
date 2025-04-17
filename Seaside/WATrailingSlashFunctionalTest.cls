@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAFunctionalTest subclass: #WATrailingSlashFunctionalTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WATrailingSlashFunctionalTest guid: (GUID fromString: '{bea31046-e4cf-485c-a746-616f199ee236}')!
+
+WATrailingSlashFunctionalTest guid: (GUID fromString: '{4c478d1b-041e-4e48-a3a0-91a2eed66e96}')!
+
 WATrailingSlashFunctionalTest comment: ''!
-!WATrailingSlashFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
+
+!WATrailingSlashFunctionalTest categoriesForClass!Unclassified! !
+
 !WATrailingSlashFunctionalTest methodsFor!
 
 baseUrlWithSlash: aBoolean 	^ self application url		addToPath: self class name greaseString;		addField: 'slash'			value: aBoolean greaseString;		slash: aBoolean;		yourself!
@@ -19,9 +23,12 @@ renderExplanationOn: html	html paragraph: 'This tests whether the sever adapter
 renderLinksOn: html	html table: [		html tableRow: [			html tableData: [				self renderSlashSuccess: true on: html ].			html tableData: [				html anchor				url: (self baseUrlWithSlash: true);				with: 'With Slash' ] ].				html tableRow: [			html tableData: [				self renderSlashSuccess: false on: html ].			html tableData: [				html anchor				url: (self baseUrlWithSlash: false);				with: 'Without Slash' ] ] ]!
 
 renderSlashSuccess: aBoolean on: html 	| request hasTrailingSlash expectedSlash |	request := self requestContext request.	hasTrailingSlash := request url slash.	expectedSlash := request fields 		at: 'slash'		ifAbsent: [ nil ].	expectedSlash isNil 		ifTrue: [ html strong: 'not run' ]		ifFalse: [			aBoolean greaseString = expectedSlash 				ifTrue: [					hasTrailingSlash greaseString = expectedSlash 						ifTrue: [ html strong: 'success' ]						ifFalse: [ html strong: 'fail' ] ]				ifFalse: [ html strong: 'not run' ] ]! !
-!WATrailingSlashFunctionalTest categoriesFor: #baseUrlWithSlash:!private! !
-!WATrailingSlashFunctionalTest categoriesFor: #renderContentOn:!public!rendering! !
-!WATrailingSlashFunctionalTest categoriesFor: #renderExplanationOn:!public!rendering! !
-!WATrailingSlashFunctionalTest categoriesFor: #renderLinksOn:!public!rendering! !
-!WATrailingSlashFunctionalTest categoriesFor: #renderSlashSuccess:on:!private! !
+
+!WATrailingSlashFunctionalTest categoriesForMethods!
+baseUrlWithSlash:!private! !
+renderContentOn:!public!rendering! !
+renderExplanationOn:!public!rendering! !
+renderLinksOn:!public!rendering! !
+renderSlashSuccess:on:!private! !
+!
 

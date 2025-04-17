@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQFunctionalTest subclass: #JQCounterFunctionalTest
 	instanceVariableNames: 'count'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQCounterFunctionalTest guid: (GUID fromString: '{c5d36715-0760-4c36-8a1e-6a309a9dca25}')!
+
+JQCounterFunctionalTest guid: (GUID fromString: '{a963c4f0-bf99-4973-89eb-a10d872bd608}')!
+
 JQCounterFunctionalTest comment: ''!
-!JQCounterFunctionalTest categoriesForClass!JQuery-Tests-Core-Functional! !
+
+!JQCounterFunctionalTest categoriesForClass!Functional! !
+
 !JQCounterFunctionalTest methodsFor!
 
 initialize	super initialize.	count := 0!
@@ -19,9 +23,12 @@ selectors	^ #(initialize renderContentOn:)!
 style	^ '#count { margin: 0 0.5em; }'!
 
 title	^ 'Counting Up and Down'! !
-!JQCounterFunctionalTest categoriesFor: #initialize!initialization!public! !
-!JQCounterFunctionalTest categoriesFor: #renderContentOn:!public!rendering! !
-!JQCounterFunctionalTest categoriesFor: #selectors!accessing!public! !
-!JQCounterFunctionalTest categoriesFor: #style!hooks!public! !
-!JQCounterFunctionalTest categoriesFor: #title!accessing!public! !
+
+!JQCounterFunctionalTest categoriesForMethods!
+initialize!initialization!public! !
+renderContentOn:!public!rendering! !
+selectors!accessing!public! !
+style!hooks!public! !
+title!accessing!public! !
+!
 

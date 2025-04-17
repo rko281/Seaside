@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQUiFunctionalTest subclass: #JQSelectableFunctionalTest
 	instanceVariableNames: 'selected'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQSelectableFunctionalTest guid: (GUID fromString: '{15821941-08d1-4b0d-83f6-35d898280a62}')!
+
+JQSelectableFunctionalTest guid: (GUID fromString: '{5030059f-a586-48e9-be6d-17240af4fa00}')!
+
 JQSelectableFunctionalTest comment: ''!
-!JQSelectableFunctionalTest categoriesForClass!JQuery-Tests-UI-Functional! !
+
+!JQSelectableFunctionalTest categoriesForClass!Functional! !
+
 !JQSelectableFunctionalTest methodsFor!
 
 initialize	super initialize.	selected := Set new!
@@ -21,10 +25,13 @@ style	^ '.ui-selectable, .ui-selectable li { list-style-type: none; padding: 0;
 title	^ 'Selectable Interaction'!
 
 url	^ 'http://docs.jquery.com/UI/Selectable'! !
-!JQSelectableFunctionalTest categoriesFor: #initialize!initialization!public! !
-!JQSelectableFunctionalTest categoriesFor: #renderContentOn:!public!rendering! !
-!JQSelectableFunctionalTest categoriesFor: #selectors!accessing!public! !
-!JQSelectableFunctionalTest categoriesFor: #style!hooks!public! !
-!JQSelectableFunctionalTest categoriesFor: #title!accessing!public! !
-!JQSelectableFunctionalTest categoriesFor: #url!accessing!public! !
+
+!JQSelectableFunctionalTest categoriesForMethods!
+initialize!initialization!public! !
+renderContentOn:!public!rendering! !
+selectors!accessing!public! !
+style!hooks!public! !
+title!accessing!public! !
+url!accessing!public! !
+!
 

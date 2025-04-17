@@ -1,18 +1,25 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAFileHandlerListingTest subclass: #WAHtmlFileHandlerListingTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAHtmlFileHandlerListingTest guid: (GUID fromString: '{3a047586-ce86-4a92-b9ec-765eb2ac1515}')!
+
+WAHtmlFileHandlerListingTest guid: (GUID fromString: '{096b3f09-3f3a-402a-8ee3-f173e22e6316}')!
+
 WAHtmlFileHandlerListingTest comment: ''!
-!WAHtmlFileHandlerListingTest categoriesForClass!Seaside-Tests-Environment! !
+
+!WAHtmlFileHandlerListingTest categoriesForClass!Base! !
+
 !WAHtmlFileHandlerListingTest methodsFor!
 
 expectedMimeType	^ WAMimeType textHtml!
 
 handlerClass	^ WAHtmlFileHandlerListing! !
-!WAHtmlFileHandlerListingTest categoriesFor: #expectedMimeType!public!testing! !
-!WAHtmlFileHandlerListingTest categoriesFor: #handlerClass!public!testing! !
+
+!WAHtmlFileHandlerListingTest categoriesForMethods!
+expectedMimeType!public!testing! !
+handlerClass!public!testing! !
+!
 

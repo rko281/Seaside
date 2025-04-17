@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAFunctionalTest subclass: #WARequestFunctionalTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WARequestFunctionalTest guid: (GUID fromString: '{82ca0cf1-65e4-48b7-b779-7bbdf7f5d44c}')!
+
+WARequestFunctionalTest guid: (GUID fromString: '{8a0d7483-0f8d-4df9-a4f9-3cd070f24adc}')!
+
 WARequestFunctionalTest comment: ''!
-!WARequestFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
+
+!WARequestFunctionalTest categoriesForClass!Unclassified! !
+
 !WARequestFunctionalTest methodsFor!
 
 renderAcceptCharsetFor: aRequest on: html	html definitionTerm: 'Accept-Charset:'.	self renderQualifiedValues: aRequest acceptCharset on: html!
@@ -29,14 +33,17 @@ renderQualifiedValues: aCollection on: html	html definitionData: [		aCollectio
 renderRemoteAddressFor: aRequest on: html	html definitionTerm: 'Remote Address:'.	html definitionData: aRequest remoteAddress!
 
 renderSslSessionIdFor: aRequest on: html	aRequest isSsl ifTrue: [		html definitionTerm: 'SSL Session Id:'.		html definitionData: aRequest sslSessionId ]! !
-!WARequestFunctionalTest categoriesFor: #renderAcceptCharsetFor:on:!public!rendering! !
-!WARequestFunctionalTest categoriesFor: #renderAcceptEncodingFor:on:!public!rendering! !
-!WARequestFunctionalTest categoriesFor: #renderAcceptFor:on:!public!rendering! !
-!WARequestFunctionalTest categoriesFor: #renderAcceptLanguageFor:on:!public!rendering! !
-!WARequestFunctionalTest categoriesFor: #renderContentOn:!public!rendering! !
-!WARequestFunctionalTest categoriesFor: #renderOtherHeadersFor:on:!public!rendering! !
-!WARequestFunctionalTest categoriesFor: #renderQualifiedValue:on:!public!rendering! !
-!WARequestFunctionalTest categoriesFor: #renderQualifiedValues:on:!public!rendering! !
-!WARequestFunctionalTest categoriesFor: #renderRemoteAddressFor:on:!public!rendering! !
-!WARequestFunctionalTest categoriesFor: #renderSslSessionIdFor:on:!public!rendering! !
+
+!WARequestFunctionalTest categoriesForMethods!
+renderAcceptCharsetFor:on:!public!rendering! !
+renderAcceptEncodingFor:on:!public!rendering! !
+renderAcceptFor:on:!public!rendering! !
+renderAcceptLanguageFor:on:!public!rendering! !
+renderContentOn:!public!rendering! !
+renderOtherHeadersFor:on:!public!rendering! !
+renderQualifiedValue:on:!public!rendering! !
+renderQualifiedValues:on:!public!rendering! !
+renderRemoteAddressFor:on:!public!rendering! !
+renderSslSessionIdFor:on:!public!rendering! !
+!
 

@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAObject subclass: #WAObjectUnderstandingUnregistered
 	instanceVariableNames: 'hasReceivedUnregistered'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAObjectUnderstandingUnregistered guid: (GUID fromString: '{e24236aa-e683-4122-809d-617ed60737fb}')!
+
+WAObjectUnderstandingUnregistered guid: (GUID fromString: '{f46a9be7-382b-41a5-a5a0-468b27869c98}')!
+
 WAObjectUnderstandingUnregistered comment: ''!
-!WAObjectUnderstandingUnregistered categoriesForClass!Seaside-Tests-Core-Cache! !
+
+!WAObjectUnderstandingUnregistered categoriesForClass!Cache! !
+
 !WAObjectUnderstandingUnregistered methodsFor!
 
 hasReceivedUnregistered	^ hasReceivedUnregistered!
@@ -15,7 +19,10 @@ hasReceivedUnregistered	^ hasReceivedUnregistered!
 initialize	super initialize.	hasReceivedUnregistered := false!
 
 unregistered	hasReceivedUnregistered := true! !
-!WAObjectUnderstandingUnregistered categoriesFor: #hasReceivedUnregistered!accessing!public! !
-!WAObjectUnderstandingUnregistered categoriesFor: #initialize!initialization!public! !
-!WAObjectUnderstandingUnregistered categoriesFor: #unregistered!public!registration! !
+
+!WAObjectUnderstandingUnregistered categoriesForMethods!
+hasReceivedUnregistered!accessing!public! !
+initialize!initialization!public! !
+unregistered!public!registration! !
+!
 

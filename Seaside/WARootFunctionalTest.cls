@@ -1,18 +1,25 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAFunctionalTest subclass: #WARootFunctionalTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WARootFunctionalTest guid: (GUID fromString: '{219a31fb-2995-45ca-a3ae-cdde9ffe5c97}')!
+
+WARootFunctionalTest guid: (GUID fromString: '{9617b545-570d-438b-a730-55102171f82e}')!
+
 WARootFunctionalTest comment: ''!
-!WARootFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
+
+!WARootFunctionalTest categoriesForClass!Unclassified! !
+
 !WARootFunctionalTest methodsFor!
 
 renderContentOn: html	html text: 'body{font-size:12px;}'!
 
 updateRoot: anHtmlRoot	super updateRoot: anHtmlRoot.	anHtmlRoot style: 'body{font-size:12px;}'! !
-!WARootFunctionalTest categoriesFor: #renderContentOn:!public!rendering! !
-!WARootFunctionalTest categoriesFor: #updateRoot:!public!update! !
+
+!WARootFunctionalTest categoriesForMethods!
+renderContentOn:!public!rendering! !
+updateRoot:!public!update! !
+!
 

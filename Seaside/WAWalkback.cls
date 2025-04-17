@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAComponent subclass: #WAWalkback
 	instanceVariableNames: 'exception limit'
 	classVariableNames: 'Current'
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAWalkback guid: (GUID fromString: '{37650560-4ade-4bdd-9c1b-aa5a6750edaa}')!
+
+WAWalkback guid: (GUID fromString: '{223446c7-607e-49c7-8151-99cb3e9aaf98}')!
+
 WAWalkback comment: 'An abstract component that renders an exception stack with temporary variables. Platforms should implement a concrete subclass and register that subclass when it is loaded.By default this class renders only the top few stack frames, but offers the option to render all. It also offers the option to open a debugger in the image or to proceed with the execution and answers true and false, respectively.'!
-!WAWalkback categoriesForClass!Seaside-Development-Core! !
+
+!WAWalkback categoriesForClass!Core! !
+
 !WAWalkback methodsFor!
 
 canAnswer	^ self decorations anySatisfy: [ :each |		each isKindOf: WAAnswerHandler ]!
@@ -57,30 +61,33 @@ showFullStack	self limit: self frameCount!
 updateRoot: anHtmlRoot	super updateRoot: anHtmlRoot.	anHtmlRoot title: self exceptionDescription.	anHtmlRoot bodyAttributes addClass: 'walkback'.	WAToolFiles default updateRoot: anHtmlRoot!
 
 urlForDebugAction: aString	| copy |	copy := self requestContext request url copy.	"We don't use #withField:value: or #addField:value: because we want to replace existing fields, not add to them.	For example _fullStack may already be present and we want to set _debug."	copy queryFields at: self debugActionField put: aString.	^ copy! !
-!WAWalkback categoriesFor: #canAnswer!private! !
-!WAWalkback categoriesFor: #debug!actions!public! !
-!WAWalkback categoriesFor: #debugActionField!private! !
-!WAWalkback categoriesFor: #debugUrl!accessing/url!public! !
-!WAWalkback categoriesFor: #defaultLimit!accessing!public! !
-!WAWalkback categoriesFor: #exception!accessing!public! !
-!WAWalkback categoriesFor: #exceptionDescription!accessing!public! !
-!WAWalkback categoriesFor: #frameCount!accessing!public! !
-!WAWalkback categoriesFor: #fullStackUrl!accessing/url!public! !
-!WAWalkback categoriesFor: #initializeWithException:!initialization!public! !
-!WAWalkback categoriesFor: #limit!accessing!public! !
-!WAWalkback categoriesFor: #limit:!accessing!public! !
-!WAWalkback categoriesFor: #proceed!actions!public! !
-!WAWalkback categoriesFor: #proceedUrl!accessing/url!public! !
-!WAWalkback categoriesFor: #renderAnsweringToolsOn:!public!rendering! !
-!WAWalkback categoriesFor: #renderContentOn:!public!rendering! !
-!WAWalkback categoriesFor: #renderExceptionOn:!public!rendering! !
-!WAWalkback categoriesFor: #renderHeadingOn:!public!rendering! !
-!WAWalkback categoriesFor: #renderNotAnsweringToolsOn:!public!rendering! !
-!WAWalkback categoriesFor: #renderStackOn:!public!rendering! !
-!WAWalkback categoriesFor: #renderToolsOn:!public!rendering! !
-!WAWalkback categoriesFor: #showFullStack!actions!public! !
-!WAWalkback categoriesFor: #updateRoot:!public!updating! !
-!WAWalkback categoriesFor: #urlForDebugAction:!private! !
+
+!WAWalkback categoriesForMethods!
+canAnswer!private! !
+debug!actions!public! !
+debugActionField!private! !
+debugUrl!accessing/url!public! !
+defaultLimit!accessing!public! !
+exception!accessing!public! !
+exceptionDescription!accessing!public! !
+frameCount!accessing!public! !
+fullStackUrl!accessing/url!public! !
+initializeWithException:!initialization!public! !
+limit!accessing!public! !
+limit:!accessing!public! !
+proceed!actions!public! !
+proceedUrl!accessing/url!public! !
+renderAnsweringToolsOn:!public!rendering! !
+renderContentOn:!public!rendering! !
+renderExceptionOn:!public!rendering! !
+renderHeadingOn:!public!rendering! !
+renderNotAnsweringToolsOn:!public!rendering! !
+renderStackOn:!public!rendering! !
+renderToolsOn:!public!rendering! !
+showFullStack!actions!public! !
+updateRoot:!public!updating! !
+urlForDebugAction:!private! !
+!
 
 !WAWalkback class methodsFor!
 
@@ -93,9 +100,12 @@ exception: anException	^ self basicNew initializeWithException: anException; yo
 select	self current: self!
 
 unselect	(self current = self) ifTrue: [ self current: nil ]! !
-!WAWalkback class categoriesFor: #current!public!registration! !
-!WAWalkback class categoriesFor: #current:!public!registration! !
-!WAWalkback class categoriesFor: #exception:!instance creation!public! !
-!WAWalkback class categoriesFor: #select!public!registration! !
-!WAWalkback class categoriesFor: #unselect!public!registration! !
+
+!WAWalkback class categoriesForMethods!
+current!public!registration! !
+current:!public!registration! !
+exception:!instance creation!public! !
+select!public!registration! !
+unselect!public!registration! !
+!
 

@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JSObjectTest subclass: #JSRenderingTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSRenderingTest guid: (GUID fromString: '{34dda01d-1004-43f3-b60a-c2a83e0b1e54}')!
+
+JSRenderingTest guid: (GUID fromString: '{91e5749d-66ed-49e3-8da7-2e501851ea01}')!
+
 JSRenderingTest comment: ''!
-!JSRenderingTest categoriesForClass!Javascript-Tests-Core! !
+
+!JSRenderingTest categoriesForClass!Unclassified! !
+
 !JSRenderingTest methodsFor!
 
 testAddToEvent	self 		assert: [ :html | html div onClick: self mock ]		renders: '<div onclick="mock"></div>'.	self 		assert: [ :html | html div onMouseOut: self mock ]		renders: '<div onmouseout="mock"></div>'.	self 		assert: [ :html | html div onKeyUp: self mock ]		renders: '<div onkeyup="mock"></div>'!
@@ -25,12 +29,15 @@ testRenderOn	self 		assert: [ :html | html html: (html javascript render: 123)
 testScript	self 		assert: [ :html | html div script: self mock ]		renders: '<div></div><script type="text/javascript">mock;</script>'!
 
 testScriptOn	self 		assert: [ :html | html html: (html javascript script: [ :s | ]) ]		renders: ''.	self 		assert: [ :html | html html: (html javascript script: [ :s | s add: self mock ]) ]		renders: 'mock'.	self 		assert: [ :html | html html: (html javascript script: [ :s | s add: self mock; add: self mock ]) ]		renders: 'mock;mock'! !
-!JSRenderingTest categoriesFor: #testAddToEvent!public!tests! !
-!JSRenderingTest categoriesFor: #testAddToScript!public!tests! !
-!JSRenderingTest categoriesFor: #testJavascript!public!tests! !
-!JSRenderingTest categoriesFor: #testLogger!public!tests! !
-!JSRenderingTest categoriesFor: #testPassenger!public!tests! !
-!JSRenderingTest categoriesFor: #testRenderOn!public!tests! !
-!JSRenderingTest categoriesFor: #testScript!public!tests! !
-!JSRenderingTest categoriesFor: #testScriptOn!public!tests! !
+
+!JSRenderingTest categoriesForMethods!
+testAddToEvent!public!tests! !
+testAddToScript!public!tests! !
+testJavascript!public!tests! !
+testLogger!public!tests! !
+testPassenger!public!tests! !
+testRenderOn!public!tests! !
+testScript!public!tests! !
+testScriptOn!public!tests! !
+!
 

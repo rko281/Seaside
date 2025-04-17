@@ -3,7 +3,6 @@ package := Package name: 'Javascript-Core'.
 package paxVersion: 1;
 	basicComment: ''.
 
-
 package classNames
 	add: #JSAccess;
 	add: #JSAjaxCallback;
@@ -35,6 +34,7 @@ package classNames
 	add: #JSStream;
 	add: #JSTimed;
 	add: #JSTimeout;
+	add: #ManifestJavascriptCore;
 	yourself.
 
 package methodNames
@@ -64,11 +64,11 @@ package methodNames
 	add: #WACallbackRegistry -> #passengerAt:ifAbsent:;
 	add: #WACallbackRegistry -> #registerPassenger:named:;
 	add: #WARenderer -> #javascript;
+	add: #WARenderer -> #javascript:;
 	add: #WARenderer -> #logger;
 	add: #WATagBrush -> #passenger:;
 	add: #WATagBrush -> #script:;
 	add: #WAUrl -> #javascriptOn:;
-	add: 'GRPackage class' -> #javascriptCore;
 	yourself.
 
 package binaryGlobalNames: (Set new
@@ -81,6 +81,8 @@ package setPrerequisites: #(
 	'..\..\Core\Object Arts\Dolphin\Base\Dolphin'
 	'..\..\Core\Object Arts\Dolphin\Base\Dolphin Legacy Date & Time'
 	'..\..\Grease\Grease-Core'
+	'..\..\Portishead\Portishead-Core'
+	'..\..\Portishead\Portishead-Pragmas'
 	'..\Seaside\Seaside-Canvas'
 	'..\Seaside\Seaside-Core').
 
@@ -93,217 +95,274 @@ WAObject subclass: #JSDecoration
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAObject subclass: #JSObject
 	instanceVariableNames: 'decoration renderContext rendererClass'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JSDecoration subclass: #JSApply
 	instanceVariableNames: 'arguments'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JSDecoration subclass: #JSAssignment
 	instanceVariableNames: 'object'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JSDecoration subclass: #JSCall
 	instanceVariableNames: 'name arguments'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JSDecoration subclass: #JSCreate
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JSDecoration subclass: #JSIfThenElse
 	instanceVariableNames: 'trueStatement falseStatement'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JSDecoration subclass: #JSMember
 	instanceVariableNames: 'name'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JSDecoration subclass: #JSNegation
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JSDecoration subclass: #JSStatement
 	instanceVariableNames: 'statement'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JSDecoration subclass: #JSTimed
 	instanceVariableNames: 'duration'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JSMember subclass: #JSAccess
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JSMember subclass: #JSAlias
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JSMember subclass: #JSAssign
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JSMember subclass: #JSProperty
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JSAssign subclass: #JSAssignLocal
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JSStatement subclass: #JSBinary
 	instanceVariableNames: 'operator'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JSStatement subclass: #JSConcatenation
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JSStatement subclass: #JSCondition
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JSCondition subclass: #JSConditionElse
 	instanceVariableNames: 'elseStatement'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JSTimed subclass: #JSInterval
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JSTimed subclass: #JSTimeout
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JSObject subclass: #JSJoin
 	instanceVariableNames: 'collection'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JSObject subclass: #JSJson
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JSObject subclass: #JSLogger
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JSObject subclass: #JSScript
 	instanceVariableNames: 'statements'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JSObject subclass: #JSStream
 	instanceVariableNames: 'stream'
 	classVariableNames: 'Arguments JavascriptCharacters This'
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JSScript subclass: #JSFunction
 	instanceVariableNames: 'return arguments'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WACallback subclass: #JSAjaxCallback
 	instanceVariableNames: 'block'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WACallback subclass: #JSPassenger
 	instanceVariableNames: 'object'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-"Global Aliases"!
-
+PackageManifest subclass: #ManifestJavascriptCore
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
 
 "Loose Methods"!
 
 !Character methodsFor!
 
 javascriptOn: aStream	(String with: self) javascriptOn: aStream! !
-!Character categoriesFor: #javascriptOn:!*javascript/core!public! !
+
+!Character categoriesForMethods!
+javascriptOn:!*javascript/core!public! !
+!
 
 !Collection methodsFor!
 
 javascriptOn: aStream	JSStream encodeCollection: self on: aStream! !
-!Collection categoriesFor: #javascriptOn:!*javascript/core!public! !
+
+!Collection categoriesForMethods!
+javascriptOn:!*javascript/core!public! !
+!
 
 !Date methodsFor!
 
 javascriptMonthIndex	^ self monthIndex - 1!
 
 javascriptOn: aStream	aStream nextPutAll: 'new Date('.	#( year javascriptMonthIndex dayOfMonth )		do: [ :each | aStream javascript: (self perform: each) ]		separatedBy: [ aStream nextPut: $, ].	aStream nextPut: $)! !
-!Date categoriesFor: #javascriptMonthIndex!*javascript/core!public! !
-!Date categoriesFor: #javascriptOn:!*javascript/core!public! !
+
+!Date categoriesForMethods!
+javascriptMonthIndex!*javascript/core!public! !
+javascriptOn:!*javascript/core!public! !
+!
 
 !DateAndTime methodsFor!
 
 javascriptMonthIndex	^ self monthIndex - 1!
 
 javascriptOn: aStream	aStream nextPutAll: 'new Date('.	#( year javascriptMonthIndex dayOfMonth hour minute second )		do: [ :each | aStream javascript: (self perform: each) ]		separatedBy: [ aStream nextPut: $, ].	aStream nextPut: $)! !
-!DateAndTime categoriesFor: #javascriptMonthIndex!*javascript/core!public! !
-!DateAndTime categoriesFor: #javascriptOn:!*javascript/core!public! !
+
+!DateAndTime categoriesForMethods!
+javascriptMonthIndex!*javascript/core!public! !
+javascriptOn:!*javascript/core!public! !
+!
 
 !Dictionary methodsFor!
 
 javascriptOn: aStream	JSStream encodeDictionary: self on: aStream! !
-!Dictionary categoriesFor: #javascriptOn:!*javascript/core!public! !
+
+!Dictionary categoriesForMethods!
+javascriptOn:!*javascript/core!public! !
+!
 
 !Duration methodsFor!
 
 javascriptOn: aStream	aStream javascript: self asMilliseconds! !
-!Duration categoriesFor: #javascriptOn:!*javascript/core!public! !
+
+!Duration categoriesForMethods!
+javascriptOn:!*javascript/core!public! !
+!
 
 !GRDelegatingStream methodsFor!
 
 javascript: anObject	anObject javascriptOn: self! !
-!GRDelegatingStream categoriesFor: #javascript:!*javascript/core!public! !
 
-!GRPackage class methodsFor!
-
-javascriptCore	^ self new		name: 'Javascript-Core';		description: 'Javascript integration in Seaside. Provides a basic functionality to generate Javascript from Smalltalk.';		addDependency: 'Seaside-Core';		addDependency: 'Seaside-Canvas';		url: #seasideUrl;		yourself! !
-!GRPackage class categoriesFor: #javascriptCore!*javascript/core!public! !
+!GRDelegatingStream categoriesForMethods!
+javascript:!*javascript/core!public! !
+!
 
 !GRSmallDictionary methodsFor!
 
 javascriptOn: aStream	JSStream encodeDictionary: self on: aStream! !
-!GRSmallDictionary categoriesFor: #javascriptOn:!*javascript/core!public! !
+
+!GRSmallDictionary categoriesForMethods!
+javascriptOn:!*javascript/core!public! !
+!
 
 !GRSmallDictionary2 methodsFor!
 
 javascriptOn: aStream	JSStream encodeDictionary: self on: aStream! !
-!GRSmallDictionary2 categoriesFor: #javascriptOn:!*javascript/core!public! !
+
+!GRSmallDictionary2 categoriesForMethods!
+javascriptOn:!*javascript/core!public! !
+!
 
 !GRSmallOrderedSet methodsFor!
 
 javascriptOn: aStream	JSStream encodeCollection: self on: aStream! !
-!GRSmallOrderedSet categoriesFor: #javascriptOn:!*javascript/core!public! !
+
+!GRSmallOrderedSet categoriesForMethods!
+javascriptOn:!*javascript/core!public! !
+!
 
 !Object methodsFor!
 
@@ -316,34 +375,49 @@ asJavascript	^ String streamContents: [ :stream | self javascriptOn: stream ]!
 isJavascript	^ false!
 
 javascriptOn: aStream	self printOn: aStream! !
-!Object categoriesFor: #asFunction!*javascript/core!public! !
-!Object categoriesFor: #asFunction:!*javascript/core!public! !
-!Object categoriesFor: #asJavascript!*javascript/core!public! !
-!Object categoriesFor: #isJavascript!*javascript/core!public! !
-!Object categoriesFor: #javascriptOn:!*javascript/core!public! !
+
+!Object categoriesForMethods!
+asFunction!*javascript/core!public! !
+asFunction:!*javascript/core!public! !
+asJavascript!*javascript/core!public! !
+isJavascript!*javascript/core!public! !
+javascriptOn:!*javascript/core!public! !
+!
 
 !Stream methodsFor!
 
 javascript: anObject	anObject javascriptOn: self! !
-!Stream categoriesFor: #javascript:!*javascript/core!public! !
+
+!Stream categoriesForMethods!
+javascript:!*javascript/core!public! !
+!
 
 !String methodsFor!
 
 asFunction: aCollection	^ (JSStream on: self) asFunction: aCollection!
 
 javascriptOn: aStream	JSStream encodeString: self on: aStream! !
-!String categoriesFor: #asFunction:!*javascript/core!public! !
-!String categoriesFor: #javascriptOn:!*javascript/core!public! !
+
+!String categoriesForMethods!
+asFunction:!*javascript/core!public! !
+javascriptOn:!*javascript/core!public! !
+!
 
 !UndefinedObject methodsFor!
 
 javascriptOn: aStream	aStream nextPutAll: 'null'! !
-!UndefinedObject categoriesFor: #javascriptOn:!*javascript/core!public! !
+
+!UndefinedObject categoriesForMethods!
+javascriptOn:!*javascript/core!public! !
+!
 
 !WACallback methodsFor!
 
 isPassenger	^ false! !
-!WACallback categoriesFor: #isPassenger!*javascript/core!public! !
+
+!WACallback categoriesForMethods!
+isPassenger!*javascript/core!public! !
+!
 
 !WACallbackRegistry methodsFor!
 
@@ -352,30 +426,45 @@ passengerAt: aString	^ self passengerAt: aString ifAbsent: [ nil ]!
 passengerAt: aString ifAbsent: aBlock	| passenger |	passenger := callbacks at: aString ifAbsent: [ ^ aBlock value ].	passenger isPassenger ifFalse: [ ^ aBlock value ].	^ passenger object!
 
 registerPassenger: anObject named: aString	| callback |	callback := JSPassenger new.	callback setKey: aString callbacks: callbacks; setObject: anObject.	callbacks at: (callback convertKey: aString) put: callback.	^ aString! !
-!WACallbackRegistry categoriesFor: #passengerAt:!*javascript/core!public! !
-!WACallbackRegistry categoriesFor: #passengerAt:ifAbsent:!*javascript/core!public! !
-!WACallbackRegistry categoriesFor: #registerPassenger:named:!*javascript/core!public! !
+
+!WACallbackRegistry categoriesForMethods!
+passengerAt:!*javascript/core!public! !
+passengerAt:ifAbsent:!*javascript/core!public! !
+registerPassenger:named:!*javascript/core!public! !
+!
 
 !WARenderer methodsFor!
 
 javascript	^ (JSScript context: self context)		rendererClass: self species;		yourself!
 
+javascript: aString	^ JSStream on: aString!
+
 logger	^ (JSLogger context: self context)		rendererClass: self species;		yourself! !
-!WARenderer categoriesFor: #javascript!*javascript/core!public! !
-!WARenderer categoriesFor: #logger!*javascript/core!public! !
+
+!WARenderer categoriesForMethods!
+javascript!*javascript/core!public! !
+javascript:!*javascript/core!public! !
+logger!*javascript/core!public! !
+!
 
 !WATagBrush methodsFor!
 
 passenger: anObject	"Assign a passenger object to the receiver. This is used to keep a mapping between DOM elements and Smalltalk objects. Note, that to we are required to assign a numeric id to the reciever in order to keep the mapping between DOM element and Smalltalk object."	canvas callbacks registerPassenger: anObject named: self ensureId!
 
 script: anObject	"Attach a JavaScript object to the receiver. The argument automatically knows the ID of the DOM element it should operate on and will be evaluated when the page complete loading."	(anObject isNil) 		ifTrue: [ ^ self ].	(anObject respondsTo: #id:)		ifTrue: [ anObject id: self ensureId ].	canvas document addLoadScript: anObject! !
-!WATagBrush categoriesFor: #passenger:!*javascript/core!public! !
-!WATagBrush categoriesFor: #script:!*javascript/core!public! !
+
+!WATagBrush categoriesForMethods!
+passenger:!*javascript/core!public! !
+script:!*javascript/core!public! !
+!
 
 !WAUrl methodsFor!
 
 javascriptOn: aStream 	aStream javascript: self printString! !
-!WAUrl categoriesFor: #javascriptOn:!*javascript/core!public! !
+
+!WAUrl categoriesForMethods!
+javascriptOn:!*javascript/core!public! !
+!
 
 "End of package definition"!
 

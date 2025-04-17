@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAObject subclass: #WACallback
 	instanceVariableNames: 'key'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WACallback guid: (GUID fromString: '{ca04a16c-b6fa-4d4c-9b2c-a85973afefb1}')!
+
+WACallback guid: (GUID fromString: '{2639edf1-1aab-4eb8-b378-cc6ca50d6610}')!
+
 WACallback comment: ''!
-!WACallback categoriesForClass!Seaside-Core-Callbacks! !
+
+!WACallback categoriesForClass!Callbacks! !
+
 !WACallback methodsFor!
 
 <= other	^ self priority < other priority or: [ self priority = other priority and: [ self key asNumber <= other key asNumber ] ]!
@@ -29,19 +33,25 @@ priority	"Answer the priority in which the receiver is evaluated."		^ 0!
 setKey: aString callbacks: aDictionary	key := aString!
 
 valueForField: anObject	"Answer the value that should be used when the field value in the Request	is anObject. This allows subclasses to specify a default value other than	nil, for example."	^ anObject! !
-!WACallback categoriesFor: #<=!comparing!public! !
-!WACallback categoriesFor: #block:!accessing!public! !
-!WACallback categoriesFor: #convertKey:!converting!public! !
-!WACallback categoriesFor: #evaluateWithArgument:!evaluation!public! !
-!WACallback categoriesFor: #evaluateWithFieldValues:!evaluation!public! !
-!WACallback categoriesFor: #isEnabledFor:!public!testing! !
-!WACallback categoriesFor: #key!accessing!public! !
-!WACallback categoriesFor: #priority!accessing!public! !
-!WACallback categoriesFor: #setKey:callbacks:!initialization!public! !
-!WACallback categoriesFor: #valueForField:!converting!public! !
+
+!WACallback categoriesForMethods!
+<=!comparing!public! !
+block:!accessing!public! !
+convertKey:!converting!public! !
+evaluateWithArgument:!evaluation!public! !
+evaluateWithFieldValues:!evaluation!public! !
+isEnabledFor:!public!testing! !
+key!accessing!public! !
+priority!accessing!public! !
+setKey:callbacks:!initialization!public! !
+valueForField:!converting!public! !
+!
 
 !WACallback class methodsFor!
 
 on: aBlock	^ self new block: aBlock! !
-!WACallback class categoriesFor: #on:!instance creation!public! !
+
+!WACallback class categoriesForMethods!
+on:!instance creation!public! !
+!
 

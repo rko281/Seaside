@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAComponent subclass: #WAWelcomeConfigure
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAWelcomeConfigure guid: (GUID fromString: '{74308291-b905-4ab2-8156-aeb815f38d68}')!
+
+WAWelcomeConfigure guid: (GUID fromString: '{65f7d592-8471-4113-91e5-be294ee712d4}')!
+
 WAWelcomeConfigure comment: ''!
-!WAWelcomeConfigure categoriesForClass!Seaside-Welcome! !
+
+!WAWelcomeConfigure categoriesForClass!Base! !
+
 !WAWelcomeConfigure methodsFor!
 
 clearServerUrl	WAWelcomeUrlDialog clearServerUrl!
@@ -31,15 +35,18 @@ renderToolsOn: html	html paragraph: [		html checkbox			id: html nextId;			va
 renderWalkbacksOn: html	html paragraph: [		html checkbox			id: html nextId;			value: self errorWalkbacksEnabled;			onTrue: [ self enableErrorWalkbacks ]			onFalse: [ self disableErrorWalkbacks ];			onChange: (html jQuery ajax serializeForm).		html label			for: html lastId;			with: 'Allow debugging of errors' ]!
 
 serverUrl	^ WAWelcomeUrlDialog serverUrl! !
-!WAWelcomeConfigure categoriesFor: #clearServerUrl!private! !
-!WAWelcomeConfigure categoriesFor: #disableErrorWalkbacks!actions!public! !
-!WAWelcomeConfigure categoriesFor: #enableErrorWalkbacks!actions!public! !
-!WAWelcomeConfigure categoriesFor: #errorWalkbacksEnabled!public!testing! !
-!WAWelcomeConfigure categoriesFor: #renderButtonsOn:!public!rendering/parts! !
-!WAWelcomeConfigure categoriesFor: #renderContentOn:!public!rendering! !
-!WAWelcomeConfigure categoriesFor: #renderDescriptionOn:!public!rendering/parts! !
-!WAWelcomeConfigure categoriesFor: #renderServerUrlOn:!public!rendering/parts! !
-!WAWelcomeConfigure categoriesFor: #renderToolsOn:!public!rendering/parts! !
-!WAWelcomeConfigure categoriesFor: #renderWalkbacksOn:!public!rendering/parts! !
-!WAWelcomeConfigure categoriesFor: #serverUrl!private! !
+
+!WAWelcomeConfigure categoriesForMethods!
+clearServerUrl!private! !
+disableErrorWalkbacks!actions!public! !
+enableErrorWalkbacks!actions!public! !
+errorWalkbacksEnabled!public!testing! !
+renderButtonsOn:!public!rendering/parts! !
+renderContentOn:!public!rendering! !
+renderDescriptionOn:!public!rendering/parts! !
+renderServerUrlOn:!public!rendering/parts! !
+renderToolsOn:!public!rendering/parts! !
+renderWalkbacksOn:!public!rendering/parts! !
+serverUrl!private! !
+!
 

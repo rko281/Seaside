@@ -1,8 +1,8 @@
 ﻿| package |
 package := Package name: 'Seaside'.
 package paxVersion: 1;
-	basicComment: 'Seaside 3.4 for Dolphin Smalltalk.
-Core packages ported from github.com/SeasideSt 21st April 2020
+	basicComment: 'Seaside 3.5.9 for Dolphin Smalltalk.
+Core packages ported from github.com/SeasideSt 17th April 2025
 Dolphin Seaside, Grease, Swazoo and Sport packages adapted from www.infoil.com.ar/seaside/ with thanks and acknowledgement.'.
 
 package basicScriptAt: #postinstall put: '"Launch the Welcome server"
@@ -22,14 +22,6 @@ package setManualPrerequisites: #(
 	'Seaside-Dolphin-Welcome').
 
 package!
-
-"Class Definitions"!
-
-
-"Global Aliases"!
-
-
-"Loose Methods"!
 
 "End of package definition"!
 

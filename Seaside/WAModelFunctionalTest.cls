@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAFunctionalTest subclass: #WAModelFunctionalTest
 	instanceVariableNames: 'state user pass test'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAModelFunctionalTest guid: (GUID fromString: '{8a5dd644-d28f-403f-8d0c-2f3fb3f423e3}')!
+
+WAModelFunctionalTest guid: (GUID fromString: '{f4bf7744-23a1-4db9-849f-a5088cb11446}')!
+
 WAModelFunctionalTest comment: ''!
-!WAModelFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
+
+!WAModelFunctionalTest categoriesForClass!Unclassified! !
+
 !WAModelFunctionalTest methodsFor!
 
 logoff	state := #OFF.	test ifTrue: [ self inform: 'Logged off' onAnswer: [ ] ]!
@@ -35,17 +39,20 @@ test: anObject	"Set the value of test"	test := anObject!
 user	"Answer the value of user"	^ user!
 
 user: anObject	"Set the value of user"	user := anObject! !
-!WAModelFunctionalTest categoriesFor: #logoff!actions!public! !
-!WAModelFunctionalTest categoriesFor: #logon!actions!public! !
-!WAModelFunctionalTest categoriesFor: #pass!accessing!public! !
-!WAModelFunctionalTest categoriesFor: #pass:!accessing!public! !
-!WAModelFunctionalTest categoriesFor: #renderButtonOn:!public!rendering! !
-!WAModelFunctionalTest categoriesFor: #renderContentOn:!public!rendering! !
-!WAModelFunctionalTest categoriesFor: #renderFeedbackOn:!public!rendering! !
-!WAModelFunctionalTest categoriesFor: #renderPasswordOn:!public!rendering! !
-!WAModelFunctionalTest categoriesFor: #renderUsernameOn:!public!rendering! !
-!WAModelFunctionalTest categoriesFor: #test!accessing!public! !
-!WAModelFunctionalTest categoriesFor: #test:!accessing!public! !
-!WAModelFunctionalTest categoriesFor: #user!accessing!public! !
-!WAModelFunctionalTest categoriesFor: #user:!accessing!public! !
+
+!WAModelFunctionalTest categoriesForMethods!
+logoff!actions!public! !
+logon!actions!public! !
+pass!accessing!public! !
+pass:!accessing!public! !
+renderButtonOn:!public!rendering! !
+renderContentOn:!public!rendering! !
+renderFeedbackOn:!public!rendering! !
+renderPasswordOn:!public!rendering! !
+renderUsernameOn:!public!rendering! !
+test!accessing!public! !
+test:!accessing!public! !
+user!accessing!public! !
+user:!accessing!public! !
+!
 

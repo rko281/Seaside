@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQWidget subclass: #JQTabs
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQTabs guid: (GUID fromString: '{a072ebd5-4bb0-4b49-ba1d-7224ee222fcd}')!
+
+JQTabs guid: (GUID fromString: '{106a2c61-a49b-40cd-ac89-619adcca5221}')!
+
 JQTabs comment: ''!
-!JQTabs categoriesForClass!JQuery-UI-Widgets! !
+
+!JQTabs categoriesForClass!Widgets! !
+
 !JQTabs methodsFor!
 
 active: aJSObject	"Which panel is currently open"	self optionAt: 'active' put: aJSObject!
@@ -45,22 +49,25 @@ onLoad: anObject	"This event is triggered after the content of a remote tab has
 refresh	"Process any tabs that were added or removed directly in the DOM and recompute the height of the tab panels. "		self action: 'refresh'!
 
 show: aJSObject	"If and how to animate the showing of the panel"	self optionAt: 'show' put: aJSObject! !
-!JQTabs categoriesFor: #active:!options/generated!public! !
-!JQTabs categoriesFor: #collapsible:!options/generated!public! !
-!JQTabs categoriesFor: #destroy!actions!public! !
-!JQTabs categoriesFor: #disable:!actions!public! !
-!JQTabs categoriesFor: #disabled:!options/generated!public! !
-!JQTabs categoriesFor: #enable:!actions!public! !
-!JQTabs categoriesFor: #event:!options/generated!public! !
-!JQTabs categoriesFor: #heightStyle:!options/generated!public! !
-!JQTabs categoriesFor: #hide:!options/generated!public! !
-!JQTabs categoriesFor: #load:!actions!public! !
-!JQTabs categoriesFor: #method!accessing!public! !
-!JQTabs categoriesFor: #onActivate:!events/generated!public! !
-!JQTabs categoriesFor: #onBeforeActivate:!events/generated!public! !
-!JQTabs categoriesFor: #onBeforeLoad:!events/generated!public! !
-!JQTabs categoriesFor: #onCreate:!events/generated!public! !
-!JQTabs categoriesFor: #onLoad:!events/generated!public! !
-!JQTabs categoriesFor: #refresh!actions!public! !
-!JQTabs categoriesFor: #show:!options/generated!public! !
+
+!JQTabs categoriesForMethods!
+active:!options/generated!public! !
+collapsible:!options/generated!public! !
+destroy!actions!public! !
+disable:!actions!public! !
+disabled:!options/generated!public! !
+enable:!actions!public! !
+event:!options/generated!public! !
+heightStyle:!options/generated!public! !
+hide:!options/generated!public! !
+load:!actions!public! !
+method!accessing!public! !
+onActivate:!events/generated!public! !
+onBeforeActivate:!events/generated!public! !
+onBeforeLoad:!events/generated!public! !
+onCreate:!events/generated!public! !
+onLoad:!events/generated!public! !
+refresh!actions!public! !
+show:!options/generated!public! !
+!
 

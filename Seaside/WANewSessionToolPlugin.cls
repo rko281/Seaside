@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAToolPlugin subclass: #WANewSessionToolPlugin
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WANewSessionToolPlugin guid: (GUID fromString: '{8465ae23-d23f-40c7-867c-14102f7317ed}')!
+
+WANewSessionToolPlugin guid: (GUID fromString: '{7afc326d-eac3-4287-9bf8-3c2ecbd957e3}')!
+
 WANewSessionToolPlugin comment: 'I create a new session.'!
-!WANewSessionToolPlugin categoriesForClass!Seaside-Development-Plugins! !
+
+!WANewSessionToolPlugin categoriesForClass!Plugins! !
+
 !WANewSessionToolPlugin methodsFor!
 
 execute	self session unregister.	self requestContext redirectTo: self application url!
@@ -15,12 +19,18 @@ execute	self session unregister.	self requestContext redirectTo: self applicat
 label	^ 'New Session'!
 
 priority	^ 100! !
-!WANewSessionToolPlugin categoriesFor: #execute!actions!public! !
-!WANewSessionToolPlugin categoriesFor: #label!accessing!public! !
-!WANewSessionToolPlugin categoriesFor: #priority!accessing!public! !
+
+!WANewSessionToolPlugin categoriesForMethods!
+execute!actions!public! !
+label!accessing!public! !
+priority!accessing!public! !
+!
 
 !WANewSessionToolPlugin class methodsFor!
 
 title	^ 'New Session'! !
-!WANewSessionToolPlugin class categoriesFor: #title!accessing!public! !
+
+!WANewSessionToolPlugin class categoriesForMethods!
+title!accessing!public! !
+!
 

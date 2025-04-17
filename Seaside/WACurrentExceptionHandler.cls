@@ -1,10 +1,14 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WADynamicVariable subclass: #WACurrentExceptionHandler
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WACurrentExceptionHandler guid: (GUID fromString: '{e7a2e4b0-76dc-481f-95b3-ffdcf3d3aa05}')!
-WACurrentExceptionHandler comment: 'WASystemConfiguration subclass: #WAExceptionFilterConfiguration	instanceVariableNames: ''''	classVariableNames: ''''	package: ''Seaside-Core-Filter'''!
-!WACurrentExceptionHandler categoriesForClass!Seaside-Core-Filter! !
+
+WACurrentExceptionHandler guid: (GUID fromString: '{a3749aa9-b8f9-48a2-9abf-985bbdf11a7c}')!
+
+WACurrentExceptionHandler comment: 'I hold a reference to the current WAExceptionHandler. This may be needed when nesting exception handlers so that the look up of an exception handler from within an exception handler block still succeeds.'!
+
+!WACurrentExceptionHandler categoriesForClass!Filter! !
+

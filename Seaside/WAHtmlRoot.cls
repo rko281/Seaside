@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WARoot subclass: #WAHtmlRoot
 	instanceVariableNames: 'docType htmlAttrs headAttrs bodyAttrs headElements title styles scripts'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAHtmlRoot guid: (GUID fromString: '{470ef249-d241-4f09-b323-defb5bcb00a7}')!
+
+WAHtmlRoot guid: (GUID fromString: '{46616d90-46e5-459e-a905-0754692b6384}')!
+
 WAHtmlRoot comment: 'A WAHtmlRoot is the root element of an HTML Document (<html>).Instance Variables	bodyAttrs:		<WAHtmlAttributes>	context:			<WARenderContext>	docType:		<String>	headAttrs:		<WAHtmlAttributes>	headElements:	<OrderedCollection<WAHtmlElement>>	htmlAttrs:		<WAHtmlAttributes>	scripts:			<Set<String>>	styles:			<Set<String>>	title:			<String>bodyAttrs	- the attributes of the <body> elementcontext	- the context used to render the contents of the <body> elementdocType	- the document typeheadAttrs	- the attributes of the <head> elementheadElements	- the elements inside the <head> sectionhtmlAttrs	- the attributes of the <html> elementscripts	- contains the strings returned by WAPresenter >> #scriptstyles	- contains the strings returned by WAPresenter >> #styletitle	- the title of the HTML document, the contents of the <title> element'!
-!WAHtmlRoot categoriesForClass!Seaside-Core-Document! !
+
+!WAHtmlRoot categoriesForClass!Document! !
+
 !WAHtmlRoot methodsFor!
 
 add: aHtmlElement	"Add a HTML head element to the receiver."	^ headElements add: aHtmlElement!
@@ -77,38 +81,41 @@ writeHeadOn: aDocument	aDocument nextPutAll: docType.	aDocument openTag: 'html
 writeScriptsOn: aDocument	scripts ifNil: [ ^ self ].	scripts do: [ :each |		aDocument print: ((WAScriptElement root: self)			beJavascript;			document: each;			yourself) ]!
 
 writeStylesOn: aDocument	styles ifNil: [ ^ self ].	styles do: [ :each |		aDocument print: ((WALinkElement root: self)			beStylesheet; beCss;			document: each;			yourself) ]! !
-!WAHtmlRoot categoriesFor: #add:!adding!public! !
-!WAHtmlRoot categoriesFor: #addScript:!adding!public! !
-!WAHtmlRoot categoriesFor: #addStyle:!adding!public! !
-!WAHtmlRoot categoriesFor: #addXmlNamespaces!private! !
-!WAHtmlRoot categoriesFor: #base!elements!public! !
-!WAHtmlRoot categoriesFor: #beHtml5!doctype!public! !
-!WAHtmlRoot categoriesFor: #bodyAttributes!accessing/attributes!public! !
-!WAHtmlRoot categoriesFor: #closeOn:!public!writing! !
-!WAHtmlRoot categoriesFor: #contentBase:!convenience!public! !
-!WAHtmlRoot categoriesFor: #docType!doctype!public! !
-!WAHtmlRoot categoriesFor: #docType:!doctype!public! !
-!WAHtmlRoot categoriesFor: #headAttributes!accessing/attributes!public! !
-!WAHtmlRoot categoriesFor: #headElements!accessing!public! !
-!WAHtmlRoot categoriesFor: #headElements:!accessing!public! !
-!WAHtmlRoot categoriesFor: #htmlAttributes!accessing/attributes!public! !
-!WAHtmlRoot categoriesFor: #if!elements!public! !
-!WAHtmlRoot categoriesFor: #initialize!initialization!public! !
-!WAHtmlRoot categoriesFor: #javascript!elements!public! !
-!WAHtmlRoot categoriesFor: #link!elements!public! !
-!WAHtmlRoot categoriesFor: #meta!elements!public! !
-!WAHtmlRoot categoriesFor: #openOn:!public!writing! !
-!WAHtmlRoot categoriesFor: #redirectTo:delay:!convenience!public! !
-!WAHtmlRoot categoriesFor: #revealedIf!elements!public! !
-!WAHtmlRoot categoriesFor: #script!elements!public! !
-!WAHtmlRoot categoriesFor: #style!elements!public! !
-!WAHtmlRoot categoriesFor: #style:!convenience!public! !
-!WAHtmlRoot categoriesFor: #stylesheet!elements!public! !
-!WAHtmlRoot categoriesFor: #title!accessing/properties!public! !
-!WAHtmlRoot categoriesFor: #title:!accessing/properties!public! !
-!WAHtmlRoot categoriesFor: #writeElementsOn:!public!writing! !
-!WAHtmlRoot categoriesFor: #writeFootOn:!public!writing! !
-!WAHtmlRoot categoriesFor: #writeHeadOn:!public!writing! !
-!WAHtmlRoot categoriesFor: #writeScriptsOn:!public!writing! !
-!WAHtmlRoot categoriesFor: #writeStylesOn:!public!writing! !
+
+!WAHtmlRoot categoriesForMethods!
+add:!adding!public! !
+addScript:!adding!public! !
+addStyle:!adding!public! !
+addXmlNamespaces!private! !
+base!elements!public! !
+beHtml5!doctype!public! !
+bodyAttributes!accessing/attributes!public! !
+closeOn:!public!writing! !
+contentBase:!convenience!public! !
+docType!doctype!public! !
+docType:!doctype!public! !
+headAttributes!accessing/attributes!public! !
+headElements!accessing!public! !
+headElements:!accessing!public! !
+htmlAttributes!accessing/attributes!public! !
+if!elements!public! !
+initialize!initialization!public! !
+javascript!elements!public! !
+link!elements!public! !
+meta!elements!public! !
+openOn:!public!writing! !
+redirectTo:delay:!convenience!public! !
+revealedIf!elements!public! !
+script!elements!public! !
+style!elements!public! !
+style:!convenience!public! !
+stylesheet!elements!public! !
+title!accessing/properties!public! !
+title:!accessing/properties!public! !
+writeElementsOn:!public!writing! !
+writeFootOn:!public!writing! !
+writeHeadOn:!public!writing! !
+writeScriptsOn:!public!writing! !
+writeStylesOn:!public!writing! !
+!
 

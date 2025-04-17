@@ -1,15 +1,22 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WARequestHandler subclass: #WATestNoopRequestHandler
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WATestNoopRequestHandler guid: (GUID fromString: '{5b8a63b0-a26e-4ee1-979d-28b727a9cc4f}')!
+
+WATestNoopRequestHandler guid: (GUID fromString: '{7c138209-afd1-4234-b7d2-33af2d65ad73}')!
+
 WATestNoopRequestHandler comment: ''!
-!WATestNoopRequestHandler categoriesForClass!Seaside-Tests-Core-RequestHandling! !
+
+!WATestNoopRequestHandler categoriesForClass!RequestHandling! !
+
 !WATestNoopRequestHandler methodsFor!
 
 handleFiltered: aRequestContext	"do nothing"! !
-!WATestNoopRequestHandler categoriesFor: #handleFiltered:!handling!public! !
+
+!WATestNoopRequestHandler categoriesForMethods!
+handleFiltered:!handling!public! !
+!
 

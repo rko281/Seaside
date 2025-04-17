@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JSObject subclass: #JQEvent
 	instanceVariableNames: 'owner'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQEvent guid: (GUID fromString: '{58ff0c54-de63-483d-a477-e6e5b6392f54}')!
+
+JQEvent guid: (GUID fromString: '{86b276b7-3d07-4c53-ae19-dbd00c6ad543}')!
+
 JQEvent comment: ''!
-!JQEvent categoriesForClass!JQuery-Core-Objects! !
+
+!JQEvent categoriesForClass!Objects! !
+
 !JQEvent methodsFor!
 
 currentTarget	"The current DOM element within the event bubbling phase. This attribute will always be equal to the this of the function."		self access: 'currentTarget'!
@@ -47,23 +51,26 @@ target	"Contains the DOM element that issued the event."		self access: 'targe
 timeStamp	"The timestamp (in milliseconds) when the event was created."		self access: 'timeStamp'!
 
 type	"Describes the nature of the event."		self access: 'type'! !
-!JQEvent categoriesFor: #currentTarget!accessing!public! !
-!JQEvent categoriesFor: #data!accessing!public! !
-!JQEvent categoriesFor: #initialize!initialization!public! !
-!JQEvent categoriesFor: #isDefaultPrevented!public!testing! !
-!JQEvent categoriesFor: #isImmediatePropagationStopped!public!testing! !
-!JQEvent categoriesFor: #isPropagationStopped!public!testing! !
-!JQEvent categoriesFor: #javascriptContentOn:!printing!public! !
-!JQEvent categoriesFor: #namespace!accessing!public! !
-!JQEvent categoriesFor: #pageX!accessing!public! !
-!JQEvent categoriesFor: #pageY!accessing!public! !
-!JQEvent categoriesFor: #preventDefault!actions!public! !
-!JQEvent categoriesFor: #relatedTarget!accessing!public! !
-!JQEvent categoriesFor: #result!accessing!public! !
-!JQEvent categoriesFor: #setOwner:!initialization!public! !
-!JQEvent categoriesFor: #stopImmediatePropagation!actions!public! !
-!JQEvent categoriesFor: #stopPropagation!actions!public! !
-!JQEvent categoriesFor: #target!accessing!public! !
-!JQEvent categoriesFor: #timeStamp!accessing!public! !
-!JQEvent categoriesFor: #type!accessing!public! !
+
+!JQEvent categoriesForMethods!
+currentTarget!accessing!public! !
+data!accessing!public! !
+initialize!initialization!public! !
+isDefaultPrevented!public!testing! !
+isImmediatePropagationStopped!public!testing! !
+isPropagationStopped!public!testing! !
+javascriptContentOn:!printing!public! !
+namespace!accessing!public! !
+pageX!accessing!public! !
+pageY!accessing!public! !
+preventDefault!actions!public! !
+relatedTarget!accessing!public! !
+result!accessing!public! !
+setOwner:!initialization!public! !
+stopImmediatePropagation!actions!public! !
+stopPropagation!actions!public! !
+target!accessing!public! !
+timeStamp!accessing!public! !
+type!accessing!public! !
+!
 

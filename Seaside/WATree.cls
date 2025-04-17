@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WACanvasWidget subclass: #WATree
 	instanceVariableNames: 'root selected expanded childrenBlock labelBlock canSelectBlock selectBlock'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WATree guid: (GUID fromString: '{68e7c090-f01b-4048-9777-bc100648c20a}')!
+
+WATree guid: (GUID fromString: '{75d9a3f2-5498-4712-8f65-3ced95f6f451}')!
+
 WATree comment: 'WATree implements a tree menu, which supports nesting, collapsing and expanding. Prefixes items with "+/-" to indicate items that can be expanded/collapsed.See class methods for simple example.Instance Variables:	canSelectBlock	<BlockClosure [:nodeInTree | ]>	returns true if user can select the argument of the block, if true node is an anchor	childrenBlock	<BlockClosure [:nodeInTree | ]>	returns children (or subnodes) of the given node in the tree, sent to all nodes	expanded	<IdentitySet>	Collection of all nodes that are currently expanded	labelBlock	<[:nodeInTree | ]> returns text to display for given node	root	<Object>	root or top level node in tree, childrenBlock is used to determine roots subnodes	selectBlock	<BlockClosure [:selectedNode | ]>	called when an node is selected, put a callback to your code here	selected	<Object>	currently selected node'!
-!WATree categoriesForClass!Seaside-Widgets-Components! !
+
+!WATree categoriesForClass!Components! !
+
 !WATree methodsFor!
 
 canSelect: aNode	^ self selectBlock notNil and: [ self canSelectBlock isNil or: [ self canSelectBlock value: aNode ] ]!
@@ -71,37 +75,40 @@ selected	^ selected!
 selected: aNode	selected := aNode!
 
 states	^ Array with: expanded! !
-!WATree categoriesFor: #canSelect:!public!testing! !
-!WATree categoriesFor: #canSelectBlock!accessing/configuration!public! !
-!WATree categoriesFor: #canSelectBlock:!accessing/configuration!public! !
-!WATree categoriesFor: #childrenBlock!accessing/configuration!public! !
-!WATree categoriesFor: #childrenBlock:!accessing/configuration!public! !
-!WATree categoriesFor: #childrenOf:!accessing/nodes!public! !
-!WATree categoriesFor: #collapse:!actions!public! !
-!WATree categoriesFor: #expand:!actions!public! !
-!WATree categoriesFor: #expandAll:!actions!public! !
-!WATree categoriesFor: #hasChildren:!public!testing! !
-!WATree categoriesFor: #initialize!initialization!public! !
-!WATree categoriesFor: #isExpanded:!public!testing! !
-!WATree categoriesFor: #labelBlock!accessing/configuration!public! !
-!WATree categoriesFor: #labelBlock:!accessing/configuration!public! !
-!WATree categoriesFor: #labelOf:!accessing/nodes!public! !
-!WATree categoriesFor: #renderContentOn:!public!rendering! !
-!WATree categoriesFor: #renderNode:on:!public!rendering/nodes! !
-!WATree categoriesFor: #renderNodeButton:on:!public!rendering/nodes! !
-!WATree categoriesFor: #renderNodeButtonLink:action:text:on:!public!rendering/nodes! !
-!WATree categoriesFor: #renderNodeChildren:on:!public!rendering/nodes! !
-!WATree categoriesFor: #renderNodeLabel:on:!public!rendering/nodes! !
-!WATree categoriesFor: #renderNodeLabelLink:action:text:on:!public!rendering/nodes! !
-!WATree categoriesFor: #renderTreeOn:!public!rendering! !
-!WATree categoriesFor: #root!accessing!public! !
-!WATree categoriesFor: #root:!accessing!public! !
-!WATree categoriesFor: #select:!actions!public! !
-!WATree categoriesFor: #selectBlock!accessing/configuration!public! !
-!WATree categoriesFor: #selectBlock:!accessing/configuration!public! !
-!WATree categoriesFor: #selected!accessing!public! !
-!WATree categoriesFor: #selected:!accessing!public! !
-!WATree categoriesFor: #states!hooks!public! !
+
+!WATree categoriesForMethods!
+canSelect:!public!testing! !
+canSelectBlock!accessing/configuration!public! !
+canSelectBlock:!accessing/configuration!public! !
+childrenBlock!accessing/configuration!public! !
+childrenBlock:!accessing/configuration!public! !
+childrenOf:!accessing/nodes!public! !
+collapse:!actions!public! !
+expand:!actions!public! !
+expandAll:!actions!public! !
+hasChildren:!public!testing! !
+initialize!initialization!public! !
+isExpanded:!public!testing! !
+labelBlock!accessing/configuration!public! !
+labelBlock:!accessing/configuration!public! !
+labelOf:!accessing/nodes!public! !
+renderContentOn:!public!rendering! !
+renderNode:on:!public!rendering/nodes! !
+renderNodeButton:on:!public!rendering/nodes! !
+renderNodeButtonLink:action:text:on:!public!rendering/nodes! !
+renderNodeChildren:on:!public!rendering/nodes! !
+renderNodeLabel:on:!public!rendering/nodes! !
+renderNodeLabelLink:action:text:on:!public!rendering/nodes! !
+renderTreeOn:!public!rendering! !
+root!accessing!public! !
+root:!accessing!public! !
+select:!actions!public! !
+selectBlock!accessing/configuration!public! !
+selectBlock:!accessing/configuration!public! !
+selected!accessing!public! !
+selected:!accessing!public! !
+states!hooks!public! !
+!
 
 !WATree class methodsFor!
 
@@ -110,7 +117,10 @@ exampleClassBrowser	^ self new		root: Collection;		labelBlock: [ :class | cla
 root: anObject	^ self new		root: anObject;		yourself!
 
 root: anObject path: anArray	^ (self root: anObject)		expandAll: anArray;		selected: anArray last;		yourself! !
-!WATree class categoriesFor: #exampleClassBrowser!examples!public! !
-!WATree class categoriesFor: #root:!instance creation!public! !
-!WATree class categoriesFor: #root:path:!instance creation!public! !
+
+!WATree class categoriesForMethods!
+exampleClassBrowser!examples!public! !
+root:!instance creation!public! !
+root:path:!instance creation!public! !
+!
 

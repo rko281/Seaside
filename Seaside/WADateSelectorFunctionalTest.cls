@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAFunctionalTest subclass: #WADateSelectorFunctionalTest
 	instanceVariableNames: 'beginDate endDate beginTime endTime beginDAT endDAT'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WADateSelectorFunctionalTest guid: (GUID fromString: '{9ead05dc-9fe3-4365-81f2-3a2ea5819934}')!
+
+WADateSelectorFunctionalTest guid: (GUID fromString: '{0667de99-fa1c-4529-88a0-49b904133dc6}')!
+
 WADateSelectorFunctionalTest comment: ''!
-!WADateSelectorFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
+
+!WADateSelectorFunctionalTest categoriesForClass!Unclassified! !
+
 !WADateSelectorFunctionalTest methodsFor!
 
 children	^ OrderedCollection new		add: beginDate;		add: endDate;		add: beginTime;		add: endTime;		add: beginDAT;		add: endDAT;		yourself!
@@ -18,16 +22,19 @@ initialize	super initialize.	beginDate := WADateSelector new.	endDate := WADa
 
 renderContentOn: html	self renderDateSelectorsOn: html.	html horizontalRule.	self renderTimeSelectorsOn: html.	html horizontalRule.	self renderDateTimeSelectorsOn: html!
 
-renderDateSelectorsOn: html 	html heading		level3;		with: 'Dates'.	html form: [		html table: [			html tableRow: [				html					tableData: 'From';					tableData: beginDate ].			html tableRow: [				html					tableData: 'To';					tableData: endDate ] ].		html div: [			html submitButton				callback: [					self 						inform: (endDate date - beginDate date) days greaseString , ' day(s)'						onAnswer: [ ] ];				text: 'Compute duration' ] ]!
+renderDateSelectorsOn: html  html heading    level3;    with: 'Dates'.  html form    id: #'dateForm';    with: [           html            table: [               html tableRow                class: 'from';                with: [                       html                        tableData: 'From';                        tableData: beginDate ].              html tableRow                class: 'to';                with: [                       html                        tableData: 'To';                        tableData: endDate ] ].          html            div: [               html submitButton                callback: [                       self                        inform:                          (endDate date subtractDate: beginDate date) greaseString , ' day(s)'                        onAnswer: [  ] ];                text: 'Compute duration' ] ]!
 
-renderDateTimeSelectorsOn: html	html heading level3; with: 'Dates and Times'.	html form: [		html table: [			html tableRow: [				html tableData: 'From'; tableData: beginDAT ].			html tableRow: [				html tableData: 'To'; tableData: endDAT ] ].		html div: [			html submitButton				callback: [ self computeDuration ];				text: 'Compute duration' ] ]!
+renderDateTimeSelectorsOn: html	html heading level3; with: 'Dates and Times'.	html form id: #dateTimeForm; with: [		html table: [			html tableRow				class:'from';				with:[ html tableData: 'From'; tableData: beginDAT ].			html tableRow				class:'to';				with:[ html tableData: 'To'; tableData: endDAT ] ].		html div: [			html submitButton				callback: [ self computeDuration ];				text: 'Compute duration' ] ]!
 
-renderTimeSelectorsOn: html 	html heading		level3;		with: 'Times'.	html form: [		html table: [			html tableRow: [				html					tableData: 'From';					tableData: beginTime ].			html tableRow: [				html					tableData: 'To';					tableData: endTime ] ].		html div: [			html submitButton				callback: [					self 						inform: (endTime time subtractTime: beginTime time) asSeconds greaseString , ' seconds(s)'						onAnswer: [ ] ];				text: 'Compute duration' ] ]! !
-!WADateSelectorFunctionalTest categoriesFor: #children!hooks!public! !
-!WADateSelectorFunctionalTest categoriesFor: #computeDuration!actions!public! !
-!WADateSelectorFunctionalTest categoriesFor: #initialize!initialization!public! !
-!WADateSelectorFunctionalTest categoriesFor: #renderContentOn:!public!rendering! !
-!WADateSelectorFunctionalTest categoriesFor: #renderDateSelectorsOn:!public!rendering! !
-!WADateSelectorFunctionalTest categoriesFor: #renderDateTimeSelectorsOn:!public!rendering! !
-!WADateSelectorFunctionalTest categoriesFor: #renderTimeSelectorsOn:!public!rendering! !
+renderTimeSelectorsOn: html 	html heading		level3;		with: 'Times'.	html form id: #timeForm; with: [		html table: [			html tableRow				class:'from';				with:[ 					html						tableData: 'From';						tableData: beginTime ].			html tableRow				class:'to';				with:[					html						tableData: 'To';						tableData: endTime ] ].		html div: [			html submitButton				callback: [					self 						inform: (endTime time subtractTime: beginTime time) asSeconds greaseString , ' second(s)'						onAnswer: [ ] ];				text: 'Compute duration' ] ]! !
+
+!WADateSelectorFunctionalTest categoriesForMethods!
+children!hooks!public! !
+computeDuration!actions!public! !
+initialize!initialization!public! !
+renderContentOn:!public!rendering! !
+renderDateSelectorsOn:!public!rendering! !
+renderDateTimeSelectorsOn:!public!rendering! !
+renderTimeSelectorsOn:!public!rendering! !
+!
 

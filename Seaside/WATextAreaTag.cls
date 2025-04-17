@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAAbstractTextAreaTag subclass: #WATextAreaTag
 	instanceVariableNames: 'value'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WATextAreaTag guid: (GUID fromString: '{b9fd9036-6f85-44e5-8b24-f5c3a04153a4}')!
+
+WATextAreaTag guid: (GUID fromString: '{6aaa365c-e51c-4cd4-9483-f1628a4aa067}')!
+
 WATextAreaTag comment: 'I am a multi line text input widget. See WAInputTest >> #renderTextAreaWithExampleOn: for examples.'!
-!WATextAreaTag categoriesForClass!Seaside-Canvas-Tags! !
+
+!WATextAreaTag categoriesForClass!Tags! !
+
 !WATextAreaTag methodsFor!
 
 columns: anInteger 	"This attribute specifies the visible width in average character widths. User agents may wrap visible text lines to keep long lines visible without the need for scrolling."	self attributes 		at: 'cols'		put: anInteger!
@@ -25,12 +29,15 @@ value	^ value!
 value: aString	value := aString!
 
 with: aBlock	super with: (value ifNil: [ aBlock ])! !
-!WATextAreaTag categoriesFor: #columns:!attributes!public! !
-!WATextAreaTag categoriesFor: #initialize!initialization!public! !
-!WATextAreaTag categoriesFor: #isClosed!public!testing! !
-!WATextAreaTag categoriesFor: #rows:!attributes!public! !
-!WATextAreaTag categoriesFor: #tag!accessing!public! !
-!WATextAreaTag categoriesFor: #value!attributes!public! !
-!WATextAreaTag categoriesFor: #value:!attributes!public! !
-!WATextAreaTag categoriesFor: #with:!public! !
+
+!WATextAreaTag categoriesForMethods!
+columns:!attributes!public! !
+initialize!initialization!public! !
+isClosed!public!testing! !
+rows:!attributes!public! !
+tag!accessing!public! !
+value!attributes!public! !
+value:!attributes!public! !
+with:!public! !
+!
 

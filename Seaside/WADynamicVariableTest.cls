@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 TestCase subclass: #WADynamicVariableTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WADynamicVariableTest guid: (GUID fromString: '{c84ef0bc-4aed-452c-8a14-883813aa218e}')!
+
+WADynamicVariableTest guid: (GUID fromString: '{f5b1e0f5-a086-4486-a330-68d6092c1a9e}')!
+
 WADynamicVariableTest comment: ''!
-!WADynamicVariableTest categoriesForClass!Seaside-Tests-Core-Utilities! !
+
+!WADynamicVariableTest categoriesForClass!Utilities! !
+
 !WADynamicVariableTest methodsFor!
 
 testAnswer	self assert: (WADynamicVariable use: 'value' during: [ true ])!
@@ -17,8 +21,11 @@ testWithNestedValue	WADynamicVariable 		use: 'outer' 		during: [			WADynamic
 testWithoutValue	self assert: WADynamicVariable value isNil!
 
 testWithValue	WADynamicVariable 		use: 'value' 		during: [ self assert: WADynamicVariable value = 'value' ]! !
-!WADynamicVariableTest categoriesFor: #testAnswer!public!tests! !
-!WADynamicVariableTest categoriesFor: #testWithNestedValue!public!tests! !
-!WADynamicVariableTest categoriesFor: #testWithoutValue!public!tests! !
-!WADynamicVariableTest categoriesFor: #testWithValue!public!tests! !
+
+!WADynamicVariableTest categoriesForMethods!
+testAnswer!public!tests! !
+testWithNestedValue!public!tests! !
+testWithoutValue!public!tests! !
+testWithValue!public!tests! !
+!
 

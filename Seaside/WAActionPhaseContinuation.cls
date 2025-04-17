@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WARenderLoopContinuation subclass: #WAActionPhaseContinuation
 	instanceVariableNames: 'renderContext'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAActionPhaseContinuation guid: (GUID fromString: '{e0870395-21d7-4f13-9e55-9cafeaf1b999}')!
+
+WAActionPhaseContinuation guid: (GUID fromString: '{b3a43c0f-8087-4403-939e-ae7089c797d9}')!
+
 WAActionPhaseContinuation comment: ''!
-!WAActionPhaseContinuation categoriesForClass!Seaside-RenderLoop! !
+
+!WAActionPhaseContinuation categoriesForClass!Continuations! !
+
 !WAActionPhaseContinuation methodsFor!
 
 basicPerformAction	"Do nothing by default. Subclasses can override."!
@@ -27,15 +31,18 @@ renderContext: aRenderContext	renderContext := aRenderContext!
 shouldRedirect	| request |	request := self request.	^ (request isGet and: [ request fields includesKey: '_n' ]) not!
 
 startTasks	"Make sure that any new Tasks get executed"	(WAVisiblePresenterGuide client: WATaskVisitor new) start: self presenter! !
-!WAActionPhaseContinuation categoriesFor: #basicPerformAction!processing!public! !
-!WAActionPhaseContinuation categoriesFor: #continue!processing!public! !
-!WAActionPhaseContinuation categoriesFor: #handleFiltered:!handling!public! !
-!WAActionPhaseContinuation categoriesFor: #initializeWithSnapshot:renderContext:!initialization!public! !
-!WAActionPhaseContinuation categoriesFor: #performAction!processing!public! !
-!WAActionPhaseContinuation categoriesFor: #renderContext!accessing!public! !
-!WAActionPhaseContinuation categoriesFor: #renderContext:!accessing!public! !
-!WAActionPhaseContinuation categoriesFor: #shouldRedirect!private! !
-!WAActionPhaseContinuation categoriesFor: #startTasks!private! !
+
+!WAActionPhaseContinuation categoriesForMethods!
+basicPerformAction!processing!public! !
+continue!processing!public! !
+handleFiltered:!handling!public! !
+initializeWithSnapshot:renderContext:!initialization!public! !
+performAction!processing!public! !
+renderContext!accessing!public! !
+renderContext:!accessing!public! !
+shouldRedirect!private! !
+startTasks!private! !
+!
 
 !WAActionPhaseContinuation class methodsFor!
 
@@ -46,8 +53,11 @@ isActionContinuation	^ true!
 snapshot: aSnapshot	^ self snapshot: aSnapshot renderContext: self defaultRenderContext!
 
 snapshot: aSnapshot renderContext: aRenderContext	^ self basicNew		initializeWithSnapshot: aSnapshot renderContext: aRenderContext;		yourself! !
-!WAActionPhaseContinuation class categoriesFor: #defaultRenderContext!private! !
-!WAActionPhaseContinuation class categoriesFor: #isActionContinuation!public!testing! !
-!WAActionPhaseContinuation class categoriesFor: #snapshot:!instance creation!public! !
-!WAActionPhaseContinuation class categoriesFor: #snapshot:renderContext:!instance creation!public! !
+
+!WAActionPhaseContinuation class categoriesForMethods!
+defaultRenderContext!private! !
+isActionContinuation!public!testing! !
+snapshot:!instance creation!public! !
+snapshot:renderContext:!instance creation!public! !
+!
 

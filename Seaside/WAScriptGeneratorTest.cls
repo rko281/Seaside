@@ -1,23 +1,33 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAContextTest subclass: #WAScriptGeneratorTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAScriptGeneratorTest guid: (GUID fromString: '{5ad1519c-0352-4827-91b6-3e9614052260}')!
+
+WAScriptGeneratorTest guid: (GUID fromString: '{0b3c3abf-f57e-429f-9319-164a9874484c}')!
+
 WAScriptGeneratorTest comment: 'Abstract base class for all script generator tests.'!
-!WAScriptGeneratorTest categoriesForClass!Seaside-Tests-Canvas! !
+
+!WAScriptGeneratorTest categoriesForClass!Base! !
+
 !WAScriptGeneratorTest methodsFor!
 
-assert: aBlock gives: aString	| html |	html := WAHtmlCanvas builder		fullDocument: true;		scriptGeneratorClass: self scriptGeneratorClass;		render: aBlock.	self assert: aString = html!
+assert: aBlock gives: aString	| html |	html := WAHtmlCanvas builder		fullDocument: true;		scriptGeneratorClass: self scriptGeneratorClass;		render: aBlock.	self assert: aString equals: html!
 
 scriptGeneratorClass	self subclassResponsibility! !
-!WAScriptGeneratorTest categoriesFor: #assert:gives:!private! !
-!WAScriptGeneratorTest categoriesFor: #scriptGeneratorClass!configuration!public! !
+
+!WAScriptGeneratorTest categoriesForMethods!
+assert:gives:!private! !
+scriptGeneratorClass!configuration!public! !
+!
 
 !WAScriptGeneratorTest class methodsFor!
 
 isAbstract	^ self name = #WAScriptGeneratorTest! !
-!WAScriptGeneratorTest class categoriesFor: #isAbstract!public!testing! !
+
+!WAScriptGeneratorTest class categoriesForMethods!
+isAbstract!public!testing! !
+!
 

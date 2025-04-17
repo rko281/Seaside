@@ -1,15 +1,22 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQBaseTheme subclass: #JQMintChocTheme
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQMintChocTheme guid: (GUID fromString: '{69787ba5-2cd0-496e-9873-f691b03d1e23}')!
+
+JQMintChocTheme guid: (GUID fromString: '{a33427b5-9155-4b6b-ab12-53775a33e532}')!
+
 JQMintChocTheme comment: ''!
-!JQMintChocTheme categoriesForClass!JQuery-UI-Libraries! !
+
+!JQMintChocTheme categoriesForClass!Libraries! !
+
 !JQMintChocTheme methodsFor!
 
 themeName	^ 'mint-choc'! !
-!JQMintChocTheme categoriesFor: #themeName!accessing!public! !
+
+!JQMintChocTheme categoriesForMethods!
+themeName!accessing!public! !
+!
 

@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WARegistryKeyHandlingTest subclass: #WAApplicationKeyHandlingTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAApplicationKeyHandlingTest guid: (GUID fromString: '{56d72dd8-773f-4321-9f43-e0c58b289f9d}')!
+
+WAApplicationKeyHandlingTest guid: (GUID fromString: '{dc62b526-72da-46ed-95b9-b7a0ff2e80ff}')!
+
 WAApplicationKeyHandlingTest comment: ''!
-!WAApplicationKeyHandlingTest categoriesForClass!Seaside-Tests-Session! !
+
+!WAApplicationKeyHandlingTest categoriesForClass!Unclassified! !
+
 !WAApplicationKeyHandlingTest methodsFor!
 
 assertDefault: aResponse	"Instead of returning 404 on a default request as WARegistry does, WAApplication creates a new	Session and dispatches to it."	self assert: registry cache size = (registrySize + 1).	self assert: aResponse status = 200.	self assert: (aResponse contents beginsWithSubCollection: 'start:')!
@@ -37,23 +41,29 @@ testNoFieldCookieHandlerAbsent	"There is no key in the URL but there is a cooki
 testNoFieldCookieHandlerPresent	"There is no key in the URL but there is a cookie. The handler specified by key exists."		| response context key |	registry := self createRegistryWithCookiesEnabled.	key := self registerNewHandler.	context := self createRequestContextWithFieldKey: nil cookieKey: key.	response := self dispatch: context to: registry.		self assertNoCookies: response.	self assertDispatched: response!
 
 testNoKey	"There is no URL field and no cookie. This is a new request to the Registry.		Instead of returning a 404, like WARegistry does, WAApplication creates a new WASession	and also adds the cookie."		| response context |	registry := self createRegistryWithCookiesEnabled.	context := self createRequestContextWithFieldKey: nil cookieKey: nil.	response := self dispatch: context to: registry.		self assertCookieAddition: response.	self assert: ((registry cache at: response cookies first value ifAbsent: [ nil ]) isKindOf: WASession).	self assertDefault: response! !
-!WAApplicationKeyHandlingTest categoriesFor: #assertDefault:!private! !
-!WAApplicationKeyHandlingTest categoriesFor: #createRegistry!private! !
-!WAApplicationKeyHandlingTest categoriesFor: #registerNewHandler!private! !
-!WAApplicationKeyHandlingTest categoriesFor: #testFieldNoCookieHandlerAbsent!public!tests! !
-!WAApplicationKeyHandlingTest categoriesFor: #testFieldNoCookieHandlerPresent!public!tests! !
-!WAApplicationKeyHandlingTest categoriesFor: #testMatchingHandlerAbsent!public!tests! !
-!WAApplicationKeyHandlingTest categoriesFor: #testMatchingHandlerPresent!public!tests! !
-!WAApplicationKeyHandlingTest categoriesFor: #testMismatchingWithBothHandlers!public!tests! !
-!WAApplicationKeyHandlingTest categoriesFor: #testMismatchingWithCookieHandler!public!tests! !
-!WAApplicationKeyHandlingTest categoriesFor: #testMismatchingWithNoHandlers!public!tests! !
-!WAApplicationKeyHandlingTest categoriesFor: #testMismatchingWithUrlHandler!public!tests! !
-!WAApplicationKeyHandlingTest categoriesFor: #testNoFieldCookieHandlerAbsent!public!tests! !
-!WAApplicationKeyHandlingTest categoriesFor: #testNoFieldCookieHandlerPresent!public!tests! !
-!WAApplicationKeyHandlingTest categoriesFor: #testNoKey!public!tests! !
+
+!WAApplicationKeyHandlingTest categoriesForMethods!
+assertDefault:!private! !
+createRegistry!private! !
+registerNewHandler!private! !
+testFieldNoCookieHandlerAbsent!public!tests! !
+testFieldNoCookieHandlerPresent!public!tests! !
+testMatchingHandlerAbsent!public!tests! !
+testMatchingHandlerPresent!public!tests! !
+testMismatchingWithBothHandlers!public!tests! !
+testMismatchingWithCookieHandler!public!tests! !
+testMismatchingWithNoHandlers!public!tests! !
+testMismatchingWithUrlHandler!public!tests! !
+testNoFieldCookieHandlerAbsent!public!tests! !
+testNoFieldCookieHandlerPresent!public!tests! !
+testNoKey!public!tests! !
+!
 
 !WAApplicationKeyHandlingTest class methodsFor!
 
 shouldInheritSelectors	^ true! !
-!WAApplicationKeyHandlingTest class categoriesFor: #shouldInheritSelectors!public!testing! !
+
+!WAApplicationKeyHandlingTest class categoriesForMethods!
+shouldInheritSelectors!public!testing! !
+!
 

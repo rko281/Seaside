@@ -1,15 +1,22 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JSStatement subclass: #JSConcatenation
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSConcatenation guid: (GUID fromString: '{c4b5bfb9-ba53-46b3-9d1a-dd611e27da59}')!
+
+JSConcatenation guid: (GUID fromString: '{3b88336c-4f3b-41d2-ab20-b3bc726b00a8}')!
+
 JSConcatenation comment: 'I represent a sequence (or concatenation) of a decorated object and another object.'!
-!JSConcatenation categoriesForClass!Javascript-Core-Decorations! !
+
+!JSConcatenation categoriesForClass!Decorations! !
+
 !JSConcatenation methodsFor!
 
 javascriptContentOn: aStream	super javascriptContentOn: aStream.	aStream		nextPut: $;;		javascript: self statement! !
-!JSConcatenation categoriesFor: #javascriptContentOn:!printing!public! !
+
+!JSConcatenation categoriesForMethods!
+javascriptContentOn:!printing!public! !
+!
 

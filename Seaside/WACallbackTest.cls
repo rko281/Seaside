@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 TestCase subclass: #WACallbackTest
 	instanceVariableNames: 'registry log'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WACallbackTest guid: (GUID fromString: '{dbec5d8c-d453-4349-816d-84ccf5e7ee91}')!
+
+WACallbackTest guid: (GUID fromString: '{e45aa7f1-157e-489d-8864-1566bd83686c}')!
+
 WACallbackTest comment: ''!
-!WACallbackTest categoriesForClass!Seaside-Tests-Core-Callbacks! !
+
+!WACallbackTest categoriesForClass!Callbacks! !
+
 !WACallbackTest methodsFor!
 
 assertLog: aCollection	self		assert: log asArray = aCollection asArray		description: 'Expected ' , aCollection asArray printString , ', but got ' , log asArray printString.	log := OrderedCollection new!
@@ -30,7 +34,7 @@ testImageCallback	| key |	key := registry store: (WAImageCallback on: [ log ad
 
 testMapCallback	| key |	key := registry store: (WAMapCallback on: [ :v | log add: v ]).	" valid "	self 		shouldnt: 			[ self request: (WARequestFields new					at: key						put: '?1,2';					yourself) ]		raise: WARenderNotification.	self assertLog: (Array with: 1 @ 2).	" valid "	self 		shouldnt: 			[ self request: (WARequestFields new					at: key						put: '?1,23';					yourself) ]		raise: WARenderNotification.	self assertLog: (Array with: 1 @ 23).	" valid "	self 		shouldnt: 			[ self request: (WARequestFields new					at: key						put: '?12,34';					yourself) ]		raise: WARenderNotification.	self assertLog: (Array with: 12 @ 34).	" invalid: no value "	self 		shouldnt: 			[ self request: (WARequestFields new					at: key						put: nil;					yourself) ]		raise: WARenderNotification.	self assertLog: #().	" invalid: empty string "	self 		shouldnt: 			[ self request: (WARequestFields new					at: key						put: '';					yourself) ]		raise: WARenderNotification.	self assertLog: #().	" invalid: invalid syntax "	self 		shouldnt: 			[ self request: (WARequestFields new					at: key						put: '1,2';					yourself) ]		raise: WARenderNotification.	self assertLog: #().	" invalid: invalid syntax "	self 		shouldnt: 			[ self request: (WARequestFields new					at: key						put: '?1';					yourself) ]		raise: WARenderNotification.	self assertLog: #().	" invalid: invalid syntax "	self 		shouldnt: 			[ self request: (WARequestFields new					at: key						put: '?1,';					yourself) ]		raise: WARenderNotification.	" invalid: invalid syntax "	self 		shouldnt: 			[ self request: (WARequestFields new					at: key						put: '?1x2';					yourself) ]		raise: WARenderNotification.	self assertLog: #().	" invalid: invalid syntax "	self 		shouldnt: 			[ self request: (WARequestFields new					at: key						put: '?a,b';					yourself) ]		raise: WARenderNotification.	self assertLog: #()!
 
-testMultiValuesCallback	| key key1 key2 dict |	dict := Dictionary new.	key1 := '1'.	key2 := '2'.	dict at: key1 greaseInteger put: '1a'.	dict at: key2 greaseInteger put: '2a'.	key := registry store: (WAMultipleValuesCallback				on: [ :v | log := v ]				values: dict).	"an empty callback"	self		shouldnt: [			self request: (WARequestFields new				at: key put: nil;				yourself) ]		raise: WARenderNotification.	self assert: log isEmpty.		" another empty callback "	self 		shouldnt: [			self request: (WARequestFields new				at: key put: '';				yourself) ]		raise: WARenderNotification.	self assert: log isEmpty.		" the first callback "	self 		shouldnt: [			self request: (WARequestFields new				at: key put: key1;				yourself) ]		raise: WARenderNotification.	self assertLog: #( '1a' ).		" the second callback "	self 		shouldnt: [			self request: (WARequestFields new				at: key add: key1;				at: key add: key2;				yourself) ]		raise: WARenderNotification.	self assertLog: #('1a' '2a' )!
+testMultiValuesCallback	| key key1 key2 dict |	dict := Dictionary new.	key1 := '1'.	key2 := '2'.	dict at: key1 greaseInteger put: '1a'.	dict at: key2 greaseInteger put: '2a'.	key := registry store: (WAMultipleValuesCallback				on: [ :v | log := v ]				values: dict).	"an empty callback"	self		shouldnt: [			self request: (WARequestFields new				at: key put: nil;				yourself) ]		raise: WARenderNotification.	self assert: log isEmpty.		" another empty callback "	self 		shouldnt: [			self request: (WARequestFields new				at: key put: '';				yourself) ]		raise: WARenderNotification.	self assert: log isEmpty.		" the first callback "	self 		shouldnt: [			self request: (WARequestFields new				at: key put: key1;				yourself) ]		raise: WARenderNotification.	self assertLog: #( '1a' ).		" the second callback "	self 		shouldnt: [			self request: (WARequestFields new				at: key add: key1;				at: key add: key2;				yourself) ]		raise: WARenderNotification.	self assertLog: #('1a' '2a' )!
 
 testNextKey	self assert: registry nextKey = '1'.	registry increaseKey.	self assert: registry nextKey = '2'.	self assert: registry nextKey = '2'!
 
@@ -38,20 +42,23 @@ testUploadCallback	| key file |	key := registry store: (WAUploadCallback on: [
 
 testValueCallback	| key1 key2 |	key1 := registry store: (WAValueCallback on: 			[ :v | log add: 1; add: v ]).	key2 := registry store: (WAValueCallback on: 			[ :v | log add: 2; add: v ]).	" a single value callback with nil "	self 		shouldnt: 			[ self request: (WARequestFields new					at: key1 put: nil;					yourself) ]		raise: WARenderNotification.	self assertLog: #(1 '' ).	" a single value callback with an empty string "	self 		shouldnt: 			[ self request: (WARequestFields new					at: key1 put: '';					yourself) ]		raise: WARenderNotification.	self assertLog: #(1 '' ).	" a single value callback with a string "	self 		shouldnt: 			[ self request: (WARequestFields new					at: key1 put: 'foo';					yourself) ]		raise: WARenderNotification.	self assertLog: #(1 'foo' ).	" a single value callback with a filled collection "	self 		shouldnt: 			[ self request: (WARequestFields new					at: key1 add: 'foo';					at: key1 add: 'bar';					yourself) ]		raise: WARenderNotification.	self assertLog: #(1 'foo' ).	" two callbacks in order "	self 		shouldnt: 			[ self request: (WARequestFields new					at: key1 put: 'b';					at: key2 put: 'c';					yourself) ]		raise: WARenderNotification.	self assertLog: #(1 'b' 2 'c' ).	" two callbacks not in order "	self 		shouldnt: 			[ self request: (WARequestFields new					at: key2 put: 'c';					at: key1 put: 'b';					yourself) ]		raise: WARenderNotification.	self assertLog: #(1 'b' 2 'c' )!
 
-testValuesCallback	| key key1 key2 dict |	dict := Dictionary new.	key1 := '1'.	key2 := '2'.	dict at: key1 greaseInteger put: '1a'.	dict at: key2 greaseInteger put: '2a'.	key := registry store: (WAValuesCallback		on: [ :v | log add: v ]		values: dict).	"an empty callback"	self 		shouldnt: [			self request: (WARequestFields new				at: key				put: nil;				yourself) ]		raise: WARenderNotification.	self assertLog: #().		" another empty callback "	self 		shouldnt: [			self request: (WARequestFields new				at: key				put: '';			yourself) ]		raise: WARenderNotification.	self assertLog: #().		" the first callback "	self shouldnt: [		self request: (WARequestFields new			at: key			put: key1;			yourself) ]		raise: WARenderNotification.	self assertLog: #( '1a' ).		" the second callback "	self 		shouldnt: [			self request: (WARequestFields new				at: key				put: key2;				yourself) ]		raise: WARenderNotification.	self assertLog: #( '2a' )! !
-!WACallbackTest categoriesFor: #assertLog:!public!utilities! !
-!WACallbackTest categoriesFor: #request:!public!utilities! !
-!WACallbackTest categoriesFor: #setUp!public!running! !
-!WACallbackTest categoriesFor: #testActionCallback!public!tests/callbacks! !
-!WACallbackTest categoriesFor: #testAdvanceKey!public!tests! !
-!WACallbackTest categoriesFor: #testCancelCallback!public!tests/callbacks! !
-!WACallbackTest categoriesFor: #testDefaultCallback!public!tests/callbacks! !
-!WACallbackTest categoriesFor: #testDispatchCallback!public!tests/callbacks! !
-!WACallbackTest categoriesFor: #testImageCallback!public!tests/callbacks! !
-!WACallbackTest categoriesFor: #testMapCallback!public!tests/callbacks! !
-!WACallbackTest categoriesFor: #testMultiValuesCallback!public!tests/callbacks! !
-!WACallbackTest categoriesFor: #testNextKey!public!tests! !
-!WACallbackTest categoriesFor: #testUploadCallback!public!tests/callbacks! !
-!WACallbackTest categoriesFor: #testValueCallback!public!tests/callbacks! !
-!WACallbackTest categoriesFor: #testValuesCallback!public!tests/callbacks! !
+testValuesCallback	| key key1 key2 dict |	dict := Dictionary new.	key1 := '1'.	key2 := '2'.	dict at: key1 greaseInteger put: '1a'.	dict at: key2 greaseInteger put: '2a'.	key := registry store: (WAValuesCallback		on: [ :v | log add: v ]		values: dict).	"an empty callback"	self 		shouldnt: [			self request: (WARequestFields new				at: key				put: nil;				yourself) ]		raise: WARenderNotification.	self assertLog: #().		" another empty callback "	self 		shouldnt: [			self request: (WARequestFields new				at: key				put: '';			yourself) ]		raise: WARenderNotification.	self assertLog: #().		" the first callback "	self shouldnt: [		self request: (WARequestFields new			at: key			put: key1;			yourself) ]		raise: WARenderNotification.	self assertLog: #( '1a' ).		" the second callback "	self 		shouldnt: [			self request: (WARequestFields new				at: key				put: key2;				yourself) ]		raise: WARenderNotification.	self assertLog: #( '2a' )! !
+
+!WACallbackTest categoriesForMethods!
+assertLog:!public!utilities! !
+request:!public!utilities! !
+setUp!public!running! !
+testActionCallback!public!tests/callbacks! !
+testAdvanceKey!public!tests! !
+testCancelCallback!public!tests/callbacks! !
+testDefaultCallback!public!tests/callbacks! !
+testDispatchCallback!public!tests/callbacks! !
+testImageCallback!public!tests/callbacks! !
+testMapCallback!public!tests/callbacks! !
+testMultiValuesCallback!public!tests/callbacks! !
+testNextKey!public!tests! !
+testUploadCallback!public!tests/callbacks! !
+testValueCallback!public!tests/callbacks! !
+testValuesCallback!public!tests/callbacks! !
+!
 

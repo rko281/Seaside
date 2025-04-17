@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAComponent subclass: #WAAllFunctionalTests
 	instanceVariableNames: 'classes current'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAAllFunctionalTests guid: (GUID fromString: '{479e4c77-386c-4af5-8ed3-58083fc52c11}')!
+
+WAAllFunctionalTests guid: (GUID fromString: '{7b86d46b-c3c9-4cb5-8ab0-d87f577a20a4}')!
+
 WAAllFunctionalTests comment: 'If you want to see these examples:/config app:- add a new application named "tests"- choose WAAllFunctionalTests as the root component'!
-!WAAllFunctionalTests categoriesForClass!Seaside-Tests-Functional! !
+
+!WAAllFunctionalTests categoriesForClass!Unclassified! !
+
 !WAAllFunctionalTests methodsFor!
 
 children	^ Array with: current contents!
@@ -18,7 +22,7 @@ initializeTests	classes := (WAPresenter allSubclasses select: [ :each | each is
 
 initialRequest: aRequest 	super initialRequest: aRequest.	self requestContext consumer nextIfPresentDo: [ :className | 		classes do: [ :each | 			"#greaseString is required because of Symbol <-> String comparison"			each name greaseString = className ifTrue: [ self selected: each ] ] ]!
 
-next	| nextIndex |	nextIndex := self selectionIndex \\ classes size + 1.	self selected: (classes at: nextIndex)	!
+next	| nextIndex |	nextIndex := self selectionIndex \\ classes size + 1.	self selected: (classes at: nextIndex)!
 
 previous	| nextIndex |	nextIndex := (self selectionIndex + classes size - 2 \\ classes size) + 1.	self selected: (classes at: nextIndex)!
 
@@ -33,18 +37,21 @@ selectionIndex	^ classes indexOf: self selected!
 states	^ Array with: current!
 
 updateUrl: aUrl	super updateUrl: aUrl.	"class name is a Symbol, using a String makes a big difference for WALotsaLinksFunctionalTest"	aUrl addToPath: self selected name greaseString! !
-!WAAllFunctionalTests categoriesFor: #children!hooks!public! !
-!WAAllFunctionalTests categoriesFor: #initialize!initialization!public! !
-!WAAllFunctionalTests categoriesFor: #initializeTests!initialization!public! !
-!WAAllFunctionalTests categoriesFor: #initialRequest:!hooks!public! !
-!WAAllFunctionalTests categoriesFor: #next!actions!public! !
-!WAAllFunctionalTests categoriesFor: #previous!actions!public! !
-!WAAllFunctionalTests categoriesFor: #renderContentOn:!public!rendering! !
-!WAAllFunctionalTests categoriesFor: #selected!accessing!public! !
-!WAAllFunctionalTests categoriesFor: #selected:!accessing!public! !
-!WAAllFunctionalTests categoriesFor: #selectionIndex!private! !
-!WAAllFunctionalTests categoriesFor: #states!hooks!public! !
-!WAAllFunctionalTests categoriesFor: #updateUrl:!public!updating! !
+
+!WAAllFunctionalTests categoriesForMethods!
+children!hooks!public! !
+initialize!initialization!public! !
+initializeTests!initialization!public! !
+initialRequest:!hooks!public! !
+next!actions!public! !
+previous!actions!public! !
+renderContentOn:!public!rendering! !
+selected!accessing!public! !
+selected:!accessing!public! !
+selectionIndex!private! !
+states!hooks!public! !
+updateUrl:!public!updating! !
+!
 
 !WAAllFunctionalTests class methodsFor!
 
@@ -53,7 +60,10 @@ canBeRoot	^ true!
 description	^ 'Seaside Functional Test Suite'!
 
 initialize	(WAAdmin register: self asApplicationAt: 'tests/functional')		sessionClass: WAExpirySession! !
-!WAAllFunctionalTests class categoriesFor: #canBeRoot!public!testing! !
-!WAAllFunctionalTests class categoriesFor: #description!accessing!public! !
-!WAAllFunctionalTests class categoriesFor: #initialize!initialization!public! !
+
+!WAAllFunctionalTests class categoriesForMethods!
+canBeRoot!public!testing! !
+description!accessing!public! !
+initialize!initialization!public! !
+!
 

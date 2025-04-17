@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQWidget subclass: #JQDatepicker
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQDatepicker guid: (GUID fromString: '{79b68906-0832-4c87-b327-b6893af95a46}')!
+
+JQDatepicker guid: (GUID fromString: '{ac9f513e-b9e8-4701-af37-2133979fa4f3}')!
+
 JQDatepicker comment: 'A highly configurable plugin that adds datepicker functionality to your pages. You can restrict the functionality in various ways, you can select date ranges, and you can provide the date in picker in a number of languages.'!
-!JQDatepicker categoriesForClass!JQuery-UI-Widgets! !
+
+!JQDatepicker categoriesForClass!Widgets! !
+
 !JQDatepicker methodsFor!
 
 altField: aString	"The jQuery selector for another field that is to be updated with the selected date from the datepicker. Use the altFormat setting below to change the format of the date within this field. Leave as blank for no alternate field."	self optionAt: 'altField' put: aString!
@@ -88,6 +92,8 @@ onClose: anObject	"Allows you to define your own event when the datepicker is c
 
 onSelect: anObject	"Allows you to define your own event when the datepicker is selected. The function receives the selected date as text and the datepicker instance as parameters. this refers to the associated input field."	self optionAt: 'onSelect' put: anObject asFunction!
 
+onUpdateDatePicker: anObject	"Called when the datepicker widget's DOM is updated. The function receives the datepicker instance as the only parameter. this refers to the associated input field."	self optionAt: 'onUpdateDatepicker' put: anObject asFunction!
+
 prevText: aString	"The text to display for the previous month link. This attribute is one of the regionalisation attributes. With the standard ThemeRoller styling, this value is replaced by an icon."	self optionAt: 'prevText' put: aString!
 
 selectOtherMonths: aBoolean	"When true days in other months shown before or after the current month are selectable. This only applies if [[UI/Datepicker#option-showOtherMonths"	self optionAt: 'selectOtherMonths' put: aBoolean!
@@ -112,69 +118,73 @@ showOptions: anOptions	"If using one of the jQuery UI effects for showAnim, you
 
 showOtherMonths: aBoolean	"Display dates in other months (non-selectable) at the start or end of the current month."	self optionAt: 'showOtherMonths' put: aBoolean!
 
-showWeek: aBoolean	"When true a column is added to show the week of the year."	self optionAt: 'showWeek' put: aBoolean!
+showWeek: aBoolean	"When true a column is added to show the week of the year."	self optionAt: 'showWeek' put: aBoolean!
 
 stepMonths: aNumber	"Set how many months to move when clicking the Previous/Next links."	self optionAt: 'stepMonths' put: aNumber!
 
-weekHeader: aString	"The text to display for the week of the year column heading. This attribute is one of the regionalisation attributes."	self optionAt: 'weekHeader' put: aString!
+weekHeader: aString	"The text to display for the week of the year column heading. This attribute is one of the regionalisation attributes."	self optionAt: 'weekHeader' put: aString!
 
 yearRange: aString	"Control the range of years displayed in the year drop-down: either relative to current year (-nn:+nn) or absolute (nnnn:nnnn)."	self optionAt: 'yearRange' put: aString!
 
 yearSuffix: aString	"Additional text to display after the year in the month headers. This attribute is one of the regionalisation attributes."	self optionAt: 'yearSuffix' put: aString! !
-!JQDatepicker categoriesFor: #altField:!options/generated!public! !
-!JQDatepicker categoriesFor: #altFormat:!options/generated!public! !
-!JQDatepicker categoriesFor: #appendText:!options/generated!public! !
-!JQDatepicker categoriesFor: #autoSize:!options/generated!public! !
-!JQDatepicker categoriesFor: #buttonImage:!options/generated!public! !
-!JQDatepicker categoriesFor: #buttonImageOnly:!options/generated!public! !
-!JQDatepicker categoriesFor: #buttonText:!options/generated!public! !
-!JQDatepicker categoriesFor: #calculateWeek:!options/generated!public! !
-!JQDatepicker categoriesFor: #changeMonth:!options/generated!public! !
-!JQDatepicker categoriesFor: #changeYear:!options/generated!public! !
-!JQDatepicker categoriesFor: #closeText:!options/generated!public! !
-!JQDatepicker categoriesFor: #constrainInput:!options/generated!public! !
-!JQDatepicker categoriesFor: #currentText:!options/generated!public! !
-!JQDatepicker categoriesFor: #dateFormat:!options/generated!public! !
-!JQDatepicker categoriesFor: #dayNames:!options/generated!public! !
-!JQDatepicker categoriesFor: #dayNamesMin:!options/generated!public! !
-!JQDatepicker categoriesFor: #dayNamesShort:!options/generated!public! !
-!JQDatepicker categoriesFor: #defaultDate:!options/generated!public! !
-!JQDatepicker categoriesFor: #duration:!options/generated!public! !
-!JQDatepicker categoriesFor: #firstDay:!options/generated!public! !
-!JQDatepicker categoriesFor: #getDate!actions!public! !
-!JQDatepicker categoriesFor: #gotoCurrent:!options/generated!public! !
-!JQDatepicker categoriesFor: #hide!actions!public! !
-!JQDatepicker categoriesFor: #hideIfNoPrevNext:!options/generated!public! !
-!JQDatepicker categoriesFor: #isDisabled!actions!public! !
-!JQDatepicker categoriesFor: #isRTL:!options/generated!public! !
-!JQDatepicker categoriesFor: #maxDate:!options/generated!public! !
-!JQDatepicker categoriesFor: #method!accessing!public! !
-!JQDatepicker categoriesFor: #minDate:!options/generated!public! !
-!JQDatepicker categoriesFor: #monthNames:!options/generated!public! !
-!JQDatepicker categoriesFor: #monthNamesShort:!options/generated!public! !
-!JQDatepicker categoriesFor: #navigationAsDateFormat:!options/generated!public! !
-!JQDatepicker categoriesFor: #nextText:!options/generated!public! !
-!JQDatepicker categoriesFor: #numberOfMonths:!options/generated!public! !
-!JQDatepicker categoriesFor: #onBeforeShow:!events/generated!public! !
-!JQDatepicker categoriesFor: #onBeforeShowDay:!events/generated!public! !
-!JQDatepicker categoriesFor: #onChangeMonthYear:!events/generated!public! !
-!JQDatepicker categoriesFor: #onClose:!events/generated!public! !
-!JQDatepicker categoriesFor: #onSelect:!events/generated!public! !
-!JQDatepicker categoriesFor: #prevText:!options/generated!public! !
-!JQDatepicker categoriesFor: #selectOtherMonths:!options/generated!public! !
-!JQDatepicker categoriesFor: #setDate:!actions!public! !
-!JQDatepicker categoriesFor: #shortYearCutoff:!options/generated!public! !
-!JQDatepicker categoriesFor: #show!actions!public! !
-!JQDatepicker categoriesFor: #showAnim:!options/generated!public! !
-!JQDatepicker categoriesFor: #showButtonPanel:!options/generated!public! !
-!JQDatepicker categoriesFor: #showCurrentAtPos:!options/generated!public! !
-!JQDatepicker categoriesFor: #showMonthAfterYear:!options/generated!public! !
-!JQDatepicker categoriesFor: #showOn:!options/generated!public! !
-!JQDatepicker categoriesFor: #showOptions:!options/generated!public! !
-!JQDatepicker categoriesFor: #showOtherMonths:!options/generated!public! !
-!JQDatepicker categoriesFor: #showWeek:!options/generated!public! !
-!JQDatepicker categoriesFor: #stepMonths:!options/generated!public! !
-!JQDatepicker categoriesFor: #weekHeader:!options/generated!public! !
-!JQDatepicker categoriesFor: #yearRange:!options/generated!public! !
-!JQDatepicker categoriesFor: #yearSuffix:!options/generated!public! !
+
+!JQDatepicker categoriesForMethods!
+altField:!options/generated!public! !
+altFormat:!options/generated!public! !
+appendText:!options/generated!public! !
+autoSize:!options/generated!public! !
+buttonImage:!options/generated!public! !
+buttonImageOnly:!options/generated!public! !
+buttonText:!options/generated!public! !
+calculateWeek:!options/generated!public! !
+changeMonth:!options/generated!public! !
+changeYear:!options/generated!public! !
+closeText:!options/generated!public! !
+constrainInput:!options/generated!public! !
+currentText:!options/generated!public! !
+dateFormat:!options/generated!public! !
+dayNames:!options/generated!public! !
+dayNamesMin:!options/generated!public! !
+dayNamesShort:!options/generated!public! !
+defaultDate:!options/generated!public! !
+duration:!options/generated!public! !
+firstDay:!options/generated!public! !
+getDate!actions!public! !
+gotoCurrent:!options/generated!public! !
+hide!actions!public! !
+hideIfNoPrevNext:!options/generated!public! !
+isDisabled!actions!public! !
+isRTL:!options/generated!public! !
+maxDate:!options/generated!public! !
+method!accessing!public! !
+minDate:!options/generated!public! !
+monthNames:!options/generated!public! !
+monthNamesShort:!options/generated!public! !
+navigationAsDateFormat:!options/generated!public! !
+nextText:!options/generated!public! !
+numberOfMonths:!options/generated!public! !
+onBeforeShow:!events/generated!public! !
+onBeforeShowDay:!events/generated!public! !
+onChangeMonthYear:!events/generated!public! !
+onClose:!events/generated!public! !
+onSelect:!events/generated!public! !
+onUpdateDatePicker:!events/generated!public! !
+prevText:!options/generated!public! !
+selectOtherMonths:!options/generated!public! !
+setDate:!actions!public! !
+shortYearCutoff:!options/generated!public! !
+show!actions!public! !
+showAnim:!options/generated!public! !
+showButtonPanel:!options/generated!public! !
+showCurrentAtPos:!options/generated!public! !
+showMonthAfterYear:!options/generated!public! !
+showOn:!options/generated!public! !
+showOptions:!options/generated!public! !
+showOtherMonths:!options/generated!public! !
+showWeek:!options/generated!public! !
+stepMonths:!options/generated!public! !
+weekHeader:!options/generated!public! !
+yearRange:!options/generated!public! !
+yearSuffix:!options/generated!public! !
+!
 

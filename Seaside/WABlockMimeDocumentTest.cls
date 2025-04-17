@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 TestCase subclass: #WABlockMimeDocumentTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WABlockMimeDocumentTest guid: (GUID fromString: '{14cd0052-f4e7-4b1c-b6a2-170823b97919}')!
+
+WABlockMimeDocumentTest guid: (GUID fromString: '{813b9906-6310-4270-82d6-47b052e2257a}')!
+
 WABlockMimeDocumentTest comment: ''!
-!WABlockMimeDocumentTest categoriesForClass!Seaside-Tests-Core-HTTP! !
+
+!WABlockMimeDocumentTest categoriesForClass!HTTP! !
+
 !WABlockMimeDocumentTest methodsFor!
 
 testAsMIMEDocumentByteArray	| document content |	document := WABlockMimeDocument onBlock: [ #(1 2 3 4) asByteArray ].	self assert: document contentType = WAMimeType applicationOctetStream.	content := document content.	self assert: content size = 4.	self assert: content class = ByteArray.	1 to: 4 do: [ :index | self assert: (content at: index) = index ]!
@@ -18,13 +22,16 @@ testAsMIMEDocumentString	| document |	document := (WABlockMimeDocument onBlock
 
 testAsMIMEDocumentStringColon	| document |	document := WABlockMimeDocument onBlock: [ 'hello Seaside' ].	document mimeType: 'text/x-weirdo' seasideMimeType.	self assert: document contentType = 'text/x-weirdo' seasideMimeType.	self assert: document content = 'hello Seaside'!
 
-testByteArraySeasideMimeDocumentType	| document mpeg |	mpeg := WAMimeType main: 'audio' sub: 'mpeg'.	document :=  (WABlockMimeDocument onBlock: [ #(1 2 3 4) asByteArray ]) seasideMimeDocumentType: mpeg.	self assert: document mimeType = mpeg.	self assert: document contents = #(1 2 3 4) asByteArray !
+testByteArraySeasideMimeDocumentType	| document mpeg |	mpeg := WAMimeType main: 'audio' sub: 'mpeg'.	document :=  (WABlockMimeDocument onBlock: [ #(1 2 3 4) asByteArray ]) seasideMimeDocumentType: mpeg.	self assert: document mimeType = mpeg.	self assert: document contents = #(1 2 3 4) asByteArray!
 
 testStringSeasideMimeDocumentType	| document csv |	csv := WAMimeType main: 'text' sub: 'csv'.	document := (WABlockMimeDocument onBlock: [ 'foo,bar' ]) seasideMimeDocumentType: csv.	self assert: document mimeType = csv.	self assert: document contents = 'foo,bar'! !
-!WABlockMimeDocumentTest categoriesFor: #testAsMIMEDocumentByteArray!public!tests! !
-!WABlockMimeDocumentTest categoriesFor: #testAsMIMEDocumentByteArrayColon!public!tests! !
-!WABlockMimeDocumentTest categoriesFor: #testAsMIMEDocumentString!public!tests! !
-!WABlockMimeDocumentTest categoriesFor: #testAsMIMEDocumentStringColon!public!tests! !
-!WABlockMimeDocumentTest categoriesFor: #testByteArraySeasideMimeDocumentType!public!tests! !
-!WABlockMimeDocumentTest categoriesFor: #testStringSeasideMimeDocumentType!public!tests! !
+
+!WABlockMimeDocumentTest categoriesForMethods!
+testAsMIMEDocumentByteArray!public!tests! !
+testAsMIMEDocumentByteArrayColon!public!tests! !
+testAsMIMEDocumentString!public!tests! !
+testAsMIMEDocumentStringColon!public!tests! !
+testByteArraySeasideMimeDocumentType!public!tests! !
+testStringSeasideMimeDocumentType!public!tests! !
+!
 

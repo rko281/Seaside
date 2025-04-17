@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAFunctionalTest subclass: #WAParameterFunctionalTest
 	instanceVariableNames: 'wasExecuted values'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAParameterFunctionalTest guid: (GUID fromString: '{6cc2697a-1a1a-4e94-bca4-1491e527439a}')!
+
+WAParameterFunctionalTest guid: (GUID fromString: '{250198a6-5d25-4b1f-86f5-615bce052dcf}')!
+
 WAParameterFunctionalTest comment: 'A WAParameterFunctionalTest tests whether GET and POST fields are merged in WARequest >> #fields.'!
-!WAParameterFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
+
+!WAParameterFunctionalTest categoriesForClass!Unclassified! !
+
 !WAParameterFunctionalTest methodsFor!
 
 actionUrlFor: html	| url |	url := html actionUrl copy.	url		addField: self parameterName		value: self firstParameterValue.	^ url!
@@ -31,15 +35,18 @@ runTest	values := self requestContext request fields allAt: self parameterName.
 secondParameterValue	^ 'secondValue'!
 
 wasSuccessful	^ values notNil		and: [ values isCollection		and: [ values isString not		and: [ values size = 2		and: [ (values includes: self firstParameterValue)		and: [ (values includes: self secondParameterValue) ] ] ] ] ]! !
-!WAParameterFunctionalTest categoriesFor: #actionUrlFor:!accessing!public! !
-!WAParameterFunctionalTest categoriesFor: #firstParameterValue!accessing!public! !
-!WAParameterFunctionalTest categoriesFor: #initialize!initialization!public! !
-!WAParameterFunctionalTest categoriesFor: #parameterName!accessing!public! !
-!WAParameterFunctionalTest categoriesFor: #renderContentOn:!public!rendering! !
-!WAParameterFunctionalTest categoriesFor: #renderExecutedOn:!public!rendering! !
-!WAParameterFunctionalTest categoriesFor: #renderExplanationOn:!public!rendering! !
-!WAParameterFunctionalTest categoriesFor: #renderNotExecutedOn:!public!rendering! !
-!WAParameterFunctionalTest categoriesFor: #runTest!actions!public! !
-!WAParameterFunctionalTest categoriesFor: #secondParameterValue!accessing!public! !
-!WAParameterFunctionalTest categoriesFor: #wasSuccessful!public!testing! !
+
+!WAParameterFunctionalTest categoriesForMethods!
+actionUrlFor:!accessing!public! !
+firstParameterValue!accessing!public! !
+initialize!initialization!public! !
+parameterName!accessing!public! !
+renderContentOn:!public!rendering! !
+renderExecutedOn:!public!rendering! !
+renderExplanationOn:!public!rendering! !
+renderNotExecutedOn:!public!rendering! !
+runTest!actions!public! !
+secondParameterValue!accessing!public! !
+wasSuccessful!public!testing! !
+!
 

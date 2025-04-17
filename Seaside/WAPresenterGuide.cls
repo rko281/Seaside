@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAPainterVisitor subclass: #WAPresenterGuide
 	instanceVariableNames: 'client'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAPresenterGuide guid: (GUID fromString: '{c91b63d7-99da-4ff8-a89a-4d9ecfb9e825}')!
+
+WAPresenterGuide guid: (GUID fromString: '{0c462fbd-c24c-4a00-b295-85a810529261}')!
+
 WAPresenterGuide comment: 'WAPresenterGuides takes another WAPainterVisitor as a client. When asked to visit a Component, they will first visit its Decorations. Along the way, they will ask their client to visit each Painter they come across.This allows us to separate the behaviour of the various Presenter-tree traversal methods from the behaviour to perform on each Presenter we visit.'!
-!WAPresenterGuide categoriesForClass!Seaside-Component-Visitors! !
+
+!WAPresenterGuide categoriesForClass!Visitors! !
+
 !WAPresenterGuide methodsFor!
 
 client	^ client!
@@ -19,17 +23,26 @@ postCopyForRenderContext: aRenderContext	super postCopyForRenderContext: aRende
 visit: aPainter	aPainter acceptDecorated: self!
 
 visitPainter: aPainter	self client visit: aPainter! !
-!WAPresenterGuide categoriesFor: #client!accessing!public! !
-!WAPresenterGuide categoriesFor: #initializeWithClient:!initialization!public! !
-!WAPresenterGuide categoriesFor: #postCopyForRenderContext:!copying!public! !
-!WAPresenterGuide categoriesFor: #visit:!public!visiting! !
-!WAPresenterGuide categoriesFor: #visitPainter:!public!visiting! !
+
+!WAPresenterGuide categoriesForMethods!
+client!accessing!public! !
+initializeWithClient:!initialization!public! !
+postCopyForRenderContext:!copying!public! !
+visit:!public!visiting! !
+visitPainter:!public!visiting! !
+!
 
 !WAPresenterGuide class methodsFor!
 
 client: aPainterVisitor	^ self basicNew initializeWithClient: aPainterVisitor; yourself!
 
+isAbstract 	^ self == WAPresenterGuide!
+
 new	^ self client: WAPainterVisitor new! !
-!WAPresenterGuide class categoriesFor: #client:!instance creation!public! !
-!WAPresenterGuide class categoriesFor: #new!instance creation!public! !
+
+!WAPresenterGuide class categoriesForMethods!
+client:!instance creation!public! !
+isAbstract!public!testing! !
+new!instance creation!public! !
+!
 

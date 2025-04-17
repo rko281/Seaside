@@ -1,10 +1,14 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WANotification subclass: #WAValidationNotification
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAValidationNotification guid: (GUID fromString: '{d42884b1-c3d7-4a1f-8329-eaba166733df}')!
-WAValidationNotification comment: 'WADecoration subclass: #WAWidgetDecoration	instanceVariableNames: ''''	classVariableNames: ''''	package: ''Seaside-Widgets-Decorations'''!
-!WAValidationNotification categoriesForClass!Seaside-Widgets-Decorations! !
+
+WAValidationNotification guid: (GUID fromString: '{b7b6582b-c183-4e6d-b311-2140d0f487d9}')!
+
+WAValidationNotification comment: 'I am signaled to indicate that a validation has occurred.  See: WAFormDialog>>#validationError:, WAComponent>>validateWith: and WAValidationDecoration.'!
+
+!WAValidationNotification categoriesForClass!Decorations! !
+

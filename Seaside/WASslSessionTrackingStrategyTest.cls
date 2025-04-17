@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAInvisibleSessionTrackingStrategyTest subclass: #WASslSessionTrackingStrategyTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WASslSessionTrackingStrategyTest guid: (GUID fromString: '{c2f4d8ac-4459-4885-af44-25284f4512e6}')!
+
+WASslSessionTrackingStrategyTest guid: (GUID fromString: '{8bf332b2-8816-45fa-9797-99ba4cda147c}')!
+
 WASslSessionTrackingStrategyTest comment: ''!
-!WASslSessionTrackingStrategyTest categoriesForClass!Seaside-Tests-Session! !
+
+!WASslSessionTrackingStrategyTest categoriesForClass!Unclassified! !
+
 !WASslSessionTrackingStrategyTest methodsFor!
 
 createRequest	^ super createRequest		setSslSessionId: self sslSessionId;		yourself!
@@ -17,8 +21,11 @@ newStrategy	^ WASslSessionTrackingStrategy new!
 sessionId	^ self sslSessionId!
 
 sslSessionId	^ 'F42BAA17C89C707060E6BF5D251CC7E8832117056C1A8B0883387CA0EDDB52CF'! !
-!WASslSessionTrackingStrategyTest categoriesFor: #createRequest!private! !
-!WASslSessionTrackingStrategyTest categoriesFor: #newStrategy!private! !
-!WASslSessionTrackingStrategyTest categoriesFor: #sessionId!private! !
-!WASslSessionTrackingStrategyTest categoriesFor: #sslSessionId!private! !
+
+!WASslSessionTrackingStrategyTest categoriesForMethods!
+createRequest!private! !
+newStrategy!private! !
+sessionId!private! !
+sslSessionId!private! !
+!
 

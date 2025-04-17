@@ -1,15 +1,22 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQBaseTheme subclass: #JQRedmondTheme
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQRedmondTheme guid: (GUID fromString: '{88905610-5f90-4464-a817-d78f0d22c791}')!
+
+JQRedmondTheme guid: (GUID fromString: '{79059e21-a6d8-437d-89c5-3c2b33444857}')!
+
 JQRedmondTheme comment: ''!
-!JQRedmondTheme categoriesForClass!JQuery-UI-Libraries! !
+
+!JQRedmondTheme categoriesForClass!Libraries! !
+
 !JQRedmondTheme methodsFor!
 
 themeName	^ 'redmond'! !
-!JQRedmondTheme categoriesFor: #themeName!accessing!public! !
+
+!JQRedmondTheme categoriesForMethods!
+themeName!accessing!public! !
+!
 

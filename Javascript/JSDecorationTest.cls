@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JSObjectTest subclass: #JSDecorationTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSDecorationTest guid: (GUID fromString: '{b2e3ba4b-c44b-489c-98e3-4834dfc6679e}')!
+
+JSDecorationTest guid: (GUID fromString: '{d3f057b2-6736-4e8e-9ef4-bf47f934a310}')!
+
 JSDecorationTest comment: ''!
-!JSDecorationTest categoriesForClass!Javascript-Tests-Core! !
+
+!JSDecorationTest categoriesForClass!Unclassified! !
+
 !JSDecorationTest methodsFor!
 
 testAccess	self		assert: (self mock access: 'foo')		equals: 'mock.foo'!
@@ -55,27 +59,30 @@ testReturn	self		assert: (self mock return: 1)		equals: 'mock;return 1'!
 testThenElse	| mock |	mock := self mock.	mock then: 1.	self assert: mock equals: '(mock?1:null)'.	mock := self mock.	mock then: 1 else: 2.	self assert: mock equals: '(mock?1:2)'!
 
 testTimeout	| mock |	mock := self mock.	mock setTimeout: 123.	self assert: mock equals: 'setTimeout(function(){mock},123)'! !
-!JSDecorationTest categoriesFor: #testAccess!public!tests! !
-!JSDecorationTest categoriesFor: #testAlias!public!tests! !
-!JSDecorationTest categoriesFor: #testApply!public!tests! !
-!JSDecorationTest categoriesFor: #testAssign!public!tests! !
-!JSDecorationTest categoriesFor: #testAssignLocalTo!public!tests! !
-!JSDecorationTest categoriesFor: #testAssignTo!public!tests! !
-!JSDecorationTest categoriesFor: #testBinary!public!tests! !
-!JSDecorationTest categoriesFor: #testCall!public!tests! !
-!JSDecorationTest categoriesFor: #testCallWith!public!tests! !
-!JSDecorationTest categoriesFor: #testCallWithArguments!public!tests! !
-!JSDecorationTest categoriesFor: #testCallWithWith!public!tests! !
-!JSDecorationTest categoriesFor: #testCallWithWithWith!public!tests! !
-!JSDecorationTest categoriesFor: #testConcatenate!public!tests! !
-!JSDecorationTest categoriesFor: #testCondition!public!tests! !
-!JSDecorationTest categoriesFor: #testConditionElse!public!tests! !
-!JSDecorationTest categoriesFor: #testConfirm!public!tests! !
-!JSDecorationTest categoriesFor: #testCreate!public!tests! !
-!JSDecorationTest categoriesFor: #testInterval!public!tests! !
-!JSDecorationTest categoriesFor: #testNot!public!tests! !
-!JSDecorationTest categoriesFor: #testProperty!public!tests! !
-!JSDecorationTest categoriesFor: #testReturn!public!tests! !
-!JSDecorationTest categoriesFor: #testThenElse!public!tests! !
-!JSDecorationTest categoriesFor: #testTimeout!public!tests! !
+
+!JSDecorationTest categoriesForMethods!
+testAccess!public!tests! !
+testAlias!public!tests! !
+testApply!public!tests! !
+testAssign!public!tests! !
+testAssignLocalTo!public!tests! !
+testAssignTo!public!tests! !
+testBinary!public!tests! !
+testCall!public!tests! !
+testCallWith!public!tests! !
+testCallWithArguments!public!tests! !
+testCallWithWith!public!tests! !
+testCallWithWithWith!public!tests! !
+testConcatenate!public!tests! !
+testCondition!public!tests! !
+testConditionElse!public!tests! !
+testConfirm!public!tests! !
+testCreate!public!tests! !
+testInterval!public!tests! !
+testNot!public!tests! !
+testProperty!public!tests! !
+testReturn!public!tests! !
+testThenElse!public!tests! !
+testTimeout!public!tests! !
+!
 

@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQWidget subclass: #JQAccordion
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQAccordion guid: (GUID fromString: '{4e3ac410-ac4c-4437-a4ad-514d883a20f8}')!
+
+JQAccordion guid: (GUID fromString: '{d72355cf-7ecb-4ada-9210-adb38e90438d}')!
+
 JQAccordion comment: 'An expandable/collapsible content pane. Applicable when content must be displayed within limited space.'!
-!JQAccordion categoriesForClass!JQuery-UI-Widgets! !
+
+!JQAccordion categoriesForClass!Widgets! !
+
 !JQAccordion methodsFor!
 
 active: aSelectorOrElementOrjQueryOrBooleanOrNumber	"Selector for the active element. Set to false to display none at start. Needs collapsible: true."	self optionAt: 'active' put: aSelectorOrElementOrjQueryOrBooleanOrNumber!
@@ -35,17 +39,20 @@ onActivate: anObject	"Triggered after a panel has been activated (after animati
 onCreate: anObject	"Triggered when the accordion is created. If the accordion is collapsed, ui.header and ui.panel will be empty jQuery objects"	self optionAt: 'create' put: anObject asFunction!
 
 refresh	"Process any headers and panels that were added or removed directly in the DOM and recompute the height of the accordion panels. Results depend on the content and the heightStyle option."		self action: 'refresh'! !
-!JQAccordion categoriesFor: #active:!options/generated!public! !
-!JQAccordion categoriesFor: #animate:!options/generated!public! !
-!JQAccordion categoriesFor: #beforeActivate:!events/generated!public! !
-!JQAccordion categoriesFor: #collapsible:!options/generated!public! !
-!JQAccordion categoriesFor: #disabled:!options/generated!public! !
-!JQAccordion categoriesFor: #event:!options/generated!public! !
-!JQAccordion categoriesFor: #header:!options/generated!public! !
-!JQAccordion categoriesFor: #heightStyle:!options/generated!public! !
-!JQAccordion categoriesFor: #icons:!options/generated!public! !
-!JQAccordion categoriesFor: #method!accessing!public! !
-!JQAccordion categoriesFor: #onActivate:!events/generated!public! !
-!JQAccordion categoriesFor: #onCreate:!events/generated!public! !
-!JQAccordion categoriesFor: #refresh!actions!public! !
+
+!JQAccordion categoriesForMethods!
+active:!options/generated!public! !
+animate:!options/generated!public! !
+beforeActivate:!events/generated!public! !
+collapsible:!options/generated!public! !
+disabled:!options/generated!public! !
+event:!options/generated!public! !
+header:!options/generated!public! !
+heightStyle:!options/generated!public! !
+icons:!options/generated!public! !
+method!accessing!public! !
+onActivate:!events/generated!public! !
+onCreate:!events/generated!public! !
+refresh!actions!public! !
+!
 

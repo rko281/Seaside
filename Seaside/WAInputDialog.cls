@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WACanvasWidget subclass: #WAInputDialog
 	instanceVariableNames: 'label value'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAInputDialog guid: (GUID fromString: '{adef7c8e-ef5a-4f94-8688-99266f93d0d5}')!
+
+WAInputDialog guid: (GUID fromString: '{17847734-b189-40b3-a50c-35329033aba3}')!
+
 WAInputDialog comment: 'WAInputDialog generates a simple form with a text input field and a submit button. The instance variable "value" is used for initial value of the text field and hold the text entered by user. WAInputDialog answers with text entered by user (value of "value"). See WAComponent>>request:label:default: for sample use and easy way to use WAInputDialog.Instance Variables:	label	<String>	label of submit button	value	<Object | String>	'!
-!WAInputDialog categoriesForClass!Seaside-Widgets-Components! !
+
+!WAInputDialog categoriesForClass!Components! !
+
 !WAInputDialog methodsFor!
 
 default: aString	value := aString!
@@ -21,10 +25,13 @@ renderContentOn: html	html form		defaultAction: [ self answer: value ];		with
 value	^ value!
 
 value: aString	value := aString! !
-!WAInputDialog categoriesFor: #default:!accessing!public! !
-!WAInputDialog categoriesFor: #label!accessing!public! !
-!WAInputDialog categoriesFor: #label:!accessing!public! !
-!WAInputDialog categoriesFor: #renderContentOn:!public!rendering! !
-!WAInputDialog categoriesFor: #value!accessing!public! !
-!WAInputDialog categoriesFor: #value:!accessing!public! !
+
+!WAInputDialog categoriesForMethods!
+default:!accessing!public! !
+label!accessing!public! !
+label:!accessing!public! !
+renderContentOn:!public!rendering! !
+value!accessing!public! !
+value:!accessing!public! !
+!
 

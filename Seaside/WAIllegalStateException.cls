@@ -1,10 +1,14 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAError subclass: #WAIllegalStateException
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAIllegalStateException guid: (GUID fromString: '{a5152d71-416a-4bc4-84d2-7e11bf7fef69}')!
+
+WAIllegalStateException guid: (GUID fromString: '{92f98f49-3e63-4b30-92f8-f6fb929b0e5d}')!
+
 WAIllegalStateException comment: ''!
-!WAIllegalStateException categoriesForClass!Seaside-Core-HTTP! !
+
+!WAIllegalStateException categoriesForClass!HTTP! !
+

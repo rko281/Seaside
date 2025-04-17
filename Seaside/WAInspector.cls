@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WATool subclass: #WAInspector
 	instanceVariableNames: 'path selected input'
 	classVariableNames: 'Current'
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAInspector guid: (GUID fromString: '{84688318-61ac-455f-9d13-32d5c4d3b352}')!
+
+WAInspector guid: (GUID fromString: '{1790737c-e467-4437-af53-d96b4525d7dd}')!
+
 WAInspector comment: 'This is an abstract implementation of a web-based object inspector. Platforms should implement their own subclasses, specifying behaviour for all unimplemented methods.Note that #openNativeInspectorOn: on the class-side also needs to be implemented.Also subclasses probably want to implement #initialize and #unload on the class-side to call ''self select'' and ''self unselect'' respectively. This will ensure they are registered as the current implementation when they are loaded.'!
-!WAInspector categoriesForClass!Seaside-Development-Core! !
+
+!WAInspector categoriesForClass!Core! !
+
 !WAInspector methodsFor!
 
 actions	"A list of action selectors used to render buttons in the Inspector."	^ #(doIt inspectIt)!
@@ -41,22 +45,25 @@ renderMembersOn: html	| members radioGroup |	selected := nil.	members := self
 renderRow: anObject named: aString group: aRadioGroup on: html	| radioButton |	html tableRow: [		html tableHeading: [			radioButton := aRadioGroup radioButton				ensureId;				value: aString;				yourself.			html label for: radioButton id; with: [				(self isPrimitiveType: anObject)					ifTrue: [ html text: aString ]					ifFalse: [						html anchor							callback: [ self chooseObject: anObject named: aString ];							with: aString ] ] ].		html tableData: (anObject printStringLimitedTo: 100) ]!
 
 style	^ 'form {	padding: 2px;	margin: 0;}form th {	text-align: left;	padding-right: 2em;}form textarea {	width: 100%;	height: 100px;	border: 1px solid #aaa;}'! !
-!WAInspector categoriesFor: #actions!actions!public! !
-!WAInspector categoriesFor: #children!hooks!public! !
-!WAInspector categoriesFor: #chooseObject:named:!actions!public! !
-!WAInspector categoriesFor: #doIt!actions!public! !
-!WAInspector categoriesFor: #evaluate!actions!public! !
-!WAInspector categoriesFor: #fieldsFor:!private! !
-!WAInspector categoriesFor: #initialize!initialization!public! !
-!WAInspector categoriesFor: #inspectIt!actions!public! !
-!WAInspector categoriesFor: #isPrimitiveType:!public!testing! !
-!WAInspector categoriesFor: #object!accessing!public! !
-!WAInspector categoriesFor: #object:!accessing!public! !
-!WAInspector categoriesFor: #renderContentOn:!public!rendering! !
-!WAInspector categoriesFor: #renderEditAreaOn:!public!rendering! !
-!WAInspector categoriesFor: #renderMembersOn:!public!rendering! !
-!WAInspector categoriesFor: #renderRow:named:group:on:!public!rendering! !
-!WAInspector categoriesFor: #style!hooks!public! !
+
+!WAInspector categoriesForMethods!
+actions!actions!public! !
+children!hooks!public! !
+chooseObject:named:!actions!public! !
+doIt!actions!public! !
+evaluate!actions!public! !
+fieldsFor:!private! !
+initialize!initialization!public! !
+inspectIt!actions!public! !
+isPrimitiveType:!public!testing! !
+object!accessing!public! !
+object:!accessing!public! !
+renderContentOn:!public!rendering! !
+renderEditAreaOn:!public!rendering! !
+renderMembersOn:!public!rendering! !
+renderRow:named:group:on:!public!rendering! !
+style!hooks!public! !
+!
 
 !WAInspector class methodsFor!
 
@@ -69,9 +76,12 @@ on: anObject	^ self new object: anObject; yourself!
 select	self current: self!
 
 unselect	(self current = self) ifTrue: [ self current: nil ]! !
-!WAInspector class categoriesFor: #current!public!registration! !
-!WAInspector class categoriesFor: #current:!public!registration! !
-!WAInspector class categoriesFor: #on:!instance creation!public! !
-!WAInspector class categoriesFor: #select!public!registration! !
-!WAInspector class categoriesFor: #unselect!public!registration! !
+
+!WAInspector class categoriesForMethods!
+current!public!registration! !
+current:!public!registration! !
+on:!instance creation!public! !
+select!public!registration! !
+unselect!public!registration! !
+!
 

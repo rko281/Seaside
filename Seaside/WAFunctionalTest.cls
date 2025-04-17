@@ -1,20 +1,30 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAComponent subclass: #WAFunctionalTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAFunctionalTest guid: (GUID fromString: '{fa21fe3e-4986-430f-864c-3135936bb8ff}')!
+
+WAFunctionalTest guid: (GUID fromString: '{b2d48a3e-f4c8-41ad-b1d4-36523916a967}')!
+
 WAFunctionalTest comment: ''!
-!WAFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
+
+!WAFunctionalTest categoriesForClass!Unclassified! !
+
 !WAFunctionalTest methodsFor!
 
 updateRoot: anHtmlRoot	super updateRoot: anHtmlRoot.	anHtmlRoot title: self class name greaseString! !
-!WAFunctionalTest categoriesFor: #updateRoot:!public!updating! !
+
+!WAFunctionalTest categoriesForMethods!
+updateRoot:!public!updating! !
+!
 
 !WAFunctionalTest class methodsFor!
 
 isFunctionalTest	^ self name ~= #WAFunctionalTest! !
-!WAFunctionalTest class categoriesFor: #isFunctionalTest!public!testing! !
+
+!WAFunctionalTest class categoriesForMethods!
+isFunctionalTest!public!testing! !
+!
 

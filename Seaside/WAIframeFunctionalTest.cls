@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAFunctionalTest subclass: #WAIframeFunctionalTest
 	instanceVariableNames: 'batchFunctionalTest'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAIframeFunctionalTest guid: (GUID fromString: '{25b07c84-980f-4b64-85c5-b2ad8391cefe}')!
+
+WAIframeFunctionalTest guid: (GUID fromString: '{10a5b1da-0bf9-4814-801a-193720e53324}')!
+
 WAIframeFunctionalTest comment: ''!
-!WAIframeFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
+
+!WAIframeFunctionalTest categoriesForClass!Unclassified! !
+
 !WAIframeFunctionalTest methodsFor!
 
 batchFunctionalTestLoop	self session presenter		show: WABatchFunctionalTest new!
@@ -19,9 +23,12 @@ initialize	super initialize.	batchFunctionalTest := WABatchFunctionalTest new!
 renderContentOn: html	html paragraph: 'With #contents:'.	html iframe		contents: batchFunctionalTest.	html paragraph: 'With #url:'.	html iframe		url: (WATestingFiles / #samplePng).	html paragraph: 'With #document:'.	html iframe		document: WATestingFiles default samplePng		mimeType: 'image/png'.	html paragraph: 'With #document:'.	html iframe		document: WATestingFiles default samplePng		mimeType: 'image/png'.		html paragraph: 'With #callback:'.	html iframe		callback: [ self batchFunctionalTestLoop ]!
 
 style	^ 'iframe {	border: 1px solid gray;	width: 100%;}'! !
-!WAIframeFunctionalTest categoriesFor: #batchFunctionalTestLoop!actions!public! !
-!WAIframeFunctionalTest categoriesFor: #children!hooks!public! !
-!WAIframeFunctionalTest categoriesFor: #initialize!initialization!public! !
-!WAIframeFunctionalTest categoriesFor: #renderContentOn:!public!rendering! !
-!WAIframeFunctionalTest categoriesFor: #style!hooks!public! !
+
+!WAIframeFunctionalTest categoriesForMethods!
+batchFunctionalTestLoop!actions!public! !
+children!hooks!public! !
+initialize!initialization!public! !
+renderContentOn:!public!rendering! !
+style!hooks!public! !
+!
 

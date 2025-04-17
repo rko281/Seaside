@@ -3,7 +3,6 @@ package := Package name: 'JQuery-Tests-Core'.
 package paxVersion: 1;
 	basicComment: ''.
 
-
 package classNames
 	add: #JQAjaxFunctionalTest;
 	add: #JQAjaxTest;
@@ -25,10 +24,6 @@ package classNames
 	add: #JQWelcomeFunctionalTest;
 	yourself.
 
-package methodNames
-	add: 'GRPackage class' -> #jQueryTestsCore;
-	yourself.
-
 package binaryGlobalNames: (Set new
 	yourself).
 
@@ -41,6 +36,7 @@ package setPrerequisites: #(
 	'..\Javascript\Javascript-Core'
 	'..\Javascript\Javascript-Tests-Core'
 	'JQuery-Core'
+	'..\Seaside\Seaside-Ajaxifier-Core'
 	'..\Seaside\Seaside-Component'
 	'..\Seaside\Seaside-Core'
 	'..\Seaside\Seaside-Development'
@@ -56,101 +52,108 @@ WAFileLibrary subclass: #JQAllFunctionalTestsLibrary
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAComponent subclass: #JQAllFunctionalTests
 	instanceVariableNames: 'default tests contents'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAComponent subclass: #JQFunctionalTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JQFunctionalTest subclass: #JQAjaxFunctionalTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JQFunctionalTest subclass: #JQAnimateFunctionalTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JQFunctionalTest subclass: #JQCounterFunctionalTest
 	instanceVariableNames: 'count'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JQFunctionalTest subclass: #JQEffectsFunctionalTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JQFunctionalTest subclass: #JQFormFunctionalTest
 	instanceVariableNames: 'textInput textArea checkBox radioButton selectList multiSelectList fileInput fileInputs'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JQFunctionalTest subclass: #JQJsonFunctionalTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JQFunctionalTest subclass: #JQRepeatingFunctionalTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JQFunctionalTest subclass: #JQRequestFunctionalTest
 	instanceVariableNames: 'logger'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JQFunctionalTest subclass: #JQWelcomeFunctionalTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JSObjectTest subclass: #JQueryTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JQueryTest subclass: #JQAjaxTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JQueryTest subclass: #JQEffectsTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JQueryTest subclass: #JQEventTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JQueryTest subclass: #JQueryClassTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JQueryTest subclass: #JQueryInstanceTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-
-"Global Aliases"!
-
-
-"Loose Methods"!
-
-!GRPackage class methodsFor!
-
-jQueryTestsCore	^ self new		name: 'JQuery-Tests-Core';		description: 'Functional and unit tests for the JQuery-Core package.';		addDependency: 'JQuery-Core';		addDependency: 'Javascript-Tests-Core';		addDependency: 'Seaside-Development';		addDependency: 'Seaside-Tests-Functional';		url: #seasideUrl;		yourself! !
-!GRPackage class categoriesFor: #jQueryTestsCore!*jquery/tests/core!public! !
 
 "End of package definition"!
 

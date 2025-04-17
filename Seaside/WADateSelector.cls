@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WACanvasWidget subclass: #WADateSelector
 	instanceVariableNames: 'day month year startYear endYear'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WADateSelector guid: (GUID fromString: '{3f61bf26-b761-480c-8b2e-1c5429719b18}')!
+
+WADateSelector guid: (GUID fromString: '{fad3acb8-5af9-4b1b-9130-60376f0ab32b}')!
+
 WADateSelector comment: 'WADateSelector displays dropdown menus (html select) allowing a user to delect a date within a range. "startYear" and "endYear" define the range of selectable dates. Date displayed in month, day, year format. WADateSelector>>date returns date user selected as a Date object.See WADateSelectorFunctionalTest for sample of usage.Select "Date Selector" tab of the Functional Seaside Test Suite to run an example  (http://127.0.0.1:xxxx/seaside/tests/alltests)Instance Variables:	day	<Integer 1-31> selected day	endYear	<Integer>	end of range of dates user is allowed to select, not required to use 4 digits	month	<Integer 1-12>	selected month	startYear	<Integer>	 start of range of dates user is allowed to select, not required to use 4 digits	year	<Integer>	selected year'!
-!WADateSelector categoriesForClass!Seaside-Widgets-Components! !
+
+!WADateSelector categoriesForClass!Components! !
+
 !WADateSelector methodsFor!
 
 date	(self privateIsValidDay: day monthNumber: month year: year)		ifFalse: [ self error: 'Invalid date' ].	^ self dateClass year: year month: month day: day!
@@ -57,28 +61,31 @@ year	^ year!
 year: anObject	year := anObject!
 
 yearRange	^ self startYear to: self endYear! !
-!WADateSelector categoriesFor: #date!accessing!public! !
-!WADateSelector categoriesFor: #date:!accessing!public! !
-!WADateSelector categoriesFor: #dateClass!private! !
-!WADateSelector categoriesFor: #dateIsValid!public!testing! !
-!WADateSelector categoriesFor: #day!accessing!public! !
-!WADateSelector categoriesFor: #day:!accessing!public! !
-!WADateSelector categoriesFor: #days!accessing!public! !
-!WADateSelector categoriesFor: #endYear!accessing!public! !
-!WADateSelector categoriesFor: #endYear:!accessing!public! !
-!WADateSelector categoriesFor: #initialize!initialization!public! !
-!WADateSelector categoriesFor: #labelForDay:!accessing!public! !
-!WADateSelector categoriesFor: #labelForMonth:!accessing!public! !
-!WADateSelector categoriesFor: #labelForYear:!accessing!public! !
-!WADateSelector categoriesFor: #month!accessing!public! !
-!WADateSelector categoriesFor: #month:!accessing!public! !
-!WADateSelector categoriesFor: #months!accessing!public! !
-!WADateSelector categoriesFor: #privateIsValidDay:monthNumber:year:!private! !
-!WADateSelector categoriesFor: #renderContentOn:!public!rendering! !
-!WADateSelector categoriesFor: #renderValidationErrorOn:!public!rendering! !
-!WADateSelector categoriesFor: #startYear!accessing!public! !
-!WADateSelector categoriesFor: #startYear:!accessing!public! !
-!WADateSelector categoriesFor: #year!accessing!public! !
-!WADateSelector categoriesFor: #year:!accessing!public! !
-!WADateSelector categoriesFor: #yearRange!accessing!public! !
+
+!WADateSelector categoriesForMethods!
+date!accessing!public! !
+date:!accessing!public! !
+dateClass!private! !
+dateIsValid!public!testing! !
+day!accessing!public! !
+day:!accessing!public! !
+days!accessing!public! !
+endYear!accessing!public! !
+endYear:!accessing!public! !
+initialize!initialization!public! !
+labelForDay:!accessing!public! !
+labelForMonth:!accessing!public! !
+labelForYear:!accessing!public! !
+month!accessing!public! !
+month:!accessing!public! !
+months!accessing!public! !
+privateIsValidDay:monthNumber:year:!private! !
+renderContentOn:!public!rendering! !
+renderValidationErrorOn:!public!rendering! !
+startYear!accessing!public! !
+startYear:!accessing!public! !
+year!accessing!public! !
+year:!accessing!public! !
+yearRange!accessing!public! !
+!
 

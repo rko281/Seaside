@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WATagBrush subclass: #WAHeadingTag
 	instanceVariableNames: 'level'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAHeadingTag guid: (GUID fromString: '{f25d9dc1-418c-4f28-8610-835d7f5ffcbb}')!
+
+WAHeadingTag guid: (GUID fromString: '{9c22206e-6844-4a63-b2cb-a2b6af8d3c92}')!
+
 WAHeadingTag comment: 'A heading element briefly describes the topic of the section it introduces. Heading information may be used by user agents, for example, to construct a table of contents for a document automatically.There are six levels of headings in HTML with H1 as the most important and H6 as the least. Visual browsers usually render more important headings in larger fonts than less important ones.'!
-!WAHeadingTag categoriesForClass!Seaside-Canvas-Tags! !
+
+!WAHeadingTag categoriesForClass!Tags! !
+
 !WAHeadingTag methodsFor!
 
 initialize	super initialize.	self level1!
@@ -29,14 +33,17 @@ level5	level := 5!
 level6	level := 6!
 
 tag	^ 'h' , self level greaseString! !
-!WAHeadingTag categoriesFor: #initialize!initialization!public! !
-!WAHeadingTag categoriesFor: #level!accessing!public! !
-!WAHeadingTag categoriesFor: #level:!accessing!public! !
-!WAHeadingTag categoriesFor: #level1!convenience!public! !
-!WAHeadingTag categoriesFor: #level2!convenience!public! !
-!WAHeadingTag categoriesFor: #level3!convenience!public! !
-!WAHeadingTag categoriesFor: #level4!convenience!public! !
-!WAHeadingTag categoriesFor: #level5!convenience!public! !
-!WAHeadingTag categoriesFor: #level6!convenience!public! !
-!WAHeadingTag categoriesFor: #tag!accessing!public! !
+
+!WAHeadingTag categoriesForMethods!
+initialize!initialization!public! !
+level!accessing!public! !
+level:!accessing!public! !
+level1!convenience!public! !
+level2!convenience!public! !
+level3!convenience!public! !
+level4!convenience!public! !
+level5!convenience!public! !
+level6!convenience!public! !
+tag!accessing!public! !
+!
 

@@ -1,18 +1,25 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQueryTest subclass: #JQueryUiTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQueryUiTest guid: (GUID fromString: '{eb0a69a7-ae0d-4835-a6bf-a69324d641fd}')!
+
+JQueryUiTest guid: (GUID fromString: '{29ab24bd-c2cf-419c-a53e-adcb0d2f0d9c}')!
+
 JQueryUiTest comment: ''!
-!JQueryUiTest categoriesForClass!JQuery-Tests-UI-Unit! !
+
+!JQueryUiTest categoriesForClass!Unit! !
+
 !JQueryUiTest class methodsFor!
 
 isAbstract	^ self name = #JQueryUiTest!
 
 packageNamesUnderTest	^ #('JQuery-UI')! !
-!JQueryUiTest class categoriesFor: #isAbstract!public!testing! !
-!JQueryUiTest class categoriesFor: #packageNamesUnderTest!accessing!public! !
+
+!JQueryUiTest class categoriesForMethods!
+isAbstract!public!testing! !
+packageNamesUnderTest!accessing!public! !
+!
 

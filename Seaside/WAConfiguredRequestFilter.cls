@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WARequestFilter subclass: #WAConfiguredRequestFilter
 	instanceVariableNames: 'configuration'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAConfiguredRequestFilter guid: (GUID fromString: '{b5543695-d8ee-49ed-8e62-657e855b348d}')!
+
+WAConfiguredRequestFilter guid: (GUID fromString: '{7e00445d-c102-4d94-80f8-bfb4b198b57e}')!
+
 WAConfiguredRequestFilter comment: ''!
-!WAConfiguredRequestFilter categoriesForClass!Seaside-Core-Filter! !
+
+!WAConfiguredRequestFilter categoriesForClass!Filter! !
+
 !WAConfiguredRequestFilter methodsFor!
 
 configuration	^ configuration!
@@ -15,7 +19,18 @@ configuration	^ configuration!
 defaultConfiguration	"Return the configuration (normally a new instance of WAUserConfiguration) to be	used with the Filter upon initialization."		self subclassResponsibility!
 
 initialize	super initialize.	configuration := self defaultConfiguration! !
-!WAConfiguredRequestFilter categoriesFor: #configuration!configuration!public! !
-!WAConfiguredRequestFilter categoriesFor: #defaultConfiguration!configuration!public! !
-!WAConfiguredRequestFilter categoriesFor: #initialize!initialization!public! !
+
+!WAConfiguredRequestFilter categoriesForMethods!
+configuration!configuration!public! !
+defaultConfiguration!configuration!public! !
+initialize!initialization!public! !
+!
+
+!WAConfiguredRequestFilter class methodsFor!
+
+isAbstract 	^ self == WAConfiguredRequestFilter! !
+
+!WAConfiguredRequestFilter class categoriesForMethods!
+isAbstract!public!testing! !
+!
 

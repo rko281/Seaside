@@ -1,18 +1,25 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WATableColumnGroupTag subclass: #WATableColumnTag
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WATableColumnTag guid: (GUID fromString: '{cd0741a2-cb30-4421-b755-3083db1e6d7d}')!
+
+WATableColumnTag guid: (GUID fromString: '{706c9836-301c-4310-82a8-a9bbfa1bc542}')!
+
 WATableColumnTag comment: 'WATableColumnTag elements define the alignment properties for cells in one or more columns.'!
-!WATableColumnTag categoriesForClass!Seaside-Canvas-Tags! !
+
+!WATableColumnTag categoriesForClass!Tags! !
+
 !WATableColumnTag methodsFor!
 
 isClosed	^ true!
 
 tag	^ 'col'! !
-!WATableColumnTag categoriesFor: #isClosed!public!testing! !
-!WATableColumnTag categoriesFor: #tag!accessing!public! !
+
+!WATableColumnTag categoriesForMethods!
+isClosed!public!testing! !
+tag!accessing!public! !
+!
 

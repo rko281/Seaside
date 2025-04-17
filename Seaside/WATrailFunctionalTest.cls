@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAFunctionalTest subclass: #WATrailFunctionalTest
 	instanceVariableNames: 'component trail'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WATrailFunctionalTest guid: (GUID fromString: '{ffb50f1a-290a-4181-89d8-ffd984af1c71}')!
+
+WATrailFunctionalTest guid: (GUID fromString: '{00372335-7f34-4b74-9391-753bc5845666}')!
+
 WATrailFunctionalTest comment: ''!
-!WATrailFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
+
+!WATrailFunctionalTest categoriesForClass!Unclassified! !
+
 !WATrailFunctionalTest methodsFor!
 
 children	^ Array with: trail with: component!
@@ -15,7 +19,10 @@ children	^ Array with: trail with: component!
 initialize	super initialize.	component := WATrailTestComponent new.	trail := WATrail on: component!
 
 renderContentOn: html	html render: trail.	html div: component! !
-!WATrailFunctionalTest categoriesFor: #children!hooks!public! !
-!WATrailFunctionalTest categoriesFor: #initialize!initialization!public! !
-!WATrailFunctionalTest categoriesFor: #renderContentOn:!public!rendering! !
+
+!WATrailFunctionalTest categoriesForMethods!
+children!hooks!public! !
+initialize!initialization!public! !
+renderContentOn:!public!rendering! !
+!
 

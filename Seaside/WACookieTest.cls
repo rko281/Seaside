@@ -1,16 +1,20 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAContextTest subclass: #WACookieTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WACookieTest guid: (GUID fromString: '{99fadbc3-150e-4fb3-859f-0288112bb199}')!
+
+WACookieTest guid: (GUID fromString: '{ee9a95e8-cd6e-417f-a876-dbac7ae9849c}')!
+
 WACookieTest comment: ''!
-!WACookieTest categoriesForClass!Seaside-Tests-Core-HTTP! !
+
+!WACookieTest categoriesForClass!HTTP! !
+
 !WACookieTest methodsFor!
 
-testCombine	| expiry actual cookie1 cookie2 |	expiry := DateAndTime year: 2007 month: 11 day: 21 hour: 14 minute: 42 second: 48 offset: (Duration days: 0 hours: 2 minutes: 0 seconds: 0).	cookie1 := WACookie key: 'ikuser' value: '1234'.	cookie1 expiry: expiry.	cookie2 := WACookie key: 'JSESSIONID' value: '8543783483494373483764'.		actual := WACookie		combine: (Array with: cookie1 with: cookie2)		using: [ :each | each rfc6265String ].	self assert: actual = 'ikuser=1234; expires=Wed, 21-Nov-2007 12:42:48 GMT; path=/, JSESSIONID=8543783483494373483764; path=/' !
+testCombine	| expiry actual cookie1 cookie2 |	expiry := DateAndTime year: 2007 month: 11 day: 21 hour: 14 minute: 42 second: 48 offset: (Duration days: 0 hours: 2 minutes: 0 seconds: 0).	cookie1 := WACookie key: 'ikuser' value: '1234'.	cookie1 expiry: expiry.	cookie2 := WACookie key: 'JSESSIONID' value: '8543783483494373483764'.		actual := WACookie		combine: (Array with: cookie1 with: cookie2)		using: [ :each | each rfc6265String ].	self assert: actual = 'ikuser=1234; expires=Wed, 21-Nov-2007 12:42:48 GMT; path=/, JSESSIONID=8543783483494373483764; path=/'!
 
 testCopy	| original copy |	original := (WACookie key: 'meta' value: 'phor')		ports: #(80) asOrderedCollection;		yourself.			copy := original copy.	copy ports at: 1 put: 443.			self assert: original ports size = 1.	self assert: original ports first = 80.		self assert: copy ports size = 1.	self assert: copy ports first = 443!
 
@@ -41,20 +45,23 @@ testSettingRootPath 	| cookie | 	cookie := WACookie new 		key: 'name'; 		val
 testWriteAttributes	| cookie |	cookie := (WACookie key: 'ikuser' value: '1234')		httpOnly: true;		secure: true;		sameSite: 'Strict';		yourself.	self assert: cookie rfc6265String = 'ikuser=1234; path=/; Secure; HttpOnly; SameSite=Strict'!
 
 testWriteOn	| expiry cookie |	expiry := DateAndTime year: 2007 month: 11 day: 21 hour: 14 minute: 42 second: 48 offset: (Duration days: 0 hours: 2 minutes: 0 seconds: 0).	cookie := WACookie key: 'ikuser' value: '1234'.	self assert: cookie rfc6265String = 'ikuser=1234; path=/'.		cookie expiry: expiry.	cookie maxAge: 3600.	self assert: cookie rfc6265String = 'ikuser=1234; expires=Wed, 21-Nov-2007 12:42:48 GMT; Max-Age=3600; path=/'.		cookie path: '/seaside/counter'.	self assert: cookie rfc6265String = 'ikuser=1234; expires=Wed, 21-Nov-2007 12:42:48 GMT; Max-Age=3600; path=/seaside/counter'.		cookie value: nil.	self assert: cookie rfc6265String = 'ikuser=; expires=Wed, 21-Nov-2007 12:42:48 GMT; Max-Age=3600; path=/seaside/counter'.		cookie value: '1234'.	cookie domain: 'www.example.com'.	cookie ports: (Array with: 80 with: 433).	self assert: cookie rfc6265String = 'ikuser=1234; expires=Wed, 21-Nov-2007 12:42:48 GMT; Max-Age=3600; domain=www.example.com; path=/seaside/counter'.		cookie discard: true.	cookie secure: true.	cookie httpOnly: true.	self assert: cookie rfc6265String = 'ikuser=1234; expires=Wed, 21-Nov-2007 12:42:48 GMT; Max-Age=3600; domain=www.example.com; path=/seaside/counter; Secure; HttpOnly'.		cookie comment: 'FIS Heer username'.	cookie commentUrl: 'http://www.example.com/session-cookie.html'.	self assert: cookie rfc6265String = 'ikuser=1234; expires=Wed, 21-Nov-2007 12:42:48 GMT; Max-Age=3600; domain=www.example.com; path=/seaside/counter; Secure; HttpOnly'! !
-!WACookieTest categoriesFor: #testCombine!public!tests! !
-!WACookieTest categoriesFor: #testCopy!public!tests! !
-!WACookieTest categoriesFor: #testEquals!public!tests! !
-!WACookieTest categoriesFor: #testExpireInPast!public!tests! !
-!WACookieTest categoriesFor: #testExpirePrinting!public!tests! !
-!WACookieTest categoriesFor: #testFromStringOldNetscape!public!tests! !
-!WACookieTest categoriesFor: #testFromStringRfc2965!public!tests! !
-!WACookieTest categoriesFor: #testPathEncoding!public!tests! !
-!WACookieTest categoriesFor: #testSettingEmptyPath!public!tests! !
-!WACookieTest categoriesFor: #testSettingNilPath!public!tests! !
-!WACookieTest categoriesFor: #testSettingPathWithoutLeadingSlash!public!tests! !
-!WACookieTest categoriesFor: #testSettingPathWithTrailingSlash!public!tests! !
-!WACookieTest categoriesFor: #testSettingRegularPath!public!tests! !
-!WACookieTest categoriesFor: #testSettingRootPath!public!tests! !
-!WACookieTest categoriesFor: #testWriteAttributes!public!tests! !
-!WACookieTest categoriesFor: #testWriteOn!public!tests! !
+
+!WACookieTest categoriesForMethods!
+testCombine!public!tests! !
+testCopy!public!tests! !
+testEquals!public!tests! !
+testExpireInPast!public!tests! !
+testExpirePrinting!public!tests! !
+testFromStringOldNetscape!public!tests! !
+testFromStringRfc2965!public!tests! !
+testPathEncoding!public!tests! !
+testSettingEmptyPath!public!tests! !
+testSettingNilPath!public!tests! !
+testSettingPathWithoutLeadingSlash!public!tests! !
+testSettingPathWithTrailingSlash!public!tests! !
+testSettingRegularPath!public!tests! !
+testSettingRootPath!public!tests! !
+testWriteAttributes!public!tests! !
+testWriteOn!public!tests! !
+!
 

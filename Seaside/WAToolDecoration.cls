@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WADecoration subclass: #WAToolDecoration
 	instanceVariableNames: 'plugins showHalos halos'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAToolDecoration guid: (GUID fromString: '{d80db614-b6bd-4f8a-a4f4-c398bcaf4df8}')!
+
+WAToolDecoration guid: (GUID fromString: '{d271b374-e27e-4567-b89a-f8b4f850dbce}')!
+
 WAToolDecoration comment: ''!
-!WAToolDecoration categoriesForClass!Seaside-Development-Core! !
+
+!WAToolDecoration categoriesForClass!Core! !
+
 !WAToolDecoration methodsFor!
 
 haloFor: aPresenter	^ halos at: aPresenter ifAbsentPut: [ aPresenter haloClass on: aPresenter ]!
@@ -33,21 +37,27 @@ toggleHalos	showHalos contents: showHalos contents not!
 updateRoot: anHtmlRoot	super updateRoot: anHtmlRoot.	WADevelopmentFiles default updateRoot: anHtmlRoot!
 
 updateStates: aSnapshot	super updateStates: aSnapshot.	"Create halos for all visible presenters at the end of the action phase so that we	can properly snapshot their initial values (otherwise they get created in the render	phase and we have no snapshot of the state for that render)."	self showHalos ifTrue: [ self visiblePresentersDo: [ :each | self haloFor: each ] ].	aSnapshot register: halos.	halos do: [ :each  | each updateStates: aSnapshot ]! !
-!WAToolDecoration categoriesFor: #haloFor:!plugin/halos!public! !
-!WAToolDecoration categoriesFor: #initialize!initialization!public! !
-!WAToolDecoration categoriesFor: #isGlobal!public!testing! !
-!WAToolDecoration categoriesFor: #plugins!accessing!public! !
-!WAToolDecoration categoriesFor: #renderChildOn:!public!rendering! !
-!WAToolDecoration categoriesFor: #renderContentOn:!public!rendering! !
-!WAToolDecoration categoriesFor: #renderToolbarOn:!public!rendering! !
-!WAToolDecoration categoriesFor: #showHalos!plugin/halos!public! !
-!WAToolDecoration categoriesFor: #states!hooks!public! !
-!WAToolDecoration categoriesFor: #toggleHalos!plugin/halos!public! !
-!WAToolDecoration categoriesFor: #updateRoot:!public!updating! !
-!WAToolDecoration categoriesFor: #updateStates:!public!updating! !
+
+!WAToolDecoration categoriesForMethods!
+haloFor:!plugin/halos!public! !
+initialize!initialization!public! !
+isGlobal!public!testing! !
+plugins!accessing!public! !
+renderChildOn:!public!rendering! !
+renderContentOn:!public!rendering! !
+renderToolbarOn:!public!rendering! !
+showHalos!plugin/halos!public! !
+states!hooks!public! !
+toggleHalos!plugin/halos!public! !
+updateRoot:!public!updating! !
+updateStates:!public!updating! !
+!
 
 !WAToolDecoration class methodsFor!
 
 canBeRoot	^ true! !
-!WAToolDecoration class categoriesFor: #canBeRoot!public!testing! !
+
+!WAToolDecoration class categoriesForMethods!
+canBeRoot!public!testing! !
+!
 

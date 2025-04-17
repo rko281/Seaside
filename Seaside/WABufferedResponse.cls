@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAResponse subclass: #WABufferedResponse
 	instanceVariableNames: 'contentsStream'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WABufferedResponse guid: (GUID fromString: '{190f8918-0783-4aa6-aaea-496a0a56c7fe}')!
+
+WABufferedResponse guid: (GUID fromString: '{9a0272fe-63ef-4294-a069-cd192d6c95ca}')!
+
 WABufferedResponse comment: 'A WABufferedResponse is a concrete implementation of a HTTP response. Its contentsStream is used to represent the body of the message.Instance Variables	contentsStream:		<WriteStream> The contents of this message.'!
-!WABufferedResponse categoriesForClass!Seaside-Core-HTTP! !
+
+!WABufferedResponse categoriesForClass!HTTP! !
+
 !WABufferedResponse methodsFor!
 
 binary	"put the response stream into binary mode. For buffered response, 	 replace the contentStream with a ByteArray based stream."	contentsStream := GRPlatform current readWriteByteStream!
@@ -22,23 +26,32 @@ resetIfPossible	self initializeFields.	contentsStream reset.	^ true!
 
 stream	^ contentsStream!
 
+writeContentAsStringOn: aStream 	aStream nextPutAll: self contents asString!
+
 writeContentOn: aStream 	aStream nextPutAll: self contents!
 
 writeHeadersOn: aStream 	self 		headerAt: 'Content-Length'		put: contentsStream position.	super writeHeadersOn: aStream! !
-!WABufferedResponse categoriesFor: #binary!public!streaming! !
-!WABufferedResponse categoriesFor: #contents!accessing!public! !
-!WABufferedResponse categoriesFor: #destroy!initialization!public! !
-!WABufferedResponse categoriesFor: #initializeOn:!initialization!public! !
-!WABufferedResponse categoriesFor: #resetIfPossible!convenience!public! !
-!WABufferedResponse categoriesFor: #stream!accessing!public! !
-!WABufferedResponse categoriesFor: #writeContentOn:!public!writing! !
-!WABufferedResponse categoriesFor: #writeHeadersOn:!public!writing! !
+
+!WABufferedResponse categoriesForMethods!
+binary!public!streaming! !
+contents!accessing!public! !
+destroy!initialization!public! !
+initializeOn:!initialization!public! !
+resetIfPossible!convenience!public! !
+stream!accessing!public! !
+writeContentAsStringOn:!public!writing! !
+writeContentOn:!public!writing! !
+writeHeadersOn:!public!writing! !
+!
 
 !WABufferedResponse class methodsFor!
 
 new	^ self on: (GRPlatform current writeCharacterStreamOn: (String new: 4096))!
 
 on: aStream	^ self basicNew initializeOn: aStream! !
-!WABufferedResponse class categoriesFor: #new!instance creation!public! !
-!WABufferedResponse class categoriesFor: #on:!instance creation!public! !
+
+!WABufferedResponse class categoriesForMethods!
+new!instance creation!public! !
+on:!instance creation!public! !
+!
 

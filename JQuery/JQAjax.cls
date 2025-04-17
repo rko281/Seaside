@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQAjaxSetup subclass: #JQAjax
 	instanceVariableNames: 'callback callbackId'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQAjax guid: (GUID fromString: '{740e7860-4383-4dc4-b549-2f76d98ff518}')!
+
+JQAjax guid: (GUID fromString: '{b1e91465-1fc3-4330-aa62-4a1f48c0cde3}')!
+
 JQAjax comment: 'Load a remote page using an HTTP request.'!
-!JQAjax categoriesForClass!JQuery-Core-Objects! !
+
+!JQAjax categoriesForClass!Objects! !
+
 !JQAjax methodsFor!
 
 addParameter: anObject	"Add the request parameter anObject, a single value or an association."	self parameters add: anObject!
@@ -15,6 +19,13 @@ addParameter: anObject	"Add the request parameter anObject, a single value or a
 addParameters: aCollection	"Add multiple request parameters from aCollection."	self parameters addAll: aCollection associations!
 
 callback: aBlock	"Register aBlock as a primary callback of the receiver. It is only possible to have a single primary callback registered per instance. The primary callback must generate a response."	self enableCallbacks.	callback := aBlock!
+
+callback: aBlock json: anObject
+	"Register aBlock as a secondary callback. anObject is a reference to a Javascript object on the client-side. anObject will be serialized to a JSON string, sent back to the server, deserialized from JSON to nested Smalltalk objects, and result passed into aBlock."
+
+	self
+		callback: [ :value | aBlock value: (WAJsonParser parse: value) ] 
+		value: (JSJson new stringify: anObject)!
 
 callback: aBlock value: anObject	"Register aBlock as a secondary callback. anObject is a reference to a Javascript object on the client-side. The object will be sent back to the server as a string and passed into aBlock. Multiple secondary callbacks can be defined with one receiver.Note: anObject should be a single literal Javascript object (String, Number, Boolean). The object is transfered from client to server as the print-string of the object and passed into the callback block as a Smalltalk String."	self enableCallbacks.	self addParameter: (self renderContext callbacks		store: (WAValueCallback on: aBlock)) 			-> anObject!
 
@@ -31,6 +42,16 @@ html: aRenderable	"Defines a html rendering callback."	self dataType: 'html'.
 isSupportedOption: aString	^ true!
 
 javascriptUrl	"Answer a Javascript expression that evaluates to the URL with all parameters attached."	| stream |	stream := JSStream new.	stream javascript: self url.	self data collection isEmpty ifFalse: [		stream nextPutAll: '+"'.		stream nextPut: (self url queryFields isEmpty			ifTrue: [ $? ] ifFalse: [ $& ]).		stream nextPutAll: '"+'; javascript: self data ].	^ stream!
+
+json: aRenderable
+	"Defines a json rendering callback."
+
+	self dataType: 'json'.
+	self respond: [ :response |
+		response
+			doNotCache;
+			contentType: WAMimeType applicationJson;
+			nextPutAll: (WAJsonCanvas builder render: aRenderable) ]!
 
 method	^ 'ajax'!
 
@@ -65,32 +86,37 @@ serializeWithHidden: aQuery	"Serialize the receiving form element and a followi
 text: aBlock	"Defines a text rendering callback."	self dataType: 'text'.	self respond: [ :response |		response			doNotCache;			contentType: (WAMimeType textPlain 				charset: self requestContext handler charSet).		aBlock value: response stream ]!
 
 url	^ self options at: 'url' ifAbsentPut: [ WAUrl new ]! !
-!JQAjax categoriesFor: #addParameter:!parameters!public! !
-!JQAjax categoriesFor: #addParameters:!parameters!public! !
-!JQAjax categoriesFor: #callback:!callbacks!public! !
-!JQAjax categoriesFor: #callback:value:!callbacks!public! !
-!JQAjax categoriesFor: #data!accessing!public! !
-!JQAjax categoriesFor: #enableCallbacks!private! !
-!JQAjax categoriesFor: #fullUrl!accessing/urls!public! !
-!JQAjax categoriesFor: #hasCallback!private! !
-!JQAjax categoriesFor: #html:!callbacks!public! !
-!JQAjax categoriesFor: #isSupportedOption:!options!public! !
-!JQAjax categoriesFor: #javascriptUrl!accessing/urls!public! !
-!JQAjax categoriesFor: #method!accessing!public! !
-!JQAjax categoriesFor: #optionAt:put:!options!public! !
-!JQAjax categoriesFor: #parameters!parameters!public! !
-!JQAjax categoriesFor: #processCallback!private! !
-!JQAjax categoriesFor: #respond:!callbacks!public! !
-!JQAjax categoriesFor: #script:!callbacks!public! !
-!JQAjax categoriesFor: #serialize:!convenience!public! !
-!JQAjax categoriesFor: #serializeChildren!convenience!public! !
-!JQAjax categoriesFor: #serializeChildren:!convenience!public! !
-!JQAjax categoriesFor: #serializeFileUpload:!convenience!public! !
-!JQAjax categoriesFor: #serializeForm!convenience!public! !
-!JQAjax categoriesFor: #serializeForm:!convenience!public! !
-!JQAjax categoriesFor: #serializeThis!convenience!public! !
-!JQAjax categoriesFor: #serializeThisWithHidden!convenience!public! !
-!JQAjax categoriesFor: #serializeWithHidden:!convenience!public! !
-!JQAjax categoriesFor: #text:!callbacks!public! !
-!JQAjax categoriesFor: #url!accessing!public! !
+
+!JQAjax categoriesForMethods!
+addParameter:!parameters!public! !
+addParameters:!parameters!public! !
+callback:!callbacks!public! !
+callback:json:!*JQuery/JSON!public! !
+callback:value:!callbacks!public! !
+data!accessing!public! !
+enableCallbacks!private! !
+fullUrl!accessing/urls!public! !
+hasCallback!private! !
+html:!callbacks!public! !
+isSupportedOption:!options!public! !
+javascriptUrl!accessing/urls!public! !
+json:!*JQuery/JSON!public! !
+method!accessing!public! !
+optionAt:put:!options!public! !
+parameters!parameters!public! !
+processCallback!private! !
+respond:!callbacks!public! !
+script:!callbacks!public! !
+serialize:!convenience!public! !
+serializeChildren!convenience!public! !
+serializeChildren:!convenience!public! !
+serializeFileUpload:!convenience!public! !
+serializeForm!convenience!public! !
+serializeForm:!convenience!public! !
+serializeThis!convenience!public! !
+serializeThisWithHidden!convenience!public! !
+serializeWithHidden:!convenience!public! !
+text:!callbacks!public! !
+url!accessing!public! !
+!
 

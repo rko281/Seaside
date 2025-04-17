@@ -1,24 +1,26 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAFunctionalTest subclass: #WAPhraseElementsFunctionalTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAPhraseElementsFunctionalTest guid: (GUID fromString: '{82f5fe06-00d2-452b-afab-6ea239d00fdb}')!
+
+WAPhraseElementsFunctionalTest guid: (GUID fromString: '{69fc1d78-ba18-405f-8305-88b784cbd3a4}')!
+
 WAPhraseElementsFunctionalTest comment: ''!
-!WAPhraseElementsFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
+
+!WAPhraseElementsFunctionalTest categoriesForClass!Unclassified! !
+
 !WAPhraseElementsFunctionalTest methodsFor!
 
 renderAbbreviatedOn: html	html heading level2; with: '<abbr>'.	html paragraph: [		html abbreviated			title: 'World Wide Web';			with: 'WWW' ]!
-
-renderAcronymOn: html	html heading level2; with: '<acronym>'.	html paragraph: [		html acronym			title: 'Federal Bureau of Investigation';			with: 'F.B.I.' ]!
 
 renderAddressOn: html	html heading level2; with: '<address>'.	html address: [		#(			'Newsletter editor'			'J.R. Brown'			'JimquickPost News, Jimquick, CT 01234'			'Tel (123) 456 7890')			do: [ :each | html text: each ]			separatedBy: [ html break ] ]!
 
 renderCodeOn: html	html heading level2; with: '<code>'.	html paragraph: [		html text: 'Expressions like '.		html code: 'a[i++] + b[i++]'.		html text: ' should not be used, since they cause undefined behavior' ]!
 
-renderContentOn: html	self renderHarryOn: html.	self renderAbbreviatedOn: html.	self renderAcronymOn: html.	self renderKeyboardInputOn: html.	self renderVariableOn: html.	self renderCodeOn: html.	self renderDefinitionOn: html.	self renderSampleOn: html.	self renderAddressOn: html.	self renderModificationOn: html!
+renderContentOn: html	self renderHarryOn: html.	self renderAbbreviatedOn: html.	self renderKeyboardInputOn: html.	self renderVariableOn: html.	self renderCodeOn: html.	self renderDefinitionOn: html.	self renderSampleOn: html.	self renderAddressOn: html.	self renderModificationOn: html!
 
 renderDefinitionOn: html	html heading level2; with: '<dfn>'.	html paragraph: [		html definition: 'Ichthyology'.		html text: ' is the branch of natural science which studies fish.' ]!
 
@@ -31,15 +33,17 @@ renderModificationOn: html	html heading level2; with: '<ins>, <del>'.	html p
 renderSampleOn: html	html heading level2; with: '<samp>'.	html paragraph: [		html text: 'If you select the ''champion'' option, you will receive the message '.		html sample: 'The monkey is not a caterpillar'.		html text: '.' ]!
 
 renderVariableOn: html	html heading level2; with: '<var>'.	html paragraph: [		html text: 'In the simplest case, the command for deleting a file in Unix is'.		html break.		html keyboard: 'rm'.		html space.		html variable: 'filename' ]! !
-!WAPhraseElementsFunctionalTest categoriesFor: #renderAbbreviatedOn:!public!rendering! !
-!WAPhraseElementsFunctionalTest categoriesFor: #renderAcronymOn:!public!rendering! !
-!WAPhraseElementsFunctionalTest categoriesFor: #renderAddressOn:!public!rendering! !
-!WAPhraseElementsFunctionalTest categoriesFor: #renderCodeOn:!public!rendering! !
-!WAPhraseElementsFunctionalTest categoriesFor: #renderContentOn:!public!rendering! !
-!WAPhraseElementsFunctionalTest categoriesFor: #renderDefinitionOn:!public!rendering! !
-!WAPhraseElementsFunctionalTest categoriesFor: #renderHarryOn:!public!rendering! !
-!WAPhraseElementsFunctionalTest categoriesFor: #renderKeyboardInputOn:!public!rendering! !
-!WAPhraseElementsFunctionalTest categoriesFor: #renderModificationOn:!public!rendering! !
-!WAPhraseElementsFunctionalTest categoriesFor: #renderSampleOn:!public!rendering! !
-!WAPhraseElementsFunctionalTest categoriesFor: #renderVariableOn:!public!rendering! !
+
+!WAPhraseElementsFunctionalTest categoriesForMethods!
+renderAbbreviatedOn:!public!rendering! !
+renderAddressOn:!public!rendering! !
+renderCodeOn:!public!rendering! !
+renderContentOn:!public!rendering! !
+renderDefinitionOn:!public!rendering! !
+renderHarryOn:!public!rendering! !
+renderKeyboardInputOn:!public!rendering! !
+renderModificationOn:!public!rendering! !
+renderSampleOn:!public!rendering! !
+renderVariableOn:!public!rendering! !
+!
 

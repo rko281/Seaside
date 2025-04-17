@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAPlaceholderPathMatch subclass: #WASuffixPlaceholderPathMatch
 	instanceVariableNames: 'suffix'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WASuffixPlaceholderPathMatch guid: (GUID fromString: '{b804476a-c440-4946-8267-9b87bedcb53d}')!
+
+WASuffixPlaceholderPathMatch guid: (GUID fromString: '{033cd2a7-9c0a-46b1-b205-0bb7ae974aa9}')!
+
 WASuffixPlaceholderPathMatch comment: ''!
-!WASuffixPlaceholderPathMatch categoriesForClass!Seaside-REST-Core-Route! !
+
+!WASuffixPlaceholderPathMatch categoriesForClass!Route! !
+
 !WASuffixPlaceholderPathMatch methodsFor!
 
 initializeWithSourceIndex: anFirstInteger targetIndex: aSecondInteger suffix: aString	self initializeWithSourceIndex: anFirstInteger targetIndex: aSecondInteger.	suffix := aString!
@@ -17,16 +21,22 @@ mapArgumentsWithElements: aCollection into: anArray usingOffset: anInteger	| va
 matches: aString	^ (aString size > suffix size)		and: [ aString endsWithSubCollection: suffix ]!
 
 priority	^ 3! !
-!WASuffixPlaceholderPathMatch categoriesFor: #initializeWithSourceIndex:targetIndex:suffix:!initialization!public! !
-!WASuffixPlaceholderPathMatch categoriesFor: #mapArgumentsWithElements:into:usingOffset:!public! !
-!WASuffixPlaceholderPathMatch categoriesFor: #matches:!public!testing! !
-!WASuffixPlaceholderPathMatch categoriesFor: #priority!accessing!public! !
+
+!WASuffixPlaceholderPathMatch categoriesForMethods!
+initializeWithSourceIndex:targetIndex:suffix:!initialization!public! !
+mapArgumentsWithElements:into:usingOffset:!public! !
+matches:!public!testing! !
+priority!accessing!public! !
+!
 
 !WASuffixPlaceholderPathMatch class methodsFor!
 
 fromString: aString index: anInteger arguments: aCollectionOfStrings	| suffix |	suffix := aString copyAfter: $}.	^ self		source: anInteger		target: (self			targetIndexOf: (aString copyFrom: 2 to: aString size - suffix size - 1)			arguments: aCollectionOfStrings)		suffix: suffix!
 
 source: anFirstInteger target: aSecondInteger suffix: aString	^ self basicNew		initializeWithSourceIndex: anFirstInteger		targetIndex: aSecondInteger		suffix: aString! !
-!WASuffixPlaceholderPathMatch class categoriesFor: #fromString:index:arguments:!instance creation!public! !
-!WASuffixPlaceholderPathMatch class categoriesFor: #source:target:suffix:!instance creation!public! !
+
+!WASuffixPlaceholderPathMatch class categoriesForMethods!
+fromString:index:arguments:!instance creation!public! !
+source:target:suffix:!instance creation!public! !
+!
 

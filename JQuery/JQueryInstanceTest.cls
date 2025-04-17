@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQueryTest subclass: #JQueryInstanceTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQueryInstanceTest guid: (GUID fromString: '{6263cafd-6f94-4f1f-bf15-fa62daeb727b}')!
+
+JQueryInstanceTest guid: (GUID fromString: '{28dbfb85-de71-4a57-8d76-0f176577d6d7}')!
+
 JQueryInstanceTest comment: ''!
-!JQueryInstanceTest categoriesForClass!JQuery-Tests-Core-Unit! !
+
+!JQueryInstanceTest categoriesForClass!Unit! !
+
 !JQueryInstanceTest methodsFor!
 
 testAdd	self		assert: ((self jQuery: 'div') add: 'p')		equals: self function , '("div").add("p")'.	self		assert: ((self jQuery: 'div') add: 'p' context: '#foo')		equals: self function , '("div").add("p","#foo")'!
@@ -76,6 +80,8 @@ testEnd	self		assert: ((self jQuery: 'p') find: 'span'; addClass: 'border'; en
 
 testEq	self		assert: ((self jQuery: 'div') eq: 4)		equals: self function , '("div").eq(4)'.	self		assert: ((self jQuery: 'div') eq: -1)		equals: self function , '("div").eq(-1)'!
 
+testEven	self		assert: ((self jQuery: 'div') even)		equals: self function , '("div").even()'!
+
 testEventsAjax	self		assert: ((self jQuery: 'a') onAjaxSuccess: self mock)		equals: self function , '("a").ajaxSuccess(function(){mock})'.	self		assert: ((self jQuery: 'a') onAjaxComplete: self mock)		equals: self function , '("a").ajaxComplete(function(){mock})'.	self		assert: ((self jQuery: 'a') onAjaxSend: self mock)		equals: self function , '("a").ajaxSend(function(){mock})'.	self		assert: ((self jQuery: 'a') onAjaxStart: self mock)		equals: self function , '("a").ajaxStart(function(){mock})'.	self		assert: ((self jQuery: 'a') onAjaxStop: self mock)		equals: self function , '("a").ajaxStop(function(){mock})'.	self		assert: ((self jQuery: 'a') onAjaxError: self mock)		equals: self function , '("a").ajaxError(function(){mock})'!
 
 testEventsDom	self		assert: ((self jQuery: 'a') onBlur: self mock)		equals: self function , '("a").blur(function(){mock})'.	self		assert: ((self jQuery: 'a') onChange: self mock)		equals: self function , '("a").change(function(){mock})'.	self		assert: ((self jQuery: 'a') onClick: self mock)		equals: self function , '("a").click(function(){mock})'.	self		assert: ((self jQuery: 'a') onDoubleClick: self mock)		equals: self function , '("a").dblclick(function(){mock})'.	self		assert: ((self jQuery: 'a') onError: self mock)		equals: self function , '("a").on("error",function(){mock})'.	self		assert: ((self jQuery: 'a') onFocus: self mock)		equals: self function , '("a").focus(function(){mock})'.	self		assert: ((self jQuery: 'a') onFocusOut: self mock)		equals: self function , '("a").focusout(function(){mock})'.	self		assert: ((self jQuery: 'a') onFocusIn: self mock)		equals: self function , '("a").focusin(function(){mock})'.	self 		assert: ((self jQuery: 'a') onInput: self mock) 		equals: self function , '("a").on("input",function(){mock})'.	self		assert: ((self jQuery: 'a') onKeyDown: self mock)		equals: self function , '("a").keydown(function(){mock})'.	self		assert: ((self jQuery: 'a') onKeyPress: self mock)		equals: self function , '("a").keypress(function(){mock})'.	self		assert: ((self jQuery: 'a') onKeyUp: self mock)		equals: self function , '("a").keyup(function(){mock})'.	self		assert: ((self jQuery: 'a') onLoad: self mock)		equals: self function , '("a").on("load",function(){mock})'.	self		assert: ((self jQuery: 'a') onMouseDown: self mock)		equals: self function , '("a").mousedown(function(){mock})'.	self		assert: ((self jQuery: 'a') onMouseEnter: self mock)		equals: self function , '("a").mouseenter(function(){mock})'.	self		assert: ((self jQuery: 'a') onMouseLeave: self mock)		equals: self function , '("a").mouseleave(function(){mock})'.	self		assert: ((self jQuery: 'a') onMouseMove: self mock)		equals: self function , '("a").mousemove(function(){mock})'.	self		assert: ((self jQuery: 'a') onMouseOut: self mock)		equals: self function , '("a").mouseout(function(){mock})'.	self		assert: ((self jQuery: 'a') onMouseOver: self mock)		equals: self function , '("a").mouseover(function(){mock})'.	self		assert: ((self jQuery: 'a') onMouseUp: self mock)		equals: self function , '("a").mouseup(function(){mock})'.	self		assert: ((self jQuery: 'a') onResize: self mock)		equals: self function , '("a").resize(function(){mock})'.	self		assert: ((self jQuery: 'a') onScroll: self mock)		equals: self function , '("a").scroll(function(){mock})'.	self		assert: ((self jQuery: 'a') onSelect: self mock)		equals: self function , '("a").select(function(){mock})'.	self		assert: ((self jQuery: 'a') onSubmit: self mock)		equals: self function , '("a").submit(function(){mock})'.	self		assert: ((self jQuery: 'a') onUnload: self mock)		equals: self function , '("a").on("unload",function(){mock})'!
@@ -117,6 +123,8 @@ testNextAll	self		assert: (((self jQuery: 'div')) nextAll)		equals: self func
 testNextUntil	self		assert: (((self jQuery: 'div')) nextUntil: 'p')		equals: self function , '("div").nextUntil("p")'!
 
 testNot	self		assert: ((self jQuery: 'div') not: ':even')		equals: self function , '("div").not(":even")'!
+
+testOdd	self		assert: ((self jQuery: 'div') odd)		equals: self function , '("div").odd()'!
 
 testOff	self		assert: ((self jQuery: 'a') off: 'click')		equals: self function , '("a").off("click")'.	self		assert: ((self jQuery: 'a') off: 'click' selector: 'div')		equals: self function , '("a").off("click","div")'!
 
@@ -192,7 +200,9 @@ testTriggers	self		assert: ((self jQuery: 'a') triggerBlur)		equals: self fun
 
 testUnbind	self		assert: ((self jQuery: 'a') unbind: 'click')		equals: self function , '("a").unbind("click")'!
 
-testUndelegate	self		assert: ((self jQuery: '#theone') undelegate)		equals: self function , '("#theone").undelegate()'.	self		assert: ((self jQuery: '#theone') undelegate: 'tr' on: 'click')		equals: self function , '("#theone").undelegate("tr","click")'	!
+testUndelegate	self		assert: ((self jQuery: '#theone') undelegate)		equals: self function , '("#theone").undelegate()'.	self		assert: ((self jQuery: '#theone') undelegate: 'tr' on: 'click')		equals: self function , '("#theone").undelegate("tr","click")'!
+
+testUniqueSort	self		assert: (self jQuery: 'div') uniqueSort		equals: self function , '("div").uniqueSort()'!
 
 testUnwrap	self		assert: ((self jQuery: 'p') unwrap)		equals: self function , '("p").unwrap()'!
 
@@ -201,100 +211,106 @@ testValue	self 		assert: ((self jQuery: 'input') value)		equals: self functio
 testWidth	self		assert: (((self jQuery: 'div')) width)		equals: self function , '("div").width()'.	self		assert: (((self jQuery: 'div')) width: 17)		equals: self function , '("div").width(17)'!
 
 testWrap	self		assert: ((self jQuery: 'p') wrap: [ :html | html strong ])		equals: self function , '("p").wrap("<strong></strong>")'.	self		assert: ((self jQuery: 'p') wrapAll: [ :html | html div ])		equals: self function , '("p").wrapAll("<div></div>")'.	self		assert: ((self jQuery: 'p') wrapInner: [ :html | html span ])		equals: self function , '("p").wrapInner("<span></span>")'! !
-!JQueryInstanceTest categoriesFor: #testAdd!public!tests/navigating! !
-!JQueryInstanceTest categoriesFor: #testAddBack!public!tests/chaining! !
-!JQueryInstanceTest categoriesFor: #testAddClass!public!tests/classes! !
-!JQueryInstanceTest categoriesFor: #testAfter!public!tests/modifying! !
-!JQueryInstanceTest categoriesFor: #testAppend!public!tests/modifying! !
-!JQueryInstanceTest categoriesFor: #testAt!public!tests/accessors/smalltalk! !
-!JQueryInstanceTest categoriesFor: #testAtAll!public!tests/accessors/smalltalk! !
-!JQueryInstanceTest categoriesFor: #testAttributeAt!public!tests/attributes! !
-!JQueryInstanceTest categoriesFor: #testAttributeAtPut!public!tests/attributes! !
-!JQueryInstanceTest categoriesFor: #testAttributes!public!tests/attributes! !
-!JQueryInstanceTest categoriesFor: #testBefore!public!tests/modifying! !
-!JQueryInstanceTest categoriesFor: #testBindDo!public!tests/events! !
-!JQueryInstanceTest categoriesFor: #testChildren!public!tests/navigating! !
-!JQueryInstanceTest categoriesFor: #testClearQueue!public!tests/effects! !
-!JQueryInstanceTest categoriesFor: #testClone!public!tests/copying! !
-!JQueryInstanceTest categoriesFor: #testCloneAll!public!tests/copying! !
-!JQueryInstanceTest categoriesFor: #testClosest!public!tests/navigating! !
-!JQueryInstanceTest categoriesFor: #testCollect!public!tests/filtering! !
-!JQueryInstanceTest categoriesFor: #testContents!public!tests/navigating! !
-!JQueryInstanceTest categoriesFor: #testCss!public!tests/css! !
-!JQueryInstanceTest categoriesFor: #testCssAt!public!tests/css! !
-!JQueryInstanceTest categoriesFor: #testCssAtPut!public!tests/css! !
-!JQueryInstanceTest categoriesFor: #testData!public!tests/accessors! !
-!JQueryInstanceTest categoriesFor: #testDataAt!public!tests/data! !
-!JQueryInstanceTest categoriesFor: #testDataAtPut!public!tests/data! !
-!JQueryInstanceTest categoriesFor: #testDelay!public!tests/effects! !
-!JQueryInstanceTest categoriesFor: #testDelegate!public!tests/events! !
-!JQueryInstanceTest categoriesFor: #testDequeue!public!tests/data! !
-!JQueryInstanceTest categoriesFor: #testDetach!public!tests/modifying! !
-!JQueryInstanceTest categoriesFor: #testDo!public!tests/accessors! !
-!JQueryInstanceTest categoriesFor: #testEmpty!public!tests/modifying! !
-!JQueryInstanceTest categoriesFor: #testEnd!public!tests/chaining! !
-!JQueryInstanceTest categoriesFor: #testEq!public!tests/accessors! !
-!JQueryInstanceTest categoriesFor: #testEventsAjax!public!tests/events! !
-!JQueryInstanceTest categoriesFor: #testEventsDom!public!tests/events! !
-!JQueryInstanceTest categoriesFor: #testFilter!public!tests/filtering! !
-!JQueryInstanceTest categoriesFor: #testFind!public!tests/navigating! !
-!JQueryInstanceTest categoriesFor: #testFirst!public!tests/accessors/smalltalk! !
-!JQueryInstanceTest categoriesFor: #testGet!public!tests/accessors! !
-!JQueryInstanceTest categoriesFor: #testHas!public!tests/filtering! !
-!JQueryInstanceTest categoriesFor: #testHasClass!public!tests/classes! !
-!JQueryInstanceTest categoriesFor: #testHeight!public!tests/css! !
-!JQueryInstanceTest categoriesFor: #testHover!public!tests/events! !
-!JQueryInstanceTest categoriesFor: #testHtml!public!tests/manipulating! !
-!JQueryInstanceTest categoriesFor: #testIndex!public!tests/accessors! !
-!JQueryInstanceTest categoriesFor: #testInnerHeight!public!tests/css! !
-!JQueryInstanceTest categoriesFor: #testInnerWidth!public!tests/css! !
-!JQueryInstanceTest categoriesFor: #testIs!public!tests/filtering! !
-!JQueryInstanceTest categoriesFor: #testLast!public!tests/accessors/smalltalk! !
-!JQueryInstanceTest categoriesFor: #testLength!public!tests/accessors/smalltalk! !
-!JQueryInstanceTest categoriesFor: #testNext!public!tests/navigating! !
-!JQueryInstanceTest categoriesFor: #testNextAll!public!tests/navigating! !
-!JQueryInstanceTest categoriesFor: #testNextUntil!public!tests/navigating! !
-!JQueryInstanceTest categoriesFor: #testNot!public!tests/filtering! !
-!JQueryInstanceTest categoriesFor: #testOff!public!tests/events! !
-!JQueryInstanceTest categoriesFor: #testOffset!public!tests/css! !
-!JQueryInstanceTest categoriesFor: #testOffsetParent!public!tests/css! !
-!JQueryInstanceTest categoriesFor: #testOnDo!public!tests/events! !
-!JQueryInstanceTest categoriesFor: #testOneDo!public!tests/events! !
-!JQueryInstanceTest categoriesFor: #testOuterHeight!public!tests/css! !
-!JQueryInstanceTest categoriesFor: #testOuterWidth!public!tests/css! !
-!JQueryInstanceTest categoriesFor: #testParent!public!tests/navigating! !
-!JQueryInstanceTest categoriesFor: #testParents!public!tests/navigating! !
-!JQueryInstanceTest categoriesFor: #testParentsUntil!public!tests/navigating! !
-!JQueryInstanceTest categoriesFor: #testPosition!public!tests/css! !
-!JQueryInstanceTest categoriesFor: #testPrepend!public!tests/modifying! !
-!JQueryInstanceTest categoriesFor: #testPrevious!public!tests/navigating! !
-!JQueryInstanceTest categoriesFor: #testPreviousAll!public!tests/navigating! !
-!JQueryInstanceTest categoriesFor: #testPreviousUntil!public!tests/navigating! !
-!JQueryInstanceTest categoriesFor: #testProperties!public!tests/attributes! !
-!JQueryInstanceTest categoriesFor: #testPropertyAt!public!tests/attributes! !
-!JQueryInstanceTest categoriesFor: #testPropertyAtPut!public!tests/attributes! !
-!JQueryInstanceTest categoriesFor: #testQueue!public!tests/data! !
-!JQueryInstanceTest categoriesFor: #testRegister!public!tests/events! !
-!JQueryInstanceTest categoriesFor: #testRemove!public!tests/modifying! !
-!JQueryInstanceTest categoriesFor: #testRemoveAttribute!public!tests/attributes! !
-!JQueryInstanceTest categoriesFor: #testRemoveClass!public!tests/classes! !
-!JQueryInstanceTest categoriesFor: #testRemoveData!public!tests/data! !
-!JQueryInstanceTest categoriesFor: #testRemoveProperty!public!tests/attributes! !
-!JQueryInstanceTest categoriesFor: #testReplace!public!tests/modifying! !
-!JQueryInstanceTest categoriesFor: #testScrollLeft!public!tests/css! !
-!JQueryInstanceTest categoriesFor: #testScrollTop!public!tests/css! !
-!JQueryInstanceTest categoriesFor: #testSiblings!public!tests/navigating! !
-!JQueryInstanceTest categoriesFor: #testSliceFrom!public!tests/filtering! !
-!JQueryInstanceTest categoriesFor: #testSliceFromTo!public!tests/filtering! !
-!JQueryInstanceTest categoriesFor: #testText!public!tests/manipulating! !
-!JQueryInstanceTest categoriesFor: #testToArray!public!tests/accessors! !
-!JQueryInstanceTest categoriesFor: #testToggleClass!public!tests/classes! !
-!JQueryInstanceTest categoriesFor: #testTrigger!public!tests/events! !
-!JQueryInstanceTest categoriesFor: #testTriggers!public!tests/events! !
-!JQueryInstanceTest categoriesFor: #testUnbind!public!tests/events! !
-!JQueryInstanceTest categoriesFor: #testUndelegate!public!tests/events! !
-!JQueryInstanceTest categoriesFor: #testUnwrap!public!tests/modifying! !
-!JQueryInstanceTest categoriesFor: #testValue!public!tests/manipulating! !
-!JQueryInstanceTest categoriesFor: #testWidth!public!tests/css! !
-!JQueryInstanceTest categoriesFor: #testWrap!public!tests/modifying! !
+
+!JQueryInstanceTest categoriesForMethods!
+testAdd!public!tests/navigating! !
+testAddBack!public!tests/chaining! !
+testAddClass!public!tests/classes! !
+testAfter!public!tests/modifying! !
+testAppend!public!tests/modifying! !
+testAt!public!tests/accessors/smalltalk! !
+testAtAll!public!tests/accessors/smalltalk! !
+testAttributeAt!public!tests/attributes! !
+testAttributeAtPut!public!tests/attributes! !
+testAttributes!public!tests/attributes! !
+testBefore!public!tests/modifying! !
+testBindDo!public!tests/events! !
+testChildren!public!tests/navigating! !
+testClearQueue!public!tests/effects! !
+testClone!public!tests/copying! !
+testCloneAll!public!tests/copying! !
+testClosest!public!tests/navigating! !
+testCollect!public!tests/filtering! !
+testContents!public!tests/navigating! !
+testCss!public!tests/css! !
+testCssAt!public!tests/css! !
+testCssAtPut!public!tests/css! !
+testData!public!tests/accessors! !
+testDataAt!public!tests/data! !
+testDataAtPut!public!tests/data! !
+testDelay!public!tests/effects! !
+testDelegate!public!tests/events! !
+testDequeue!public!tests/data! !
+testDetach!public!tests/modifying! !
+testDo!public!tests/accessors! !
+testEmpty!public!tests/modifying! !
+testEnd!public!tests/chaining! !
+testEq!public!tests/accessors! !
+testEven!public!tests/accessors/smalltalk! !
+testEventsAjax!public!tests/events! !
+testEventsDom!public!tests/events! !
+testFilter!public!tests/filtering! !
+testFind!public!tests/navigating! !
+testFirst!public!tests/accessors/smalltalk! !
+testGet!public!tests/accessors! !
+testHas!public!tests/filtering! !
+testHasClass!public!tests/classes! !
+testHeight!public!tests/css! !
+testHover!public!tests/events! !
+testHtml!public!tests/manipulating! !
+testIndex!public!tests/accessors! !
+testInnerHeight!public!tests/css! !
+testInnerWidth!public!tests/css! !
+testIs!public!tests/filtering! !
+testLast!public!tests/accessors/smalltalk! !
+testLength!public!tests/accessors/smalltalk! !
+testNext!public!tests/navigating! !
+testNextAll!public!tests/navigating! !
+testNextUntil!public!tests/navigating! !
+testNot!public!tests/filtering! !
+testOdd!public!tests/accessors/smalltalk! !
+testOff!public!tests/events! !
+testOffset!public!tests/css! !
+testOffsetParent!public!tests/css! !
+testOnDo!public!tests/events! !
+testOneDo!public!tests/events! !
+testOuterHeight!public!tests/css! !
+testOuterWidth!public!tests/css! !
+testParent!public!tests/navigating! !
+testParents!public!tests/navigating! !
+testParentsUntil!public!tests/navigating! !
+testPosition!public!tests/css! !
+testPrepend!public!tests/modifying! !
+testPrevious!public!tests/navigating! !
+testPreviousAll!public!tests/navigating! !
+testPreviousUntil!public!tests/navigating! !
+testProperties!public!tests/attributes! !
+testPropertyAt!public!tests/attributes! !
+testPropertyAtPut!public!tests/attributes! !
+testQueue!public!tests/data! !
+testRegister!public!tests/events! !
+testRemove!public!tests/modifying! !
+testRemoveAttribute!public!tests/attributes! !
+testRemoveClass!public!tests/classes! !
+testRemoveData!public!tests/data! !
+testRemoveProperty!public!tests/attributes! !
+testReplace!public!tests/modifying! !
+testScrollLeft!public!tests/css! !
+testScrollTop!public!tests/css! !
+testSiblings!public!tests/navigating! !
+testSliceFrom!public!tests/filtering! !
+testSliceFromTo!public!tests/filtering! !
+testText!public!tests/manipulating! !
+testToArray!public!tests/accessors! !
+testToggleClass!public!tests/classes! !
+testTrigger!public!tests/events! !
+testTriggers!public!tests/events! !
+testUnbind!public!tests/events! !
+testUndelegate!public!tests/events! !
+testUniqueSort!public!tests/data! !
+testUnwrap!public!tests/modifying! !
+testValue!public!tests/manipulating! !
+testWidth!public!tests/css! !
+testWrap!public!tests/modifying! !
+!
 

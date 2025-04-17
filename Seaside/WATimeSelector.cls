@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WACanvasWidget subclass: #WATimeSelector
 	instanceVariableNames: 'second hour minute startHour endHour'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WATimeSelector guid: (GUID fromString: '{9e3092c8-f0f8-4dce-acfa-3474c74f0030}')!
+
+WATimeSelector guid: (GUID fromString: '{14455196-eb5d-46ab-8af1-49b33d2e5627}')!
+
 WATimeSelector comment: 'WATimeSelector displays dropdown menus (html select) allowing a user to delect a time within a range. "startHour" and "endHour" define the range of selectable times. Time is displayed in 24 hour format. WATimeSelector>>time returns time user selected as a Time object.See WADateSelectorFunctionalTest for sample of usage.Select "Date Selector" tab of the Functional Seaside Test Suite to run an example  (http://127.0.0.1:xxxx/seaside/tests/alltests)Instance Variables:	endHour	<Integer 0-23>	end of time interval for selectable times	hour	<Integer 0-23>	selected hour	minute	<Integer 0-59>	selected minute	second	<Integer 0-59>	selected second	startHour	<Integer 0-23>	start of time interval for selectable times'!
-!WATimeSelector categoriesForClass!Seaside-Widgets-Components! !
+
+!WATimeSelector categoriesForClass!Components! !
+
 !WATimeSelector methodsFor!
 
 date: aDate	second := aDate dayOfMonth.	hour := aDate monthIndex.	minute := aDate year!
@@ -49,24 +53,27 @@ time: aTime	second := aTime second.	hour := aTime hour.	minute := aTime minut
 timeClass	^ Time!
 
 timeIsValid	[ self time ] on: Error do: [ :e | ^ false ].	^ true! !
-!WATimeSelector categoriesFor: #date:!accessing!public! !
-!WATimeSelector categoriesFor: #days!accessing!public! !
-!WATimeSelector categoriesFor: #endHour!accessing!public! !
-!WATimeSelector categoriesFor: #endHour:!accessing!public! !
-!WATimeSelector categoriesFor: #hour!accessing!public! !
-!WATimeSelector categoriesFor: #hour:!accessing!public! !
-!WATimeSelector categoriesFor: #initialize!initialization!public! !
-!WATimeSelector categoriesFor: #minute!accessing!public! !
-!WATimeSelector categoriesFor: #minute:!accessing!public! !
-!WATimeSelector categoriesFor: #privateIsValidSecond:hourNumber:minuteNumber:!private! !
-!WATimeSelector categoriesFor: #renderContentOn:!public!rendering! !
-!WATimeSelector categoriesFor: #renderValidationErrorOn:!public!rendering! !
-!WATimeSelector categoriesFor: #second!accessing!public! !
-!WATimeSelector categoriesFor: #second:!accessing!public! !
-!WATimeSelector categoriesFor: #startHour!accessing!public! !
-!WATimeSelector categoriesFor: #startHour:!accessing!public! !
-!WATimeSelector categoriesFor: #time!accessing!public! !
-!WATimeSelector categoriesFor: #time:!accessing!public! !
-!WATimeSelector categoriesFor: #timeClass!private! !
-!WATimeSelector categoriesFor: #timeIsValid!public!testing! !
+
+!WATimeSelector categoriesForMethods!
+date:!accessing!public! !
+days!accessing!public! !
+endHour!accessing!public! !
+endHour:!accessing!public! !
+hour!accessing!public! !
+hour:!accessing!public! !
+initialize!initialization!public! !
+minute!accessing!public! !
+minute:!accessing!public! !
+privateIsValidSecond:hourNumber:minuteNumber:!private! !
+renderContentOn:!public!rendering! !
+renderValidationErrorOn:!public!rendering! !
+second!accessing!public! !
+second:!accessing!public! !
+startHour!accessing!public! !
+startHour:!accessing!public! !
+time!accessing!public! !
+time:!accessing!public! !
+timeClass!private! !
+timeIsValid!public!testing! !
+!
 

@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAFunctionalTest subclass: #WABatchFunctionalTest
 	instanceVariableNames: 'batcher'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WABatchFunctionalTest guid: (GUID fromString: '{dab009e8-e9f9-4435-8a83-f32c264d6b78}')!
+
+WABatchFunctionalTest guid: (GUID fromString: '{9bbc6e6a-4ad8-4ebf-aa25-56dc08f197ba}')!
+
 WABatchFunctionalTest comment: ''!
-!WABatchFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
+
+!WABatchFunctionalTest categoriesForClass!Unclassified! !
+
 !WABatchFunctionalTest methodsFor!
 
 children	^ Array with: batcher!
@@ -15,7 +19,10 @@ children	^ Array with: batcher!
 initialize	super initialize.	batcher := WAAlphabeticBatchedList new items: Collection allSubclasses!
 
 renderContentOn: html	html render: batcher.	html unorderedList		list: batcher batch! !
-!WABatchFunctionalTest categoriesFor: #children!hooks!public! !
-!WABatchFunctionalTest categoriesFor: #initialize!initialization!public! !
-!WABatchFunctionalTest categoriesFor: #renderContentOn:!public!rendering! !
+
+!WABatchFunctionalTest categoriesForMethods!
+children!hooks!public! !
+initialize!initialization!public! !
+renderContentOn:!public!rendering! !
+!
 

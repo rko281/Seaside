@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAConfiguration subclass: #WAUserConfiguration
 	instanceVariableNames: 'expressions parents'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAUserConfiguration guid: (GUID fromString: '{db16c7e1-e458-454e-8189-7f72cdf0b593}')!
+
+WAUserConfiguration guid: (GUID fromString: '{ce3d867a-c248-426e-bb02-2b5c2518185f}')!
+
 WAUserConfiguration comment: 'WAUserConfiguration is a composite of configurations.  This composite of configurations is stored in the field "parents". WAUserConfiguration provides methods to dynamically provide non-default values for attributes. WAUserConfiguration inherits attributes and values defined in its ancestors. If WAUserConfiguration does not have a value for an attribute it will search its ancestors for a value, stopping when it finds a value.An instance of WAUserConfiguration is the first configuration added to a Seaside application (WAApplication). All other configurations added to the application are added as ancestors of this instance. When a value for an attribute is set either by the standard Seaside component configuration page or in code the value is added to the "values" dictionary in WAUserConfiguration.Instance Variables:	parents	<Collection of: WAConfiguration>	 hierarchy of configurations defining all attributes for this instance of WAUserConfiguration	values	<Dictionary>	the dictionary key is an attribute key, dictionary value is value of that attribute '!
-!WAUserConfiguration categoriesForClass!Seaside-Core-Configuration! !
+
+!WAUserConfiguration categoriesForClass!Configuration! !
+
 !WAUserConfiguration methodsFor!
 
 addParent: aConfiguration	(self parents includes: aConfiguration)		ifTrue: [ ^ aConfiguration ].	(self canAddParent: aConfiguration) 		ifTrue: [ self clearSearchContexts. parents add: aConfiguration ]		ifFalse: [ WAConfigurationError signal: 'Cannot add this configuration as a parent. Would this cause a circular ancestry graph?' ].	^ aConfiguration!
@@ -49,24 +53,27 @@ storeExpression: anAttributeExpression forAttribute: anAttribute	self clearSear
 takeValue: anObject forAttribute: anAttribute	^ anObject isNil ifFalse: [		self			storeExpression:				((WAValueExpression key: anAttribute key)					value: anObject;					yourself)			forAttribute: anAttribute ]!
 
 takeValueFromString: aString forAttribute: anAttribute	^ self takeValue: (anAttribute valueFromString: aString) forAttribute: anAttribute! !
-!WAUserConfiguration categoriesFor: #addParent:!ancestry!public! !
-!WAUserConfiguration categoriesFor: #at:addAll:!public!values! !
-!WAUserConfiguration categoriesFor: #at:addAll:removeAll:!public!values! !
-!WAUserConfiguration categoriesFor: #at:put:!public!values! !
-!WAUserConfiguration categoriesFor: #at:putClass:!public!values! !
-!WAUserConfiguration categoriesFor: #canAddParent:!ancestry!public! !
-!WAUserConfiguration categoriesFor: #expressionAt:ifAbsent:!public!values! !
-!WAUserConfiguration categoriesFor: #initialize!initialization!public! !
-!WAUserConfiguration categoriesFor: #localAttributeAt:ifAbsent:!attributes!public! !
-!WAUserConfiguration categoriesFor: #localAttributesDo:!attributes!public! !
-!WAUserConfiguration categoriesFor: #moveParentDown:!ancestry!public! !
-!WAUserConfiguration categoriesFor: #moveParentUp:!ancestry!public! !
-!WAUserConfiguration categoriesFor: #parents!ancestry!public! !
-!WAUserConfiguration categoriesFor: #postCopy!copying!public! !
-!WAUserConfiguration categoriesFor: #removeExpressionAt:!public!values! !
-!WAUserConfiguration categoriesFor: #removeExpressionAt:ifAbsent:!public!values! !
-!WAUserConfiguration categoriesFor: #removeParent:!ancestry!public! !
-!WAUserConfiguration categoriesFor: #storeExpression:forAttribute:!public!values! !
-!WAUserConfiguration categoriesFor: #takeValue:forAttribute:!public!values! !
-!WAUserConfiguration categoriesFor: #takeValueFromString:forAttribute:!public!values! !
+
+!WAUserConfiguration categoriesForMethods!
+addParent:!ancestry!public! !
+at:addAll:!public!values! !
+at:addAll:removeAll:!public!values! !
+at:put:!public!values! !
+at:putClass:!public!values! !
+canAddParent:!ancestry!public! !
+expressionAt:ifAbsent:!public!values! !
+initialize!initialization!public! !
+localAttributeAt:ifAbsent:!attributes!public! !
+localAttributesDo:!attributes!public! !
+moveParentDown:!ancestry!public! !
+moveParentUp:!ancestry!public! !
+parents!ancestry!public! !
+postCopy!copying!public! !
+removeExpressionAt:!public!values! !
+removeExpressionAt:ifAbsent:!public!values! !
+removeParent:!ancestry!public! !
+storeExpression:forAttribute:!public!values! !
+takeValue:forAttribute:!public!values! !
+takeValueFromString:forAttribute:!public!values! !
+!
 

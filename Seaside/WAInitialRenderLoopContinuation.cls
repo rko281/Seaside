@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAActionPhaseContinuation subclass: #WAInitialRenderLoopContinuation
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAInitialRenderLoopContinuation guid: (GUID fromString: '{f784525f-300d-4396-8ae7-6e9df6ddc9e6}')!
+
+WAInitialRenderLoopContinuation guid: (GUID fromString: '{55a3df13-55b9-4350-acbf-2c660b31ce1a}')!
+
 WAInitialRenderLoopContinuation comment: 'I''m the initial continuation of a render loop. I just render the initial page. Subclasses may want to override #shouldRedirect and answer true so that a redirect happens before displaying the first page.'!
-!WAInitialRenderLoopContinuation categoriesForClass!Seaside-RenderLoop! !
+
+!WAInitialRenderLoopContinuation categoriesForClass!Continuations! !
+
 !WAInitialRenderLoopContinuation methodsFor!
 
 basicPerformAction	| root |	root := self createRoot.	self session properties at: #presenter put: root.	self prepareRoot: root!
@@ -21,10 +25,13 @@ rootClass	^ (self application preferenceAt: #rootClass) value!
 rootDecorationClasses	^ (self application preferenceAt: #rootDecorationClasses) collect: [ :each | each value ]!
 
 shouldRedirect	"This should probably be made configurable, but for backwards compatibility with Seaside 3.0,	where we do not redirect when you enter a session, we return false."		^ false! !
-!WAInitialRenderLoopContinuation categoriesFor: #basicPerformAction!processing!public! !
-!WAInitialRenderLoopContinuation categoriesFor: #createRoot!creational!public! !
-!WAInitialRenderLoopContinuation categoriesFor: #prepareRoot:!processing!public! !
-!WAInitialRenderLoopContinuation categoriesFor: #rootClass!accessing!public! !
-!WAInitialRenderLoopContinuation categoriesFor: #rootDecorationClasses!accessing!public! !
-!WAInitialRenderLoopContinuation categoriesFor: #shouldRedirect!private! !
+
+!WAInitialRenderLoopContinuation categoriesForMethods!
+basicPerformAction!processing!public! !
+createRoot!creational!public! !
+prepareRoot:!processing!public! !
+rootClass!accessing!public! !
+rootDecorationClasses!accessing!public! !
+shouldRedirect!private! !
+!
 

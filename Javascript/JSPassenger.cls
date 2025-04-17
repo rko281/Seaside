@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WACallback subclass: #JSPassenger
 	instanceVariableNames: 'object'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSPassenger guid: (GUID fromString: '{0a52f74b-13e0-41e9-86d3-a2f8a0ed0db5}')!
+
+JSPassenger guid: (GUID fromString: '{b3108648-bbee-4527-8cc0-ec409677284e}')!
+
 JSPassenger comment: ''!
-!JSPassenger categoriesForClass!Javascript-Core-Base! !
+
+!JSPassenger categoriesForClass!Base! !
+
 !JSPassenger methodsFor!
 
 evaluateWithArgument: anObject	self shouldNotImplement!
@@ -19,9 +23,12 @@ isPassenger	^ true!
 object	^ object!
 
 setObject: anObject	object := anObject! !
-!JSPassenger categoriesFor: #evaluateWithArgument:!evaluation!public! !
-!JSPassenger categoriesFor: #isEnabledFor:!public!testing! !
-!JSPassenger categoriesFor: #isPassenger!public!testing! !
-!JSPassenger categoriesFor: #object!accessing!public! !
-!JSPassenger categoriesFor: #setObject:!initialization!public! !
+
+!JSPassenger categoriesForMethods!
+evaluateWithArgument:!evaluation!public! !
+isEnabledFor:!public!testing! !
+isPassenger!public!testing! !
+object!accessing!public! !
+setObject:!initialization!public! !
+!
 

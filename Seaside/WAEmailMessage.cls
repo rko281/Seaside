@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAObject subclass: #WAEmailMessage
 	instanceVariableNames: 'to from cc bcc subject headers body replyTo'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAEmailMessage guid: (GUID fromString: '{3b3b0a0a-36e0-4e80-bc6c-3661511ac28e}')!
+
+WAEmailMessage guid: (GUID fromString: '{53dba15a-dbb3-4860-86f9-ee34bca6c069}')!
+
 WAEmailMessage comment: 'I am a  general email message (single part).'!
-!WAEmailMessage categoriesForClass!Seaside-Email-Base! !
+
+!WAEmailMessage categoriesForClass!Base! !
+
 !WAEmailMessage methodsFor!
 
 addAllTo: aCollectionOfEmailAddress	aCollectionOfEmailAddress do: [ :each |		self addTo: each ]!
@@ -63,39 +67,45 @@ subject: anObject	subject := anObject!
 to	^ to!
 
 writeBodyOn: stream	self body isNil		ifFalse: [ stream nextPutAll: self body greaseString ]! !
-!WAEmailMessage categoriesFor: #addAllTo:!adding!public! !
-!WAEmailMessage categoriesFor: #addBcc:!adding!public! !
-!WAEmailMessage categoriesFor: #addCc:!adding!public! !
-!WAEmailMessage categoriesFor: #addTo:!adding!public! !
-!WAEmailMessage categoriesFor: #bcc!accessing!public! !
-!WAEmailMessage categoriesFor: #body!accessing!public! !
-!WAEmailMessage categoriesFor: #body:!accessing!public! !
-!WAEmailMessage categoriesFor: #cc!accessing!public! !
-!WAEmailMessage categoriesFor: #from!accessing!public! !
-!WAEmailMessage categoriesFor: #from:!accessing!public! !
-!WAEmailMessage categoriesFor: #headerAt:put:!adding!public! !
-!WAEmailMessage categoriesFor: #headers!accessing!public! !
-!WAEmailMessage categoriesFor: #initialize!initialization!public! !
-!WAEmailMessage categoriesFor: #isMultipart!public!testing! !
-!WAEmailMessage categoriesFor: #plainMessage!private! !
-!WAEmailMessage categoriesFor: #recipients!private! !
-!WAEmailMessage categoriesFor: #recipientsAddresses!private! !
-!WAEmailMessage categoriesFor: #renderAddress:withHeader:on:!private! !
-!WAEmailMessage categoriesFor: #replyTo!adding!public! !
-!WAEmailMessage categoriesFor: #replyTo:!adding!public! !
-!WAEmailMessage categoriesFor: #send!actions!public! !
-!WAEmailMessage categoriesFor: #setStringBody:!convenience!public! !
-!WAEmailMessage categoriesFor: #setStringBody:wrap:!convenience!public! !
-!WAEmailMessage categoriesFor: #subject!accessing!public! !
-!WAEmailMessage categoriesFor: #subject:!accessing!public! !
-!WAEmailMessage categoriesFor: #to!accessing!public! !
-!WAEmailMessage categoriesFor: #writeBodyOn:!private! !
+
+!WAEmailMessage categoriesForMethods!
+addAllTo:!adding!public! !
+addBcc:!adding!public! !
+addCc:!adding!public! !
+addTo:!adding!public! !
+bcc!accessing!public! !
+body!accessing!public! !
+body:!accessing!public! !
+cc!accessing!public! !
+from!accessing!public! !
+from:!accessing!public! !
+headerAt:put:!adding!public! !
+headers!accessing!public! !
+initialize!initialization!public! !
+isMultipart!public!testing! !
+plainMessage!private! !
+recipients!private! !
+recipientsAddresses!private! !
+renderAddress:withHeader:on:!private! !
+replyTo!adding!public! !
+replyTo:!adding!public! !
+send!actions!public! !
+setStringBody:!convenience!public! !
+setStringBody:wrap:!convenience!public! !
+subject!accessing!public! !
+subject:!accessing!public! !
+to!accessing!public! !
+writeBodyOn:!private! !
+!
 
 !WAEmailMessage class methodsFor!
 
 from: aFromEmailAddress to: aToEmailAddress subject: aString	^ self new		from: aFromEmailAddress;		addTo: aToEmailAddress;		subject: aString;		yourself!
 
 from: aFromEmailAddress toAll: aCollectionOfEmailAddress subject: aString	^ self new		from: aFromEmailAddress;		addAllTo: aCollectionOfEmailAddress;		subject: aString;		yourself! !
-!WAEmailMessage class categoriesFor: #from:to:subject:!instance creation!public! !
-!WAEmailMessage class categoriesFor: #from:toAll:subject:!instance creation!public! !
+
+!WAEmailMessage class categoriesForMethods!
+from:to:subject:!instance creation!public! !
+from:toAll:subject:!instance creation!public! !
+!
 

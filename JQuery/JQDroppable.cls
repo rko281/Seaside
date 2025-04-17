@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQWidget subclass: #JQDroppable
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQDroppable guid: (GUID fromString: '{03b3cbb6-3396-4e17-9d2c-b12b2d4864ec}')!
+
+JQDroppable guid: (GUID fromString: '{3addbead-20f5-4759-ade5-84ff8e05cba6}')!
+
 JQDroppable comment: 'Creates new droppables on the nodeset supplied by the query.'!
-!JQDroppable categoriesForClass!JQuery-UI-Interaction! !
+
+!JQDroppable categoriesForClass!Interaction! !
+
 !JQDroppable methodsFor!
 
 accept: aSelectorOrFunction	"All draggables that match the selector will be accepted. If a function is specified, the function will be called for each draggable on the page (passed as the first argument to the function), to provide a custom filter. The function should return true if the draggable should be accepted."	self optionAt: 'accept' put: aSelectorOrFunction!
@@ -35,17 +39,20 @@ onOver: anObject	"This event is triggered as an accepted draggable is dragged '
 scope: aString	"Used to group sets of draggable and droppable items, in addition to droppable's accept option. A draggable with the same scope value as a droppable will be accepted."	self optionAt: 'scope' put: aString!
 
 tolerance: aString	"Specifies which mode to use for testing whether a draggable is 'over' a droppable. Possible values: 'fit', 'intersect', 'pointer', 'touch'.  ''fit'': draggable overlaps the droppable entirely ''intersect'': draggable overlaps the droppable at least 50% ''pointer'': mouse pointer overlaps the droppable ''touch'': draggable overlaps the droppable any amount "	self optionAt: 'tolerance' put: aString! !
-!JQDroppable categoriesFor: #accept:!options/generated!public! !
-!JQDroppable categoriesFor: #activeClass:!options/generated!public! !
-!JQDroppable categoriesFor: #addClasses:!options/generated!public! !
-!JQDroppable categoriesFor: #greedy:!options/generated!public! !
-!JQDroppable categoriesFor: #hoverClass:!options/generated!public! !
-!JQDroppable categoriesFor: #method!accessing!public! !
-!JQDroppable categoriesFor: #onActivate:!events/generated!public! !
-!JQDroppable categoriesFor: #onDeactivate:!events/generated!public! !
-!JQDroppable categoriesFor: #onDrop:!events/generated!public! !
-!JQDroppable categoriesFor: #onOut:!events/generated!public! !
-!JQDroppable categoriesFor: #onOver:!events/generated!public! !
-!JQDroppable categoriesFor: #scope:!options/generated!public! !
-!JQDroppable categoriesFor: #tolerance:!options/generated!public! !
+
+!JQDroppable categoriesForMethods!
+accept:!options/generated!public! !
+activeClass:!options/generated!public! !
+addClasses:!options/generated!public! !
+greedy:!options/generated!public! !
+hoverClass:!options/generated!public! !
+method!accessing!public! !
+onActivate:!events/generated!public! !
+onDeactivate:!events/generated!public! !
+onDrop:!events/generated!public! !
+onOut:!events/generated!public! !
+onOver:!events/generated!public! !
+scope:!options/generated!public! !
+tolerance:!options/generated!public! !
+!
 

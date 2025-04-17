@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAFunctionalTest subclass: #WAHtml5OrderedListTest
 	instanceVariableNames: 'reversed start type'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAHtml5OrderedListTest guid: (GUID fromString: '{254d53c6-5a48-4bb0-8cf3-14c5024edaa2}')!
+
+WAHtml5OrderedListTest guid: (GUID fromString: '{3759dd3a-5461-4217-a39c-96766268e427}')!
+
 WAHtml5OrderedListTest comment: ''!
-!WAHtml5OrderedListTest categoriesForClass!Seaside-Tests-Functional! !
+
+!WAHtml5OrderedListTest categoriesForClass!Unclassified! !
+
 !WAHtml5OrderedListTest methodsFor!
 
 initialize	super initialize.	reversed := true.	start := 2.	type := $I!
@@ -29,14 +33,17 @@ renderTypeOn: html	html label		for: html nextId;		with: 'type:'.	html space.
 types	^ '1aAiI'!
 
 typesDictionary	^ Dictionary new		add: $1 -> 'decimal';		add: $a -> 'lower-alpha';		add: $A -> 'upper-alpha';		add: $i -> 'lower-roman';		add: $I -> 'upper-roman';		yourself! !
-!WAHtml5OrderedListTest categoriesFor: #initialize!initialization!public! !
-!WAHtml5OrderedListTest categoriesFor: #items!accessing!public! !
-!WAHtml5OrderedListTest categoriesFor: #renderConfigurationOn:!public!rendering! !
-!WAHtml5OrderedListTest categoriesFor: #renderContentOn:!public!rendering! !
-!WAHtml5OrderedListTest categoriesFor: #renderListOn:!public!rendering! !
-!WAHtml5OrderedListTest categoriesFor: #renderReversedOn:!public!rendering! !
-!WAHtml5OrderedListTest categoriesFor: #renderStartOn:!public!rendering! !
-!WAHtml5OrderedListTest categoriesFor: #renderTypeOn:!public!rendering! !
-!WAHtml5OrderedListTest categoriesFor: #types!accessing!public! !
-!WAHtml5OrderedListTest categoriesFor: #typesDictionary!accessing!public! !
+
+!WAHtml5OrderedListTest categoriesForMethods!
+initialize!initialization!public! !
+items!accessing!public! !
+renderConfigurationOn:!public!rendering! !
+renderContentOn:!public!rendering! !
+renderListOn:!public!rendering! !
+renderReversedOn:!public!rendering! !
+renderStartOn:!public!rendering! !
+renderTypeOn:!public!rendering! !
+types!accessing!public! !
+typesDictionary!accessing!public! !
+!
 

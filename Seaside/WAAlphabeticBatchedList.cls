@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WACanvasWidget subclass: #WAAlphabeticBatchedList
 	instanceVariableNames: 'items currentPage'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAAlphabeticBatchedList guid: (GUID fromString: '{91d7f9cf-43da-43af-b7f3-ef2d5de5c82f}')!
+
+WAAlphabeticBatchedList guid: (GUID fromString: '{906b029d-18e8-4c96-9dbd-327a36d29237}')!
+
 WAAlphabeticBatchedList comment: 'WAAlphabeticBatchedList organizes a collection of items into pages for display. A page contains all items whose string representation (item displayString) starts with the same character. WAAlphabeticBatchedList only displays the navigation (alphabet with links) for the list. Your code needs to display the current page.Use WAAlphabeticBatchedList>>items: to set the collections of items.Use WAAlphabeticBatchedList>>batch to get the items to display on the current pageSee WABatchFunctionalTest for example of usage.Select "Batch" tab of the Functional Seaside Test Suite to run an example  (http://127.0.0.1:xxxx/seaside/tests/alltests)Instance Variables:	currentPage	<Character>	the character of the curent page	items	<(Collection of: (Object ))> collection of the items managed by WAAlphabeticBatchedList. Collection is sorted before items are displayed.'!
-!WAAlphabeticBatchedList categoriesForClass!Seaside-Widgets-Components! !
+
+!WAAlphabeticBatchedList categoriesForClass!Components! !
+
 !WAAlphabeticBatchedList methodsFor!
 
 allPages	^ 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'!
@@ -41,20 +45,23 @@ renderPreviousOn: html	self isOnFirstPage		ifFalse: [ html anchor callback: [ 
 states	^ Array with: self!
 
 validPages	^ (items collect: [ :each |		each greaseString asUppercase first ]) asSet sorted! !
-!WAAlphabeticBatchedList categoriesFor: #allPages!accessing/calculated!public! !
-!WAAlphabeticBatchedList categoriesFor: #batch!accessing/calculated!public! !
-!WAAlphabeticBatchedList categoriesFor: #currentPage!accessing!public! !
-!WAAlphabeticBatchedList categoriesFor: #currentPage:!accessing!public! !
-!WAAlphabeticBatchedList categoriesFor: #isOnFirstPage!public!testing! !
-!WAAlphabeticBatchedList categoriesFor: #isOnLastPage!public!testing! !
-!WAAlphabeticBatchedList categoriesFor: #items!accessing!public! !
-!WAAlphabeticBatchedList categoriesFor: #items:!accessing!public! !
-!WAAlphabeticBatchedList categoriesFor: #nextPage!actions!public! !
-!WAAlphabeticBatchedList categoriesFor: #previousPage!actions!public! !
-!WAAlphabeticBatchedList categoriesFor: #renderContentOn:!public!rendering! !
-!WAAlphabeticBatchedList categoriesFor: #renderNextOn:!public!rendering! !
-!WAAlphabeticBatchedList categoriesFor: #renderPagesOn:!public!rendering! !
-!WAAlphabeticBatchedList categoriesFor: #renderPreviousOn:!public!rendering! !
-!WAAlphabeticBatchedList categoriesFor: #states!hooks!public! !
-!WAAlphabeticBatchedList categoriesFor: #validPages!accessing/calculated!public! !
+
+!WAAlphabeticBatchedList categoriesForMethods!
+allPages!accessing/calculated!public! !
+batch!accessing/calculated!public! !
+currentPage!accessing!public! !
+currentPage:!accessing!public! !
+isOnFirstPage!public!testing! !
+isOnLastPage!public!testing! !
+items!accessing!public! !
+items:!accessing!public! !
+nextPage!actions!public! !
+previousPage!actions!public! !
+renderContentOn:!public!rendering! !
+renderNextOn:!public!rendering! !
+renderPagesOn:!public!rendering! !
+renderPreviousOn:!public!rendering! !
+states!hooks!public! !
+validPages!accessing/calculated!public! !
+!
 

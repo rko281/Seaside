@@ -1,10 +1,14 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAError subclass: #WAConfigurationError
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAConfigurationError guid: (GUID fromString: '{a89c2f0c-f55e-4eb2-b420-162292ec1214}')!
+
+WAConfigurationError guid: (GUID fromString: '{48059f63-1b0a-405c-802b-82394ffc5aea}')!
+
 WAConfigurationError comment: ''!
-!WAConfigurationError categoriesForClass!Seaside-Core-Configuration! !
+
+!WAConfigurationError categoriesForClass!Configuration! !
+

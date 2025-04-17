@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAObject subclass: #WACacheListEntry
 	instanceVariableNames: 'previous next time cacheEntry'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WACacheListEntry guid: (GUID fromString: '{c7a46c9e-1563-4762-a7ef-e1d18996ba5e}')!
+
+WACacheListEntry guid: (GUID fromString: '{245e18e4-f9e6-4ebb-88b2-cf179935e2c7}')!
+
 WACacheListEntry comment: 'I am a node in a sorted linked list in WAHashCache.    Instance Variables	cacheEntry:		<WACacheKeyEntry>	next:		<WACacheListEntry>	previous:		<WACacheListEntry>	time:		<Integer>time:	timestamp in seconds, could be the creation time or access time depending on with of the two linked lists it is'!
-!WACacheListEntry categoriesForClass!Seaside-Core-Cache! !
+
+!WACacheListEntry categoriesForClass!Cache! !
+
 !WACacheListEntry methodsFor!
 
 cacheEntry	^ cacheEntry!
@@ -27,18 +31,24 @@ previous	^ previous!
 previous: aCacheListEntry	previous := aCacheListEntry!
 
 time	^ time! !
-!WACacheListEntry categoriesFor: #cacheEntry!accessing!public! !
-!WACacheListEntry categoriesFor: #expunge!operations!public! !
-!WACacheListEntry categoriesFor: #initializeTime!operations!public! !
-!WACacheListEntry categoriesFor: #initializeWithEntry:!initialization!public! !
-!WACacheListEntry categoriesFor: #next!accessing!public! !
-!WACacheListEntry categoriesFor: #next:!accessing!public! !
-!WACacheListEntry categoriesFor: #previous!accessing!public! !
-!WACacheListEntry categoriesFor: #previous:!accessing!public! !
-!WACacheListEntry categoriesFor: #time!accessing!public! !
+
+!WACacheListEntry categoriesForMethods!
+cacheEntry!accessing!public! !
+expunge!operations!public! !
+initializeTime!operations!public! !
+initializeWithEntry:!initialization!public! !
+next!accessing!public! !
+next:!accessing!public! !
+previous!accessing!public! !
+previous:!accessing!public! !
+time!accessing!public! !
+!
 
 !WACacheListEntry class methodsFor!
 
 entry: aCacheEntry	^ self basicNew		initializeWithEntry: aCacheEntry;		yourself! !
-!WACacheListEntry class categoriesFor: #entry:!instance creation!public! !
+
+!WACacheListEntry class categoriesForMethods!
+entry:!instance creation!public! !
+!
 

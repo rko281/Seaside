@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAWidgetDecoration subclass: #WAValidationDecoration
 	instanceVariableNames: 'message validationBlock exceptionClass'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAValidationDecoration guid: (GUID fromString: '{3d3d4053-1375-4ce0-8797-a90c02be97d4}')!
+
+WAValidationDecoration guid: (GUID fromString: '{35e1de20-6af8-427f-b178-885267a4c4d2}')!
+
 WAValidationDecoration comment: 'A WAValidationDecoration validates its component form data when the component returns using "answer" or "answer:". A WAValidationDecoration can be added to component via the method "validateWith:" as below.	SampleLoginComponent>>intialize		form := WAFormDecoration new buttons: self buttons.		self addDecoration: form.		self validateWith: [:answerArgOrSelf | answerArgOrSelf validate].		self addMessage: ''Please enter the following information''.If component returns via "answer:" the answer: argument is passed to the validate block. If the component returns using "answer" the sender of "answer" is passed to the validate block.Instance Variables	exceptionClass:		<Notification>	message:		<String>	validationBlock:		<one arg block>exceptionClass	- Type of notication that is raised by validation code when validation fails. Default value is WAValidationNotificationmessage	- String message displayed on validation failure. Obtained from the notificationvalidationBlock	- One arg block, '!
-!WAValidationDecoration categoriesForClass!Seaside-Widgets-Decorations! !
+
+!WAValidationDecoration categoriesForClass!Decorations! !
+
 !WAValidationDecoration methodsFor!
 
 exceptionClass	^ exceptionClass ifNil: [ exceptionClass := WAValidationNotification ]!
@@ -27,13 +31,16 @@ states	^ Array with: message!
 validate: anObject	^ [ validationBlock value: anObject.	message contents: nil.	true ]		on: self exceptionClass		do: [ :exception |			message contents: exception messageText.			exception return: false ]!
 
 validateWith: aBlock	validationBlock := aBlock! !
-!WAValidationDecoration categoriesFor: #exceptionClass!accessing!public! !
-!WAValidationDecoration categoriesFor: #exceptionClass:!accessing!public! !
-!WAValidationDecoration categoriesFor: #handleAnswer:!delegation!public! !
-!WAValidationDecoration categoriesFor: #handleAnswer:continueWith:!processing!public! !
-!WAValidationDecoration categoriesFor: #initialize!initialization!public! !
-!WAValidationDecoration categoriesFor: #renderContentOn:!public!rendering! !
-!WAValidationDecoration categoriesFor: #states!hooks!public! !
-!WAValidationDecoration categoriesFor: #validate:!public!request processing! !
-!WAValidationDecoration categoriesFor: #validateWith:!convenience!public! !
+
+!WAValidationDecoration categoriesForMethods!
+exceptionClass!accessing!public! !
+exceptionClass:!accessing!public! !
+handleAnswer:!delegation!public! !
+handleAnswer:continueWith:!processing!public! !
+initialize!initialization!public! !
+renderContentOn:!public!rendering! !
+states!hooks!public! !
+validate:!public!request processing! !
+validateWith:!convenience!public! !
+!
 

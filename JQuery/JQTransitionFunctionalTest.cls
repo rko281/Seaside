@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQUiFunctionalTest subclass: #JQTransitionFunctionalTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQTransitionFunctionalTest guid: (GUID fromString: '{1e1a0826-0d67-44f2-a1ed-2f14939da0be}')!
+
+JQTransitionFunctionalTest guid: (GUID fromString: '{a47d6e6d-80fe-41ac-bf44-042107a9fb85}')!
+
 JQTransitionFunctionalTest comment: ''!
-!JQTransitionFunctionalTest categoriesForClass!JQuery-Tests-UI-Functional! !
+
+!JQTransitionFunctionalTest categoriesForClass!Functional! !
+
 !JQTransitionFunctionalTest methodsFor!
 
 renderContentOn: html	html paragraph class: 'actions'; with: [		#( green wide bold ) do: [ :each |			html anchor				onClick: ((html jQuery: '.box')					toggleClass: each					duration: 'slow');				with: (each copyUpTo: $:) ] ].	self renderBoxOn: html!
@@ -19,9 +23,12 @@ style	^ '.wide { width: 100%; height: 50px; }.bold { border-width: 5px; }'!
 title	^ 'Class Transition'!
 
 url	^ 'http://docs.jquery.com/UI/Effects/ClassTransitions'! !
-!JQTransitionFunctionalTest categoriesFor: #renderContentOn:!public!rendering! !
-!JQTransitionFunctionalTest categoriesFor: #selectors!accessing!public! !
-!JQTransitionFunctionalTest categoriesFor: #style!hooks!public! !
-!JQTransitionFunctionalTest categoriesFor: #title!accessing!public! !
-!JQTransitionFunctionalTest categoriesFor: #url!accessing!public! !
+
+!JQTransitionFunctionalTest categoriesForMethods!
+renderContentOn:!public!rendering! !
+selectors!accessing!public! !
+style!hooks!public! !
+title!accessing!public! !
+url!accessing!public! !
+!
 

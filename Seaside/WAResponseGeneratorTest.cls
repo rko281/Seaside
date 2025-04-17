@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAContextTest subclass: #WAResponseGeneratorTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAResponseGeneratorTest guid: (GUID fromString: '{93a6d9c7-7abe-41bc-aff5-915d7cac89c8}')!
+
+WAResponseGeneratorTest guid: (GUID fromString: '{633b9930-728f-41ba-9007-081ff0955572}')!
+
 WAResponseGeneratorTest comment: ''!
-!WAResponseGeneratorTest categoriesForClass!Seaside-Tests-Core-RequestHandling! !
+
+!WAResponseGeneratorTest categoriesForClass!RequestHandling! !
+
 !WAResponseGeneratorTest methodsFor!
 
 assertContents: aString	self assert: self requestContext response contents = aString!
@@ -21,10 +25,13 @@ testNotFound	| generator |	generator := WAResponseGenerator on: self requestCo
 testNotImplemented	| generator |	generator := WAResponseGenerator on: self requestContext.	self requestContext response nextPutAll: 'oops'.	generator notImplemented.	self assertContents:  'Not Implemented'!
 
 testPageExpired	| generator |	generator := WAResponseGenerator on: self requestContext.	self requestContext response nextPutAll: 'oops'.	generator pageExpired.	self assertContents: 'This page has expired, please use the back-button to navigate to the last valid page.'! !
-!WAResponseGeneratorTest categoriesFor: #assertContents:!private! !
-!WAResponseGeneratorTest categoriesFor: #testForbidden!public!tests! !
-!WAResponseGeneratorTest categoriesFor: #testInternalError!public!tests! !
-!WAResponseGeneratorTest categoriesFor: #testNotFound!public!tests! !
-!WAResponseGeneratorTest categoriesFor: #testNotImplemented!public!tests! !
-!WAResponseGeneratorTest categoriesFor: #testPageExpired!public!tests! !
+
+!WAResponseGeneratorTest categoriesForMethods!
+assertContents:!private! !
+testForbidden!public!tests! !
+testInternalError!public!tests! !
+testNotFound!public!tests! !
+testNotImplemented!public!tests! !
+testPageExpired!public!tests! !
+!
 

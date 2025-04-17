@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WARequestHandler subclass: #WADispatcher
 	instanceVariableNames: 'defaultName handlers'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: 'default'!
-WADispatcher guid: (GUID fromString: '{0f778c1e-2355-4847-afec-4e943d37f134}')!
+
+WADispatcher guid: (GUID fromString: '{4bd5c926-b4c8-41d0-9c96-53ef20396de2}')!
+
 WADispatcher comment: 'WADispatcher takes http requests and dispatches them to the correct handler (WAApplication, WAFileHandler, etc). WADispatcher class>>default is the top level dispatcher. When a Seaside application is registered as "foo" the application is added to the top level dispatcher. The application is added to the entryPoints of the dispatcher at the key "foo". If a Seaside application is registered as "bar/foo" then the application isadded to a  dispatcher''s entryPoints at the key "foo". That dispatcher is in the top level dispatcher''s  entryPoints at the key "bar".   When a http request is received it is sent to WADispatcher class>>default to find the correct handler for the request. If a handler exists for the request is sent to that handler. Otherwise the request is sent to the not found response generator.The VW port maintains multiple copies of the tree of dispatchers rooted at WADispatcher class>>default. One copy is for each different URL that can reach Seaside (http://..../seaside/go/counter - normal, http://..../counter - SeasideShortPath, http://..../seaside/stream/counter - streaming). Instance Variables:	defaultName	<String>	entryPoints	<(Dictionary of: WAEntryPoint)>	 the keys are strings, which are the names and URL path segments for the handler at that key'!
-!WADispatcher categoriesForClass!Seaside-Core-RequestHandling! !
+
+!WADispatcher categoriesForClass!RequestHandling! !
+
 !WADispatcher methodsFor!
 
 childrenDo: aBlock	handlers do: aBlock!
@@ -24,7 +28,7 @@ handleFiltered: aRequestContext	| consumer |	consumer := aRequestContext consu
 
 handleFiltered: aRequestContext named: aString	(self 		handlerAt: aString 		ifAbsent: [ aRequestContext responseGenerator notFound; respond ])			handle: aRequestContext!
 
-handlerAt: aString	^ self			handlerAt: aString			ifAbsent: [ WAError signal: 'Handler not found.' ] !
+handlerAt: aString	^ self			handlerAt: aString			ifAbsent: [ WAError signal: 'Handler not found.' ]!
 
 handlerAt: aString ifAbsent: aBlock	aString isNil		ifTrue: [ ^ aBlock value ].	^ self handlers		at: aString		ifAbsent: aBlock!
 
@@ -45,24 +49,27 @@ register: aRequestHandler at: aString 	aString ifNil: [ WAError signal: 'Regist
 unregister: aRequestHandler	handlers 		removeKey: aRequestHandler name		ifAbsent: [ ^ nil ].	^ aRequestHandler unregistered!
 
 urlFor: aRequestHandler	^ self url		addToPath: (self nameOfHandler: aRequestHandler);		yourself! !
-!WADispatcher categoriesFor: #childrenDo:!parent/child!public! !
-!WADispatcher categoriesFor: #defaultHandler!accessing!public! !
-!WADispatcher categoriesFor: #defaultName!accessing!public! !
-!WADispatcher categoriesFor: #defaultName:!accessing!public! !
-!WADispatcher categoriesFor: #handleDefault:!handling!public! !
-!WADispatcher categoriesFor: #handleFiltered:!handling!public! !
-!WADispatcher categoriesFor: #handleFiltered:named:!handling!public! !
-!WADispatcher categoriesFor: #handlerAt:!accessing!public! !
-!WADispatcher categoriesFor: #handlerAt:ifAbsent:!accessing!public! !
-!WADispatcher categoriesFor: #handlerAtAll:!accessing!public! !
-!WADispatcher categoriesFor: #handlers!accessing!public! !
-!WADispatcher categoriesFor: #initialize!initialization!public! !
-!WADispatcher categoriesFor: #isDispatcher!public!testing! !
-!WADispatcher categoriesFor: #nameOfHandler:!accessing!public! !
-!WADispatcher categoriesFor: #postCopy!copying!public! !
-!WADispatcher categoriesFor: #register:at:!parent/child!public! !
-!WADispatcher categoriesFor: #unregister:!parent/child!public! !
-!WADispatcher categoriesFor: #urlFor:!accessing!public! !
+
+!WADispatcher categoriesForMethods!
+childrenDo:!parent/child!public! !
+defaultHandler!accessing!public! !
+defaultName!accessing!public! !
+defaultName:!accessing!public! !
+handleDefault:!handling!public! !
+handleFiltered:!handling!public! !
+handleFiltered:named:!handling!public! !
+handlerAt:!accessing!public! !
+handlerAt:ifAbsent:!accessing!public! !
+handlerAtAll:!accessing!public! !
+handlers!accessing!public! !
+initialize!initialization!public! !
+isDispatcher!public!testing! !
+nameOfHandler:!accessing!public! !
+postCopy!copying!public! !
+register:at:!parent/child!public! !
+unregister:!parent/child!public! !
+urlFor:!accessing!public! !
+!
 
 !WADispatcher class methodsFor!
 
@@ -71,7 +78,10 @@ default	^ default ifNil: [ default := self new ]!
 description	^ 'Dispatcher'!
 
 resetDefault	default := nil! !
-!WADispatcher class categoriesFor: #default!accessing!public! !
-!WADispatcher class categoriesFor: #description!accessing!public! !
-!WADispatcher class categoriesFor: #resetDefault!initialization!public! !
+
+!WADispatcher class categoriesForMethods!
+default!accessing!public! !
+description!accessing!public! !
+resetDefault!initialization!public! !
+!
 

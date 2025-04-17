@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAObject subclass: #WAOpeningConditionalComment
 	instanceVariableNames: 'condition'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAOpeningConditionalComment guid: (GUID fromString: '{cbf077ee-cbda-4cf2-8c2b-ed95d4450300}')!
+
+WAOpeningConditionalComment guid: (GUID fromString: '{a1c9d17f-ad28-4a32-813d-2bd47fe1301b}')!
+
 WAOpeningConditionalComment comment: 'Opens a WAConditionalComment and encodes the condition.'!
-!WAOpeningConditionalComment categoriesForClass!Seaside-Core-Document-Elements! !
+
+!WAOpeningConditionalComment categoriesForClass!Document-Elements! !
+
 !WAOpeningConditionalComment methodsFor!
 
 condition	^ condition!
@@ -15,12 +19,18 @@ condition	^ condition!
 condition: aString	condition := aString!
 
 encodeOn: aDocument	aDocument		nextPutAll: '<!!--[';		nextPutAll: self condition;		nextPutAll: ']>'! !
-!WAOpeningConditionalComment categoriesFor: #condition!accessing!public! !
-!WAOpeningConditionalComment categoriesFor: #condition:!accessing!public! !
-!WAOpeningConditionalComment categoriesFor: #encodeOn:!printing!public! !
+
+!WAOpeningConditionalComment categoriesForMethods!
+condition!accessing!public! !
+condition:!accessing!public! !
+encodeOn:!printing!public! !
+!
 
 !WAOpeningConditionalComment class methodsFor!
 
 condition: aString	^ self new		condition: aString;		yourself! !
-!WAOpeningConditionalComment class categoriesFor: #condition:!instance creation!public! !
+
+!WAOpeningConditionalComment class categoriesForMethods!
+condition:!instance creation!public! !
+!
 

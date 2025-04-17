@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAFunctionalTaskTest subclass: #WAFlowConvenienceFunctionalTest
 	instanceVariableNames: 'cheese'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAFlowConvenienceFunctionalTest guid: (GUID fromString: '{8fb056db-e367-45d2-87eb-f01e4d9aaca6}')!
+
+WAFlowConvenienceFunctionalTest guid: (GUID fromString: '{6c2fc50d-7402-46fe-891c-c1e5f1bca74f}')!
+
 WAFlowConvenienceFunctionalTest comment: ''!
-!WAFlowConvenienceFunctionalTest categoriesForClass!Seaside-Tests-Flow-Functional! !
+
+!WAFlowConvenienceFunctionalTest categoriesForClass!Functional! !
+
 !WAFlowConvenienceFunctionalTest methodsFor!
 
 chooseCheese	cheese := self		chooseFrom: #('Greyerzer' 'Tilsiter' 'Sbrinz')		caption: 'What''s your favorite Cheese?'.	cheese isNil ifTrue: [ self chooseCheese ]!
@@ -19,9 +23,12 @@ go	[ self chooseCheese.	  self confirmCheese ] whileFalse.	self informCheese!
 informCheese	self inform: 'Your favorite cheese is ', cheese, '.'!
 
 states	^ Array with: self! !
-!WAFlowConvenienceFunctionalTest categoriesFor: #chooseCheese!controlling!public! !
-!WAFlowConvenienceFunctionalTest categoriesFor: #confirmCheese!controlling!public! !
-!WAFlowConvenienceFunctionalTest categoriesFor: #go!public!running! !
-!WAFlowConvenienceFunctionalTest categoriesFor: #informCheese!controlling!public! !
-!WAFlowConvenienceFunctionalTest categoriesFor: #states!hooks!public! !
+
+!WAFlowConvenienceFunctionalTest categoriesForMethods!
+chooseCheese!controlling!public! !
+confirmCheese!controlling!public! !
+go!public!running! !
+informCheese!controlling!public! !
+states!hooks!public! !
+!
 

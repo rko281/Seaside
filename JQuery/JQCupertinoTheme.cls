@@ -1,15 +1,22 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQBaseTheme subclass: #JQCupertinoTheme
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQCupertinoTheme guid: (GUID fromString: '{7980dae7-c73b-427e-adaa-f0728a119111}')!
+
+JQCupertinoTheme guid: (GUID fromString: '{9381b37c-78c9-4dff-a04e-7482a2b3d789}')!
+
 JQCupertinoTheme comment: ''!
-!JQCupertinoTheme categoriesForClass!JQuery-UI-Libraries! !
+
+!JQCupertinoTheme categoriesForClass!Libraries! !
+
 !JQCupertinoTheme methodsFor!
 
 themeName	^ 'cupertino'! !
-!JQCupertinoTheme categoriesFor: #themeName!accessing!public! !
+
+!JQCupertinoTheme categoriesForMethods!
+themeName!accessing!public! !
+!
 

@@ -1,15 +1,22 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAQualifiedValue subclass: #WAAccept
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAAccept guid: (GUID fromString: '{17004b12-8955-4bd9-b0d1-c07d81594040}')!
-WAAccept comment: 'WAAccept class	instanceVariableNames: '''''!
-!WAAccept categoriesForClass!Seaside-Core-HTTP! !
+
+WAAccept guid: (GUID fromString: '{a8740f57-80e2-4e79-8d74-b16959041474}')!
+
+WAAccept comment: 'A WAAccept is a WAQualifiedValue with a value that is an instance of WAMimeType. It represents how much a user agent prefers a certain mime type.'!
+
+!WAAccept categoriesForClass!HTTP! !
+
 !WAAccept class methodsFor!
 
 valueClass	^ WAMimeType! !
-!WAAccept class categoriesFor: #valueClass!private! !
+
+!WAAccept class categoriesForMethods!
+valueClass!private! !
+!
 

@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WATagBrush subclass: #WAOptionTag
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAOptionTag guid: (GUID fromString: '{243b0a03-c65d-4079-96ac-9db0fa69ce45}')!
+
+WAOptionTag guid: (GUID fromString: '{cae1cc8d-fe84-468e-a4f4-8eddeb70d2e8}')!
+
 WAOptionTag comment: 'The option element defines an option in a drop-down list. '!
-!WAOptionTag categoriesForClass!Seaside-Canvas-Tags! !
+
+!WAOptionTag categoriesForClass!Tags! !
+
 !WAOptionTag methodsFor!
 
 callback: aBlock	self value: (self storeCallback: (WAValueCallback on: aBlock))!
@@ -20,11 +24,14 @@ tag	^ 'option'!
 
 value: aString	self attributes at: 'value' put: aString!
 
-value: anObject with: aListTag	self selected: (aListTag isSelected: anObject).	self value: (aListTag valueFor: anObject)	! !
-!WAOptionTag categoriesFor: #callback:!callbacks!public! !
-!WAOptionTag categoriesFor: #label:!attributes!public! !
-!WAOptionTag categoriesFor: #selected:!attributes!public! !
-!WAOptionTag categoriesFor: #tag!accessing!public! !
-!WAOptionTag categoriesFor: #value:!attributes!public! !
-!WAOptionTag categoriesFor: #value:with:!attributes!public! !
+value: anObject with: aListTag	self selected: (aListTag isSelected: anObject).	self value: (aListTag valueFor: anObject)! !
+
+!WAOptionTag categoriesForMethods!
+callback:!callbacks!public! !
+label:!attributes!public! !
+selected:!attributes!public! !
+tag!accessing!public! !
+value:!attributes!public! !
+value:with:!attributes!public! !
+!
 

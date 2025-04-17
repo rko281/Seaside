@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAFunctionalTest subclass: #WAInputPostFunctionalTest
 	instanceVariableNames: 'inputElements hasBody ran'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAInputPostFunctionalTest guid: (GUID fromString: '{7a8d5beb-86f4-4a8e-832d-5936d974e304}')!
+
+WAInputPostFunctionalTest guid: (GUID fromString: '{93c54860-fca1-45e4-a49c-f36618c6a2ca}')!
+
 WAInputPostFunctionalTest comment: ''!
-!WAInputPostFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
+
+!WAInputPostFunctionalTest categoriesForClass!Unclassified! !
+
 !WAInputPostFunctionalTest methodsFor!
 
 children	^ Array with: inputElements!
@@ -21,10 +25,13 @@ renderContentOn: html	self renderExplanationOn: html.	html form: [		html tabl
 renderExplanationOn: html	html paragraph: 'This form uses an URL-encoded POST request. The upload is not supposed to work.'!
 
 renderRequestBodyOn: html	html hiddenInput		callback: [ self readRequestBody ].	html strong: 'Request Body:'.	ran		ifTrue: [ html text: (hasBody ifTrue: [ 'Success' ] ifFalse: [ 'Fail' ]) ]		ifFalse: [ html text: 'Not Run' ].	html break! !
-!WAInputPostFunctionalTest categoriesFor: #children!hooks!public! !
-!WAInputPostFunctionalTest categoriesFor: #initialize!initialization!public! !
-!WAInputPostFunctionalTest categoriesFor: #readRequestBody!actions!public! !
-!WAInputPostFunctionalTest categoriesFor: #renderContentOn:!public!rendering! !
-!WAInputPostFunctionalTest categoriesFor: #renderExplanationOn:!public!rendering! !
-!WAInputPostFunctionalTest categoriesFor: #renderRequestBodyOn:!public!rendering! !
+
+!WAInputPostFunctionalTest categoriesForMethods!
+children!hooks!public! !
+initialize!initialization!public! !
+readRequestBody!actions!public! !
+renderContentOn:!public!rendering! !
+renderExplanationOn:!public!rendering! !
+renderRequestBodyOn:!public!rendering! !
+!
 

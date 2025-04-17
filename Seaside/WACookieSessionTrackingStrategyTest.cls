@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WASessionTrackingStrategyTest subclass: #WACookieSessionTrackingStrategyTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WACookieSessionTrackingStrategyTest guid: (GUID fromString: '{ae48943f-5187-47ec-ae35-a3a5383a1983}')!
+
+WACookieSessionTrackingStrategyTest guid: (GUID fromString: '{7efc1cdd-01fd-4cad-8ccc-68e0aa06b148}')!
+
 WACookieSessionTrackingStrategyTest comment: ''!
-!WACookieSessionTrackingStrategyTest categoriesForClass!Seaside-Tests-Session! !
+
+!WACookieSessionTrackingStrategyTest categoriesForClass!Unclassified! !
+
 !WACookieSessionTrackingStrategyTest methodsFor!
 
 assertNotFound: aRequestContext	self assert: aRequestContext response status = WAResponse statusFound.	self assert: (aRequestContext response headerAt: 'Location') greaseString = '/1/2'!
@@ -37,23 +41,29 @@ testQueryFieldOverridesCookie	| cookie1 key context |	cookie1 := WARequestCook
 testWrongKey	| cookie context actual |	cookie := WARequestCookie key: (strategy keyCookieName, '-not') value: 'cookie'.	context := self requestContext.	context request setCookies: (Array with: cookie).	actual := strategy keyFromContext: context.	self assert: actual isNil!
 
 testWrongPrefix	| cookie1 cookie2 actual context |	cookie1 := WARequestCookie key: strategy keyCookieName value: 'cookie1'.	cookie2 := (WARequestCookie key: strategy keyCookieName value: 'cookie2')		path: '/one';		yourself.	context := self requestContext.	context request setCookies: (Array			with: cookie1			with: cookie2).	actual := strategy keyFromContext: context.	self assert: actual = 'cookie1'! !
-!WACookieSessionTrackingStrategyTest categoriesFor: #assertNotFound:!private! !
-!WACookieSessionTrackingStrategyTest categoriesFor: #createRequest!private! !
-!WACookieSessionTrackingStrategyTest categoriesFor: #testAddCookieNonePresentYet!public!tests! !
-!WACookieSessionTrackingStrategyTest categoriesFor: #testAddCookieOneAlreadyPresent!public!tests! !
-!WACookieSessionTrackingStrategyTest categoriesFor: #testAddCookieOneAlreadyPresentWithWrongValue!public!tests! !
-!WACookieSessionTrackingStrategyTest categoriesFor: #testEmpty!public!tests! !
-!WACookieSessionTrackingStrategyTest categoriesFor: #testNoHandlerFoundForKey!public!tests! !
-!WACookieSessionTrackingStrategyTest categoriesFor: #testOneOfMany!public!tests! !
-!WACookieSessionTrackingStrategyTest categoriesFor: #testOneOfManySlashInCookie!public!tests! !
-!WACookieSessionTrackingStrategyTest categoriesFor: #testOneOfManySlashInUrl!public!tests! !
-!WACookieSessionTrackingStrategyTest categoriesFor: #testOnlyOne!public!tests! !
-!WACookieSessionTrackingStrategyTest categoriesFor: #testQueryFieldOverridesCookie!public!tests! !
-!WACookieSessionTrackingStrategyTest categoriesFor: #testWrongKey!public!tests! !
-!WACookieSessionTrackingStrategyTest categoriesFor: #testWrongPrefix!public!tests! !
+
+!WACookieSessionTrackingStrategyTest categoriesForMethods!
+assertNotFound:!private! !
+createRequest!private! !
+testAddCookieNonePresentYet!public!tests! !
+testAddCookieOneAlreadyPresent!public!tests! !
+testAddCookieOneAlreadyPresentWithWrongValue!public!tests! !
+testEmpty!public!tests! !
+testNoHandlerFoundForKey!public!tests! !
+testOneOfMany!public!tests! !
+testOneOfManySlashInCookie!public!tests! !
+testOneOfManySlashInUrl!public!tests! !
+testOnlyOne!public!tests! !
+testQueryFieldOverridesCookie!public!tests! !
+testWrongKey!public!tests! !
+testWrongPrefix!public!tests! !
+!
 
 !WACookieSessionTrackingStrategyTest class methodsFor!
 
 isAbstract	^ self name = #WACookieSessionTrackingStrategyTest! !
-!WACookieSessionTrackingStrategyTest class categoriesFor: #isAbstract!public!testing! !
+
+!WACookieSessionTrackingStrategyTest class categoriesForMethods!
+isAbstract!public!testing! !
+!
 

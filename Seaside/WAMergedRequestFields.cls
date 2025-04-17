@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAObject subclass: #WAMergedRequestFields
 	instanceVariableNames: 'delegates'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAMergedRequestFields guid: (GUID fromString: '{ae6c10d6-a9c6-4345-9485-9a243878b444}')!
+
+WAMergedRequestFields guid: (GUID fromString: '{751235af-ab71-4f6c-a73d-f4f941e160af}')!
+
 WAMergedRequestFields comment: 'Provides a read-only view onto multiple dictionaries. Note that this can lead to to duplicated keys that can only retrieved by iterating over all the associations.'!
-!WAMergedRequestFields categoriesForClass!Seaside-Core-HTTP! !
+
+!WAMergedRequestFields categoriesForClass!HTTP! !
+
 !WAMergedRequestFields methodsFor!
 
 allAt: aKey	^ Array streamContents: [ :stream |		delegates do: [ :each | stream nextPutAll: (each allAt: aKey) ] ]!
@@ -41,28 +45,34 @@ keysDo: aBlock	delegates do: [ :each | each keysDo: aBlock ]!
 size	^ delegates inject: 0 into: [ :result :each | result + each size ]!
 
 values	^ Array streamContents: [ :stream |		delegates do: [ :each | stream nextPutAll: each values ] ]! !
-!WAMergedRequestFields categoriesFor: #allAt:!enumerating!public! !
-!WAMergedRequestFields categoriesFor: #allAt:ifAbsent:!enumerating!public! !
-!WAMergedRequestFields categoriesFor: #associationsDo:!enumerating!public! !
-!WAMergedRequestFields categoriesFor: #at:!accessing!public! !
-!WAMergedRequestFields categoriesFor: #at:ifAbsent:!accessing!public! !
-!WAMergedRequestFields categoriesFor: #at:ifPresent:!accessing!public! !
-!WAMergedRequestFields categoriesFor: #do:!enumerating!public! !
-!WAMergedRequestFields categoriesFor: #errorKeyNotFound!private! !
-!WAMergedRequestFields categoriesFor: #includesKey:!public!testing! !
-!WAMergedRequestFields categoriesFor: #initializeOn:!initialization!public! !
-!WAMergedRequestFields categoriesFor: #isEmpty!public!testing! !
-!WAMergedRequestFields categoriesFor: #keys!enumerating!public! !
-!WAMergedRequestFields categoriesFor: #keysAndValuesDo:!enumerating!public! !
-!WAMergedRequestFields categoriesFor: #keysDo:!enumerating!public! !
-!WAMergedRequestFields categoriesFor: #size!accessing!public! !
-!WAMergedRequestFields categoriesFor: #values!enumerating!public! !
+
+!WAMergedRequestFields categoriesForMethods!
+allAt:!enumerating!public! !
+allAt:ifAbsent:!enumerating!public! !
+associationsDo:!enumerating!public! !
+at:!accessing!public! !
+at:ifAbsent:!accessing!public! !
+at:ifPresent:!accessing!public! !
+do:!enumerating!public! !
+errorKeyNotFound!private! !
+includesKey:!public!testing! !
+initializeOn:!initialization!public! !
+isEmpty!public!testing! !
+keys!enumerating!public! !
+keysAndValuesDo:!enumerating!public! !
+keysDo:!enumerating!public! !
+size!accessing!public! !
+values!enumerating!public! !
+!
 
 !WAMergedRequestFields class methodsFor!
 
 new	self error: self name , ' is created with #on:'!
 
 on: anArray	^ self basicNew initializeOn: anArray! !
-!WAMergedRequestFields class categoriesFor: #new!instance creation!public! !
-!WAMergedRequestFields class categoriesFor: #on:!instance creation!public! !
+
+!WAMergedRequestFields class categoriesForMethods!
+new!instance creation!public! !
+on:!instance creation!public! !
+!
 

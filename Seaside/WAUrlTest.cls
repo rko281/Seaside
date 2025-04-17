@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAContextTest subclass: #WAUrlTest
 	instanceVariableNames: 'url'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAUrlTest guid: (GUID fromString: '{231175ba-e277-434e-ae44-757ef0fde2ba}')!
+
+WAUrlTest guid: (GUID fromString: '{ec43b1c9-91ba-4484-a131-44e67f817c6a}')!
+
 WAUrlTest comment: ''!
-!WAUrlTest categoriesForClass!Seaside-Tests-Core-HTTP! !
+
+!WAUrlTest categoriesForClass!HTTP! !
+
 !WAUrlTest methodsFor!
 
 absoluteExamples	^ #( 'http://www.seaside.st/'		 'http://www.seaside.st:8080/'		 'http://lukas@www.seaside.st/'		 'http://lukas:renggli@www.seaside.st/'		 'http://www.seaside.st/resources'		 'http://www.seaside.st/styles/favicon.png'		 'http://www.seaside.st/%24%26%2B%2C%2F%3A%3B%3D%3F%40'		 'http://www.seaside.st/#top'		 'http://www.seaside.st/styles#top'		 'http://www.seaside.st/about/screenshots?_c'		 'http://www.seaside.st/about/screenshots?_s=XrkNBpErXTKlVRhn'		 'http://www.seaside.st/about/screenshots?_s=XrkNBpErXTKlVRhn&_k=lZWXfESZ'		 'http://www.seaside.st/about/screenshots?_s=XrkNBpErXTKlVRhn&_k=lZWXfESZ&_n&47'		 'http://www.seaside.st/about/screenshots?_s=XrkNBpErXTKlVRhn&_k=lZWXfESZ&_n&47#149361951'		 'http://www.seaside.st/;jsessionid=42?redirectcounter=1'		 'http://www.seaside.st/seaside/files;old/WAStandardFiles;key1=value1,value3;key2=value2/seaside.jpg;jsessionid=42?redirectcounter=1'		'http://www.seaside.st/seaside/WAStandardFiles;session%3Aid=42?redirectcounter=1'		 'http://lukas:renggli@www.seaside.st/about/screenshots?_s=XrkNBpErXTKlVRhn&_k=lZWXfESZ&_n&47#149361951'		 'http://lukas:renggli@www.seaside.st:8080/about/screenshots?_s=XrkNBpErXTKlVRhn&_k=lZWXfESZ&_n&47#149361951' )!
@@ -44,7 +48,7 @@ testAddToPathWithTrailingSlashOnly	url addToPath: 'files/WAStandardFiles/'.	se
 
 testConversion	| converted |	url		host: 'example.com';		addToPath: 'foo';		addToPath: 'bar'.		converted := 'http://example.com/foo/bar' seasideUrl.		self assert: (converted isKindOf: WAUrl).	self assert: url = converted!
 
-testCopy	| copy |	url addToPath: 'foo/bar'.	url addField: 'foo' value: 'bar'.	copy := url copy.	url addToPath: 'zork'.	url addField: 'zork'.	self assert: url printString = '/foo/bar/zork?foo=bar&zork'.	self assert: copy printString = '/foo/bar?foo=bar'	!
+testCopy	| copy |	url addToPath: 'foo/bar'.	url addField: 'foo' value: 'bar'.	copy := url copy.	url addToPath: 'zork'.	url addField: 'zork'.	self assert: url printString = '/foo/bar/zork?foo=bar&zork'.	self assert: copy printString = '/foo/bar?foo=bar'!
 
 testCopyWithPathParameter	| copy |	url addToPath: 'zork'.	copy := url copy.	url addPathParameterAt: 1 key: 'foo'.		self assert: url printString = '/zork;foo'.	self assert: copy printString = '/zork'!
 
@@ -66,7 +70,7 @@ testInvalidSyntax	"Regression test for:	http://code.google.com/p/seaside/issue
 
 testIsSsl	url := WAUrl absolute: 'https://www.seaside.st/'.	self assert: url isSsl.	url := WAUrl absolute: 'http://www.seaside.st/'.	self deny: url isSsl.	url := WAUrl absolute: 'ftps://www.seaside.st/'.	self assert: url isSsl.	url := WAUrl absolute: 'ftp://www.seaside.st/'.	self deny: url isSsl.	self deny: WAUrl new isSsl!
 
-testNastyEdgeCasesParsing	url := (WAUrl absolute: 'http://example.com/blue+light%20blue?blue%2Blight+blue')		decodedWith: GRNullCodec new.	self assert: url path first = 'blue+light blue'.	self assert: (url queryFields includesKey: 'blue+light blue').		url := (WAUrl absolute: 'http://example.com/blue%2Fred%3Fand+green')		decodedWith: GRNullCodec new.	self assert: url path first = 'blue/red?and+green'.		url := (WAUrl absolute: 'http://example.com/:@-._~!!$&''()*+,=;:@-._~!!$&''()*+,=:@-._~!!$&''()*+,==?/?:@-._~!!$''()*+,;=/?:@-._~!!$''()*+,;==#/?:@-._~!!$&''()*+,;=')		decodedWith: GRNullCodec new.	self assert: url path first = ':@-._~!!$&''()*+,='.	self assert: (url pathParameterAllAt: 1 key: ':@-._~!!$&''()*+,' ifAbsent: [ 'fail' ]) = #(':@-._~!!$&''()*+' '==').	self assert: (url queryFields at: '/?:@-._~!!$''()* ,;') = '/?:@-._~!!$''()* ,;=='.	self assert: url fragment = '/?:@-._~!!$&''()*+,;='!
+testNastyEdgeCasesParsing	url := (WAUrl absolute: 'http://example.com/blue+light%20blue?blue%2Blight+blue')		decodedWith: GRNullCodec new.	self assert: url path first = 'blue+light blue'.	self assert: (url queryFields includesKey: 'blue+light blue').		url := (WAUrl absolute: 'http://example.com/blue%2Fred%3Fand+green')		decodedWith: GRNullCodec new.	self assert: url path first = 'blue/red?and+green'.		url := WAUrl absolute: '/blue?http://example.com/red'.	self assert: url path = (OrderedCollection with: 'blue').	self assert: url queryFields keys = #('http://example.com/red').	self assert: url queryFields values = #(nil).		url := (WAUrl absolute: 'http://example.com/:@-._~!!$&''()*+,=;:@-._~!!$&''()*+,=:@-._~!!$&''()*+,==?/?:@-._~!!$''()*+,;=/?:@-._~!!$''()*+,;==#/?:@-._~!!$&''()*+,;=')		decodedWith: GRNullCodec new.	self assert: url path first = ':@-._~!!$&''()*+,='.	self assert: (url pathParameterAllAt: 1 key: ':@-._~!!$&''()*+,' ifAbsent: [ 'fail' ]) = #(':@-._~!!$&''()*+' '==').	self assert: (url queryFields at: '/?:@-._~!!$''()* ,;') = '/?:@-._~!!$''()* ,;=='.	self assert: url fragment = '/?:@-._~!!$&''()*+,;='!
 
 testNastyEdgeCasesSerialization	url host: 'example.com'.	url addToPath: 'blue+light blue'.	url queryFields at: 'blue+light blue' put: nil.	"legal but hardcore	self assert: url greaseString = 'http://example.com/blue+light%20blue?blue%2Blight+blue'"	self assert: url greaseString = 'http://example.com/blue%2Blight%20blue?blue%2Blight%20blue'!
 
@@ -124,7 +128,7 @@ testTakeServerParametersFromRequestHttps	| request |	request := WARequest new
 
 testUser	url		host: 'seaside.st';		user: 'foo'.	self assert: url user = 'foo'.	self assert: url greaseString = 'http://foo@seaside.st/'!
 
-testUserinfo	url		host: 'seaside.st';		userinfo: 'foo:bar'.	self assert: url userinfo = 'foo:bar'.	self assert: url greaseString = 'http://foo%3Abar@seaside.st/'.	"A colon needs to be escaped unless it is separating a (deprecated) password	part. This password part must be specified with #password: because we can't	tell the difference between the two types of colons in #userinfo:."	self assert: url user = 'foo:bar'.	self assert: url password isNil.	url user: 'foo'; password: 'bar'.	self assert: url userinfo = 'foo:bar'.	self assert: url user = 'foo'.	self assert: url password = 'bar'	!
+testUserinfo	url		host: 'seaside.st';		userinfo: 'foo:bar'.	self assert: url userinfo = 'foo:bar'.	self assert: url greaseString = 'http://foo%3Abar@seaside.st/'.	"A colon needs to be escaped unless it is separating a (deprecated) password	part. This password part must be specified with #password: because we can't	tell the difference between the two types of colons in #userinfo:."	self assert: url user = 'foo:bar'.	self assert: url password isNil.	url user: 'foo'; password: 'bar'.	self assert: url userinfo = 'foo:bar'.	self assert: url user = 'foo'.	self assert: url password = 'bar'!
 
 testWith	| copy |	copy := url with: 'with'.	url addToPath: 'zork'.	url addField: 'zork'.	self assert: url printString = '/zork?zork'.	self assert: copy printString = '/with'!
 
@@ -134,68 +138,77 @@ testWithFieldValue	| copy |	copy := url withField: 'foo' value: 'bar'.	url ad
 
 testWithoutFragment	| copy |	url fragment: 'foo'.	copy := url withoutFragment.	url addToPath: 'zork'.	url addField: 'zork'.	self assert: url printString = '/zork?zork#foo'.	self assert: copy printString = '/'!
 
-testWithoutQuery	| copy |	url addField: 'foo' value: 'bar'.	copy := url withoutQuery.	url addToPath: 'zork'.	url addField: 'zork'.	self assert: url printString = '/zork?foo=bar&zork'.	self assert: copy printString = '/'! !
-!WAUrlTest categoriesFor: #absoluteExamples!public!testing/parsing! !
-!WAUrlTest categoriesFor: #ambigousExamples!public!testing/parsing! !
-!WAUrlTest categoriesFor: #asString:!public!utilities! !
-!WAUrlTest categoriesFor: #equalExamples!public!testing/parsing! !
-!WAUrlTest categoriesFor: #invalidExamples!public!testing/parsing! !
-!WAUrlTest categoriesFor: #relativeExamples!public!testing/parsing! !
-!WAUrlTest categoriesFor: #setUp!public!running! !
-!WAUrlTest categoriesFor: #testAddAllToPath!public!tests/adding! !
-!WAUrlTest categoriesFor: #testAddField!public!tests/adding! !
-!WAUrlTest categoriesFor: #testAddFieldValue!public!tests/adding! !
-!WAUrlTest categoriesFor: #testAddPathParameter!public!tests/adding! !
-!WAUrlTest categoriesFor: #testAddToPathEmptyString!public!tests/adding! !
-!WAUrlTest categoriesFor: #testAddToPathWithLeadingAndTrailingSlash!public!tests/adding! !
-!WAUrlTest categoriesFor: #testAddToPathWithLeadingSlash!public!tests/adding! !
-!WAUrlTest categoriesFor: #testAddToPathWithoutLeadingSlash!public!tests/adding! !
-!WAUrlTest categoriesFor: #testAddToPathWithTrailingSlashOnly!public!tests/adding! !
-!WAUrlTest categoriesFor: #testConversion!public!tests! !
-!WAUrlTest categoriesFor: #testCopy!public!tests/copy! !
-!WAUrlTest categoriesFor: #testCopyWithPathParameter!public!tests/copy! !
-!WAUrlTest categoriesFor: #testCopyWithPathParameterValue!public!tests/copy! !
-!WAUrlTest categoriesFor: #testDecodedWith!public!tests/encoding! !
-!WAUrlTest categoriesFor: #testDecodePercent!public!testing/parsing! !
-!WAUrlTest categoriesFor: #testEqual!public!tests/comparing! !
-!WAUrlTest categoriesFor: #testFragment!public!tests! !
-!WAUrlTest categoriesFor: #testHash!public!tests/comparing! !
-!WAUrlTest categoriesFor: #testHost!public!tests! !
-!WAUrlTest categoriesFor: #testInvalidSyntax!public!tests/adding! !
-!WAUrlTest categoriesFor: #testIsSsl!public!testing/parsing! !
-!WAUrlTest categoriesFor: #testNastyEdgeCasesParsing!public!tests/encoding! !
-!WAUrlTest categoriesFor: #testNastyEdgeCasesSerialization!public!tests/encoding! !
-!WAUrlTest categoriesFor: #testNoParameter!public!testing/parsing! !
-!WAUrlTest categoriesFor: #testParseAbsolute!public!testing/parsing! !
-!WAUrlTest categoriesFor: #testParseAmbigous!public!testing/parsing! !
-!WAUrlTest categoriesFor: #testParseEqual!public!testing/parsing! !
-!WAUrlTest categoriesFor: #testParseInvalid!public!testing/parsing! !
-!WAUrlTest categoriesFor: #testParseRelative!public!testing/parsing! !
-!WAUrlTest categoriesFor: #testParseWithoutSlash!public!testing/parsing! !
-!WAUrlTest categoriesFor: #testParseWithSlash!public!testing/parsing! !
-!WAUrlTest categoriesFor: #testPassword!public!tests! !
-!WAUrlTest categoriesFor: #testPath!public!tests! !
-!WAUrlTest categoriesFor: #testPathEncoding!public!tests/encoding! !
-!WAUrlTest categoriesFor: #testPathString!public!tests/encoding! !
-!WAUrlTest categoriesFor: #testPathStringUnencoded!public!tests/adding! !
-!WAUrlTest categoriesFor: #testPort!public!tests! !
-!WAUrlTest categoriesFor: #testQueryEmpty!public!tests/encoding! !
-!WAUrlTest categoriesFor: #testQueryEncoding!public!tests/encoding! !
-!WAUrlTest categoriesFor: #testQueryFields!public!tests! !
-!WAUrlTest categoriesFor: #testQueryString!public!tests/encoding! !
-!WAUrlTest categoriesFor: #testRawAddAllToPath!public!tests/adding! !
-!WAUrlTest categoriesFor: #testRawAddToPath!public!tests/adding! !
-!WAUrlTest categoriesFor: #testRelativeTo!public!tests/encoding! !
-!WAUrlTest categoriesFor: #testScheme!public!tests! !
-!WAUrlTest categoriesFor: #testSlash!public!tests! !
-!WAUrlTest categoriesFor: #testTakeServerParametersFromRequest!public!tests! !
-!WAUrlTest categoriesFor: #testTakeServerParametersFromRequestBase!public!tests! !
-!WAUrlTest categoriesFor: #testTakeServerParametersFromRequestHttps!public!tests! !
-!WAUrlTest categoriesFor: #testUser!public!tests! !
-!WAUrlTest categoriesFor: #testUserinfo!public!tests! !
-!WAUrlTest categoriesFor: #testWith!public!tests/copy! !
-!WAUrlTest categoriesFor: #testWithField!public!tests/copy! !
-!WAUrlTest categoriesFor: #testWithFieldValue!public!tests/copy! !
-!WAUrlTest categoriesFor: #testWithoutFragment!public!tests/copy! !
-!WAUrlTest categoriesFor: #testWithoutQuery!public!tests/copy! !
+testWithoutQuery	| copy |	url addField: 'foo' value: 'bar'.	copy := url withoutQuery.	url addToPath: 'zork'.	url addField: 'zork'.	self assert: url printString = '/zork?foo=bar&zork'.	self assert: copy printString = '/'!
+
+testWithoutResource	| copy |	url addField: 'foo' value: 'bar'.	url scheme: 'http'.	url host: 'localhost'.	url port: 9000.		copy := url withoutResource.	url addToPath: 'zork'.	url addField: 'zork'.	self assert: url printString equals: 'http://localhost:9000/zork?foo=bar&zork'.	self assert: copy printString equals: 'http://localhost:9000/'!
+
+testWithoutSeasideQueryFields	| copy |	url addToPath: 'zork'.	url addField: 'foo' value: 'bar'.	url addField: '_k' value: '1'.	url addField: '_s' value: '2'.	url addField: '_d' value: '3'.	copy := url withoutSeasideQueryFields.	self assert: url printString = '/zork?foo=bar&_k=1&_s=2&_d=3'.	self assert: copy printString = '/zork?foo=bar'! !
+
+!WAUrlTest categoriesForMethods!
+absoluteExamples!public!testing/parsing! !
+ambigousExamples!public!testing/parsing! !
+asString:!public!utilities! !
+equalExamples!public!testing/parsing! !
+invalidExamples!public!testing/parsing! !
+relativeExamples!public!testing/parsing! !
+setUp!public!running! !
+testAddAllToPath!public!tests/adding! !
+testAddField!public!tests/adding! !
+testAddFieldValue!public!tests/adding! !
+testAddPathParameter!public!tests/adding! !
+testAddToPathEmptyString!public!tests/adding! !
+testAddToPathWithLeadingAndTrailingSlash!public!tests/adding! !
+testAddToPathWithLeadingSlash!public!tests/adding! !
+testAddToPathWithoutLeadingSlash!public!tests/adding! !
+testAddToPathWithTrailingSlashOnly!public!tests/adding! !
+testConversion!public!tests! !
+testCopy!public!tests/copy! !
+testCopyWithPathParameter!public!tests/copy! !
+testCopyWithPathParameterValue!public!tests/copy! !
+testDecodedWith!public!tests/encoding! !
+testDecodePercent!public!testing/parsing! !
+testEqual!public!tests/comparing! !
+testFragment!public!tests! !
+testHash!public!tests/comparing! !
+testHost!public!tests! !
+testInvalidSyntax!public!tests/adding! !
+testIsSsl!public!testing/parsing! !
+testNastyEdgeCasesParsing!public!tests/encoding! !
+testNastyEdgeCasesSerialization!public!tests/encoding! !
+testNoParameter!public!testing/parsing! !
+testParseAbsolute!public!testing/parsing! !
+testParseAmbigous!public!testing/parsing! !
+testParseEqual!public!testing/parsing! !
+testParseInvalid!public!testing/parsing! !
+testParseRelative!public!testing/parsing! !
+testParseWithoutSlash!public!testing/parsing! !
+testParseWithSlash!public!testing/parsing! !
+testPassword!public!tests! !
+testPath!public!tests! !
+testPathEncoding!public!tests/encoding! !
+testPathString!public!tests/encoding! !
+testPathStringUnencoded!public!tests/adding! !
+testPort!public!tests! !
+testQueryEmpty!public!tests/encoding! !
+testQueryEncoding!public!tests/encoding! !
+testQueryFields!public!tests! !
+testQueryString!public!tests/encoding! !
+testRawAddAllToPath!public!tests/adding! !
+testRawAddToPath!public!tests/adding! !
+testRelativeTo!public!tests/encoding! !
+testScheme!public!tests! !
+testSlash!public!tests! !
+testTakeServerParametersFromRequest!public!tests! !
+testTakeServerParametersFromRequestBase!public!tests! !
+testTakeServerParametersFromRequestHttps!public!tests! !
+testUser!public!tests! !
+testUserinfo!public!tests! !
+testWith!public!tests/copy! !
+testWithField!public!tests/copy! !
+testWithFieldValue!public!tests/copy! !
+testWithoutFragment!public!tests/copy! !
+testWithoutQuery!public!tests/copy! !
+testWithoutResource!public!tests/copy! !
+testWithoutSeasideQueryFields!public!tests/copy! !
+!
 

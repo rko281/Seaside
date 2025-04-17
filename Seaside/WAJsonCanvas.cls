@@ -1,20 +1,24 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WACanvas subclass: #WAJsonCanvas
 	instanceVariableNames: 'first'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAJsonCanvas guid: (GUID fromString: '{c7a029bc-220d-4a6f-8f3a-9b386c3a3a02}')!
+
+WAJsonCanvas guid: (GUID fromString: '{939aea6a-14aa-4292-8bd1-79998e659eb8}')!
+
 WAJsonCanvas comment: 'I am a  specific canvas to render JSON output.'!
-!WAJsonCanvas categoriesForClass!Seaside-JSON-Core! !
+
+!WAJsonCanvas categoriesForClass!Base! !
+
 !WAJsonCanvas methodsFor!
 
 array: aBlock	^ (self brush: WAJsonArrayBrush new) with: aBlock!
 
 boolean: aBoolean	self document stream nextPutAll: (aBoolean ifTrue: [ 'true' ] ifFalse: [ 'false' ])!
 
-dateAndTime: aDateAndTime	" Note: date and time is not standard json. So we use the ISO 8601 standard here. We convert to string to make it valid json "	self document stream nextPut: $".	aDateAndTime printOn: self document stream.	self document stream nextPut: $"!
+dateAndTime: aDateAndTime	" Note: date and time is not standard json. So we use the ISO 8601 standard here. We convert to string to make it valid json "	self document stream nextPut: $".	aDateAndTime printOn: self document stream.	self document stream nextPut: $"!
 
 initializeWithContext: aRenderContext	super initializeWithContext: aRenderContext.	first := true!
 
@@ -39,24 +43,30 @@ string: aString	self document string: aString!
 value: aBlock	^ (self brush: WAJsonValueBrush new) with: aBlock!
 
 writeIfNotFirst: aString	first ifFalse: [		self document nextPutAll: aString ]! !
-!WAJsonCanvas categoriesFor: #array:!public! !
-!WAJsonCanvas categoriesFor: #boolean:!double/disptach!public! !
-!WAJsonCanvas categoriesFor: #dateAndTime:!double/disptach!public! !
-!WAJsonCanvas categoriesFor: #initializeWithContext:!initialization!public! !
-!WAJsonCanvas categoriesFor: #key:value:!public! !
-!WAJsonCanvas categoriesFor: #nest:!private! !
-!WAJsonCanvas categoriesFor: #nextPut:!public! !
-!WAJsonCanvas categoriesFor: #null!double/disptach!public! !
-!WAJsonCanvas categoriesFor: #number:!double/disptach!public! !
-!WAJsonCanvas categoriesFor: #object:!public! !
-!WAJsonCanvas categoriesFor: #render:!public! !
-!WAJsonCanvas categoriesFor: #scaledDecimal:!double/disptach!public! !
-!WAJsonCanvas categoriesFor: #string:!double/disptach!public! !
-!WAJsonCanvas categoriesFor: #value:!public! !
-!WAJsonCanvas categoriesFor: #writeIfNotFirst:!private! !
+
+!WAJsonCanvas categoriesForMethods!
+array:!public! !
+boolean:!double/dispatch!public! !
+dateAndTime:!double/dispatch!public! !
+initializeWithContext:!initialization!public! !
+key:value:!public! !
+nest:!private! !
+nextPut:!public! !
+null!double/dispatch!public! !
+number:!double/dispatch!public! !
+object:!public! !
+render:!public! !
+scaledDecimal:!double/dispatch!public! !
+string:!double/dispatch!public! !
+value:!public! !
+writeIfNotFirst:!private! !
+!
 
 !WAJsonCanvas class methodsFor!
 
 builder	^ (WABuilder on: self)		documentClass: WAJsonDocument;		yourself! !
-!WAJsonCanvas class categoriesFor: #builder!instance creation!public! !
+
+!WAJsonCanvas class categoriesForMethods!
+builder!instance creation!public! !
+!
 

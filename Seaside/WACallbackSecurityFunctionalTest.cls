@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAFunctionalTest subclass: #WACallbackSecurityFunctionalTest
 	instanceVariableNames: 'letter number'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WACallbackSecurityFunctionalTest guid: (GUID fromString: '{e0ef325f-1aa9-4973-abe0-ca9e92199750}')!
+
+WACallbackSecurityFunctionalTest guid: (GUID fromString: '{2cefb729-65fa-4f44-a9e6-570f009b7a71}')!
+
 WACallbackSecurityFunctionalTest comment: ''!
-!WACallbackSecurityFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
+
+!WACallbackSecurityFunctionalTest categoriesForClass!Unclassified! !
+
 !WACallbackSecurityFunctionalTest methodsFor!
 
 initialize	super initialize.	number := 1.	letter := $A!
@@ -23,11 +27,14 @@ renderNumberListOn: html	html select		id: 'number-list';		size: 3;		selected
 script^ 'function swapCallbacks(url, list1id, list2id) {	list1 = document.getElementById(list1id);	list2 = document.getElementById(list2id);		document.location = url		+ "&" + list1.name + "=" + list2.options[2].value		+ "&" + list2.name + "=" + list1.options[2].value;}		'!
 
 states	^ Array with: self! !
-!WACallbackSecurityFunctionalTest categoriesFor: #initialize!initialization!public! !
-!WACallbackSecurityFunctionalTest categoriesFor: #renderContentOn:!public!rendering! !
-!WACallbackSecurityFunctionalTest categoriesFor: #renderInstructionsOn:!public!rendering! !
-!WACallbackSecurityFunctionalTest categoriesFor: #renderLetterListOn:!public!rendering! !
-!WACallbackSecurityFunctionalTest categoriesFor: #renderNumberListOn:!public!rendering! !
-!WACallbackSecurityFunctionalTest categoriesFor: #script!hooks!public! !
-!WACallbackSecurityFunctionalTest categoriesFor: #states!hooks!public! !
+
+!WACallbackSecurityFunctionalTest categoriesForMethods!
+initialize!initialization!public! !
+renderContentOn:!public!rendering! !
+renderInstructionsOn:!public!rendering! !
+renderLetterListOn:!public!rendering! !
+renderNumberListOn:!public!rendering! !
+script!hooks!public! !
+states!hooks!public! !
+!
 

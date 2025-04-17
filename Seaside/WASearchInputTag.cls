@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAAbstractTextAreaTag subclass: #WASearchInputTag
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WASearchInputTag guid: (GUID fromString: '{17263ea4-a422-4bb4-9d4d-3cde27be82c5}')!
+
+WASearchInputTag guid: (GUID fromString: '{6a7a6680-7ea9-47c8-9d5e-cb72ce8c3a30}')!
+
 WASearchInputTag comment: 'supported on:- Safari 1.3 and 2.0not (yet) part of HTML5graceful degeneration to text inputhttp://weblogs.mozillazine.org/hyatt/archives/2004_07.html#005890'!
-!WASearchInputTag categoriesForClass!Seaside-Canvas-Tags! !
+
+!WASearchInputTag categoriesForClass!Tags! !
+
 !WASearchInputTag methodsFor!
 
 autosave: aString	"The autosave attribute allows you to specify an autosave name for your search results in the dropdown. What's cool about the autosave is that it's global, which means that two Web sites could put up a search field with an autosave name of google and then they would share the search results. (Since the actual result values are not accessible to the page there is no privacy violation.)"	self attributeAt: 'autosave' put: aString!
@@ -19,9 +23,12 @@ onSearch: aString	"The search DOM event fires at the precise time the search sh
 results: aNumber	"The results attribute allows you to specify how many results should be displayed in the dropdown."	self attributeAt: 'results' put: aNumber!
 
 type	^ 'search'! !
-!WASearchInputTag categoriesFor: #autosave:!attributes!public! !
-!WASearchInputTag categoriesFor: #incremental:!attributes!public! !
-!WASearchInputTag categoriesFor: #onSearch:!events!public! !
-!WASearchInputTag categoriesFor: #results:!attributes!public! !
-!WASearchInputTag categoriesFor: #type!accessing!public! !
+
+!WASearchInputTag categoriesForMethods!
+autosave:!attributes!public! !
+incremental:!attributes!public! !
+onSearch:!events!public! !
+results:!attributes!public! !
+type!accessing!public! !
+!
 

@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAObject subclass: #WARenderContext
 	instanceVariableNames: 'visitor actionUrl actionBaseUrl resourceUrl callbacks document properties'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WARenderContext guid: (GUID fromString: '{60953b34-4afb-4d33-9fa7-6c7fab896bc8}')!
+
+WARenderContext guid: (GUID fromString: '{bda569f3-fe41-47ef-b3cb-d6aa8a76f60e}')!
+
 WARenderContext comment: 'A WARenderContext provides all the state needed by a Renderer to do its work.It is a decoupling device between whatever is initiating rendering and the Renderer itself.'!
-!WARenderContext categoriesForClass!Seaside-Core-Rendering! !
+
+!WARenderContext categoriesForClass!Rendering! !
+
 !WARenderContext methodsFor!
 
 absoluteUrlForResource: aString 	| url |	aString isNil ifTrue: [ ^ nil ].	url := self resourceUrl.	(url isNil or: [ (aString indexOfSubCollection: '://' startingAt: 1) ~= 0 ]) ifTrue: [		^ WAUrl absolute: aString ].	^ url copy addToPath: aString; yourself!
@@ -19,8 +23,6 @@ actionBaseUrl: anObject	actionBaseUrl := anObject seasideUrl!
 actionUrl	"Answer the action URL that was modified by #updateUrl:."	^ actionUrl!
 
 actionUrl: anObject	actionUrl := anObject seasideUrl!
-
-callbackAt: aString	self greaseDeprecatedApi: 'WARenderContext>>#callbackAt:' details: 'Report if you still need it.'.	^ callbacks at: aString ifAbsent: [ ]!
 
 callbacks	^ callbacks!
 
@@ -47,23 +49,25 @@ resourceUrl: anObject	resourceUrl := anObject seasideUrl!
 visitor	^ visitor ifNil: [ visitor := self defaultVisitor ]!
 
 visitor: anObject	visitor := anObject! !
-!WARenderContext categoriesFor: #absoluteUrlForResource:!accessing!public! !
-!WARenderContext categoriesFor: #actionBaseUrl!accessing!public! !
-!WARenderContext categoriesFor: #actionBaseUrl:!accessing!public! !
-!WARenderContext categoriesFor: #actionUrl!accessing!public! !
-!WARenderContext categoriesFor: #actionUrl:!accessing!public! !
-!WARenderContext categoriesFor: #callbackAt:!callbacks!public! !
-!WARenderContext categoriesFor: #callbacks!accessing!public! !
-!WARenderContext categoriesFor: #defaultVisitor!private! !
-!WARenderContext categoriesFor: #destroy!initialization!public! !
-!WARenderContext categoriesFor: #document!accessing!public! !
-!WARenderContext categoriesFor: #document:!accessing!public! !
-!WARenderContext categoriesFor: #document:during:!accessing!public! !
-!WARenderContext categoriesFor: #initialize!initialization!public! !
-!WARenderContext categoriesFor: #postCopy!copying!public! !
-!WARenderContext categoriesFor: #properties!accessing!public! !
-!WARenderContext categoriesFor: #resourceUrl!accessing!public! !
-!WARenderContext categoriesFor: #resourceUrl:!accessing!public! !
-!WARenderContext categoriesFor: #visitor!accessing!public! !
-!WARenderContext categoriesFor: #visitor:!accessing!public! !
+
+!WARenderContext categoriesForMethods!
+absoluteUrlForResource:!accessing!public! !
+actionBaseUrl!accessing!public! !
+actionBaseUrl:!accessing!public! !
+actionUrl!accessing!public! !
+actionUrl:!accessing!public! !
+callbacks!accessing!public! !
+defaultVisitor!private! !
+destroy!initialization!public! !
+document!accessing!public! !
+document:!accessing!public! !
+document:during:!accessing!public! !
+initialize!initialization!public! !
+postCopy!copying!public! !
+properties!accessing!public! !
+resourceUrl!accessing!public! !
+resourceUrl:!accessing!public! !
+visitor!accessing!public! !
+visitor:!accessing!public! !
+!
 

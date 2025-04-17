@@ -1,15 +1,22 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAUploadCallback subclass: #WAAllUploadsCallback
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAAllUploadsCallback guid: (GUID fromString: '{32385036-cc93-4df0-89b8-35a7f648ba24}')!
+
+WAAllUploadsCallback guid: (GUID fromString: '{662d851c-1d42-4845-a87a-b464c4a5d335}')!
+
 WAAllUploadsCallback comment: ''!
-!WAAllUploadsCallback categoriesForClass!Seaside-Core-Callbacks! !
+
+!WAAllUploadsCallback categoriesForClass!Callbacks! !
+
 !WAAllUploadsCallback methodsFor!
 
 evaluateWithFieldValues: anOrderedCollection	self evaluateWithArgument: ((anOrderedCollection		collect: [ :each | self valueForField: each ])		reject: [ :each | each isNil ])! !
-!WAAllUploadsCallback categoriesFor: #evaluateWithFieldValues:!evaluation!public! !
+
+!WAAllUploadsCallback categoriesForMethods!
+evaluateWithFieldValues:!evaluation!public! !
+!
 

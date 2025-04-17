@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAHandlerEditor subclass: #WARegistryEditor
 	instanceVariableNames: 'cacheEditor'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WARegistryEditor guid: (GUID fromString: '{2015bc43-118b-4978-8fac-17ad014ad4be}')!
+
+WARegistryEditor guid: (GUID fromString: '{11823390-6db1-4300-afd2-f78beac012a6}')!
+
 WARegistryEditor comment: ''!
-!WARegistryEditor categoriesForClass!Seaside-Tools-Web! !
+
+!WARegistryEditor categoriesForClass!Unclassified! !
+
 !WARegistryEditor methodsFor!
 
 children	^ super children copyWith: cacheEditor!
@@ -15,7 +19,10 @@ children	^ super children copyWith: cacheEditor!
 initializeOn: aHandler	| cache |	super initializeOn: aHandler.	cache := self handler cache.	cacheEditor := cache editorClass new		configuration: cache;		handler: handler;		group: #cache;		parent: self;		yourself!
 
 renderSubItemsOn: html	super renderSubItemsOn: html.	html render: cacheEditor! !
-!WARegistryEditor categoriesFor: #children!hooks!public! !
-!WARegistryEditor categoriesFor: #initializeOn:!initialization!public! !
-!WARegistryEditor categoriesFor: #renderSubItemsOn:!public!rendering! !
+
+!WARegistryEditor categoriesForMethods!
+children!hooks!public! !
+initializeOn:!initialization!public! !
+renderSubItemsOn:!public!rendering! !
+!
 

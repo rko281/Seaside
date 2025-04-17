@@ -1,15 +1,22 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAActionCallback subclass: #WACancelActionCallback
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WACancelActionCallback guid: (GUID fromString: '{991bc56a-255d-41a4-ac61-f268ddc51036}')!
+
+WACancelActionCallback guid: (GUID fromString: '{d10f938d-b65e-4616-b3db-ac50472f0cfe}')!
+
 WACancelActionCallback comment: ''!
-!WACancelActionCallback categoriesForClass!Seaside-Core-Callbacks! !
+
+!WACancelActionCallback categoriesForClass!Callbacks! !
+
 !WACancelActionCallback methodsFor!
 
 priority	^ -5! !
-!WACancelActionCallback categoriesFor: #priority!accessing!public! !
+
+!WACancelActionCallback categoriesForMethods!
+priority!accessing!public! !
+!
 

@@ -1,15 +1,22 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAError subclass: #WAChildComponentShouldNotBeSelfError
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAChildComponentShouldNotBeSelfError guid: (GUID fromString: '{cca39c4f-9702-45d8-b2bd-ec92ac7d361f}')!
+
+WAChildComponentShouldNotBeSelfError guid: (GUID fromString: '{6082d723-00e8-47b1-a8b2-109244a137f6}')!
+
 WAChildComponentShouldNotBeSelfError comment: ''!
-!WAChildComponentShouldNotBeSelfError categoriesForClass!Seaside-Component-Exceptions! !
+
+!WAChildComponentShouldNotBeSelfError categoriesForClass!Exceptions! !
+
 !WAChildComponentShouldNotBeSelfError methodsFor!
 
 seasidePossibleCauses	^ #(		'you included self in the return value of #children'		'You''re probably missing a return (^) somewhere.'	)! !
-!WAChildComponentShouldNotBeSelfError categoriesFor: #seasidePossibleCauses!accessing!public! !
+
+!WAChildComponentShouldNotBeSelfError categoriesForMethods!
+seasidePossibleCauses!accessing!public! !
+!
 

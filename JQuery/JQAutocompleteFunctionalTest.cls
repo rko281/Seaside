@@ -1,30 +1,40 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQUiFunctionalTest subclass: #JQAutocompleteFunctionalTest
-	instanceVariableNames: 'packages'
+	instanceVariableNames: 'packages countryNames selectedCountryName'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQAutocompleteFunctionalTest guid: (GUID fromString: '{f6f2b8aa-f450-4a40-a67e-06a1ece75182}')!
+
+JQAutocompleteFunctionalTest guid: (GUID fromString: '{ddceb03c-fda7-40d0-840e-27934b895d75}')!
+
 JQAutocompleteFunctionalTest comment: ''!
-!JQAutocompleteFunctionalTest categoriesForClass!JQuery-Tests-UI-Functional! !
+
+!JQAutocompleteFunctionalTest categoriesForClass!Functional! !
+
 !JQAutocompleteFunctionalTest methodsFor!
 
-packageNamesFor: aString	| filtered |	filtered := self packages		select: [ :each | each name includesSubstring: aString caseSensitive: false ].	filtered size > 10		ifTrue: [ filtered := filtered first: 10 ].	^ filtered collect: [ :each | each name ]!
+countryNames 		^ countryNames ifNil: [ countryNames := self listOfCountryNames ]!
 
-packages	^ packages ifNil: [ packages := GRPackage grPackages sorted: [ :a :b | a name < b name ] ]!
+countryNamesFor: aString	| filtered |	filtered := self countryNames		select: [ :each | each includesSubstring: aString caseSensitive: false ].	filtered size > 10		ifTrue: [ filtered := filtered first: 10 ].	^ filtered!
 
-renderContentOn: html	html label		for: html nextId;		with: 'Type a Seaside package name:'.	html break.	html textInput		id: html lastId;		script: (html jQuery this autocomplete			sourceCallback: [ :term | self packageNamesFor: term ])!
+renderContentOn: html	| showId |	showId := html nextId.		html paragraph: [		html label			for: html nextId;			with: 'Type a country name (no callback):'.		html break.		html textInput			id: html lastId;			script: (html jQuery this autocomplete sourceCallback: [ :term | self countryNamesFor: term ]) ].	html paragraph: [		html label			for: html nextId;			with: 'Type a country name (with callback):'.		html break.		html textInput			id: html lastId;			script: (html jQuery this autocomplete					 search: [ :term | self countryNamesFor: term ]					 labels: [ :countryName | countryName ]					 callback: [ :val :s |						 selectedCountryName := val.						 s << (s jQuery id: showId) html: [ :r | self renderSelectedCountryNameOn: r ] ]).		html break.		html div			id: showId;			with: [ self renderSelectedCountryNameOn: html ] ]!
+
+renderSelectedCountryNameOn: html	html text: (selectedCountryName			 ifNil: [ 'No selected country' ]			 ifNotNil: [ selectedCountryName , ' was selected' ])!
 
 selectors	^ #(renderContentOn:)!
 
 title	^ 'Autocomplete'!
 
 url	^ 'http://docs.jquery.com/UI/Autocomplete'! !
-!JQAutocompleteFunctionalTest categoriesFor: #packageNamesFor:!public!querying! !
-!JQAutocompleteFunctionalTest categoriesFor: #packages!public!querying! !
-!JQAutocompleteFunctionalTest categoriesFor: #renderContentOn:!public!rendering! !
-!JQAutocompleteFunctionalTest categoriesFor: #selectors!accessing!public! !
-!JQAutocompleteFunctionalTest categoriesFor: #title!accessing!public! !
-!JQAutocompleteFunctionalTest categoriesFor: #url!accessing!public! !
+
+!JQAutocompleteFunctionalTest categoriesForMethods!
+countryNames!public!querying! !
+countryNamesFor:!public!querying! !
+renderContentOn:!public!rendering! !
+renderSelectedCountryNameOn:!public!rendering! !
+selectors!accessing!public! !
+title!accessing!public! !
+url!accessing!public! !
+!
 

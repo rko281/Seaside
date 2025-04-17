@@ -1,15 +1,22 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAActionCallback subclass: #WAImageCallback
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAImageCallback guid: (GUID fromString: '{1ae9ef40-ef20-4138-be31-4594aa90a076}')!
+
+WAImageCallback guid: (GUID fromString: '{5acf4c78-3fcc-496e-9fca-9fca55a00b15}')!
+
 WAImageCallback comment: ''!
-!WAImageCallback categoriesForClass!Seaside-Core-Callbacks! !
+
+!WAImageCallback categoriesForClass!Callbacks! !
+
 !WAImageCallback methodsFor!
 
 convertKey: aString	^ aString , '.x'! !
-!WAImageCallback categoriesFor: #convertKey:!converting!public! !
+
+!WAImageCallback categoriesForMethods!
+convertKey:!converting!public! !
+!
 

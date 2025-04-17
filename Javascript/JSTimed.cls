@@ -1,23 +1,33 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JSDecoration subclass: #JSTimed
 	instanceVariableNames: 'duration'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSTimed guid: (GUID fromString: '{65014967-90d7-42fe-a48a-eb866a3be4d0}')!
+
+JSTimed guid: (GUID fromString: '{9b179408-532e-40fe-97e9-77f99d2b2afc}')!
+
 JSTimed comment: ''!
-!JSTimed categoriesForClass!Javascript-Core-Decorations! !
+
+!JSTimed categoriesForClass!Decorations! !
+
 !JSTimed methodsFor!
 
 duration	^ duration!
 
 duration: aDuration	duration := aDuration! !
-!JSTimed categoriesFor: #duration!accessing!public! !
-!JSTimed categoriesFor: #duration:!accessing!public! !
+
+!JSTimed categoriesForMethods!
+duration!accessing!public! !
+duration:!accessing!public! !
+!
 
 !JSTimed class methodsFor!
 
 duration: aDuration	^ self new duration: aDuration! !
-!JSTimed class categoriesFor: #duration:!instance creation!public! !
+
+!JSTimed class categoriesForMethods!
+duration:!instance creation!public! !
+!
 

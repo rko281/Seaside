@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAComponent subclass: #WAUserConfigurationEditor
 	instanceVariableNames: 'configuration groups parent dialog'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAUserConfigurationEditor guid: (GUID fromString: '{4a4d9ab8-3585-49a5-961a-dbbd55d21d92}')!
+
+WAUserConfigurationEditor guid: (GUID fromString: '{c968736e-6372-44c4-8aac-f6aae31eb251}')!
+
 WAUserConfigurationEditor comment: ''!
-!WAUserConfigurationEditor categoriesForClass!Seaside-Tools-Web! !
+
+!WAUserConfigurationEditor categoriesForClass!Unclassified! !
+
 !WAUserConfigurationEditor methodsFor!
 
 apply!
@@ -36,7 +40,7 @@ ok	dialog		ifTrue: [ self answer ]!
 
 parent	^ parent ifNil: [ ^ self ]!
 
-parent: aComponent 	parent := aComponent !
+parent: aComponent 	parent := aComponent!
 
 parents	^ self configuration parents!
 
@@ -45,27 +49,33 @@ renderButtonsOn: html	html paragraph: [		dialog 			ifTrue: [ html submitButto
 renderContentOn: html	self configuration isShared		ifTrue: [ html heading: self configuration name ].	html form: [		self renderFormOn: html.		self renderButtonsOn: html ]!
 
 renderFormOn: html	groups do: [ :each | html render: each ]! !
-!WAUserConfigurationEditor categoriesFor: #apply!actions!public! !
-!WAUserConfigurationEditor categoriesFor: #beComponent!accessing!public! !
-!WAUserConfigurationEditor categoriesFor: #beDialog!accessing!public! !
-!WAUserConfigurationEditor categoriesFor: #buildGroups!accessing!public! !
-!WAUserConfigurationEditor categoriesFor: #cancel!actions!public! !
-!WAUserConfigurationEditor categoriesFor: #children!hooks!public! !
-!WAUserConfigurationEditor categoriesFor: #configuration!accessing!public! !
-!WAUserConfigurationEditor categoriesFor: #groupedAttributes!attributes!public! !
-!WAUserConfigurationEditor categoriesFor: #groups!accessing!public! !
-!WAUserConfigurationEditor categoriesFor: #includesAdvanced:!accessing!public! !
-!WAUserConfigurationEditor categoriesFor: #initializeOn:!initialization!public! !
-!WAUserConfigurationEditor categoriesFor: #ok!actions!public! !
-!WAUserConfigurationEditor categoriesFor: #parent!accessing!public! !
-!WAUserConfigurationEditor categoriesFor: #parent:!accessing!public! !
-!WAUserConfigurationEditor categoriesFor: #parents!accessing!public! !
-!WAUserConfigurationEditor categoriesFor: #renderButtonsOn:!public!rendering! !
-!WAUserConfigurationEditor categoriesFor: #renderContentOn:!public!rendering! !
-!WAUserConfigurationEditor categoriesFor: #renderFormOn:!public!rendering! !
+
+!WAUserConfigurationEditor categoriesForMethods!
+apply!actions!public! !
+beComponent!accessing!public! !
+beDialog!accessing!public! !
+buildGroups!accessing!public! !
+cancel!actions!public! !
+children!hooks!public! !
+configuration!accessing!public! !
+groupedAttributes!attributes!public! !
+groups!accessing!public! !
+includesAdvanced:!accessing!public! !
+initializeOn:!initialization!public! !
+ok!actions!public! !
+parent!accessing!public! !
+parent:!accessing!public! !
+parents!accessing!public! !
+renderButtonsOn:!public!rendering! !
+renderContentOn:!public!rendering! !
+renderFormOn:!public!rendering! !
+!
 
 !WAUserConfigurationEditor class methodsFor!
 
 on: aUserConfiguration	^ self basicNew initializeOn: aUserConfiguration; yourself! !
-!WAUserConfigurationEditor class categoriesFor: #on:!instance creation!public! !
+
+!WAUserConfigurationEditor class categoriesForMethods!
+on:!instance creation!public! !
+!
 

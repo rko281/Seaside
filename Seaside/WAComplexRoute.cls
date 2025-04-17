@@ -1,16 +1,20 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WARoute subclass: #WAComplexRoute
 	instanceVariableNames: 'pathMatches parameterMatches isOverlyComplex'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAComplexRoute guid: (GUID fromString: '{d1882f8b-d29c-40cf-a487-cd0e377d0a23}')!
+
+WAComplexRoute guid: (GUID fromString: '{6b1f8f29-fa49-4f3b-a739-0e6168f05ff6}')!
+
 WAComplexRoute comment: ''!
-!WAComplexRoute categoriesForClass!Seaside-REST-Core-Route! !
+
+!WAComplexRoute categoriesForClass!Route! !
+
 !WAComplexRoute methodsFor!
 
-argumentCount	| count |	count := 0.	pathMatches do: [ :each |		count := count + each argumentCount ].	parameterMatches do: [ :each |		count := count + each argumentCount ].	^ count !
+argumentCount	| count |	count := 0.	pathMatches do: [ :each |		count := count + each argumentCount ].	parameterMatches do: [ :each |		count := count + each argumentCount ].	^ count!
 
 buildPathMatchesFrom: aUrl arguments: aCollectionOfStrings	| index |	index := 0.	^ aUrl path collect: [ :each |		index := index + 1.		WAPPathMatch fromString: each index: index arguments: aCollectionOfStrings ]!
 
@@ -37,20 +41,23 @@ pathElementCount	^ pathMatches size!
 printOn: aStream	super printOn: aStream.	aStream 		nextPutAll: ' (pathMatches: '; print: pathMatches;		nextPutAll: ' parameterMatches: '; print: parameterMatches;		nextPutAll: ' isOverlyComplex: '; print: self isOverlyComplex;		nextPut: $)!
 
 priority	^ pathMatches inject: 0 into: [ :sum :each |		sum + each priority ]! !
-!WAComplexRoute categoriesFor: #argumentCount!accessing!public! !
-!WAComplexRoute categoriesFor: #buildPathMatchesFrom:arguments:!private! !
-!WAComplexRoute categoriesFor: #initializeQueryFieldParameters:arguments:!initialization!public! !
-!WAComplexRoute categoriesFor: #initializeWithMethod:selector:url:arguments:produces:consumes:!initialization!public! !
-!WAComplexRoute categoriesFor: #isOverlyComplex!private! !
-!WAComplexRoute categoriesFor: #mapArgumentsWithElements:parameters:into:!public! !
-!WAComplexRoute categoriesFor: #matchesFlexibleNumberOfPathElements!public!testing! !
-!WAComplexRoute categoriesFor: #matchesModeratelyComplex:!private! !
-!WAComplexRoute categoriesFor: #matchesOverlyComplex:!private! !
-!WAComplexRoute categoriesFor: #matchesParameters:!public!testing! !
-!WAComplexRoute categoriesFor: #matchesPath:!public!testing! !
-!WAComplexRoute categoriesFor: #pathElementCount!accessing!public! !
-!WAComplexRoute categoriesFor: #printOn:!printing!public! !
-!WAComplexRoute categoriesFor: #priority!accessing!public! !
+
+!WAComplexRoute categoriesForMethods!
+argumentCount!accessing!public! !
+buildPathMatchesFrom:arguments:!private! !
+initializeQueryFieldParameters:arguments:!initialization!public! !
+initializeWithMethod:selector:url:arguments:produces:consumes:!initialization!public! !
+isOverlyComplex!private! !
+mapArgumentsWithElements:parameters:into:!public! !
+matchesFlexibleNumberOfPathElements!public!testing! !
+matchesModeratelyComplex:!private! !
+matchesOverlyComplex:!private! !
+matchesParameters:!public!testing! !
+matchesPath:!public!testing! !
+pathElementCount!accessing!public! !
+printOn:!printing!public! !
+priority!accessing!public! !
+!
 
 !WAComplexRoute class methodsFor!
 
@@ -60,9 +67,12 @@ method: aMethodString selector: aSymbol pattern: aPatternString	^ self		method
 
 method: aMethodString selector: aSymbol pattern: aPatternString arguments: aCollectionOfStrings produces: aProducesMimeTypeMatch consumes: aConsumesMimeTypeMatch 	^ self		method: aMethodString		selector: aSymbol		url: (WAUrl absolute: aPatternString)		arguments: aCollectionOfStrings		produces: aProducesMimeTypeMatch		consumes: aConsumesMimeTypeMatch!
 
-method: aString selector: aSymbol url: aUrl arguments: aCollectionOfStrings produces: aProducesMimeTypeMatch consumes: aConsumesMimeTypeMatch	^ self basicNew		initializeWithMethod: aString		selector: aSymbol		url: aUrl		arguments: aCollectionOfStrings		produces: aProducesMimeTypeMatch		consumes: aConsumesMimeTypeMatch ! !
-!WAComplexRoute class categoriesFor: #example!examples!public! !
-!WAComplexRoute class categoriesFor: #method:selector:pattern:!instance creation!public! !
-!WAComplexRoute class categoriesFor: #method:selector:pattern:arguments:produces:consumes:!instance creation!public! !
-!WAComplexRoute class categoriesFor: #method:selector:url:arguments:produces:consumes:!instance creation!public! !
+method: aString selector: aSymbol url: aUrl arguments: aCollectionOfStrings produces: aProducesMimeTypeMatch consumes: aConsumesMimeTypeMatch	^ self basicNew		initializeWithMethod: aString		selector: aSymbol		url: aUrl		arguments: aCollectionOfStrings		produces: aProducesMimeTypeMatch		consumes: aConsumesMimeTypeMatch! !
+
+!WAComplexRoute class categoriesForMethods!
+example!examples!public! !
+method:selector:pattern:!instance creation!public! !
+method:selector:pattern:arguments:produces:consumes:!instance creation!public! !
+method:selector:url:arguments:produces:consumes:!instance creation!public! !
+!
 

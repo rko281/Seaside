@@ -1,15 +1,22 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAFileLibrary subclass: #JQUiGoogleLibrary
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQUiGoogleLibrary guid: (GUID fromString: '{fb9a507d-c157-479e-a054-c262bb210320}')!
+
+JQUiGoogleLibrary guid: (GUID fromString: '{5aa1af58-d853-4c31-b0dc-c15f8eab05d5}')!
+
 JQUiGoogleLibrary comment: ''!
-!JQUiGoogleLibrary categoriesForClass!JQuery-UI-Libraries! !
+
+!JQUiGoogleLibrary categoriesForClass!Libraries! !
+
 !JQUiGoogleLibrary methodsFor!
 
-updateRoot: anHtmlRoot	super updateRoot: anHtmlRoot.	anHtmlRoot javascript		url: 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'! !
-!JQUiGoogleLibrary categoriesFor: #updateRoot:!public!updating! !
+updateRoot: anHtmlRoot	super updateRoot: anHtmlRoot.	anHtmlRoot javascript		url: 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js'! !
+
+!JQUiGoogleLibrary categoriesForMethods!
+updateRoot:!public!updating! !
+!
 

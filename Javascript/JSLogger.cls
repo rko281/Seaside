@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JSObject subclass: #JSLogger
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSLogger guid: (GUID fromString: '{4a3f7f62-73c5-435d-aa64-f3c3a58a1f95}')!
+
+JSLogger guid: (GUID fromString: '{4c942ccf-7953-43f1-8747-ba59b388deac}')!
+
 JSLogger comment: 'I am a logger class to be used together with FireBug. I have nothing to do with Scriptaculous directly, but I nicely fit in here as everybody should be using FireBug for Script debugging anyway.'!
-!JSLogger categoriesForClass!Javascript-Core-Base! !
+
+!JSLogger categoriesForClass!Base! !
+
 !JSLogger methodsFor!
 
 assert: anObject 	self 		call: 'assert'		with: anObject!
@@ -49,24 +53,27 @@ log: anObject 	self 		call: 'log'		with: anObject!
 log: anObject format: anArray 	self 		call: 'log'		withArguments: (Array with: anObject) , anArray!
 
 warn: anObject 	self 		call: 'warn'		with: anObject! !
-!JSLogger categoriesFor: #assert:!assertions!public! !
-!JSLogger categoriesFor: #assert:equals:!assertions!public! !
-!JSLogger categoriesFor: #assert:greater:!assertions!public! !
-!JSLogger categoriesFor: #assert:less:!assertions!public! !
-!JSLogger categoriesFor: #assert:notEquals:!assertions!public! !
-!JSLogger categoriesFor: #assert:notGreater:!assertions!public! !
-!JSLogger categoriesFor: #assert:notLess:!assertions!public! !
-!JSLogger categoriesFor: #assertFalse:!assertions!public! !
-!JSLogger categoriesFor: #assertNotNull:!assertions!public! !
-!JSLogger categoriesFor: #assertNotUndefined:!assertions!public! !
-!JSLogger categoriesFor: #assertNull:!assertions!public! !
-!JSLogger categoriesFor: #assertTrue:!assertions!public! !
-!JSLogger categoriesFor: #assertUndefined:!assertions!public! !
-!JSLogger categoriesFor: #debug:!messages!public! !
-!JSLogger categoriesFor: #error:!messages!public! !
-!JSLogger categoriesFor: #info:!messages!public! !
-!JSLogger categoriesFor: #javascriptContentOn:!printing!public! !
-!JSLogger categoriesFor: #log:!logging!public! !
-!JSLogger categoriesFor: #log:format:!logging!public! !
-!JSLogger categoriesFor: #warn:!messages!public! !
+
+!JSLogger categoriesForMethods!
+assert:!assertions!public! !
+assert:equals:!assertions!public! !
+assert:greater:!assertions!public! !
+assert:less:!assertions!public! !
+assert:notEquals:!assertions!public! !
+assert:notGreater:!assertions!public! !
+assert:notLess:!assertions!public! !
+assertFalse:!assertions!public! !
+assertNotNull:!assertions!public! !
+assertNotUndefined:!assertions!public! !
+assertNull:!assertions!public! !
+assertTrue:!assertions!public! !
+assertUndefined:!assertions!public! !
+debug:!messages!public! !
+error:!messages!public! !
+info:!messages!public! !
+javascriptContentOn:!printing!public! !
+log:!logging!public! !
+log:format:!logging!public! !
+warn:!messages!public! !
+!
 

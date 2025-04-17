@@ -1,23 +1,33 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAObject subclass: #WAConfigurationElement
 	instanceVariableNames: 'key'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAConfigurationElement guid: (GUID fromString: '{58a48415-fb46-4611-84c8-74f97ec24f9e}')!
+
+WAConfigurationElement guid: (GUID fromString: '{99b47137-59fd-4997-9ec7-e709e0a9bca9}')!
+
 WAConfigurationElement comment: ''!
-!WAConfigurationElement categoriesForClass!Seaside-Core-Configuration! !
+
+!WAConfigurationElement categoriesForClass!Configuration! !
+
 !WAConfigurationElement methodsFor!
 
 initializeWithKey: aSymbol	self initialize.	key := aSymbol!
 
 key	^ key! !
-!WAConfigurationElement categoriesFor: #initializeWithKey:!initialization!public! !
-!WAConfigurationElement categoriesFor: #key!accessing!public! !
+
+!WAConfigurationElement categoriesForMethods!
+initializeWithKey:!initialization!public! !
+key!accessing!public! !
+!
 
 !WAConfigurationElement class methodsFor!
 
 key: aSymbol	^ self basicNew initializeWithKey: aSymbol; yourself! !
-!WAConfigurationElement class categoriesFor: #key:!instance creation!public! !
+
+!WAConfigurationElement class categoriesForMethods!
+key:!instance creation!public! !
+!
 

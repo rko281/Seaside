@@ -1,18 +1,33 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAJsonBrush subclass: #WAJsonElementBrush
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAJsonElementBrush guid: (GUID fromString: '{a2abea80-f90a-4272-85ef-5a09930e4cad}')!
-WAJsonElementBrush comment: ''!
-!WAJsonElementBrush categoriesForClass!Seaside-JSON-Core! !
+
+WAJsonElementBrush guid: (GUID fromString: '{257a7bae-2012-410e-80a2-237c92ae9620}')!
+
+WAJsonElementBrush comment: 'Abstract superclass for JSON elements'!
+
+!WAJsonElementBrush categoriesForClass!Brushes! !
+
 !WAJsonElementBrush methodsFor!
 
 closeBrush!
 
 openBrush	canvas writeIfNotFirst: ', '! !
-!WAJsonElementBrush categoriesFor: #closeBrush!private! !
-!WAJsonElementBrush categoriesFor: #openBrush!private! !
+
+!WAJsonElementBrush categoriesForMethods!
+closeBrush!private! !
+openBrush!private! !
+!
+
+!WAJsonElementBrush class methodsFor!
+
+isAbstract 	^ self == WAJsonElementBrush! !
+
+!WAJsonElementBrush class categoriesForMethods!
+isAbstract!public!testing! !
+!
 

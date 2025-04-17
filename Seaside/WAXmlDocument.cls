@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WADocument subclass: #WAXmlDocument
 	instanceVariableNames: 'urlEncoder xmlEncoder'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAXmlDocument guid: (GUID fromString: '{16da7352-964a-4f57-9696-6dddd14412a7}')!
+
+WAXmlDocument guid: (GUID fromString: '{10f79ed7-7d9a-45af-97a9-b22f2932b77c}')!
+
 WAXmlDocument comment: 'A WAXmlDocument is adds the possibility to generate XML tags and knows encoders for XML text and URLs.'!
-!WAXmlDocument categoriesForClass!Seaside-Core-Document! !
+
+!WAXmlDocument categoriesForClass!Document! !
+
 !WAXmlDocument methodsFor!
 
 closeTag: aString	"Close the XML tag named aString."	stream nextPutAll: '</'; nextPutAll: aString; nextPut: $>!
@@ -27,13 +31,16 @@ print: anObject	anObject encodeOn: self!
 urlEncoder	"Answer an encoder for URL data."	^ urlEncoder!
 
 xmlEncoder	"Answer an encoder for XML data."	^ xmlEncoder! !
-!WAXmlDocument categoriesFor: #closeTag:!public!writing! !
-!WAXmlDocument categoriesFor: #destroy!initialization!public! !
-!WAXmlDocument categoriesFor: #initializeWithStream:codec:!initialization!public! !
-!WAXmlDocument categoriesFor: #openTag:!public!writing! !
-!WAXmlDocument categoriesFor: #openTag:attributes:!public!writing! !
-!WAXmlDocument categoriesFor: #openTag:attributes:closed:!public!writing! !
-!WAXmlDocument categoriesFor: #print:!public!writing! !
-!WAXmlDocument categoriesFor: #urlEncoder!accessing!public! !
-!WAXmlDocument categoriesFor: #xmlEncoder!accessing!public! !
+
+!WAXmlDocument categoriesForMethods!
+closeTag:!public!writing! !
+destroy!initialization!public! !
+initializeWithStream:codec:!initialization!public! !
+openTag:!public!writing! !
+openTag:attributes:!public!writing! !
+openTag:attributes:closed:!public!writing! !
+print:!public!writing! !
+urlEncoder!accessing!public! !
+xmlEncoder!accessing!public! !
+!
 

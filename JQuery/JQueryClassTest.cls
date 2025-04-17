@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQueryTest subclass: #JQueryClassTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQueryClassTest guid: (GUID fromString: '{99692f07-7996-4396-96cc-fa32c2b74c9b}')!
+
+JQueryClassTest guid: (GUID fromString: '{3970a50d-4fb8-4bf2-8082-ec2cd1cd5e11}')!
+
 JQueryClassTest comment: ''!
-!JQueryClassTest categoriesForClass!JQuery-Tests-Core-Unit! !
+
+!JQueryClassTest categoriesForClass!Unit! !
+
 !JQueryClassTest methodsFor!
 
 testAlias	| originalName |	originalName := JQuery functionName.	JQuery functionName: 'WhatElse'.	[ self assert: self jQuery equals: 'WhatElse' ]		ensure: [ JQuery functionName: originalName ]!
@@ -26,7 +30,7 @@ testError	self		assert: (self jQuery error: 'Doomsday Device')		equals: self 
 
 testEscapeSelector	self		assert: (self jQuery escapeSelector: '#foobar')		equals: self function , '.escapeSelector("#foobar")'!
 
-testExpression	self		assert: (self jQuery expression: '#foo')		equals: self function , '("#foo")'.	self		assert: (self jQuery expression: 'div > p')		equals: self function , '("div > p")'.	self		assert: (self jQuery expression: 'ul li.active')		equals: self function , '("ul li.active")'!
+testExpression	self		assert: (self jQuery expression: '#foo')		equals: self function , '("#foo")'.	self		assert: (self jQuery expression: 'div > p')		equals: self function , '("div > p")'.	self		assert: (self jQuery expression: 'ul li.active')		equals: self function , '("ul li.active")'!
 
 testExpressionContext	self		assert: (self jQuery expression: '#foo' context: 123)		equals: self function , '("#foo",123)'!
 
@@ -69,34 +73,37 @@ testWithReady	self		assert: (self jQuery: (self javascript alert: 'Hello'))		
 testWithString	self		assert: (self jQuery: 'div > p')		equals: self function , '("div > p")'!
 
 testWithSymbol	self		assert: (self jQuery: #foo)		equals: self function , '("#foo")'! !
-!JQueryClassTest categoriesFor: #testAlias!public!tests! !
-!JQueryClassTest categoriesFor: #testAll!public!tests/creation! !
-!JQueryClassTest categoriesFor: #testBasic!public!tests! !
-!JQueryClassTest categoriesFor: #testClass!public!tests/creation! !
-!JQueryClassTest categoriesFor: #testContains!public!tests/utilities! !
-!JQueryClassTest categoriesFor: #testDocument!public!tests/creation! !
-!JQueryClassTest categoriesFor: #testError!public!tests/utilities! !
-!JQueryClassTest categoriesFor: #testEscapeSelector!public!tests/utilities! !
-!JQueryClassTest categoriesFor: #testExpression!public!tests/creation! !
-!JQueryClassTest categoriesFor: #testExpressionContext!public!tests/creation! !
-!JQueryClassTest categoriesFor: #testHoldReady!public!tests/utilities! !
-!JQueryClassTest categoriesFor: #testHtml!public!tests/creation! !
-!JQueryClassTest categoriesFor: #testId!public!tests/creation! !
-!JQueryClassTest categoriesFor: #testIsEmptyObject!public!tests/utilities! !
-!JQueryClassTest categoriesFor: #testIsPlainObject!public!tests/utilities! !
-!JQueryClassTest categoriesFor: #testIsWindow!public!tests/utilities! !
-!JQueryClassTest categoriesFor: #testNew!public!tests/creation! !
-!JQueryClassTest categoriesFor: #testNoop!public!tests/accessing! !
-!JQueryClassTest categoriesFor: #testParseJSON!public!tests/utilities! !
-!JQueryClassTest categoriesFor: #testReady!public!tests/creation! !
-!JQueryClassTest categoriesFor: #testScript!public!tests/creation! !
-!JQueryClassTest categoriesFor: #testSupport!public!tests/agent! !
-!JQueryClassTest categoriesFor: #testThis!public!tests/creation! !
-!JQueryClassTest categoriesFor: #testType!public!tests/utilities! !
-!JQueryClassTest categoriesFor: #testUniqueSort!public!tests/utilities! !
-!JQueryClassTest categoriesFor: #testWithBlock!public!tests/with! !
-!JQueryClassTest categoriesFor: #testWithNil!public!tests/with! !
-!JQueryClassTest categoriesFor: #testWithReady!public!tests/with! !
-!JQueryClassTest categoriesFor: #testWithString!public!tests/with! !
-!JQueryClassTest categoriesFor: #testWithSymbol!public!tests/with! !
+
+!JQueryClassTest categoriesForMethods!
+testAlias!public!tests! !
+testAll!public!tests/creation! !
+testBasic!public!tests! !
+testClass!public!tests/creation! !
+testContains!public!tests/utilities! !
+testDocument!public!tests/creation! !
+testError!public!tests/utilities! !
+testEscapeSelector!public!tests/utilities! !
+testExpression!public!tests/creation! !
+testExpressionContext!public!tests/creation! !
+testHoldReady!public!tests/utilities! !
+testHtml!public!tests/creation! !
+testId!public!tests/creation! !
+testIsEmptyObject!public!tests/utilities! !
+testIsPlainObject!public!tests/utilities! !
+testIsWindow!public!tests/utilities! !
+testNew!public!tests/creation! !
+testNoop!public!tests/accessing! !
+testParseJSON!public!tests/utilities! !
+testReady!public!tests/creation! !
+testScript!public!tests/creation! !
+testSupport!public!tests/agent! !
+testThis!public!tests/creation! !
+testType!public!tests/utilities! !
+testUniqueSort!public!tests/utilities! !
+testWithBlock!public!tests/with! !
+testWithNil!public!tests/with! !
+testWithReady!public!tests/with! !
+testWithString!public!tests/with! !
+testWithSymbol!public!tests/with! !
+!
 

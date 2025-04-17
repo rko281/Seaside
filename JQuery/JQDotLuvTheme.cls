@@ -1,15 +1,22 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQBaseTheme subclass: #JQDotLuvTheme
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQDotLuvTheme guid: (GUID fromString: '{16a7629d-95c7-4b90-a4bf-ef5ee2cded3a}')!
+
+JQDotLuvTheme guid: (GUID fromString: '{4c42dda2-1295-49c3-a24a-c68642b72415}')!
+
 JQDotLuvTheme comment: ''!
-!JQDotLuvTheme categoriesForClass!JQuery-UI-Libraries! !
+
+!JQDotLuvTheme categoriesForClass!Libraries! !
+
 !JQDotLuvTheme methodsFor!
 
 themeName	^ 'dot-luv'! !
-!JQDotLuvTheme categoriesFor: #themeName!accessing!public! !
+
+!JQDotLuvTheme categoriesForMethods!
+themeName!accessing!public! !
+!
 

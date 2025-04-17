@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WASessionTrackingStrategy subclass: #WACookieSessionTrackingStrategy
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WACookieSessionTrackingStrategy guid: (GUID fromString: '{8a74b5d6-2796-4524-af9b-e886a7e65517}')!
+
+WACookieSessionTrackingStrategy guid: (GUID fromString: '{8d4e0da4-934c-4ac9-b63f-284853bff318}')!
+
 WACookieSessionTrackingStrategy comment: 'I am the abstract base class for tracking strategies that use cookies to track sessions and query fields to track everything else.'!
-!WACookieSessionTrackingStrategy categoriesForClass!Seaside-Session! !
+
+!WACookieSessionTrackingStrategy categoriesForClass!Tracking! !
+
 !WACookieSessionTrackingStrategy methodsFor!
 
 addCookieWithValue: aString to: aRequestContext	"Create a new handler key cookie and att it to the response."		aRequestContext response addCookie: 		(aRequestContext newCookie			key: self keyCookieName;			value: aString;			discard: true;			sameSite: 'Strict';			comment: 'the Seaside Session Cookie';			commentUrl: 'https://github.com/SeasideSt/Seaside/wiki/Session-Cookie';			yourself)!
@@ -21,15 +25,21 @@ deleteSessionCookieOf: anApplication from: aRequestContext	| cookie baseUrl |	
 keyCookieName	"Answer the name of the cookie to track the handler."		^ self keyField!
 
 keyFromContext: aRequestContext	"If a query field is present it overrides a cookie."	| key |	key := self queryFieldKeyFromContext: aRequestContext.	^ key isNil		ifTrue: [ (self cookieFromContext: aRequestContext ifAbsent: [ ^ nil ]) value ]		ifFalse: [ key ]! !
-!WACookieSessionTrackingStrategy categoriesFor: #addCookieWithValue:to:!private! !
-!WACookieSessionTrackingStrategy categoriesFor: #addKey:toContext:!public! !
-!WACookieSessionTrackingStrategy categoriesFor: #cookieFromContext:ifAbsent:!private! !
-!WACookieSessionTrackingStrategy categoriesFor: #deleteSessionCookieOf:from:!private! !
-!WACookieSessionTrackingStrategy categoriesFor: #keyCookieName!private! !
-!WACookieSessionTrackingStrategy categoriesFor: #keyFromContext:!public! !
+
+!WACookieSessionTrackingStrategy categoriesForMethods!
+addCookieWithValue:to:!private! !
+addKey:toContext:!public! !
+cookieFromContext:ifAbsent:!private! !
+deleteSessionCookieOf:from:!private! !
+keyCookieName!private! !
+keyFromContext:!public! !
+!
 
 !WACookieSessionTrackingStrategy class methodsFor!
 
 isAbstract	^ self name = #WACookieSessionTrackingStrategy! !
-!WACookieSessionTrackingStrategy class categoriesFor: #isAbstract!public!testing! !
+
+!WACookieSessionTrackingStrategy class categoriesForMethods!
+isAbstract!public!testing! !
+!
 

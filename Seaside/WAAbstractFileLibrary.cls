@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAObject subclass: #WAAbstractFileLibrary
 	instanceVariableNames: ''
 	classVariableNames: 'MimeTypes'
 	poolDictionaries: ''
 	classInstanceVariableNames: 'default'!
-WAAbstractFileLibrary guid: (GUID fromString: '{32c369b6-3612-407a-80b1-2934d093ffbe}')!
-WAAbstractFileLibrary comment: ''!
-!WAAbstractFileLibrary categoriesForClass!Seaside-Core-Libraries! !
+
+WAAbstractFileLibrary guid: (GUID fromString: '{a29a0d6b-9bf4-4539-b7ea-1b7068f6819a}')!
+
+WAAbstractFileLibrary comment: 'Abstract superclass for Seaside file libraries'!
+
+!WAAbstractFileLibrary categoriesForClass!Libraries! !
+
 !WAAbstractFileLibrary methodsFor!
 
 addFile: aFile 	"adds a file to the receiver	aFile an instance of of WAFile"	| contents |	aFile isNil ifTrue: [		"in case no file was selected for uploading"		^ self ].	contents := (aFile contentType isNil or: [ aFile contentType isBinary or: [ aFile contentType charSet isNil ] ])		ifTrue: [ aFile rawContents ]		ifFalse: [ GRPlatform current convertToSmalltalkNewlines: aFile contentsDecoded ].	self class 		addFileNamed: aFile fileName		contents: contents!
@@ -17,6 +21,8 @@ asFilename: aSelector	self subclassResponsibility!
 asSelector: aFilename	^ self class asSelector: aFilename!
 
 deployFiles	self subclassResponsibility!
+
+entityTagFor: aStringOrByteArray	| hash base64 |	hash := GRPlatform current secureHashFor: aStringOrByteArray.	"etags have to be delimited by double quotes"	base64 := GRPlatform current base64Encode: hash greaseAsByteArray.	^ String new: base64 size + 2 streamContents:  [ :stream |		stream			nextPut: $";			nextPutAll: base64;			nextPut: $"]!
 
 filenames	^ self fileSelectors collect: [ :each | self asFilename: each ]!
 
@@ -53,28 +59,32 @@ urlForFile: aFilename	^ self urlOf: (self asSelector: aFilename)!
 urlOf: aSymbol	^ self urlOf: aSymbol using: WAFileHandler default!
 
 urlOf: aSymbol using: aHandler	^ aHandler baseUrlForLibrary		addToPath: self className;		addToPath: (self asFilename: aSymbol);		yourself! !
-!WAAbstractFileLibrary categoriesFor: #addFile:!actions!public! !
-!WAAbstractFileLibrary categoriesFor: #asFilename:!private! !
-!WAAbstractFileLibrary categoriesFor: #asSelector:!private! !
-!WAAbstractFileLibrary categoriesFor: #deployFiles!actions!public! !
-!WAAbstractFileLibrary categoriesFor: #filenames!accessing!public! !
-!WAAbstractFileLibrary categoriesFor: #fileSelectors!private! !
-!WAAbstractFileLibrary categoriesFor: #fileSelectorsTo:!private! !
-!WAAbstractFileLibrary categoriesFor: #fileSizeOf:!accessing!public! !
-!WAAbstractFileLibrary categoriesFor: #fullPathForFileName:using:!private! !
-!WAAbstractFileLibrary categoriesFor: #handle:!handling!public! !
-!WAAbstractFileLibrary categoriesFor: #isFileSelector:!private! !
-!WAAbstractFileLibrary categoriesFor: #lastUpperCaseIndexIn:!private! !
-!WAAbstractFileLibrary categoriesFor: #mimetypeOf:!accessing!public! !
-!WAAbstractFileLibrary categoriesFor: #name!public!testing! !
-!WAAbstractFileLibrary categoriesFor: #nonFileSelectors!private! !
-!WAAbstractFileLibrary categoriesFor: #removeFile:!actions!public! !
-!WAAbstractFileLibrary categoriesFor: #renameFile:to:!actions!public! !
-!WAAbstractFileLibrary categoriesFor: #selectorsToInclude!accessing!public! !
-!WAAbstractFileLibrary categoriesFor: #updateRoot:!public!updating! !
-!WAAbstractFileLibrary categoriesFor: #urlForFile:!accessing!public! !
-!WAAbstractFileLibrary categoriesFor: #urlOf:!accessing!public! !
-!WAAbstractFileLibrary categoriesFor: #urlOf:using:!accessing!public! !
+
+!WAAbstractFileLibrary categoriesForMethods!
+addFile:!actions!public! !
+asFilename:!private! !
+asSelector:!private! !
+deployFiles!actions!public! !
+entityTagFor:!private! !
+filenames!accessing!public! !
+fileSelectors!private! !
+fileSelectorsTo:!private! !
+fileSizeOf:!accessing!public! !
+fullPathForFileName:using:!private! !
+handle:!handling!public! !
+isFileSelector:!private! !
+lastUpperCaseIndexIn:!private! !
+mimetypeOf:!accessing!public! !
+name!public!testing! !
+nonFileSelectors!private! !
+removeFile:!actions!public! !
+renameFile:to:!actions!public! !
+selectorsToInclude!accessing!public! !
+updateRoot:!public!updating! !
+urlForFile:!accessing!public! !
+urlOf:!accessing!public! !
+urlOf:using:!accessing!public! !
+!
 
 !WAAbstractFileLibrary class methodsFor!
 
@@ -92,7 +102,7 @@ asSelector: aFilename	| mainPart extension |	mainPart := (aFilename copyUpToLa
 
 compileBinary: aByteArrayOrString selector: aSymbol 	"compiles aByteArrayOrString into a method named aSymbol that returns aByteArrayOrString as a byte array"	| code |	code := GRPlatform current 		asMethodReturningByteArray: aByteArrayOrString		named: aSymbol.	GRPlatform current 		compile: code		into: self		classified: self methodCategory!
 
-compileText: aByteArrayOrString selector: aSymbol 	"Compiles aByteArrayOrString into a method named aSymbol that returns aByteArrayOrString as a string literal.	aSymbol		^ aByteArrayOrString"	| code |	code := String streamContents: [ :stream | 		stream			nextPutAll: aSymbol;			nextPut: Character cr.		stream			tab;			nextPutAll: '^ '''.		aByteArrayOrString greaseString do: [ :each | 			each = $' ifTrue: [ stream nextPut: $' ].			stream nextPut: each ].		stream nextPut: $' ].	GRPlatform current 		compile: code		into: self		classified: self methodCategory!
+compileText: aByteArrayOrString selector: aSymbol 	"Compiles aByteArrayOrString into a method named aSymbol that returns aByteArrayOrString as a string literal."	| code |	code := GRPlatform current asMethodReturningString: aByteArrayOrString named: aSymbol.	GRPlatform current 		compile: code		into: self		classified: self methodCategory!
 
 default	^ default ifNil: [ default := self new ]!
 
@@ -110,6 +120,8 @@ handlesFolder: aSymbol	^ self name = aSymbol!
 
 initialize	MimeTypes := Dictionary new.	1 to: self defaultMimeTypes size by: 2 do: [ :index |		MimeTypes			at: (self defaultMimeTypes at: index)			put: (self defaultMimeTypes at: index + 1) ]!
 
+isAbstract 	^ self == WAAbstractFileLibrary!
+
 isBinary: aFilename	^ (self mimetypeFor: (aFilename copyAfterLast: $.)) isBinary!
 
 isBinaryAt: aPath 	^ self isBinary: (GRPlatform current localNameOf: aPath)!
@@ -123,27 +135,31 @@ mimetypeFor: aString	^ (self mimetypes at: aString ifAbsent: [ self defaultMime
 mimetypes	^ MimeTypes!
 
 urlOf: aSymbol	^ self default urlOf: aSymbol! !
-!WAAbstractFileLibrary class categoriesFor: #/!convenience!public! !
-!WAAbstractFileLibrary class categoriesFor: #addAllFilesIn:!file addition!public! !
-!WAAbstractFileLibrary class categoriesFor: #addFileAt:!file addition!public! !
-!WAAbstractFileLibrary class categoriesFor: #addFileAt:contents:!file addition!public! !
-!WAAbstractFileLibrary class categoriesFor: #addFileNamed:contents:!file addition!public! !
-!WAAbstractFileLibrary class categoriesFor: #asSelector:!private! !
-!WAAbstractFileLibrary class categoriesFor: #compileBinary:selector:!private! !
-!WAAbstractFileLibrary class categoriesFor: #compileText:selector:!private! !
-!WAAbstractFileLibrary class categoriesFor: #default!instance creation!public! !
-!WAAbstractFileLibrary class categoriesFor: #defaultCacheDuration!accessing/defaults!public! !
-!WAAbstractFileLibrary class categoriesFor: #defaultMimeType!accessing/defaults!public! !
-!WAAbstractFileLibrary class categoriesFor: #defaultMimeTypes!accessing/defaults!public! !
-!WAAbstractFileLibrary class categoriesFor: #deployFiles!actions!public! !
-!WAAbstractFileLibrary class categoriesFor: #handle:!handling!public! !
-!WAAbstractFileLibrary class categoriesFor: #handlesFolder:!public!testing! !
-!WAAbstractFileLibrary class categoriesFor: #initialize!class initialization!public! !
-!WAAbstractFileLibrary class categoriesFor: #isBinary:!private! !
-!WAAbstractFileLibrary class categoriesFor: #isBinaryAt:!private! !
-!WAAbstractFileLibrary class categoriesFor: #libraries!accessing!public! !
-!WAAbstractFileLibrary class categoriesFor: #methodCategory!private! !
-!WAAbstractFileLibrary class categoriesFor: #mimetypeFor:!accessing!public! !
-!WAAbstractFileLibrary class categoriesFor: #mimetypes!accessing!public! !
-!WAAbstractFileLibrary class categoriesFor: #urlOf:!convenience!public! !
+
+!WAAbstractFileLibrary class categoriesForMethods!
+/!convenience!public! !
+addAllFilesIn:!file addition!public! !
+addFileAt:!file addition!public! !
+addFileAt:contents:!file addition!public! !
+addFileNamed:contents:!file addition!public! !
+asSelector:!private! !
+compileBinary:selector:!private! !
+compileText:selector:!private! !
+default!instance creation!public! !
+defaultCacheDuration!accessing/defaults!public! !
+defaultMimeType!accessing/defaults!public! !
+defaultMimeTypes!accessing/defaults!public! !
+deployFiles!actions!public! !
+handle:!handling!public! !
+handlesFolder:!public!testing! !
+initialize!class initialization!public! !
+isAbstract!public!testing! !
+isBinary:!private! !
+isBinaryAt:!private! !
+libraries!accessing!public! !
+methodCategory!private! !
+mimetypeFor:!accessing!public! !
+mimetypes!accessing!public! !
+urlOf:!convenience!public! !
+!
 

@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQUiFunctionalTest subclass: #JQResizableFunctionalTest
 	instanceVariableNames: 'size'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQResizableFunctionalTest guid: (GUID fromString: '{32ce5a51-53a1-495a-82c8-32efd4d17510}')!
+
+JQResizableFunctionalTest guid: (GUID fromString: '{68d5f841-f231-4460-81d1-e385215f200c}')!
+
 JQResizableFunctionalTest comment: ''!
-!JQResizableFunctionalTest categoriesForClass!JQuery-Tests-UI-Functional! !
+
+!JQResizableFunctionalTest categoriesForClass!Functional! !
+
 !JQResizableFunctionalTest methodsFor!
 
 initialize	super initialize.	size := 128 @ 128!
@@ -19,9 +23,12 @@ selectors	^ #(renderContentOn:)!
 title	^ 'Resizable Interaction'!
 
 url	^ 'http://docs.jquery.com/UI/Resizable'! !
-!JQResizableFunctionalTest categoriesFor: #initialize!initialization!public! !
-!JQResizableFunctionalTest categoriesFor: #renderContentOn:!public!rendering! !
-!JQResizableFunctionalTest categoriesFor: #selectors!accessing!public! !
-!JQResizableFunctionalTest categoriesFor: #title!accessing!public! !
-!JQResizableFunctionalTest categoriesFor: #url!accessing!public! !
+
+!JQResizableFunctionalTest categoriesForMethods!
+initialize!initialization!public! !
+renderContentOn:!public!rendering! !
+selectors!accessing!public! !
+title!accessing!public! !
+url!accessing!public! !
+!
 

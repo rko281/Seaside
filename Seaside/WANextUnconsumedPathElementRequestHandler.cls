@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WARequestHandler subclass: #WANextUnconsumedPathElementRequestHandler
 	instanceVariableNames: 'nextUnconsumedPathElement'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WANextUnconsumedPathElementRequestHandler guid: (GUID fromString: '{3994b0e2-7df5-4ec5-a552-2f508f70be6a}')!
+
+WANextUnconsumedPathElementRequestHandler guid: (GUID fromString: '{be7f494c-b111-4f82-9cca-2b1aea13bd40}')!
+
 WANextUnconsumedPathElementRequestHandler comment: ''!
-!WANextUnconsumedPathElementRequestHandler categoriesForClass!Seaside-Tests-Core-RequestHandling! !
+
+!WANextUnconsumedPathElementRequestHandler categoriesForClass!RequestHandling! !
+
 !WANextUnconsumedPathElementRequestHandler methodsFor!
 
 handle: aRequestContext	| consumer |	consumer := aRequestContext consumer.	nextUnconsumedPathElement := consumer atEnd		ifTrue: [ nil ]		ifFalse: [ aRequestContext consumer peek ].	super handle: aRequestContext!
@@ -15,7 +19,10 @@ handle: aRequestContext	| consumer |	consumer := aRequestContext consumer.	ne
 handleFiltered: aRequestContext!
 
 nextUnconsumedPathElement	^ nextUnconsumedPathElement! !
-!WANextUnconsumedPathElementRequestHandler categoriesFor: #handle:!handling!public! !
-!WANextUnconsumedPathElementRequestHandler categoriesFor: #handleFiltered:!handling!public! !
-!WANextUnconsumedPathElementRequestHandler categoriesFor: #nextUnconsumedPathElement!accessing!public! !
+
+!WANextUnconsumedPathElementRequestHandler categoriesForMethods!
+handle:!handling!public! !
+handleFiltered:!handling!public! !
+nextUnconsumedPathElement!accessing!public! !
+!
 

@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQFunctionalTest subclass: #JQRequestFunctionalTest
 	instanceVariableNames: 'logger'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQRequestFunctionalTest guid: (GUID fromString: '{6665cf93-7350-4a4f-a748-dac38fef21d5}')!
+
+JQRequestFunctionalTest guid: (GUID fromString: '{d844a8af-c1a1-4b72-a4c9-43f34a1ad501}')!
+
 JQRequestFunctionalTest comment: ''!
-!JQRequestFunctionalTest categoriesForClass!JQuery-Tests-Core-Functional! !
+
+!JQRequestFunctionalTest categoriesForClass!Functional! !
+
 !JQRequestFunctionalTest methodsFor!
 
 initialize	super initialize.	logger := OrderedCollection new!
@@ -25,12 +29,15 @@ selectors	^ #(renderContentOn: renderButton:ajax:on:)!
 style	^ 'fieldset { border: none; margin: 1em 0; padding: 0; }fieldset label, fieldset span, fieldset p { display: block; float: left; width: 50%; margin: 0; padding: 0; }'!
 
 title	^ 'Ajax Requests'! !
-!JQRequestFunctionalTest categoriesFor: #initialize!initialization!public! !
-!JQRequestFunctionalTest categoriesFor: #loggerOn:!private! !
-!JQRequestFunctionalTest categoriesFor: #renderButton:ajax:on:!public!rendering! !
-!JQRequestFunctionalTest categoriesFor: #renderContentOn:!public!rendering! !
-!JQRequestFunctionalTest categoriesFor: #renderText:on:!public!rendering! !
-!JQRequestFunctionalTest categoriesFor: #selectors!accessing!public! !
-!JQRequestFunctionalTest categoriesFor: #style!hooks!public! !
-!JQRequestFunctionalTest categoriesFor: #title!accessing!public! !
+
+!JQRequestFunctionalTest categoriesForMethods!
+initialize!initialization!public! !
+loggerOn:!private! !
+renderButton:ajax:on:!public!rendering! !
+renderContentOn:!public!rendering! !
+renderText:on:!public!rendering! !
+selectors!accessing!public! !
+style!hooks!public! !
+title!accessing!public! !
+!
 

@@ -1,15 +1,22 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQBaseTheme subclass: #JQUiLightnessTheme
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQUiLightnessTheme guid: (GUID fromString: '{0ed9d3f5-a595-4d8b-b2d7-c7b0484b286b}')!
+
+JQUiLightnessTheme guid: (GUID fromString: '{135394d6-476f-4f27-8060-a54d8481f778}')!
+
 JQUiLightnessTheme comment: ''!
-!JQUiLightnessTheme categoriesForClass!JQuery-UI-Libraries! !
+
+!JQUiLightnessTheme categoriesForClass!Libraries! !
+
 !JQUiLightnessTheme methodsFor!
 
 themeName	^ 'ui-lightness'! !
-!JQUiLightnessTheme categoriesFor: #themeName!accessing!public! !
+
+!JQUiLightnessTheme categoriesForMethods!
+themeName!accessing!public! !
+!
 

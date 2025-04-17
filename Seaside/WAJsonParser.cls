@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAObject subclass: #WAJsonParser
 	instanceVariableNames: 'stream'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAJsonParser guid: (GUID fromString: '{0194ba52-6dc6-4669-a92e-992295b2246c}')!
-WAJsonParser comment: 'I am a parser for JSON. It is a bit more forgiving than the standard and allows any kind of top level element except numbers, not just {} and []. See http://www.json.org/ for details.I can be subclasses to create more sophisticated objects than just Arrays and Dictionaries. To do that, override the one or more methods in the creating protocol.'!
-!WAJsonParser categoriesForClass!Seaside-JSON-Core! !
+
+WAJsonParser guid: (GUID fromString: '{f4fce56e-b0eb-4273-a648-71fb8dc91cf5}')!
+
+WAJsonParser comment: 'I am a parser for JSON. I follow RFC-8259 / ECMA-404 and allow any kind of value as a root object.I convert surrogate pairs to a single code point.I can be subclassed to create more sophisticated objects than just Arrays and Dictionaries. To do that, override the one or more methods in the "creating" protocol.Seehttps://datatracker.ietf.org/doc/html/rfc8259https://www.ecma-international.org/publications-and-standards/standards/ecma-404/https://datatracker.ietf.org/doc/html/rfc4627'!
+
+!WAJsonParser categoriesForClass!Parser! !
+
 !WAJsonParser methodsFor!
 
 addProperty: anAssociation to: anObject	"Add the property anAssociation described with key and value to anObject. Subclasses might want to refine this implementation."		^ anObject 		add: anAssociation;		yourself!
@@ -15,6 +19,8 @@ addProperty: anAssociation to: anObject	"Add the property anAssociation describ
 addValue: anObject to: aCollection	"Add anObject to aCollection. Subclasses might want to refine this implementation."	^ aCollection copyWith: anObject!
 
 createArray	"Create an empty collection. Subclasses might want to refine this implementation."	^ Array new!
+
+createCodePointFromSurrogatesHigh: aHighInteger low: aLowInteger	^ 16r10000 + ((aHighInteger - 16rD800 bitShift: 10) bitOr: (aLowInteger - 16rDC00))!
 
 createFalse	"Create the false literal. Subclasses might want to refine this implementation."		^ false!
 
@@ -36,6 +42,10 @@ expectChar: aChar	"Expects aChar and consume input, throw an error otherwise."
 
 initializeOn: aStream	self initialize.	stream := aStream!
 
+isHighSurrogate: anInteger	^ anInteger between: 16rD800 and: 16rDBFF!
+
+isLowSurrogate: anInteger	^ anInteger between: 16rDC00 and: 16rDFFF!
+
 match: aString ifTrue: aBlock	" Tries to match the string, consume input and answer the value of the block if true."	self whitespace.	aString do: [ :each |		(stream atEnd or: [ each ~= stream next ]) ifTrue: [ self error: aString , ' expected' ] ].	aBlock value!
 
 matchChar: aChar	" Tries to match the character, consume input and answer true if successful."	self whitespace.	(stream atEnd or: [ stream peek ~= aChar ]) ifTrue: [ ^ false ].	stream next.	^ true!
@@ -46,9 +56,11 @@ parseArray	| result |	self expectChar: $[.	result := self createArray.	(self
 
 parseCharacter	| char |	(char := stream next) = $\ 		ifFalse: [ ^ char ].	(char := stream next) = $" 		ifTrue: [ ^ char ].	char = $\		ifTrue: [ ^ char ].	char = $/		ifTrue: [ ^ char ].	char = $b		ifTrue: [ ^ Character backspace ].	char = $f		ifTrue: [ ^ Character newPage ].	char = $n		ifTrue: [ ^ Character lf ].	char = $r		ifTrue: [ ^ Character cr ].	char = $t		ifTrue: [ ^ Character tab ].	char = $u		ifTrue: [ ^ self parseCharacterHex ].	self error: 'invalid escape character \' , (String with: char)!
 
-parseCharacterHex	| value |	value := self parseCharacterHexDigit.	3 timesRepeat: [ value := (value << 4) + self parseCharacterHexDigit ].	^ Character codePoint: value!
+parseCharacterHex	| value |	value := self parseCharacterHexRaw.	(self isHighSurrogate: value)		ifTrue: [			| lowSurrogate |			self expectChar: $\.			self expectChar: $u.			lowSurrogate := self parseCharacterHexRaw.			(self isLowSurrogate: lowSurrogate) ifFalse: [				^ self error: 'low surrogate expected' ].			value := self createCodePointFromSurrogatesHigh: value low: lowSurrogate ]		ifFalse: [			(self isLowSurrogate: value)				ifTrue: [ self error: 'unexpected low surrogate' ] ].	^ Character codePoint: value!
 
 parseCharacterHexDigit	| digit |	stream atEnd ifFalse: [ 		digit := stream next greaseInteger.		(digit between: "$0" 48 and: "$9" 57)			ifTrue: [ ^ digit - 48 ].		(digit between: "$A" 65 and: "$F" 70)			ifTrue: [ ^ digit - 55 ].		(digit between: "$a" 97 and: "$f" 102)			ifTrue: [ ^ digit - 87 ] ].	self error: 'hex-digit expected'!
+
+parseCharacterHexRaw	| value |	value := self parseCharacterHexDigit.	3 timesRepeat: [ value := (value << 4) + self parseCharacterHexDigit ].	^ value!
 
 parseNumber	| negated number |	negated := stream peek = $-.	negated ifTrue: [ stream next ].	number := self parseNumberInteger.	(stream peek = $.) ifTrue: [		stream next. 		number := number + self parseNumberFraction ].	('eE' includes: stream peek) ifTrue: [		stream next.		number := number * self parseNumberExponent ].	negated ifTrue: [ number := number negated ].	^ self whitespace; createNumber: number!
 
@@ -67,35 +79,42 @@ parseString	| result |	self expectChar: $".	result := WriteStream on: String 
 parseValue	stream atEnd ifFalse: [ 		| char |		self whitespace.		char := stream peek.		char = ${			ifTrue: [ ^ self parseObject ].		char = $[			ifTrue: [ ^ self parseArray ].		char = $"			ifTrue: [ ^ self parseString ].		(char = $- or: [ char between: $0 and: $9 ])			ifTrue: [ ^ self parseNumber ].		(char = $t)			ifTrue: [ self match: 'true' ifTrue: [ ^ self createTrue ] ].		(char = $f)			ifTrue: [ self match: 'false' ifTrue: [ ^ self createFalse ] ].		(char = $n)			ifTrue: [ self match: 'null' ifTrue: [ ^ self createNull ] ] ].	self error: 'invalid input'!
 
 whitespace	"Strip whitespaces from the input stream."	[ stream atEnd not and: [ stream peek isSeparator ] ]		whileTrue: [ stream next ]! !
-!WAJsonParser categoriesFor: #addProperty:to:!adding!public! !
-!WAJsonParser categoriesFor: #addValue:to:!adding!public! !
-!WAJsonParser categoriesFor: #createArray!creating!public! !
-!WAJsonParser categoriesFor: #createFalse!creating!public! !
-!WAJsonParser categoriesFor: #createNull!creating!public! !
-!WAJsonParser categoriesFor: #createNumber:!creating!public! !
-!WAJsonParser categoriesFor: #createObject!creating!public! !
-!WAJsonParser categoriesFor: #createProperty:with:!creating!public! !
-!WAJsonParser categoriesFor: #createString:!creating!public! !
-!WAJsonParser categoriesFor: #createTrue!creating!public! !
-!WAJsonParser categoriesFor: #error:!private! !
-!WAJsonParser categoriesFor: #expectChar:!private! !
-!WAJsonParser categoriesFor: #initializeOn:!initialization!public! !
-!WAJsonParser categoriesFor: #match:ifTrue:!private! !
-!WAJsonParser categoriesFor: #matchChar:!private! !
-!WAJsonParser categoriesFor: #parse!parsing!public! !
-!WAJsonParser categoriesFor: #parseArray!parsing!public! !
-!WAJsonParser categoriesFor: #parseCharacter!parsing/internal!public! !
-!WAJsonParser categoriesFor: #parseCharacterHex!parsing/internal!public! !
-!WAJsonParser categoriesFor: #parseCharacterHexDigit!parsing/internal!public! !
-!WAJsonParser categoriesFor: #parseNumber!parsing/internal!public! !
-!WAJsonParser categoriesFor: #parseNumberExponent!parsing/internal!public! !
-!WAJsonParser categoriesFor: #parseNumberFraction!parsing/internal!public! !
-!WAJsonParser categoriesFor: #parseNumberInteger!parsing/internal!public! !
-!WAJsonParser categoriesFor: #parseObject!parsing!public! !
-!WAJsonParser categoriesFor: #parseProperty!parsing/internal!public! !
-!WAJsonParser categoriesFor: #parseString!parsing/internal!public! !
-!WAJsonParser categoriesFor: #parseValue!parsing!public! !
-!WAJsonParser categoriesFor: #whitespace!private! !
+
+!WAJsonParser categoriesForMethods!
+addProperty:to:!adding!public! !
+addValue:to:!adding!public! !
+createArray!creating!public! !
+createCodePointFromSurrogatesHigh:low:!parsing/internal!public! !
+createFalse!creating!public! !
+createNull!creating!public! !
+createNumber:!creating!public! !
+createObject!creating!public! !
+createProperty:with:!creating!public! !
+createString:!creating!public! !
+createTrue!creating!public! !
+error:!private! !
+expectChar:!private! !
+initializeOn:!initialization!public! !
+isHighSurrogate:!private! !
+isLowSurrogate:!private! !
+match:ifTrue:!private! !
+matchChar:!private! !
+parse!parsing!public! !
+parseArray!parsing!public! !
+parseCharacter!parsing/internal!public! !
+parseCharacterHex!parsing/internal!public! !
+parseCharacterHexDigit!parsing/internal!public! !
+parseCharacterHexRaw!parsing/internal!public! !
+parseNumber!parsing/internal!public! !
+parseNumberExponent!parsing/internal!public! !
+parseNumberFraction!parsing/internal!public! !
+parseNumberInteger!parsing/internal!public! !
+parseObject!parsing!public! !
+parseProperty!parsing/internal!public! !
+parseString!parsing/internal!public! !
+parseValue!parsing!public! !
+whitespace!private! !
+!
 
 !WAJsonParser class methodsFor!
 
@@ -106,8 +125,11 @@ on: aStream	^ self basicNew initializeOn: aStream!
 parse: aString	^ self parseStream: aString readStream!
 
 parseStream: aStream	^ (self on: aStream) parse! !
-!WAJsonParser class categoriesFor: #new!instance creation!public! !
-!WAJsonParser class categoriesFor: #on:!instance creation!public! !
-!WAJsonParser class categoriesFor: #parse:!accessing!public! !
-!WAJsonParser class categoriesFor: #parseStream:!accessing!public! !
+
+!WAJsonParser class categoriesForMethods!
+new!instance creation!public! !
+on:!instance creation!public! !
+parse:!accessing!public! !
+parseStream:!accessing!public! !
+!
 

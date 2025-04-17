@@ -1,18 +1,25 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WANumberAttribute subclass: #WAIntegerAttribute
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAIntegerAttribute guid: (GUID fromString: '{9024aeed-88af-48b0-a9f2-5dc5cf4e7dfe}')!
+
+WAIntegerAttribute guid: (GUID fromString: '{7eba4af0-7527-4fdc-8fd6-837d39fc6ef5}')!
+
 WAIntegerAttribute comment: ''!
-!WAIntegerAttribute categoriesForClass!Seaside-Core-Configuration! !
+
+!WAIntegerAttribute categoriesForClass!Configuration! !
+
 !WAIntegerAttribute methodsFor!
 
 accept: aVisitor	aVisitor visitIntegerAttribute: self!
 
 valueFromString: aString 	^ aString isEmptyOrNil ifFalse: [ aString greaseInteger ]! !
-!WAIntegerAttribute categoriesFor: #accept:!public!visiting! !
-!WAIntegerAttribute categoriesFor: #valueFromString:!converting!public! !
+
+!WAIntegerAttribute categoriesForMethods!
+accept:!public!visiting! !
+valueFromString:!converting!public! !
+!
 

@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WARoute subclass: #WASimpleRoute
 	instanceVariableNames: 'count'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WASimpleRoute guid: (GUID fromString: '{f9699655-b774-4384-9caa-6e55bbcfdb45}')!
+
+WASimpleRoute guid: (GUID fromString: '{114a1431-4ee9-432e-8391-eb227705af0b}')!
+
 WASimpleRoute comment: 'I match only on an exact number of path elements and no URL parameters. The path elements are turned into message arguments.Instance Variables:	count	<Integer>		count	- The exact number of path elements that have to be present.'!
-!WASimpleRoute categoriesForClass!Seaside-REST-Core-Route! !
+
+!WASimpleRoute categoriesForClass!Route! !
+
 !WASimpleRoute methodsFor!
 
 argumentCount	^ self pathElementCount!
@@ -25,20 +29,26 @@ matchesPath: aCollectionOfStrings	^ self pathElementCount = aCollectionOfString
 pathElementCount	^ count!
 
 priority	^ self pathElementCount! !
-!WASimpleRoute categoriesFor: #argumentCount!accessing!public! !
-!WASimpleRoute categoriesFor: #initializeWithMethod:count:selector:produces:consumes:!initialization!public! !
-!WASimpleRoute categoriesFor: #mapArgumentsWithElements:parameters:into:!public! !
-!WASimpleRoute categoriesFor: #matchesFlexibleNumberOfPathElements!public!testing! !
-!WASimpleRoute categoriesFor: #matchesParameters:!public!testing! !
-!WASimpleRoute categoriesFor: #matchesPath:!public!testing! !
-!WASimpleRoute categoriesFor: #pathElementCount!accessing!public! !
-!WASimpleRoute categoriesFor: #priority!accessing!public! !
+
+!WASimpleRoute categoriesForMethods!
+argumentCount!accessing!public! !
+initializeWithMethod:count:selector:produces:consumes:!initialization!public! !
+mapArgumentsWithElements:parameters:into:!public! !
+matchesFlexibleNumberOfPathElements!public!testing! !
+matchesParameters:!public!testing! !
+matchesPath:!public!testing! !
+pathElementCount!accessing!public! !
+priority!accessing!public! !
+!
 
 !WASimpleRoute class methodsFor!
 
 method: aString selector: aSymbol	^ self		method: aString		selector: aSymbol		produces: WAWildcardMimeTypeMatch new		consumes: WAWildcardMimeTypeMatch new!
 
 method: aString selector: aSymbol produces: aProducesMimeTypeMatch consumes: aConsumesMimeTypeMatch	"Can't send #count: in VAST"	| count |	count := 0.	aSymbol do: [ :each |		each = $: 			ifTrue: [ count := count + 1 ] ].	^ self basicNew		initializeWithMethod: aString		count: count		selector: aSymbol		produces: aProducesMimeTypeMatch		consumes: aConsumesMimeTypeMatch! !
-!WASimpleRoute class categoriesFor: #method:selector:!instance creation!public! !
-!WASimpleRoute class categoriesFor: #method:selector:produces:consumes:!instance creation!public! !
+
+!WASimpleRoute class categoriesForMethods!
+method:selector:!instance creation!public! !
+method:selector:produces:consumes:!instance creation!public! !
+!
 

@@ -1,20 +1,24 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WATagCanvas subclass: #WAHtmlCanvas
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAHtmlCanvas guid: (GUID fromString: '{1b970896-e851-4209-b9dd-a4127048c7c9}')!
+
+WAHtmlCanvas guid: (GUID fromString: '{d544817d-b641-4bcb-9f79-4dc5a399663f}')!
+
 WAHtmlCanvas comment: 'I''m a canvas for building HTML.'!
-!WAHtmlCanvas categoriesForClass!Seaside-Canvas-Canvas! !
+
+!WAHtmlCanvas categoriesForClass!Canvas! !
+
 !WAHtmlCanvas methodsFor!
 
 abbreviated	"Defines an abbreviation, such as 'M.', 'Inc.', 'et al.', 'etc.'"	^ self tag: 'abbr'!
 
 abbreviated: aBlock	self abbreviated with: aBlock!
 
-acronym	"Defines an acronym, such as 'GmbH', 'NATO', and 'F.B.I.'"	^ self tag: 'acronym'!
+acronym	"Defines an acronym, such as 'GmbH', 'NATO', and 'F.B.I.'"	self		greaseDeprecatedApi: 'WAHtmlCanvas>>acronym'		details: 'https://www.w3docs.com/learn-html/deprecated-html-tags.html'.	^ self tag: 'acronym'!
 
 acronym: aBlock	self acronym with: aBlock!
 
@@ -50,7 +54,7 @@ bidirectionalOverride	"The bdo element represents explicit text directionality 
 
 bidirectionalOverride: aBlock	self bidirectionalOverride with: aBlock!
 
-big	"Defines big text."	^ self tag: 'big'!
+big	"Defines big text."	self		greaseDeprecatedApi: 'WAHtmlCanvas>>big'		details: 'https://www.w3docs.com/learn-html/deprecated-html-tags.html'.	^ self tag: 'big'!
 
 big: aBlock	self big with: aBlock!
 
@@ -84,11 +88,11 @@ code: aBlock	self code with: aBlock!
 
 colorInput	^ self brush: WAColorInputTag new!
 
-command	^ self brush: WACommandTag new	!
+command	^ self brush: WACommandTag new!
 
 command: aBlock	self command with: aBlock!
 
-datalist	^ self brush: WADatalistTag new	!
+datalist	^ self brush: WADatalistTag new!
 
 datalist: aBlock	self datalist with: aBlock!
 
@@ -120,7 +124,7 @@ deleted	"Defines deleted text."	^ self brush: (WAEditTag tag: 'del')!
 
 deleted: aBlock	self deleted with: aBlock!
 
-details	^ self brush: WADetailsTag new	!
+details	^ self brush: WADetailsTag new!
 
 details: aBlock	self details with: aBlock!
 
@@ -130,7 +134,7 @@ div: aBlock	self div with: aBlock!
 
 emailInput	^ self brush: WAEmailInputTag new!
 
-embed	"The embed element represents an integration point for an external (typically non-HTML) application or interactive content."	^ self brush: WAEmbedTag new!
+embed	"The embed element represents an integration point for an external (typically non-HTML) application or interactive content."	self		greaseDeprecatedApi: 'WAHtmlCanvas>>embed'		details: 'https://www.w3docs.com/learn-html/deprecated-html-tags.html'.	^ self brush: WAEmbedTag new!
 
 embed: aBlock	self embed with: aBlock!
 
@@ -161,6 +165,8 @@ footer: aBlock	self footer with: aBlock!
 form	^ self brush: WAFormTag new!
 
 form: aBlock	self form with: aBlock!
+
+formatText: aString with: collection	| stream previousText |	stream := aString readStream.	previousText := WriteStream on: String new.	[ stream atEnd ] whileFalse: [ | currentChar | 			(currentChar := stream next) == ${				ifTrue: [ 					| expression index | 					expression := stream upTo: $}.					index := Integer readFrom: expression ifFail: [ expression ].					self text: previousText contents.					previousText := WriteStream on: String new.					self render: (collection at: index) ]				ifFalse: [					currentChar == $\						ifTrue: [ stream atEnd ifFalse: [ previousText nextPut: stream next ] ]						ifFalse: [ previousText nextPut: currentChar ] ] ].	self text: previousText contents.!
 
 header	"The header element represents the header of a section. Headers may contain more than just the section's heading \u2014 for example it would be reasonable for the header to include version history information.	header elements must not contain any header elements, footer elements, or any sectioning elements (such as section) as descendants.	header elements must have at least one h1, h2, h3, h4, h5, or h6 element as a descendant. "	^ self tag: 'header'!
 
@@ -228,7 +234,7 @@ marked	"no known browser support		The mark element represents a run of text i
 
 marked: aBlock	self marked with: aBlock!
 
-menu	^ self brush: WAMenuTag new	!
+menu	self		greaseDeprecatedApi: 'WAHtmlCanvas>>menu'		details: 'https://www.w3docs.com/learn-html/deprecated-html-tags.html'.	^ self brush: WAMenuTag new!
 
 menu: aBlock	self menu with: aBlock!
 
@@ -336,6 +342,10 @@ select	^ self brush: WASelectTag new!
 
 select: aBlock	^ self select with: aBlock!
 
+slot	^ self brush: WASlotTag new!
+
+slot: aBlock	self slot with: aBlock!
+
 small	"Defines small text."	^ self tag: 'small'!
 
 small: aBlock	self small with: aBlock!
@@ -416,6 +426,10 @@ teletype	"Defines teletype text."	^ self tag: 'tt'!
 
 teletype: aBlock	self teletype with: aBlock!
 
+template	^ self brush: WATemplateTag new!
+
+template: aBlock	self template with: aBlock!
+
 textArea	^ self brush: WATextAreaTag new!
 
 textArea: anObject	^ self textArea with: anObject!
@@ -455,229 +469,237 @@ weekInput	^ self brush: WAWeekInputTag new!
 withLineBreaksAndUrls: aString	| stream |	aString ifNil: [ ^ self ].	stream := aString readStream.	[ stream atEnd ] whileFalse: [ 		self withUrls: stream nextLine.		stream atEnd			ifFalse: [ self break ] ]!
 
 withUrls: aString 	| stream url |	stream := aString readStream.	[ stream atEnd ] whileFalse: 		[ self text: (stream greaseUpToAll: 'http://').		stream atEnd ifFalse: 			[ url := 'http://' , (stream upTo: Character space).			self anchor				url: url;				with: url.			self text: ' ' ] ]! !
-!WAHtmlCanvas categoriesFor: #abbreviated!public!tags/block! !
-!WAHtmlCanvas categoriesFor: #abbreviated:!public!tags/block! !
-!WAHtmlCanvas categoriesFor: #acronym!public!tags/block! !
-!WAHtmlCanvas categoriesFor: #acronym:!public!tags/block! !
-!WAHtmlCanvas categoriesFor: #address!public!tags/block! !
-!WAHtmlCanvas categoriesFor: #address:!public!tags/block! !
-!WAHtmlCanvas categoriesFor: #anchor!public!tags/input! !
-!WAHtmlCanvas categoriesFor: #anchor:!public!tags/input! !
-!WAHtmlCanvas categoriesFor: #article!public!tags! !
-!WAHtmlCanvas categoriesFor: #article:!public!tags! !
-!WAHtmlCanvas categoriesFor: #aside!public!tags! !
-!WAHtmlCanvas categoriesFor: #aside:!public!tags! !
-!WAHtmlCanvas categoriesFor: #audio!public!tags! !
-!WAHtmlCanvas categoriesFor: #audio:!public!tags! !
-!WAHtmlCanvas categoriesFor: #basicForm!public!tags/input! !
-!WAHtmlCanvas categoriesFor: #basicForm:!public!tags/input! !
-!WAHtmlCanvas categoriesFor: #bidirectional!public!tags! !
-!WAHtmlCanvas categoriesFor: #bidirectional:!public!tags! !
-!WAHtmlCanvas categoriesFor: #bidirectionalOverride!public!tags! !
-!WAHtmlCanvas categoriesFor: #bidirectionalOverride:!public!tags! !
-!WAHtmlCanvas categoriesFor: #big!public!tags/format! !
-!WAHtmlCanvas categoriesFor: #big:!public!tags/format! !
-!WAHtmlCanvas categoriesFor: #blockquote!public!tags/block! !
-!WAHtmlCanvas categoriesFor: #blockquote:!public!tags/block! !
-!WAHtmlCanvas categoriesFor: #break!public!tags! !
-!WAHtmlCanvas categoriesFor: #button!form/buttons!public! !
-!WAHtmlCanvas categoriesFor: #button:!form/buttons!public! !
-!WAHtmlCanvas categoriesFor: #cancelButton!form/buttons!public! !
-!WAHtmlCanvas categoriesFor: #cancelButton:!form/buttons!public! !
-!WAHtmlCanvas categoriesFor: #canvas!public!tags! !
-!WAHtmlCanvas categoriesFor: #canvas:!public!tags! !
-!WAHtmlCanvas categoriesFor: #checkbox!form/elements!public! !
-!WAHtmlCanvas categoriesFor: #citation!public!tags/block! !
-!WAHtmlCanvas categoriesFor: #citation:!public!tags/block! !
-!WAHtmlCanvas categoriesFor: #code!public!tags/output! !
-!WAHtmlCanvas categoriesFor: #code:!public!tags/output! !
-!WAHtmlCanvas categoriesFor: #colorInput!public!tags/input! !
-!WAHtmlCanvas categoriesFor: #command!public!tags! !
-!WAHtmlCanvas categoriesFor: #command:!public!tags! !
-!WAHtmlCanvas categoriesFor: #datalist!public!tags! !
-!WAHtmlCanvas categoriesFor: #datalist:!public!tags! !
-!WAHtmlCanvas categoriesFor: #dateInput!form/elements!public! !
-!WAHtmlCanvas categoriesFor: #dateInput5!public!tags/input! !
-!WAHtmlCanvas categoriesFor: #dateTimeInput!public!tags/input! !
-!WAHtmlCanvas categoriesFor: #dateTimeLocalInput!public!tags/input! !
-!WAHtmlCanvas categoriesFor: #definition!public!tags/output! !
-!WAHtmlCanvas categoriesFor: #definition:!public!tags/output! !
-!WAHtmlCanvas categoriesFor: #definitionData!public!tags/lists! !
-!WAHtmlCanvas categoriesFor: #definitionData:!public!tags/lists! !
-!WAHtmlCanvas categoriesFor: #definitionList!public!tags/lists! !
-!WAHtmlCanvas categoriesFor: #definitionList:!public!tags/lists! !
-!WAHtmlCanvas categoriesFor: #definitionTerm!public!tags/lists! !
-!WAHtmlCanvas categoriesFor: #definitionTerm:!public!tags/lists! !
-!WAHtmlCanvas categoriesFor: #deleted!public!tags/block! !
-!WAHtmlCanvas categoriesFor: #deleted:!public!tags/block! !
-!WAHtmlCanvas categoriesFor: #details!public!tags! !
-!WAHtmlCanvas categoriesFor: #details:!public!tags! !
-!WAHtmlCanvas categoriesFor: #div!public!tags/styles! !
-!WAHtmlCanvas categoriesFor: #div:!public!tags/styles! !
-!WAHtmlCanvas categoriesFor: #emailInput!public!tags/input! !
-!WAHtmlCanvas categoriesFor: #embed!public!tags! !
-!WAHtmlCanvas categoriesFor: #embed:!public!tags! !
-!WAHtmlCanvas categoriesFor: #emphasis!public!tags/format! !
-!WAHtmlCanvas categoriesFor: #emphasis:!public!tags/format! !
-!WAHtmlCanvas categoriesFor: #encodeCharacter:!convenience!public! !
-!WAHtmlCanvas categoriesFor: #fieldSet!public!tags/input! !
-!WAHtmlCanvas categoriesFor: #fieldSet:!public!tags/input! !
-!WAHtmlCanvas categoriesFor: #figure!public!tags! !
-!WAHtmlCanvas categoriesFor: #figure:!public!tags! !
-!WAHtmlCanvas categoriesFor: #figureCaption!public!tags! !
-!WAHtmlCanvas categoriesFor: #figureCaption:!public!tags! !
-!WAHtmlCanvas categoriesFor: #fileUpload!form/elements!public! !
-!WAHtmlCanvas categoriesFor: #footer!public!tags! !
-!WAHtmlCanvas categoriesFor: #footer:!public!tags! !
-!WAHtmlCanvas categoriesFor: #form!form!public! !
-!WAHtmlCanvas categoriesFor: #form:!public!tags/input! !
-!WAHtmlCanvas categoriesFor: #header!public!tags! !
-!WAHtmlCanvas categoriesFor: #header:!public!tags! !
-!WAHtmlCanvas categoriesFor: #heading!public!tags! !
-!WAHtmlCanvas categoriesFor: #heading:!public!tags! !
-!WAHtmlCanvas categoriesFor: #headingGroup!public!tags! !
-!WAHtmlCanvas categoriesFor: #headingGroup:!public!tags! !
-!WAHtmlCanvas categoriesFor: #hiddenInput!form/elements!public! !
-!WAHtmlCanvas categoriesFor: #horizontalRule!public!tags! !
-!WAHtmlCanvas categoriesFor: #html:!public! !
-!WAHtmlCanvas categoriesFor: #iframe!public!tags/transitional! !
-!WAHtmlCanvas categoriesFor: #image!public!tags/images! !
-!WAHtmlCanvas categoriesFor: #image:!public!tags/images! !
-!WAHtmlCanvas categoriesFor: #imageButton!form/buttons!public! !
-!WAHtmlCanvas categoriesFor: #imageButton:!form/buttons!public! !
-!WAHtmlCanvas categoriesFor: #inserted!public!tags/block! !
-!WAHtmlCanvas categoriesFor: #inserted:!public!tags/block! !
-!WAHtmlCanvas categoriesFor: #keyboard!public!tags/output! !
-!WAHtmlCanvas categoriesFor: #keyboard:!public!tags/output! !
-!WAHtmlCanvas categoriesFor: #keyGenerator!public!tags! !
-!WAHtmlCanvas categoriesFor: #label!public!tags/input! !
-!WAHtmlCanvas categoriesFor: #label:!public!tags/input! !
-!WAHtmlCanvas categoriesFor: #legend!public!tags/input! !
-!WAHtmlCanvas categoriesFor: #legend:!public!tags/input! !
-!WAHtmlCanvas categoriesFor: #lineBreakOpportunity!public!tags! !
-!WAHtmlCanvas categoriesFor: #lineBreakOpportunity:!public!tags! !
-!WAHtmlCanvas categoriesFor: #listItem!public!tags/lists! !
-!WAHtmlCanvas categoriesFor: #listItem:!public!tags/lists! !
-!WAHtmlCanvas categoriesFor: #main!public!tags! !
-!WAHtmlCanvas categoriesFor: #main:!public!tags! !
-!WAHtmlCanvas categoriesFor: #map!public!tags/images! !
-!WAHtmlCanvas categoriesFor: #map:!public!tags/images! !
-!WAHtmlCanvas categoriesFor: #marked!public!tags! !
-!WAHtmlCanvas categoriesFor: #marked:!public!tags! !
-!WAHtmlCanvas categoriesFor: #menu!public!tags! !
-!WAHtmlCanvas categoriesFor: #menu:!public!tags! !
-!WAHtmlCanvas categoriesFor: #meter!public!tags! !
-!WAHtmlCanvas categoriesFor: #meter:!public!tags! !
-!WAHtmlCanvas categoriesFor: #monthInput!public!tags/input! !
-!WAHtmlCanvas categoriesFor: #multiSelect!form/elements!public! !
-!WAHtmlCanvas categoriesFor: #multiSelect:!form/elements!public! !
-!WAHtmlCanvas categoriesFor: #navigation!public!tags! !
-!WAHtmlCanvas categoriesFor: #navigation:!public!tags! !
-!WAHtmlCanvas categoriesFor: #numberInput!public!tags/input! !
-!WAHtmlCanvas categoriesFor: #object!public!tags/program! !
-!WAHtmlCanvas categoriesFor: #object:!public!tags/program! !
-!WAHtmlCanvas categoriesFor: #option!form/elements!public! !
-!WAHtmlCanvas categoriesFor: #option:!form/elements!public! !
-!WAHtmlCanvas categoriesFor: #optionGroup!form/elements!public! !
-!WAHtmlCanvas categoriesFor: #optionGroup:!form/elements!public! !
-!WAHtmlCanvas categoriesFor: #orderedList!public!tags/lists! !
-!WAHtmlCanvas categoriesFor: #orderedList:!public!tags/lists! !
-!WAHtmlCanvas categoriesFor: #output!public!tags! !
-!WAHtmlCanvas categoriesFor: #output:!public!tags! !
-!WAHtmlCanvas categoriesFor: #paragraph!public!tags! !
-!WAHtmlCanvas categoriesFor: #paragraph:!public!tags! !
-!WAHtmlCanvas categoriesFor: #parameter!public!tags/program! !
-!WAHtmlCanvas categoriesFor: #parameter:!public!tags/program! !
-!WAHtmlCanvas categoriesFor: #passwordInput!form/elements!public! !
-!WAHtmlCanvas categoriesFor: #passwordInput:!form/elements!public! !
-!WAHtmlCanvas categoriesFor: #popupAnchor!public!tags/input! !
-!WAHtmlCanvas categoriesFor: #popupAnchor:!public!tags/input! !
-!WAHtmlCanvas categoriesFor: #preformatted!public!tags/output! !
-!WAHtmlCanvas categoriesFor: #preformatted:!public!tags/output! !
-!WAHtmlCanvas categoriesFor: #progress!public!tags! !
-!WAHtmlCanvas categoriesFor: #progress:!public!tags! !
-!WAHtmlCanvas categoriesFor: #quote!public!tags/block! !
-!WAHtmlCanvas categoriesFor: #quote:!public!tags/block! !
-!WAHtmlCanvas categoriesFor: #radioButton!form/elements!public! !
-!WAHtmlCanvas categoriesFor: #radioButton:!form/elements!public! !
-!WAHtmlCanvas categoriesFor: #radioGroup!form/elements!public! !
-!WAHtmlCanvas categoriesFor: #radioGroup:!form/elements!public! !
-!WAHtmlCanvas categoriesFor: #rangeInput!public!tags/input! !
-!WAHtmlCanvas categoriesFor: #ruby!public!tags/ruby! !
-!WAHtmlCanvas categoriesFor: #ruby:!public!tags/ruby! !
-!WAHtmlCanvas categoriesFor: #rubyParentheses!public!tags/ruby! !
-!WAHtmlCanvas categoriesFor: #rubyParentheses:!public!tags/ruby! !
-!WAHtmlCanvas categoriesFor: #rubyText!public!tags/ruby! !
-!WAHtmlCanvas categoriesFor: #rubyText:!public!tags/ruby! !
-!WAHtmlCanvas categoriesFor: #sample!public!tags/output! !
-!WAHtmlCanvas categoriesFor: #sample:!public!tags/output! !
-!WAHtmlCanvas categoriesFor: #script!public!tags/program! !
-!WAHtmlCanvas categoriesFor: #script:!public!tags/program! !
-!WAHtmlCanvas categoriesFor: #searchInput!public!tags/input! !
-!WAHtmlCanvas categoriesFor: #section!public!tags! !
-!WAHtmlCanvas categoriesFor: #section:!public!tags! !
-!WAHtmlCanvas categoriesFor: #select!form/elements!public! !
-!WAHtmlCanvas categoriesFor: #select:!form/elements!public! !
-!WAHtmlCanvas categoriesFor: #small!public!tags/format! !
-!WAHtmlCanvas categoriesFor: #small:!public!tags/format! !
-!WAHtmlCanvas categoriesFor: #source!public!tags! !
-!WAHtmlCanvas categoriesFor: #source:!public!tags! !
-!WAHtmlCanvas categoriesFor: #spaceEntity!private! !
-!WAHtmlCanvas categoriesFor: #span!public!tags/styles! !
-!WAHtmlCanvas categoriesFor: #span:!public!tags/styles! !
-!WAHtmlCanvas categoriesFor: #strong!public!tags/format! !
-!WAHtmlCanvas categoriesFor: #strong:!public!tags/format! !
-!WAHtmlCanvas categoriesFor: #submitButton!form/buttons!public! !
-!WAHtmlCanvas categoriesFor: #submitButton:!form/buttons!public! !
-!WAHtmlCanvas categoriesFor: #subscript!public!tags/format! !
-!WAHtmlCanvas categoriesFor: #subscript:!public!tags/format! !
-!WAHtmlCanvas categoriesFor: #summary!public!tags! !
-!WAHtmlCanvas categoriesFor: #summary:!public!tags! !
-!WAHtmlCanvas categoriesFor: #superscript!public!tags/format! !
-!WAHtmlCanvas categoriesFor: #superscript:!public!tags/format! !
-!WAHtmlCanvas categoriesFor: #table!public!tags/tables! !
-!WAHtmlCanvas categoriesFor: #table:!public!tags/tables! !
-!WAHtmlCanvas categoriesFor: #tableBody!public!tags/tables! !
-!WAHtmlCanvas categoriesFor: #tableBody:!public!tags/tables! !
-!WAHtmlCanvas categoriesFor: #tableCaption!public!tags/tables! !
-!WAHtmlCanvas categoriesFor: #tableCaption:!public!tags/tables! !
-!WAHtmlCanvas categoriesFor: #tableColumn!public!tags/tables! !
-!WAHtmlCanvas categoriesFor: #tableColumn:!public!tags/tables! !
-!WAHtmlCanvas categoriesFor: #tableColumnGroup!public!tags/tables! !
-!WAHtmlCanvas categoriesFor: #tableColumnGroup:!public!tags/tables! !
-!WAHtmlCanvas categoriesFor: #tableData!public!tags/tables! !
-!WAHtmlCanvas categoriesFor: #tableData:!public!tags/tables! !
-!WAHtmlCanvas categoriesFor: #tableFoot!public!tags/tables! !
-!WAHtmlCanvas categoriesFor: #tableFoot:!public!tags/tables! !
-!WAHtmlCanvas categoriesFor: #tableHead!public!tags/tables! !
-!WAHtmlCanvas categoriesFor: #tableHead:!public!tags/tables! !
-!WAHtmlCanvas categoriesFor: #tableHeading!public!tags/tables! !
-!WAHtmlCanvas categoriesFor: #tableHeading:!public!tags/tables! !
-!WAHtmlCanvas categoriesFor: #tableRow!public!tags/tables! !
-!WAHtmlCanvas categoriesFor: #tableRow:!public!tags/tables! !
-!WAHtmlCanvas categoriesFor: #telephoneInput!public!tags/input! !
-!WAHtmlCanvas categoriesFor: #teletype!public!tags/output! !
-!WAHtmlCanvas categoriesFor: #teletype:!public!tags/output! !
-!WAHtmlCanvas categoriesFor: #textArea!public!tags/input! !
-!WAHtmlCanvas categoriesFor: #textArea:!form/elements!public! !
-!WAHtmlCanvas categoriesFor: #textInput!form/elements!public! !
-!WAHtmlCanvas categoriesFor: #textInput:!form/elements!public! !
-!WAHtmlCanvas categoriesFor: #time!public!tags! !
-!WAHtmlCanvas categoriesFor: #time:!public!tags/input! !
-!WAHtmlCanvas categoriesFor: #timeInput!form/elements!public! !
-!WAHtmlCanvas categoriesFor: #timeInput5!public!tags/input! !
-!WAHtmlCanvas categoriesFor: #track!public!tags! !
-!WAHtmlCanvas categoriesFor: #track:!public!tags! !
-!WAHtmlCanvas categoriesFor: #unorderedList!public!tags/lists! !
-!WAHtmlCanvas categoriesFor: #unorderedList:!public!tags/lists! !
-!WAHtmlCanvas categoriesFor: #urlInput!public!tags/input! !
-!WAHtmlCanvas categoriesFor: #variable!public!tags/output! !
-!WAHtmlCanvas categoriesFor: #variable:!public!tags/output! !
-!WAHtmlCanvas categoriesFor: #video!public!tags! !
-!WAHtmlCanvas categoriesFor: #video:!public!tags! !
-!WAHtmlCanvas categoriesFor: #weekInput!public!tags/input! !
-!WAHtmlCanvas categoriesFor: #withLineBreaksAndUrls:!convenience!public! !
-!WAHtmlCanvas categoriesFor: #withUrls:!convenience!public! !
+
+!WAHtmlCanvas categoriesForMethods!
+abbreviated!public!tags/block! !
+abbreviated:!public!tags/block! !
+acronym!public!tags/deprecated! !
+acronym:!public!tags/deprecated! !
+address!public!tags/block! !
+address:!public!tags/block! !
+anchor!public!tags/input! !
+anchor:!public!tags/input! !
+article!public!tags! !
+article:!public!tags! !
+aside!public!tags! !
+aside:!public!tags! !
+audio!public!tags! !
+audio:!public!tags! !
+basicForm!public!tags/input! !
+basicForm:!public!tags/input! !
+bidirectional!public!tags! !
+bidirectional:!public!tags! !
+bidirectionalOverride!public!tags! !
+bidirectionalOverride:!public!tags! !
+big!public!tags/deprecated! !
+big:!public!tags/deprecated! !
+blockquote!public!tags/block! !
+blockquote:!public!tags/block! !
+break!public!tags! !
+button!form/buttons!public! !
+button:!form/buttons!public! !
+cancelButton!form/buttons!public! !
+cancelButton:!form/buttons!public! !
+canvas!public!tags! !
+canvas:!public!tags! !
+checkbox!form/elements!public! !
+citation!public!tags/block! !
+citation:!public!tags/block! !
+code!public!tags/output! !
+code:!public!tags/output! !
+colorInput!public!tags/input! !
+command!public!tags! !
+command:!public!tags! !
+datalist!public!tags! !
+datalist:!public!tags! !
+dateInput!form/elements!public! !
+dateInput5!public!tags/input! !
+dateTimeInput!public!tags/input! !
+dateTimeLocalInput!public!tags/input! !
+definition!public!tags/output! !
+definition:!public!tags/output! !
+definitionData!public!tags/lists! !
+definitionData:!public!tags/lists! !
+definitionList!public!tags/lists! !
+definitionList:!public!tags/lists! !
+definitionTerm!public!tags/lists! !
+definitionTerm:!public!tags/lists! !
+deleted!public!tags/block! !
+deleted:!public!tags/block! !
+details!public!tags! !
+details:!public!tags! !
+div!public!tags/styles! !
+div:!public!tags/styles! !
+emailInput!public!tags/input! !
+embed!public!tags/deprecated! !
+embed:!public!tags/deprecated! !
+emphasis!public!tags/format! !
+emphasis:!public!tags/format! !
+encodeCharacter:!convenience!public! !
+fieldSet!public!tags/input! !
+fieldSet:!public!tags/input! !
+figure!public!tags! !
+figure:!public!tags! !
+figureCaption!public!tags! !
+figureCaption:!public!tags! !
+fileUpload!form/elements!public! !
+footer!public!tags! !
+footer:!public!tags! !
+form!form!public! !
+form:!public!tags/input! !
+formatText:with:!convenience!public! !
+header!public!tags! !
+header:!public!tags! !
+heading!public!tags! !
+heading:!public!tags! !
+headingGroup!public!tags! !
+headingGroup:!public!tags! !
+hiddenInput!form/elements!public! !
+horizontalRule!public!tags! !
+html:!public! !
+iframe!public!tags/transitional! !
+image!public!tags/images! !
+image:!public!tags/images! !
+imageButton!form/buttons!public! !
+imageButton:!form/buttons!public! !
+inserted!public!tags/block! !
+inserted:!public!tags/block! !
+keyboard!public!tags/output! !
+keyboard:!public!tags/output! !
+keyGenerator!public!tags! !
+label!public!tags/input! !
+label:!public!tags/input! !
+legend!public!tags/input! !
+legend:!public!tags/input! !
+lineBreakOpportunity!public!tags! !
+lineBreakOpportunity:!public!tags! !
+listItem!public!tags/lists! !
+listItem:!public!tags/lists! !
+main!public!tags! !
+main:!public!tags! !
+map!public!tags/images! !
+map:!public!tags/images! !
+marked!public!tags! !
+marked:!public!tags! !
+menu!public!tags/deprecated! !
+menu:!public!tags/deprecated! !
+meter!public!tags! !
+meter:!public!tags! !
+monthInput!public!tags/input! !
+multiSelect!form/elements!public! !
+multiSelect:!form/elements!public! !
+navigation!public!tags! !
+navigation:!public!tags! !
+numberInput!public!tags/input! !
+object!public!tags/program! !
+object:!public!tags/program! !
+option!form/elements!public! !
+option:!form/elements!public! !
+optionGroup!form/elements!public! !
+optionGroup:!form/elements!public! !
+orderedList!public!tags/lists! !
+orderedList:!public!tags/lists! !
+output!public!tags! !
+output:!public!tags! !
+paragraph!public!tags! !
+paragraph:!public!tags! !
+parameter!public!tags/program! !
+parameter:!public!tags/program! !
+passwordInput!form/elements!public! !
+passwordInput:!form/elements!public! !
+popupAnchor!public!tags/input! !
+popupAnchor:!public!tags/input! !
+preformatted!public!tags/output! !
+preformatted:!public!tags/output! !
+progress!public!tags! !
+progress:!public!tags! !
+quote!public!tags/block! !
+quote:!public!tags/block! !
+radioButton!form/elements!public! !
+radioButton:!form/elements!public! !
+radioGroup!form/elements!public! !
+radioGroup:!form/elements!public! !
+rangeInput!public!tags/input! !
+ruby!public!tags/ruby! !
+ruby:!public!tags/ruby! !
+rubyParentheses!public!tags/ruby! !
+rubyParentheses:!public!tags/ruby! !
+rubyText!public!tags/ruby! !
+rubyText:!public!tags/ruby! !
+sample!public!tags/output! !
+sample:!public!tags/output! !
+script!public!tags/program! !
+script:!public!tags/program! !
+searchInput!public!tags/input! !
+section!public!tags! !
+section:!public!tags! !
+select!form/elements!public! !
+select:!form/elements!public! !
+slot!public!tags/web/components! !
+slot:!public!tags/web/components! !
+small!public!tags/format! !
+small:!public!tags/format! !
+source!public!tags! !
+source:!public!tags! !
+spaceEntity!private! !
+span!public!tags/styles! !
+span:!public!tags/styles! !
+strong!public!tags/format! !
+strong:!public!tags/format! !
+submitButton!form/buttons!public! !
+submitButton:!form/buttons!public! !
+subscript!public!tags/format! !
+subscript:!public!tags/format! !
+summary!public!tags! !
+summary:!public!tags! !
+superscript!public!tags/format! !
+superscript:!public!tags/format! !
+table!public!tags/tables! !
+table:!public!tags/tables! !
+tableBody!public!tags/tables! !
+tableBody:!public!tags/tables! !
+tableCaption!public!tags/tables! !
+tableCaption:!public!tags/tables! !
+tableColumn!public!tags/tables! !
+tableColumn:!public!tags/tables! !
+tableColumnGroup!public!tags/tables! !
+tableColumnGroup:!public!tags/tables! !
+tableData!public!tags/tables! !
+tableData:!public!tags/tables! !
+tableFoot!public!tags/tables! !
+tableFoot:!public!tags/tables! !
+tableHead!public!tags/tables! !
+tableHead:!public!tags/tables! !
+tableHeading!public!tags/tables! !
+tableHeading:!public!tags/tables! !
+tableRow!public!tags/tables! !
+tableRow:!public!tags/tables! !
+telephoneInput!public!tags/input! !
+teletype!public!tags/output! !
+teletype:!public!tags/output! !
+template!public!tags/web/components! !
+template:!public!tags/web/components! !
+textArea!public!tags/input! !
+textArea:!form/elements!public! !
+textInput!form/elements!public! !
+textInput:!form/elements!public! !
+time!public!tags! !
+time:!public!tags/input! !
+timeInput!form/elements!public! !
+timeInput5!public!tags/input! !
+track!public!tags! !
+track:!public!tags! !
+unorderedList!public!tags/lists! !
+unorderedList:!public!tags/lists! !
+urlInput!public!tags/input! !
+variable!public!tags/output! !
+variable:!public!tags/output! !
+video!public!tags! !
+video:!public!tags! !
+weekInput!public!tags/input! !
+withLineBreaksAndUrls:!convenience!public! !
+withUrls:!convenience!public! !
+!
 
 !WAHtmlCanvas class methodsFor!
 
@@ -686,7 +708,10 @@ builder	^ super builder			rootClass: WAHtmlRoot;			documentClass: WAHtmlDocum
 initialize	self selectAsDefault!
 
 unload	self unselectAsDefault! !
-!WAHtmlCanvas class categoriesFor: #builder!instance creation!public! !
-!WAHtmlCanvas class categoriesFor: #initialize!class initialization!public! !
-!WAHtmlCanvas class categoriesFor: #unload!class initialization!public! !
+
+!WAHtmlCanvas class categoriesForMethods!
+builder!instance creation!public! !
+initialize!class initialization!public! !
+unload!class initialization!public! !
+!
 

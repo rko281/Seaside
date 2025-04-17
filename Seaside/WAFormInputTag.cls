@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WATagBrush subclass: #WAFormInputTag
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAFormInputTag guid: (GUID fromString: '{c286b800-db73-44dc-99cd-2d5da8758097}')!
+
+WAFormInputTag guid: (GUID fromString: '{0ac0600d-5092-4d22-9aae-17d36a388b9a}')!
+
 WAFormInputTag comment: 'The <input> tag defines the start of an input field where the user can enter data.'!
-!WAFormInputTag categoriesForClass!Seaside-Canvas-Tags! !
+
+!WAFormInputTag categoriesForClass!Tags! !
+
 !WAFormInputTag methodsFor!
 
 autocomplete: aString	"User agents sometimes have features for helping users fill forms in, for example prefilling the user's address based on earlier user input. The autocomplete content attribute can be used to hint to the user agent how to, or indeed whether to, provide such a feature."	self attributes 		at: 'autocomplete'		append: aString!
@@ -20,7 +24,7 @@ name: aString	"This attribute assigns the control name.		A control's 'control
 
 noAutocomplete	self autocomplete: 'off'!
 
-on: aSelector of: anObject 	self value: (anObject perform: aSelector).	self callback: (GRDelayedSend 			receiver: anObject			selector: aSelector asMutator)!
+on: aSelector of: anObject 	self value: (anObject perform: aSelector).	self callback: (GRDelayedSend 			receiver: anObject			selector: aSelector greaseAsMutator)!
 
 readonly: aBoolean	"When set to true, this boolean attribute prohibits changes to the widget."	self attributes at: 'readonly' put: aBoolean!
 
@@ -39,19 +43,30 @@ value	^ self attributes at: 'value'!
 value: anObject	anObject isNil		ifFalse: [ self attributes at: 'value' put: anObject ]!
 
 with: aBlock	self type isNil ifFalse: [		self attributes at: 'type' ifAbsentPut: [ self type ] ].	super with: aBlock! !
-!WAFormInputTag categoriesFor: #autocomplete:!attributes!public! !
-!WAFormInputTag categoriesFor: #callback:!callbacks!public! !
-!WAFormInputTag categoriesFor: #isClosed!public!testing! !
-!WAFormInputTag categoriesFor: #name:!attributes!public! !
-!WAFormInputTag categoriesFor: #noAutocomplete!attributes!public! !
-!WAFormInputTag categoriesFor: #on:of:!callbacks!public! !
-!WAFormInputTag categoriesFor: #readonly:!attributes!public! !
-!WAFormInputTag categoriesFor: #size:!attributes!public! !
-!WAFormInputTag categoriesFor: #tag!accessing!public! !
-!WAFormInputTag categoriesFor: #text:!attributes!public! !
-!WAFormInputTag categoriesFor: #type!accessing!public! !
-!WAFormInputTag categoriesFor: #type:!attributes!public! !
-!WAFormInputTag categoriesFor: #value!attributes!public! !
-!WAFormInputTag categoriesFor: #value:!attributes!public! !
-!WAFormInputTag categoriesFor: #with:!public! !
+
+!WAFormInputTag categoriesForMethods!
+autocomplete:!attributes!public! !
+callback:!callbacks!public! !
+isClosed!public!testing! !
+name:!attributes!public! !
+noAutocomplete!attributes!public! !
+on:of:!callbacks!public! !
+readonly:!attributes!public! !
+size:!attributes!public! !
+tag!accessing!public! !
+text:!attributes!public! !
+type!accessing!public! !
+type:!attributes!public! !
+value!attributes!public! !
+value:!attributes!public! !
+with:!public! !
+!
+
+!WAFormInputTag class methodsFor!
+
+isAbstract 	^ self == WAFormInputTag! !
+
+!WAFormInputTag class categoriesForMethods!
+isAbstract!public!testing! !
+!
 

@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAObject subclass: #WAServerAdaptor
 	instanceVariableNames: 'manager port requestHandler codec'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAServerAdaptor guid: (GUID fromString: '{d9696f41-0e16-41b4-8c77-2599bd747467}')!
+
+WAServerAdaptor guid: (GUID fromString: '{2196c8aa-4e2b-46f7-ba6f-2e107d701f07}')!
+
 WAServerAdaptor comment: 'A WAServer is the abstract base class for all servers. Actual servers do not have to subclass it but have to support the protocol: - #codec - #usesSmalltalkEncodingInstance Variables	codec:		<WACodec>codec	- the codec used for response conversion from characters to bytes'!
-!WAServerAdaptor categoriesForClass!Seaside-Core-Server! !
+
+!WAServerAdaptor categoriesForClass!Server! !
+
 !WAServerAdaptor methodsFor!
 
 additionalStatusOn: aStream!
@@ -82,7 +86,7 @@ requestUrlFor: aNativeRequest	self subclassResponsibility!
 
 requestVersionFor: aNativeRequest	self subclassResponsibility!
 
-responseFor: aNativeRequest	"Answer a response object for aNativeRequest."	^ WABufferedResponse on: (self codec encoderFor: (GRPlatform current writeCharacterStreamOn: String new))!
+responseFor: aNativeRequest	"Answer a response object for aNativeRequest."	^ WABufferedResponse on: (self codec encoderFor: (GRPlatform current writeCharacterStreamOn: (self codec encodedStringClass) new))!
 
 responseFrom: aRequestContext	"Answer a native response from aRequestContext."	self subclassResponsibility!
 
@@ -103,53 +107,56 @@ stop	self manager stop: self!
 unregister	self manager unregister: self!
 
 unregistered	manager := nil! !
-!WAServerAdaptor categoriesFor: #additionalStatusOn:!accessing/readonly!public! !
-!WAServerAdaptor categoriesFor: #basicStart!private! !
-!WAServerAdaptor categoriesFor: #basicStop!private! !
-!WAServerAdaptor categoriesFor: #canStart!public!testing! !
-!WAServerAdaptor categoriesFor: #canStop!public!testing! !
-!WAServerAdaptor categoriesFor: #codec!accessing!public! !
-!WAServerAdaptor categoriesFor: #codec:!accessing!public! !
-!WAServerAdaptor categoriesFor: #contextFor:!converting!public! !
-!WAServerAdaptor categoriesFor: #defaultCodec!defaults!public! !
-!WAServerAdaptor categoriesFor: #defaultPort!defaults!public! !
-!WAServerAdaptor categoriesFor: #defaultRequestHandler!defaults!public! !
-!WAServerAdaptor categoriesFor: #handle:!processing!public! !
-!WAServerAdaptor categoriesFor: #handlePadding:!processing!public! !
-!WAServerAdaptor categoriesFor: #handleRequest:!processing!public! !
-!WAServerAdaptor categoriesFor: #initialize!initialization!public! !
-!WAServerAdaptor categoriesFor: #initializeWithManager:!initialization!public! !
-!WAServerAdaptor categoriesFor: #isRunning!public!testing! !
-!WAServerAdaptor categoriesFor: #isStarting!public!testing! !
-!WAServerAdaptor categoriesFor: #isStopped!public!testing! !
-!WAServerAdaptor categoriesFor: #isStopping!public!testing! !
-!WAServerAdaptor categoriesFor: #kill!public!starting/stopping! !
-!WAServerAdaptor categoriesFor: #manager!accessing/readonly!public! !
-!WAServerAdaptor categoriesFor: #port!accessing!public! !
-!WAServerAdaptor categoriesFor: #port:!accessing!public! !
-!WAServerAdaptor categoriesFor: #process:!processing!public! !
-!WAServerAdaptor categoriesFor: #requestAddressFor:!converting/request!public! !
-!WAServerAdaptor categoriesFor: #requestBodyFor:!converting/request!public! !
-!WAServerAdaptor categoriesFor: #requestCookiesFor:!converting/request!public! !
-!WAServerAdaptor categoriesFor: #requestFieldsFor:!converting/request!public! !
-!WAServerAdaptor categoriesFor: #requestFor:!converting!public! !
-!WAServerAdaptor categoriesFor: #requestHandler!accessing!public! !
-!WAServerAdaptor categoriesFor: #requestHandler:!accessing!public! !
-!WAServerAdaptor categoriesFor: #requestHeadersFor:!converting/request!public! !
-!WAServerAdaptor categoriesFor: #requestMethodFor:!converting/request!public! !
-!WAServerAdaptor categoriesFor: #requestUrlFor:!converting/request!public! !
-!WAServerAdaptor categoriesFor: #requestVersionFor:!converting/request!public! !
-!WAServerAdaptor categoriesFor: #responseFor:!converting!public! !
-!WAServerAdaptor categoriesFor: #responseFrom:!converting!public! !
-!WAServerAdaptor categoriesFor: #restart!public!starting/stopping! !
-!WAServerAdaptor categoriesFor: #shutDown!private! !
-!WAServerAdaptor categoriesFor: #sslSessionIdFor:!converting/request!public! !
-!WAServerAdaptor categoriesFor: #start!public!starting/stopping! !
-!WAServerAdaptor categoriesFor: #startUp!private! !
-!WAServerAdaptor categoriesFor: #statusString!accessing/readonly!public! !
-!WAServerAdaptor categoriesFor: #stop!public!starting/stopping! !
-!WAServerAdaptor categoriesFor: #unregister!public!registration! !
-!WAServerAdaptor categoriesFor: #unregistered!public!registration! !
+
+!WAServerAdaptor categoriesForMethods!
+additionalStatusOn:!accessing/readonly!public! !
+basicStart!private! !
+basicStop!private! !
+canStart!public!testing! !
+canStop!public!testing! !
+codec!accessing!public! !
+codec:!accessing!public! !
+contextFor:!converting!public! !
+defaultCodec!defaults!public! !
+defaultPort!defaults!public! !
+defaultRequestHandler!defaults!public! !
+handle:!processing!public! !
+handlePadding:!processing!public! !
+handleRequest:!processing!public! !
+initialize!initialization!public! !
+initializeWithManager:!initialization!public! !
+isRunning!public!testing! !
+isStarting!public!testing! !
+isStopped!public!testing! !
+isStopping!public!testing! !
+kill!public!starting/stopping! !
+manager!accessing/readonly!public! !
+port!accessing!public! !
+port:!accessing!public! !
+process:!processing!public! !
+requestAddressFor:!converting/request!public! !
+requestBodyFor:!converting/request!public! !
+requestCookiesFor:!converting/request!public! !
+requestFieldsFor:!converting/request!public! !
+requestFor:!converting!public! !
+requestHandler!accessing!public! !
+requestHandler:!accessing!public! !
+requestHeadersFor:!converting/request!public! !
+requestMethodFor:!converting/request!public! !
+requestUrlFor:!converting/request!public! !
+requestVersionFor:!converting/request!public! !
+responseFor:!converting!public! !
+responseFrom:!converting!public! !
+restart!public!starting/stopping! !
+shutDown!private! !
+sslSessionIdFor:!converting/request!public! !
+start!public!starting/stopping! !
+startUp!private! !
+statusString!accessing/readonly!public! !
+stop!public!starting/stopping! !
+unregister!public!registration! !
+unregistered!public!registration! !
+!
 
 !WAServerAdaptor class methodsFor!
 
@@ -160,8 +167,11 @@ manager: aServerManager	^ aServerManager register: 		(self basicNew			initial
 new	^ self manager: WAServerManager default!
 
 port: anInteger	^ self new		port: anInteger;		yourself! !
-!WAServerAdaptor class categoriesFor: #isAbstract!public!testing! !
-!WAServerAdaptor class categoriesFor: #manager:!instance creation!public! !
-!WAServerAdaptor class categoriesFor: #new!instance creation!public! !
-!WAServerAdaptor class categoriesFor: #port:!instance creation!public! !
+
+!WAServerAdaptor class categoriesForMethods!
+isAbstract!public!testing! !
+manager:!instance creation!public! !
+new!instance creation!public! !
+port:!instance creation!public! !
+!
 

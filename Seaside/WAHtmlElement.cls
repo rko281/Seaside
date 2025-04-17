@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAObject subclass: #WAHtmlElement
 	instanceVariableNames: 'root attributes children'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAHtmlElement guid: (GUID fromString: '{93cbb1f2-69be-4b4f-b690-ec33be0e6cde}')!
+
+WAHtmlElement guid: (GUID fromString: '{82b6fd1c-6ee2-4426-9022-f6e0b802b57b}')!
+
 WAHtmlElement comment: 'Root class of all elements inside a <head> section.'!
-!WAHtmlElement categoriesForClass!Seaside-Core-Document-Elements! !
+
+!WAHtmlElement categoriesForClass!Document-Elements! !
+
 !WAHtmlElement methodsFor!
 
 add: anElement	children ifNil: [ children := OrderedCollection new ].	children add: anElement!
@@ -37,23 +41,29 @@ isClosed	^ true!
 tag	self subclassResponsibility!
 
 with: anObject	self add: anObject! !
-!WAHtmlElement categoriesFor: #add:!accessing/children!public! !
-!WAHtmlElement categoriesFor: #attributeAt:!accessing/attributes!public! !
-!WAHtmlElement categoriesFor: #attributeAt:ifAbsent:!accessing/attributes!public! !
-!WAHtmlElement categoriesFor: #attributeAt:put:!accessing/attributes!public! !
-!WAHtmlElement categoriesFor: #attributes!accessing!public! !
-!WAHtmlElement categoriesFor: #childrenDo:!accessing/children!public! !
-!WAHtmlElement categoriesFor: #encodeAfterOn:!printing!public! !
-!WAHtmlElement categoriesFor: #encodeBeforeOn:!printing!public! !
-!WAHtmlElement categoriesFor: #encodeChildrenOn:!printing!public! !
-!WAHtmlElement categoriesFor: #encodeOn:!printing!public! !
-!WAHtmlElement categoriesFor: #initializeWithRoot:!initialization!public! !
-!WAHtmlElement categoriesFor: #isClosed!public!testing! !
-!WAHtmlElement categoriesFor: #tag!accessing!public! !
-!WAHtmlElement categoriesFor: #with:!public! !
+
+!WAHtmlElement categoriesForMethods!
+add:!accessing/children!public! !
+attributeAt:!accessing/attributes!public! !
+attributeAt:ifAbsent:!accessing/attributes!public! !
+attributeAt:put:!accessing/attributes!public! !
+attributes!accessing!public! !
+childrenDo:!accessing/children!public! !
+encodeAfterOn:!printing!public! !
+encodeBeforeOn:!printing!public! !
+encodeChildrenOn:!printing!public! !
+encodeOn:!printing!public! !
+initializeWithRoot:!initialization!public! !
+isClosed!public!testing! !
+tag!accessing!public! !
+with:!public! !
+!
 
 !WAHtmlElement class methodsFor!
 
 root: aRoot	^ self basicNew initializeWithRoot: aRoot; yourself! !
-!WAHtmlElement class categoriesFor: #root:!instance creation!public! !
+
+!WAHtmlElement class categoriesForMethods!
+root:!instance creation!public! !
+!
 

@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAComponent subclass: #JQAllFunctionalTests
 	instanceVariableNames: 'default tests contents'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQAllFunctionalTests guid: (GUID fromString: '{47ae3594-17e7-48b7-87a4-9bccac3c36a5}')!
+
+JQAllFunctionalTests guid: (GUID fromString: '{52461063-f41d-4d4c-b600-1f424b9e6caf}')!
+
 JQAllFunctionalTests comment: ''!
-!JQAllFunctionalTests categoriesForClass!JQuery-Tests-Core-Functional! !
+
+!JQAllFunctionalTests categoriesForClass!Functional! !
+
 !JQAllFunctionalTests methodsFor!
 
 children	^ Array with: contents!
@@ -48,7 +52,7 @@ renderMenuOn: html	html div id: 'menu'; with: [		html div class: 'left'.		htm
 
 renderReadmeOn: html	contents renderReadmeOn: html!
 
-renderSmalltalkOn: html 	| source |	html heading level: 4; with: 'Smalltalk'.	contents selectors do: [ :selector | 		source := ((contents class whichClassIncludesSelector: selector) 			sourceCodeAt: selector) greaseString readStream.		html div class: 'code'; with: [			html span				class: 'signature';				with: [ html text: contents class name; text: '>>'; text: source nextLine ].			html break.			[ source atEnd ] whileFalse: [ 				[ source peek = Character tab ] whileTrue: [ 					html space; space; space.					source next ].				html render: source nextLine; break ] ] ]		separatedBy: [ html break ]!
+renderSmalltalkOn: html 	| source |	html heading level: 4; with: 'Smalltalk'.	contents selectors do: [ :selector | 		source := ((contents class whichClassIncludesSelector: selector) 			sourceCodeAt: selector) greaseString readStream.		html div class: 'code'; with: [			html span				class: 'signature';				with: [ html text: contents class name; text: '>>'; text: source nextLine ].			html break.			[ source atEnd ] whileFalse: [ 				[ source peek = Character tab ] whileTrue: [ 					html space; space; space.					source next ].				html render: source nextLine; break ] ] ]		separatedBy: [ html break ]!
 
 renderTestsOn: html	html div class: 'tests'; with: [		tests do: [ :titleAndItems |			html heading level: 3; with: titleAndItems key.			html unorderedList: [				titleAndItems value do: [ :titleAndClass |					html listItem						class: 'active' if: contents = titleAndClass value;						with: [ 							html anchor								useBaseUrl;								callback: [ contents := titleAndClass value ];								extraPath: (self pathFor: titleAndClass value title);								with: titleAndClass key ] ] ] ] ]!
 
@@ -69,36 +73,39 @@ updateRoot: anHtmlRoot	super updateRoot: anHtmlRoot.	anHtmlRoot title: self ti
 updateUrl: aUrl	super updateUrl: aUrl.	aUrl addToPath: (self pathFor: contents title)!
 
 url	^ 'http://www.jquery.com/'! !
-!JQAllFunctionalTests categoriesFor: #children!hooks!public! !
-!JQAllFunctionalTests categoriesFor: #default!configuration!public! !
-!JQAllFunctionalTests categoriesFor: #heading!configuration!public! !
-!JQAllFunctionalTests categoriesFor: #initialize!initialization!public! !
-!JQAllFunctionalTests categoriesFor: #initialRequest:!hooks!public! !
-!JQAllFunctionalTests categoriesFor: #menu!configuration!public! !
-!JQAllFunctionalTests categoriesFor: #pathFor:!private! !
-!JQAllFunctionalTests categoriesFor: #renderBodyOn:!public!rendering! !
-!JQAllFunctionalTests categoriesFor: #renderBottomOn:!public!rendering! !
-!JQAllFunctionalTests categoriesFor: #renderBrowserOn:!public!rendering/browser! !
-!JQAllFunctionalTests categoriesFor: #renderContentOn:!public!rendering! !
-!JQAllFunctionalTests categoriesFor: #renderDemoOn:!public!rendering/browser! !
-!JQAllFunctionalTests categoriesFor: #renderHeaderOn:!public!rendering! !
-!JQAllFunctionalTests categoriesFor: #renderHeadOn:!public!rendering! !
-!JQAllFunctionalTests categoriesFor: #renderJavascriptOn:!public!rendering/browser! !
-!JQAllFunctionalTests categoriesFor: #renderLogoOn:!public!rendering! !
-!JQAllFunctionalTests categoriesFor: #renderMainOn:!public!rendering! !
-!JQAllFunctionalTests categoriesFor: #renderMenuOn:!public!rendering! !
-!JQAllFunctionalTests categoriesFor: #renderReadmeOn:!public!rendering/browser! !
-!JQAllFunctionalTests categoriesFor: #renderSmalltalkOn:!public!rendering/browser! !
-!JQAllFunctionalTests categoriesFor: #renderTestsOn:!public!rendering! !
-!JQAllFunctionalTests categoriesFor: #renderTimeoutOn:!public!rendering! !
-!JQAllFunctionalTests categoriesFor: #renderTopOn:!public!rendering! !
-!JQAllFunctionalTests categoriesFor: #slogan!configuration!public! !
-!JQAllFunctionalTests categoriesFor: #states!hooks!public! !
-!JQAllFunctionalTests categoriesFor: #tests!configuration!public! !
-!JQAllFunctionalTests categoriesFor: #title!configuration!public! !
-!JQAllFunctionalTests categoriesFor: #updateRoot:!public!updating! !
-!JQAllFunctionalTests categoriesFor: #updateUrl:!public!updating! !
-!JQAllFunctionalTests categoriesFor: #url!configuration!public! !
+
+!JQAllFunctionalTests categoriesForMethods!
+children!hooks!public! !
+default!configuration!public! !
+heading!configuration!public! !
+initialize!initialization!public! !
+initialRequest:!hooks!public! !
+menu!configuration!public! !
+pathFor:!private! !
+renderBodyOn:!public!rendering! !
+renderBottomOn:!public!rendering! !
+renderBrowserOn:!public!rendering/browser! !
+renderContentOn:!public!rendering! !
+renderDemoOn:!public!rendering/browser! !
+renderHeaderOn:!public!rendering! !
+renderHeadOn:!public!rendering! !
+renderJavascriptOn:!public!rendering/browser! !
+renderLogoOn:!public!rendering! !
+renderMainOn:!public!rendering! !
+renderMenuOn:!public!rendering! !
+renderReadmeOn:!public!rendering/browser! !
+renderSmalltalkOn:!public!rendering/browser! !
+renderTestsOn:!public!rendering! !
+renderTimeoutOn:!public!rendering! !
+renderTopOn:!public!rendering! !
+slogan!configuration!public! !
+states!hooks!public! !
+tests!configuration!public! !
+title!configuration!public! !
+updateRoot:!public!updating! !
+updateUrl:!public!updating! !
+url!configuration!public! !
+!
 
 !JQAllFunctionalTests class methodsFor!
 
@@ -106,8 +113,11 @@ canBeRoot	^ true!
 
 description	^ 'jQuery Functional Test Suite'!
 
-initialize	| application |	application := WAAdmin register: self asApplicationAt: 'javascript/jquery'.	application preferenceAt: #scriptGeneratorClass put: JQScriptGenerator.	application 		addLibrary: JQDeploymentLibrary;		addLibrary: JQAllFunctionalTestsLibrary.	application := WAAdmin register: WAAllFunctionalTests asApplicationAt: 'tests/functional-ajaxified'.	application preferenceAt: #scriptGeneratorClass put: JQScriptGenerator.	application		preferenceAt: #sessionClass put: WAExpirySession;		addLibrary: JQDeploymentLibrary;		addLibrary: JQAjaxifierLibrary! !
-!JQAllFunctionalTests class categoriesFor: #canBeRoot!public!testing! !
-!JQAllFunctionalTests class categoriesFor: #description!accessing!public! !
-!JQAllFunctionalTests class categoriesFor: #initialize!initialization!public! !
+initialize	| application |	application := WAAdmin register: self asApplicationAt: 'javascript/jquery'.	application preferenceAt: #scriptGeneratorClass put: JQScriptGenerator.	application 		addLibrary: JQDeploymentLibrary;		addLibrary: JQAllFunctionalTestsLibrary.	application := WAAdmin register: WAAllFunctionalTests asApplicationAt: 'tests/functional-ajaxified'.	application preferenceAt: #scriptGeneratorClass put: JQScriptGenerator.	application		preferenceAt: #sessionClass put: WAExpirySession;		addLibrary: JQDeploymentLibrary;		addLibrary: WAAjaxifierLibrary! !
+
+!JQAllFunctionalTests class categoriesForMethods!
+canBeRoot!public!testing! !
+description!accessing!public! !
+initialize!initialization!public! !
+!
 

@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQWidget subclass: #JQAutocomplete
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQAutocomplete guid: (GUID fromString: '{0d62aaae-b720-4095-8852-2b663f45ec8f}')!
+
+JQAutocomplete guid: (GUID fromString: '{2b7f2c24-0e2b-4d97-807f-56567e8e1e8a}')!
+
 JQAutocomplete comment: 'Autocomplete, added to an input field, enables users to quickly find and select from a pre-populated list of values as they type, leveraging searching and filtering.'!
-!JQAutocomplete categoriesForClass!JQuery-UI-Widgets! !
+
+!JQAutocomplete categoriesForClass!Widgets! !
+
 !JQAutocomplete methodsFor!
 
 appendTo: aSelector	"Which element the menu should be appended to."	self optionAt: 'appendTo' put: aSelector!
@@ -40,30 +44,33 @@ position: anObject	"Identifies the position of the Autocomplete widget in relat
 
 search: aString	"Triggers a search event, which, when data is available, then will display the suggestions; can be used by a selectbox-like button to open the suggestions when clicked. If no value argument is specified, the current input's value is used. Can be called with an empty string and minLength: 0 to display all items."		self action: 'search' arguments: (Array with: aString)!
 
-search: aSearchBlock callback: aCallbackBlock	self search: aSearchBlock labels: [ :each | each greaseString ] callback: aCallbackBlock!
+search: aSearchBlock callback: aCallbackBlock	self search: aSearchBlock labels: [ :each | each greaseString ] callback: aCallbackBlock!
 
-search: aSearchBlock labels: aLabelsBlock callback: aCallbackBlock	"A one argument block aSearchBlock that will be evaluated with the term the user currently typed. The block is expected to answer a collection of objects. aLabelsBlock should answer a string label to be displayed for each object. aCallbackBlock is evaluated with the selected object and an ajax script to be performed."		| term mapping |	mapping := IdentityDictionary new.	"assigments to temps don't work in GS 2.4'	http://code.google.com/p/glassdb/issues/detail?id=221"	term := WAValueHolder new.	self source: ((self jQuery getJson		callback: [ :value | term contents: value ]		value: (JSStream on: 'request.term');		text: [ :stream | 			stream json: ((aSearchBlock value: term contents) asArray collect: [ :object | 				GRSmallDictionary2 new					at: 'label' put: (aLabelsBlock value: object);					at: 'index' put: (mapping at: object ifAbsentPut: [ mapping size + 1 ]);					yourself ]) ];		onSuccess: 'response(arguments[0])'; 		dataType: 'jsonp') asFunction: #('request' 'response')).	self onSelect: ((self jQuery ajax		callback: [ :value | term contents: value greaseInteger ] 		value: (JSStream on: 'ui.item.index');		script: [ :script |			mapping keysAndValuesDo: [ :object :value |				value = term contents					ifTrue: [ aCallbackBlock value: object value: script ] ] ])		asFunction: #('event' 'ui'))!
+search: aSearchBlock labels: aLabelsBlock callback: aCallbackBlock	"A one argument block aSearchBlock that will be evaluated with the term the user currently typed. The block is expected to answer a collection of objects. aLabelsBlock should answer a string label to be displayed for each object. aCallbackBlock is evaluated with the selected object and an ajax script to be performed."		| term mapping |	mapping := IdentityDictionary new.	"Use a WAValueHolder because assigments to temps don't work in GemStone.	http://code.google.com/p/glassdb/issues/detail?id=221"	term := WAValueHolder new.	self source: ((self jQuery getJson		callback: [ :value | term contents: value ]		value: (JSStream on: 'request.term');		json: [ :json | 			json array: [				(aSearchBlock value: term contents) do: [ :object | 					json object: [ 						json 							key: 'label' value: (aLabelsBlock value: object);							key: 'index' value: (mapping at: object ifAbsentPut: [ mapping size + 1 ]) ] ] ] ];		onSuccess: 'response(arguments[0])'; 		dataType: 'jsonp') asFunction: #('request' 'response')).	self onSelect: ((self jQuery ajax		callback: [ :value | term contents: value greaseInteger ] 		value: (JSStream on: 'ui.item.index');		script: [ :script |			mapping keysAndValuesDo: [ :object :value |				value = term contents					ifTrue: [ aCallbackBlock value: object value: script ] ] ])		asFunction: #('event' 'ui'))!
 
 source: aStringOrArrayOrCallback	"Defines the data to use, must be specified. See Overview section for more details, and look at the various demos."	self optionAt: 'source' put: aStringOrArrayOrCallback!
 
-sourceCallback: aOneArgumentBlock	"A one argument block that will be evaluated with the term the user currently typed. The block is expected to answer a collection of objects."		| term |	"assignments to temps don't work in GS 2.4	http://code.google.com/p/glassdb/issues/detail?id=152"	term := WAValueHolder new.	self source: ((self jQuery getJson		text: [ :stream | stream json: (aOneArgumentBlock value: term contents) ];		callback: [ :value | term contents: value ] value: (JSStream on: 'request.term');		onSuccess: 'response(arguments[0])'; 		dataType: 'jsonp') asFunction: #('request' 'response'))! !
-!JQAutocomplete categoriesFor: #appendTo:!options/generated!public! !
-!JQAutocomplete categoriesFor: #autoFocus:!options/generated!public! !
-!JQAutocomplete categoriesFor: #close!actions!public! !
-!JQAutocomplete categoriesFor: #delay:!options/generated!public! !
-!JQAutocomplete categoriesFor: #method!accessing!public! !
-!JQAutocomplete categoriesFor: #minLength:!options/generated!public! !
-!JQAutocomplete categoriesFor: #onChange:!events/generated!public! !
-!JQAutocomplete categoriesFor: #onClose:!events/generated!public! !
-!JQAutocomplete categoriesFor: #onFocus:!events/generated!public! !
-!JQAutocomplete categoriesFor: #onOpen:!events/generated!public! !
-!JQAutocomplete categoriesFor: #onResponse:!events/generated!public! !
-!JQAutocomplete categoriesFor: #onSearch:!events/generated!public! !
-!JQAutocomplete categoriesFor: #onSelect:!events/generated!public! !
-!JQAutocomplete categoriesFor: #position:!options/generated!public! !
-!JQAutocomplete categoriesFor: #search:!actions!public! !
-!JQAutocomplete categoriesFor: #search:callback:!convenience!public! !
-!JQAutocomplete categoriesFor: #search:labels:callback:!convenience!public! !
-!JQAutocomplete categoriesFor: #source:!options/generated!public! !
-!JQAutocomplete categoriesFor: #sourceCallback:!convenience!public! !
+sourceCallback: aOneArgumentBlock	"A one argument block that will be evaluated with the term the user currently typed. The block is expected to answer a collection of objects."		| term |	"assignments to temps don't work in GS 2.4	http://code.google.com/p/glassdb/issues/detail?id=152"	term := WAValueHolder new.	self source: ((self jQuery getJson		json: [ :json | json value: (aOneArgumentBlock value: term contents) ];		callback: [ :value | term contents: value ] value: (JSStream on: 'request.term');		onSuccess: 'response(arguments[0])'; 		dataType: 'jsonp') asFunction: #('request' 'response'))! !
+
+!JQAutocomplete categoriesForMethods!
+appendTo:!options/generated!public! !
+autoFocus:!options/generated!public! !
+close!actions!public! !
+delay:!options/generated!public! !
+method!accessing!public! !
+minLength:!options/generated!public! !
+onChange:!events/generated!public! !
+onClose:!events/generated!public! !
+onFocus:!events/generated!public! !
+onOpen:!events/generated!public! !
+onResponse:!events/generated!public! !
+onSearch:!events/generated!public! !
+onSelect:!events/generated!public! !
+position:!options/generated!public! !
+search:!actions!public! !
+search:callback:!convenience!public! !
+search:labels:callback:!convenience!public! !
+source:!options/generated!public! !
+sourceCallback:!convenience!public! !
+!
 

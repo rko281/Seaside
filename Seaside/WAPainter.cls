@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAObject subclass: #WAPainter
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAPainter guid: (GUID fromString: '{74852396-ed26-47c2-90d9-cc7d0579d918}')!
+
+WAPainter guid: (GUID fromString: '{b1432c42-01c5-4ee8-8a80-18fbb9b40979}')!
+
 WAPainter comment: 'A Painter is an object that renders onto a Document using a Renderer (typically a subclass of WACanvas). The class of the Renderer is specified by #rendererClass.Subclasses should implement #renderContentOn: to do the actual rendering.Painters do not store or backtrack state and do not provide call/answer semantics or decorations. They are often created for each request, used, and then discarded. If you want any of the above features, you should use a subclass of WAPresenter or WAComponent.To cause a Painter to render itself, you should pass it to the #render: message of a Renderer. For example, from within a Component you could do the following:	renderContentOn: html		html render: MyPainterSubclass new'!
-!WAPainter categoriesForClass!Seaside-Core-Rendering! !
+
+!WAPainter categoriesForClass!Rendering! !
+
 !WAPainter methodsFor!
 
 accept: aVisitor	aVisitor visitPainter: self!
@@ -23,11 +27,14 @@ renderWithContext: aRenderContext	"This is the main entry point when attempting
 updateRoot: anHtmlRoot	"Override this method to modify the Root object of a Document while rendering. This	method is usually called by a WAUpdateRootVisitor.		If you are using Painters within a tree of Presenters/Components, this method will not	be called unless the Painter is included in the list of children of the Presenter."!
 
 updateUrl: aUrl	"Override this method to modify the WAUrl object which will be used as a base URL	while rendering. This method is usually called by a WAUpdateUrlVisitor.		If you are using Painters within a tree of Presenters/Components, this method will not	be called unless the Painter is included in the list of children of the Presenter."! !
-!WAPainter categoriesFor: #accept:!public!visiting! !
-!WAPainter categoriesFor: #renderContentOn:!public!rendering! !
-!WAPainter categoriesFor: #rendererClass!public!rendering! !
-!WAPainter categoriesFor: #renderOn:!public!rendering! !
-!WAPainter categoriesFor: #renderWithContext:!public!rendering! !
-!WAPainter categoriesFor: #updateRoot:!public!updating! !
-!WAPainter categoriesFor: #updateUrl:!public!updating! !
+
+!WAPainter categoriesForMethods!
+accept:!public!visiting! !
+renderContentOn:!public!rendering! !
+rendererClass!public!rendering! !
+renderOn:!public!rendering! !
+renderWithContext:!public!rendering! !
+updateRoot:!public!updating! !
+updateUrl:!public!updating! !
+!
 

@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAComponent subclass: #WADispatcherBrowser
 	instanceVariableNames: 'dispatcher'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WADispatcherBrowser guid: (GUID fromString: '{c3e6aeaa-7d60-4b89-8ea7-d81cee7e8691}')!
+
+WADispatcherBrowser guid: (GUID fromString: '{237824b4-8da8-4a38-af06-b24e5204ed9e}')!
+
 WADispatcherBrowser comment: ''!
-!WADispatcherBrowser categoriesForClass!Seaside-Tools-Web! !
+
+!WADispatcherBrowser categoriesForClass!Unclassified! !
+
 !WADispatcherBrowser methodsFor!
 
 dispatcher	^ dispatcher!
@@ -47,25 +51,28 @@ updateRoot: anHtmlRoot	super updateRoot: anHtmlRoot.	anHtmlRoot title: self ti
 updateUrl: aUrl	super updateUrl: aUrl.	self updateUrlHandler hierarchyNames do: [ :each | aUrl addToPath: each ]!
 
 updateUrlHandler	^ self dispatcher! !
-!WADispatcherBrowser categoriesFor: #dispatcher!accessing!public! !
-!WADispatcherBrowser categoriesFor: #dispatcher:!accessing!public! !
-!WADispatcherBrowser categoriesFor: #handlers!accessing!public! !
-!WADispatcherBrowser categoriesFor: #initializeOn:!initialization!public! !
-!WADispatcherBrowser categoriesFor: #initialRequest:!hooks!public! !
-!WADispatcherBrowser categoriesFor: #lookupHandler!actions!public! !
-!WADispatcherBrowser categoriesFor: #openHandler:!actions!public! !
-!WADispatcherBrowser categoriesFor: #renderContentOn:!public!rendering! !
-!WADispatcherBrowser categoriesFor: #renderDispatcherOn:!public!rendering! !
-!WADispatcherBrowser categoriesFor: #renderHeadingOn:!public!rendering! !
-!WADispatcherBrowser categoriesFor: #renderRow:named:on:!public!rendering/rows! !
-!WADispatcherBrowser categoriesFor: #renderRowActions:named:on:!public!rendering/rows! !
-!WADispatcherBrowser categoriesFor: #renderRowDescription:named:on:!public!rendering/rows! !
-!WADispatcherBrowser categoriesFor: #renderRowName:named:on:!public!rendering/rows! !
-!WADispatcherBrowser categoriesFor: #states!hooks!public! !
-!WADispatcherBrowser categoriesFor: #title!accessing!public! !
-!WADispatcherBrowser categoriesFor: #updateRoot:!public!updating! !
-!WADispatcherBrowser categoriesFor: #updateUrl:!public!updating! !
-!WADispatcherBrowser categoriesFor: #updateUrlHandler!processing!public! !
+
+!WADispatcherBrowser categoriesForMethods!
+dispatcher!accessing!public! !
+dispatcher:!accessing!public! !
+handlers!accessing!public! !
+initializeOn:!initialization!public! !
+initialRequest:!hooks!public! !
+lookupHandler!actions!public! !
+openHandler:!actions!public! !
+renderContentOn:!public!rendering! !
+renderDispatcherOn:!public!rendering! !
+renderHeadingOn:!public!rendering! !
+renderRow:named:on:!public!rendering/rows! !
+renderRowActions:named:on:!public!rendering/rows! !
+renderRowDescription:named:on:!public!rendering/rows! !
+renderRowName:named:on:!public!rendering/rows! !
+states!hooks!public! !
+title!accessing!public! !
+updateRoot:!public!updating! !
+updateUrl:!public!updating! !
+updateUrlHandler!processing!public! !
+!
 
 !WADispatcherBrowser class methodsFor!
 
@@ -78,9 +85,12 @@ initialize	(WAAdmin register: self asApplicationAt: 'browse') 		addLibrary: WA
 new	^ self on: WAAdmin defaultDispatcher!
 
 on: anEntryPoint	^ self basicNew initializeOn: anEntryPoint; yourself! !
-!WADispatcherBrowser class categoriesFor: #canBeRoot!public!testing! !
-!WADispatcherBrowser class categoriesFor: #description!accessing!public! !
-!WADispatcherBrowser class categoriesFor: #initialize!initialization!public! !
-!WADispatcherBrowser class categoriesFor: #new!instance creation!public! !
-!WADispatcherBrowser class categoriesFor: #on:!instance creation!public! !
+
+!WADispatcherBrowser class categoriesForMethods!
+canBeRoot!public!testing! !
+description!accessing!public! !
+initialize!initialization!public! !
+new!instance creation!public! !
+on:!instance creation!public! !
+!
 

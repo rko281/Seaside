@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAValueCallback subclass: #WAValuesCallback
 	instanceVariableNames: 'values'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAValuesCallback guid: (GUID fromString: '{8e50444c-48ec-4365-9bf9-dbfc05abfe99}')!
+
+WAValuesCallback guid: (GUID fromString: '{dfc2c292-5962-4c42-bf07-4a8321776523}')!
+
 WAValuesCallback comment: ''!
-!WAValuesCallback categoriesForClass!Seaside-Core-Callbacks! !
+
+!WAValuesCallback categoriesForClass!Callbacks! !
+
 !WAValuesCallback methodsFor!
 
 evaluateWithArgument: anObject	values at: anObject greaseInteger ifPresent: [ :value | block valueWithPossibleArguments: (Array with: value) ]!
@@ -15,12 +19,18 @@ evaluateWithArgument: anObject	values at: anObject greaseInteger ifPresent: [ :
 values	^ values!
 
 values: aDictionary 	values := aDictionary! !
-!WAValuesCallback categoriesFor: #evaluateWithArgument:!evaluation!public! !
-!WAValuesCallback categoriesFor: #values!accessing!public! !
-!WAValuesCallback categoriesFor: #values:!accessing!public! !
+
+!WAValuesCallback categoriesForMethods!
+evaluateWithArgument:!evaluation!public! !
+values!accessing!public! !
+values:!accessing!public! !
+!
 
 !WAValuesCallback class methodsFor!
 
 on: aBlock values: aDictionary	^ self new block: aBlock; values: aDictionary; yourself! !
-!WAValuesCallback class categoriesFor: #on:values:!instance creation!public! !
+
+!WAValuesCallback class categoriesForMethods!
+on:values:!instance creation!public! !
+!
 

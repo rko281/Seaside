@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAMatch subclass: #WAPPathMatch
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAPPathMatch guid: (GUID fromString: '{3f256502-6905-463f-8eb5-b92018639dfb}')!
+
+WAPPathMatch guid: (GUID fromString: '{efccfcbb-4272-40f7-9342-ebca93bdd224}')!
+
 WAPPathMatch comment: ''!
-!WAPPathMatch categoriesForClass!Seaside-REST-Core-Route! !
+
+!WAPPathMatch categoriesForClass!Route! !
+
 !WAPPathMatch methodsFor!
 
 argumentCount	self subclassResponsibility!
@@ -23,19 +27,25 @@ matchesJustOneElement	^ true!
 printOn: aStream 	super printOn: aStream.		aStream		nextPutAll: ' (argumentCount: '; print: self argumentCount;		nextPutAll: ' matchesJustOneElement: '; print: self matchesJustOneElement;		nextPutAll: ' priority: '; print: self priority;		nextPut: $)!
 
 priority	self subclassResponsibility! !
-!WAPPathMatch categoriesFor: #argumentCount!accessing!public! !
-!WAPPathMatch categoriesFor: #mapArgumentsWithElements:into:!public! !
-!WAPPathMatch categoriesFor: #mapArgumentsWithElements:into:usingOffset:!public! !
-!WAPPathMatch categoriesFor: #matches:!public!testing! !
-!WAPPathMatch categoriesFor: #matchesJustOneElement!public!testing! !
-!WAPPathMatch categoriesFor: #printOn:!printing!public! !
-!WAPPathMatch categoriesFor: #priority!accessing!public! !
+
+!WAPPathMatch categoriesForMethods!
+argumentCount!accessing!public! !
+mapArgumentsWithElements:into:!public! !
+mapArgumentsWithElements:into:usingOffset:!public! !
+matches:!public!testing! !
+matchesJustOneElement!public!testing! !
+printOn:!printing!public! !
+priority!accessing!public! !
+!
 
 !WAPPathMatch class methodsFor!
 
 fromString: aString index: anInteger arguments: aCollectionOfStrings	^ (self matchClassFor: aString)		fromString: aString index: anInteger arguments: aCollectionOfStrings!
 
 matchClassFor: aString	aString isEmpty ifTrue: [ ^ WAExactPathMatch  ].	aString first = ${		ifTrue: [			| index |			index := aString indexOf: $} startingAt: 2.			index = aString size				"{name}"				ifTrue: [ ^ WAFullPlaceholderPathMatch ].			index isZero				"{name}suffix"				ifFalse: [ ^ WASuffixPlaceholderPathMatch ] ].	"prefix{name}"	(aString last = $}		and: [ (aString indexOf: ${) isZero not ])			ifTrue: [ ^ WAPrefixPlaceholderPathMatch ].	"[option1|option2]"	(aString first = $[		and: [ aString last = $]		and: [ aString includes: $| ] ])			ifTrue: [ ^ WAOrPathMatch ].	"*name*"	(aString first = $*		and: [ aString last = $* ])			ifTrue: [ ^ WAMultiPlaceholderPathMatch ].	^ WAExactPathMatch! !
-!WAPPathMatch class categoriesFor: #fromString:index:arguments:!instance creation!public! !
-!WAPPathMatch class categoriesFor: #matchClassFor:!private! !
+
+!WAPPathMatch class categoriesForMethods!
+fromString:index:arguments:!instance creation!public! !
+matchClassFor:!private! !
+!
 

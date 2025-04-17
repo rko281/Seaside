@@ -1,18 +1,25 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WATagBrush subclass: #WAOptionalBreakTag
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAOptionalBreakTag guid: (GUID fromString: '{bacfc1da-db7c-49a1-804d-b35091e6ea0d}')!
+
+WAOptionalBreakTag guid: (GUID fromString: '{23f12eed-decb-4a95-bdf9-107b7e7280e6}')!
+
 WAOptionalBreakTag comment: 'The <wbr> (Word Break Opportunity) tag specifies where in a text it would be ok to add a line-break.'!
-!WAOptionalBreakTag categoriesForClass!Seaside-Canvas-Tags! !
+
+!WAOptionalBreakTag categoriesForClass!Tags! !
+
 !WAOptionalBreakTag methodsFor!
 
 isClosed	^ true!
 
 tag	^ 'wbr'! !
-!WAOptionalBreakTag categoriesFor: #isClosed!public!testing! !
-!WAOptionalBreakTag categoriesFor: #tag!accessing!public! !
+
+!WAOptionalBreakTag categoriesForMethods!
+isClosed!public!testing! !
+tag!accessing!public! !
+!
 

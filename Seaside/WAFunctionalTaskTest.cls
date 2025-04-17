@@ -1,15 +1,22 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WATask subclass: #WAFunctionalTaskTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAFunctionalTaskTest guid: (GUID fromString: '{5471b58f-2042-4b1b-a7a3-d164fcb1144b}')!
+
+WAFunctionalTaskTest guid: (GUID fromString: '{5ac54042-d5c2-471a-9fb9-e080cf10a695}')!
+
 WAFunctionalTaskTest comment: ''!
-!WAFunctionalTaskTest categoriesForClass!Seaside-Tests-Functional! !
+
+!WAFunctionalTaskTest categoriesForClass!Unclassified! !
+
 !WAFunctionalTaskTest class methodsFor!
 
 isFunctionalTest	^ self name ~= #WAFunctionalTaskTest! !
-!WAFunctionalTaskTest class categoriesFor: #isFunctionalTest!public!testing! !
+
+!WAFunctionalTaskTest class categoriesForMethods!
+isFunctionalTest!public!testing! !
+!
 

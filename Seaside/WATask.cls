@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAComponent subclass: #WATask
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WATask guid: (GUID fromString: '{b0922b95-de4e-4807-9260-e93bc50609a3}')!
+
+WATask guid: (GUID fromString: '{9823052b-e65d-4301-873b-b54df7769fa1}')!
+
 WATask comment: 'I am a subclass of WAComponent, specialized for defining workflow.  The difference between a task and a component is the following:Both of them are reusable, embeddable, callable pieces of user interface. A component has state (instance variables), behavior (it may change its state, and it may also choose to display other components with #call:), and appearance (it renders HTML). A Task has only the first two - it doesn''t render any HTML directly, but only through the components it calls. This is useful when what you want to encapsulate/embed/call is purely a process (show this component, then this one, then this one).The key method for WATask is #go - as soon as a task is displayed, this method will get invoked, and will presumably #call: other components.In terms of implementation, you can think of a WATask in the following way: it is a component which renders two things:- a link whose callback invokes the #go method- a header that immediately redirects to the URL of that linkSubclasses must not implement #renderContentOn:An example can be found in WAFlowConvenienceFunctionalTest.'!
-!WATask categoriesForClass!Seaside-Component-Tasks! !
+
+!WATask categoriesForClass!Tasks! !
+
 !WATask methodsFor!
 
 accept: aVisitor	aVisitor visitTask: self!
@@ -18,10 +22,13 @@ go	self subclassResponsibility!
 
 isExecuting	"Answer whether or not the task is currently executing."	^ self activeComponent ~~ self!
 
-renderContentOn: html	"Tasks define behaviour and should not render themselves directly. Behaviour is defined	in the #go method, which can use #call: and other methods to display components.		In general, if this method is called, it means that the application has not been configured	properly to use Flow and the task was never executed."	WATaskNotDelegated signal: 'This task has no delegation.'	! !
-!WATask categoriesFor: #accept:!public!visiting! !
-!WATask categoriesFor: #execute!public!running! !
-!WATask categoriesFor: #go!public!running! !
-!WATask categoriesFor: #isExecuting!public!testing! !
-!WATask categoriesFor: #renderContentOn:!public!rendering! !
+renderContentOn: html	"Tasks define behaviour and should not render themselves directly. Behaviour is defined	in the #go method, which can use #call: and other methods to display components.		In general, if this method is called, it means that the application has not been configured	properly to use Flow and the task was never executed."	WATaskNotDelegated signal: 'This task has no delegation.'! !
+
+!WATask categoriesForMethods!
+accept:!public!visiting! !
+execute!public!running! !
+go!public!running! !
+isExecuting!public!testing! !
+renderContentOn:!public!rendering! !
+!
 

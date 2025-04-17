@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQFunctionalTest subclass: #JQRepeatingFunctionalTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQRepeatingFunctionalTest guid: (GUID fromString: '{22246b21-9c32-4544-bfd6-afd179245310}')!
+
+JQRepeatingFunctionalTest guid: (GUID fromString: '{bcbdad33-8400-4a68-81ad-5672f0762f03}')!
+
 JQRepeatingFunctionalTest comment: ''!
-!JQRepeatingFunctionalTest categoriesForClass!JQuery-Tests-Core-Functional! !
+
+!JQRepeatingFunctionalTest categoriesForClass!Functional! !
+
 !JQRepeatingFunctionalTest methodsFor!
 
 renderContentOn: html	html paragraph		script: (html jQuery this load			html: [ :r | self renderTimeOn: r ];			interval: 1 seconds);			with: [ self renderTimeOn: html ]!
@@ -17,8 +21,11 @@ renderTimeOn: html	html render: DateAndTime now!
 selectors	^ #(renderContentOn: renderTimeOn:)!
 
 title	^ 'Repeated Ajax Calls'! !
-!JQRepeatingFunctionalTest categoriesFor: #renderContentOn:!public!rendering! !
-!JQRepeatingFunctionalTest categoriesFor: #renderTimeOn:!public!rendering! !
-!JQRepeatingFunctionalTest categoriesFor: #selectors!accessing!public! !
-!JQRepeatingFunctionalTest categoriesFor: #title!accessing!public! !
+
+!JQRepeatingFunctionalTest categoriesForMethods!
+renderContentOn:!public!rendering! !
+renderTimeOn:!public!rendering! !
+selectors!accessing!public! !
+title!accessing!public! !
+!
 

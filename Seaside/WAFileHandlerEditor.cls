@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAHandlerEditor subclass: #WAFileHandlerEditor
 	instanceVariableNames: 'fileEditor'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAFileHandlerEditor guid: (GUID fromString: '{3f683414-6ff4-4841-8bac-62d210d0134d}')!
+
+WAFileHandlerEditor guid: (GUID fromString: '{cd96e2c8-3869-4bd6-af3d-2c6d5db5ea78}')!
+
 WAFileHandlerEditor comment: ''!
-!WAFileHandlerEditor categoriesForClass!Seaside-Tools-Web! !
+
+!WAFileHandlerEditor categoriesForClass!Unclassified! !
+
 !WAFileHandlerEditor methodsFor!
 
 children	^ super children copyWith: fileEditor!
@@ -15,7 +19,10 @@ children	^ super children copyWith: fileEditor!
 initializeOn: aHandler	super initializeOn: aHandler.	fileEditor := WAFileAttributeEditor new		configuration: self handler libraries;		handler: handler;		group: #libraries;		parent: self;		yourself!
 
 renderSubItemsOn: html	super renderSubItemsOn: html.	html render: fileEditor! !
-!WAFileHandlerEditor categoriesFor: #children!hooks!public! !
-!WAFileHandlerEditor categoriesFor: #initializeOn:!initialization!public! !
-!WAFileHandlerEditor categoriesFor: #renderSubItemsOn:!public!rendering! !
+
+!WAFileHandlerEditor categoriesForMethods!
+children!hooks!public! !
+initializeOn:!initialization!public! !
+renderSubItemsOn:!public!rendering! !
+!
 

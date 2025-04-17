@@ -1,18 +1,25 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WASystemConfiguration subclass: #WARegistryConfiguration
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WARegistryConfiguration guid: (GUID fromString: '{81652dc0-3d93-4f72-8836-17b4dad697cf}')!
+
+WARegistryConfiguration guid: (GUID fromString: '{43a621ab-ed0c-406e-a8da-2e3bda666288}')!
+
 WARegistryConfiguration comment: ''!
-!WARegistryConfiguration categoriesForClass!Seaside-Core-RequestHandling! !
+
+!WARegistryConfiguration categoriesForClass!RequestHandling! !
+
 !WARegistryConfiguration methodsFor!
 
 describeOn: config	(config list: #trackingStrategy)		comment: 'How handlers should be tracked.';		options: [ Array with: WAQueryFieldHandlerTrackingStrategy new ];		default: WAQueryFieldHandlerTrackingStrategy new!
 
 parents	^ Array with: WARequestHandlingConfiguration instance! !
-!WARegistryConfiguration categoriesFor: #describeOn:!description!public! !
-!WARegistryConfiguration categoriesFor: #parents!ancestry!public! !
+
+!WARegistryConfiguration categoriesForMethods!
+describeOn:!description!public! !
+parents!ancestry!public! !
+!
 

@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQFunctionalTest subclass: #JQWelcomeFunctionalTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQWelcomeFunctionalTest guid: (GUID fromString: '{a3e7b053-93f9-42fa-ae4b-3a4baf62e5ef}')!
+
+JQWelcomeFunctionalTest guid: (GUID fromString: '{faaaaad0-2187-481e-b513-d3f565a1b029}')!
+
 JQWelcomeFunctionalTest comment: ''!
-!JQWelcomeFunctionalTest categoriesForClass!JQuery-Tests-Core-Functional! !
+
+!JQWelcomeFunctionalTest categoriesForClass!Functional! !
+
 !JQWelcomeFunctionalTest methodsFor!
 
 renderContentOn: html	self renderWelcomeOn: html.	self renderSeasideOn: html.	self renderQueryOn: html!
@@ -19,9 +23,12 @@ renderSeasideOn: html	html heading level: 4; with: 'Seaside'.	html paragraph: 
 renderWelcomeOn: html	html paragraph: [		html anchor			url: 'http://www.seaside.st/';			with: 'Seaside'.		html text: ' provides a complete integration of '.		html anchor			url: 'http://www.jquery.com/';			with: 'jQuery'.		html text: ', allowing the use of the library without having to write a single line of JavaScript code. Everything can be configured and plugged together using Smalltalk objects. Try by yourself, by clicking through this functional test suite and by browsing the source-code.' ]!
 
 title	^ 'Welcome'! !
-!JQWelcomeFunctionalTest categoriesFor: #renderContentOn:!public!rendering! !
-!JQWelcomeFunctionalTest categoriesFor: #renderQueryOn:!public!rendering! !
-!JQWelcomeFunctionalTest categoriesFor: #renderSeasideOn:!public!rendering! !
-!JQWelcomeFunctionalTest categoriesFor: #renderWelcomeOn:!public!rendering! !
-!JQWelcomeFunctionalTest categoriesFor: #title!accessing!public! !
+
+!JQWelcomeFunctionalTest categoriesForMethods!
+renderContentOn:!public!rendering! !
+renderQueryOn:!public!rendering! !
+renderSeasideOn:!public!rendering! !
+renderWelcomeOn:!public!rendering! !
+title!accessing!public! !
+!
 

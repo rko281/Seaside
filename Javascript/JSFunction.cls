@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JSScript subclass: #JSFunction
 	instanceVariableNames: 'return arguments'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JSFunction guid: (GUID fromString: '{7f62ff45-16bd-4448-9a96-b31f30c4eff6}')!
+
+JSFunction guid: (GUID fromString: '{766c4cce-1487-43c5-981c-a00ca2116fe0}')!
+
 JSFunction comment: 'I represent an anonymous JavaScript function.'!
-!JSFunction categoriesForClass!Javascript-Core-Base! !
+
+!JSFunction categoriesForClass!Base! !
+
 !JSFunction methodsFor!
 
 argument	^ arguments!
@@ -27,13 +31,16 @@ javascriptContentOn: aStream	aStream nextPutAll: 'function('.	self arguments d
 return	^ return ifNil: [ false ]!
 
 return: aBoolean	return := aBoolean! !
-!JSFunction categoriesFor: #argument!accessing!public! !
-!JSFunction categoriesFor: #arguments!accessing!public! !
-!JSFunction categoriesFor: #arguments:!accessing!public! !
-!JSFunction categoriesFor: #asFunction!converting!public! !
-!JSFunction categoriesFor: #asFunction:!converting!public! !
-!JSFunction categoriesFor: #initialize!initialization!public! !
-!JSFunction categoriesFor: #javascriptContentOn:!printing!public! !
-!JSFunction categoriesFor: #return!accessing!public! !
-!JSFunction categoriesFor: #return:!accessing!public! !
+
+!JSFunction categoriesForMethods!
+argument!accessing!public! !
+arguments!accessing!public! !
+arguments:!accessing!public! !
+asFunction!converting!public! !
+asFunction:!converting!public! !
+initialize!initialization!public! !
+javascriptContentOn:!printing!public! !
+return!accessing!public! !
+return:!accessing!public! !
+!
 

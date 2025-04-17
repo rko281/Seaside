@@ -1,18 +1,25 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WANotification subclass: #WAResponseNotification
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAResponseNotification guid: (GUID fromString: '{2d4002dd-3a36-4a47-b0be-53d599dae07a}')!
+
+WAResponseNotification guid: (GUID fromString: '{460ddcfb-83ad-40dd-883c-13782b08cbe3}')!
+
 WAResponseNotification comment: 'A WAResponseNotification is signaled whenever the application server wants to return a response back to the client.'!
-!WAResponseNotification categoriesForClass!Seaside-Core-Exceptions! !
+
+!WAResponseNotification categoriesForClass!Exceptions! !
+
 !WAResponseNotification methodsFor!
 
 defaultAction	^ WAUnhandledNotificationError signalWithNotification: self!
 
 isResumable	^ false! !
-!WAResponseNotification categoriesFor: #defaultAction!public! !
-!WAResponseNotification categoriesFor: #isResumable!public!testing! !
+
+!WAResponseNotification categoriesForMethods!
+defaultAction!public! !
+isResumable!public!testing! !
+!
 

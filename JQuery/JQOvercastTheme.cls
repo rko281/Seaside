@@ -1,15 +1,22 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQBaseTheme subclass: #JQOvercastTheme
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQOvercastTheme guid: (GUID fromString: '{323678da-d930-46a2-b540-5946d8071e04}')!
+
+JQOvercastTheme guid: (GUID fromString: '{7966118b-e40a-4d06-b829-a5dca628eb20}')!
+
 JQOvercastTheme comment: ''!
-!JQOvercastTheme categoriesForClass!JQuery-UI-Libraries! !
+
+!JQOvercastTheme categoriesForClass!Libraries! !
+
 !JQOvercastTheme methodsFor!
 
 themeName	^ 'overcast'! !
-!JQOvercastTheme categoriesFor: #themeName!accessing!public! !
+
+!JQOvercastTheme categoriesForMethods!
+themeName!accessing!public! !
+!
 

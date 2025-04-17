@@ -1,15 +1,22 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WASessionContinuation subclass: #WANullSessionContinuation
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WANullSessionContinuation guid: (GUID fromString: '{40ec8e39-d2a3-46b4-ad1a-236e84b5cf3d}')!
+
+WANullSessionContinuation guid: (GUID fromString: '{e7d66013-1a73-4642-b109-9a1b1e77c9fb}')!
+
 WANullSessionContinuation comment: ''!
-!WANullSessionContinuation categoriesForClass!Seaside-Session! !
+
+!WANullSessionContinuation categoriesForClass!Continuations! !
+
 !WANullSessionContinuation methodsFor!
 
 handleFiltered: aRequestContext	"Do nothing"! !
-!WANullSessionContinuation categoriesFor: #handleFiltered:!handling!public! !
+
+!WANullSessionContinuation categoriesForMethods!
+handleFiltered:!handling!public! !
+!
 

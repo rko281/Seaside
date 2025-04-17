@@ -1,27 +1,34 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAConfigurationToolPlugin subclass: #WARemoveHandlerPlugin
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WARemoveHandlerPlugin guid: (GUID fromString: '{32133b3e-7aa8-434b-b915-be87a960bf70}')!
+
+WARemoveHandlerPlugin guid: (GUID fromString: '{dfd36f8d-c50e-4aaa-af9b-3e5eecf44397}')!
+
 WARemoveHandlerPlugin comment: 'I remove an application.'!
-!WARemoveHandlerPlugin categoriesForClass!Seaside-Tools-Web! !
+
+!WARemoveHandlerPlugin categoriesForClass!Unclassified! !
+
 !WARemoveHandlerPlugin methodsFor!
 
 clickScript	^ 'return confirm("Really delete ', self handler basicUrl pathStringUnencoded, '?")'!
 
 execute	| aDispatcher |	aDispatcher := self handler parent.	aDispatcher unregister: self handler.	self requestor configure: aDispatcher!
 
-isActive	^ self handler notNil and: [ self handler parent notNil ]!
+isActive	^ self handler notNil and: [ self handler parent notNil ]!
 
 label	^ 'Remove'!
 
 priority	^ 60! !
-!WARemoveHandlerPlugin categoriesFor: #clickScript!accessing!public! !
-!WARemoveHandlerPlugin categoriesFor: #execute!actions!public! !
-!WARemoveHandlerPlugin categoriesFor: #isActive!public!testing! !
-!WARemoveHandlerPlugin categoriesFor: #label!accessing!public! !
-!WARemoveHandlerPlugin categoriesFor: #priority!accessing!public! !
+
+!WARemoveHandlerPlugin categoriesForMethods!
+clickScript!accessing!public! !
+execute!actions!public! !
+isActive!public!testing! !
+label!accessing!public! !
+priority!accessing!public! !
+!
 

@@ -1,20 +1,24 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAFunctionalTest subclass: #WAPerformanceFunctionalTest
 	instanceVariableNames: 'duration referenceDict builder'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAPerformanceFunctionalTest guid: (GUID fromString: '{05bb6a2c-99c4-4135-a913-da39457a0a16}')!
+
+WAPerformanceFunctionalTest guid: (GUID fromString: '{64373a52-7104-488b-9d65-f37fce665722}')!
+
 WAPerformanceFunctionalTest comment: ''!
-!WAPerformanceFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
+
+!WAPerformanceFunctionalTest categoriesForClass!Unclassified! !
+
 !WAPerformanceFunctionalTest methodsFor!
 
 colorFor: spi	| colors max |	colors := self class colors.	max := 800.	spi >= max ifTrue: [ ^ colors first ].	spi = 0 ifTrue: [ ^ colors last ].	^ colors at: (colors size - (spi / max * colors size) greaseInteger)!
 
 initialize	super initialize.	builder := WAHtmlCanvas builder!
 
-renderAnchorsOn: canvas	self renderInline: [ :html | 		html unorderedList: [			html listItem: [					html anchor						name: 'name';						callback: [ ];						with: 'Anchor' ] ] ]		factor: 1		key: #anchor		on: canvas!
+renderAnchorsOn: canvas	self renderInline: [ :html | 		html unorderedList: [			html listItem: [					html anchor						title: 'name';						callback: [ ];						with: 'Anchor' ] ] ]		factor: 1		key: #anchor		on: canvas!
 
 renderBreakOn: canvas	self		renderInline: [ :html | html break ]		factor: 1 / 50		key: #seasideBR		on: canvas!
 
@@ -30,11 +34,11 @@ renderHtmlTextOn: canvas	self		renderInline: [ :html | html html: 'abcdefghijk
 
 renderIdTestOn: canvas	self		renderInline: [ :html | 			| id1 |			id1 := html nextId.			html span				id: id1;				with: id1.			html break ]		key: #id		on: canvas!
 
-renderInline: aBlock factor: factor key: key on: html 	| startTime endTime count backColor anAssociation title referenceValue spi context document renderer stream runTime scale |	scale := self class scale.	count := 0.	runTime := 200.	anAssociation := referenceDict 		at: key		ifAbsent: [ 'Undefined' -> 100000 ].	title := anAssociation key.	referenceValue := anAssociation value.	stream := WriteStream on: String new.	document := builder documentClass 		on: stream		codec: builder codec.	context := WARenderContext new.	context document: document.	context		actionUrl: builder actionUrl;		resourceUrl: builder resourceUrl.	renderer := builder rendererClass context: context.	builder 		openDocument: document		context: context.	html div		class: 'bench';		with: [			html heading: title.			startTime := Time millisecondClockValue.			endTime := startTime + runTime.			[ Time millisecondClockValue < endTime ] whileTrue: [				count := count + 1.				renderer					render: aBlock;					flush ] ].	builder closeDocument: document.	spi := (count / referenceValue * (10000 / runTime)) rounded.	backColor := self colorFor: spi.	duration := duration + spi.	html div		class: 'spi';		with: [			html big: spi greaseString , ' SPI'.			html span				class: 'iteration';				with: '(' , count greaseString , ' iterations)'.			html break.			html div				class: 'rect';				style: 'background:' , backColor , ';width:' , (spi * scale) greaseString , 'px' ].	html div style: 'clear:both'!
+renderInline: aBlock factor: factor key: key on: html 	| startTime endTime count backColor anAssociation title referenceValue spi context document renderer stream runTime scale |	scale := self class scale.	count := 0.	runTime := 200.	anAssociation := referenceDict 		at: key		ifAbsent: [ 'Undefined' -> 100000 ].	title := anAssociation key.	referenceValue := anAssociation value.	stream := WriteStream on: String new.	document := builder documentClass 		on: stream		codec: builder codec.	context := WARenderContext new.	context document: document.	context		actionUrl: builder actionUrl;		resourceUrl: builder resourceUrl.	renderer := builder rendererClass context: context.	builder 		openDocument: document		context: context.	html div		class: 'bench';		with: [			html heading: title.			startTime := Time millisecondClockValue.			endTime := startTime + runTime.			[ Time millisecondClockValue < endTime ] whileTrue: [				count := count + 1.				renderer					render: aBlock;					flush ] ].	builder closeDocument: document.	spi := (count / referenceValue * (10000 / runTime)) rounded.	backColor := self colorFor: spi.	duration := duration + spi.	html div		class: 'spi';		with: [			html span				style: 'font-size: 30px;';				with: spi greaseString , ' SPI'.			html span				class: 'iteration';				with: '(' , count greaseString , ' iterations)'.			html break.			html div				class: 'rect';				style: 'background:' , backColor , ';width:' , (spi * scale) greaseString , 'px' ].	html div style: 'clear:both'!
 
 renderInline: aBlock key: key on: html	self renderInline: aBlock factor: 1 key: key on: html!
 
-renderLineBreaksOn: canvas	self		renderInline: [ :html |			html withLineBreaks: 'a			b			c' ]		key: #lineBreak		on: canvas			!
+renderLineBreaksOn: canvas	self		renderInline: [ :html |			html withLineBreaks: 'a			b			c' ]		key: #lineBreak		on: canvas!
 
 renderNativeBreakOn: canvas	self		renderInline: [ :html | html html: '<br/>' ]		factor: 1 / 50		key: #nativeBR		on: canvas!
 
@@ -45,24 +49,27 @@ renderTableOn: canvas	self		renderInline: [ :html | html table: [ html tableRo
 renderTextOn: canvas	self		renderInline: [ :html | html text: 'abcdefghijklmnopqrstuvwxyz&0123456789' ]		factor: 1 / 50		key: #seasideText		on: canvas!
 
 style	^ 'h1 {margin:0;padding:0;font-size:1.5em}	div.bench {padding-left:4px;position:relative;line-height:36px;width:320px;border: 1px solid #ccc;overflow:hidden;float:left;margin-bottom:2px}	div.result {margin:6px;color:#008aff;font-size:200%;font-weight:bold}	span.iteration {margin-left:6px}	div.rect {position:relative;border: 1px solid #ccc;;height:12px}	.spi{float:left;padding-left:4px;padding-top:2px}	'! !
-!WAPerformanceFunctionalTest categoriesFor: #colorFor:!private! !
-!WAPerformanceFunctionalTest categoriesFor: #initialize!initialization!public! !
-!WAPerformanceFunctionalTest categoriesFor: #renderAnchorsOn:!public!rendering! !
-!WAPerformanceFunctionalTest categoriesFor: #renderBreakOn:!public!rendering! !
-!WAPerformanceFunctionalTest categoriesFor: #renderCallbackOn:!public!rendering! !
-!WAPerformanceFunctionalTest categoriesFor: #renderContentOn:!public!rendering! !
-!WAPerformanceFunctionalTest categoriesFor: #renderExplanationOn:!public!rendering! !
-!WAPerformanceFunctionalTest categoriesFor: #renderFormOn:!public!rendering! !
-!WAPerformanceFunctionalTest categoriesFor: #renderHtmlTextOn:!public!rendering! !
-!WAPerformanceFunctionalTest categoriesFor: #renderIdTestOn:!public!rendering! !
-!WAPerformanceFunctionalTest categoriesFor: #renderInline:factor:key:on:!public!rendering! !
-!WAPerformanceFunctionalTest categoriesFor: #renderInline:key:on:!public!rendering! !
-!WAPerformanceFunctionalTest categoriesFor: #renderLineBreaksOn:!public!rendering! !
-!WAPerformanceFunctionalTest categoriesFor: #renderNativeBreakOn:!public!rendering! !
-!WAPerformanceFunctionalTest categoriesFor: #renderScriptOn:!public!rendering! !
-!WAPerformanceFunctionalTest categoriesFor: #renderTableOn:!public!rendering! !
-!WAPerformanceFunctionalTest categoriesFor: #renderTextOn:!public!rendering! !
-!WAPerformanceFunctionalTest categoriesFor: #style!hooks!public! !
+
+!WAPerformanceFunctionalTest categoriesForMethods!
+colorFor:!private! !
+initialize!initialization!public! !
+renderAnchorsOn:!public!rendering! !
+renderBreakOn:!public!rendering! !
+renderCallbackOn:!public!rendering! !
+renderContentOn:!public!rendering! !
+renderExplanationOn:!public!rendering! !
+renderFormOn:!public!rendering! !
+renderHtmlTextOn:!public!rendering! !
+renderIdTestOn:!public!rendering! !
+renderInline:factor:key:on:!public!rendering! !
+renderInline:key:on:!public!rendering! !
+renderLineBreaksOn:!public!rendering! !
+renderNativeBreakOn:!public!rendering! !
+renderScriptOn:!public!rendering! !
+renderTableOn:!public!rendering! !
+renderTextOn:!public!rendering! !
+style!hooks!public! !
+!
 
 !WAPerformanceFunctionalTest class methodsFor!
 
@@ -71,7 +78,10 @@ colors	"(120 to: 0 by: -1) collect: [ :hue |		(Color h: hue s: 67 v: 100) asHT
 referenceDict	| dict |	dict := Dictionary new.	dict at: #anchor put: 'Anchor Test' -> 1800.	dict at: #script put: 'Script Test' -> 5300.	dict at: #table put: 'Table Test' -> 5280.	dict at: #lineBreak put: 'Line Break Test' -> 4550.	dict at: #callback put: 'Callback Test' -> 2130.	dict at: #form put: 'Form Test' -> 270.	dict at: #id put: 'Generate ID''s Test' -> 4300.	dict at: #seasideText put: 'Seaside Text Rendering Test' -> 6500.	dict at: #nativeText put: 'Native Text Rendering Test' -> 26000.	dict at: #seasideBR put: 'Seaside (br) Rendering Test' -> 23000.	dict at: #nativeBR put: 'Native (br) Rendering Test' -> 78000.	^ dict!
 
 scale	^ 0.8! !
-!WAPerformanceFunctionalTest class categoriesFor: #colors!accessing!public! !
-!WAPerformanceFunctionalTest class categoriesFor: #referenceDict!accessing!public! !
-!WAPerformanceFunctionalTest class categoriesFor: #scale!accessing!public! !
+
+!WAPerformanceFunctionalTest class categoriesForMethods!
+colors!accessing!public! !
+referenceDict!accessing!public! !
+scale!accessing!public! !
+!
 

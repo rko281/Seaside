@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAPainter subclass: #WAPlugin
 	instanceVariableNames: 'requestor'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAPlugin guid: (GUID fromString: '{c1abdd67-dc17-414d-8418-66673bf33d22}')!
+
+WAPlugin guid: (GUID fromString: '{dc0ea670-cb3a-4a55-9f11-7896087c8eb1}')!
+
 WAPlugin comment: 'I am an abstract root class for all plugins. Plugins are an easy way to add or remove additional tools without changing the codebase. To add a new plugin make sure you choose the right superclass so that the tool can detect your code.The appearance of all plugins, such as icons, has to be configured using CSS.'!
-!WAPlugin categoriesForClass!Seaside-Tools-Web! !
+
+!WAPlugin categoriesForClass!Unclassified! !
+
 !WAPlugin methodsFor!
 
 <= aPlugin	^ self priority <= aPlugin priority!
@@ -39,19 +43,22 @@ requestor	"Answer the requestor component the plugin is working on."	^ reques
 title	"Answer the title used when opening a window."	^ self label!
 
 tooltip	"Answer a tooltip string that is displayed on the plugin link or button."	^ nil! !
-!WAPlugin categoriesFor: #<=!comparing!public! !
-!WAPlugin categoriesFor: #clickScript!accessing!public! !
-!WAPlugin categoriesFor: #cssClass!accessing!public! !
-!WAPlugin categoriesFor: #execute!actions!public! !
-!WAPlugin categoriesFor: #initializeRequestor:!initialization!public! !
-!WAPlugin categoriesFor: #isActive!public!testing! !
-!WAPlugin categoriesFor: #label!accessing!public! !
-!WAPlugin categoriesFor: #open:!actions!public! !
-!WAPlugin categoriesFor: #open:onAnswer:!actions!public! !
-!WAPlugin categoriesFor: #priority!accessing!public! !
-!WAPlugin categoriesFor: #renderContentOn:!public!rendering! !
-!WAPlugin categoriesFor: #rendererClass!public!rendering! !
-!WAPlugin categoriesFor: #requestor!accessing!public! !
-!WAPlugin categoriesFor: #title!accessing!public! !
-!WAPlugin categoriesFor: #tooltip!accessing!public! !
+
+!WAPlugin categoriesForMethods!
+<=!comparing!public! !
+clickScript!accessing!public! !
+cssClass!accessing!public! !
+execute!actions!public! !
+initializeRequestor:!initialization!public! !
+isActive!public!testing! !
+label!accessing!public! !
+open:!actions!public! !
+open:onAnswer:!actions!public! !
+priority!accessing!public! !
+renderContentOn:!public!rendering! !
+rendererClass!public!rendering! !
+requestor!accessing!public! !
+title!accessing!public! !
+tooltip!accessing!public! !
+!
 

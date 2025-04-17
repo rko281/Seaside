@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WACache subclass: #WABidirectionalCache
 	instanceVariableNames: 'byKey byValue'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WABidirectionalCache guid: (GUID fromString: '{4c93748d-0635-44f7-bc96-57e4c3c4b9a5}')!
+
+WABidirectionalCache guid: (GUID fromString: '{b732887a-105b-48dd-8f1e-53066c9012b9}')!
+
 WABidirectionalCache comment: 'I support key -> value and value -> key mappings and never forget anything.I also implement serveral methods of Dictionary.'!
-!WABidirectionalCache categoriesForClass!Seaside-Core-Cache! !
+
+!WABidirectionalCache categoriesForClass!Cache! !
+
 !WABidirectionalCache methodsFor!
 
 at: aKey	^ byKey at: aKey!
@@ -38,29 +42,32 @@ postCopy	super postCopy.	byKey := byKey copy.	byValue := byValue copy!
 
 remove: anObject	| key |	key := byValue removeKey: anObject.	byKey removeKey: key!
 
-removeKey: aKey ifAbsent: aBlock	| value |	value := byKey at: aKey ifAbsent: [ ^ aBlock value ].	byKey removeKey: aKey.	byValue removeKey: value.	^ value	!
+removeKey: aKey ifAbsent: aBlock	| value |	value := byKey at: aKey ifAbsent: [ ^ aBlock value ].	byKey removeKey: aKey.	byValue removeKey: value.	^ value!
 
 size	^ byKey size!
 
 store: anObject	| candidateKey |	[ 		candidateKey := WAKeyGenerator current keyOfLength: self keySize.		self includesKey: candidateKey ] whileTrue.	self at: candidateKey put: anObject.	^ candidateKey!
 
 valuesCollect: aBlock	| result |	result := self species new.	self keysAndValuesDo: [ :key :value |		result at: key put: (aBlock value: value) ].	^ result! !
-!WABidirectionalCache categoriesFor: #at:!accessing!public! !
-!WABidirectionalCache categoriesFor: #at:ifAbsent:!accessing!public! !
-!WABidirectionalCache categoriesFor: #at:put:!public!putting! !
-!WABidirectionalCache categoriesFor: #clear!public! !
-!WABidirectionalCache categoriesFor: #do:!enumerating!public! !
-!WABidirectionalCache categoriesFor: #errorAlreadyMapped!private! !
-!WABidirectionalCache categoriesFor: #includes:!public!testing! !
-!WABidirectionalCache categoriesFor: #includesKey:!private! !
-!WABidirectionalCache categoriesFor: #initialize!initialization!public! !
-!WABidirectionalCache categoriesFor: #keyAtValue:ifAbsent:!accessing!public! !
-!WABidirectionalCache categoriesFor: #keys!accessing!public! !
-!WABidirectionalCache categoriesFor: #keysAndValuesDo:!enumerating!public! !
-!WABidirectionalCache categoriesFor: #postCopy!copying!public! !
-!WABidirectionalCache categoriesFor: #remove:!public!removing! !
-!WABidirectionalCache categoriesFor: #removeKey:ifAbsent:!public!removing! !
-!WABidirectionalCache categoriesFor: #size!accessing!public! !
-!WABidirectionalCache categoriesFor: #store:!public!putting! !
-!WABidirectionalCache categoriesFor: #valuesCollect:!public! !
+
+!WABidirectionalCache categoriesForMethods!
+at:!accessing!public! !
+at:ifAbsent:!accessing!public! !
+at:put:!public!putting! !
+clear!public! !
+do:!enumerating!public! !
+errorAlreadyMapped!private! !
+includes:!public!testing! !
+includesKey:!private! !
+initialize!initialization!public! !
+keyAtValue:ifAbsent:!accessing!public! !
+keys!accessing!public! !
+keysAndValuesDo:!enumerating!public! !
+postCopy!copying!public! !
+remove:!public!removing! !
+removeKey:ifAbsent:!public!removing! !
+size!accessing!public! !
+store:!public!putting! !
+valuesCollect:!public! !
+!
 

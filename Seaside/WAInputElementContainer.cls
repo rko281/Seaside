@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAComponent subclass: #WAInputElementContainer
 	instanceVariableNames: 'textInput textArea singleSelection singleSelectionOptional singleSelectionCustom multiSelection nestedSelection nestedMultiSelection checkbox radio upload hiddenInput radioCustom'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAInputElementContainer guid: (GUID fromString: '{5dbdb475-e2b7-442b-8acc-b2476d0cc100}')!
+
+WAInputElementContainer guid: (GUID fromString: '{faabab44-35e4-4b38-ab84-cc29d083fabb}')!
+
 WAInputElementContainer comment: ''!
-!WAInputElementContainer categoriesForClass!Seaside-Tests-Functional! !
+
+!WAInputElementContainer categoriesForClass!Unclassified! !
+
 !WAInputElementContainer methodsFor!
 
 elements	^ #( Quito Dakar Sydney Bamako )!
@@ -45,22 +49,25 @@ renderTextAreaOn: html	self		renderLabel: 'Text Area'		input: [			html textA
 renderTextInputOn: html	self		renderLabel: 'Text Input'		input: [			html textInput				value: textInput;				callback: [ :value | textInput := value ] ]		output: textInput printString		on: html!
 
 renderUploadOn: html	self		renderLabel: 'Upload'		input: [ html fileUpload callback: [ :file | upload := file ] ]		output: upload printString		on: html! !
-!WAInputElementContainer categoriesFor: #elements!accessing!public! !
-!WAInputElementContainer categoriesFor: #nestedElements!accessing!public! !
-!WAInputElementContainer categoriesFor: #renderCheckboxOn:!public!rendering/elements! !
-!WAInputElementContainer categoriesFor: #renderContentOn:!public!rendering! !
-!WAInputElementContainer categoriesFor: #renderHeadingOn:!public!rendering! !
-!WAInputElementContainer categoriesFor: #renderHiddenInputOn:!public!rendering/elements! !
-!WAInputElementContainer categoriesFor: #renderLabel:input:output:on:!public!rendering! !
-!WAInputElementContainer categoriesFor: #renderMultiSelectionOn:!public!rendering/elements! !
-!WAInputElementContainer categoriesFor: #renderNestedMultiSelectionOn:!public!rendering/elements! !
-!WAInputElementContainer categoriesFor: #renderNestedSelectionOn:!public!rendering/elements! !
-!WAInputElementContainer categoriesFor: #renderRadioButtonsCustomOn:!public!rendering/elements! !
-!WAInputElementContainer categoriesFor: #renderRadioButtonsOn:!public!rendering/elements! !
-!WAInputElementContainer categoriesFor: #renderSingleSelectionCustomOn:!public!rendering/elements! !
-!WAInputElementContainer categoriesFor: #renderSingleSelectionOn:!public!rendering/elements! !
-!WAInputElementContainer categoriesFor: #renderSingleSelectionOptionalOn:!public!rendering/elements! !
-!WAInputElementContainer categoriesFor: #renderTextAreaOn:!public!rendering/elements! !
-!WAInputElementContainer categoriesFor: #renderTextInputOn:!public!rendering/elements! !
-!WAInputElementContainer categoriesFor: #renderUploadOn:!public!rendering/elements! !
+
+!WAInputElementContainer categoriesForMethods!
+elements!accessing!public! !
+nestedElements!accessing!public! !
+renderCheckboxOn:!public!rendering/elements! !
+renderContentOn:!public!rendering! !
+renderHeadingOn:!public!rendering! !
+renderHiddenInputOn:!public!rendering/elements! !
+renderLabel:input:output:on:!public!rendering! !
+renderMultiSelectionOn:!public!rendering/elements! !
+renderNestedMultiSelectionOn:!public!rendering/elements! !
+renderNestedSelectionOn:!public!rendering/elements! !
+renderRadioButtonsCustomOn:!public!rendering/elements! !
+renderRadioButtonsOn:!public!rendering/elements! !
+renderSingleSelectionCustomOn:!public!rendering/elements! !
+renderSingleSelectionOn:!public!rendering/elements! !
+renderSingleSelectionOptionalOn:!public!rendering/elements! !
+renderTextAreaOn:!public!rendering/elements! !
+renderTextInputOn:!public!rendering/elements! !
+renderUploadOn:!public!rendering/elements! !
+!
 

@@ -1,15 +1,22 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQBaseTheme subclass: #JQBlackTieTheme
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQBlackTieTheme guid: (GUID fromString: '{0d413b09-3fdf-4b9c-b16f-710a76f4a969}')!
+
+JQBlackTieTheme guid: (GUID fromString: '{6a8e2c39-754d-470c-b85f-7e103b99ad80}')!
+
 JQBlackTieTheme comment: ''!
-!JQBlackTieTheme categoriesForClass!JQuery-UI-Libraries! !
+
+!JQBlackTieTheme categoriesForClass!Libraries! !
+
 !JQBlackTieTheme methodsFor!
 
 themeName	^ 'black-tie'! !
-!JQBlackTieTheme categoriesFor: #themeName!accessing!public! !
+
+!JQBlackTieTheme categoriesForMethods!
+themeName!accessing!public! !
+!
 

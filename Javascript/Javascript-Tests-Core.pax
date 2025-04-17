@@ -3,7 +3,6 @@ package := Package name: 'Javascript-Tests-Core'.
 package paxVersion: 1;
 	basicComment: ''.
 
-
 package classNames
 	add: #JSConversionTest;
 	add: #JSDecorationTest;
@@ -13,10 +12,6 @@ package classNames
 	add: #JSRenderingTest;
 	add: #JSScriptTest;
 	add: #JSStreamTest;
-	yourself.
-
-package methodNames
-	add: 'GRPackage class' -> #javascriptTestsCore;
 	yourself.
 
 package binaryGlobalNames: (Set new
@@ -43,51 +38,48 @@ WAContextTest subclass: #JSObjectTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JSObjectTest subclass: #JSConversionTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JSObjectTest subclass: #JSDecorationTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JSObjectTest subclass: #JSJsonTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JSObjectTest subclass: #JSLoggingTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JSObjectTest subclass: #JSRenderingTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JSObjectTest subclass: #JSScriptTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JSObjectTest subclass: #JSStreamTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-
-"Global Aliases"!
-
-
-"Loose Methods"!
-
-!GRPackage class methodsFor!
-
-javascriptTestsCore	^ self new		name: 'Javascript-Tests-Core';		description: 'Unit tests for the Javascript-Core package.';		addDependency: 'Javascript-Core';		addDependency: 'Seaside-Tests-Core';		url: #seasideUrl;		yourself! !
-!GRPackage class categoriesFor: #javascriptTestsCore!*javascript/tests/core!public! !
 
 "End of package definition"!
 

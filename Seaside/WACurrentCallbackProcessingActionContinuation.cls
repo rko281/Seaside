@@ -1,10 +1,14 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WADynamicVariable subclass: #WACurrentCallbackProcessingActionContinuation
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WACurrentCallbackProcessingActionContinuation guid: (GUID fromString: '{69aa80eb-8b26-4660-b638-1dd157d4ae41}')!
+
+WACurrentCallbackProcessingActionContinuation guid: (GUID fromString: '{d3f1bf07-c054-4685-9aa0-14db759d48f6}')!
+
 WACurrentCallbackProcessingActionContinuation comment: ''!
-!WACurrentCallbackProcessingActionContinuation categoriesForClass!Seaside-RenderLoop! !
+
+!WACurrentCallbackProcessingActionContinuation categoriesForClass!Base! !
+

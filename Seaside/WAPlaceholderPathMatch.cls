@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAPPathMatch subclass: #WAPlaceholderPathMatch
 	instanceVariableNames: 'sourceIndex targetIndex'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAPlaceholderPathMatch guid: (GUID fromString: '{fa599458-9cb8-4b5d-8be0-f472abaf6506}')!
+
+WAPlaceholderPathMatch guid: (GUID fromString: '{b3b86e5e-3727-47b1-a2c8-5198f8836555}')!
+
 WAPlaceholderPathMatch comment: ''!
-!WAPlaceholderPathMatch categoriesForClass!Seaside-REST-Core-Route! !
+
+!WAPlaceholderPathMatch categoriesForClass!Route! !
+
 !WAPlaceholderPathMatch methodsFor!
 
 argumentCount	^ 1!
@@ -17,8 +21,11 @@ initializeWithSourceIndex: anFirstInteger targetIndex: aSecondInteger	self init
 sourceIndex	^ sourceIndex!
 
 targetIndex	^ targetIndex! !
-!WAPlaceholderPathMatch categoriesFor: #argumentCount!accessing!public! !
-!WAPlaceholderPathMatch categoriesFor: #initializeWithSourceIndex:targetIndex:!initialization!public! !
-!WAPlaceholderPathMatch categoriesFor: #sourceIndex!accessing!public! !
-!WAPlaceholderPathMatch categoriesFor: #targetIndex!accessing!public! !
+
+!WAPlaceholderPathMatch categoriesForMethods!
+argumentCount!accessing!public! !
+initializeWithSourceIndex:targetIndex:!initialization!public! !
+sourceIndex!accessing!public! !
+targetIndex!accessing!public! !
+!
 

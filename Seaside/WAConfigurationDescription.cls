@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAObject subclass: #WAConfigurationDescription
 	instanceVariableNames: 'attributes expressions'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAConfigurationDescription guid: (GUID fromString: '{86ca1896-6819-4383-b998-923c38566ea6}')!
+
+WAConfigurationDescription guid: (GUID fromString: '{40ea3147-7d7d-43a4-b9f2-51ce484120c0}')!
+
 WAConfigurationDescription comment: 'I hold a collection of attributes and present methods to construct new methods, providing an interface a bit like WACanvas and #renderContentOn: to WASystemConfiguration>>addAttributes:.I can use any kind of collection class and handle setting the #configuration: parameter of the attribute appropriately on addition. If my collection is a Dictionary, I will store the attributes by their keys.'!
-!WAConfigurationDescription categoriesForClass!Seaside-Core-Configuration! !
+
+!WAConfigurationDescription categoriesForClass!Configuration! !
+
 !WAConfigurationDescription methodsFor!
 
 add: aDescriptor to: aDictionary	^ aDictionary at: aDescriptor key put: aDescriptor!
@@ -51,25 +55,28 @@ password: aSymbol	^ self addAttribute: (WAPasswordAttribute key: aSymbol)!
 string: aSymbol	^ self addAttribute: (WAStringAttribute key: aSymbol)!
 
 url: aSymbol	^ self addAttribute: (WAUrlAttribute key: aSymbol)! !
-!WAConfigurationDescription categoriesFor: #add:to:!private! !
-!WAConfigurationDescription categoriesFor: #addAttribute:!attribute creation!public! !
-!WAConfigurationDescription categoriesFor: #addExpression:!public!values! !
-!WAConfigurationDescription categoriesFor: #at:addAll:!public!values! !
-!WAConfigurationDescription categoriesFor: #at:addAll:removeAll:!public!values! !
-!WAConfigurationDescription categoriesFor: #at:put:!public!values! !
-!WAConfigurationDescription categoriesFor: #at:putClass:!public!values! !
-!WAConfigurationDescription categoriesFor: #attributes!accessing!public! !
-!WAConfigurationDescription categoriesFor: #boolean:!attribute creation!public! !
-!WAConfigurationDescription categoriesFor: #classBinding:!attribute creation!public! !
-!WAConfigurationDescription categoriesFor: #classBindingCollection:!attribute creation!public! !
-!WAConfigurationDescription categoriesFor: #collection:!attribute creation!public! !
-!WAConfigurationDescription categoriesFor: #expressions!accessing!public! !
-!WAConfigurationDescription categoriesFor: #initialize!initialization!public! !
-!WAConfigurationDescription categoriesFor: #integer:!attribute creation!public! !
-!WAConfigurationDescription categoriesFor: #list:!attribute creation!public! !
-!WAConfigurationDescription categoriesFor: #listOfClasses:!attribute creation!public! !
-!WAConfigurationDescription categoriesFor: #number:!attribute creation!public! !
-!WAConfigurationDescription categoriesFor: #password:!attribute creation!public! !
-!WAConfigurationDescription categoriesFor: #string:!attribute creation!public! !
-!WAConfigurationDescription categoriesFor: #url:!attribute creation!public! !
+
+!WAConfigurationDescription categoriesForMethods!
+add:to:!private! !
+addAttribute:!attribute creation!public! !
+addExpression:!public!values! !
+at:addAll:!public!values! !
+at:addAll:removeAll:!public!values! !
+at:put:!public!values! !
+at:putClass:!public!values! !
+attributes!accessing!public! !
+boolean:!attribute creation!public! !
+classBinding:!attribute creation!public! !
+classBindingCollection:!attribute creation!public! !
+collection:!attribute creation!public! !
+expressions!accessing!public! !
+initialize!initialization!public! !
+integer:!attribute creation!public! !
+list:!attribute creation!public! !
+listOfClasses:!attribute creation!public! !
+number:!attribute creation!public! !
+password:!attribute creation!public! !
+string:!attribute creation!public! !
+url:!attribute creation!public! !
+!
 

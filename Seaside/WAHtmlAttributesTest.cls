@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAContextTest subclass: #WAHtmlAttributesTest
 	instanceVariableNames: 'attributes'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAHtmlAttributesTest guid: (GUID fromString: '{2b53c41c-6982-4495-8917-164151712380}')!
+
+WAHtmlAttributesTest guid: (GUID fromString: '{4121b100-1ed4-4d1f-aedf-6f2d095e5217}')!
+
 WAHtmlAttributesTest comment: ''!
-!WAHtmlAttributesTest categoriesForClass!Seaside-Tests-Core-Document! !
+
+!WAHtmlAttributesTest categoriesForClass!Document! !
+
 !WAHtmlAttributesTest methodsFor!
 
 assert: aBlock gives: aString 	| stream |	aBlock value: (attributes := WAHtmlAttributes new).	(WAHtmlDocument 		on: (stream := WriteStream on: String new)		codec: self requestContext codec) print: attributes.	self 		assert: stream contents = aString		description: 'Expected ' , aString printString , ', but got ' , stream contents printString		resumable: true!
@@ -29,14 +33,17 @@ testCaseSensititve	self		assert: [ :attr | attr at: 'lastBuildDate' put: 'Sat,
 testOrder	self		assert: [ :attr | attr at: 'a' put: 1; at: 'b' put: 2; at: 'c' put: 3 ]		gives: ' a="1" b="2" c="3"'.	self		assert: [ :attr | attr at: 'a' put: 1; at: 'b' put: 2; at: 'c' put: 3; at: 'b' put: 4 ]		gives: ' a="1" b="4" c="3"'!
 
 testRemoveKey	attributes at: 'id' put: 'foo'.	self assert: (attributes removeKey: 'id') = 'foo'.	self assert: (attributes removeKey: 'id') isNil! !
-!WAHtmlAttributesTest categoriesFor: #assert:gives:!private! !
-!WAHtmlAttributesTest categoriesFor: #setUp!public!running! !
-!WAHtmlAttributesTest categoriesFor: #testAddClass!public!tests/convenience! !
-!WAHtmlAttributesTest categoriesFor: #testAddStyle!public!tests/convenience! !
-!WAHtmlAttributesTest categoriesFor: #testAt!public!tests! !
-!WAHtmlAttributesTest categoriesFor: #testAtAppend!public!tests! !
-!WAHtmlAttributesTest categoriesFor: #testAtPut!public!tests! !
-!WAHtmlAttributesTest categoriesFor: #testCaseSensititve!public!tests/fixtures! !
-!WAHtmlAttributesTest categoriesFor: #testOrder!public!tests! !
-!WAHtmlAttributesTest categoriesFor: #testRemoveKey!public!tests! !
+
+!WAHtmlAttributesTest categoriesForMethods!
+assert:gives:!private! !
+setUp!public!running! !
+testAddClass!public!tests/convenience! !
+testAddStyle!public!tests/convenience! !
+testAt!public!tests! !
+testAtAppend!public!tests! !
+testAtPut!public!tests! !
+testCaseSensititve!public!tests/fixtures! !
+testOrder!public!tests! !
+testRemoveKey!public!tests! !
+!
 

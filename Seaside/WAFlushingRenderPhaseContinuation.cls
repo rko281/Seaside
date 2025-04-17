@@ -1,15 +1,22 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WARenderPhaseContinuation subclass: #WAFlushingRenderPhaseContinuation
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAFlushingRenderPhaseContinuation guid: (GUID fromString: '{a52bc1e3-38ec-446b-a71f-023744d7fdf3}')!
-WAFlushingRenderPhaseContinuation comment: ''!
-!WAFlushingRenderPhaseContinuation categoriesForClass!Seaside-RenderLoop! !
+
+WAFlushingRenderPhaseContinuation guid: (GUID fromString: '{55a0dfd9-006a-459d-ba30-2774ecaf22a7}')!
+
+WAFlushingRenderPhaseContinuation comment: 'I send #flush to the HTTP response (WAResponse) after HTML <head> element has been fully rendered and closed and the HTML <body> has been opened. This results in this part of the the HTML document being sent to the browser. This allows the browser to prefetch the resources (styles, scripts, ...) possibly resulting in faster page loads.This only works with a streaming server adapter, for example one using WAComboResponse.'!
+
+!WAFlushingRenderPhaseContinuation categoriesForClass!Continuations! !
+
 !WAFlushingRenderPhaseContinuation methodsFor!
 
 documentOpened: aResponse	aResponse flush! !
-!WAFlushingRenderPhaseContinuation categoriesFor: #documentOpened:!processing!public! !
+
+!WAFlushingRenderPhaseContinuation categoriesForMethods!
+documentOpened:!processing!public! !
+!
 

@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAObject subclass: #WARequest
 	instanceVariableNames: 'method uri version remoteAddress headers cookies body postFields sslSessionId'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WARequest guid: (GUID fromString: '{3db2b28a-ffde-42f8-b417-8fcb7201b540}')!
+
+WARequest guid: (GUID fromString: '{588a5c61-da10-4d25-bad6-1582049b897e}')!
+
 WARequest comment: 'I am a server independent http request object. Instance of me can be aquired through WAObject >> #currentRequest.Instance Variables	method:			<String>	uri:					<WAUrl>	version:				<WAHttpVersion>	remoteAddress:	<String>	headers:			<Dictionary<String, String>>	cookies:			<Collection<WARequestCookie>>	body:				<String>	postFields:			<WARequestFields>	sslSessionId:		<String>			method	- the HTTP method, should be upper case. In general only ''GET'' and ''POST'' are encountered in Seaside. SqueakSource also supports ''PUT''.		uri	- The request url without parameters. For example if the client requested ''http://www.google.com/search?q=seaside'' then the contents of url would be ''/search''. To get the parameters use #fields. This url is fully decoded. Use the #host method to get the host name. Dependening on the server adapter the #scheme may be ''http'' or ''https'' if the original request was HTTPS.	version	- The version of this request.	remoteAddress	- The IP address of the client. If the server is behind a reverse proxy then this is ''127.0.0.1''. This could in theory also be an IPv6 address.headers	- The header of the HTTP request. This is a Dictionary mapping lowercase strings to other strings.	cookies	- The collection of cookies (instance of WARequestCookie) the client sent. Note not all clients support all fields. E.g. you might send a path but the client might not return it. Note there can be several cookies with the same key but a different domain or path. See the #cookiesAt: method.	body	- The undecoded, raw request body as a String, may be nil. See the "accessing-body" protocol for accessing it.	postFields	- The HTTP POST request parameters. In general this is a dictionary mapping Strings to Strings. In the case of multivalued paramters multiple mappings may exist.	sslSessionId	- The SSL session id. This is an opaque string. It is not present if the request wasn''t made over SSL (or TLS) or the server adaptor does not support this feature.'!
-!WARequest categoriesForClass!Seaside-Core-HTTP! !
+
+!WARequest categoriesForClass!HTTP! !
+
 !WARequest methodsFor!
 
 accept	"The Accept request-header field can be used to specify certain media types which are acceptable for the response. Accept headers can be used to indicate that the request is specifically limited to a small set of desired types, as in the case of a request for an in-line image.		Answers an OrderedCollection of WAAccept with the values in the order the client sent them."	^ WAAccept fromString: (self headerAt: 'accept' ifAbsent: [ ^ nil ])!
@@ -55,6 +59,8 @@ headerAt: aKey ifAbsent: aBlock	^ headers at: aKey ifAbsent: aBlock!
 headers	^ headers!
 
 host	^ self headerAt: 'host'!
+
+ifNoneMatch	"The If-None-Match HTTP request header makes the request conditional."	^ self headerAt: 'if-none-match' ifAbsent: [ nil ]!
 
 includesKey: key	^ self fields includesKey: key!
 
@@ -115,59 +121,63 @@ userAgent	^ self headerAt: 'user-agent'!
 version	^ version!
 
 version: aVersion	version := aVersion! !
-!WARequest categoriesFor: #accept!accessing/headers!public! !
-!WARequest categoriesFor: #acceptCharset!accessing/headers!public! !
-!WARequest categoriesFor: #acceptEncoding!accessing/headers!public! !
-!WARequest categoriesFor: #acceptLanguage!accessing/headers!public! !
-!WARequest categoriesFor: #at:!accessing!public! !
-!WARequest categoriesFor: #at:ifAbsent:!accessing!public! !
-!WARequest categoriesFor: #at:ifPresent:!accessing!public! !
-!WARequest categoriesFor: #authorization!accessing/headers!public! !
-!WARequest categoriesFor: #bodyDecoded!accessing/body!public! !
-!WARequest categoriesFor: #bodyDecodeUsing:!accessing/body!public! !
-!WARequest categoriesFor: #contentType!accessing/headers!public! !
-!WARequest categoriesFor: #cookieAt:!accessing/cookies!public! !
-!WARequest categoriesFor: #cookies!accessing/cookies!public! !
-!WARequest categoriesFor: #cookiesAt:!accessing/cookies!public! !
-!WARequest categoriesFor: #decodeAuthorization:!private! !
-!WARequest categoriesFor: #destroy!initialization!public! !
-!WARequest categoriesFor: #fields!accessing!public! !
-!WARequest categoriesFor: #forwarded!accessing/headers!public! !
-!WARequest categoriesFor: #forwardedFor!accessing!public! !
-!WARequest categoriesFor: #headerAt:!accessing!public! !
-!WARequest categoriesFor: #headerAt:ifAbsent:!accessing!public! !
-!WARequest categoriesFor: #headers!accessing!public! !
-!WARequest categoriesFor: #host!accessing/headers!public! !
-!WARequest categoriesFor: #includesKey:!public!testing! !
-!WARequest categoriesFor: #initializeWithMethod:uri:version:!initialization!public! !
-!WARequest categoriesFor: #isGet!public!testing! !
-!WARequest categoriesFor: #isHttp10!public!testing! !
-!WARequest categoriesFor: #isHttp11!public!testing! !
-!WARequest categoriesFor: #isPost!public!testing! !
-!WARequest categoriesFor: #isPrefetch!public!testing! !
-!WARequest categoriesFor: #isSsl!public!testing! !
-!WARequest categoriesFor: #isXmlHttpRequest!public!testing! !
-!WARequest categoriesFor: #method!accessing!public! !
-!WARequest categoriesFor: #password!accessing!public! !
-!WARequest categoriesFor: #postFields!accessing/body!public! !
-!WARequest categoriesFor: #printOn:!printing!public! !
-!WARequest categoriesFor: #queryFields!accessing!public! !
-!WARequest categoriesFor: #rawBody!accessing/body!public! !
-!WARequest categoriesFor: #referer!accessing/headers!public! !
-!WARequest categoriesFor: #remoteAddress!accessing!public! !
-!WARequest categoriesFor: #setBody:!initialization!public! !
-!WARequest categoriesFor: #setCookies:!initialization!public! !
-!WARequest categoriesFor: #setHeaders:!initialization!public! !
-!WARequest categoriesFor: #setPostFields:!initialization!public! !
-!WARequest categoriesFor: #setRemoteAddress:!initialization!public! !
-!WARequest categoriesFor: #setSslSessionId:!initialization!public! !
-!WARequest categoriesFor: #sslSessionId!accessing!public! !
-!WARequest categoriesFor: #uri!accessing!public! !
-!WARequest categoriesFor: #url!accessing!public! !
-!WARequest categoriesFor: #user!accessing!public! !
-!WARequest categoriesFor: #userAgent!accessing/headers!public! !
-!WARequest categoriesFor: #version!accessing!public! !
-!WARequest categoriesFor: #version:!accessing!public! !
+
+!WARequest categoriesForMethods!
+accept!accessing/headers!public! !
+acceptCharset!accessing/headers!public! !
+acceptEncoding!accessing/headers!public! !
+acceptLanguage!accessing/headers!public! !
+at:!accessing!public! !
+at:ifAbsent:!accessing!public! !
+at:ifPresent:!accessing!public! !
+authorization!accessing/headers!public! !
+bodyDecoded!accessing/body!public! !
+bodyDecodeUsing:!accessing/body!public! !
+contentType!accessing/headers!public! !
+cookieAt:!accessing/cookies!public! !
+cookies!accessing/cookies!public! !
+cookiesAt:!accessing/cookies!public! !
+decodeAuthorization:!private! !
+destroy!initialization!public! !
+fields!accessing!public! !
+forwarded!accessing/headers!public! !
+forwardedFor!accessing!public! !
+headerAt:!accessing!public! !
+headerAt:ifAbsent:!accessing!public! !
+headers!accessing!public! !
+host!accessing/headers!public! !
+ifNoneMatch!accessing/headers!public! !
+includesKey:!public!testing! !
+initializeWithMethod:uri:version:!initialization!public! !
+isGet!public!testing! !
+isHttp10!public!testing! !
+isHttp11!public!testing! !
+isPost!public!testing! !
+isPrefetch!public!testing! !
+isSsl!public!testing! !
+isXmlHttpRequest!public!testing! !
+method!accessing!public! !
+password!accessing!public! !
+postFields!accessing/body!public! !
+printOn:!printing!public! !
+queryFields!accessing!public! !
+rawBody!accessing/body!public! !
+referer!accessing/headers!public! !
+remoteAddress!accessing!public! !
+setBody:!initialization!public! !
+setCookies:!initialization!public! !
+setHeaders:!initialization!public! !
+setPostFields:!initialization!public! !
+setRemoteAddress:!initialization!public! !
+setSslSessionId:!initialization!public! !
+sslSessionId!accessing!public! !
+uri!accessing!public! !
+url!accessing!public! !
+user!accessing!public! !
+userAgent!accessing/headers!public! !
+version!accessing!public! !
+version:!accessing!public! !
+!
 
 !WARequest class methodsFor!
 
@@ -182,10 +192,13 @@ method: methodString uri: aUrlOrString	^ self method: methodString uri: aUrlOrS
 method: methodString uri: aUrlOrString version: aVersion	^ self basicNew		initializeWithMethod: methodString			uri: aUrlOrString			version: aVersion;		yourself!
 
 new	^ self		method: self defaultMethod		uri: self defaultUri		version: self defaultVersion! !
-!WARequest class categoriesFor: #defaultMethod!configuration!public! !
-!WARequest class categoriesFor: #defaultUri!configuration!public! !
-!WARequest class categoriesFor: #defaultVersion!configuration!public! !
-!WARequest class categoriesFor: #method:uri:!instance creation!public! !
-!WARequest class categoriesFor: #method:uri:version:!instance creation!public! !
-!WARequest class categoriesFor: #new!instance creation!public! !
+
+!WARequest class categoriesForMethods!
+defaultMethod!configuration!public! !
+defaultUri!configuration!public! !
+defaultVersion!configuration!public! !
+method:uri:!instance creation!public! !
+method:uri:version:!instance creation!public! !
+new!instance creation!public! !
+!
 

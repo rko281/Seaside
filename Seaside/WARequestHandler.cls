@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAObject subclass: #WARequestHandler
 	instanceVariableNames: 'filter parent configuration'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WARequestHandler guid: (GUID fromString: '{adbeb519-2487-45c5-af14-77bb880f1a7f}')!
+
+WARequestHandler guid: (GUID fromString: '{0fb18280-eefc-475e-8f72-349f237ea609}')!
+
 WARequestHandler comment: 'WARequestHandler is an abstract class whose subclasses handle http requests. Most of the methods are either empty or return a default value. Subclasses must implement the following messages:	handleFiltered:	process the request'!
-!WARequestHandler categoriesForClass!Seaside-Core-RequestHandling! !
+
+!WARequestHandler categoriesForClass!RequestHandling! !
+
 !WARequestHandler methodsFor!
 
 addFilter: aFilter	"Add aFilter to the receiver. Answer the filter added."	^ self addFilterLast: aFilter!
@@ -109,56 +113,59 @@ urlFor: aRequestHandler	"Return the URL for the given request handler, which sh
 verifyPassword: password forUser: username 	"This method is called by WAAuthMain to verify the username provided	in the HTTP request. The default implementation compares them against	the configuration values provided by WAAuthConfiguration. WAAuthMain	can also be used by itself if you implement this method in your	own Application subclass to do something different."	| loginPreference hashPreference |	loginPreference := self preferenceAt: #login.	hashPreference := self preferenceAt: #passwordHash.	loginPreference isNil ifTrue: [		self authConfigurationError: 'Login not defined. The default authentication method requires a WAAuthConfiguration' ].	hashPreference isNil ifTrue: [		self authConfigurationError: 'Password not defined. The default authentication method requires a WAAuthConfiguration' ].	^ username isEmptyOrNil not		and: [ password isEmptyOrNil not		and: [ loginPreference = username		and: [ hashPreference = (GRPlatform current secureHashFor: password) ] ] ]!
 
 withDescendantsDo: aBlock	"Evaluate aBlock for this request handler and recursively for each of	its child handlers."		aBlock value: self.	self childrenDo: [ :each | each withDescendantsDo: aBlock ]! !
-!WARequestHandler categoriesFor: #addFilter:!filters!public! !
-!WARequestHandler categoriesFor: #addFilterFirst:!filters!public! !
-!WARequestHandler categoriesFor: #addFilterLast:!filters!public! !
-!WARequestHandler categoriesFor: #authConfigurationError:!private! !
-!WARequestHandler categoriesFor: #basicUrl!private! !
-!WARequestHandler categoriesFor: #charSet!configuration!public! !
-!WARequestHandler categoriesFor: #childrenDo:!parent/child!public! !
-!WARequestHandler categoriesFor: #configuration!configuration!public! !
-!WARequestHandler categoriesFor: #configuration:!configuration!public! !
-!WARequestHandler categoriesFor: #copyTo:!copying!public! !
-!WARequestHandler categoriesFor: #defaultConfiguration!configuration!public! !
-!WARequestHandler categoriesFor: #documentClass!configuration!public! !
-!WARequestHandler categoriesFor: #exceptionHandler:!filters/convenience!public! !
-!WARequestHandler categoriesFor: #filter!private/accessing!public! !
-!WARequestHandler categoriesFor: #filters!filters!public! !
-!WARequestHandler categoriesFor: #handle:!handling!public! !
-!WARequestHandler categoriesFor: #handleFiltered:!handling!public! !
-!WARequestHandler categoriesFor: #handler!filters!public! !
-!WARequestHandler categoriesFor: #initialize!initialization!public! !
-!WARequestHandler categoriesFor: #isDispatcher!public!testing! !
-!WARequestHandler categoriesFor: #isRegistry!public!testing! !
-!WARequestHandler categoriesFor: #isRoot!public!testing! !
-!WARequestHandler categoriesFor: #name!accessing!public! !
-!WARequestHandler categoriesFor: #parent!accessing!public! !
-!WARequestHandler categoriesFor: #parentChildPairsDo:!enumerating!public! !
-!WARequestHandler categoriesFor: #postCopy!copying!public! !
-!WARequestHandler categoriesFor: #preferenceAt:!configuration!public! !
-!WARequestHandler categoriesFor: #preferenceAt:ifAbsent:!configuration!public! !
-!WARequestHandler categoriesFor: #preferenceAt:put:!configuration!public! !
-!WARequestHandler categoriesFor: #removeFilter:!filters!public! !
-!WARequestHandler categoriesFor: #responseGenerator!configuration!public! !
-!WARequestHandler categoriesFor: #scriptGeneratorClass!configuration!public! !
-!WARequestHandler categoriesFor: #scriptGeneratorClass:!configuration!public! !
-!WARequestHandler categoriesFor: #serverHostname!configuration!public! !
-!WARequestHandler categoriesFor: #serverHostname:!configuration!public! !
-!WARequestHandler categoriesFor: #serverPath!configuration!public! !
-!WARequestHandler categoriesFor: #serverPath:!configuration!public! !
-!WARequestHandler categoriesFor: #serverPort!configuration!public! !
-!WARequestHandler categoriesFor: #serverPort:!configuration!public! !
-!WARequestHandler categoriesFor: #serverProtocol!configuration!public! !
-!WARequestHandler categoriesFor: #serverProtocol:!configuration!public! !
-!WARequestHandler categoriesFor: #setFilter:!private/accessing!public! !
-!WARequestHandler categoriesFor: #setParent:!parent/child!public! !
-!WARequestHandler categoriesFor: #unregister!parent/child!public! !
-!WARequestHandler categoriesFor: #unregister:!parent/child!public! !
-!WARequestHandler categoriesFor: #unregistered!parent/child!public! !
-!WARequestHandler categoriesFor: #url!accessing!public! !
-!WARequestHandler categoriesFor: #urlFor:!accessing!public! !
-!WARequestHandler categoriesFor: #verifyPassword:forUser:!authentication!public! !
-!WARequestHandler categoriesFor: #withDescendantsDo:!parent/child!public! !
+
+!WARequestHandler categoriesForMethods!
+addFilter:!filters!public! !
+addFilterFirst:!filters!public! !
+addFilterLast:!filters!public! !
+authConfigurationError:!private! !
+basicUrl!private! !
+charSet!configuration!public! !
+childrenDo:!parent/child!public! !
+configuration!configuration!public! !
+configuration:!configuration!public! !
+copyTo:!copying!public! !
+defaultConfiguration!configuration!public! !
+documentClass!configuration!public! !
+exceptionHandler:!filters/convenience!public! !
+filter!private/accessing!public! !
+filters!filters!public! !
+handle:!handling!public! !
+handleFiltered:!handling!public! !
+handler!filters!public! !
+initialize!initialization!public! !
+isDispatcher!public!testing! !
+isRegistry!public!testing! !
+isRoot!public!testing! !
+name!accessing!public! !
+parent!accessing!public! !
+parentChildPairsDo:!enumerating!public! !
+postCopy!copying!public! !
+preferenceAt:!configuration!public! !
+preferenceAt:ifAbsent:!configuration!public! !
+preferenceAt:put:!configuration!public! !
+removeFilter:!filters!public! !
+responseGenerator!configuration!public! !
+scriptGeneratorClass!configuration!public! !
+scriptGeneratorClass:!configuration!public! !
+serverHostname!configuration!public! !
+serverHostname:!configuration!public! !
+serverPath!configuration!public! !
+serverPath:!configuration!public! !
+serverPort!configuration!public! !
+serverPort:!configuration!public! !
+serverProtocol!configuration!public! !
+serverProtocol:!configuration!public! !
+setFilter:!private/accessing!public! !
+setParent:!parent/child!public! !
+unregister!parent/child!public! !
+unregister:!parent/child!public! !
+unregistered!parent/child!public! !
+url!accessing!public! !
+urlFor:!accessing!public! !
+verifyPassword:forUser:!authentication!public! !
+withDescendantsDo:!parent/child!public! !
+!
 
 !WARequestHandler class methodsFor!
 
@@ -167,7 +174,10 @@ concreteSubclasses	^ self allSubclasses reject: [ :each | each isAbstract ]!
 description	^ self name greaseString!
 
 isAbstract	^ self name = #WARequestHandler! !
-!WARequestHandler class categoriesFor: #concreteSubclasses!accessing!public! !
-!WARequestHandler class categoriesFor: #description!accessing!public! !
-!WARequestHandler class categoriesFor: #isAbstract!public!testing! !
+
+!WARequestHandler class categoriesForMethods!
+concreteSubclasses!accessing!public! !
+description!accessing!public! !
+isAbstract!public!testing! !
+!
 

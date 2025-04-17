@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQWidget subclass: #JQDraggable
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQDraggable guid: (GUID fromString: '{61ae9a81-3d19-4d32-82b4-44ca084b6812}')!
+
+JQDraggable guid: (GUID fromString: '{edd35137-e37a-494f-a83a-78683180fa3c}')!
+
 JQDraggable comment: 'Creates new draggables on the nodeset supplied by the query.'!
-!JQDraggable categoriesForClass!JQuery-UI-Interaction! !
+
+!JQDraggable categoriesForClass!Interaction! !
+
 !JQDraggable methodsFor!
 
 addClasses: aBoolean	"If set to false, will prevent the ui-draggable class from being added. This may be desired as a performance optimization when calling .draggable() init on many hundreds of elements."	self optionAt: 'addClasses' put: aBoolean!
@@ -69,34 +73,37 @@ snapMode: aString	"Determines which edges of snap elements the draggable will s
 snapTolerance: anInteger	"The distance in pixels from the snap element edges at which snapping should occur. Ignored if snap is false."	self optionAt: 'snapTolerance' put: anInteger!
 
 stack: aSelector	"Controls the z-Index of the set of elements that match the selector, always brings to front the dragged item. Very useful in things like window managers."	self optionAt: 'stack' put: aSelector! !
-!JQDraggable categoriesFor: #addClasses:!options/generated!public! !
-!JQDraggable categoriesFor: #appendTo:!options/generated!public! !
-!JQDraggable categoriesFor: #axis:!options/generated!public! !
-!JQDraggable categoriesFor: #cancel:!options/generated!public! !
-!JQDraggable categoriesFor: #connectToSortable:!options/generated!public! !
-!JQDraggable categoriesFor: #containment:!options/generated!public! !
-!JQDraggable categoriesFor: #cursor:!options/generated!public! !
-!JQDraggable categoriesFor: #cursorAt:!options/generated!public! !
-!JQDraggable categoriesFor: #delay:!options/generated!public! !
-!JQDraggable categoriesFor: #distance:!options/generated!public! !
-!JQDraggable categoriesFor: #grid:!options/generated!public! !
-!JQDraggable categoriesFor: #handle:!options/generated!public! !
-!JQDraggable categoriesFor: #helper:!options/generated!public! !
-!JQDraggable categoriesFor: #iframeFix:!options/generated!public! !
-!JQDraggable categoriesFor: #method!accessing!public! !
-!JQDraggable categoriesFor: #onDrag:!events/generated!public! !
-!JQDraggable categoriesFor: #onStart:!events/generated!public! !
-!JQDraggable categoriesFor: #onStop:!events/generated!public! !
-!JQDraggable categoriesFor: #opacity:!options/generated!public! !
-!JQDraggable categoriesFor: #refreshPositions:!options/generated!public! !
-!JQDraggable categoriesFor: #revert:!options/generated!public! !
-!JQDraggable categoriesFor: #revertDuration:!options/generated!public! !
-!JQDraggable categoriesFor: #scope:!options/generated!public! !
-!JQDraggable categoriesFor: #scroll:!options/generated!public! !
-!JQDraggable categoriesFor: #scrollSensitivity:!options/generated!public! !
-!JQDraggable categoriesFor: #scrollSpeed:!options/generated!public! !
-!JQDraggable categoriesFor: #snap:!options/generated!public! !
-!JQDraggable categoriesFor: #snapMode:!options/generated!public! !
-!JQDraggable categoriesFor: #snapTolerance:!options/generated!public! !
-!JQDraggable categoriesFor: #stack:!options/generated!public! !
+
+!JQDraggable categoriesForMethods!
+addClasses:!options/generated!public! !
+appendTo:!options/generated!public! !
+axis:!options/generated!public! !
+cancel:!options/generated!public! !
+connectToSortable:!options/generated!public! !
+containment:!options/generated!public! !
+cursor:!options/generated!public! !
+cursorAt:!options/generated!public! !
+delay:!options/generated!public! !
+distance:!options/generated!public! !
+grid:!options/generated!public! !
+handle:!options/generated!public! !
+helper:!options/generated!public! !
+iframeFix:!options/generated!public! !
+method!accessing!public! !
+onDrag:!events/generated!public! !
+onStart:!events/generated!public! !
+onStop:!events/generated!public! !
+opacity:!options/generated!public! !
+refreshPositions:!options/generated!public! !
+revert:!options/generated!public! !
+revertDuration:!options/generated!public! !
+scope:!options/generated!public! !
+scroll:!options/generated!public! !
+scrollSensitivity:!options/generated!public! !
+scrollSpeed:!options/generated!public! !
+snap:!options/generated!public! !
+snapMode:!options/generated!public! !
+snapTolerance:!options/generated!public! !
+stack:!options/generated!public! !
+!
 

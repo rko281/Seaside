@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQUiFunctionalTest subclass: #JQSortableFunctionalTest
 	instanceVariableNames: 'items'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQSortableFunctionalTest guid: (GUID fromString: '{d2ef98fe-77a9-4326-884c-deb1dfc1fd87}')!
+
+JQSortableFunctionalTest guid: (GUID fromString: '{4bab280e-e798-42fe-9a72-ed4cfef3a557}')!
+
 JQSortableFunctionalTest comment: ''!
-!JQSortableFunctionalTest categoriesForClass!JQuery-Tests-UI-Functional! !
+
+!JQSortableFunctionalTest categoriesForClass!Functional! !
+
 !JQSortableFunctionalTest methodsFor!
 
 initialize	super initialize.	items := self vegetables!
@@ -21,10 +25,13 @@ style	^ '.ui-sortable, .ui-sortable li { list-style-type: none; padding: 0; mar
 title	^ 'Sortable Interaction'!
 
 url	^ 'http://docs.jquery.com/UI/Sortable'! !
-!JQSortableFunctionalTest categoriesFor: #initialize!initialization!public! !
-!JQSortableFunctionalTest categoriesFor: #renderContentOn:!public!rendering! !
-!JQSortableFunctionalTest categoriesFor: #selectors!accessing!public! !
-!JQSortableFunctionalTest categoriesFor: #style!hooks!public! !
-!JQSortableFunctionalTest categoriesFor: #title!accessing!public! !
-!JQSortableFunctionalTest categoriesFor: #url!accessing!public! !
+
+!JQSortableFunctionalTest categoriesForMethods!
+initialize!initialization!public! !
+renderContentOn:!public!rendering! !
+selectors!accessing!public! !
+style!hooks!public! !
+title!accessing!public! !
+url!accessing!public! !
+!
 

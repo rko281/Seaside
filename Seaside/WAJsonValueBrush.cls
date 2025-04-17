@@ -1,10 +1,14 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAJsonElementBrush subclass: #WAJsonValueBrush
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAJsonValueBrush guid: (GUID fromString: '{30ac1669-3133-4e21-9ab7-e5c56c420e4c}')!
-WAJsonValueBrush comment: ''!
-!WAJsonValueBrush categoriesForClass!Seaside-JSON-Core! !
+
+WAJsonValueBrush guid: (GUID fromString: '{83d38bfe-45b4-467b-aaa5-fd4f690fdf0f}')!
+
+WAJsonValueBrush comment: 'A JSON value'!
+
+!WAJsonValueBrush categoriesForClass!Brushes! !
+

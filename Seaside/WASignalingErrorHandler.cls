@@ -1,15 +1,22 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAErrorHandler subclass: #WASignalingErrorHandler
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WASignalingErrorHandler guid: (GUID fromString: '{91c3e02d-7ab2-4499-9233-d06f9720aea9}')!
+
+WASignalingErrorHandler guid: (GUID fromString: '{6faa5fdd-447e-47f4-8e17-96639fb87f2e}')!
+
 WASignalingErrorHandler comment: ''!
-!WASignalingErrorHandler categoriesForClass!Seaside-Tests-RenderLoop! !
+
+!WASignalingErrorHandler categoriesForClass!Unclassified! !
+
 !WASignalingErrorHandler methodsFor!
 
 handleException: anException	WARenderNotification signal! !
-!WASignalingErrorHandler categoriesFor: #handleException:!actions!public! !
+
+!WASignalingErrorHandler categoriesForMethods!
+handleException:!actions!public! !
+!
 

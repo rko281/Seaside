@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAHtmlElement subclass: #WAStyleElement
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAStyleElement guid: (GUID fromString: '{55e186b9-33cb-41a3-a988-55c3a6692879}')!
+
+WAStyleElement guid: (GUID fromString: '{400b5bc8-84fe-4fd7-b7e9-d97e5265767b}')!
+
 WAStyleElement comment: 'The style element allows style information to be embedded in documents.'!
-!WAStyleElement categoriesForClass!Seaside-Core-Document-Elements! !
+
+!WAStyleElement categoriesForClass!Document-Elements! !
+
 !WAStyleElement methodsFor!
 
 isClosed	^ false!
@@ -17,8 +21,11 @@ media: aString 	"Specifies which media the styles apply to.	A valid media quer
 tag	^ 'style'!
 
 type: aString 	"A valid MIME type that designates a styling language.	A string that identifies a valid MIME media type as defined in [RFC 2046]."		self attributes at: 'type' put: aString! !
-!WAStyleElement categoriesFor: #isClosed!public!testing! !
-!WAStyleElement categoriesFor: #media:!attributes!public! !
-!WAStyleElement categoriesFor: #tag!accesing!public! !
-!WAStyleElement categoriesFor: #type:!attributes!public! !
+
+!WAStyleElement categoriesForMethods!
+isClosed!public!testing! !
+media:!attributes!public! !
+tag!accessing!public! !
+type:!attributes!public! !
+!
 

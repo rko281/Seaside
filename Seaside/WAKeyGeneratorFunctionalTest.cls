@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAFunctionalTest subclass: #WAKeyGeneratorFunctionalTest
 	instanceVariableNames: 'key'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAKeyGeneratorFunctionalTest guid: (GUID fromString: '{da8ef9c3-6fa7-4387-8833-0adda2337c9d}')!
+
+WAKeyGeneratorFunctionalTest guid: (GUID fromString: '{39ef7464-a2b0-4128-84ef-78489a4faa12}')!
+
 WAKeyGeneratorFunctionalTest comment: ''!
-!WAKeyGeneratorFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
+
+!WAKeyGeneratorFunctionalTest categoriesForClass!Unclassified! !
+
 !WAKeyGeneratorFunctionalTest methodsFor!
 
 renderContentOn: html	self renderExplanationOn: html.	key isNil		ifTrue: [ self renderKeyGeneratorOn: html ]		ifFalse: [ self renderKeyOn: html ]!
@@ -17,8 +21,11 @@ renderExplanationOn: html	html paragraph: 'This test should display a dialog fo
 renderKeyGeneratorOn: html	html form: [		html keyGenerator			callback: [ :k | key := k ].		html submitButton ]!
 
 renderKeyOn: html	html render: key! !
-!WAKeyGeneratorFunctionalTest categoriesFor: #renderContentOn:!public!rendering! !
-!WAKeyGeneratorFunctionalTest categoriesFor: #renderExplanationOn:!public!rendering! !
-!WAKeyGeneratorFunctionalTest categoriesFor: #renderKeyGeneratorOn:!public!rendering! !
-!WAKeyGeneratorFunctionalTest categoriesFor: #renderKeyOn:!public!rendering! !
+
+!WAKeyGeneratorFunctionalTest categoriesForMethods!
+renderContentOn:!public!rendering! !
+renderExplanationOn:!public!rendering! !
+renderKeyGeneratorOn:!public!rendering! !
+renderKeyOn:!public!rendering! !
+!
 

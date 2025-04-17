@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAFormDialog subclass: #WAChoiceDialog
 	instanceVariableNames: 'options selection'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAChoiceDialog guid: (GUID fromString: '{9037b0ad-6832-406c-b385-b0d2093292e5}')!
+
+WAChoiceDialog guid: (GUID fromString: '{1e264cb0-39bf-45b5-a1d9-b75b0b414360}')!
+
 WAChoiceDialog comment: 'WAChoiceDialog produces a form with select tag (dropdown menu) on a collection of options and "Ok" and "Cancel" buttons. Options can be any object. Returns actual object selected or nil if user select "Cancel". WAChoiceDialog is used to implement the chooseFrom:caption: convenience method in WAComponent.	| selection |	selection := WAChoiceDialog options: #(''Smalltalk'' ''Perl'' ''Python'' ''Ruby'' 9).	result := self call: selection.	self inform: result printStringInstance Variables:	options	<Collection of Objects> objects in list	selection	<Object>	object selected by user or nil if user cancels'!
-!WAChoiceDialog categoriesForClass!Seaside-Widgets-Components! !
+
+!WAChoiceDialog categoriesForClass!Components! !
+
 !WAChoiceDialog methodsFor!
 
 buttons	^ #(ok cancel)!
@@ -25,14 +29,17 @@ renderContentOn: html	html select		list: self options;		selected: self select
 selection	^ selection!
 
 selection: anObject	selection := anObject! !
-!WAChoiceDialog categoriesFor: #buttons!accessing!public! !
-!WAChoiceDialog categoriesFor: #cancel!actions!public! !
-!WAChoiceDialog categoriesFor: #ok!actions!public! !
-!WAChoiceDialog categoriesFor: #options!accessing!public! !
-!WAChoiceDialog categoriesFor: #options:!accessing!public! !
-!WAChoiceDialog categoriesFor: #renderContentOn:!public!rendering! !
-!WAChoiceDialog categoriesFor: #selection!accessing!public! !
-!WAChoiceDialog categoriesFor: #selection:!accessing!public! !
+
+!WAChoiceDialog categoriesForMethods!
+buttons!accessing!public! !
+cancel!actions!public! !
+ok!actions!public! !
+options!accessing!public! !
+options:!accessing!public! !
+renderContentOn:!public!rendering! !
+selection!accessing!public! !
+selection:!accessing!public! !
+!
 
 !WAChoiceDialog class methodsFor!
 
@@ -40,8 +47,11 @@ exampleComponent	^ self options: #('Perl' 'Python' 'Ruby' 'Smalltalk') selectio
 
 options: aCollection	^ self options: aCollection selection: nil!
 
-options: aCollection selection: anObject	^ self new		options: aCollection;		selection: anObject;		yourself		! !
-!WAChoiceDialog class categoriesFor: #exampleComponent!examples!public! !
-!WAChoiceDialog class categoriesFor: #options:!instance creation!public! !
-!WAChoiceDialog class categoriesFor: #options:selection:!instance creation!public! !
+options: aCollection selection: anObject	^ self new		options: aCollection;		selection: anObject;		yourself! !
+
+!WAChoiceDialog class categoriesForMethods!
+exampleComponent!examples!public! !
+options:!instance creation!public! !
+options:selection:!instance creation!public! !
+!
 

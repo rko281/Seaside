@@ -1,16 +1,20 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAContextTest subclass: #WARenderingTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WARenderingTest guid: (GUID fromString: '{7a447b40-988d-4c7e-b48a-e753003212f2}')!
+
+WARenderingTest guid: (GUID fromString: '{84b29047-5ac9-4a79-be14-32b23ebb0a45}')!
+
 WARenderingTest comment: ''!
-!WARenderingTest categoriesForClass!Seaside-Tests-Canvas! !
+
+!WARenderingTest categoriesForClass!Base! !
+
 !WARenderingTest methodsFor!
 
-assert: aBlock gives: aString	| html |	html := WAHtmlCanvas builder		fullDocument: false;		rootBlock: aBlock;		render: aBlock.	self assert: aString = html!
+assert: aBlock gives: aString	| html |	html := WAHtmlCanvas builder		fullDocument: false;		rootBlock: aBlock;		render: aBlock.	self assert: aString equals: html!
 
 assertRoot: aBlock gives: aString	| html |	html := WAHtmlCanvas builder		fullDocument: true;		rootBlock: aBlock;		render: [ :canvas | ].	self assert: '<html><head>' , aString , '</head><body onload="onLoad()"><script type="text/javascript">function onLoad(){};</script></body></html>' = html!
 
@@ -24,19 +28,22 @@ testJavascript	self		assertRoot: [ :html |			html javascript				add: 'true &
 
 testLinkElement	self		assertRoot: [ :html |			html stylesheet				addAural;				addTeletype;				title: 'aTilte';				url: 'http://example.com/style.css'  ]		gives: '<title></title><link rel="stylesheet" type="text/css" media="aural, tty" title="aTilte" href="http://example.com/style.css"/>'!
 
-testLinkElementWithContent	self		assertRoot: [ :html |			html stylesheet				add: 'div > em { color: blue; }'  ]		gives: '<title></title><style type="text/css">div > em { color: blue; }</style>'.	self		assertRoot: [ :html |			html stylesheet				add: 'E[foo$="bar"]'  ]		gives: '<title></title><style type="text/css">E[foo$="bar"]</style>'	!
+testLinkElementWithContent	self		assertRoot: [ :html |			html stylesheet				add: 'div > em { color: blue; }'  ]		gives: '<title></title><style type="text/css">div > em { color: blue; }</style>'.	self		assertRoot: [ :html |			html stylesheet				add: 'E[foo$="bar"]'  ]		gives: '<title></title><style type="text/css">E[foo$="bar"]</style>'!
 
 testRevealedConditionalComment		self assertRoot: [ :html |			html revealedIf ie7; do: [				html script					defer;					url: 'http://www.example.com/bugs.js' ] ]		gives: '<title></title><!!--[if IE 7]><!!--><script defer src="http://www.example.com/bugs.js"></script><!!--<!![endif]-->'!
 
 testStyle		self			assertRoot: [ :html |				html style: 'body{font-size:12px;}' ]			gives: '<title></title><style>body{font-size:12px;}</style>'! !
-!WARenderingTest categoriesFor: #assert:gives:!private! !
-!WARenderingTest categoriesFor: #assertRoot:gives:!private! !
-!WARenderingTest categoriesFor: #testConditionalComment!public!tests! !
-!WARenderingTest categoriesFor: #testContentType!public!tests! !
-!WARenderingTest categoriesFor: #testInteger!public!tests! !
-!WARenderingTest categoriesFor: #testJavascript!public!tests! !
-!WARenderingTest categoriesFor: #testLinkElement!public!tests! !
-!WARenderingTest categoriesFor: #testLinkElementWithContent!public!tests! !
-!WARenderingTest categoriesFor: #testRevealedConditionalComment!public!tests! !
-!WARenderingTest categoriesFor: #testStyle!public!tests! !
+
+!WARenderingTest categoriesForMethods!
+assert:gives:!private! !
+assertRoot:gives:!private! !
+testConditionalComment!public!tests! !
+testContentType!public!tests! !
+testInteger!public!tests! !
+testJavascript!public!tests! !
+testLinkElement!public!tests! !
+testLinkElementWithContent!public!tests! !
+testRevealedConditionalComment!public!tests! !
+testStyle!public!tests! !
+!
 

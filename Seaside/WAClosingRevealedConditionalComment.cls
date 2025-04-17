@@ -1,15 +1,22 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAObject subclass: #WAClosingRevealedConditionalComment
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAClosingRevealedConditionalComment guid: (GUID fromString: '{2f2fa003-a0bb-462f-8db0-25611d9301b9}')!
+
+WAClosingRevealedConditionalComment guid: (GUID fromString: '{62580055-713d-4a5e-994d-3255d3354dd3}')!
+
 WAClosingRevealedConditionalComment comment: 'Closes a WARevealedConditionalComment.'!
-!WAClosingRevealedConditionalComment categoriesForClass!Seaside-Core-Document-Elements! !
+
+!WAClosingRevealedConditionalComment categoriesForClass!Document-Elements! !
+
 !WAClosingRevealedConditionalComment methodsFor!
 
 encodeOn: aDocument	aDocument nextPutAll: '<!!--<!![endif]-->'! !
-!WAClosingRevealedConditionalComment categoriesFor: #encodeOn:!printing!public! !
+
+!WAClosingRevealedConditionalComment categoriesForMethods!
+encodeOn:!printing!public! !
+!
 

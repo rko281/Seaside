@@ -1,15 +1,22 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQBaseTheme subclass: #JQFlickTheme
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQFlickTheme guid: (GUID fromString: '{04aa8e14-1c05-4707-b2e1-2310911187eb}')!
+
+JQFlickTheme guid: (GUID fromString: '{7735f317-ebed-4e60-bf67-af00a7e92952}')!
+
 JQFlickTheme comment: ''!
-!JQFlickTheme categoriesForClass!JQuery-UI-Libraries! !
+
+!JQFlickTheme categoriesForClass!Libraries! !
+
 !JQFlickTheme methodsFor!
 
 themeName	^ 'flick'! !
-!JQFlickTheme categoriesFor: #themeName!accessing!public! !
+
+!JQFlickTheme categoriesForMethods!
+themeName!accessing!public! !
+!
 

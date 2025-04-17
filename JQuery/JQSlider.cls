@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQWidget subclass: #JQSlider
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQSlider guid: (GUID fromString: '{d370c16c-4f9d-47de-9ba9-b5c45f0ce85e}')!
+
+JQSlider guid: (GUID fromString: '{6f8b5790-ccea-4125-bbe1-e5e1d2c80ab1}')!
+
 JQSlider comment: ''!
-!JQSlider categoriesForClass!JQuery-UI-Widgets! !
+
+!JQSlider categoriesForClass!Widgets! !
+
 !JQSlider methodsFor!
 
 animate: aBooleanOrStringOrNumber	"Whether to slide handle smoothly when user click outside handle on the bar. Will also accept a string representing one of the three predefined speeds ('slow', 'normal', or 'fast') or the number of milliseconds to run the animation (e.g. 1000)."	self optionAt: 'animate' put: aBooleanOrStringOrNumber!
@@ -43,21 +47,24 @@ step: aNumber	"Determines the size or amount of each interval or step the slide
 value: aNumber	"Determines the value of the slider, if there's only one handle. If there is more than one handle, determines the value of the first handle."	self optionAt: 'value' put: aNumber!
 
 values: anArray	"This option can be used to specify multiple handles. If range is set to true, the length of 'values' should be 2."	self optionAt: 'values' put: anArray! !
-!JQSlider categoriesFor: #animate:!options/generated!public! !
-!JQSlider categoriesFor: #getValue!actions!public! !
-!JQSlider categoriesFor: #getValueAt:!actions!public! !
-!JQSlider categoriesFor: #max:!options/generated!public! !
-!JQSlider categoriesFor: #method!accessing!public! !
-!JQSlider categoriesFor: #min:!options/generated!public! !
-!JQSlider categoriesFor: #onChange:!events/generated!public! !
-!JQSlider categoriesFor: #onSlide:!events/generated!public! !
-!JQSlider categoriesFor: #onStart:!events/generated!public! !
-!JQSlider categoriesFor: #onStop:!events/generated!public! !
-!JQSlider categoriesFor: #orientation:!options/generated!public! !
-!JQSlider categoriesFor: #range:!options/generated!public! !
-!JQSlider categoriesFor: #setValue:!actions!public! !
-!JQSlider categoriesFor: #setValue:at:!actions!public! !
-!JQSlider categoriesFor: #step:!options/generated!public! !
-!JQSlider categoriesFor: #value:!options/generated!public! !
-!JQSlider categoriesFor: #values:!options/generated!public! !
+
+!JQSlider categoriesForMethods!
+animate:!options/generated!public! !
+getValue!actions!public! !
+getValueAt:!actions!public! !
+max:!options/generated!public! !
+method!accessing!public! !
+min:!options/generated!public! !
+onChange:!events/generated!public! !
+onSlide:!events/generated!public! !
+onStart:!events/generated!public! !
+onStop:!events/generated!public! !
+orientation:!options/generated!public! !
+range:!options/generated!public! !
+setValue:!actions!public! !
+setValue:at:!actions!public! !
+step:!options/generated!public! !
+value:!options/generated!public! !
+values:!options/generated!public! !
+!
 

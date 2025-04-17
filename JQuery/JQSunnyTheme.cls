@@ -1,15 +1,22 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 JQBaseTheme subclass: #JQSunnyTheme
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQSunnyTheme guid: (GUID fromString: '{e728c826-f67c-448d-975b-7b11a3bfad06}')!
+
+JQSunnyTheme guid: (GUID fromString: '{8db15619-2224-4580-a6da-a2374e6c39b5}')!
+
 JQSunnyTheme comment: ''!
-!JQSunnyTheme categoriesForClass!JQuery-UI-Libraries! !
+
+!JQSunnyTheme categoriesForClass!Libraries! !
+
 !JQSunnyTheme methodsFor!
 
 themeName	^ 'sunny'! !
-!JQSunnyTheme categoriesFor: #themeName!accessing!public! !
+
+!JQSunnyTheme categoriesForMethods!
+themeName!accessing!public! !
+!
 

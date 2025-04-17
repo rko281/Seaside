@@ -1,18 +1,25 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WADecoration subclass: #WAAnswerHandler
 	instanceVariableNames: 'block'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAAnswerHandler guid: (GUID fromString: '{ff397b50-db71-4f04-b8a8-86e76e4e4c06}')!
+
+WAAnswerHandler guid: (GUID fromString: '{b79f1b65-5908-4d2b-bc8e-c96e1ae4d66e}')!
+
 WAAnswerHandler comment: 'I am the specific decoration to handle the answer of a given block.'!
-!WAAnswerHandler categoriesForClass!Seaside-Component-Base! !
+
+!WAAnswerHandler categoriesForClass!Base! !
+
 !WAAnswerHandler methodsFor!
 
 block: aBlock	block := aBlock!
 
 handleAnswer: anObject continueWith: aBlock	block valueWithPossibleArguments: (Array with:  anObject)! !
-!WAAnswerHandler categoriesFor: #block:!accessing!public! !
-!WAAnswerHandler categoriesFor: #handleAnswer:continueWith:!processing!public! !
+
+!WAAnswerHandler categoriesForMethods!
+block:!accessing!public! !
+handleAnswer:continueWith:!processing!public! !
+!
 

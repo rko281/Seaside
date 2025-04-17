@@ -1,18 +1,25 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAScriptGenerator subclass: #JQScriptGenerator
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JQScriptGenerator guid: (GUID fromString: '{8962998b-40ed-4fa4-adf7-6c92c371b041}')!
+
+JQScriptGenerator guid: (GUID fromString: '{bb0ed9bd-af6d-4ac8-9ce7-f20ba04cd71c}')!
+
 JQScriptGenerator comment: ''!
-!JQScriptGenerator categoriesForClass!JQuery-Core-Objects! !
+
+!JQScriptGenerator categoriesForClass!Objects! !
+
 !JQScriptGenerator methodsFor!
 
 close: aHtmlRoot on: aDocument	self loadScripts isEmpty		ifTrue: [ ^ self ].	self 		writeScriptTag: [ 			aDocument nextPutAll: JQuery functionName; nextPutAll: '(function(){'.			self writeLoadScriptsOn: aDocument.			aDocument nextPutAll: '});' ]		on: aDocument!
 
 event: aString do: anObject on: aBrush	anObject ifNil: [ ^ self ].	self addLoadScript: (JQueryInstance new		id: aBrush ensureId;		on: aString do: anObject)! !
-!JQScriptGenerator categoriesFor: #close:on:!actions!public! !
-!JQScriptGenerator categoriesFor: #event:do:on:!public! !
+
+!JQScriptGenerator categoriesForMethods!
+close:on:!actions!public! !
+event:do:on:!public! !
+!
 

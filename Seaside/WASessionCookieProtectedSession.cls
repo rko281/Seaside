@@ -1,15 +1,22 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WASession subclass: #WASessionCookieProtectedSession
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WASessionCookieProtectedSession guid: (GUID fromString: '{c1d5df70-fa69-4e48-8f8e-1b71a23a1c63}')!
+
+WASessionCookieProtectedSession guid: (GUID fromString: '{dd85fff6-3094-420d-9897-a3deefa3103b}')!
+
 WASessionCookieProtectedSession comment: 'I am a session with a WASessionCookieProtectionFilter.'!
-!WASessionCookieProtectedSession categoriesForClass!Seaside-Examples! !
+
+!WASessionCookieProtectedSession categoriesForClass!Sessions! !
+
 !WASessionCookieProtectedSession methodsFor!
 
 initializeFilters	super initializeFilters.	self addFilter: WASessionCookieProtectionFilter new! !
-!WASessionCookieProtectedSession categoriesFor: #initializeFilters!initialization!public! !
+
+!WASessionCookieProtectedSession categoriesForMethods!
+initializeFilters!initialization!public! !
+!
 

@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAAbstractTextAreaTag subclass: #WATextInputTag
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WATextInputTag guid: (GUID fromString: '{b3412615-25a9-4a87-8f9e-718df2d86ff4}')!
+
+WATextInputTag guid: (GUID fromString: '{1fc5ca66-5fc3-4893-bae3-472fa9b47cf8}')!
+
 WATextInputTag comment: 'I am a single line text input widget. See WAInputTest >> #renderTextInputWithExampleOn: for examples.'!
-!WATextInputTag categoriesForClass!Seaside-Canvas-Tags! !
+
+!WATextInputTag categoriesForClass!Tags! !
+
 !WATextInputTag methodsFor!
 
 maxLength: aNumber 	"This attribute specifies the maximum number of characters the user may enter. This number may exceed the specified #size:, in which case the user agent should offer a scrolling mechanism. The default value for this attribute is an unlimited number."	self attributes 		at: 'maxlength'		put: aNumber!
@@ -15,7 +19,10 @@ maxLength: aNumber 	"This attribute specifies the maximum number of characters 
 type	^ 'text'!
 
 with: anObject 	anObject isNil ifFalse: [ self value: anObject greaseString ].	super with: nil! !
-!WATextInputTag categoriesFor: #maxLength:!attributes!public! !
-!WATextInputTag categoriesFor: #type!accessing!public! !
-!WATextInputTag categoriesFor: #with:!public! !
+
+!WATextInputTag categoriesForMethods!
+maxLength:!attributes!public! !
+type!accessing!public! !
+with:!public! !
+!
 

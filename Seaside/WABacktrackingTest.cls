@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 TestCase subclass: #WABacktrackingTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WABacktrackingTest guid: (GUID fromString: '{4952af76-85b5-4c11-83ca-05880dce7bf5}')!
+
+WABacktrackingTest guid: (GUID fromString: '{11e2d1c6-e32d-460b-83c3-47a0f5ff6940}')!
+
 WABacktrackingTest comment: ''!
-!WABacktrackingTest categoriesForClass!Seaside-Tests-Core-Backtracking! !
+
+!WABacktrackingTest categoriesForClass!Backtracking! !
+
 !WABacktrackingTest methodsFor!
 
 testArray	| original snapshot1 snapshot2 snapshot3 |	original := Array with: 1 with: 2 with: 3.	snapshot1 := original snapshotCopy.	original at: 1 put: #a.	snapshot2 := original snapshotCopy.	original at: 2 put: #b.	snapshot3 := original snapshotCopy.	original restoreFromSnapshot: snapshot1.	self assert: original equals: #( 1 2 3 ).	original restoreFromSnapshot: snapshot2.	self assert: original equals: #( a 2 3 ).	original restoreFromSnapshot: snapshot3.	self assert: original equals: #( a b 3 )!
@@ -23,11 +27,14 @@ testObject	| original snapshot |	original := Object new.	snapshot := origina
 testOrderedCollection	| original snapshot |	original := OrderedCollection with: 1 with: 2.	snapshot := original snapshotCopy.		original restoreFromSnapshot: snapshot.	self assert: original asArray equals: #(1 2).		original removeLast.		original restoreFromSnapshot: snapshot.	self assert: original asArray equals: #(1 2)!
 
 testSet	| original snapshot1 snapshot2 snapshot3 |	original := Set with: 1 with: 2.	snapshot1 := original snapshotCopy.	original add: 3.	snapshot2 := original snapshotCopy.	original remove: 1.	snapshot3 := original snapshotCopy.	original restoreFromSnapshot: snapshot1.	self assert: original size equals: 2.	self assert: (original includes: 1).	self assert: (original includes: 2).	self deny: (original includes: 3).	original restoreFromSnapshot: snapshot2.	self assert: original size equals: 3.	self assert: (original includes: 1).	self assert: (original includes: 2).	self assert: (original includes: 3).	original restoreFromSnapshot: snapshot3.	self assert: original size equals: 2.	self deny: (original includes: 1).	self assert: (original includes: 2).	self assert: (original includes: 3).	original add: 4.	original restoreFromSnapshot: snapshot3.	self assert: original size equals: 2.	self deny: (original includes: 1).	self assert: (original includes: 2).	self assert: (original includes: 3).	self deny: (original includes: 4)! !
-!WABacktrackingTest categoriesFor: #testArray!public!tests! !
-!WABacktrackingTest categoriesFor: #testBag!public!tests! !
-!WABacktrackingTest categoriesFor: #testDictionary!public!tests! !
-!WABacktrackingTest categoriesFor: #testHolder!public!tests! !
-!WABacktrackingTest categoriesFor: #testObject!public!tests! !
-!WABacktrackingTest categoriesFor: #testOrderedCollection!public!tests! !
-!WABacktrackingTest categoriesFor: #testSet!public!tests! !
+
+!WABacktrackingTest categoriesForMethods!
+testArray!public!tests! !
+testBag!public!tests! !
+testDictionary!public!tests! !
+testHolder!public!tests! !
+testObject!public!tests! !
+testOrderedCollection!public!tests! !
+testSet!public!tests! !
+!
 

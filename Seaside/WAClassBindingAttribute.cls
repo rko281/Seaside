@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAListAttribute subclass: #WAClassBindingAttribute
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAClassBindingAttribute guid: (GUID fromString: '{bf0a6a04-166c-4f1b-b2d2-7a6aab5a51a0}')!
+
+WAClassBindingAttribute guid: (GUID fromString: '{0e706618-2119-47f7-8751-8d4130f9ce6e}')!
+
 WAClassBindingAttribute comment: ''!
-!WAClassBindingAttribute categoriesForClass!Seaside-Core-Configuration! !
+
+!WAClassBindingAttribute categoriesForClass!Configuration! !
+
 !WAClassBindingAttribute methodsFor!
 
 accept: aVisitor	aVisitor visitClassBindingAttribute: self!
@@ -15,7 +19,10 @@ accept: aVisitor	aVisitor visitClassBindingAttribute: self!
 default: aClass	default := aClass isNil		ifTrue: [ nil ]		ifFalse: [ GRPlatform current bindingOf: aClass ]!
 
 stringForValue: aBinding 	^ aBinding isNil ifFalse: [ aBinding value name greaseString ]! !
-!WAClassBindingAttribute categoriesFor: #accept:!public!visiting! !
-!WAClassBindingAttribute categoriesFor: #default:!accessing!public! !
-!WAClassBindingAttribute categoriesFor: #stringForValue:!converting!public! !
+
+!WAClassBindingAttribute categoriesForMethods!
+accept:!public!visiting! !
+default:!accessing!public! !
+stringForValue:!converting!public! !
+!
 

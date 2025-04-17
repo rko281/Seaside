@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAFormInputTag subclass: #WACheckboxTag
 	instanceVariableNames: 'value callback'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WACheckboxTag guid: (GUID fromString: '{d1d6e9b9-077f-4857-989b-d1e67a2df656}')!
+
+WACheckboxTag guid: (GUID fromString: '{9d07162d-1035-4069-89ac-e2672626e00c}')!
+
 WACheckboxTag comment: 'The checkbox element is used with an associated property of typ boolean. It renders a HTML <input> element of type checkbox.If this input element is disabled then the callback will still be evaluated but with an argument that is false. See method comment of #callback: for more information.'!
-!WACheckboxTag categoriesForClass!Seaside-Canvas-Tags! !
+
+!WACheckboxTag categoriesForClass!Tags! !
+
 !WACheckboxTag methodsFor!
 
 after	super after.	callback isNil ifTrue: [ ^ self ].	canvas hiddenInput 		callback: [			callback value: value.			value := false ]!
@@ -19,9 +23,12 @@ onTrue: trueBlock onFalse: falseBlock	self callback: [ :v | v ifTrue: [ trueBlo
 type	^ 'checkbox'!
 
 value: aBoolean 	self attributes 		at: 'checked'		put: aBoolean! !
-!WACheckboxTag categoriesFor: #after!private! !
-!WACheckboxTag categoriesFor: #callback:!callbacks!public! !
-!WACheckboxTag categoriesFor: #onTrue:onFalse:!attributes!public! !
-!WACheckboxTag categoriesFor: #type!accessing!public! !
-!WACheckboxTag categoriesFor: #value:!attributes!public! !
+
+!WACheckboxTag categoriesForMethods!
+after!private! !
+callback:!callbacks!public! !
+onTrue:onFalse:!attributes!public! !
+type!accessing!public! !
+value:!attributes!public! !
+!
 
