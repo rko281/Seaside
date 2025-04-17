@@ -1,7 +1,7 @@
 # Seaside
-[Seaside 3.4](https://github.com/SeasideSt) for [Dolphin Smalltalk 7.1](https://github.com/dolphinsmalltalk/Dolphin)
+[Seaside 3.5.9](https://github.com/SeasideSt) for [Dolphin Smalltalk 7.2](https://github.com/dolphinsmalltalk/Dolphin)
 
-Core packages ported from [Seaside](https://github.com/SeasideSt/Seaside) 21st April 2020
+Core packages ported from [Seaside](https://github.com/SeasideSt/Seaside) 17th April 2025
 
 Dolphin Seaside and Grease packages adapted from [Infoil](http://www.infoil.com.ar/seaside)'s D6 versions with thanks and acknowledgement.
 
@@ -9,7 +9,7 @@ Dolphin HTTP Server and Seaside adaptor created by [Sebastian Calvo](https://git
 
 
 ## Getting Started
-* Install [Dolphin Smalltalk 7.1](https://github.com/dolphinsmalltalk/Dolphin)
+* Install [Dolphin Smalltalk 7.2](https://github.com/dolphinsmalltalk/Dolphin)
 
 ### Automated Installation
 * Download and install [GitHub Package Manager](https://github.com/rko281/GitHub)
