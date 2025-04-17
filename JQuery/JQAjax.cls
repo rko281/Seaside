@@ -20,13 +20,6 @@ addParameters: aCollection	"Add multiple request parameters from aCollection."
 
 callback: aBlock	"Register aBlock as a primary callback of the receiver. It is only possible to have a single primary callback registered per instance. The primary callback must generate a response."	self enableCallbacks.	callback := aBlock!
 
-callback: aBlock json: anObject
-	"Register aBlock as a secondary callback. anObject is a reference to a Javascript object on the client-side. anObject will be serialized to a JSON string, sent back to the server, deserialized from JSON to nested Smalltalk objects, and result passed into aBlock."
-
-	self
-		callback: [ :value | aBlock value: (WAJsonParser parse: value) ] 
-		value: (JSJson new stringify: anObject)!
-
 callback: aBlock value: anObject	"Register aBlock as a secondary callback. anObject is a reference to a Javascript object on the client-side. The object will be sent back to the server as a string and passed into aBlock. Multiple secondary callbacks can be defined with one receiver.Note: anObject should be a single literal Javascript object (String, Number, Boolean). The object is transfered from client to server as the print-string of the object and passed into the callback block as a Smalltalk String."	self enableCallbacks.	self addParameter: (self renderContext callbacks		store: (WAValueCallback on: aBlock)) 			-> anObject!
 
 data	^ self options at: 'data' ifAbsentPut: [ JSJoin new ]!
@@ -42,16 +35,6 @@ html: aRenderable	"Defines a html rendering callback."	self dataType: 'html'.
 isSupportedOption: aString	^ true!
 
 javascriptUrl	"Answer a Javascript expression that evaluates to the URL with all parameters attached."	| stream |	stream := JSStream new.	stream javascript: self url.	self data collection isEmpty ifFalse: [		stream nextPutAll: '+"'.		stream nextPut: (self url queryFields isEmpty			ifTrue: [ $? ] ifFalse: [ $& ]).		stream nextPutAll: '"+'; javascript: self data ].	^ stream!
-
-json: aRenderable
-	"Defines a json rendering callback."
-
-	self dataType: 'json'.
-	self respond: [ :response |
-		response
-			doNotCache;
-			contentType: WAMimeType applicationJson;
-			nextPutAll: (WAJsonCanvas builder render: aRenderable) ]!
 
 method	^ 'ajax'!
 
@@ -91,7 +74,6 @@ url	^ self options at: 'url' ifAbsentPut: [ WAUrl new ]! !
 addParameter:!parameters!public! !
 addParameters:!parameters!public! !
 callback:!callbacks!public! !
-callback:json:!*JQuery/JSON!public! !
 callback:value:!callbacks!public! !
 data!accessing!public! !
 enableCallbacks!private! !
@@ -100,7 +82,6 @@ hasCallback!private! !
 html:!callbacks!public! !
 isSupportedOption:!options!public! !
 javascriptUrl!accessing/urls!public! !
-json:!*JQuery/JSON!public! !
 method!accessing!public! !
 optionAt:put:!options!public! !
 parameters!parameters!public! !
