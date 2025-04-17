@@ -3,23 +3,22 @@ package := Package name: 'Seaside-Examples'.
 package paxVersion: 1;
 	basicComment: ''.
 
-
 package classNames
 	add: #WACounter;
 	add: #WAExampleBrowser;
 	add: #WAExampleComponent;
 	add: #WAExamplesLibrary;
 	add: #WAFileLibraryDemo;
-	add: #WAJQueryExampleComponent;
 	add: #WAMultiCounter;
 	add: #WASessionCookieProtectedSession;
+	add: #WASessionCookieProtectionRenderedFilter;
 	add: #WASessionProtectedCounter;
 	add: #WATodo;
 	add: #WATodoItem;
+	add: #WATodoItemEditor;
 	yourself.
 
 package methodNames
-	add: 'GRPackage class' -> #seasideExamples;
 	add: 'WAComponent class' -> #headerForExampleBrowser;
 	yourself.
 
@@ -31,9 +30,7 @@ package globalAliases: (Set new
 
 package setPrerequisites: #(
 	'..\..\Core\Object Arts\Dolphin\Base\Dolphin'
-	'..\..\Grease\Grease-Core'
 	'..\Javascript\Javascript-Core'
-	'..\JQuery\JQuery-Core'
 	'Seaside-Canvas'
 	'Seaside-Component'
 	'Seaside-Core'
@@ -50,71 +47,82 @@ WAFileLibrary subclass: #WAExamplesLibrary
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAFileLibrary subclass: #WAFileLibraryDemo
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAComponent subclass: #WAExampleComponent
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAComponent subclass: #WAJQueryExampleComponent
-	instanceVariableNames: ''
-	classVariableNames: ''
-	poolDictionaries: ''
-	classInstanceVariableNames: ''!
+
 WAComponent subclass: #WATodoItem
 	instanceVariableNames: 'todos description done'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
+WAComponent subclass: #WATodoItemEditor
+	instanceVariableNames: 'todoItem'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
 WAExampleComponent subclass: #WACounter
 	instanceVariableNames: 'count'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAExampleComponent subclass: #WAExampleBrowser
 	instanceVariableNames: 'class selector component hasAnswer answer'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAExampleComponent subclass: #WAMultiCounter
 	instanceVariableNames: 'counters'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAExampleComponent subclass: #WASessionProtectedCounter
 	instanceVariableNames: 'counter'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAExampleComponent subclass: #WATodo
 	instanceVariableNames: 'todos'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
+WASessionCookieProtectionFilter subclass: #WASessionCookieProtectionRenderedFilter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
 WASession subclass: #WASessionCookieProtectedSession
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-"Global Aliases"!
-
-
 "Loose Methods"!
-
-!GRPackage class methodsFor!
-
-seasideExamples	^ self new		name: 'Seaside-Examples';		description: 'Simple example applications and components.';		addDependency: 'Seaside-Component';		addDependency: 'Seaside-Canvas';		addDependency: 'Seaside-Tools-Core'; "for WAAdmin"		addDependency: 'Seaside-Development'; "for WADebugErrorHandler"		addDependency: 'JQuery-Core';		url: #seasideUrl;		yourself! !
-!GRPackage class categoriesFor: #seasideExamples!*Seaside/Examples!public! !
 
 !WAComponent class methodsFor!
 
 headerForExampleBrowser	^ self name = self description		ifTrue: [ self name ]		ifFalse: [ self description , ' (' , self name , ')' ]! !
-!WAComponent class categoriesFor: #headerForExampleBrowser!*Seaside/Examples/misc!public! !
+
+!WAComponent class categoriesForMethods!
+headerForExampleBrowser!*Seaside/Examples/misc!public! !
+!
 
 "End of package definition"!
 

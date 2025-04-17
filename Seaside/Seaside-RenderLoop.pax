@@ -3,7 +3,6 @@ package := Package name: 'Seaside-RenderLoop'.
 package paxVersion: 1;
 	basicComment: ''.
 
-
 package classNames
 	add: #WAActionPhaseContinuation;
 	add: #WACallbackProcessingActionContinuation;
@@ -22,7 +21,7 @@ package methodNames
 	add: #WARequestContext -> #rootComponentIfAbsent:;
 	add: #WASession -> #presenter;
 	add: #WASessionContinuation -> #isRenderLoopContinuation;
-	add: 'GRPackage class' -> #seasideRenderLoop;
+	add: 'WAHtmlCanvas class' -> #configureRenderContext:;
 	add: 'WASessionContinuation class' -> #isRenderLoopContinuation;
 	yourself.
 
@@ -35,6 +34,7 @@ package globalAliases: (Set new
 package setPrerequisites: #(
 	'..\..\Core\Object Arts\Dolphin\Base\Dolphin'
 	'..\..\Grease\Grease-Core'
+	'Seaside-Canvas'
 	'Seaside-Component'
 	'Seaside-Core'
 	'Seaside-Session').
@@ -48,84 +48,105 @@ WAError subclass: #WAMissingResponseError
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WADynamicVariable subclass: #WACurrentCallbackProcessingActionContinuation
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WASystemConfiguration subclass: #WARenderLoopConfiguration
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WASessionContinuation subclass: #WARenderLoopContinuation
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WARenderLoopContinuation subclass: #WAActionPhaseContinuation
 	instanceVariableNames: 'renderContext'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WARenderLoopContinuation subclass: #WARenderPhaseContinuation
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAActionPhaseContinuation subclass: #WACallbackProcessingActionContinuation
 	instanceVariableNames: 'jumpTo'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAActionPhaseContinuation subclass: #WAInitialRenderLoopContinuation
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAActionPhaseContinuation subclass: #WAPluggableActionContinuation
 	instanceVariableNames: 'action'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WARenderPhaseContinuation subclass: #WAFlushingRenderPhaseContinuation
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-"Global Aliases"!
-
-
 "Loose Methods"!
 
-!GRPackage class methodsFor!
+!WAHtmlCanvas class methodsFor!
 
-seasideRenderLoop	^ self new		name: 'Seaside-RenderLoop';		description: 'Defines the low-level rendering and callback processing functionality.';		addDependency: 'Seaside-Session';		addDependency: 'Seaside-Component';		url: #seasideUrl;		yourself! !
-!GRPackage class categoriesFor: #seasideRenderLoop!*seaside/renderloop!public! !
+configureRenderContext: aWARenderContext	"We set aWARenderContext to use a rendering guide as visitor."			aWARenderContext visitor: (WARenderingGuide client: aWARenderContext visitor).! !
+
+!WAHtmlCanvas class categoriesForMethods!
+configureRenderContext:!*Seaside/RenderLoop!public! !
+!
 
 !WARequestContext methodsFor!
 
 rootComponent: aComponent	"Set the root component for the render loop.	If this message is sent before a session is created the given component will be used as the root component of the render loop instead of the root component configured on the application."	self properties at: #rootComponent put: aComponent!
 
 rootComponentIfAbsent: aNiladicBlock	"Answer the root component if set, the value of aNiladicBlock if not set."	^ self properties at: #rootComponent ifAbsent: aNiladicBlock! !
-!WARequestContext categoriesFor: #rootComponent:!*seaside/renderloop!public! !
-!WARequestContext categoriesFor: #rootComponentIfAbsent:!*seaside/renderloop!public! !
+
+!WARequestContext categoriesForMethods!
+rootComponent:!*seaside/renderloop!public! !
+rootComponentIfAbsent:!*seaside/renderloop!public! !
+!
 
 !WASession methodsFor!
 
 presenter	^ self properties at: #presenter ifAbsent: [ nil ]! !
-!WASession categoriesFor: #presenter!*seaside/renderloop!public! !
+
+!WASession categoriesForMethods!
+presenter!*seaside/renderloop!public! !
+!
 
 !WASessionContinuation methodsFor!
 
 isRenderLoopContinuation	^ self class isRenderLoopContinuation! !
-!WASessionContinuation categoriesFor: #isRenderLoopContinuation!*seaside/renderloop!public! !
+
+!WASessionContinuation categoriesForMethods!
+isRenderLoopContinuation!*seaside/renderloop!public! !
+!
 
 !WASessionContinuation class methodsFor!
 
 isRenderLoopContinuation	^ false! !
-!WASessionContinuation class categoriesFor: #isRenderLoopContinuation!*seaside/renderloop!public! !
+
+!WASessionContinuation class categoriesForMethods!
+isRenderLoopContinuation!*seaside/renderloop!public! !
+!
 
 "End of package definition"!
 

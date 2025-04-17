@@ -3,7 +3,6 @@ package := Package name: 'Seaside-Tests-Session'.
 package paxVersion: 1;
 	basicComment: ''.
 
-
 package classNames
 	add: #WAApplicationEncodingFallbackTest;
 	add: #WAApplicationEncodingFromCodecTest;
@@ -25,10 +24,6 @@ package classNames
 	add: #WASessionTrackingStrategyTest;
 	add: #WASslSessionTrackingStrategyTest;
 	add: #WATestSession;
-	yourself.
-
-package methodNames
-	add: 'GRPackage class' -> #seasideTestsSession;
 	yourself.
 
 package binaryGlobalNames: (Set new
@@ -54,111 +49,120 @@ WAApplication subclass: #WARedirectingApplication
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WASession subclass: #WATestSession
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAContextTest subclass: #WAInteractionTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAContextTest subclass: #WASessionTest
 	instanceVariableNames: 'handler'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAAbstractCanvasBrushTest subclass: #WACanvasDocumentTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAHandlerTrackingStrategyTest subclass: #WASessionTrackingStrategyTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WASessionTrackingStrategyTest subclass: #WACookieForBrowserIPForCrawlerTrackingStrategyTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WASessionTrackingStrategyTest subclass: #WACookieSessionTrackingStrategyTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WASessionTrackingStrategyTest subclass: #WAInvisibleSessionTrackingStrategyTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WASessionTrackingStrategyTest subclass: #WAQueryFieldHandlerTrackingStrategySessionTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WACookieSessionTrackingStrategyTest subclass: #WACookieIfSupportedSessionTrackingStrategyTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WACookieSessionTrackingStrategyTest subclass: #WACookieOnlySessionTrackingStrategyTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WACookieSessionTrackingStrategyTest subclass: #WAEnterpriseAuberginesStrategyTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAInvisibleSessionTrackingStrategyTest subclass: #WAIPSessionTrackingStrategyTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAInvisibleSessionTrackingStrategyTest subclass: #WASslSessionTrackingStrategyTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WARegistryTest subclass: #WAApplicationEncodingFallbackTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WARegistryTest subclass: #WAApplicationEncodingFromCodecTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WARegistryTest subclass: #WAApplicationTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WARegistryTest subclass: #WASessionCookieTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WARegistryKeyHandlingTest subclass: #WAApplicationKeyHandlingTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-
-"Global Aliases"!
-
-
-"Loose Methods"!
-
-!GRPackage class methodsFor!
-
-seasideTestsSession	^ self new		name: 'Seaside-Tests-Session';		description: 'Unit tests for the package Seaside-Session.';		addDependency: 'Seaside-Session';		addDependency: 'Seaside-Tests-Core';		addDependency: 'Seaside-Tests-Canvas';		url: #seasideUrl;		yourself! !
-!GRPackage class categoriesFor: #seasideTestsSession!*seaside/tests/session!public! !
 
 "End of package definition"!
 

@@ -3,7 +3,6 @@ package := Package name: 'Seaside-Tests-Flow'.
 package paxVersion: 1;
 	basicComment: ''.
 
-
 package classNames
 	add: #WACallDuringRenderTestComponent;
 	add: #WAComponentCallTest;
@@ -17,10 +16,6 @@ package classNames
 	add: #WAFlowRenderingCallFunctionalTest;
 	yourself.
 
-package methodNames
-	add: 'GRPackage class' -> #seasideTestsFlow;
-	yourself.
-
 package binaryGlobalNames: (Set new
 	yourself).
 
@@ -30,6 +25,7 @@ package globalAliases: (Set new
 package setPrerequisites: #(
 	'..\..\Core\Object Arts\Dolphin\Base\Dolphin'
 	'..\..\Grease\Grease-Core'
+	'..\..\Portishead\Portishead-Pragmas'
 	'Seaside-Component'
 	'Seaside-Core'
 	'Seaside-Tests-Functional'
@@ -45,61 +41,60 @@ WAComponent subclass: #WACallDuringRenderTestComponent
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAFunctionalTest subclass: #WAFlowClosureFunctionalTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAFunctionalTest subclass: #WAFlowFunctionalTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAFunctionalTest subclass: #WAFlowRenderingCallFunctionalTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WADelegationFunctionalTest subclass: #WAFlowDelegationFunctionalTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAExceptionFunctionalTest subclass: #WAFlowErrorFunctionalTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WADelegationTask subclass: #WAFlowDelegationTask
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAFunctionalTaskTest subclass: #WAFlowConvenienceFunctionalTest
 	instanceVariableNames: 'cheese'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 TestCase subclass: #WAComponentCallTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 TestCase subclass: #WAFlowPlatformTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-
-"Global Aliases"!
-
-
-"Loose Methods"!
-
-!GRPackage class methodsFor!
-
-seasideTestsFlow	^ self new		name: 'Seaside-Tests-Flow';		description: 'Functional tests for Seaside-Flow.';		addDependency: 'Seaside-Flow';		addDependency: 'Seaside-Tests-Functional';		url: #seasideUrl;		yourself! !
-!GRPackage class categoriesFor: #seasideTestsFlow!*seaside/tests/flow!public! !
 
 "End of package definition"!
 

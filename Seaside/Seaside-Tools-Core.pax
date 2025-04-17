@@ -3,13 +3,11 @@ package := Package name: 'Seaside-Tools-Core'.
 package paxVersion: 1;
 	basicComment: ''.
 
-
 package classNames
 	add: #WAAdmin;
 	yourself.
 
 package methodNames
-	add: 'GRPackage class' -> #seasideToolsCore;
 	add: 'WAServerAdaptor class' -> #default;
 	add: 'WAServerAdaptor class' -> #start;
 	add: 'WAServerAdaptor class' -> #startOn:;
@@ -38,15 +36,7 @@ WAObject subclass: #WAAdmin
 	poolDictionaries: ''
 	classInstanceVariableNames: 'configuredApplicationDefaults configuredExceptionHandlingDefaults'!
 
-"Global Aliases"!
-
-
 "Loose Methods"!
-
-!GRPackage class methodsFor!
-
-seasideToolsCore	^ self new		name: 'Seaside-Tools-Core';		description: 'Administrative tools, useful to have for production and development environments.';		addDependency: 'Seaside-Core';		addDependency: 'Seaside-Component'; "only for deprecated class-side method extension"		addDependency: 'Seaside-RenderLoop'; "for class references in WAAdmin"		addDependency: 'Seaside-Session'; "for class reference in WAAdmin"		url: #seasideUrl;		yourself! !
-!GRPackage class categoriesFor: #seasideToolsCore!*seaside/tools/core!public! !
 
 !WAServerAdaptor class methodsFor!
 
@@ -57,10 +47,13 @@ start	"Convenience method to start a single already registered adaptor of the t
 startOn: portInteger	"Convenience method to start a single adaptor on the specified port. If an existing	adaptor of this type is already registered, it will be restarted on the specified port."	| adaptor |	adaptor := self default.	adaptor isNil		ifFalse: [ adaptor stop; port: portInteger ]		ifTrue: [ adaptor := self port: portInteger ].	adaptor start!
 
 stop	"Convenience method to stop a currently running adaptor of the type of the receiver	as long as there is only one such adaptor currently registered."	| default |	default := self default.	default isNil ifFalse: [ default stop ]! !
-!WAServerAdaptor class categoriesFor: #default!*seaside/tools/core!public! !
-!WAServerAdaptor class categoriesFor: #start!*seaside/tools/core!public! !
-!WAServerAdaptor class categoriesFor: #startOn:!*seaside/tools/core!public! !
-!WAServerAdaptor class categoriesFor: #stop!*seaside/tools/core!public! !
+
+!WAServerAdaptor class categoriesForMethods!
+default!*seaside/tools/core!public! !
+start!*seaside/tools/core!public! !
+startOn:!*seaside/tools/core!public! !
+stop!*seaside/tools/core!public! !
+!
 
 "End of package definition"!
 

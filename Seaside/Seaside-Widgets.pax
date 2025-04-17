@@ -3,7 +3,6 @@ package := Package name: 'Seaside-Widgets'.
 package paxVersion: 1;
 	basicComment: ''.
 
-
 package classNames
 	add: #WAAlphabeticBatchedList;
 	add: #WABatchedList;
@@ -52,7 +51,6 @@ package methodNames
 	add: #WAComponent -> #request:label:onAnswer:;
 	add: #WAComponent -> #request:onAnswer:;
 	add: #WAComponent -> #validateWith:;
-	add: 'GRPackage class' -> #seasideWidgets;
 	yourself.
 
 package binaryGlobalNames: (Set new
@@ -78,171 +76,194 @@ WANotification subclass: #WAValidationNotification
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAObject subclass: #WAReportColumn
 	instanceVariableNames: 'clickBlock formatBlock hasTotal title sortBlock valueBlock cssClass'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAFileLibrary subclass: #WANavigationFiles
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAComponent subclass: #WACanvasWidget
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WACanvasWidget subclass: #WAAlphabeticBatchedList
 	instanceVariableNames: 'items currentPage'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WACanvasWidget subclass: #WABatchedList
 	instanceVariableNames: 'items batchSize currentPage'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WACanvasWidget subclass: #WABatchSelection
 	instanceVariableNames: 'batcher linkSelector textSelector'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WACanvasWidget subclass: #WADateSelector
 	instanceVariableNames: 'day month year startYear endYear'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WACanvasWidget subclass: #WADateTable
 	instanceVariableNames: 'rows startDate endDate datesCache'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WACanvasWidget subclass: #WADateTimeSelector
 	instanceVariableNames: 'dateSelector timeSelector'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WACanvasWidget subclass: #WAFormDialog
 	instanceVariableNames: 'validationError form'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WACanvasWidget subclass: #WAInputDialog
 	instanceVariableNames: 'label value'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WACanvasWidget subclass: #WAMiniCalendar
 	instanceVariableNames: 'monthIndex year date canSelectBlock selectBlock'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WACanvasWidget subclass: #WANavigation
 	instanceVariableNames: 'selection'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WACanvasWidget subclass: #WANavigationBar
 	instanceVariableNames: 'actionsSelector owner'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WACanvasWidget subclass: #WAPath
 	instanceVariableNames: 'stack'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WACanvasWidget subclass: #WASelection
 	instanceVariableNames: 'items labelBlock'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WACanvasWidget subclass: #WATableReport
 	instanceVariableNames: 'sortColumn isReversed columns rowPeriod rowColors rows'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WACanvasWidget subclass: #WATimeSelector
 	instanceVariableNames: 'second hour minute startHour endHour'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WACanvasWidget subclass: #WATrail
 	instanceVariableNames: 'root'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WACanvasWidget subclass: #WATree
 	instanceVariableNames: 'root selected expanded childrenBlock labelBlock canSelectBlock selectBlock'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WADateTable subclass: #WASelectionDateTable
 	instanceVariableNames: 'cellBlock dateSelectionStart dateSelectionEnd rowSelectionStart rowSelectionEnd'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAFormDialog subclass: #WAChoiceDialog
 	instanceVariableNames: 'options selection'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAFormDialog subclass: #WALabelledFormDialog
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAFormDialog subclass: #WAYesOrNoDialog
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WANavigation subclass: #WASimpleNavigation
 	instanceVariableNames: 'components'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WADecoration subclass: #WAWidgetDecoration
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAWidgetDecoration subclass: #WADelayedAnswerDecoration
 	instanceVariableNames: 'delay'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAWidgetDecoration subclass: #WAFormDecoration
 	instanceVariableNames: 'buttons'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAWidgetDecoration subclass: #WAMessageDecoration
 	instanceVariableNames: 'message'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAWidgetDecoration subclass: #WAValidationDecoration
 	instanceVariableNames: 'message validationBlock exceptionClass'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAWidgetDecoration subclass: #WAWindowDecoration
 	instanceVariableNames: 'title cssClass'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-"Global Aliases"!
-
-
 "Loose Methods"!
-
-!GRPackage class methodsFor!
-
-seasideWidgets	^ self new		name: 'Seaside-Widgets';		description: 'Various sample Decorations and Components that require Canvas.';		addDependency: 'Seaside-Canvas';		addDependency: 'Seaside-Component';		url: #seasideUrl;		yourself! !
-!GRPackage class categoriesFor: #seasideWidgets!*Seaside/Widgets!public! !
 
 !WAComponent methodsFor!
 
@@ -269,18 +290,21 @@ request: aRequestString label: aLabelString onAnswer: aBlock	"Display an input 
 request: aString onAnswer: aBlock	"Display an input dialog with the question aRequestString. Passes the answer into aBlock."	self request: aString default: nil onAnswer: aBlock!
 
 validateWith: aBlock	^ self addDecoration: (WAValidationDecoration new validateWith: aBlock)! !
-!WAComponent categoriesFor: #addMessage:!*Seaside/Widgets/decorations!public! !
-!WAComponent categoriesFor: #chooseFrom:caption:onAnswer:!*Seaside/Widgets/dialogs!public! !
-!WAComponent categoriesFor: #chooseFrom:default:caption:onAnswer:!*Seaside/Widgets!public! !
-!WAComponent categoriesFor: #chooseFrom:default:onAnswer:!*Seaside/Widgets!public! !
-!WAComponent categoriesFor: #chooseFrom:onAnswer:!*Seaside/Widgets!public! !
-!WAComponent categoriesFor: #confirm:onAnswer:!*Seaside/Widgets!public! !
-!WAComponent categoriesFor: #inform:onAnswer:!*Seaside/Widgets!public! !
-!WAComponent categoriesFor: #request:default:onAnswer:!*Seaside/Widgets!public! !
-!WAComponent categoriesFor: #request:label:default:onAnswer:!*Seaside/Widgets!public! !
-!WAComponent categoriesFor: #request:label:onAnswer:!*Seaside/Widgets!public! !
-!WAComponent categoriesFor: #request:onAnswer:!*Seaside/Widgets!public! !
-!WAComponent categoriesFor: #validateWith:!*Seaside/Widgets!public! !
+
+!WAComponent categoriesForMethods!
+addMessage:!*Seaside/Widgets/decorations!public! !
+chooseFrom:caption:onAnswer:!*Seaside/Widgets/dialogs!public! !
+chooseFrom:default:caption:onAnswer:!*Seaside/Widgets!public! !
+chooseFrom:default:onAnswer:!*Seaside/Widgets!public! !
+chooseFrom:onAnswer:!*Seaside/Widgets!public! !
+confirm:onAnswer:!*Seaside/Widgets!public! !
+inform:onAnswer:!*Seaside/Widgets!public! !
+request:default:onAnswer:!*Seaside/Widgets!public! !
+request:label:default:onAnswer:!*Seaside/Widgets!public! !
+request:label:onAnswer:!*Seaside/Widgets!public! !
+request:onAnswer:!*Seaside/Widgets!public! !
+validateWith:!*Seaside/Widgets!public! !
+!
 
 "End of package definition"!
 

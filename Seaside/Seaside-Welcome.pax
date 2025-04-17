@@ -3,7 +3,6 @@ package := Package name: 'Seaside-Welcome'.
 package paxVersion: 1;
 	basicComment: ''.
 
-
 package classNames
 	add: #WAWelcome;
 	add: #WAWelcomeAuthorNamePrompter;
@@ -24,7 +23,7 @@ package classNames
 package methodNames
 	add: #GRPlatform -> #seasideIsAuthorNameSet;
 	add: #GRPlatform -> #seasideSetAuthorName:;
-	add: 'GRPackage class' -> #seasideWelcome;
+	add: #GRPlatform -> #subclassOf:named:categorized:;
 	yourself.
 
 package binaryGlobalNames: (Set new
@@ -56,89 +55,100 @@ WAFileLibrary subclass: #WAWelcomeFiles
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAPainter subclass: #WAWelcomeUrlDialog
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAComponent subclass: #WAWelcome
 	instanceVariableNames: 'component'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAComponent subclass: #WAWelcomeAuthorNamePrompter
 	instanceVariableNames: 'authorName'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAComponent subclass: #WAWelcomeBrowse
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAComponent subclass: #WAWelcomeComponentConfirmation
 	instanceVariableNames: 'componentName component'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAComponent subclass: #WAWelcomeComponentNamePrompter
 	instanceVariableNames: 'componentName'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAComponent subclass: #WAWelcomeConfigure
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAComponent subclass: #WAWelcomeExample
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAComponent subclass: #WAWelcomeGettingStarted
 	instanceVariableNames: 'componentCreator'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WATask subclass: #WAWelcomeComponentCreator
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAWelcomeExample subclass: #WAWelcomeExampleCounter
 	instanceVariableNames: 'counter'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAWelcomeExample subclass: #WAWelcomeExampleFlow
 	instanceVariableNames: 'taskExample'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAWelcomeExample subclass: #WAWelcomeExampleMultiCounter
 	instanceVariableNames: 'multicounter'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-"Global Aliases"!
-
-
 "Loose Methods"!
-
-!GRPackage class methodsFor!
-
-seasideWelcome	^ self new		name: 'Seaside-Welcome';		description: 'A welcome screen for new users.';		addDependency: 'Seaside-Environment';		addDependency: 'Seaside-Tools-Web';		addDependency: 'Seaside-Widgets';		addDependency: 'Seaside-Examples';		addDependency: 'Seaside-Development';		addDependency: 'JQuery-Core';		addDependency: 'JQuery-UI';		addDependency: 'Seaside-Flow'; "For #call: - Ideally to be removed"		addDependency: 'Seaside-Tests-Flow'; "For WAFlowConvenienceFunctionalTest - Ideally to be removed"		url: #seasideUrl;		yourself! !
-!GRPackage class categoriesFor: #seasideWelcome!*seaside/welcome!public! !
 
 !GRPlatform methodsFor!
 
 seasideIsAuthorNameSet	self subclassResponsibility!
 
-seasideSetAuthorName: anAuthorName	self subclassResponsibility! !
-!GRPlatform categoriesFor: #seasideIsAuthorNameSet!*seaside/welcome!public! !
-!GRPlatform categoriesFor: #seasideSetAuthorName:!*seaside/welcome!public! !
+seasideSetAuthorName: anAuthorName	self subclassResponsibility!
+
+subclassOf: aSuperClass named: aNameSymbol categorized: aCategoryString	^ aSuperClass		subclass: aNameSymbol		instanceVariableNames: ''		classVariableNames: ''		poolDictionaries: ''		category: aCategoryString! !
+
+!GRPlatform categoriesForMethods!
+seasideIsAuthorNameSet!*seaside/welcome!public! !
+seasideSetAuthorName:!*seaside/welcome!public! !
+subclassOf:named:categorized:!*Seaside/Welcome!public! !
+!
 
 "End of package definition"!
 

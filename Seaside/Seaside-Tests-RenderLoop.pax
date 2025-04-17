@@ -3,14 +3,12 @@ package := Package name: 'Seaside-Tests-RenderLoop'.
 package paxVersion: 1;
 	basicComment: ''.
 
-
 package classNames
+	add: #WABuilderWithComponentsCanvasTest;
+	add: #WACanvasTestComponent;
+	add: #WACanvasTestDecoration;
 	add: #WARenderLoopContinuationTest;
 	add: #WASignalingErrorHandler;
-	yourself.
-
-package methodNames
-	add: 'GRPackage class' -> #seasideTestsRenderLoop;
 	yourself.
 
 package binaryGlobalNames: (Set new
@@ -20,9 +18,11 @@ package globalAliases: (Set new
 	yourself).
 
 package setPrerequisites: #(
-	'..\..\Grease\Grease-Core'
+	'Seaside-Canvas'
+	'Seaside-Component'
 	'Seaside-Core'
 	'Seaside-RenderLoop'
+	'Seaside-Tests-Core'
 	'..\..\Core\Contributions\Camp Smalltalk\SUnit\SUnit').
 
 package!
@@ -34,21 +34,30 @@ WAErrorHandler subclass: #WASignalingErrorHandler
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
+WAComponent subclass: #WACanvasTestComponent
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+WADecoration subclass: #WACanvasTestDecoration
+	instanceVariableNames: 'tagName'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
 TestCase subclass: #WARenderLoopContinuationTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-"Global Aliases"!
-
-
-"Loose Methods"!
-
-!GRPackage class methodsFor!
-
-seasideTestsRenderLoop	^ self new		name: 'Seaside-Tests-RenderLoop';		description: 'Unit tests for the package Seaside-RenderLoop.';		addDependency: 'Seaside-RenderLoop';		addDependency: 'Seaside-Tests-Session';		url: #seasideUrl;		yourself! !
-!GRPackage class categoriesFor: #seasideTestsRenderLoop!*seaside/tests/renderloop!public! !
+WAContextTest subclass: #WABuilderWithComponentsCanvasTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
 
 "End of package definition"!
 

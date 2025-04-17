@@ -3,7 +3,6 @@ package := Package name: 'Seaside-Tests-Dolphin-Core'.
 package paxVersion: 1;
 	basicComment: ''.
 
-
 package classNames
 	add: #WADolphinBulkReapingCacheTest;
 	add: #WADolphinDocumentHandlerResponseTest;
@@ -41,29 +40,30 @@ WAPlatformTest subclass: #WADolphinPlatformTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WABulkReapingCacheTest subclass: #WADolphinBulkReapingCacheTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAHashCacheTest subclass: #WADolphinHashCacheTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WADocumentHandlerResponseTest subclass: #WADolphinDocumentHandlerResponseTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAUrlTest subclass: #WADolphinUrlTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-
-"Global Aliases"!
-
 
 "Loose Methods"!
 
@@ -74,7 +74,10 @@ isAbstract
 	"Use Dolphin-specific subclass to workaround Delays being non-repeatable"
 
 	^self == ##(self)! !
-!WABulkReapingCacheTest class categoriesFor: #isAbstract!public! !
+
+!WABulkReapingCacheTest class categoriesForMethods!
+isAbstract!public! !
+!
 
 !WADocumentHandlerResponseTest class methodsFor!
 
@@ -83,7 +86,10 @@ isAbstract
 	"Use Dolphin-specific subclass"
 
 	^self == ##(self)! !
-!WADocumentHandlerResponseTest class categoriesFor: #isAbstract!public! !
+
+!WADocumentHandlerResponseTest class categoriesForMethods!
+isAbstract!public! !
+!
 
 !WAHashCacheTest class methodsFor!
 
@@ -92,7 +98,10 @@ isAbstract
 	"Use Dolphin-specific subclass to workaround Delays being non-repeatable"
 
 	^self == ##(self)! !
-!WAHashCacheTest class categoriesFor: #isAbstract!public! !
+
+!WAHashCacheTest class categoriesForMethods!
+isAbstract!public! !
+!
 
 !WAPlatformTest class methodsFor!
 
@@ -101,7 +110,10 @@ isAbstract
 	"Use Dolphin-specific subclass"
 
 	^self == ##(self)! !
-!WAPlatformTest class categoriesFor: #isAbstract!public! !
+
+!WAPlatformTest class categoriesForMethods!
+isAbstract!public! !
+!
 
 !WAUrlTest class methodsFor!
 
@@ -110,7 +122,10 @@ isAbstract
 	"Use Dolphin-specific subclass"
 
 	^self == ##(self)! !
-!WAUrlTest class categoriesFor: #isAbstract!public! !
+
+!WAUrlTest class categoriesForMethods!
+isAbstract!public! !
+!
 
 "End of package definition"!
 
