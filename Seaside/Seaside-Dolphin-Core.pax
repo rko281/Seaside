@@ -48,9 +48,10 @@ package globalAliases: (Set new
 
 package setPrerequisites: #(
 	'..\..\Core\Object Arts\Dolphin\Base\Dolphin'
+	'..\..\Core\Object Arts\Dolphin\MVP\Base\Dolphin MVP Base'
+	'..\..\Core\Object Arts\Dolphin\MVP\Icons\Dolphin Text Tile Icons'
 	'..\..\Grease\Grease-Core'
 	'..\..\Grease\Grease-Dolphin-Core'
-	'..\..\Core\Object Arts\Dolphin\MVP\Icons\Internal Bitmaps and Icons'
 	'Seaside-Core'
 	'..\..\Core\Object Arts\Dolphin\ActiveX\Shell\Windows Shell').
 
@@ -63,7 +64,7 @@ package!
 
 Object subclass: #SeasideIcons
 	instanceVariableNames: ''
-	classVariableNames: 'Icons'
+	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
@@ -149,7 +150,7 @@ snapshotCopy!public! !
 !GRObject class methodsFor!
 
 icon
-	^SeasideIcons pharo! !
+	^SeasideIcons grease! !
 
 !GRObject class categoriesForMethods!
 icon!public! !
