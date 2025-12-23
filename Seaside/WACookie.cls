@@ -48,6 +48,11 @@ maxAge	^ maxAge!
 
 maxAge: anInteger	"Optional.  The Max-Age attribute defines the lifetime of the	cookie, in seconds.  The delta-seconds value is a decimal non-	negative integer.  After delta-seconds seconds elapse, the client	should discard the cookie.  A value of zero means the cookie	should be discarded immediately."	maxAge := anInteger!
 
+oldNetscapeString
+	"Backwards compatibility for Dolphin HTTP Server"
+
+	^self rfc6265String!
+
 rfc6265String	"Serializes the receiver according to RFC 6265.	See class comment for a link to the spec."	^ String streamContents: [ :stream |		| useQuotes |		"the spec allows us to quote but we don't know how good browser support is"		useQuotes := false.		self writeKeyValueQuoted: useQuotes on: stream.		self writeExpiresOn: stream.		self writeMaxAgeQuoted: useQuotes on: stream.		self writeDomainQuoted: useQuotes on: stream.		self writePathQuoted: useQuotes on: stream.		self writeSecureOn: stream.		self writeHttpOnlyOn: stream.		self writeSameSiteOn: stream ]!
 
 sameSite	^ sameSite!
@@ -108,6 +113,7 @@ httpOnly:!accessing!public! !
 initialize!initialization!public! !
 maxAge!accessing!public! !
 maxAge:!accessing!public! !
+oldNetscapeString!accessing!public! !
 rfc6265String!public!writing! !
 sameSite!accessing!public! !
 sameSite:!accessing!public! !
