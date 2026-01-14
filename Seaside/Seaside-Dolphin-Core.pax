@@ -34,6 +34,7 @@ package methodNames
 	add: #Set -> #restoreFromSnapshot:;
 	add: #Set -> #snapshotCopy;
 	add: #String -> #value;
+	add: #WACookie -> #oldNetscapeString;
 	add: #WAObject -> #value;
 	add: 'GRObject class' -> #icon;
 	add: 'GRPackage class' -> #seasideDolphinCore;
@@ -288,6 +289,18 @@ value
 
 !String categoriesForMethods!
 value!accessing!public! !
+!
+
+!WACookie methodsFor!
+
+oldNetscapeString
+
+	"Required by HTTP Server"
+
+	^self rfc6265String! !
+
+!WACookie categoriesForMethods!
+oldNetscapeString!public!writing! !
 !
 
 !WAObject methodsFor!
