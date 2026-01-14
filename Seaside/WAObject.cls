@@ -6,11 +6,11 @@ GRObject subclass: #WAObject
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAObject guid: (GUID fromString: '{7209d6eb-25f3-4ceb-91c9-1d9508981535}')!
+WAObject guid: (GUID fromString: '{ed6d0d01-b162-4716-a35e-31869143ad54}')!
 
 WAObject comment: 'A WAObject is the base class for all portable Seaside classes. It provides convenience methods for accessing the current request context, session and application.'!
 
-!WAObject categoriesForClass!Base! !
+!WAObject categoriesForClass!Seaside-Core-Base! !
 
 !WAObject methodsFor!
 

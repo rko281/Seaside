@@ -20,6 +20,8 @@ package classNames
 	add: #WAConfigurationTest;
 	add: #WAContextTest;
 	add: #WACookieTest;
+	add: #WACORSFilterPreflightRequestTest;
+	add: #WACORSFilterTest;
 	add: #WACurrentRequestContextTest;
 	add: #WADispatcherTest;
 	add: #WADocumentHandlerResponseTest;
@@ -403,6 +405,12 @@ WAContextTest subclass: #WACookieTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
+WAContextTest subclass: #WACORSFilterTest
+	instanceVariableNames: 'application'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
 WAContextTest subclass: #WADocumentHandlerResponseTest
 	instanceVariableNames: ''
 	classVariableNames: ''
@@ -464,6 +472,12 @@ WAContextTest subclass: #WAUrlTest
 	classInstanceVariableNames: ''!
 
 WAAbstractHtmlElementTest subclass: #WAMetaElementTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+WACORSFilterTest subclass: #WACORSFilterPreflightRequestTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''

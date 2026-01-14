@@ -6,11 +6,11 @@ JQueryTest subclass: #JQueryUiTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQueryUiTest guid: (GUID fromString: '{29ab24bd-c2cf-419c-a53e-adcb0d2f0d9c}')!
+JQueryUiTest guid: (GUID fromString: '{6d17357e-31cf-4471-8858-9eb2e999c090}')!
 
 JQueryUiTest comment: ''!
 
-!JQueryUiTest categoriesForClass!Unit! !
+!JQueryUiTest categoriesForClass!JQuery-Tests-UI-Unit! !
 
 !JQueryUiTest class methodsFor!
 

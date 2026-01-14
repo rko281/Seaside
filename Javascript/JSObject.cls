@@ -6,11 +6,11 @@ WAObject subclass: #JSObject
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JSObject guid: (GUID fromString: '{59968552-7084-4a09-b4db-728863de56cd}')!
+JSObject guid: (GUID fromString: '{ff902540-f00a-4420-8b94-56bd428a78c5}')!
 
 JSObject comment: 'I represent the abstract root of all JavaScript objects in the Smalltalk world. My subclasses provide accessors and action methods to configure instances of myself and implement the method #javascriptContentOn: to emit valid JavaScript code for my presentation.Instance Variables	decoration:			<JSObject|JSDecoration>	renderContext:		<WARenderContext>	rendererClass:		<WARenderer>'!
 
-!JSObject categoriesForClass!Base! !
+!JSObject categoriesForClass!Javascript-Core-Base! !
 
 !JSObject methodsFor!
 
@@ -54,7 +54,7 @@ create	"Instantiate the receiver."		self addDecoration: JSCreate new!
 
 decoration	"Answer the top-level decoration in the receivers decoration stack."	^ decoration!
 
-greaseString	^ String streamContents: [ :stream | stream javascript: self ]!
+greaseString	^ self asJavascript!
 
 initialize	super initialize.	decoration := self!
 
@@ -62,13 +62,15 @@ interval: aDuration	"Execute the receiver every aDuration."	self addDecoratio
 
 isJavascript	^ true!
 
-javascriptContentOn: aStream	"Generate the JavaScript string of the receiver. Override this method in subclasses to define custom JavaScript code. Note, if you run into this method, you likely use old Seaside code need to rename #printContentOn: to #javascriptContentOn:."		self subclassResponsibility!
+javascriptContentOn: aRenderer	"Generate the JavaScript string of the receiver. Override this method in subclasses to define custom JavaScript code. Note, if you run into this method, you likely use old Seaside code need to rename #printContentOn: to #javascriptContentOn:."		self subclassResponsibility!
 
-javascriptOn: aStream	"Generate the JavaScript code from the receiver by dispatching to the outermost surrounding decoration. Do not override this method, instead override #javascriptContentOn:."	self decoration javascriptContentOn: aStream!
+javascriptOn: aRenderer	"Generate the JavaScript code from the receiver by dispatching to the outermost surrounding decoration. Do not override this method, instead override #javascriptContentOn:."	self decoration javascriptContentOn: aRenderer!
+
+jsStringWith: aRenderable	"Create a renderable that will render the string immediately on the response stream."	^ (JSString context: self renderContext) 			setRenderable: aRenderable;			yourself!
 
 not	"Negate the receiver logically."		self addDecoration: JSNegation new!
 
-printOn: aStream	super printOn: aStream.	aStream nextPutAll: ' ('; javascript: self; nextPut: $)!
+printOn: aStream	super printOn: aStream.	aStream nextPutAll: ' ('.	JSJavascriptCanvas builder		render: self		on: aStream.	aStream nextPut: $)!
 
 property: aString 	"Treat anObject as a condition to the execution of the receiver."		self addDecoration: (JSProperty named: aString)!
 
@@ -86,7 +88,7 @@ return: anObject 	"Return anObject after evaluating the receiver."		self , (J
 
 script: aBlock	"Evaluate aBlock and answer the string of the generated script."		^ String streamContents: [ :stream | self script: aBlock on: stream ]!
 
-script: aBlock on: aStream	"Evaluate aBlock and pass in a script object that is subsequently written to aStream."	| script document |	document := (self requestContext newDocumentOn: aStream).	self renderContext document: document during: [ 		script := (JSScript context: self renderContext)			rendererClass: self rendererClass;			yourself.		aBlock value: script.		script addAll: document loadScripts ].	script javascriptOn: aStream!
+script: aBlock on: aStream	"Evaluate aBlock and pass in a script object that is subsequently written to aStream."	| script |	self flag: #TODO. "questionalble API, receiver is already JSScript"	script := (JSScript context: self renderContext)		rendererClass: self rendererClass;		yourself.	aBlock value: script.	JSJavascriptCanvas builder		actionUrl: self renderContext actionUrl;		resourceUrl: self renderContext resourceUrl;		render: script		on: aStream!
 
 setContext: aRenderContext	renderContext := aRenderContext!
 
@@ -123,6 +125,7 @@ interval:!decorations!public! !
 isJavascript!public!testing! !
 javascriptContentOn:!printing!public! !
 javascriptOn:!printing!public! !
+jsStringWith:!public!utilities! !
 not!decorations!public! !
 printOn:!printing!public! !
 property:!decorations!public! !

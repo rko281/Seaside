@@ -6,11 +6,11 @@ WAObject subclass: #WARoot
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WARoot guid: (GUID fromString: '{867e7a42-5f50-4338-94a4-658ea6c47857}')!
+WARoot guid: (GUID fromString: '{34c266f2-a84a-49cc-8b9d-1b2a997a27ef}')!
 
 WARoot comment: 'A WARoot is the root of a document. It is responsible to generate header and footer of a document.'!
 
-!WARoot categoriesForClass!Document! !
+!WARoot categoriesForClass!Seaside-Core-Document! !
 
 !WARoot methodsFor!
 

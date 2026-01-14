@@ -6,11 +6,11 @@ WAFunctionalTest subclass: #WAUploadFunctionalTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAUploadFunctionalTest guid: (GUID fromString: '{5bc7f890-91b0-4772-8e59-bef633fcf447}')!
+WAUploadFunctionalTest guid: (GUID fromString: '{5a7d7930-577d-443d-a5b2-f7627853ee8a}')!
 
 WAUploadFunctionalTest comment: ''!
 
-!WAUploadFunctionalTest categoriesForClass!Unclassified! !
+!WAUploadFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
 
 !WAUploadFunctionalTest methodsFor!
 

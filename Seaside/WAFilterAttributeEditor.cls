@@ -6,11 +6,11 @@ WAAttributeEditor subclass: #WAFilterAttributeEditor
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAFilterAttributeEditor guid: (GUID fromString: '{3552c7ee-66e6-4bb0-a500-b5de49edf4d0}')!
+WAFilterAttributeEditor guid: (GUID fromString: '{8c1a3853-5219-431e-9de7-975f289fe248}')!
 
 WAFilterAttributeEditor comment: ''!
 
-!WAFilterAttributeEditor categoriesForClass!Unclassified! !
+!WAFilterAttributeEditor categoriesForClass!Seaside-Tools-Web! !
 
 !WAFilterAttributeEditor methodsFor!
 

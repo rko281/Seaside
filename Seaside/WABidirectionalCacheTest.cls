@@ -6,11 +6,11 @@ WACacheTest subclass: #WABidirectionalCacheTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WABidirectionalCacheTest guid: (GUID fromString: '{ae17e8c8-f52f-4f82-b733-a61644319a94}')!
+WABidirectionalCacheTest guid: (GUID fromString: '{0120009b-3f36-4909-a906-0eeefd016965}')!
 
 WABidirectionalCacheTest comment: ''!
 
-!WABidirectionalCacheTest categoriesForClass!Cache! !
+!WABidirectionalCacheTest categoriesForClass!Seaside-Tests-Core-Cache! !
 
 !WABidirectionalCacheTest methodsFor!
 

@@ -6,11 +6,11 @@ WASessionContinuation subclass: #WANullSessionContinuation
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WANullSessionContinuation guid: (GUID fromString: '{e7d66013-1a73-4642-b109-9a1b1e77c9fb}')!
+WANullSessionContinuation guid: (GUID fromString: '{51c54f14-2d0d-4646-9c15-d02ee362b9eb}')!
 
 WANullSessionContinuation comment: ''!
 
-!WANullSessionContinuation categoriesForClass!Continuations! !
+!WANullSessionContinuation categoriesForClass!Seaside-Session-Continuations! !
 
 !WANullSessionContinuation methodsFor!
 

@@ -6,11 +6,11 @@ WAAbstractTextAreaTag subclass: #WASteppedTag
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WASteppedTag guid: (GUID fromString: '{1c2c2a64-25b6-4384-98d1-8af8b4f5f9b3}')!
+WASteppedTag guid: (GUID fromString: '{d84f10cd-2b10-49ed-b49c-5f5c58452d70}')!
 
 WASteppedTag comment: 'Common superclass for step related tags'!
 
-!WASteppedTag categoriesForClass!Tags! !
+!WASteppedTag categoriesForClass!Seaside-Canvas-Tags! !
 
 !WASteppedTag methodsFor!
 

@@ -6,11 +6,11 @@ JSCondition subclass: #JSConditionElse
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JSConditionElse guid: (GUID fromString: '{5ca1c088-f758-4ad5-9904-47f73c5e272a}')!
+JSConditionElse guid: (GUID fromString: '{c2d8a5c8-1286-44e0-8bef-4f9cfea6db30}')!
 
 JSConditionElse comment: ''!
 
-!JSConditionElse categoriesForClass!Decorations! !
+!JSConditionElse categoriesForClass!Javascript-Core-Decorations! !
 
 !JSConditionElse methodsFor!
 
@@ -18,12 +18,12 @@ elseStatement	^ elseStatement!
 
 elseStatement: anObject	elseStatement := anObject!
 
-javascriptContentOn: aStream	super javascriptContentOn: aStream.	aStream 		nextPutAll: 'else{';		javascript: self elseStatement.	aStream nextPut: $}! !
+javascriptContentOn: aRenderer	super javascriptContentOn: aRenderer.	aRenderer document 		nextPutAll: 'else';		openBlock.	aRenderer render: self elseStatement.	aRenderer document closeBlock! !
 
 !JSConditionElse categoriesForMethods!
 elseStatement!accessing!public! !
 elseStatement:!accessing!public! !
-javascriptContentOn:!accessing!public! !
+javascriptContentOn:!printing!public! !
 !
 
 !JSConditionElse class methodsFor!

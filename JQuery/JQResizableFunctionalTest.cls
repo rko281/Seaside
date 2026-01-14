@@ -6,11 +6,11 @@ JQUiFunctionalTest subclass: #JQResizableFunctionalTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQResizableFunctionalTest guid: (GUID fromString: '{68d5f841-f231-4460-81d1-e385215f200c}')!
+JQResizableFunctionalTest guid: (GUID fromString: '{609c6aed-24dd-493b-a295-91614ac1fd47}')!
 
 JQResizableFunctionalTest comment: ''!
 
-!JQResizableFunctionalTest categoriesForClass!Functional! !
+!JQResizableFunctionalTest categoriesForClass!JQuery-Tests-UI-Functional! !
 
 !JQResizableFunctionalTest methodsFor!
 

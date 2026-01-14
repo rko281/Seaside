@@ -6,11 +6,11 @@ WAAbstractProtectionFilter subclass: #WARemoteAddressProtectionFilter
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WARemoteAddressProtectionFilter guid: (GUID fromString: '{20c85f23-4e22-43d5-83de-e8d30ac6caa1}')!
+WARemoteAddressProtectionFilter guid: (GUID fromString: '{e9ed3b55-9687-4d87-966c-562397eb905d}')!
 
 WARemoteAddressProtectionFilter comment: 'The remote address protection filter ensures that the wrapped request handler only accepts requests from the same IP. Do add this filter to a WASession for example to avoid session hijacking, do not add it to static request handlers such as WAApplication or WADispatcher as this might restrict access to the handler if your IP changes.Note that checking for IP addresses is not bullet proof and should never be used as the sole security measure for a web application as IP addresses can be easily spoofed.'!
 
-!WARemoteAddressProtectionFilter categoriesForClass!Filter! !
+!WARemoteAddressProtectionFilter categoriesForClass!Seaside-Core-Filter! !
 
 !WARemoteAddressProtectionFilter methodsFor!
 

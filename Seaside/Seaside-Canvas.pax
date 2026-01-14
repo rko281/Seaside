@@ -43,7 +43,6 @@ package classNames
 	add: #WAImageButtonTag;
 	add: #WAImageMapTag;
 	add: #WAImageTag;
-	add: #WAKeyGeneratorTag;
 	add: #WALabelTag;
 	add: #WAListTag;
 	add: #WAMediaElementTag;
@@ -244,12 +243,6 @@ WATagBrush subclass: #WAIframeTag
 	classInstanceVariableNames: ''!
 
 WATagBrush subclass: #WAImageTag
-	instanceVariableNames: ''
-	classVariableNames: ''
-	poolDictionaries: ''
-	classInstanceVariableNames: ''!
-
-WATagBrush subclass: #WAKeyGeneratorTag
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''

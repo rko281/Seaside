@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 TestCase subclass: #WACompositeMimeTypeMatchTest
 	instanceVariableNames: 'match'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WACompositeMimeTypeMatchTest guid: (GUID fromString: '{2dd3690c-c480-4a25-acdb-6dacdf5e09ee}')!
+
+WACompositeMimeTypeMatchTest guid: (GUID fromString: '{158e33b8-2e9a-49db-be5d-b1bd8a64aade}')!
+
 WACompositeMimeTypeMatchTest comment: ''!
+
 !WACompositeMimeTypeMatchTest categoriesForClass!Seaside-Tests-REST-Core! !
+
 !WACompositeMimeTypeMatchTest methodsFor!
 
 setUp	match := WACompositeMimeTypeMatch matches: (Array with:		(WAMimeTypeMatch fromString: 'text/*'))!
@@ -15,7 +19,10 @@ setUp	match := WACompositeMimeTypeMatch matches: (Array with:		(WAMimeTypeMatc
 testMatches	self assert: (match matches: (WAMimeType fromString: 'text/plain')).	self deny: (match matches: (WAMimeType fromString: 'application/json'))!
 
 testPriorityFor	match := WACompositeMimeTypeMatch matches: (Array		with: (WAMimeTypeMatch fromString: 'application/*')		with: (WAMimeTypeMatch fromString: '*/*')).	self assert: (match priorityFor: (WAMimeType fromString: 'application/json')) = 2! !
-!WACompositeMimeTypeMatchTest categoriesFor: #setUp!public!running! !
-!WACompositeMimeTypeMatchTest categoriesFor: #testMatches!public!tests! !
-!WACompositeMimeTypeMatchTest categoriesFor: #testPriorityFor!public!tests! !
+
+!WACompositeMimeTypeMatchTest categoriesForMethods!
+setUp!public!running! !
+testMatches!public!tests! !
+testPriorityFor!public!tests! !
+!
 

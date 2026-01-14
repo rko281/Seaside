@@ -6,11 +6,11 @@ JSDecoration subclass: #JSStatement
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JSStatement guid: (GUID fromString: '{5e676942-5b82-4b6e-ae80-9b424d128c06}')!
+JSStatement guid: (GUID fromString: '{28231d6a-a194-4c53-a684-418fb27dae10}')!
 
 JSStatement comment: ''!
 
-!JSStatement categoriesForClass!Decorations! !
+!JSStatement categoriesForClass!Javascript-Core-Decorations! !
 
 !JSStatement methodsFor!
 

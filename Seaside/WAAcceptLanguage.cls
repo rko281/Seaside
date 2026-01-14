@@ -6,11 +6,11 @@ WAQualifiedValue subclass: #WAAcceptLanguage
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAAcceptLanguage guid: (GUID fromString: '{7eb0d081-a088-47c6-837f-91cc4081302b}')!
+WAAcceptLanguage guid: (GUID fromString: '{5aab6a2d-da40-42d3-8180-211d55f32ef3}')!
 
 WAAcceptLanguage comment: 'A WAAcceptLanguage is a WAQualifiedValue with a value that is an instance of WALocale. It represents how much a user agent prefers a certain locale.'!
 
-!WAAcceptLanguage categoriesForClass!HTTP! !
+!WAAcceptLanguage categoriesForClass!Seaside-Core-HTTP! !
 
 !WAAcceptLanguage class methodsFor!
 

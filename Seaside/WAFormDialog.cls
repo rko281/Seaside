@@ -6,11 +6,11 @@ WACanvasWidget subclass: #WAFormDialog
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAFormDialog guid: (GUID fromString: '{1a4dac45-5c8f-486f-897c-4ad5a4cb3e15}')!
+WAFormDialog guid: (GUID fromString: '{8d2ca4f4-6583-42df-b81b-7eb40fe3b0e7}')!
 
 WAFormDialog comment: 'WAFormDialog is an empty html form. Used in WAComponent>>inform: to create a dialog component that displays text and an "Ok" button to close the component. See subclasses for sample usage & more functionality.Instance Variables:	form	<WAFormDecoration> Decorator that generates form tags	validationError	<String>	Text descriping invalid data entered by user. Displayed when not nil. Set to nil when user submits form.'!
 
-!WAFormDialog categoriesForClass!Components! !
+!WAFormDialog categoriesForClass!Seaside-Widgets-Components! !
 
 !WAFormDialog methodsFor!
 

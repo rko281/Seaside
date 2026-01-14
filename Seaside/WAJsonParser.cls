@@ -6,11 +6,11 @@ WAObject subclass: #WAJsonParser
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAJsonParser guid: (GUID fromString: '{f4fce56e-b0eb-4273-a648-71fb8dc91cf5}')!
+WAJsonParser guid: (GUID fromString: '{ce8b5154-c6aa-44e8-a147-7b3b7a2f8fac}')!
 
 WAJsonParser comment: 'I am a parser for JSON. I follow RFC-8259 / ECMA-404 and allow any kind of value as a root object.I convert surrogate pairs to a single code point.I can be subclassed to create more sophisticated objects than just Arrays and Dictionaries. To do that, override the one or more methods in the "creating" protocol.Seehttps://datatracker.ietf.org/doc/html/rfc8259https://www.ecma-international.org/publications-and-standards/standards/ecma-404/https://datatracker.ietf.org/doc/html/rfc4627'!
 
-!WAJsonParser categoriesForClass!Parser! !
+!WAJsonParser categoriesForClass!Seaside-JSON-Core-Parser! !
 
 !WAJsonParser methodsFor!
 

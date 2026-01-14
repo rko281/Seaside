@@ -5,7 +5,6 @@ package paxVersion: 1;
 
 package basicPackageVersion: '6'.
 
-
 package classNames
 	add: #WAHtmlHaltAndErrorHandler;
 	yourself.
@@ -34,9 +33,6 @@ WAHtmlErrorHandler subclass: #WAHtmlHaltAndErrorHandler
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-"Global Aliases"!
-
-
 "Loose Methods"!
 
 !GRPackage class methodsFor!
@@ -48,7 +44,10 @@ seasideDolphinEnvironment
 		addDependency: 'Seaside-Dolphin-Core';
 		url: #seasideUrl;
 		yourself! !
-!GRPackage class categoriesFor: #seasideDolphinEnvironment!*seaside-pharo-environment!public! !
+
+!GRPackage class categoriesForMethods!
+seasideDolphinEnvironment!*seaside-pharo-environment!public! !
+!
 
 "End of package definition"!
 

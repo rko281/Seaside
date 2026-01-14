@@ -6,11 +6,11 @@ WAObject subclass: #WAServerAdaptor
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAServerAdaptor guid: (GUID fromString: '{2196c8aa-4e2b-46f7-ba6f-2e107d701f07}')!
+WAServerAdaptor guid: (GUID fromString: '{ab8e9ffe-53fd-413d-8621-684d6b3ae759}')!
 
 WAServerAdaptor comment: 'A WAServer is the abstract base class for all servers. Actual servers do not have to subclass it but have to support the protocol: - #codec - #usesSmalltalkEncodingInstance Variables	codec:		<WACodec>codec	- the codec used for response conversion from characters to bytes'!
 
-!WAServerAdaptor categoriesForClass!Server! !
+!WAServerAdaptor categoriesForClass!Seaside-Core-Server! !
 
 !WAServerAdaptor methodsFor!
 

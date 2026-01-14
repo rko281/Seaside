@@ -6,11 +6,11 @@ WAContextTest subclass: #WASessionTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WASessionTest guid: (GUID fromString: '{8c94c118-b2d7-45e8-8575-cfbda99af506}')!
+WASessionTest guid: (GUID fromString: '{46622fcd-e2ac-45dd-9ef1-6cfa77410110}')!
 
 WASessionTest comment: ''!
 
-!WASessionTest categoriesForClass!Unclassified! !
+!WASessionTest categoriesForClass!Seaside-Tests-Session! !
 
 !WASessionTest methodsFor!
 

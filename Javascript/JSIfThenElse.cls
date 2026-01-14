@@ -6,11 +6,11 @@ JSDecoration subclass: #JSIfThenElse
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JSIfThenElse guid: (GUID fromString: '{f88c8cf9-3b63-4a68-ac81-60b80be12b6c}')!
+JSIfThenElse guid: (GUID fromString: '{35a2e543-3887-4634-b01c-b45af378cee4}')!
 
 JSIfThenElse comment: 'I execute different code snippets depending if the receiver is true (defined) or false (null).'!
 
-!JSIfThenElse categoriesForClass!Decorations! !
+!JSIfThenElse categoriesForClass!Javascript-Core-Decorations! !
 
 !JSIfThenElse methodsFor!
 
@@ -18,7 +18,7 @@ falseStatement	^ falseStatement!
 
 falseStatement: anObject	falseStatement := anObject!
 
-javascriptContentOn: aStream	aStream nextPut: $(.	super javascriptContentOn: aStream.	aStream nextPut: $?.	aStream javascript: self trueStatement.	aStream nextPut: $:.	aStream javascript: self falseStatement.	aStream nextPut: $)!
+javascriptContentOn: aRenderer	aRenderer document nextPut: $(.	super javascriptContentOn: aRenderer.	aRenderer document nextPut: $?.	aRenderer render: self trueStatement.	aRenderer document nextPut: $:.	aRenderer render: self falseStatement.	aRenderer document nextPut: $)!
 
 trueStatement	^ trueStatement!
 

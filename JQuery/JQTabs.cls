@@ -6,11 +6,11 @@ JQWidget subclass: #JQTabs
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQTabs guid: (GUID fromString: '{106a2c61-a49b-40cd-ac89-619adcca5221}')!
+JQTabs guid: (GUID fromString: '{8fbf32e5-cf59-4f93-a571-6b6e65a48354}')!
 
 JQTabs comment: ''!
 
-!JQTabs categoriesForClass!Widgets! !
+!JQTabs categoriesForClass!JQuery-UI-Widgets! !
 
 !JQTabs methodsFor!
 

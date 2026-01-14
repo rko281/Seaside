@@ -6,17 +6,17 @@ WAObject subclass: #WAStubJsObject
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAStubJsObject guid: (GUID fromString: '{8c7926b4-f267-4395-a559-4a080f2e8435}')!
+WAStubJsObject guid: (GUID fromString: '{3631716e-eb20-4493-95e7-5c79e9ba30d2}')!
 
 WAStubJsObject comment: 'I exsit so that script generator classes can be tested without loading the Javascript package.'!
 
-!WAStubJsObject categoriesForClass!Base! !
+!WAStubJsObject categoriesForClass!Seaside-Tests-Canvas-Base! !
 
 !WAStubJsObject methodsFor!
 
 initializeOn: anObject	self initialize.	value := anObject!
 
-javascriptOn: aStream	aStream nextPutAll: value! !
+javascriptOn: aRenderer	aRenderer javascript: value! !
 
 !WAStubJsObject categoriesForMethods!
 initializeOn:!initialization!public! !

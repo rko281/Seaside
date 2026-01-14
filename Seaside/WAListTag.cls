@@ -6,11 +6,11 @@ WACollectionTag subclass: #WAListTag
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAListTag guid: (GUID fromString: '{bd403eda-8768-40c7-adc2-0a383f5ecc0d}')!
+WAListTag guid: (GUID fromString: '{cf692d82-d4e7-4cc8-9921-13d4457f83bf}')!
 
 WAListTag comment: 'Abstract base class for ordered and unordered list tags.Ordered and unordered lists are rendered in an identical manner except that visual user agents number ordered list items. User agents may present those numbers in a variety of ways. Unordered list items are not numbered.Both types of lists are made up of sequences of list items defined by the LI element (whose end tag may be omitted).Lists may also be nested.'!
 
-!WAListTag categoriesForClass!Tags! !
+!WAListTag categoriesForClass!Seaside-Canvas-Tags! !
 
 !WAListTag methodsFor!
 

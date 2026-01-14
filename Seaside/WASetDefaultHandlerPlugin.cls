@@ -6,11 +6,11 @@ WAConfigurationToolPlugin subclass: #WASetDefaultHandlerPlugin
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WASetDefaultHandlerPlugin guid: (GUID fromString: '{6199a186-5676-44ef-a381-f5c5101c8189}')!
+WASetDefaultHandlerPlugin guid: (GUID fromString: '{23051edb-632c-478c-b301-3331f3f14e34}')!
 
 WASetDefaultHandlerPlugin comment: ''!
 
-!WASetDefaultHandlerPlugin categoriesForClass!Unclassified! !
+!WASetDefaultHandlerPlugin categoriesForClass!Seaside-Tools-Web! !
 
 !WASetDefaultHandlerPlugin methodsFor!
 

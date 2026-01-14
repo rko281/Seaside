@@ -6,11 +6,11 @@ WAExampleComponent subclass: #WATodo
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WATodo guid: (GUID fromString: '{d2582875-1dc3-4bfe-b633-3df5e36ecd1a}')!
+WATodo guid: (GUID fromString: '{d470fbad-0bce-4201-a8f9-cdc587739b5b}')!
 
 WATodo comment: 'I am the TODO application example''s root component'!
 
-!WATodo categoriesForClass!Misc! !
+!WATodo categoriesForClass!Seaside-Examples-Misc! !
 
 !WATodo methodsFor!
 

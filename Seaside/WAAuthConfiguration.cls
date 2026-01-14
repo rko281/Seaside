@@ -6,11 +6,11 @@ WASystemConfiguration subclass: #WAAuthConfiguration
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAAuthConfiguration guid: (GUID fromString: '{ee959bcb-789a-4203-b2a4-79d431890659}')!
+WAAuthConfiguration guid: (GUID fromString: '{1dd6485b-a457-4f5e-bfa3-a132ce539b76}')!
 
 WAAuthConfiguration comment: 'WAAuthConfiguration defines attributes to store a username and password for an application. It is used by WAApplication to provide a basic single-account authentication mechanism for applications like the Seaside Configuration application. It changes to mainClass for the session to WAAuthMain, which adds a Decoration to check for authentication before displaying the root component.You can implement your own authentication mechanism without using this configuration by subclassing WAApplication and implementing #verifyPassword:forUser: to lookup account details from a database or similar. You can then manually set WAAuthMain as your main class.'!
 
-!WAAuthConfiguration categoriesForClass!Filter! !
+!WAAuthConfiguration categoriesForClass!Seaside-Core-Filter! !
 
 !WAAuthConfiguration methodsFor!
 

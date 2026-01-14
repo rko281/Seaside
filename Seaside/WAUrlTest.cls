@@ -6,11 +6,11 @@ WAContextTest subclass: #WAUrlTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAUrlTest guid: (GUID fromString: '{ec43b1c9-91ba-4484-a131-44e67f817c6a}')!
+WAUrlTest guid: (GUID fromString: '{27d87f0d-5f0b-40ff-b12b-cba4c9a17ec7}')!
 
 WAUrlTest comment: ''!
 
-!WAUrlTest categoriesForClass!HTTP! !
+!WAUrlTest categoriesForClass!Seaside-Tests-Core-HTTP! !
 
 !WAUrlTest methodsFor!
 

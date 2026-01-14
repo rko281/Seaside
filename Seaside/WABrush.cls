@@ -6,11 +6,11 @@ WAObject subclass: #WABrush
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WABrush guid: (GUID fromString: '{6ba8026c-1a32-4172-a893-f80aeb00923e}')!
+WABrush guid: (GUID fromString: '{253c421d-926e-430e-be84-0cb40d4f4331}')!
 
 WABrush comment: 'I represent a brush to be used on a *WACanvas*.Instance Variables	canvas:		The canvas instance I am used with.	parent:		The parent brush I am used within.	closed:		Wether I have been closed/flushed yet.'!
 
-!WABrush categoriesForClass!Base! !
+!WABrush categoriesForClass!Seaside-Canvas-Base! !
 
 !WABrush methodsFor!
 

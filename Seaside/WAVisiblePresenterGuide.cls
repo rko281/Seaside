@@ -6,11 +6,11 @@ WAPresenterGuide subclass: #WAVisiblePresenterGuide
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAVisiblePresenterGuide guid: (GUID fromString: '{b2cc484c-b9a7-4198-ae3c-f5a40ff4a33d}')!
+WAVisiblePresenterGuide guid: (GUID fromString: '{8f71cfe0-daa0-4dd5-b30d-2ba3afd9ff88}')!
 
 WAVisiblePresenterGuide comment: 'Visit the tree of all Presenters and their registered #children. Do not visit a Decoration''s #next Decoration if the Decoration indicates that it is not visible.'!
 
-!WAVisiblePresenterGuide categoriesForClass!Visitors! !
+!WAVisiblePresenterGuide categoriesForClass!Seaside-Component-Visitors! !
 
 !WAVisiblePresenterGuide methodsFor!
 

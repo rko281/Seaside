@@ -6,11 +6,11 @@ JQueryTest subclass: #JQAjaxTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQAjaxTest guid: (GUID fromString: '{3ec0a27d-884b-4da2-9ee4-91d122241c73}')!
+JQAjaxTest guid: (GUID fromString: '{1afc607b-e4b5-4322-b3ef-58a35275681e}')!
 
 JQAjaxTest comment: ''!
 
-!JQAjaxTest categoriesForClass!Unit! !
+!JQAjaxTest categoriesForClass!JQuery-Tests-Core-Unit! !
 
 !JQAjaxTest methodsFor!
 

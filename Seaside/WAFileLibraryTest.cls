@@ -6,23 +6,23 @@ WAContextTest subclass: #WAFileLibraryTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAFileLibraryTest guid: (GUID fromString: '{58494100-b595-49af-aa92-97f3434e483d}')!
+WAFileLibraryTest guid: (GUID fromString: '{f04cdaed-6897-4e77-a5f8-23bdc623601f}')!
 
 WAFileLibraryTest comment: ''!
 
-!WAFileLibraryTest categoriesForClass!Libraries! !
+!WAFileLibraryTest categoriesForClass!Seaside-Tests-Core-Libraries! !
 
 !WAFileLibraryTest methodsFor!
 
 testAsFilename	| library |	library := WATestingFiles default.	self assert: (library asFilename: #mainJs) = 'main.js'.	self assert: (library asFilename: #style2Css) = 'style2.css'.	self assert: (library asFilename: #index) = 'index'!
 
-testAsSelector	self assert: (WAFileLibrary asSelector: 'main.css') = #mainCss.	self assert: (WAFileLibrary asSelector: 'main.js') = #mainJs.	self assert: (WAFileLibrary asSelector: 'style-2.css') = #style2Css.	self assert: (WAFileLibrary asSelector: 'style_2.css') = #style2Css.		"https://code.google.com/p/seaside/issues/detail?id=786"	self assert: (WAFileLibrary asSelector: 'main') = #main.	self assert: (WAFileLibrary asSelector: 'main.') = #main.	self assert: (WAFileLibrary asSelector: ').find(') isNil.	self assert: (WAFileLibrary asSelector: '),10)') isNil!
+testAsSelector	self assert: (WAFileLibrary asSelector: 'main.css') = #mainCss.	self assert: (WAFileLibrary asSelector: 'main.js') = #mainJs.	self assert: (WAFileLibrary asSelector: 'style-2.css') = #style2Css.	self assert: (WAFileLibrary asSelector: 'style_2.css') = #style2Css.		"https://code.google.com/p/seaside/issues/detail?id=786"	self assert: (WAFileLibrary asSelector: 'main') = #main.	self assert: (WAFileLibrary asSelector: 'main.') = #main.	self assert: (WAFileLibrary asSelector: ').find(') isNil.	self assert: (WAFileLibrary asSelector: '),10)') = #_10!
 
 testAsSelectorCapitalized	| library |	library := WATestingFiles default.	self assert: (library asSelector: 'COMMENTS.TXT') = #COMMENTSTxt.	self assert: (library asFilename: #COMMENTSTxt) = 'COMMENTS.txt'!
 
-testAsSelectorFunky	self assert: (WAFileLibrary asSelector: '1_2$3-4/5()6!!7   8.9.test 1 2 3 me 4 5 6 .txt') = #test123me456Txt!
+testAsSelectorFunky	self assert: (WAFileLibrary asSelector: '1_2$3-4/5()6!!7   8.9.test 1 2 3 me 4 5 6 .txt') = #_123456789test123me456Txt!
 
-testAsSelectorLeadingDigits	| library |	library := WATestingFiles default.	self assert: (library asSelector: '1readme.txt') = #readmeTxt.	self assert: (library asSelector: '123456789readme.txt') = #readmeTxt.	self assert: (library asSelector: '123456789readme89.txt') = #readme89Txt!
+testAsSelectorLeadingDigits	| library |	library := WATestingFiles default.	self assert: (library asSelector: '1readme.txt') = #_1readmeTxt.	self assert: (library asSelector: '123456789readme.txt') = #_123456789readmeTxt.	self assert: (library asSelector: '123456789readme89.txt') = #_123456789readme89Txt.!
 
 testCompileByteArray	| library file |	library := WATestingFiles default.	[		| data first second |		self deny: (library class selectors includes: #demoJpeg).		data := (1 to: 255) asByteArray.		file := WAFile new			contentType: WAMimeType imageJpeg;			contents: data;			fileName: 'demo.jpeg';			yourself.		library addFile: file.		self assert: (library class selectors includes: #demoJpeg).		first := library perform: #demoJpeg.		self assert: first = data.		second := library perform: #demoJpeg.		self assert: first = second	] ensure: [		library removeFile: file fileName.		self deny: (library class selectors includes: #demoJpeg) ]!
 

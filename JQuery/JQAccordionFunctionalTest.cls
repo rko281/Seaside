@@ -6,11 +6,11 @@ JQUiFunctionalTest subclass: #JQAccordionFunctionalTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQAccordionFunctionalTest guid: (GUID fromString: '{222e6ecb-d63a-42ab-bb8f-f40e576fb66f}')!
+JQAccordionFunctionalTest guid: (GUID fromString: '{6647116b-8201-433a-b7ef-33ed5962a871}')!
 
 JQAccordionFunctionalTest comment: ''!
 
-!JQAccordionFunctionalTest categoriesForClass!Functional! !
+!JQAccordionFunctionalTest categoriesForClass!JQuery-Tests-UI-Functional! !
 
 !JQAccordionFunctionalTest methodsFor!
 

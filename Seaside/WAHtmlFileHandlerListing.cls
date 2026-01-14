@@ -6,11 +6,11 @@ WAFileHandlerListing subclass: #WAHtmlFileHandlerListing
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAHtmlFileHandlerListing guid: (GUID fromString: '{d0886989-00ef-456f-989b-90b3e4ae726e}')!
+WAHtmlFileHandlerListing guid: (GUID fromString: '{d7035076-8136-49ba-965a-3138299a3059}')!
 
 WAHtmlFileHandlerListing comment: 'I am a helper class to provide the web based listing of file libraries and included files.'!
 
-!WAHtmlFileHandlerListing categoriesForClass!Unclassified! !
+!WAHtmlFileHandlerListing categoriesForClass!Seaside-Environment! !
 
 !WAHtmlFileHandlerListing methodsFor!
 

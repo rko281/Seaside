@@ -6,17 +6,17 @@ WAObject subclass: #JSDecoration
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JSDecoration guid: (GUID fromString: '{58fca328-1a69-4877-a6c7-58f782ee58de}')!
+JSDecoration guid: (GUID fromString: '{ddcbb884-c80f-4ddb-811d-0ead94b3b7d8}')!
 
 JSDecoration comment: 'I decorate JavaScript objects.'!
 
-!JSDecoration categoriesForClass!Decorations! !
+!JSDecoration categoriesForClass!Javascript-Core-Decorations! !
 
 !JSDecoration methodsFor!
 
 isJavascript	^ true!
 
-javascriptContentOn: aStream	self owner javascriptContentOn: aStream!
+javascriptContentOn: aRenderer	self owner javascriptContentOn: aRenderer!
 
 owner	^ owner!
 

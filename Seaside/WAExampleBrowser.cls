@@ -6,11 +6,11 @@ WAExampleComponent subclass: #WAExampleBrowser
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAExampleBrowser guid: (GUID fromString: '{78717a44-723d-4adb-87e1-007e56acc944}')!
+WAExampleBrowser guid: (GUID fromString: '{b3112d85-48ff-41c7-b5c1-8ff3684287df}')!
 
 WAExampleBrowser comment: 'I browse all the examples available in the system ie all the results of class side methods beginning with #exampleComponent... If you want to see these examples point your browser to localhost:xxx/examples/examplebrowser'!
 
-!WAExampleBrowser categoriesForClass!Misc! !
+!WAExampleBrowser categoriesForClass!Seaside-Examples-Misc! !
 
 !WAExampleBrowser methodsFor!
 

@@ -6,11 +6,11 @@ WAObject subclass: #WARequest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WARequest guid: (GUID fromString: '{588a5c61-da10-4d25-bad6-1582049b897e}')!
+WARequest guid: (GUID fromString: '{645251ef-b21b-4615-970f-d897fcf67ec6}')!
 
 WARequest comment: 'I am a server independent http request object. Instance of me can be aquired through WAObject >> #currentRequest.Instance Variables	method:			<String>	uri:					<WAUrl>	version:				<WAHttpVersion>	remoteAddress:	<String>	headers:			<Dictionary<String, String>>	cookies:			<Collection<WARequestCookie>>	body:				<String>	postFields:			<WARequestFields>	sslSessionId:		<String>			method	- the HTTP method, should be upper case. In general only ''GET'' and ''POST'' are encountered in Seaside. SqueakSource also supports ''PUT''.		uri	- The request url without parameters. For example if the client requested ''http://www.google.com/search?q=seaside'' then the contents of url would be ''/search''. To get the parameters use #fields. This url is fully decoded. Use the #host method to get the host name. Dependening on the server adapter the #scheme may be ''http'' or ''https'' if the original request was HTTPS.	version	- The version of this request.	remoteAddress	- The IP address of the client. If the server is behind a reverse proxy then this is ''127.0.0.1''. This could in theory also be an IPv6 address.headers	- The header of the HTTP request. This is a Dictionary mapping lowercase strings to other strings.	cookies	- The collection of cookies (instance of WARequestCookie) the client sent. Note not all clients support all fields. E.g. you might send a path but the client might not return it. Note there can be several cookies with the same key but a different domain or path. See the #cookiesAt: method.	body	- The undecoded, raw request body as a String, may be nil. See the "accessing-body" protocol for accessing it.	postFields	- The HTTP POST request parameters. In general this is a dictionary mapping Strings to Strings. In the case of multivalued paramters multiple mappings may exist.	sslSessionId	- The SSL session id. This is an opaque string. It is not present if the request wasn''t made over SSL (or TLS) or the server adaptor does not support this feature.'!
 
-!WARequest categoriesForClass!HTTP! !
+!WARequest categoriesForClass!Seaside-Core-HTTP! !
 
 !WARequest methodsFor!
 
@@ -54,7 +54,13 @@ forwardedFor	"Returns the value of the first occurrence of the For directive in
 
 headerAt: aKey	^ self headerAt: aKey ifAbsent: [ nil ]!
 
-headerAt: aKey ifAbsent: aBlock	^ headers at: aKey ifAbsent: aBlock!
+headerAt: aKey ifAbsent: aBlock
+
+	"Dolphin modified - Dolphin server headers may not match case of aKey. Fallback to search (pending change to server code)"
+	^ headers at: aKey ifAbsent: 
+		[(headers keys detect: [ :each | aKey match: each] ifNone: [nil]) 
+			ifNil: [aBlock value] 
+			ifNotNil: [ :key | headers at: key]]!
 
 headers	^ headers!
 
@@ -77,6 +83,8 @@ isPost	^ self method = 'POST'!
 isPrefetch	"Link prefetching is a browser mechanism, which utilizes browser idle time to download or prefetch documents that the user might visit in the near future. When the user visits one of the prefetched documents, it can be served up quickly out of the browser's cache."		^ (self headerAt: 'x-moz') = 'prefetch'!
 
 isSsl	^ self uri isSsl!
+
+isWebSocketSetupRequest	"Return true when request can be considered a valid WebSocket setup request"	^ self isGet			and: [ (self headerAt: 'upgrade' ifAbsent: [ ^ false ]) asLowercase = 'websocket' 				and: [ ((self headerAt: 'connection' ifAbsent: [ ^ false ]) asLowercase includesSubstring: 'upgrade')					and: [ (self headerAt: 'sec-websocket-version' ifAbsent: [ ^ false ]) = '13'						and: [ self headers includesKey: 'sec-websocket-key' ] ] ] ]!
 
 isXmlHttpRequest	^ (self headerAt: 'x-requested-with') = 'XMLHttpRequest'!
 
@@ -143,7 +151,7 @@ fields!accessing!public! !
 forwarded!accessing/headers!public! !
 forwardedFor!accessing!public! !
 headerAt:!accessing!public! !
-headerAt:ifAbsent:!accessing!public! !
+headerAt:ifAbsent:!accessing!dolphin seaside patches!public! !
 headers!accessing!public! !
 host!accessing/headers!public! !
 ifNoneMatch!accessing/headers!public! !
@@ -155,6 +163,7 @@ isHttp11!public!testing! !
 isPost!public!testing! !
 isPrefetch!public!testing! !
 isSsl!public!testing! !
+isWebSocketSetupRequest!public!testing! !
 isXmlHttpRequest!public!testing! !
 method!accessing!public! !
 password!accessing!public! !

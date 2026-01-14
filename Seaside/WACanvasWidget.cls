@@ -6,11 +6,11 @@ WAComponent subclass: #WACanvasWidget
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WACanvasWidget guid: (GUID fromString: '{ecfa67d1-04a4-4041-9a61-6cf27c44a85b}')!
+WACanvasWidget guid: (GUID fromString: '{3fb9ad44-a704-43a7-9894-b02a5f452def}')!
 
 WACanvasWidget comment: 'A common superclass for all widgets that want to use WAHtmlCanvas as their renderer.'!
 
-!WACanvasWidget categoriesForClass!Components! !
+!WACanvasWidget categoriesForClass!Seaside-Widgets-Components! !
 
 !WACanvasWidget methodsFor!
 

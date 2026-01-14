@@ -6,11 +6,11 @@ TestCase subclass: #WADynamicVariableTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WADynamicVariableTest guid: (GUID fromString: '{f5b1e0f5-a086-4486-a330-68d6092c1a9e}')!
+WADynamicVariableTest guid: (GUID fromString: '{10b5d4d6-c118-47b8-8f83-0755f1e374a6}')!
 
 WADynamicVariableTest comment: ''!
 
-!WADynamicVariableTest categoriesForClass!Utilities! !
+!WADynamicVariableTest categoriesForClass!Seaside-Tests-Core-Utilities! !
 
 !WADynamicVariableTest methodsFor!
 

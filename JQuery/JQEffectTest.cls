@@ -6,11 +6,11 @@ JQueryUiTest subclass: #JQEffectTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQEffectTest guid: (GUID fromString: '{7b83c7fe-3cfb-4116-87d1-e44548c9f705}')!
+JQEffectTest guid: (GUID fromString: '{74481e38-2e1f-4b9b-bc51-64b70c3ef867}')!
 
 JQEffectTest comment: ''!
 
-!JQEffectTest categoriesForClass!Unit! !
+!JQEffectTest categoriesForClass!JQuery-Tests-UI-Unit! !
 
 !JQEffectTest methodsFor!
 

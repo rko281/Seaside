@@ -6,22 +6,22 @@ JQAjax subclass: #JQGetJson
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQGetJson guid: (GUID fromString: '{04d7d2c1-dec8-4e65-9e77-ae52136f106b}')!
+JQGetJson guid: (GUID fromString: '{cc2db791-e74c-4002-a113-b4849a4339f0}')!
 
 JQGetJson comment: 'Load JSON data using an HTTP GET request.'!
 
-!JQGetJson categoriesForClass!Objects! !
+!JQGetJson categoriesForClass!JQuery-Core-Objects! !
 
 !JQGetJson methodsFor!
 
-arguments	| arguments |	arguments := OrderedCollection with: self url.	self options		at: 'data'		ifPresent: [ :value | arguments add: value ].	self options		at: 'success'		ifPresent: [ :value | arguments add: value ].	^ arguments!
+argumentsDo: aBlock	aBlock value: self url.	self options		at: 'data'		ifPresent: [ :data | aBlock value: data ].	self options		at: 'success'		ifPresent: [ :success | aBlock value: success ]!
 
 isSupportedOption: aString	^ #('url' 'data' 'success' "(" 'dataType' ")") includes: aString!
 
 method	^ 'getJSON'! !
 
 !JQGetJson categoriesForMethods!
-arguments!accessing!public! !
+argumentsDo:!accessing!public! !
 isSupportedOption:!options!public! !
 method!accessing!public! !
 !

@@ -6,11 +6,11 @@ WAPainter subclass: #WAWelcomeUrlDialog
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAWelcomeUrlDialog guid: (GUID fromString: '{37d7f9b2-a290-48dc-bbd9-c826deb1b4c5}')!
+WAWelcomeUrlDialog guid: (GUID fromString: '{2cad7649-ddde-47ec-a207-b21adc050858}')!
 
 WAWelcomeUrlDialog comment: ''!
 
-!WAWelcomeUrlDialog categoriesForClass!Base! !
+!WAWelcomeUrlDialog categoriesForClass!Seaside-Welcome-Base! !
 
 !WAWelcomeUrlDialog methodsFor!
 

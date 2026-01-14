@@ -6,11 +6,11 @@ TestCase subclass: #WALocaleTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WALocaleTest guid: (GUID fromString: '{57d8fc66-3d65-4666-a44b-fc64cf348e0c}')!
+WALocaleTest guid: (GUID fromString: '{10e2ed87-232b-46ec-9676-fa1cc82d16db}')!
 
 WALocaleTest comment: ''!
 
-!WALocaleTest categoriesForClass!HTTP! !
+!WALocaleTest categoriesForClass!Seaside-Tests-Core-HTTP! !
 
 !WALocaleTest methodsFor!
 

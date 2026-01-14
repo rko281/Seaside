@@ -6,15 +6,15 @@ JSDecoration subclass: #JSNegation
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JSNegation guid: (GUID fromString: '{b40a72ec-7c89-4c7b-87e7-710821f856f3}')!
+JSNegation guid: (GUID fromString: '{73ecc4db-af17-48fb-a7ea-72875afba5d9}')!
 
 JSNegation comment: 'I negate the decorated object and yield a boolean value.'!
 
-!JSNegation categoriesForClass!Decorations! !
+!JSNegation categoriesForClass!Javascript-Core-Decorations! !
 
 !JSNegation methodsFor!
 
-javascriptContentOn: aStream	aStream nextPut: $!!.	super javascriptContentOn: aStream! !
+javascriptContentOn: aRenderer	aRenderer document negation.	super javascriptContentOn: aRenderer! !
 
 !JSNegation categoriesForMethods!
 javascriptContentOn:!printing!public! !

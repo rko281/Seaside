@@ -6,11 +6,11 @@ WASelectTag subclass: #WAMultiSelectTag
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAMultiSelectTag guid: (GUID fromString: '{2876bb06-3aa4-45ea-bec9-02b4598e2f40}')!
+WAMultiSelectTag guid: (GUID fromString: '{71c4502b-8eb1-4df0-b24a-934afb37444d}')!
 
 WAMultiSelectTag comment: 'See superclass.'!
 
-!WAMultiSelectTag categoriesForClass!Tags! !
+!WAMultiSelectTag categoriesForClass!Seaside-Canvas-Tags! !
 
 !WAMultiSelectTag methodsFor!
 

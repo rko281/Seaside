@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 Object subclass: #Browser
 	instanceVariableNames: 'systemCategories classNames methodCategories selectors contents displayOption isClassComment className categoryName selectedPackage selectedClass selectedMethodCategory selectedMethod'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 Browser guid: (GUID fromString: '{85ded604-987f-4a26-b277-833be63e37dc}')!
+
 Browser comment: ''!
+
 !Browser categoriesForClass!Unclassified! !
+
 !Browser methodsFor!
 
 allClasses
@@ -487,80 +491,83 @@ systemCategoryListIndex: anInteger
 waBrowser
 
        ^self dependents last! !
-!Browser categoriesFor: #allClasses!public! !
-!Browser categoriesFor: #allClassesOfSelectedPackage!public! !
-!Browser categoriesFor: #allCompiledMethodOfSelectedClass!public! !
-!Browser categoriesFor: #allMethodOfSelectedMethodCategory!public! !
-!Browser categoriesFor: #allMethods!initializing!public! !
-!Browser categoriesFor: #allPackages!public! !
-!Browser categoriesFor: #classComment!public! !
-!Browser categoriesFor: #classDefinition!public! !
-!Browser categoriesFor: #classList!public! !
-!Browser categoriesFor: #classListIndex!indexes!public! !
-!Browser categoriesFor: #classListIndex:!indexes!initializing!public! !
-!Browser categoriesFor: #classNames!public! !
-!Browser categoriesFor: #classNames:!public! !
-!Browser categoriesFor: #classNamesFor:!public! !
-!Browser categoriesFor: #classTemplate!public! !
-!Browser categoriesFor: #compileClassDefinition:notifying:!public! !
-!Browser categoriesFor: #compileMethod:notifying:!public! !
-!Browser categoriesFor: #compileNewClass:notifying:!public! !
-!Browser categoriesFor: #computeContents!public! !
-!Browser categoriesFor: #computedContents!public! !
-!Browser categoriesFor: #contents!public! !
-!Browser categoriesFor: #contents:!public! !
-!Browser categoriesFor: #contents:notifying:!public! !
-!Browser categoriesFor: #defaultDisplayOption!public! !
-!Browser categoriesFor: #displayOption!public! !
-!Browser categoriesFor: #displayOption:!public! !
-!Browser categoriesFor: #displayOptionClass!public! !
-!Browser categoriesFor: #displayOptionInstance!public! !
-!Browser categoriesFor: #displaySourceCodeOfSelectedMethod!public! !
-!Browser categoriesFor: #getSelectedMethodIndex:!indexes!initializing!public! !
-!Browser categoriesFor: #indicateClassMessages!public! !
-!Browser categoriesFor: #indicateInstanceMessages!public! !
-!Browser categoriesFor: #initializeClassNames!initializing!public!selection! !
-!Browser categoriesFor: #initializeDisplayOption!initializing!public!selection! !
-!Browser categoriesFor: #initializeMethodCategories!initializing!public!selection! !
-!Browser categoriesFor: #initializeSelectors!initializing!public!selection! !
-!Browser categoriesFor: #initializeSystemCategories!accessing!initializing!public!selection! !
-!Browser categoriesFor: #isClassComment!public! !
-!Browser categoriesFor: #isClassComment:!public! !
-!Browser categoriesFor: #isClassSelected!public! !
-!Browser categoriesFor: #isDisplayingClass!public! !
-!Browser categoriesFor: #isMethodCategorySelected!public! !
-!Browser categoriesFor: #isMethodSelected!public! !
-!Browser categoriesFor: #isSystemCategorySelected!public! !
-!Browser categoriesFor: #messageCategoryList!indexes!public! !
-!Browser categoriesFor: #messageCategoryListIndex!indexes!public! !
-!Browser categoriesFor: #messageCategoryListIndex:!indexes!initializing!public!render! !
-!Browser categoriesFor: #messageList!indexes!public! !
-!Browser categoriesFor: #messageListIndex!indexes!public! !
-!Browser categoriesFor: #messageListIndex:!indexes!initializing!public! !
-!Browser categoriesFor: #metaClassIndicated!public! !
-!Browser categoriesFor: #methodCategories!public! !
-!Browser categoriesFor: #methodCategories:!public! !
-!Browser categoriesFor: #methodSource!public! !
-!Browser categoriesFor: #plusButtonHit!public! !
-!Browser categoriesFor: #renderClassesOfSelectedPackage!initializing!public!render! !
-!Browser categoriesFor: #renderMethodCategoriesOfSelectedClass!initializing!public!render! !
-!Browser categoriesFor: #renderMethodOfClass!initializing!public!render! !
-!Browser categoriesFor: #renderMethodOfSelectedCategory!public!render! !
-!Browser categoriesFor: #selectedBehavior!public! !
-!Browser categoriesFor: #selectedClass!public! !
-!Browser categoriesFor: #selectedClassName!public! !
-!Browser categoriesFor: #selectedMessageName!public! !
-!Browser categoriesFor: #selectedMethod!public! !
-!Browser categoriesFor: #selectedMethodCategory!public! !
-!Browser categoriesFor: #selectedSystemCategory!public! !
-!Browser categoriesFor: #selectors!public! !
-!Browser categoriesFor: #selectors:!accessing!public! !
-!Browser categoriesFor: #setClass:selector:!public! !
-!Browser categoriesFor: #sourceCodeTemplate!public! !
-!Browser categoriesFor: #systemCategories!accessing!public! !
-!Browser categoriesFor: #systemCategories:!accessing!public! !
-!Browser categoriesFor: #systemCategoryList!indexes!public! !
-!Browser categoriesFor: #systemCategoryListIndex!indexes!public! !
-!Browser categoriesFor: #systemCategoryListIndex:!indexes!initializing!public!render! !
-!Browser categoriesFor: #waBrowser!public!web selections! !
+
+!Browser categoriesForMethods!
+allClasses!public! !
+allClassesOfSelectedPackage!public! !
+allCompiledMethodOfSelectedClass!public! !
+allMethodOfSelectedMethodCategory!public! !
+allMethods!initializing!public! !
+allPackages!public! !
+classComment!public! !
+classDefinition!public! !
+classList!public! !
+classListIndex!indexes!public! !
+classListIndex:!indexes!initializing!public! !
+classNames!public! !
+classNames:!public! !
+classNamesFor:!public! !
+classTemplate!public! !
+compileClassDefinition:notifying:!public! !
+compileMethod:notifying:!public! !
+compileNewClass:notifying:!public! !
+computeContents!public! !
+computedContents!public! !
+contents!public! !
+contents:!public! !
+contents:notifying:!public! !
+defaultDisplayOption!public! !
+displayOption!public! !
+displayOption:!public! !
+displayOptionClass!public! !
+displayOptionInstance!public! !
+displaySourceCodeOfSelectedMethod!public! !
+getSelectedMethodIndex:!indexes!initializing!public! !
+indicateClassMessages!public! !
+indicateInstanceMessages!public! !
+initializeClassNames!initializing!public!selection! !
+initializeDisplayOption!initializing!public!selection! !
+initializeMethodCategories!initializing!public!selection! !
+initializeSelectors!initializing!public!selection! !
+initializeSystemCategories!accessing!initializing!public!selection! !
+isClassComment!public! !
+isClassComment:!public! !
+isClassSelected!public! !
+isDisplayingClass!public! !
+isMethodCategorySelected!public! !
+isMethodSelected!public! !
+isSystemCategorySelected!public! !
+messageCategoryList!indexes!public! !
+messageCategoryListIndex!indexes!public! !
+messageCategoryListIndex:!indexes!initializing!public!render! !
+messageList!indexes!public! !
+messageListIndex!indexes!public! !
+messageListIndex:!indexes!initializing!public! !
+metaClassIndicated!public! !
+methodCategories!public! !
+methodCategories:!public! !
+methodSource!public! !
+plusButtonHit!public! !
+renderClassesOfSelectedPackage!initializing!public!render! !
+renderMethodCategoriesOfSelectedClass!initializing!public!render! !
+renderMethodOfClass!initializing!public!render! !
+renderMethodOfSelectedCategory!public!render! !
+selectedBehavior!public! !
+selectedClass!public! !
+selectedClassName!public! !
+selectedMessageName!public! !
+selectedMethod!public! !
+selectedMethodCategory!public! !
+selectedSystemCategory!public! !
+selectors!public! !
+selectors:!accessing!public! !
+setClass:selector:!public! !
+sourceCodeTemplate!public! !
+systemCategories!accessing!public! !
+systemCategories:!accessing!public! !
+systemCategoryList!indexes!public! !
+systemCategoryListIndex!indexes!public! !
+systemCategoryListIndex:!indexes!initializing!public!render! !
+waBrowser!public!web selections! !
+!
 

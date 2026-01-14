@@ -1,0 +1,93 @@
+﻿| package |
+package := Package name: 'Seaside-Tests-UTF8'.
+package paxVersion: 1;
+	basicComment: ''.
+
+package classNames
+	add: #WAUtf8CookieTest;
+	add: #WAUtf8FileTest;
+	add: #WAUtf8ResponseGeneratorTest;
+	add: #WAUtf8ResponseTest;
+	add: #WAUtf8UrlTest;
+	yourself.
+
+package methodNames
+	add: #WABufferedResponseTest -> #asString:;
+	add: #WABufferedResponseTest -> #decodedUnicodeString;
+	add: #WABufferedResponseTest -> #encodedUnicodeString;
+	add: #WABufferedResponseTest -> #testResetKeepsStreamKind;
+	add: #WABufferedResponseTest -> #unicodeString;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: #(
+	'..\..\Core\Object Arts\Dolphin\Base\Dolphin'
+	'..\..\Grease\Grease-Core'
+	'Seaside-Core'
+	'Seaside-Tests-Core'
+	'..\..\Core\Contributions\Camp Smalltalk\SUnit\SUnit').
+
+package!
+
+"Class Definitions"!
+
+TestCase subclass: #WAUtf8FileTest
+	instanceVariableNames: 'file'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+WAContextTest subclass: #WAUtf8CookieTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+WAContextTest subclass: #WAUtf8ResponseGeneratorTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+WAContextTest subclass: #WAUtf8ResponseTest
+	instanceVariableNames: 'response'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+WAContextTest subclass: #WAUtf8UrlTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+"Loose Methods"!
+
+!WABufferedResponseTest methodsFor!
+
+asString: aCollectionOfIntegers	^ String streamContents: [ :stream |		aCollectionOfIntegers do: [ :each |			stream nextPut: (Character codePoint: each) ] ]!
+
+decodedUnicodeString	^ self asString: #(252 116 102 45 56)!
+
+encodedUnicodeString
+	"Dolphin modified (UTF8)"	^ Utf8String fromByteArray: #[195 188 116 102 45 56]!
+
+testResetKeepsStreamKind	| resetPossible codec |	codec := GRCodec forEncoding: 'utf-8'.	response := WABufferedResponse		on: (codec			encoderFor: (GRPlatform current writeCharacterStreamOn: codec encodedStringClass new)).	resetPossible := self response		status: WAResponse statusNotFound;		attachmentWithFileName: 'upload.csv';		nextPutAll: 'the wrong content';		resetIfPossible.	self assert: resetPossible.	self response		status: WAResponse statusImATeapot;		headerAt: 'X-The-Header' put: 'the value';		nextPutAll: self decodedUnicodeString.	self assertLines: (Array		with: 'HTTP/1.1 418 I''m a teapot'		with: 'X-The-Header: the value'		with: 'Content-Length: 6'		with: ''		with: self encodedUnicodeString)!
+
+unicodeString	^ self asString: 'ütf-8'! !
+
+!WABufferedResponseTest categoriesForMethods!
+asString:!*seaside/tests/utf8!public! !
+decodedUnicodeString!*seaside/tests/utf8!public! !
+encodedUnicodeString!*seaside/tests/utf8!dolphin seaside patches!public! !
+testResetKeepsStreamKind!*seaside/tests/utf8!public! !
+unicodeString!*seaside/tests/utf8!public! !
+!
+
+"End of package definition"!
+

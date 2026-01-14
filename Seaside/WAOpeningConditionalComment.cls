@@ -6,11 +6,11 @@ WAObject subclass: #WAOpeningConditionalComment
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAOpeningConditionalComment guid: (GUID fromString: '{a1c9d17f-ad28-4a32-813d-2bd47fe1301b}')!
+WAOpeningConditionalComment guid: (GUID fromString: '{26f66cb5-e5f8-49d4-be30-238f0c8fee64}')!
 
 WAOpeningConditionalComment comment: 'Opens a WAConditionalComment and encodes the condition.'!
 
-!WAOpeningConditionalComment categoriesForClass!Document-Elements! !
+!WAOpeningConditionalComment categoriesForClass!Seaside-Core-Document-Elements! !
 
 !WAOpeningConditionalComment methodsFor!
 

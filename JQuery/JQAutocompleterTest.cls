@@ -6,11 +6,11 @@ JQueryUiTest subclass: #JQAutocompleterTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQAutocompleterTest guid: (GUID fromString: '{85f7f7d6-dfb8-4186-b998-f8f7554b715f}')!
+JQAutocompleterTest guid: (GUID fromString: '{fc68a394-791b-46a3-ab4e-70d4cc66514a}')!
 
 JQAutocompleterTest comment: ''!
 
-!JQAutocompleterTest categoriesForClass!Unit! !
+!JQAutocompleterTest categoriesForClass!JQuery-Tests-UI-Unit! !
 
 !JQAutocompleterTest methodsFor!
 

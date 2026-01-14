@@ -6,11 +6,11 @@ WASessionCookieProtectionFilter subclass: #WASessionCookieProtectionRenderedFilt
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WASessionCookieProtectionRenderedFilter guid: (GUID fromString: '{34433f57-e2c1-45eb-a7aa-4e7a8850975d}')!
+WASessionCookieProtectionRenderedFilter guid: (GUID fromString: '{301d17ec-c6c1-4492-8da0-bbf095e3c5ef}')!
 
 WASessionCookieProtectionRenderedFilter comment: 'I''m pretty much the same as my superclass, but when returning a forbidden response, the response is rendered using a WAHtmlCanvas.'!
 
-!WASessionCookieProtectionRenderedFilter categoriesForClass!Sessions! !
+!WASessionCookieProtectionRenderedFilter categoriesForClass!Seaside-Examples-Sessions! !
 
 !WASessionCookieProtectionRenderedFilter methodsFor!
 

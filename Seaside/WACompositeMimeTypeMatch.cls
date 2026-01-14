@@ -6,11 +6,11 @@ WAMatch subclass: #WACompositeMimeTypeMatch
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WACompositeMimeTypeMatch guid: (GUID fromString: '{2629ce5b-8ac1-401a-92c7-ff6301663906}')!
+WACompositeMimeTypeMatch guid: (GUID fromString: '{c92b3358-c82b-4409-8fb4-1db0adb1d56d}')!
 
 WACompositeMimeTypeMatch comment: ''!
 
-!WACompositeMimeTypeMatch categoriesForClass!Route! !
+!WACompositeMimeTypeMatch categoriesForClass!Seaside-REST-Core-Route! !
 
 !WACompositeMimeTypeMatch methodsFor!
 

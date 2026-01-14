@@ -6,11 +6,11 @@ WAComponent subclass: #WATask
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WATask guid: (GUID fromString: '{9823052b-e65d-4301-873b-b54df7769fa1}')!
+WATask guid: (GUID fromString: '{5f3bbcf5-3631-48eb-b322-d213ca94cc72}')!
 
 WATask comment: 'I am a subclass of WAComponent, specialized for defining workflow.  The difference between a task and a component is the following:Both of them are reusable, embeddable, callable pieces of user interface. A component has state (instance variables), behavior (it may change its state, and it may also choose to display other components with #call:), and appearance (it renders HTML). A Task has only the first two - it doesn''t render any HTML directly, but only through the components it calls. This is useful when what you want to encapsulate/embed/call is purely a process (show this component, then this one, then this one).The key method for WATask is #go - as soon as a task is displayed, this method will get invoked, and will presumably #call: other components.In terms of implementation, you can think of a WATask in the following way: it is a component which renders two things:- a link whose callback invokes the #go method- a header that immediately redirects to the URL of that linkSubclasses must not implement #renderContentOn:An example can be found in WAFlowConvenienceFunctionalTest.'!
 
-!WATask categoriesForClass!Tasks! !
+!WATask categoriesForClass!Seaside-Component-Tasks! !
 
 !WATask methodsFor!
 

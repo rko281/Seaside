@@ -6,11 +6,11 @@ WAHandlerTrackingStrategyTest subclass: #WASessionTrackingStrategyTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WASessionTrackingStrategyTest guid: (GUID fromString: '{8b92c55e-4ca2-4e6f-a240-0a75a576993f}')!
+WASessionTrackingStrategyTest guid: (GUID fromString: '{5acd3f2e-c271-4d73-b90d-c3d29d6a7ddd}')!
 
 WASessionTrackingStrategyTest comment: ''!
 
-!WASessionTrackingStrategyTest categoriesForClass!Unclassified! !
+!WASessionTrackingStrategyTest categoriesForClass!Seaside-Tests-Session! !
 
 !WASessionTrackingStrategyTest methodsFor!
 

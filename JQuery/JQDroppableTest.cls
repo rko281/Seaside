@@ -6,11 +6,11 @@ JQueryUiTest subclass: #JQDroppableTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQDroppableTest guid: (GUID fromString: '{c4325625-a911-4f8b-9963-7964a2637c23}')!
+JQDroppableTest guid: (GUID fromString: '{2328c292-22c4-457b-8b02-10ef2518912a}')!
 
 JQDroppableTest comment: ''!
 
-!JQDroppableTest categoriesForClass!Unit! !
+!JQDroppableTest categoriesForClass!JQuery-Tests-UI-Unit! !
 
 !JQDroppableTest methodsFor!
 

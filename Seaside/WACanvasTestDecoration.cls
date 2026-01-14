@@ -6,11 +6,11 @@ WADecoration subclass: #WACanvasTestDecoration
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WACanvasTestDecoration guid: (GUID fromString: '{9a24381b-1da5-470e-b78f-76e47f9950d6}')!
+WACanvasTestDecoration guid: (GUID fromString: '{6ee6d214-815a-4d08-98fa-07dae4f49edc}')!
 
 WACanvasTestDecoration comment: ''!
 
-!WACanvasTestDecoration categoriesForClass!Unclassified! !
+!WACanvasTestDecoration categoriesForClass!Seaside-Tests-RenderLoop! !
 
 !WACanvasTestDecoration methodsFor!
 

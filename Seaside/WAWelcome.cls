@@ -6,11 +6,11 @@ WAComponent subclass: #WAWelcome
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAWelcome guid: (GUID fromString: '{31dc4f8c-d167-4c98-a339-f06a87d7f16b}')!
+WAWelcome guid: (GUID fromString: '{26a47b5a-d5a7-4935-a651-706461f08268}')!
 
 WAWelcome comment: 'An short introduction to Seaside'!
 
-!WAWelcome categoriesForClass!Base! !
+!WAWelcome categoriesForClass!Seaside-Welcome-Base! !
 
 !WAWelcome methodsFor!
 

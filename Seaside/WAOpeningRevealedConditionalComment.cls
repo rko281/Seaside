@@ -6,11 +6,11 @@ WAOpeningConditionalComment subclass: #WAOpeningRevealedConditionalComment
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAOpeningRevealedConditionalComment guid: (GUID fromString: '{780a5641-8ac3-4015-8ba8-de5ff7ed0cec}')!
+WAOpeningRevealedConditionalComment guid: (GUID fromString: '{b528d764-151a-499d-a194-129041cd70ec}')!
 
 WAOpeningRevealedConditionalComment comment: 'Opens a WARevealedConditionalComment and encodes the condition.'!
 
-!WAOpeningRevealedConditionalComment categoriesForClass!Document-Elements! !
+!WAOpeningRevealedConditionalComment categoriesForClass!Seaside-Core-Document-Elements! !
 
 !WAOpeningRevealedConditionalComment methodsFor!
 

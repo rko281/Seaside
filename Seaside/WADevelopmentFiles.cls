@@ -6,11 +6,11 @@ WAFileLibrary subclass: #WADevelopmentFiles
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WADevelopmentFiles guid: (GUID fromString: '{62046c65-0253-43c6-b4fa-aec20bfa6e01}')!
+WADevelopmentFiles guid: (GUID fromString: '{43600bbe-de76-4150-bc01-207550b269d8}')!
 
 WADevelopmentFiles comment: 'CSS and images used by the web-based development tools.The icons are from the Tango Desktop Project (tango.freedesktop.org), they are licensed under the Creative Commons Attribution Share-Alike license.'!
 
-!WADevelopmentFiles categoriesForClass!Core! !
+!WADevelopmentFiles categoriesForClass!Seaside-Development-Core! !
 
 !WADevelopmentFiles methodsFor!
 

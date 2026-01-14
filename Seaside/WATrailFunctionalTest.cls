@@ -6,11 +6,11 @@ WAFunctionalTest subclass: #WATrailFunctionalTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WATrailFunctionalTest guid: (GUID fromString: '{00372335-7f34-4b74-9391-753bc5845666}')!
+WATrailFunctionalTest guid: (GUID fromString: '{c8c39197-ee86-41e3-9729-3902d48f816a}')!
 
 WATrailFunctionalTest comment: ''!
 
-!WATrailFunctionalTest categoriesForClass!Unclassified! !
+!WATrailFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
 
 !WATrailFunctionalTest methodsFor!
 

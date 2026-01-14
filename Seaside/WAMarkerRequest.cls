@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 GRNotification subclass: #WAMarkerRequest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAMarkerRequest guid: (GUID fromString: '{890ce2c5-6316-4cb2-8624-14d49f645e8b}')!
+
 WAMarkerRequest comment: ''!
+
 !WAMarkerRequest categoriesForClass!Unclassified! !
+
 !WAMarkerRequest methodsFor!
 
 defaultAction
@@ -24,6 +28,9 @@ tryBlockFrame
 			(((proc at: markAndTryFrame sp + i) isKindOf: CompiledCode) 
 				and: [(Array with: Context with: BlockClosure) includes: (proc at: markAndTryFrame sp + i + 1) class]) 
 					ifTrue: [^proc frameAtIndex: markAndTryFrame sp + i]]! !
-!WAMarkerRequest categoriesFor: #defaultAction!public! !
-!WAMarkerRequest categoriesFor: #tryBlockFrame!public! !
+
+!WAMarkerRequest categoriesForMethods!
+defaultAction!public! !
+tryBlockFrame!public! !
+!
 

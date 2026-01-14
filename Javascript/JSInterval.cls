@@ -6,15 +6,15 @@ JSTimed subclass: #JSInterval
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JSInterval guid: (GUID fromString: '{e5f80ac9-622d-4069-815c-b7465fbd95f1}')!
+JSInterval guid: (GUID fromString: '{6aa857c2-fee0-45fd-8287-47541428d0e1}')!
 
 JSInterval comment: 'I periodically execute the decorated object.'!
 
-!JSInterval categoriesForClass!Decorations! !
+!JSInterval categoriesForClass!Javascript-Core-Decorations! !
 
 !JSInterval methodsFor!
 
-javascriptContentOn: aStream	aStream nextPutAll: 'setInterval(function(){'.	super javascriptContentOn: aStream.	aStream		nextPutAll: '},';		javascript: self duration;		nextPut: $)! !
+javascriptContentOn: aRenderer	(aRenderer function: 'setInterval')		with: [			aRenderer argument: [				aRenderer defineFunction: [					super javascriptContentOn: aRenderer ] ].			aRenderer argument: self duration ]! !
 
 !JSInterval categoriesForMethods!
 javascriptContentOn:!printing!public! !

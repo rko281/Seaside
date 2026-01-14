@@ -6,11 +6,11 @@ WAObject subclass: #WAFileLibraryResource
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAFileLibraryResource guid: (GUID fromString: '{64ad3d44-e49b-44db-8633-97156041ee7c}')!
+WAFileLibraryResource guid: (GUID fromString: '{cbce413d-b279-4055-b688-f8940145893c}')!
 
 WAFileLibraryResource comment: 'A resource within a Seaside file library'!
 
-!WAFileLibraryResource categoriesForClass!Libraries! !
+!WAFileLibraryResource categoriesForClass!Seaside-Core-Libraries! !
 
 !WAFileLibraryResource methodsFor!
 

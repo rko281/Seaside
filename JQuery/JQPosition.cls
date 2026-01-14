@@ -6,11 +6,11 @@ JQWidget subclass: #JQPosition
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQPosition guid: (GUID fromString: '{229f0c18-5bd5-4c10-b352-7573b2f5a7b2}')!
+JQPosition guid: (GUID fromString: '{5ce931e3-52f8-4b68-9a83-dd3e425c32f4}')!
 
 JQPosition comment: ''!
 
-!JQPosition categoriesForClass!Utility! !
+!JQPosition categoriesForClass!JQuery-UI-Utility! !
 
 !JQPosition methodsFor!
 

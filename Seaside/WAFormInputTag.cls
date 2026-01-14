@@ -6,11 +6,11 @@ WATagBrush subclass: #WAFormInputTag
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAFormInputTag guid: (GUID fromString: '{0ac0600d-5092-4d22-9aae-17d36a388b9a}')!
+WAFormInputTag guid: (GUID fromString: '{d949989c-3dbd-4d3d-a31a-86a5b96ec2f8}')!
 
 WAFormInputTag comment: 'The <input> tag defines the start of an input field where the user can enter data.'!
 
-!WAFormInputTag categoriesForClass!Tags! !
+!WAFormInputTag categoriesForClass!Seaside-Canvas-Tags! !
 
 !WAFormInputTag methodsFor!
 

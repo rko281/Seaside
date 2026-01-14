@@ -6,11 +6,11 @@ WAObject subclass: #WAReducedConflictCounter
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAReducedConflictCounter guid: (GUID fromString: '{8c1f4bc5-e505-4a8e-9973-9263bcb6d837}')!
+WAReducedConflictCounter guid: (GUID fromString: '{03e9e344-7b74-47c8-b34f-9930ccff4824}')!
 
 WAReducedConflictCounter comment: 'I am a fake implementation of RcCounter, which is a Gemstone Smalltalk class that provides a counter object with reduced transaction conflicts.'!
 
-!WAReducedConflictCounter categoriesForClass!Cache! !
+!WAReducedConflictCounter categoriesForClass!Seaside-Core-Cache! !
 
 !WAReducedConflictCounter methodsFor!
 

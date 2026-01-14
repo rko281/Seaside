@@ -6,11 +6,11 @@ WACookieIfSupportedSessionTrackingStrategy subclass: #WAEnterpriseAuberginesStra
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAEnterpriseAuberginesStrategy guid: (GUID fromString: '{ce821859-6a4b-4cd8-929e-cf15c3ed2f05}')!
+WAEnterpriseAuberginesStrategy guid: (GUID fromString: '{101feab7-4d37-4bf5-9cb4-469557bd27e3}')!
 
 WAEnterpriseAuberginesStrategy comment: 'I implement a session tracking strategy that emulates common JavaEE application servers (Tomcat, WildFly AS). I am similar to WACookieIfSupportedSessionTrackingStrategy.I will do the following- add a cookie named JSESSIONID- add a path parameter named jsessionid until we see a cookie, eg. /;jsessionid=1234?_k=5678'!
 
-!WAEnterpriseAuberginesStrategy categoriesForClass!Tracking! !
+!WAEnterpriseAuberginesStrategy categoriesForClass!Seaside-Session-Tracking! !
 
 !WAEnterpriseAuberginesStrategy methodsFor!
 

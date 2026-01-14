@@ -6,15 +6,15 @@ JSDecoration subclass: #JSAssignment
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JSAssignment guid: (GUID fromString: '{fd857989-5cd8-44c5-8b8a-f376d2d3c13d}')!
+JSAssignment guid: (GUID fromString: '{91ec020f-0422-45bb-94ae-f9f3d249b8fa}')!
 
 JSAssignment comment: 'I represent an assignment ot the decorated object.'!
 
-!JSAssignment categoriesForClass!Decorations! !
+!JSAssignment categoriesForClass!Javascript-Core-Decorations! !
 
 !JSAssignment methodsFor!
 
-javascriptContentOn: aStream	super javascriptContentOn: aStream.	aStream		nextPutAll: '=';		javascript: self object!
+javascriptContentOn: aRenderer	super javascriptContentOn: aRenderer.	aRenderer assignment: [ 		aRenderer render: self object ]!
 
 object	^ object!
 

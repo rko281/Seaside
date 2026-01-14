@@ -6,11 +6,11 @@ WAObject subclass: #WAConfigurationElement
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAConfigurationElement guid: (GUID fromString: '{99b47137-59fd-4997-9ec7-e709e0a9bca9}')!
+WAConfigurationElement guid: (GUID fromString: '{6c6942cf-cc0e-4997-8664-66ba1fbfd800}')!
 
 WAConfigurationElement comment: ''!
 
-!WAConfigurationElement categoriesForClass!Configuration! !
+!WAConfigurationElement categoriesForClass!Seaside-Core-Configuration! !
 
 !WAConfigurationElement methodsFor!
 

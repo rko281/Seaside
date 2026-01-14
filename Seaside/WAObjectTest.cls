@@ -6,11 +6,11 @@ TestCase subclass: #WAObjectTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAObjectTest guid: (GUID fromString: '{1da3c812-088c-4fa9-a002-009d57f55e2b}')!
+WAObjectTest guid: (GUID fromString: '{92a376a5-741f-40a9-a5d4-d71ea9f4ecce}')!
 
 WAObjectTest comment: 'I contain unit tests for WAObject.'!
 
-!WAObjectTest categoriesForClass!Base! !
+!WAObjectTest categoriesForClass!Seaside-Tests-Core-Base! !
 
 !WAObjectTest methodsFor!
 

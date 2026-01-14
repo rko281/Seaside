@@ -6,15 +6,15 @@ JSMember subclass: #JSProperty
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JSProperty guid: (GUID fromString: '{f224e5e6-81b2-4364-9a81-84d843448c41}')!
+JSProperty guid: (GUID fromString: '{fac78fe6-d574-4b52-91b5-94cf8f42b64b}')!
 
 JSProperty comment: 'I access a property of the decorated object.'!
 
-!JSProperty categoriesForClass!Decorations! !
+!JSProperty categoriesForClass!Javascript-Core-Decorations! !
 
 !JSProperty methodsFor!
 
-javascriptContentOn: aStream	super javascriptContentOn: aStream.	aStream		nextPut: $[;		javascript: self name;		nextPut: $]! !
+javascriptContentOn: aRenderer	super javascriptContentOn: aRenderer.	aRenderer bracketProperty: self name! !
 
 !JSProperty categoriesForMethods!
 javascriptContentOn:!printing!public! !

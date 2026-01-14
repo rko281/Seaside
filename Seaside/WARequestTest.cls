@@ -6,11 +6,11 @@ TestCase subclass: #WARequestTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WARequestTest guid: (GUID fromString: '{819c072d-c9e8-4861-9cbe-859df8b9b390}')!
+WARequestTest guid: (GUID fromString: '{ed87b755-064e-45f0-81db-524da5eb32e5}')!
 
 WARequestTest comment: ''!
 
-!WARequestTest categoriesForClass!HTTP! !
+!WARequestTest categoriesForClass!Seaside-Tests-Core-HTTP! !
 
 !WARequestTest methodsFor!
 

@@ -6,11 +6,11 @@ WAContextTest subclass: #WAHandlerTrackingStrategyTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAHandlerTrackingStrategyTest guid: (GUID fromString: '{26cbd9bd-d43d-48da-ad14-3078c7518735}')!
+WAHandlerTrackingStrategyTest guid: (GUID fromString: '{445ae95b-072e-41da-9233-25a560eb2a97}')!
 
 WAHandlerTrackingStrategyTest comment: ''!
 
-!WAHandlerTrackingStrategyTest categoriesForClass!RequestHandling! !
+!WAHandlerTrackingStrategyTest categoriesForClass!Seaside-Tests-Core-RequestHandling! !
 
 !WAHandlerTrackingStrategyTest methodsFor!
 

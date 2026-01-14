@@ -6,11 +6,11 @@ JQBaseTheme subclass: #JQExciteBikeTheme
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQExciteBikeTheme guid: (GUID fromString: '{8098634e-cb31-4c50-9942-68fcdfebdac9}')!
+JQExciteBikeTheme guid: (GUID fromString: '{0b2b9139-4dff-4e06-8bf3-0692f595815c}')!
 
 JQExciteBikeTheme comment: ''!
 
-!JQExciteBikeTheme categoriesForClass!Libraries! !
+!JQExciteBikeTheme categoriesForClass!JQuery-UI-Libraries! !
 
 !JQExciteBikeTheme methodsFor!
 

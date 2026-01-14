@@ -6,11 +6,11 @@ WAContextTest subclass: #JSObjectTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JSObjectTest guid: (GUID fromString: '{b7c6dea8-47cd-4f95-91d1-ad47a73913b6}')!
+JSObjectTest guid: (GUID fromString: '{0d11ccb9-2160-4898-a172-e904d633562c}')!
 
 JSObjectTest comment: ''!
 
-!JSObjectTest categoriesForClass!Unclassified! !
+!JSObjectTest categoriesForClass!Javascript-Tests-Core! !
 
 !JSObjectTest methodsFor!
 

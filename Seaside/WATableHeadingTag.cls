@@ -6,11 +6,11 @@ WATableDataTag subclass: #WATableHeadingTag
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WATableHeadingTag guid: (GUID fromString: '{b5c2c12e-f2d1-454d-ba5d-a110571ccc44}')!
+WATableHeadingTag guid: (GUID fromString: '{4f37e7c2-198b-4b3c-bbc4-e4ed04a77cc8}')!
 
 WATableHeadingTag comment: 'The WATableHeadingTag defines a table header cell in a table. The text within the th element usually renders in bold.'!
 
-!WATableHeadingTag categoriesForClass!Tags! !
+!WATableHeadingTag categoriesForClass!Seaside-Canvas-Tags! !
 
 !WATableHeadingTag methodsFor!
 

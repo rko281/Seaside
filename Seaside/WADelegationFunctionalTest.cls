@@ -6,11 +6,11 @@ WAFunctionalTest subclass: #WADelegationFunctionalTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WADelegationFunctionalTest guid: (GUID fromString: '{1b87b37e-6d79-409b-9044-efdd23d9e6c8}')!
+WADelegationFunctionalTest guid: (GUID fromString: '{bf665965-2304-4ec1-ac68-85ed7ed29489}')!
 
 WADelegationFunctionalTest comment: 'http://code.google.com/p/seaside/issues/detail?id=71'!
 
-!WADelegationFunctionalTest categoriesForClass!Unclassified! !
+!WADelegationFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
 
 !WADelegationFunctionalTest methodsFor!
 

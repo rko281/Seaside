@@ -6,11 +6,11 @@ WAWidgetDecoration subclass: #WADelayedAnswerDecoration
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WADelayedAnswerDecoration guid: (GUID fromString: '{2d28b12f-2220-4504-aaed-a172eb848605}')!
+WADelayedAnswerDecoration guid: (GUID fromString: '{859a5e85-f35a-4b7e-95a4-15bbda7bcad9}')!
 
 WADelayedAnswerDecoration comment: 'WADelayedAnswerDecoration adds a delay in displaying a component. See WADelayFunctionalTest for sample usage.Select ''Delay" tab of the Functional Seaside Test Suite to run an example  (http://127.0.0.1:xxxx/tests/functional/WADelayFunctionalTest)Instance Variables:	delay	<Integer>	delay length in seconds '!
 
-!WADelayedAnswerDecoration categoriesForClass!Decorations! !
+!WADelayedAnswerDecoration categoriesForClass!Seaside-Widgets-Decorations! !
 
 !WADelayedAnswerDecoration methodsFor!
 

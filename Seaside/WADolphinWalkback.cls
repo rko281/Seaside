@@ -1,14 +1,18 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAWalkback subclass: #WADolphinWalkback
 	instanceVariableNames: 'frames'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WADolphinWalkback guid: (GUID fromString: '{81c29edd-082f-4104-8099-5ae2fb92d3d2}')!
+
 WADolphinWalkback comment: 'Previous implementation of WASqueakWalkback
 probably has things to fix'!
+
 !WADolphinWalkback categoriesForClass!Unclassified! !
+
 !WADolphinWalkback methodsFor!
 
 frameCount
@@ -87,14 +91,17 @@ tempNamesAndValuesIn: aContext do: aTwoArgumentBlock
 				aTwoArgumentBlock
 					value: each
 					value: (aContext tempAt: (tempNames indexOf: each)) ] ]! !
-!WADolphinWalkback categoriesFor: #frameCount!accessing!public! !
-!WADolphinWalkback categoriesFor: #frames!accessing!public! !
-!WADolphinWalkback categoriesFor: #initializeWithException:!initialization!public! !
-!WADolphinWalkback categoriesFor: #renderObject:labelled:on:!public!rendering-stack! !
-!WADolphinWalkback categoriesFor: #renderStackFrame:on:!public!rendering-stack! !
-!WADolphinWalkback categoriesFor: #renderStackOn:!public!rendering! !
-!WADolphinWalkback categoriesFor: #safePrintString:!private! !
-!WADolphinWalkback categoriesFor: #tempNamesAndValuesIn:do:!private! !
+
+!WADolphinWalkback categoriesForMethods!
+frameCount!accessing!public! !
+frames!accessing!public! !
+initializeWithException:!initialization!public! !
+renderObject:labelled:on:!public!rendering-stack! !
+renderStackFrame:on:!public!rendering-stack! !
+renderStackOn:!public!rendering! !
+safePrintString:!private! !
+tempNamesAndValuesIn:do:!private! !
+!
 
 !WADolphinWalkback class methodsFor!
 
@@ -103,6 +110,9 @@ initialize
 
 unload
 	self unselect! !
-!WADolphinWalkback class categoriesFor: #initialize!class initialization!public! !
-!WADolphinWalkback class categoriesFor: #unload!class initialization!public! !
+
+!WADolphinWalkback class categoriesForMethods!
+initialize!class initialization!public! !
+unload!class initialization!public! !
+!
 

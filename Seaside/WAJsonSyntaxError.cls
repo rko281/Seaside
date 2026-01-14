@@ -6,9 +6,9 @@ WAError subclass: #WAJsonSyntaxError
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAJsonSyntaxError guid: (GUID fromString: '{cada564c-3ee0-4c88-be36-99cdfff7becf}')!
+WAJsonSyntaxError guid: (GUID fromString: '{f80aeb40-2376-41d8-8d44-464dde463de6}')!
 
 WAJsonSyntaxError comment: 'A WAJsonSyntaxError signals invalid JSON input.'!
 
-!WAJsonSyntaxError categoriesForClass!Base! !
+!WAJsonSyntaxError categoriesForClass!Seaside-JSON-Core-Base! !
 

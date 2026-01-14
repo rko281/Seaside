@@ -6,11 +6,11 @@ WAStringLibraryEditor subclass: #WAFileLibraryEditor
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAFileLibraryEditor guid: (GUID fromString: '{eb8068fd-0d4e-4b90-989b-0e800bafc2d7}')!
+WAFileLibraryEditor guid: (GUID fromString: '{7c1f1a9d-0b1c-4132-ad3c-46cbdd494fd5}')!
 
 WAFileLibraryEditor comment: ''!
 
-!WAFileLibraryEditor categoriesForClass!Unclassified! !
+!WAFileLibraryEditor categoriesForClass!Seaside-Tools-Web! !
 
 !WAFileLibraryEditor methodsFor!
 

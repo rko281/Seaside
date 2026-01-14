@@ -6,11 +6,11 @@ WAActionCallback subclass: #WACancelActionCallback
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WACancelActionCallback guid: (GUID fromString: '{d10f938d-b65e-4616-b3db-ac50472f0cfe}')!
+WACancelActionCallback guid: (GUID fromString: '{3c5ba59c-a167-4448-8866-e8ddaf720c64}')!
 
 WACancelActionCallback comment: ''!
 
-!WACancelActionCallback categoriesForClass!Callbacks! !
+!WACancelActionCallback categoriesForClass!Seaside-Core-Callbacks! !
 
 !WACancelActionCallback methodsFor!
 

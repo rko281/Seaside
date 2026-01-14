@@ -6,11 +6,11 @@ WAContextTest subclass: #WALegacyRedirectionHandlerTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WALegacyRedirectionHandlerTest guid: (GUID fromString: '{fa8d622d-279a-4410-93f5-17b4c1363430}')!
+WALegacyRedirectionHandlerTest guid: (GUID fromString: '{4999b618-b453-4c31-b022-05ee30bc0b4d}')!
 
 WALegacyRedirectionHandlerTest comment: ''!
 
-!WALegacyRedirectionHandlerTest categoriesForClass!Base! !
+!WALegacyRedirectionHandlerTest categoriesForClass!Seaside-Tests-Environment-Base! !
 
 !WALegacyRedirectionHandlerTest methodsFor!
 

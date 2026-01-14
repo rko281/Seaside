@@ -6,11 +6,11 @@ WAFunctionalTest subclass: #WAPopupFunctionalTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAPopupFunctionalTest guid: (GUID fromString: '{bbe16cf1-af07-4269-806a-7f41fadbf6e9}')!
+WAPopupFunctionalTest guid: (GUID fromString: '{ad57a12a-4d2d-4bde-a05c-9e16de0b341f}')!
 
 WAPopupFunctionalTest comment: ''!
 
-!WAPopupFunctionalTest categoriesForClass!Unclassified! !
+!WAPopupFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
 
 !WAPopupFunctionalTest methodsFor!
 

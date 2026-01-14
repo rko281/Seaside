@@ -6,11 +6,11 @@ WABrush subclass: #WAJsonBrush
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAJsonBrush guid: (GUID fromString: '{9ac4acba-4def-4309-ba6f-1a5236d1cd19}')!
+WAJsonBrush guid: (GUID fromString: '{4918c47f-3a53-4e4c-af78-27a5af22c5d5}')!
 
 WAJsonBrush comment: 'A brush to generate JSON'!
 
-!WAJsonBrush categoriesForClass!Brushes! !
+!WAJsonBrush categoriesForClass!Seaside-JSON-Core-Brushes! !
 
 !WAJsonBrush methodsFor!
 

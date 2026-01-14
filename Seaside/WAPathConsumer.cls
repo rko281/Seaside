@@ -6,11 +6,11 @@ WAObject subclass: #WAPathConsumer
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAPathConsumer guid: (GUID fromString: '{5fe2eafa-8d97-4d52-8f63-b50e2acd8510}')!
+WAPathConsumer guid: (GUID fromString: '{8a8fe6d2-ccf2-496c-9a01-3d7555811b95}')!
 
 WAPathConsumer comment: 'A WAPathConsumer keeps track of the unconsumed path elements in request handling.Image the following request path:/start/middle/endand a dispatcher mapped at ''start'' and an application mapped at ''middle''.First nothing at all would be consumed so the unconsumed path would be #(''start'' ''middle'' ''end'').Then the dispatcher consumes ''start'' and delegates to the application so the unconsumed path would be #(''middle'' ''end'').Then the application consumes ''middle'' so the unconsumed path would be #(''end'').In that caseself requestContext consumer peekinside an #initialRequest: should answer ''end''.Instance Variables	path:		<Collection<String>>path	- the collection of unconsumed path elements'!
 
-!WAPathConsumer categoriesForClass!RequestHandling! !
+!WAPathConsumer categoriesForClass!Seaside-Core-RequestHandling! !
 
 !WAPathConsumer methodsFor!
 

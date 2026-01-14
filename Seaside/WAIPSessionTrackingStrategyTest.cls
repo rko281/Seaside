@@ -6,11 +6,11 @@ WAInvisibleSessionTrackingStrategyTest subclass: #WAIPSessionTrackingStrategyTes
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAIPSessionTrackingStrategyTest guid: (GUID fromString: '{11ad40eb-067b-4d12-9ddf-0a67e1e59dc9}')!
+WAIPSessionTrackingStrategyTest guid: (GUID fromString: '{57d9956b-f44b-4715-a21d-2a014f514dc0}')!
 
 WAIPSessionTrackingStrategyTest comment: ''!
 
-!WAIPSessionTrackingStrategyTest categoriesForClass!Unclassified! !
+!WAIPSessionTrackingStrategyTest categoriesForClass!Seaside-Tests-Session! !
 
 !WAIPSessionTrackingStrategyTest methodsFor!
 

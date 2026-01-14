@@ -6,11 +6,11 @@ JQUiFunctionalTest subclass: #JQSortableFunctionalTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQSortableFunctionalTest guid: (GUID fromString: '{4bab280e-e798-42fe-9a72-ed4cfef3a557}')!
+JQSortableFunctionalTest guid: (GUID fromString: '{4f919219-60aa-4cc4-bc2c-63bfa8e28fe3}')!
 
 JQSortableFunctionalTest comment: ''!
 
-!JQSortableFunctionalTest categoriesForClass!Functional! !
+!JQSortableFunctionalTest categoriesForClass!JQuery-Tests-UI-Functional! !
 
 !JQSortableFunctionalTest methodsFor!
 

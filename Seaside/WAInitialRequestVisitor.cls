@@ -6,11 +6,11 @@ WAPainterVisitor subclass: #WAInitialRequestVisitor
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAInitialRequestVisitor guid: (GUID fromString: '{41d0e5f5-58bc-4b3a-95f4-546e13d6f88d}')!
+WAInitialRequestVisitor guid: (GUID fromString: '{497c3e0e-c062-4b0f-b800-1c833cf7c56f}')!
 
 WAInitialRequestVisitor comment: ''!
 
-!WAInitialRequestVisitor categoriesForClass!Visitors! !
+!WAInitialRequestVisitor categoriesForClass!Seaside-Component-Visitors! !
 
 !WAInitialRequestVisitor methodsFor!
 

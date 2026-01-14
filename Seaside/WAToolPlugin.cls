@@ -6,11 +6,11 @@ WAPlugin subclass: #WAToolPlugin
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAToolPlugin guid: (GUID fromString: '{400a5975-5242-47f2-a158-e9f51d9b7970}')!
+WAToolPlugin guid: (GUID fromString: '{06ccda85-788d-453b-9c5e-3667bd8d5be5}')!
 
 WAToolPlugin comment: 'Abstract root class for all development tool bar tools.'!
 
-!WAToolPlugin categoriesForClass!Plugins! !
+!WAToolPlugin categoriesForClass!Seaside-Development-Plugins! !
 
 !WAToolPlugin methodsFor!
 

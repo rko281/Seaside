@@ -6,11 +6,11 @@ WAHaloPlugin subclass: #WAInspectorHaloPlugin
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAInspectorHaloPlugin guid: (GUID fromString: '{dff112b3-138f-46c2-9501-6debf81caf2d}')!
+WAInspectorHaloPlugin guid: (GUID fromString: '{da8a1553-3ea5-4c1e-a766-cdfc7fb60887}')!
 
 WAInspectorHaloPlugin comment: 'I open an inspector on the component class.'!
 
-!WAInspectorHaloPlugin categoriesForClass!Plugins! !
+!WAInspectorHaloPlugin categoriesForClass!Seaside-Development-Plugins! !
 
 !WAInspectorHaloPlugin methodsFor!
 

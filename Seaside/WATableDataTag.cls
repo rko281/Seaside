@@ -6,11 +6,11 @@ WATableCellTag subclass: #WATableDataTag
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WATableDataTag guid: (GUID fromString: '{56f566fc-19f5-449d-acb5-5a2fe34e15f8}')!
+WATableDataTag guid: (GUID fromString: '{206dfb34-c8d4-48bc-a430-996f558e3cc8}')!
 
 WATableDataTag comment: 'The WATableDataTag defines a cell in a table.'!
 
-!WATableDataTag categoriesForClass!Tags! !
+!WATableDataTag categoriesForClass!Seaside-Canvas-Tags! !
 
 !WATableDataTag methodsFor!
 

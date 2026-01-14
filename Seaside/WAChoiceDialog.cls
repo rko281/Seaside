@@ -6,11 +6,11 @@ WAFormDialog subclass: #WAChoiceDialog
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAChoiceDialog guid: (GUID fromString: '{1e264cb0-39bf-45b5-a1d9-b75b0b414360}')!
+WAChoiceDialog guid: (GUID fromString: '{a58f2c29-ca3f-4186-b2ff-80a9ca60b364}')!
 
 WAChoiceDialog comment: 'WAChoiceDialog produces a form with select tag (dropdown menu) on a collection of options and "Ok" and "Cancel" buttons. Options can be any object. Returns actual object selected or nil if user select "Cancel". WAChoiceDialog is used to implement the chooseFrom:caption: convenience method in WAComponent.	| selection |	selection := WAChoiceDialog options: #(''Smalltalk'' ''Perl'' ''Python'' ''Ruby'' 9).	result := self call: selection.	self inform: result printStringInstance Variables:	options	<Collection of Objects> objects in list	selection	<Object>	object selected by user or nil if user cancels'!
 
-!WAChoiceDialog categoriesForClass!Components! !
+!WAChoiceDialog categoriesForClass!Seaside-Widgets-Components! !
 
 !WAChoiceDialog methodsFor!
 

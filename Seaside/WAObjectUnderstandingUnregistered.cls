@@ -6,11 +6,11 @@ WAObject subclass: #WAObjectUnderstandingUnregistered
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAObjectUnderstandingUnregistered guid: (GUID fromString: '{f46a9be7-382b-41a5-a5a0-468b27869c98}')!
+WAObjectUnderstandingUnregistered guid: (GUID fromString: '{2d41d270-8b2d-4a39-b531-c5a026496f58}')!
 
 WAObjectUnderstandingUnregistered comment: ''!
 
-!WAObjectUnderstandingUnregistered categoriesForClass!Cache! !
+!WAObjectUnderstandingUnregistered categoriesForClass!Seaside-Tests-Core-Cache! !
 
 !WAObjectUnderstandingUnregistered methodsFor!
 

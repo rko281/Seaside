@@ -6,11 +6,11 @@ WABrush subclass: #WATagBrush
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WATagBrush guid: (GUID fromString: '{026ac22e-117b-4650-ad63-5f0d10ac82bb}')!
+WATagBrush guid: (GUID fromString: '{f4e749de-af22-4f7e-b441-7bc54b828e52}')!
 
 WATagBrush comment: 'This is the superclass for all XML element classes. Its main additions are- element name (#tag)- attributes (instance of WAHtmlAttributes)- common events (onXXX), this is a hack and would better be solved with traits'!
 
-!WATagBrush categoriesForClass!Base! !
+!WATagBrush categoriesForClass!Seaside-Canvas-Base! !
 
 !WATagBrush methodsFor!
 
@@ -28,6 +28,8 @@ attributeAt: aKey ifPresent: aBlock	^ self attributes at: aKey ifPresent: aBloc
 
 attributeAt: aKey put: aValue	^ self attributes at: aKey put: aValue!
 
+attributeAt: aKey put: aValue if: aBoolean	^ aBoolean ifTrue:[ self attributes at: aKey put: aValue ]!
+
 attributes	^ attributes ifNil: [ attributes := WAHtmlAttributes new ]!
 
 attributes: anHtmlAttributes	attributes := anHtmlAttributes!
@@ -42,9 +44,9 @@ class: aString if: aBoolean	"Adds the class aString to the receiving element if
 
 closeTag	"Close the receiving tag onto the document."	self document closeTag: self tag!
 
-dataAttributeAt: aString put: aValue	self attributeAt: 'data-',aString put: aValue!
+dataAttributeAt: aString put: aValue	^ self attributeAt: 'data-',aString put: aValue!
 
-dataAttributeAt: aString put: aValue if: aBoolean	aBoolean ifTrue:[ self dataAttributeAt: aString put: aValue ]!
+dataAttributeAt: aString put: aValue if: aBoolean	^ aBoolean ifTrue:[ self dataAttributeAt: aString put: aValue ]!
 
 direction: aString	"Set the text direction ltr (left-to-right) or right-to-left (rtl).	Not supported on:	APPLET, BASE, BASEFONT, BR, FRAME, FRAMESET, IFRAME, PARAM, SCRIPT"	self attributes at: 'dir' put: aString!
 
@@ -186,6 +188,7 @@ attributeAt:ifAbsent:!accessing/attributes!public! !
 attributeAt:ifAbsentPut:!accessing/attributes!public! !
 attributeAt:ifPresent:!accessing/attributes!public! !
 attributeAt:put:!accessing/attributes!public! !
+attributeAt:put:if:!accessing/attributes!public! !
 attributes!accessing!public! !
 attributes:!accessing!public! !
 autofocus!attributes!public! !

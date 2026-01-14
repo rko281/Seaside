@@ -6,11 +6,11 @@ WARequestHandler subclass: #WALegacyRedirectionHandler
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WALegacyRedirectionHandler guid: (GUID fromString: '{142736c7-ae72-4f2b-a890-fa81ace710be}')!
+WALegacyRedirectionHandler guid: (GUID fromString: '{f8c1aa11-c865-4901-9712-c102073bb86c}')!
 
 WALegacyRedirectionHandler comment: 'I provide compatibility with old Seaside URLs that have Seaside in the path (eg. ''/seaside/examples/counter'') by simply removing it.'!
 
-!WALegacyRedirectionHandler categoriesForClass!Unclassified! !
+!WALegacyRedirectionHandler categoriesForClass!Seaside-Environment! !
 
 !WALegacyRedirectionHandler methodsFor!
 

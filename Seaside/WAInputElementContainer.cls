@@ -6,11 +6,11 @@ WAComponent subclass: #WAInputElementContainer
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAInputElementContainer guid: (GUID fromString: '{faabab44-35e4-4b38-ab84-cc29d083fabb}')!
+WAInputElementContainer guid: (GUID fromString: '{ad490d7c-6816-4bee-b022-9d97701ffcd9}')!
 
 WAInputElementContainer comment: ''!
 
-!WAInputElementContainer categoriesForClass!Unclassified! !
+!WAInputElementContainer categoriesForClass!Seaside-Tests-Functional! !
 
 !WAInputElementContainer methodsFor!
 

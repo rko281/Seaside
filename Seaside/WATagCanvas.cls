@@ -6,11 +6,11 @@ WACanvas subclass: #WATagCanvas
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WATagCanvas guid: (GUID fromString: '{ed1b719c-66a4-4343-be26-f3998d556b37}')!
+WATagCanvas guid: (GUID fromString: '{1ddd741f-e258-4d8e-8ff3-d4b20180b26a}')!
 
 WATagCanvas comment: 'I am the abstract superclass for tag based canvases.'!
 
-!WATagCanvas categoriesForClass!Canvas! !
+!WATagCanvas categoriesForClass!Seaside-Canvas-Canvas! !
 
 !WATagCanvas methodsFor!
 

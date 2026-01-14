@@ -6,11 +6,11 @@ WAWidgetDecoration subclass: #WAMessageDecoration
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAMessageDecoration guid: (GUID fromString: '{ba965e07-216c-43b7-8466-8ff70a917e10}')!
+WAMessageDecoration guid: (GUID fromString: '{239a6342-6119-4477-be03-70c41a9899b4}')!
 
 WAMessageDecoration comment: 'I add a string message on top of the WAComponent I decorate. For example if change WACounter>>initialize as below the text "Counter Example" will appear on above the counter when rendered.WACounter>>initialize	super initialize.	self count: 0.	self addMessage: ''Counter Example''	"added line"'!
 
-!WAMessageDecoration categoriesForClass!Decorations! !
+!WAMessageDecoration categoriesForClass!Seaside-Widgets-Decorations! !
 
 !WAMessageDecoration methodsFor!
 

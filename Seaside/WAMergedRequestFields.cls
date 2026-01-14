@@ -6,11 +6,11 @@ WAObject subclass: #WAMergedRequestFields
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAMergedRequestFields guid: (GUID fromString: '{751235af-ab71-4f6c-a73d-f4f941e160af}')!
+WAMergedRequestFields guid: (GUID fromString: '{a5c4f478-8b33-4e1d-a9be-0e4ab136c3ac}')!
 
 WAMergedRequestFields comment: 'Provides a read-only view onto multiple dictionaries. Note that this can lead to to duplicated keys that can only retrieved by iterating over all the associations.'!
 
-!WAMergedRequestFields categoriesForClass!HTTP! !
+!WAMergedRequestFields categoriesForClass!Seaside-Core-HTTP! !
 
 !WAMergedRequestFields methodsFor!
 

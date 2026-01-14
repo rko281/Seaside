@@ -6,11 +6,11 @@ WAObject subclass: #WAAbstractFile
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAAbstractFile guid: (GUID fromString: '{cdc1f486-7429-4c67-ae78-2da8532a4993}')!
+WAAbstractFile guid: (GUID fromString: '{fdedfe05-7ba0-4e07-9bf9-b4b398d5de9e}')!
 
 WAAbstractFile comment: ''!
 
-!WAAbstractFile categoriesForClass!HTTP! !
+!WAAbstractFile categoriesForClass!Seaside-Core-HTTP! !
 
 !WAAbstractFile methodsFor!
 

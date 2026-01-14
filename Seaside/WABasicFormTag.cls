@@ -6,11 +6,11 @@ WATagBrush subclass: #WABasicFormTag
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WABasicFormTag guid: (GUID fromString: '{c583964d-f5c9-4a3b-a966-9e88046fe625}')!
+WABasicFormTag guid: (GUID fromString: '{980df1cd-ad28-44cd-b6c7-ada7ab9ac8ac}')!
 
 WABasicFormTag comment: 'Acts as a basic form, with no defaultAction, and no holding of _s and _c values.'!
 
-!WABasicFormTag categoriesForClass!Tags! !
+!WABasicFormTag categoriesForClass!Seaside-Canvas-Tags! !
 
 !WABasicFormTag methodsFor!
 

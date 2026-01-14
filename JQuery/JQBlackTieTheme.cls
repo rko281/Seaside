@@ -6,11 +6,11 @@ JQBaseTheme subclass: #JQBlackTieTheme
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQBlackTieTheme guid: (GUID fromString: '{6a8e2c39-754d-470c-b85f-7e103b99ad80}')!
+JQBlackTieTheme guid: (GUID fromString: '{69de6727-a4fd-4d67-9f9a-4e88a6f6fcb2}')!
 
 JQBlackTieTheme comment: ''!
 
-!JQBlackTieTheme categoriesForClass!Libraries! !
+!JQBlackTieTheme categoriesForClass!JQuery-UI-Libraries! !
 
 !JQBlackTieTheme methodsFor!
 

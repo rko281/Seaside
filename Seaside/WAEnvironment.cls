@@ -6,11 +6,11 @@ WAObject subclass: #WAEnvironment
 	poolDictionaries: ''
 	classInstanceVariableNames: 'configuredApplicationDefaults'!
 
-WAEnvironment guid: (GUID fromString: '{254d9889-76a2-4abe-a1a7-5ee022239e3b}')!
+WAEnvironment guid: (GUID fromString: '{6db4e60c-c3ef-41c8-968a-69d1c6480eba}')!
 
 WAEnvironment comment: 'I am a utility class used to initialize and provide a default environment.'!
 
-!WAEnvironment categoriesForClass!Unclassified! !
+!WAEnvironment categoriesForClass!Seaside-Environment! !
 
 !WAEnvironment class methodsFor!
 

@@ -6,11 +6,11 @@ WAMediaElementTag subclass: #WAVideoTag
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAVideoTag guid: (GUID fromString: '{a3e3fff3-a090-40a8-b03f-bf52263b8597}')!
+WAVideoTag guid: (GUID fromString: '{f17ea157-6a4a-46b9-8367-6d10e1dbd3bc}')!
 
 WAVideoTag comment: 'Supported only on experimental Operahttp://people.opera.com/howcome/2007/video/A video element represents a video or movie, with an alternate representation given by its contents.http://www.whatwg.org/specs/web-apps/current-work/#videohttp://lists.whatwg.org/pipermail/whatwg-whatwg.org/attachments/20070228/6a0cdddc/attachment.txt'!
 
-!WAVideoTag categoriesForClass!Tags! !
+!WAVideoTag categoriesForClass!Seaside-Canvas-Tags! !
 
 !WAVideoTag methodsFor!
 

@@ -6,11 +6,11 @@ WAApplication subclass: #WARedirectingApplication
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WARedirectingApplication guid: (GUID fromString: '{0f737824-3736-4e14-9a0c-890d5ae62b2a}')!
+WARedirectingApplication guid: (GUID fromString: '{a3dc7e93-8e96-403c-8583-8eb45b2a62c5}')!
 
 WARedirectingApplication comment: 'I revert to the old < 3.3.0 behavior which is easier for tests.'!
 
-!WARedirectingApplication categoriesForClass!Unclassified! !
+!WARedirectingApplication categoriesForClass!Seaside-Tests-Session! !
 
 !WARedirectingApplication methodsFor!
 

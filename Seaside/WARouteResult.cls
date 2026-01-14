@@ -6,11 +6,11 @@ WAObject subclass: #WARouteResult
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WARouteResult guid: (GUID fromString: '{8789cd99-dd6b-47a3-8f4a-ad36d035b782}')!
+WARouteResult guid: (GUID fromString: '{ebd7f60d-b340-4a47-8cf2-dd497b670a40}')!
 
-WARouteResult comment: 'I am the result of a route look up. I contain all the information required to "execute" the result.Instance Variables:	route	<WARoute>	elements	<Collection<String>>	parameters	<WARequestFields>		route	the found route	elements	the unconsumed path elements of the request	parameters	the query fields of the request'!
+WARouteResult comment: 'I am the result of a route look up. I contain all the information required to "execute" the result.Instance Variables:	route			<WARoute>: the found route	elements		<Collection<String>>: the unconsumed path elements of the request	parameters	<WARequestFields>: the query fields of the request'!
 
-!WARouteResult categoriesForClass!Route! !
+!WARouteResult categoriesForClass!Seaside-REST-Core-Route! !
 
 !WARouteResult methodsFor!
 

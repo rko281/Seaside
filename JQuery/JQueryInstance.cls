@@ -6,11 +6,11 @@ JQuery subclass: #JQueryInstance
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQueryInstance guid: (GUID fromString: '{16277944-1b26-4bd2-813d-f0110b957da4}')!
+JQueryInstance guid: (GUID fromString: '{a2635cb2-2115-4878-adbf-0214b3120b52}')!
 
 JQueryInstance comment: ''!
 
-!JQueryInstance categoriesForClass!Objects! !
+!JQueryInstance categoriesForClass!JQuery-Core-Objects! !
 
 !JQueryInstance methodsFor!
 
@@ -22,11 +22,11 @@ addBack	"Add the previous set of elements on the stack to the current set."	se
 
 addClass: aString	"Adds the specified class(es) to each of the set of matched elements."		self call: 'addClass' with: aString!
 
-after: aRenderable 	"Insert content, specified by the parameter, after each element in the set of matched elements."		self call: 'after' with: (self render: aRenderable)!
+after: aRenderable 	"Insert content, specified by the parameter, after each element in the set of matched elements."		self call: 'after' with: (self jsStringWith: aRenderable)!
 
 animate	"Perform a custom animation of a set of CSS properties."		^ self create: JQAnimate!
 
-append: aRenderable 	"Insert content, specified by the parameter, to the end of each element in the set of matched elements."		self call: 'append' with: (self render: aRenderable)!
+append: aRenderable 	"Insert content, specified by the parameter, to the end of each element in the set of matched elements."		self call: 'append' with: (self jsStringWith: aRenderable)!
 
 appendTo: anObject 	"Insert every element in the set of matched elements to the end of the target."		self call: 'appendTo' with: anObject!
 
@@ -40,7 +40,7 @@ attributeAt: aKey put: aValue	"Set an attribute for the set of matched elements
 
 attributes: aDictionary 	"Set one or more attributes for the set of matched elements."		self call: 'attr' with: aDictionary!
 
-before: aRenderable 	"Insert content, specified by the parameter, before each element in the set of matched elements."		self call: 'before' with: (self render: aRenderable)!
+before: aRenderable 	"Insert content, specified by the parameter, before each element in the set of matched elements."		self call: 'before' with: (self jsStringWith: aRenderable)!
 
 bind: aString data: aDataObject  do: anObject	self 		greaseDeprecatedApi: 'JQueryInstance>>#bind:do:'		details: 'See https://jquery.com/upgrade-guide/3.0/#deprecated-bind-and-delegate'.		self call: 'bind' with: aString with: aDataObject with: anObject asFunction!
 
@@ -148,7 +148,7 @@ hover: anInObject out: anOutObject	"Bind two handlers to the matched elements, 
 
 html	"Get the HTML contents of the first element in the set of matched elements."		self call: 'html'!
 
-html: aRenderable 	"Set the HTML contents of matched elements."		self call: 'html' with: (self render: aRenderable)!
+html: aRenderable 	"Set the HTML contents of matched elements."		self call: 'html' with: (self jsStringWith: aRenderable)!
 
 id: aString	self setArguments: (Array with: '#' , aString)!
 
@@ -168,7 +168,7 @@ is: aString	"Check the current matched set of elements against a selector and r
 
 iteratorFor: anObject return: aBoolean	| this |	anObject isBlock		ifFalse: [ ^ anObject asFunction return: true ].	this := (JQueryClass context: self renderContext)			rendererClass: self rendererClass;			this.	anObject argumentCount = 1		ifTrue: [ anObject value: this ]		ifFalse: [ anObject value: this value: (JSStream argument: 0) ].	^ this asFunction return: aBoolean!
 
-javascriptContentOn: aStream	super javascriptContentOn: aStream.	JSStream encodeArguments: arguments on: aStream!
+javascriptContentOn: aRenderer	super javascriptContentOn: aRenderer.	aRenderer arguments: [		arguments do: [ :each |			aRenderer argument: each ] ]!
 
 last	"Reduce the set of matched elements to the final one in the set."		self call: 'last'!
 
@@ -292,7 +292,7 @@ positionLeft	"Gets the left position of an element relative to its offset paren
 
 positionTop	"Gets the top position of an element relative to its offset parent."		self position; access: 'top'!
 
-prepend: aRenderable 	"Insert content, specified by the parameter, to the beginning of each element in the set of matched elements."		self call: 'prepend' with: (self render: aRenderable)!
+prepend: aRenderable 	"Insert content, specified by the parameter, to the beginning of each element in the set of matched elements."		self call: 'prepend' with: (self jsStringWith: aRenderable)!
 
 prependTo: anObject 	"Insert every element in the set of matched elements to the beginning of the target."		self call: 'prependTo' with: anObject!
 
@@ -332,7 +332,7 @@ removeProperty: aKey 	"Remove a property from each element in the set of matche
 
 replaceAll: aString 	"A selector expression indicating which element(s) to replace."		self call: 'replaceAll' with: aString!
 
-replaceWith: aRenderable 	"Replace each element in the set of matched elements with the provided new content."		self call: 'replaceWith' with: (self render: aRenderable)!
+replaceWith: aRenderable 	"Replace each element in the set of matched elements with the provided new content."		self call: 'replaceWith' with: (self jsStringWith: aRenderable)!
 
 scrollLeft	"Get the current horizontal position of the scroll bar for the first element in the set of matched elements."		self call: 'scrollLeft'!
 
@@ -436,11 +436,11 @@ width	"Get the current computed width for the first element in the set of match
 
 width: anInteger	"Get the width for all matched elements."		self call: 'width' with: anInteger!
 
-wrap: aRenderable 	"Wrap an HTML structure around each element in the set of matched elements."		self call: 'wrap' with: (self render: aRenderable)!
+wrap: aRenderable 	"Wrap an HTML structure around each element in the set of matched elements."		self call: 'wrap' with: (self jsStringWith: aRenderable)!
 
-wrapAll: aRenderable 	"Wrap an HTML structure around all elements in the set of matched elements."		self call: 'wrapAll' with: (self render: aRenderable)!
+wrapAll: aRenderable 	"Wrap an HTML structure around all elements in the set of matched elements."		self call: 'wrapAll' with: (self jsStringWith: aRenderable)!
 
-wrapInner: aRenderable 	"Wrap an HTML structure around the content of each element in the set of matched elements."		self call: 'wrapInner' with: (self render: aRenderable)! !
+wrapInner: aRenderable 	"Wrap an HTML structure around the content of each element in the set of matched elements."		self call: 'wrapInner' with: (self jsStringWith: aRenderable)! !
 
 !JQueryInstance categoriesForMethods!
 add:!navigation!public! !

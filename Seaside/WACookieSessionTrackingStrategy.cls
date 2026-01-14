@@ -6,11 +6,11 @@ WASessionTrackingStrategy subclass: #WACookieSessionTrackingStrategy
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WACookieSessionTrackingStrategy guid: (GUID fromString: '{8d4e0da4-934c-4ac9-b63f-284853bff318}')!
+WACookieSessionTrackingStrategy guid: (GUID fromString: '{a94dcd9b-db94-45f9-9726-9ad6b7177825}')!
 
 WACookieSessionTrackingStrategy comment: 'I am the abstract base class for tracking strategies that use cookies to track sessions and query fields to track everything else.'!
 
-!WACookieSessionTrackingStrategy categoriesForClass!Tracking! !
+!WACookieSessionTrackingStrategy categoriesForClass!Seaside-Session-Tracking! !
 
 !WACookieSessionTrackingStrategy methodsFor!
 

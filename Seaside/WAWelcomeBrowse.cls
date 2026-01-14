@@ -6,11 +6,11 @@ WAComponent subclass: #WAWelcomeBrowse
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAWelcomeBrowse guid: (GUID fromString: '{f6bc991b-2d53-4f37-bc2f-8511dd5a96a4}')!
+WAWelcomeBrowse guid: (GUID fromString: '{395104f0-eb66-4094-804d-0292776502b9}')!
 
 WAWelcomeBrowse comment: ''!
 
-!WAWelcomeBrowse categoriesForClass!Base! !
+!WAWelcomeBrowse categoriesForClass!Seaside-Welcome-Base! !
 
 !WAWelcomeBrowse methodsFor!
 

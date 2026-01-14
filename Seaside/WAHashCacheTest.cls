@@ -6,11 +6,11 @@ WAExpiringCacheTest subclass: #WAHashCacheTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAHashCacheTest guid: (GUID fromString: '{9bc0448c-5375-4059-ab63-06930a9f30e7}')!
+WAHashCacheTest guid: (GUID fromString: '{09d2e7df-6292-4853-bcb3-c1d7e7955676}')!
 
 WAHashCacheTest comment: ''!
 
-!WAHashCacheTest categoriesForClass!Cache! !
+!WAHashCacheTest categoriesForClass!Seaside-Tests-Core-Cache! !
 
 !WAHashCacheTest methodsFor!
 

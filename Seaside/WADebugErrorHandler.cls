@@ -6,11 +6,11 @@ WAErrorHandler subclass: #WADebugErrorHandler
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WADebugErrorHandler guid: (GUID fromString: '{f450d9ab-85d6-4bba-8c20-5bef829941a6}')!
+WADebugErrorHandler guid: (GUID fromString: '{37e6d33b-027f-401e-b88c-096352a99dce}')!
 
 WADebugErrorHandler comment: 'I am like WAErrorHandler except that I open a debugger in the image for errors and warnings (not for internal errors).'!
 
-!WADebugErrorHandler categoriesForClass!Core! !
+!WADebugErrorHandler categoriesForClass!Seaside-Development-Core! !
 
 !WADebugErrorHandler methodsFor!
 

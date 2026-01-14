@@ -6,9 +6,9 @@ WAError subclass: #WAInvalidHeaderValueError
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAInvalidHeaderValueError guid: (GUID fromString: '{fd3c2d21-6705-4470-b58b-934961aae2b8}')!
+WAInvalidHeaderValueError guid: (GUID fromString: '{8c274fa3-663b-4f55-88c4-2b57714ba850}')!
 
 WAInvalidHeaderValueError comment: ''!
 
-!WAInvalidHeaderValueError categoriesForClass!HTTP! !
+!WAInvalidHeaderValueError categoriesForClass!Seaside-Core-HTTP! !
 

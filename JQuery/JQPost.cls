@@ -6,22 +6,22 @@ JQAjax subclass: #JQPost
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQPost guid: (GUID fromString: '{194981b0-0734-4878-b002-fd5c55f43ce7}')!
+JQPost guid: (GUID fromString: '{537ba74e-a6c3-4170-a5b0-42cf06b6e552}')!
 
 JQPost comment: 'Load a remote page using an HTTP POST request.'!
 
-!JQPost categoriesForClass!Objects! !
+!JQPost categoriesForClass!JQuery-Core-Objects! !
 
 !JQPost methodsFor!
 
-arguments	| arguments |	arguments := OrderedCollection with: self url.	self options		at: 'data'		ifPresent: [ :value | arguments add: value ].	self options		at: 'success'		ifPresent: [ :value | arguments add: value ].	self options		at: 'dataType'		ifPresent: [ :value | arguments add: value ].	^ arguments!
+argumentsDo: aBlock	aBlock value: self url.	self options		at: 'data'		ifPresent: [ :data | aBlock value: data ].	self options		at: 'success'		ifPresent: [ :success | aBlock value: success ].	self options		at: 'dataType'		ifPresent: [ :dataType | aBlock value: dataType ]!
 
 isSupportedOption: aString	^ #('url' 'data' 'success' 'dataType') includes: aString!
 
 method	^ 'post'! !
 
 !JQPost categoriesForMethods!
-arguments!accessing!public! !
+argumentsDo:!accessing!public! !
 isSupportedOption:!options!public! !
 method!accessing!public! !
 !

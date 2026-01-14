@@ -6,11 +6,11 @@ WAContextTest subclass: #WAHtmlAttributesTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAHtmlAttributesTest guid: (GUID fromString: '{4121b100-1ed4-4d1f-aedf-6f2d095e5217}')!
+WAHtmlAttributesTest guid: (GUID fromString: '{152f192d-89db-4fc4-8b5c-b81c7fa2a85c}')!
 
 WAHtmlAttributesTest comment: ''!
 
-!WAHtmlAttributesTest categoriesForClass!Document! !
+!WAHtmlAttributesTest categoriesForClass!Seaside-Tests-Core-Document! !
 
 !WAHtmlAttributesTest methodsFor!
 

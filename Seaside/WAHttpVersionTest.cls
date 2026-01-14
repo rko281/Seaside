@@ -6,11 +6,11 @@ TestCase subclass: #WAHttpVersionTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAHttpVersionTest guid: (GUID fromString: '{198479c4-98ca-4881-83d8-a8b46ece5d17}')!
+WAHttpVersionTest guid: (GUID fromString: '{2bcadde1-75ee-46f8-a64a-0563942844e0}')!
 
 WAHttpVersionTest comment: ''!
 
-!WAHttpVersionTest categoriesForClass!HTTP! !
+!WAHttpVersionTest categoriesForClass!Seaside-Tests-Core-HTTP! !
 
 !WAHttpVersionTest methodsFor!
 

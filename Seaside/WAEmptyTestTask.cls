@@ -6,11 +6,11 @@ WATask subclass: #WAEmptyTestTask
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAEmptyTestTask guid: (GUID fromString: '{e6f434f4-0e90-445d-8f3e-bd3a3559ba5b}')!
+WAEmptyTestTask guid: (GUID fromString: '{d815cddd-5a52-46ec-9d24-50708f4060a2}')!
 
 WAEmptyTestTask comment: ''!
 
-!WAEmptyTestTask categoriesForClass!Unclassified! !
+!WAEmptyTestTask categoriesForClass!Seaside-Tests-Functional! !
 
 !WAEmptyTestTask methodsFor!
 

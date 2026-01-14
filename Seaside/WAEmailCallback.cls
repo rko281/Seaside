@@ -6,11 +6,11 @@ WAValueCallback subclass: #WAEmailCallback
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAEmailCallback guid: (GUID fromString: '{203c8175-bbc3-4066-bb47-d9c6e0d9c0f9}')!
+WAEmailCallback guid: (GUID fromString: '{cfa0a634-e472-4cdc-9309-ced7db05b02b}')!
 
 WAEmailCallback comment: 'A WAEmailCallback is a callback for email input fields.'!
 
-!WAEmailCallback categoriesForClass!Callbacks! !
+!WAEmailCallback categoriesForClass!Seaside-Core-Callbacks! !
 
 !WAEmailCallback methodsFor!
 

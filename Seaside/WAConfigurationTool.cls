@@ -6,11 +6,11 @@ WAComponent subclass: #WAConfigurationTool
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAConfigurationTool guid: (GUID fromString: '{38eedfb6-42aa-46cc-9d56-2d7971be2680}')!
+WAConfigurationTool guid: (GUID fromString: '{abcfa82d-bb1e-4799-8b15-0443ee81e8a7}')!
 
 WAConfigurationTool comment: ''!
 
-!WAConfigurationTool categoriesForClass!Unclassified! !
+!WAConfigurationTool categoriesForClass!Seaside-Tools-Web! !
 
 !WAConfigurationTool methodsFor!
 

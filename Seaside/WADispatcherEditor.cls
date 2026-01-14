@@ -6,9 +6,9 @@ WAHandlerEditor subclass: #WADispatcherEditor
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WADispatcherEditor guid: (GUID fromString: '{589ec4d1-0146-4e1f-b2ff-68d2ba4a0844}')!
+WADispatcherEditor guid: (GUID fromString: '{34efe078-074e-4935-8f32-da73cd352b08}')!
 
 WADispatcherEditor comment: ''!
 
-!WADispatcherEditor categoriesForClass!Unclassified! !
+!WADispatcherEditor categoriesForClass!Seaside-Tools-Web! !
 

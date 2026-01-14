@@ -3,7 +3,6 @@ package := Package name: 'Seaside-Dolphin-REST-Core'.
 package paxVersion: 1;
 	basicComment: ''.
 
-
 package methodNames
 	add: #GRDolphinPlatform -> #argumentNamesOf:;
 	yourself.
@@ -23,18 +22,15 @@ package setManualPrerequisites: #(
 
 package!
 
-"Class Definitions"!
-
-
-"Global Aliases"!
-
-
 "Loose Methods"!
 
 !GRDolphinPlatform methodsFor!
 
 argumentNamesOf: aCompiledMethod	"Answer the argument names of a method as a sequenceable collection of strings."	^aCompiledMethod parseTree argumentNames! !
-!GRDolphinPlatform categoriesFor: #argumentNamesOf:!*seaside/rest/core!public! !
+
+!GRDolphinPlatform categoriesForMethods!
+argumentNamesOf:!*seaside/rest/core!public! !
+!
 
 "End of package definition"!
 

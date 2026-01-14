@@ -6,11 +6,11 @@ JQWidget subclass: #JQSortable
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQSortable guid: (GUID fromString: '{d7367b7e-ae0f-43a4-98b6-9c853b78e27c}')!
+JQSortable guid: (GUID fromString: '{1963b91c-03b4-4370-8023-877b2fecde30}')!
 
 JQSortable comment: 'Creates new sortable on the nodeset supplied by the query.'!
 
-!JQSortable categoriesForClass!Interaction! !
+!JQSortable categoriesForClass!JQuery-UI-Interaction! !
 
 !JQSortable methodsFor!
 

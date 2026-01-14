@@ -6,11 +6,11 @@ WAObject subclass: #WAByMethodRoutes
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAByMethodRoutes guid: (GUID fromString: '{9a6e0082-b3f1-45ba-9452-81cce9c6970a}')!
+WAByMethodRoutes guid: (GUID fromString: '{264886cf-5b0f-4253-96c9-95cf75820217}')!
 
 WAByMethodRoutes comment: 'A WAByMethodRoutes is a collection of routes first organized by HTTP method and then by number of URL path elements. It allows users to look up possible routes for a given HTTP request.See also WARouteResult and WARouteContainer.Instance Variables	routes:		<Dictionary<String, SortedCollection<WARouteContainer>>routes	- the routes keyed by HTTP method, sorted by number of path elements'!
 
-!WAByMethodRoutes categoriesForClass!Route! !
+!WAByMethodRoutes categoriesForClass!Seaside-REST-Core-Route! !
 
 !WAByMethodRoutes methodsFor!
 

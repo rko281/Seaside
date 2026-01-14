@@ -6,11 +6,11 @@ WAError subclass: #WAChildComponentShouldNotBeSelfError
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAChildComponentShouldNotBeSelfError guid: (GUID fromString: '{6082d723-00e8-47b1-a8b2-109244a137f6}')!
+WAChildComponentShouldNotBeSelfError guid: (GUID fromString: '{554bfe31-68a9-4d85-90a1-3b3b0a5fe071}')!
 
 WAChildComponentShouldNotBeSelfError comment: ''!
 
-!WAChildComponentShouldNotBeSelfError categoriesForClass!Exceptions! !
+!WAChildComponentShouldNotBeSelfError categoriesForClass!Seaside-Component-Exceptions! !
 
 !WAChildComponentShouldNotBeSelfError methodsFor!
 

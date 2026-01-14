@@ -6,11 +6,11 @@ WAContextTest subclass: #WAAbstractHtmlElementTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAAbstractHtmlElementTest guid: (GUID fromString: '{238300b5-ab39-4069-bfe8-4240fe17330d}')!
+WAAbstractHtmlElementTest guid: (GUID fromString: '{f8569c0a-5ae1-45b3-a1d3-90bd4a8555e2}')!
 
 WAAbstractHtmlElementTest comment: ''!
 
-!WAAbstractHtmlElementTest categoriesForClass!Document! !
+!WAAbstractHtmlElementTest categoriesForClass!Seaside-Tests-Core-Document! !
 
 !WAAbstractHtmlElementTest methodsFor!
 

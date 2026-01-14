@@ -6,15 +6,15 @@ JQAjax subclass: #JQLoad
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQLoad guid: (GUID fromString: '{567728e5-528c-4853-90f3-78b3ced3de5c}')!
+JQLoad guid: (GUID fromString: '{cd7560f8-d874-4345-8adc-1640a639bde4}')!
 
 JQLoad comment: 'Load HTML from a remote file and inject it into the DOM.'!
 
-!JQLoad categoriesForClass!Objects! !
+!JQLoad categoriesForClass!JQuery-Core-Objects! !
 
 !JQLoad methodsFor!
 
-arguments	| arguments |	arguments := OrderedCollection with: self selectorUrl.	self options		at: 'data'		ifPresent: [ :value | arguments add: value ].	self options		at: 'complete'		ifPresent: [ :value | arguments add: value ].	^ arguments!
+argumentsDo: aBlock	aBlock value: self selectorUrl.	self options		at: 'data'		ifPresent: [ :data | aBlock value: data ].	self options		at: 'complete'		ifPresent: [ :complete | aBlock value: complete ]!
 
 isSupportedOption: aString	^ #('url' 'data' 'complete' "(" 'dataType' ")") includes: aString!
 
@@ -25,7 +25,7 @@ selector: aString	"An additional selector filters the incoming HTML document, o
 selectorUrl	^ selector isNil 		ifTrue: [ self url ]		ifFalse: [ self url greaseString , ' ' , selector greaseString ]! !
 
 !JQLoad categoriesForMethods!
-arguments!accessing!public! !
+argumentsDo:!accessing!public! !
 isSupportedOption:!options!public! !
 method!accessing!public! !
 selector:!options!public! !

@@ -6,11 +6,11 @@ WAValuesCallback subclass: #WAMultipleValuesCallback
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAMultipleValuesCallback guid: (GUID fromString: '{9f4210c6-b700-4788-ae2f-afe55ae45a9e}')!
+WAMultipleValuesCallback guid: (GUID fromString: '{be196f1b-a5cd-4845-bf81-d837bad5adb7}')!
 
 WAMultipleValuesCallback comment: ''!
 
-!WAMultipleValuesCallback categoriesForClass!Callbacks! !
+!WAMultipleValuesCallback categoriesForClass!Seaside-Core-Callbacks! !
 
 !WAMultipleValuesCallback methodsFor!
 

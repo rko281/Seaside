@@ -6,11 +6,11 @@ WAObject subclass: #WAEmailBody
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAEmailBody guid: (GUID fromString: '{49a3a377-9591-43cb-91c9-26df67db9e1a}')!
+WAEmailBody guid: (GUID fromString: '{286cf600-9593-4bd4-87a6-3982329b8da8}')!
 
 WAEmailBody comment: 'I am the abstract superclass for email bodies.'!
 
-!WAEmailBody categoriesForClass!Base! !
+!WAEmailBody categoriesForClass!Seaside-Email-Base! !
 
 !WAEmailBody methodsFor!
 

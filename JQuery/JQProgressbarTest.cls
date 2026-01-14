@@ -6,11 +6,11 @@ JQueryUiTest subclass: #JQProgressbarTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQProgressbarTest guid: (GUID fromString: '{c0315e2c-4455-463f-8d96-88990973d078}')!
+JQProgressbarTest guid: (GUID fromString: '{8995d70d-ce65-43ca-a13f-5abc9c8b896a}')!
 
 JQProgressbarTest comment: ''!
 
-!JQProgressbarTest categoriesForClass!Unit! !
+!JQProgressbarTest categoriesForClass!JQuery-Tests-UI-Unit! !
 
 !JQProgressbarTest methodsFor!
 

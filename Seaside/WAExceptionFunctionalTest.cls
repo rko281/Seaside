@@ -6,11 +6,11 @@ WAFunctionalTest subclass: #WAExceptionFunctionalTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAExceptionFunctionalTest guid: (GUID fromString: '{f0436602-9442-47ff-b975-a5aaef7f8b43}')!
+WAExceptionFunctionalTest guid: (GUID fromString: '{1132d867-0216-4961-9e27-447a7828d6ea}')!
 
 WAExceptionFunctionalTest comment: ''!
 
-!WAExceptionFunctionalTest categoriesForClass!Unclassified! !
+!WAExceptionFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
 
 !WAExceptionFunctionalTest methodsFor!
 

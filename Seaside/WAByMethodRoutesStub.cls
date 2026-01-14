@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 Object subclass: #WAByMethodRoutesStub
 	instanceVariableNames: 'selector arguments'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAByMethodRoutesStub guid: (GUID fromString: '{b5138b35-a759-41e9-b13a-afdec9d184c8}')!
+
+WAByMethodRoutesStub guid: (GUID fromString: '{813c2218-4209-4898-8c47-7a6baee63912}')!
+
 WAByMethodRoutesStub comment: ''!
+
 !WAByMethodRoutesStub categoriesForClass!Seaside-Tests-REST-Core! !
+
 !WAByMethodRoutesStub methodsFor!
 
 arguments	^ arguments!
@@ -49,24 +53,27 @@ queryDatabase: aString	selector := #queryDatabase:.	arguments := Array with: a
 replicate	selector := #replicate.	arguments := Array new!
 
 selector	^ selector! !
-!WAByMethodRoutesStub categoriesFor: #arguments!accessing!public! !
-!WAByMethodRoutesStub categoriesFor: #compactDatabase:!public!stubs! !
-!WAByMethodRoutesStub categoriesFor: #createBulkDocumentsInDatabase:!public!stubs! !
-!WAByMethodRoutesStub categoriesFor: #createDatabase:!public!stubs! !
-!WAByMethodRoutesStub categoriesFor: #createNewDocumentInDatabase:!public!stubs! !
-!WAByMethodRoutesStub categoriesFor: #createOrUpdateDocument:inDatabase:!public!stubs! !
-!WAByMethodRoutesStub categoriesFor: #deleteDatabase:!public!stubs! !
-!WAByMethodRoutesStub categoriesFor: #deleteDocument:inDatabase:!public!stubs! !
-!WAByMethodRoutesStub categoriesFor: #getAllDatabases!public!stubs! !
-!WAByMethodRoutesStub categoriesFor: #getAllDocuments:!public!stubs! !
-!WAByMethodRoutesStub categoriesFor: #getConfig!public!stubs! !
-!WAByMethodRoutesStub categoriesFor: #getDatabase:!public!stubs! !
-!WAByMethodRoutesStub categoriesFor: #getDocument:ofDatabase:!public!stubs! !
-!WAByMethodRoutesStub categoriesFor: #getInfo!public!stubs! !
-!WAByMethodRoutesStub categoriesFor: #getStats!public!stubs! !
-!WAByMethodRoutesStub categoriesFor: #getUuids:!public!stubs! !
-!WAByMethodRoutesStub categoriesFor: #getView:inDesign:inDatabase:!public!stubs! !
-!WAByMethodRoutesStub categoriesFor: #queryDatabase:!public!stubs! !
-!WAByMethodRoutesStub categoriesFor: #replicate!public!stubs! !
-!WAByMethodRoutesStub categoriesFor: #selector!accessing!public! !
+
+!WAByMethodRoutesStub categoriesForMethods!
+arguments!accessing!public! !
+compactDatabase:!public!stubs! !
+createBulkDocumentsInDatabase:!public!stubs! !
+createDatabase:!public!stubs! !
+createNewDocumentInDatabase:!public!stubs! !
+createOrUpdateDocument:inDatabase:!public!stubs! !
+deleteDatabase:!public!stubs! !
+deleteDocument:inDatabase:!public!stubs! !
+getAllDatabases!public!stubs! !
+getAllDocuments:!public!stubs! !
+getConfig!public!stubs! !
+getDatabase:!public!stubs! !
+getDocument:ofDatabase:!public!stubs! !
+getInfo!public!stubs! !
+getStats!public!stubs! !
+getUuids:!public!stubs! !
+getView:inDesign:inDatabase:!public!stubs! !
+queryDatabase:!public!stubs! !
+replicate!public!stubs! !
+selector!accessing!public! !
+!
 

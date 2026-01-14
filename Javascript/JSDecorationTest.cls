@@ -6,11 +6,11 @@ JSObjectTest subclass: #JSDecorationTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JSDecorationTest guid: (GUID fromString: '{d3f057b2-6736-4e8e-9ef4-bf47f934a310}')!
+JSDecorationTest guid: (GUID fromString: '{abeea8d4-9e5a-48cb-ac7f-c6f0066240e8}')!
 
 JSDecorationTest comment: ''!
 
-!JSDecorationTest categoriesForClass!Unclassified! !
+!JSDecorationTest categoriesForClass!Javascript-Tests-Core! !
 
 !JSDecorationTest methodsFor!
 

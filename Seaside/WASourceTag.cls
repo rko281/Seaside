@@ -6,11 +6,11 @@ WATagBrush subclass: #WASourceTag
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WASourceTag guid: (GUID fromString: '{05e5aef9-0b3b-44c3-b990-9e13fa708d56}')!
+WASourceTag guid: (GUID fromString: '{0a50752f-37b3-4d1d-816e-e554ed386ef1}')!
 
 WASourceTag comment: 'The source element allows authors to specify multiple media resources for media elements.The source attribute must be present. Either the type  attribute, the media attribute or both, must be specified, unless this is the last source element child of the parent element.'!
 
-!WASourceTag categoriesForClass!Tags! !
+!WASourceTag categoriesForClass!Seaside-Canvas-Tags! !
 
 !WASourceTag methodsFor!
 

@@ -6,11 +6,11 @@ WAObject subclass: #WARequestContext
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WARequestContext guid: (GUID fromString: '{19de1bf5-7c50-4ff7-83f5-f1d39150d871}')!
+WARequestContext guid: (GUID fromString: '{80715630-d610-4ebb-ad5c-43b26154aa28}')!
 
 WARequestContext comment: 'WARequestContext encapsulates all the knowledge that should be available while processing a single request. It does not matter if this is a request to a static file, an AJAX request, a long Comet request or a normal Seaside requestion.The request context is valid only during the request that caused it. It should not be stored. Neither within instance variables, nor within the execution stack so that it might be captured by a continuation. In both cases this might lead to memory leaks.'!
 
-!WARequestContext categoriesForClass!RequestHandling! !
+!WARequestContext categoriesForClass!Seaside-Core-RequestHandling! !
 
 !WARequestContext methodsFor!
 
@@ -54,7 +54,9 @@ response	"Answer the current Response object."		^ response!
 
 responseGenerator	"Answer a ResponseGenerator as configured in the closest RequestHandler."	^ (self handler isNil 		ifTrue: [ WAResponseGenerator ]		ifFalse: [ self handler responseGenerator ])			on: self!
 
-shouldDestroy	^ self properties at: #shouldDestroy ifAbsent: [ true ]! !
+shouldDestroy	^ self properties at: #shouldDestroy ifAbsent: [ true ]!
+
+webSocket	^ self properties at: #webSocket ifAbsent:[ nil ]! !
 
 !WARequestContext categoriesForMethods!
 charSet!accessing!public! !
@@ -78,6 +80,7 @@ respond:!actions!public! !
 response!accessing!public! !
 responseGenerator!accessing/dynamic!public! !
 shouldDestroy!accessing!public! !
+webSocket!accessing!public! !
 !
 
 !WARequestContext class methodsFor!

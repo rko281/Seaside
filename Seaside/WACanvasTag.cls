@@ -6,11 +6,11 @@ WATagBrush subclass: #WACanvasTag
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WACanvasTag guid: (GUID fromString: '{c3f464d5-73c7-4247-a08f-d2cb4b9d04b0}')!
+WACanvasTag guid: (GUID fromString: '{d2ad669e-a108-4ba1-b1a8-d2fcc56675c0}')!
 
 WACanvasTag comment: 'supported on:- Firefox 1.5- Safari 2- Opera 9http://www.whatwg.org/specs/web-apps/current-work/#the-canvashttp://developer.mozilla.org/en/docs/Canvas_tutorial'!
 
-!WACanvasTag categoriesForClass!Tags! !
+!WACanvasTag categoriesForClass!Seaside-Canvas-Tags! !
 
 !WACanvasTag methodsFor!
 

@@ -6,11 +6,11 @@ WATableBasedEncoder subclass: #WAJsonEncoder
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAJsonEncoder guid: (GUID fromString: '{6166f857-318f-4ed1-84d3-22ed29c762ca}')!
+WAJsonEncoder guid: (GUID fromString: '{d0208c49-0327-49e2-9643-d3d95a89125c}')!
 
 WAJsonEncoder comment: 'I am an encoder for JSON format.'!
 
-!WAJsonEncoder categoriesForClass!Base! !
+!WAJsonEncoder categoriesForClass!Seaside-JSON-Core-Base! !
 
 !WAJsonEncoder methodsFor!
 

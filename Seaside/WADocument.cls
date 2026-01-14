@@ -6,11 +6,11 @@ WAObject subclass: #WADocument
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WADocument guid: (GUID fromString: '{4215336e-beb6-4d15-ae7c-507823afbe9b}')!
+WADocument guid: (GUID fromString: '{80358280-34e2-40a0-86f2-8f320c29bdf4}')!
 
 WADocument comment: 'A WADocument combines an output stream and an instance of root. The root is responsible to render header and footer if necessary.'!
 
-!WADocument categoriesForClass!Document! !
+!WADocument categoriesForClass!Seaside-Core-Document! !
 
 !WADocument methodsFor!
 

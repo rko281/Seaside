@@ -6,9 +6,9 @@ GRDynamicVariable subclass: #WADynamicVariable
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WADynamicVariable guid: (GUID fromString: '{42e95099-b73a-4694-9c76-db4b8f0b15bb}')!
+WADynamicVariable guid: (GUID fromString: '{2dfa25d3-b76a-4e7f-98b1-1f0c4259a812}')!
 
 WADynamicVariable comment: 'I exist for legacy purposes. You should subclass GRDynamicVariable.'!
 
-!WADynamicVariable categoriesForClass!Utilities! !
+!WADynamicVariable categoriesForClass!Seaside-Core-Utilities! !
 

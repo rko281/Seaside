@@ -6,11 +6,11 @@ JSDecoration subclass: #JSApply
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JSApply guid: (GUID fromString: '{1eb64382-098b-41e6-a4e3-930c5d97c696}')!
+JSApply guid: (GUID fromString: '{f299ad15-65ae-4514-ba15-75d55c1d77e5}')!
 
 JSApply comment: 'I apply a JavaScript function and provide arguments.'!
 
-!JSApply categoriesForClass!Decorations! !
+!JSApply categoriesForClass!Javascript-Core-Decorations! !
 
 !JSApply methodsFor!
 
@@ -18,11 +18,14 @@ arguments	^ arguments!
 
 arguments: aCollection	arguments := aCollection!
 
-javascriptContentOn: aStream	super javascriptContentOn: aStream.	JSStream encodeArguments: self arguments on: aStream! !
+argumentsDo: aBlock	self arguments do: aBlock!
+
+javascriptContentOn: aRenderer	super javascriptContentOn: aRenderer.	aRenderer arguments: [ 		self argumentsDo: [ :each |			aRenderer argument: each ] ]! !
 
 !JSApply categoriesForMethods!
 arguments!accessing!public! !
 arguments:!accessing!public! !
+argumentsDo:!accessing!public! !
 javascriptContentOn:!printing!public! !
 !
 

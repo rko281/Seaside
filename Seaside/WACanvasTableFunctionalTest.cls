@@ -6,11 +6,11 @@ WAFunctionalTest subclass: #WACanvasTableFunctionalTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WACanvasTableFunctionalTest guid: (GUID fromString: '{3a72f1f7-3870-4f3c-9771-f93e11646d06}')!
+WACanvasTableFunctionalTest guid: (GUID fromString: '{05c530e6-c309-4faf-aeee-73f03f41e0dd}')!
 
 WACanvasTableFunctionalTest comment: ''!
 
-!WACanvasTableFunctionalTest categoriesForClass!Unclassified! !
+!WACanvasTableFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
 
 !WACanvasTableFunctionalTest methodsFor!
 

@@ -6,11 +6,11 @@ WAConfigurationToolPlugin subclass: #WAAddHandlerPlugin
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAAddHandlerPlugin guid: (GUID fromString: '{8d8f991d-d14d-4e03-972b-b6d50e688536}')!
+WAAddHandlerPlugin guid: (GUID fromString: '{87aa81a5-3712-4990-9756-a6c2fbd569c7}')!
 
 WAAddHandlerPlugin comment: ''!
 
-!WAAddHandlerPlugin categoriesForClass!Unclassified! !
+!WAAddHandlerPlugin categoriesForClass!Seaside-Tools-Web! !
 
 !WAAddHandlerPlugin methodsFor!
 

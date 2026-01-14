@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 TestCase subclass: #WAPlaceholderPathMatchTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAPlaceholderPathMatchTest guid: (GUID fromString: '{222af59c-d30c-4abb-86cd-489be2d3b62c}')!
+
+WAPlaceholderPathMatchTest guid: (GUID fromString: '{6785613c-367c-4bb6-9ea6-2cf920306a3a}')!
+
 WAPlaceholderPathMatchTest comment: ''!
+
 !WAPlaceholderPathMatchTest categoriesForClass!Seaside-Tests-REST-Core! !
+
 !WAPlaceholderPathMatchTest methodsFor!
 
 testFullInstantiation	| match |	match := WAPPathMatch fromString: '{7}' index: 2 arguments: #().	self assert: (match isKindOf: WAFullPlaceholderPathMatch).	self assert: match priority = 2.	self assert: match sourceIndex = 2.	self assert: match targetIndex = 7!
@@ -33,16 +37,19 @@ testPrefixMapArgumentsWithElementsInto	| match result |	match := WAPPathMatch 
 testSuffixInstantiation	| match |	match := WAPPathMatch fromString: '{787}.bar' index: 2 arguments: #().	self assert: (match isKindOf: WASuffixPlaceholderPathMatch).	self assert: match priority = 3.	self assert: match sourceIndex = 2.	self assert: match targetIndex = 787!
 
 testSuffixMapArgumentsWithElementsInto	| match result |	match := WAPPathMatch fromString: '{1}.bar' index: 1 arguments: #().	result := Array new: 1.	match mapArgumentsWithElements: #('foo.bar') into: result.	self assert: result first = 'foo'! !
-!WAPlaceholderPathMatchTest categoriesFor: #testFullInstantiation!public!tests! !
-!WAPlaceholderPathMatchTest categoriesFor: #testFullMapArgumentsWithElementsInto!public!tests! !
-!WAPlaceholderPathMatchTest categoriesFor: #testMatchesFull!public!tests! !
-!WAPlaceholderPathMatchTest categoriesFor: #testMatchesPrefix!public!tests! !
-!WAPlaceholderPathMatchTest categoriesFor: #testMatchesSuffix!public!tests! !
-!WAPlaceholderPathMatchTest categoriesFor: #testMultiInstantiation!public!tests! !
-!WAPlaceholderPathMatchTest categoriesFor: #testNamedInstantiation!public!tests! !
-!WAPlaceholderPathMatchTest categoriesFor: #testNamedMultiInstantiation!public!tests! !
-!WAPlaceholderPathMatchTest categoriesFor: #testPrefixInstantiation!public!tests! !
-!WAPlaceholderPathMatchTest categoriesFor: #testPrefixMapArgumentsWithElementsInto!public!tests! !
-!WAPlaceholderPathMatchTest categoriesFor: #testSuffixInstantiation!public!tests! !
-!WAPlaceholderPathMatchTest categoriesFor: #testSuffixMapArgumentsWithElementsInto!public!tests! !
+
+!WAPlaceholderPathMatchTest categoriesForMethods!
+testFullInstantiation!public!tests! !
+testFullMapArgumentsWithElementsInto!public!tests! !
+testMatchesFull!public!tests! !
+testMatchesPrefix!public!tests! !
+testMatchesSuffix!public!tests! !
+testMultiInstantiation!public!tests! !
+testNamedInstantiation!public!tests! !
+testNamedMultiInstantiation!public!tests! !
+testPrefixInstantiation!public!tests! !
+testPrefixMapArgumentsWithElementsInto!public!tests! !
+testSuffixInstantiation!public!tests! !
+testSuffixMapArgumentsWithElementsInto!public!tests! !
+!
 

@@ -8,6 +8,7 @@ package basicPackageVersion: '9'.
 package classNames
 	add: #SeasideIcons;
 	add: #WADolphinUrl;
+	add: #WADolphinUrlEncoder;
 	add: #WebBrowser;
 	yourself.
 
@@ -19,6 +20,8 @@ package methodNames
 	add: #Character -> #asCharacter;
 	add: #Dictionary -> #restoreFromSnapshot:;
 	add: #Dictionary -> #snapshotCopy;
+	add: #GRDolphinPlatform -> #urlEncoderOn:;
+	add: #GRDolphinPlatform -> #urlEncoderOn:codec:;
 	add: #LookupTable -> #snapshotCopy;
 	add: #MessageSend -> #renderOn:;
 	add: #Object -> #restoreFromSnapshot:;
@@ -69,6 +72,12 @@ Object subclass: #SeasideIcons
 	classInstanceVariableNames: ''!
 
 Object subclass: #WebBrowser
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+WAUrlEncoder subclass: #WADolphinUrlEncoder
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
@@ -145,6 +154,20 @@ snapshotCopy
 !Dictionary categoriesForMethods!
 restoreFromSnapshot:!public! !
 snapshotCopy!public! !
+!
+
+!GRDolphinPlatform methodsFor!
+
+urlEncoderOn: aStream
+	"Answer an URL encoder that works on aStream.
+	Platforms may provide optimized implementations."
+	^ WADolphinUrlEncoder on: aStream!
+
+urlEncoderOn: aStream codec: aCodec	"Answer an URL encoder that works on aStream.	Platforms may provide optimized implementations."	^ aCodec url encoderFor: (WADolphinUrlEncoder on: aStream)! !
+
+!GRDolphinPlatform categoriesForMethods!
+urlEncoderOn:!*Seaside/Core!public! !
+urlEncoderOn:codec:!*Seaside/Core!public! !
 !
 
 !GRObject class methodsFor!

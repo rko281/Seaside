@@ -6,11 +6,11 @@ WATagBrush subclass: #WAOutputTag
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAOutputTag guid: (GUID fromString: '{332c8434-5cb1-4f09-8bd3-12545226e2b0}')!
+WAOutputTag guid: (GUID fromString: '{fd218a62-84dd-455e-803e-3db1d9a12e0f}')!
 
 WAOutputTag comment: 'The output element represents the result of a calculation.'!
 
-!WAOutputTag categoriesForClass!Tags! !
+!WAOutputTag categoriesForClass!Seaside-Canvas-Tags! !
 
 !WAOutputTag methodsFor!
 

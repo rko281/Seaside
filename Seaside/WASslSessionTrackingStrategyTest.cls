@@ -6,11 +6,11 @@ WAInvisibleSessionTrackingStrategyTest subclass: #WASslSessionTrackingStrategyTe
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WASslSessionTrackingStrategyTest guid: (GUID fromString: '{8bf332b2-8816-45fa-9797-99ba4cda147c}')!
+WASslSessionTrackingStrategyTest guid: (GUID fromString: '{0ff40e5e-f3af-45b2-b911-ec0482ecd4d2}')!
 
 WASslSessionTrackingStrategyTest comment: ''!
 
-!WASslSessionTrackingStrategyTest categoriesForClass!Unclassified! !
+!WASslSessionTrackingStrategyTest categoriesForClass!Seaside-Tests-Session! !
 
 !WASslSessionTrackingStrategyTest methodsFor!
 

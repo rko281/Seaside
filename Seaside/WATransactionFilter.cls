@@ -6,11 +6,11 @@ WARequestFilter subclass: #WATransactionFilter
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WATransactionFilter guid: (GUID fromString: '{f71a6f90-823d-4704-8077-860de92a67aa}')!
+WATransactionFilter guid: (GUID fromString: '{b6a32e3e-1fa7-421f-84f7-beb2832a783f}')!
 
 WATransactionFilter comment: 'This filter provides the implementation of WAComponent>>#isolate:. It rejects all requests as soon as the filter has been closed.'!
 
-!WATransactionFilter categoriesForClass!Filter! !
+!WATransactionFilter categoriesForClass!Seaside-Core-Filter! !
 
 !WATransactionFilter methodsFor!
 

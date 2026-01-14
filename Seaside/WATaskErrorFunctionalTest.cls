@@ -6,11 +6,11 @@ WAFunctionalTaskTest subclass: #WATaskErrorFunctionalTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WATaskErrorFunctionalTest guid: (GUID fromString: '{4c2b74fe-ddd7-48ac-a82c-7a8d93c39a08}')!
+WATaskErrorFunctionalTest guid: (GUID fromString: '{517cc373-6139-4f2a-9303-cb513e2f0163}')!
 
 WATaskErrorFunctionalTest comment: ''!
 
-!WATaskErrorFunctionalTest categoriesForClass!Unclassified! !
+!WATaskErrorFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
 
 !WATaskErrorFunctionalTest methodsFor!
 

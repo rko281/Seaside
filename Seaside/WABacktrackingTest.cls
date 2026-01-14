@@ -6,11 +6,11 @@ TestCase subclass: #WABacktrackingTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WABacktrackingTest guid: (GUID fromString: '{11e2d1c6-e32d-460b-83c3-47a0f5ff6940}')!
+WABacktrackingTest guid: (GUID fromString: '{fa46bcf4-6e50-48c2-9318-93fb0b6f4a82}')!
 
 WABacktrackingTest comment: ''!
 
-!WABacktrackingTest categoriesForClass!Backtracking! !
+!WABacktrackingTest categoriesForClass!Seaside-Tests-Core-Backtracking! !
 
 !WABacktrackingTest methodsFor!
 

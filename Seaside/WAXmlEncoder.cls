@@ -6,17 +6,21 @@ WAEncoder subclass: #WAXmlEncoder
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAXmlEncoder guid: (GUID fromString: '{e387fe5b-7ae9-46f8-a277-e93f04b21604}')!
+WAXmlEncoder guid: (GUID fromString: '{04c307aa-bbf4-4b4a-a403-fd4fef237488}')!
 
 WAXmlEncoder comment: 'I encode XHTML text.'!
 
-!WAXmlEncoder categoriesForClass!Document! !
+!WAXmlEncoder categoriesForClass!Seaside-Core-Document! !
 
 !WAXmlEncoder methodsFor!
 
 nextPut: aCharacter	| codePoint |	codePoint := aCharacter greaseInteger.	codePoint = 34 "$""" ifTrue: [ ^ stream nextPutAll: '&quot;' ].	codePoint = 60 "$<" ifTrue: [ ^ stream nextPutAll: '&lt;' ].	codePoint = 38 "$&" ifTrue: [ ^ stream nextPutAll: '&amp;' ].	codePoint = 62 "$>" ifTrue: [ ^ stream nextPutAll: '&gt;' ].	stream nextPut: aCharacter!
 
-nextPutAll: aString	"uses #to:do: for speed reasons (on Pharo)	this is not premature optimization, this is a hotspot method method	and #to:do: shows measurable speed improvements for rendering seaside pages"	1 to: aString size do: [ :index |		self nextPut: (aString at: index) ]! !
+nextPutAll: aString 	"Changed for Dolphin - need to use a stream to respect Dolphin's UTF String structure"
+
+	| read |
+	read := aString readStream.
+	[read atEnd] whileFalse: [self nextPut: read next]! !
 
 !WAXmlEncoder categoriesForMethods!
 nextPut:!accessing!public! !

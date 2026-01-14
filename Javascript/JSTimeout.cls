@@ -6,15 +6,15 @@ JSTimed subclass: #JSTimeout
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JSTimeout guid: (GUID fromString: '{4a75123c-bfd6-4185-a2e3-f163b49936b3}')!
+JSTimeout guid: (GUID fromString: '{475503ea-a69f-460c-876d-4b46b42ba522}')!
 
 JSTimeout comment: 'I evaluate the decorated object after a timeout.'!
 
-!JSTimeout categoriesForClass!Decorations! !
+!JSTimeout categoriesForClass!Javascript-Core-Decorations! !
 
 !JSTimeout methodsFor!
 
-javascriptContentOn: aStream	aStream nextPutAll: 'setTimeout(function(){'.	super javascriptContentOn: aStream.	aStream		nextPutAll: '},';		javascript: self duration;		nextPut: $)! !
+javascriptContentOn: aRenderer	(aRenderer function: 'setTimeout')		with: [			aRenderer argument: [				aRenderer defineFunction: [					super javascriptContentOn: aRenderer ] ].			aRenderer argument: self duration ]! !
 
 !JSTimeout categoriesForMethods!
 javascriptContentOn:!printing!public! !

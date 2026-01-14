@@ -6,11 +6,11 @@ WAHandlerTrackingStrategy subclass: #WASessionTrackingStrategy
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WASessionTrackingStrategy guid: (GUID fromString: '{1f02dee5-2dec-448c-8b2a-cbd203a209b3}')!
+WASessionTrackingStrategy guid: (GUID fromString: '{7756614b-1a04-4229-ad81-71abc332a8ce}')!
 
 WASessionTrackingStrategy comment: 'I am the abstract base class for tracking strategies that track sessions differently from other request handlers (mostly WADocumentHandlers).Concrete implementations have to take care that expired document handlers don''t expire sessions.'!
 
-!WASessionTrackingStrategy categoriesForClass!Tracking! !
+!WASessionTrackingStrategy categoriesForClass!Seaside-Session-Tracking! !
 
 !WASessionTrackingStrategy class methodsFor!
 

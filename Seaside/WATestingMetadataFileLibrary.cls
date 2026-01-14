@@ -6,11 +6,11 @@ WAFileMetadataLibrary subclass: #WATestingMetadataFileLibrary
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WATestingMetadataFileLibrary guid: (GUID fromString: '{f03eea34-50f8-45b9-a9ec-7473d71d3cda}')!
+WATestingMetadataFileLibrary guid: (GUID fromString: '{9d210510-bbdf-4628-888c-b836c2907c0b}')!
 
 WATestingMetadataFileLibrary comment: ''!
 
-!WATestingMetadataFileLibrary categoriesForClass!Libraries! !
+!WATestingMetadataFileLibrary categoriesForClass!Seaside-Tests-Core-Libraries! !
 
 !WATestingMetadataFileLibrary methodsFor!
 

@@ -6,15 +6,15 @@ JQPlugin subclass: #JQEffect
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQEffect guid: (GUID fromString: '{93966a26-9015-4af2-9436-6c8ee5784714}')!
+JQEffect guid: (GUID fromString: '{daa68cb6-2169-4bae-8986-95e3c48903f6}')!
 
 JQEffect comment: 'This is the core dependency of the effects of jQuery UI. This file is needed by all other effects and can also be used as stand-alone. Please note that ui.core.js is not a dependency for the effects to work.'!
 
-!JQEffect categoriesForClass!Objects! !
+!JQEffect categoriesForClass!JQuery-UI-Objects! !
 
 !JQEffect methodsFor!
 
-arguments	| result |	result := OrderedCollection with: effect.	(options isEmpty and: [ speed isNil and: [ complete isNil ] ])		ifFalse: [ result addLast: options ].	(speed isNil and: [ complete isNil ])		ifFalse: [ result addLast: speed ].	(complete isNil)		ifFalse: [ result addLast: complete ].	^ result!
+argumentsDo: aBlock	aBlock value: effect.	(options isEmpty and: [ speed isNil and: [ complete isNil ] ])		ifFalse: [ aBlock value: options ].	(speed isNil and: [ complete isNil ])		ifFalse: [ aBlock value: speed ].	(complete isNil)		ifFalse: [ aBlock value: complete ]!
 
 blind	"Blinds the element away or shows it by blinding it in."		self effect: 'blind'!
 
@@ -111,7 +111,7 @@ toWidth: anInteger	self to at: 'width' put: anInteger!
 transfer	"Transfers the outline of an element to another."		self effect: 'transfer'! !
 
 !JQEffect categoriesForMethods!
-arguments!private! !
+argumentsDo:!private! !
 blind!effects/toggle!public! !
 bounce!effects!public! !
 className:!options!public! !

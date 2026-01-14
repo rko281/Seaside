@@ -26,7 +26,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 package basicPackageVersion: '3'.
 
-
 package classNames
 	add: #Browser;
 	yourself.
@@ -56,9 +55,6 @@ Object subclass: #Browser
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-"Global Aliases"!
-
-
 "Loose Methods"!
 
 !Class methodsFor!
@@ -69,7 +65,10 @@ printInstVarNames
        varNames := ''.
        self instVarNames do: [:each | varNames := varNames, ' ', each].
        ^varNames! !
-!Class categoriesFor: #printInstVarNames!public! !
+
+!Class categoriesForMethods!
+printInstVarNames!public! !
+!
 
 !Metaclass methodsFor!
 
@@ -79,7 +78,10 @@ printInstVarNames
        varNames := ''.
        self instVarNames do: [:each | varNames := varNames, ' ', each].
        ^varNames! !
-!Metaclass categoriesFor: #printInstVarNames!public! !
+
+!Metaclass categoriesForMethods!
+printInstVarNames!public! !
+!
 
 "End of package definition"!
 

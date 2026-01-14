@@ -6,11 +6,11 @@ WADecoration subclass: #WAAnswerHandler
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAAnswerHandler guid: (GUID fromString: '{b79f1b65-5908-4d2b-bc8e-c96e1ae4d66e}')!
+WAAnswerHandler guid: (GUID fromString: '{833036f2-7159-458d-99bb-6b53984b28c6}')!
 
 WAAnswerHandler comment: 'I am the specific decoration to handle the answer of a given block.'!
 
-!WAAnswerHandler categoriesForClass!Base! !
+!WAAnswerHandler categoriesForClass!Seaside-Component-Base! !
 
 !WAAnswerHandler methodsFor!
 

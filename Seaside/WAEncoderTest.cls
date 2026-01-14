@@ -6,11 +6,11 @@ WAContextTest subclass: #WAEncoderTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAEncoderTest guid: (GUID fromString: '{9207794b-2346-4206-8ac3-c1074694db4c}')!
+WAEncoderTest guid: (GUID fromString: '{131064d9-8c55-4355-9e74-b0d9590f5b68}')!
 
 WAEncoderTest comment: ''!
 
-!WAEncoderTest categoriesForClass!Document! !
+!WAEncoderTest categoriesForClass!Seaside-Tests-Core-Document! !
 
 !WAEncoderTest methodsFor!
 

@@ -6,9 +6,9 @@ WAPresenterGuide subclass: #WARenderingGuide
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WARenderingGuide guid: (GUID fromString: '{b9ac8e1c-8d80-4939-ab0c-31609b72985c}')!
+WARenderingGuide guid: (GUID fromString: '{e742a56e-68b5-4e7e-a873-8821488f4a8d}')!
 
 WARenderingGuide comment: 'Currently an empty class but still present for clarity and to allow customization of Rendering behaviour.'!
 
-!WARenderingGuide categoriesForClass!Visitors! !
+!WARenderingGuide categoriesForClass!Seaside-Component-Visitors! !
 

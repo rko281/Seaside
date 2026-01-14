@@ -23,6 +23,7 @@ package classNames
 	add: #WADispatcherEmptyPage;
 	add: #WADispatcherSubPage;
 	add: #WAExpiringCacheAttributeEditor;
+	add: #WAFaviconHandler;
 	add: #WAFileAttributeEditor;
 	add: #WAFileHandlerEditor;
 	add: #WAFileLibraryEditor;
@@ -288,6 +289,12 @@ WAHandlerEditor subclass: #WARegistryEditor
 
 WAStringLibraryEditor subclass: #WAFileLibraryEditor
 	instanceVariableNames: 'renamingFile newName'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+WARequestHandler subclass: #WAFaviconHandler
+	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!

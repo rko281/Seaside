@@ -6,11 +6,11 @@ TestCase subclass: #WAExceptionHandlerTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAExceptionHandlerTest guid: (GUID fromString: '{0095abf4-b704-47f4-885b-7774ff0cefb4}')!
+WAExceptionHandlerTest guid: (GUID fromString: '{fc91ce9c-8cae-464e-8b0a-030d4538610c}')!
 
 WAExceptionHandlerTest comment: ''!
 
-!WAExceptionHandlerTest categoriesForClass!RequestHandling! !
+!WAExceptionHandlerTest categoriesForClass!Seaside-Tests-Core-RequestHandling! !
 
 !WAExceptionHandlerTest methodsFor!
 

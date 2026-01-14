@@ -6,11 +6,11 @@ JQWidget subclass: #JQDraggable
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQDraggable guid: (GUID fromString: '{edd35137-e37a-494f-a83a-78683180fa3c}')!
+JQDraggable guid: (GUID fromString: '{0d098a2c-2055-4a58-8d59-04889cc22ac3}')!
 
 JQDraggable comment: 'Creates new draggables on the nodeset supplied by the query.'!
 
-!JQDraggable categoriesForClass!Interaction! !
+!JQDraggable categoriesForClass!JQuery-UI-Interaction! !
 
 !JQDraggable methodsFor!
 

@@ -6,11 +6,11 @@ WAHtmlElement subclass: #WAStyleElement
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAStyleElement guid: (GUID fromString: '{400b5bc8-84fe-4fd7-b7e9-d97e5265767b}')!
+WAStyleElement guid: (GUID fromString: '{ad69f25a-f88c-43bc-9d72-4184250a0837}')!
 
 WAStyleElement comment: 'The style element allows style information to be embedded in documents.'!
 
-!WAStyleElement categoriesForClass!Document-Elements! !
+!WAStyleElement categoriesForClass!Seaside-Core-Document-Elements! !
 
 !WAStyleElement methodsFor!
 

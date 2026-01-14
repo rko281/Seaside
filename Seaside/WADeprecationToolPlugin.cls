@@ -6,11 +6,11 @@ WAToolPlugin subclass: #WADeprecationToolPlugin
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WADeprecationToolPlugin guid: (GUID fromString: '{369e4d40-5f16-48dd-93b1-587c7c607a1c}')!
+WADeprecationToolPlugin guid: (GUID fromString: '{638cbda2-1cf2-4a27-8c34-84110523a063}')!
 
 WADeprecationToolPlugin comment: 'I display deprecation warnings.'!
 
-!WADeprecationToolPlugin categoriesForClass!Plugins! !
+!WADeprecationToolPlugin categoriesForClass!Seaside-Development-Plugins! !
 
 !WADeprecationToolPlugin methodsFor!
 

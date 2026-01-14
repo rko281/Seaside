@@ -6,31 +6,31 @@ JSObject subclass: #JSJoin
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JSJoin guid: (GUID fromString: '{b2483a6f-00cd-44f1-bb36-e67a85eb43b3}')!
+JSJoin guid: (GUID fromString: '{e3038059-9ac8-43e6-a99b-cb845ed67b53}')!
 
 JSJoin comment: 'I join a collection of JavaScript statements with the given string.'!
 
-!JSJoin categoriesForClass!Base! !
+!JSJoin categoriesForClass!Javascript-Core-Base! !
 
 !JSJoin methodsFor!
 
 collection	^ collection!
 
-encodeElement: anObject on: aDocument	"We assume that the element is already URL encoded if this is not an association."	(anObject isKindOf: Association)		ifTrue: [			aDocument nextPut: $".			aDocument urlEncoder				nextPutAll: anObject key greaseString.			anObject value isNil 				ifTrue: [ aDocument nextPut: $" ]				ifFalse: [					aDocument nextPut: $=.					(anObject value isString or: [ anObject value isCharacter ])						ifTrue: [							aDocument urlEncoder 								nextPutAll: anObject value greaseString.							aDocument nextPut: $" ]						ifFalse: [							aDocument nextPutAll: '"+encodeURIComponent('.							aDocument stream javascript: anObject value.							aDocument nextPut: $) ] ] ]		ifFalse: [ aDocument stream javascript: anObject ]!
+encodeAssociation: anAssociation on: aRenderer	| key value |	"key -> nil: ""key""	 key -> aString: ""key=aString(urlEncoded)""	key -> anObject: ""key=""+encodeURIComponent(anObject)"	key := anAssociation key.	value := anAssociation value.	aRenderer document		beginString		urlEncode: key greaseString.	value isNil ifTrue: [		aRenderer document endString.		^ self ].		aRenderer document nextPut: $=.	(value isString or: [ value isCharacter ]) ifTrue: [		aRenderer document				urlEncode: value greaseString;				endString	.		^ self ].	aRenderer document		endString;		operator: '+'.	aRenderer encodeURIComponent: value!
 
-encodeEmptyOn: aDocument	aDocument nextPutAll: '""'!
+encodeElement: anObject on: aRenderer	(anObject isKindOf: Association)		ifTrue: [			self encodeAssociation: anObject on: aRenderer ]		ifFalse: [			"We assume that the element is already URL encoded if this is not an association."			aRenderer render: anObject ]!
 
-encodeOn: aDocument	self collection isEmpty		ifTrue: [ ^ self encodeEmptyOn: aDocument ].	self collection size = 1		ifTrue: [ ^ self encodeElement: self collection first on: aDocument ].	aDocument nextPut: $[.	self collection		do: [ :each | self encodeElement: each on: aDocument ]		separatedBy: [ aDocument nextPut: $, ].	aDocument nextPutAll: '].join("&")'!
+encodeEmptyOn: aRenderer	aRenderer string: ''!
 
 initializeOn: aCollection	self initialize.	collection := aCollection!
 
-javascriptContentOn: aStream	| document codec |	codec := [ self requestContext codec ] 		on: WARequestContextNotFound		do: [ :e | GRNullCodec new ].	document := WAUnescapedDocument 		on: aStream		codec: codec.	self encodeOn: document! !
+javascriptContentOn: aRenderer	self collection isEmpty		ifTrue: [ ^ self encodeEmptyOn: aRenderer ].	self collection size = 1		ifTrue: [ ^ self encodeElement: self collection first on: aRenderer ].	aRenderer array: [		self collection do: [ :each |			aRenderer value: [				self encodeElement: each on: aRenderer ] ] ].	(aRenderer document dotProperty: 'join').	aRenderer arguments: [ 		aRenderer string: '&' ]! !
 
 !JSJoin categoriesForMethods!
 collection!accessing!public! !
+encodeAssociation:on:!encoding!public! !
 encodeElement:on:!encoding!public! !
 encodeEmptyOn:!encoding!public! !
-encodeOn:!encoding!public! !
 initializeOn:!initialization!public! !
 javascriptContentOn:!printing!public! !
 !

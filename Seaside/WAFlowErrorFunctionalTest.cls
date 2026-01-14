@@ -6,11 +6,11 @@ WAExceptionFunctionalTest subclass: #WAFlowErrorFunctionalTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAFlowErrorFunctionalTest guid: (GUID fromString: '{aec58d40-2998-4885-bc4c-877ebea19a5c}')!
+WAFlowErrorFunctionalTest guid: (GUID fromString: '{162f5faf-b6ab-4f38-99da-e8eb899fa4a4}')!
 
 WAFlowErrorFunctionalTest comment: ''!
 
-!WAFlowErrorFunctionalTest categoriesForClass!Functional! !
+!WAFlowErrorFunctionalTest categoriesForClass!Seaside-Tests-Flow-Functional! !
 
 !WAFlowErrorFunctionalTest methodsFor!
 

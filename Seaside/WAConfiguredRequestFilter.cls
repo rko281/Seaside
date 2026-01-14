@@ -6,11 +6,11 @@ WARequestFilter subclass: #WAConfiguredRequestFilter
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAConfiguredRequestFilter guid: (GUID fromString: '{7e00445d-c102-4d94-80f8-bfb4b198b57e}')!
+WAConfiguredRequestFilter guid: (GUID fromString: '{08687847-a79d-43b3-8463-bb9a8dd4c2a7}')!
 
 WAConfiguredRequestFilter comment: ''!
 
-!WAConfiguredRequestFilter categoriesForClass!Filter! !
+!WAConfiguredRequestFilter categoriesForClass!Seaside-Core-Filter! !
 
 !WAConfiguredRequestFilter methodsFor!
 

@@ -6,11 +6,11 @@ JSDecoration subclass: #JSMember
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JSMember guid: (GUID fromString: '{3f1d0f3a-67bb-41dd-a446-4d120882b64e}')!
+JSMember guid: (GUID fromString: '{d6227203-2b86-4049-ba9f-52c0310cd124}')!
 
 JSMember comment: ''!
 
-!JSMember categoriesForClass!Decorations! !
+!JSMember categoriesForClass!Javascript-Core-Decorations! !
 
 !JSMember methodsFor!
 

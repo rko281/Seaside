@@ -6,11 +6,11 @@ WAFileHandlerListingTest subclass: #WAHtmlFileHandlerListingTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAHtmlFileHandlerListingTest guid: (GUID fromString: '{096b3f09-3f3a-402a-8ee3-f173e22e6316}')!
+WAHtmlFileHandlerListingTest guid: (GUID fromString: '{ee990d61-d2b4-4204-a62f-58bffafaf453}')!
 
 WAHtmlFileHandlerListingTest comment: ''!
 
-!WAHtmlFileHandlerListingTest categoriesForClass!Base! !
+!WAHtmlFileHandlerListingTest categoriesForClass!Seaside-Tests-Environment-Base! !
 
 !WAHtmlFileHandlerListingTest methodsFor!
 

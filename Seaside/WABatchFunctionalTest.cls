@@ -6,11 +6,11 @@ WAFunctionalTest subclass: #WABatchFunctionalTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WABatchFunctionalTest guid: (GUID fromString: '{9bbc6e6a-4ad8-4ebf-aa25-56dc08f197ba}')!
+WABatchFunctionalTest guid: (GUID fromString: '{49019398-422c-41cf-a1f5-8f4882b4002a}')!
 
 WABatchFunctionalTest comment: ''!
 
-!WABatchFunctionalTest categoriesForClass!Unclassified! !
+!WABatchFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
 
 !WABatchFunctionalTest methodsFor!
 

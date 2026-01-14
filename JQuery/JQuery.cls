@@ -6,11 +6,11 @@ JSObject subclass: #JQuery
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQuery guid: (GUID fromString: '{3f5d282a-361f-430d-b093-7939ae11510a}')!
+JQuery guid: (GUID fromString: '{1af63208-f0ee-4cef-85f3-f1b477beea29}')!
 
 JQuery comment: 'The core functionality of jQuery centers around this object. Everything in jQuery is based upon this, or uses this in some way. The most basic use of this object is to pass in an expression (usually consisting of CSS), which then finds all matching elements.'!
 
-!JQuery categoriesForClass!Objects! !
+!JQuery categoriesForClass!JQuery-Core-Objects! !
 
 !JQuery methodsFor!
 
@@ -20,7 +20,7 @@ html: aRenderable	self subclassResponsibility!
 
 id: aString	self subclassResponsibility!
 
-javascriptContentOn: aStream	aStream nextPutAll: FunctionName! !
+javascriptContentOn: aRenderer	aRenderer document identifier: FunctionName! !
 
 !JQuery categoriesForMethods!
 create:!private! !

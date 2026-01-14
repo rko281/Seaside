@@ -6,9 +6,9 @@ WAError subclass: #WAArgumentNotFoundError
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAArgumentNotFoundError guid: (GUID fromString: '{ad4494b1-899b-44dd-8134-9c7fe89edcb7}')!
+WAArgumentNotFoundError guid: (GUID fromString: '{893f9dd0-6e7f-4785-80ee-45add33d90e5}')!
 
 WAArgumentNotFoundError comment: ''!
 
-!WAArgumentNotFoundError categoriesForClass!Route! !
+!WAArgumentNotFoundError categoriesForClass!Seaside-REST-Core-Route! !
 

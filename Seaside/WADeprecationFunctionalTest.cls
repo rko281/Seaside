@@ -6,11 +6,11 @@ WAFunctionalTest subclass: #WADeprecationFunctionalTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WADeprecationFunctionalTest guid: (GUID fromString: '{5acf74c7-97f5-4e10-885b-314dd4bbe77a}')!
+WADeprecationFunctionalTest guid: (GUID fromString: '{b6fc8118-57f3-4dab-ac56-bad1b9f8690f}')!
 
 WADeprecationFunctionalTest comment: ''!
 
-!WADeprecationFunctionalTest categoriesForClass!Unclassified! !
+!WADeprecationFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
 
 !WADeprecationFunctionalTest methodsFor!
 

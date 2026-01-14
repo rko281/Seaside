@@ -6,11 +6,11 @@ WAObject subclass: #WACallbackRegistry
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WACallbackRegistry guid: (GUID fromString: '{d0209c2f-72ff-43ee-a0bd-b6c71f5b1702}')!
+WACallbackRegistry guid: (GUID fromString: '{b4c87709-4792-4c27-8010-6b812574f44d}')!
 
 WACallbackRegistry comment: ''!
 
-!WACallbackRegistry categoriesForClass!Callbacks! !
+!WACallbackRegistry categoriesForClass!Seaside-Core-Callbacks! !
 
 !WACallbackRegistry methodsFor!
 

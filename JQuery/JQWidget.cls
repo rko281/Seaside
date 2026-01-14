@@ -6,11 +6,11 @@ JQPlugin subclass: #JQWidget
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQWidget guid: (GUID fromString: '{4c17dc2b-12b3-4d34-8494-ed205dc66054}')!
+JQWidget guid: (GUID fromString: '{66780095-e29a-4e13-a3c9-044981f961dc}')!
 
 JQWidget comment: ''!
 
-!JQWidget categoriesForClass!Objects! !
+!JQWidget categoriesForClass!JQuery-UI-Objects! !
 
 !JQWidget methodsFor!
 
@@ -18,7 +18,7 @@ action: aString	self action: aString arguments: nil!
 
 action: aString arguments: anArray	action := aString.	arguments := anArray!
 
-arguments	| result |	result := OrderedCollection new.	action isNil		ifFalse: [ result addLast: action ].	arguments isNil		ifFalse: [ result addAll: arguments ].	(options isNil or: [ options isEmpty ])		ifFalse: [ result addLast: options ].	^ result!
+argumentsDo: aBlock	action isNil		ifFalse: [ aBlock value: action ].	arguments isNil		ifFalse: [ arguments do: aBlock ].	(options isNil or: [ options isEmpty ])		ifFalse: [ aBlock value: options ]!
 
 destroy	"Completely remove the functionality."		self action: 'destroy'!
 
@@ -33,7 +33,7 @@ option: aString put: anObject	"Set an option aString to anObject."		self acti
 !JQWidget categoriesForMethods!
 action:!private! !
 action:arguments:!private! !
-arguments!accessing!public! !
+argumentsDo:!accessing!public! !
 destroy!actions!public! !
 disable!actions!public! !
 enable!actions!public! !

@@ -6,11 +6,11 @@ GROrderedMultiMap2 subclass: #WARequestFields
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WARequestFields guid: (GUID fromString: '{e5be6db3-358d-4597-892d-1731e15062a4}')!
+WARequestFields guid: (GUID fromString: '{f5b18927-ddc5-48a7-a929-51540892b945}')!
 
 WARequestFields comment: ''!
 
-!WARequestFields categoriesForClass!HTTP! !
+!WARequestFields categoriesForClass!Seaside-Core-HTTP! !
 
 !WARequestFields methodsFor!
 

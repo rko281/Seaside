@@ -6,11 +6,11 @@ WAFileLibrary subclass: #JQDevelopmentLibrary
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQDevelopmentLibrary guid: (GUID fromString: '{d5adab1e-dc1a-4135-8772-b1ac8a61e830}')!
+JQDevelopmentLibrary guid: (GUID fromString: '{a19b0ea9-fd7b-4c4e-81f2-0929cd1aa836}')!
 
 JQDevelopmentLibrary comment: ''!
 
-!JQDevelopmentLibrary categoriesForClass!Libraries! !
+!JQDevelopmentLibrary categoriesForClass!JQuery-Core-Libraries! !
 
 !JQDevelopmentLibrary methodsFor!
 

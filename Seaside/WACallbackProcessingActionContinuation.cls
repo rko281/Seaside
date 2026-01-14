@@ -6,11 +6,11 @@ WAActionPhaseContinuation subclass: #WACallbackProcessingActionContinuation
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WACallbackProcessingActionContinuation guid: (GUID fromString: '{eff011c5-bdef-4096-bf34-70c5ed904009}')!
+WACallbackProcessingActionContinuation guid: (GUID fromString: '{e8c1d46a-45e9-48ab-b76a-15f77977521e}')!
 
 WACallbackProcessingActionContinuation comment: ''!
 
-!WACallbackProcessingActionContinuation categoriesForClass!Continuations! !
+!WACallbackProcessingActionContinuation categoriesForClass!Seaside-RenderLoop-Continuations! !
 
 !WACallbackProcessingActionContinuation methodsFor!
 

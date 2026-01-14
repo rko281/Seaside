@@ -6,11 +6,11 @@ WAObject subclass: #WAFileHandlerListing
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAFileHandlerListing guid: (GUID fromString: '{c330362a-d7b3-4e8d-8783-491a63808eb7}')!
+WAFileHandlerListing guid: (GUID fromString: '{0386f3e4-cf3e-4224-a762-2e2536f3b60f}')!
 
 WAFileHandlerListing comment: ''!
 
-!WAFileHandlerListing categoriesForClass!Libraries! !
+!WAFileHandlerListing categoriesForClass!Seaside-Core-Libraries! !
 
 !WAFileHandlerListing methodsFor!
 

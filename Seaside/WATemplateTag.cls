@@ -6,11 +6,11 @@ WATagBrush subclass: #WATemplateTag
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WATemplateTag guid: (GUID fromString: '{899064e9-3cab-4dbe-b0f1-2cbea3de2152}')!
+WATemplateTag guid: (GUID fromString: '{8d5c7303-079d-4bfc-bf13-2bcc1bbe149c}')!
 
 WATemplateTag comment: 'The template HTML element serves as a mechanism for holding HTML fragments, which can either be used later via JavaScript or generated immediately into shadow DOM.'!
 
-!WATemplateTag categoriesForClass!Tags! !
+!WATemplateTag categoriesForClass!Seaside-Canvas-Tags! !
 
 !WATemplateTag methodsFor!
 

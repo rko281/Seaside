@@ -6,11 +6,11 @@ WAScriptGenerator subclass: #WANullScriptGenerator
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WANullScriptGenerator guid: (GUID fromString: '{b8842992-f07b-428e-80f7-478a0a6bc84b}')!
+WANullScriptGenerator guid: (GUID fromString: '{361ff290-db1a-4971-bbdb-755b7da7772c}')!
 
 WANullScriptGenerator comment: 'A script generator that does not support any load scripts. This results in cleaner HTML and should result in slightly faster page loads.'!
 
-!WANullScriptGenerator categoriesForClass!Document! !
+!WANullScriptGenerator categoriesForClass!Seaside-Core-Document! !
 
 !WANullScriptGenerator methodsFor!
 

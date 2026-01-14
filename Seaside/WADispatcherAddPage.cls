@@ -6,11 +6,11 @@ WADispatcherSubPage subclass: #WADispatcherAddPage
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WADispatcherAddPage guid: (GUID fromString: '{db0b0b28-7945-44e2-91b3-70684b7ab970}')!
+WADispatcherAddPage guid: (GUID fromString: '{be100858-8737-4dd3-a571-f289875fc839}')!
 
 WADispatcherAddPage comment: ''!
 
-!WADispatcherAddPage categoriesForClass!Unclassified! !
+!WADispatcherAddPage categoriesForClass!Seaside-Tools-Web! !
 
 !WADispatcherAddPage methodsFor!
 

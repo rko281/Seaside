@@ -6,15 +6,15 @@ JSObject subclass: #JSJson
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JSJson guid: (GUID fromString: '{f3079c56-0418-4a1d-9f20-9dd300be9203}')!
+JSJson guid: (GUID fromString: '{94c805b9-6635-4ee1-9344-3d0b3f03246a}')!
 
 JSJson comment: 'I represent the JSON object (www.json.org) that is supported by most modern web browsers. For older browsers I require WAJsonDeploymentLibrary or WAJsonDevelopmentLibrary to be included.'!
 
-!JSJson categoriesForClass!Base! !
+!JSJson categoriesForClass!Javascript-Core-Base! !
 
 !JSJson methodsFor!
 
-javascriptContentOn: aStream	aStream nextPutAll: 'JSON'!
+javascriptContentOn: aRenderer	aRenderer document identifier: 'JSON'!
 
 parse: aString	"This method parses a JSON text to produce an object or array."	self call: 'parse' with: aString!
 

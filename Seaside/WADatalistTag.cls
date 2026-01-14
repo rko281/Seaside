@@ -6,11 +6,11 @@ WACollectionTag subclass: #WADatalistTag
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WADatalistTag guid: (GUID fromString: '{73d4b8c8-63dd-453b-b4f6-11c2cf6d459f}')!
+WADatalistTag guid: (GUID fromString: '{e8cee6c8-f9f0-4575-8a49-0720f7c14895}')!
 
 WADatalistTag comment: 'datalist together with the a new list attribute for input is used to make comboboxes:<input list=browsers><datalist id=browsers> <option value="Safari"> <option value="Internet Explorer"> <option value="Opera"> <option value="Firefox"></datalist>'!
 
-!WADatalistTag categoriesForClass!Tags! !
+!WADatalistTag categoriesForClass!Seaside-Canvas-Tags! !
 
 !WADatalistTag methodsFor!
 

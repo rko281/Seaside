@@ -6,11 +6,11 @@ WACanvasBrushTest subclass: #WAFormTagTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAFormTagTest guid: (GUID fromString: '{d836f7d2-6a3f-4341-bb9b-ce93f17ae235}')!
+WAFormTagTest guid: (GUID fromString: '{9e8097b5-58b5-44f8-9cbc-2b08da45c838}')!
 
 WAFormTagTest comment: ''!
 
-!WAFormTagTest categoriesForClass!Brushes! !
+!WAFormTagTest categoriesForClass!Seaside-Tests-Canvas-Brushes! !
 
 !WAFormTagTest methodsFor!
 

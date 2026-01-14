@@ -6,11 +6,11 @@ WAExampleComponent subclass: #WASessionProtectedCounter
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WASessionProtectedCounter guid: (GUID fromString: '{672b978a-883e-4688-a3d6-d1bb23e94534}')!
+WASessionProtectedCounter guid: (GUID fromString: '{916b89c8-7ff4-484b-9f86-6a807d0c50b7}')!
 
 WASessionProtectedCounter comment: 'A counter that is protected by WASessionCookieProtectionFilter.'!
 
-!WASessionProtectedCounter categoriesForClass!Misc! !
+!WASessionProtectedCounter categoriesForClass!Seaside-Examples-Misc! !
 
 !WASessionProtectedCounter methodsFor!
 

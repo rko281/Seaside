@@ -6,11 +6,11 @@ WAContextTest subclass: #WACookieTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WACookieTest guid: (GUID fromString: '{ee9a95e8-cd6e-417f-a876-dbac7ae9849c}')!
+WACookieTest guid: (GUID fromString: '{6eb83589-7a35-4f44-9fe0-995de405a547}')!
 
 WACookieTest comment: ''!
 
-!WACookieTest categoriesForClass!HTTP! !
+!WACookieTest categoriesForClass!Seaside-Tests-Core-HTTP! !
 
 !WACookieTest methodsFor!
 

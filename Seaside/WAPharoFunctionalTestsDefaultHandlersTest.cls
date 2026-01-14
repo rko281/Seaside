@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAEnvironmentDefaultHandlersTest subclass: #WAPharoFunctionalTestsDefaultHandlersTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAPharoFunctionalTestsDefaultHandlersTest guid: (GUID fromString: '{8c7d1c66-b188-4fb4-ab00-f6d439193dbc}')!
+
 WAPharoFunctionalTestsDefaultHandlersTest comment: ''!
+
 !WAPharoFunctionalTestsDefaultHandlersTest categoriesForClass!Unclassified! !
+
 !WAPharoFunctionalTestsDefaultHandlersTest methodsFor!
 
 testAllTests
@@ -30,6 +34,9 @@ testDefaultTests
 	self deny: app parent isNil.
 	self assert: app name = 'tests'.
 	self assert: app url pathStringUnencoded = '/tests'! !
-!WAPharoFunctionalTestsDefaultHandlersTest categoriesFor: #testAllTests!public!tests! !
-!WAPharoFunctionalTestsDefaultHandlersTest categoriesFor: #testDefaultTests!public!tests! !
+
+!WAPharoFunctionalTestsDefaultHandlersTest categoriesForMethods!
+testAllTests!public!tests! !
+testDefaultTests!public!tests! !
+!
 

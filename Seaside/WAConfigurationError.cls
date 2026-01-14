@@ -6,9 +6,9 @@ WAError subclass: #WAConfigurationError
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAConfigurationError guid: (GUID fromString: '{48059f63-1b0a-405c-802b-82394ffc5aea}')!
+WAConfigurationError guid: (GUID fromString: '{710a910e-4e34-4740-8c90-e2133ee23a5f}')!
 
 WAConfigurationError comment: ''!
 
-!WAConfigurationError categoriesForClass!Configuration! !
+!WAConfigurationError categoriesForClass!Seaside-Core-Configuration! !
 

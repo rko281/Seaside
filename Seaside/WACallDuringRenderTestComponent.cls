@@ -6,11 +6,11 @@ WAComponent subclass: #WACallDuringRenderTestComponent
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WACallDuringRenderTestComponent guid: (GUID fromString: '{8324b447-4b0a-47af-b41a-883a28a6fa71}')!
+WACallDuringRenderTestComponent guid: (GUID fromString: '{f84d2cfb-a634-4151-943a-7196f3062b19}')!
 
 WACallDuringRenderTestComponent comment: ''!
 
-!WACallDuringRenderTestComponent categoriesForClass!Functional! !
+!WACallDuringRenderTestComponent categoriesForClass!Seaside-Tests-Flow-Functional! !
 
 !WACallDuringRenderTestComponent methodsFor!
 

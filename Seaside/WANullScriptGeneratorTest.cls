@@ -6,11 +6,11 @@ WAScriptGeneratorTest subclass: #WANullScriptGeneratorTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WANullScriptGeneratorTest guid: (GUID fromString: '{02dbfd02-ca46-4868-9eba-229ffc612318}')!
+WANullScriptGeneratorTest guid: (GUID fromString: '{cc41c08f-adf8-471e-8cbd-c0930bf59c13}')!
 
 WANullScriptGeneratorTest comment: ''!
 
-!WANullScriptGeneratorTest categoriesForClass!Base! !
+!WANullScriptGeneratorTest categoriesForClass!Seaside-Tests-Canvas-Base! !
 
 !WANullScriptGeneratorTest methodsFor!
 

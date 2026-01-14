@@ -6,11 +6,11 @@ WADecoration subclass: #WADelegation
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WADelegation guid: (GUID fromString: '{59a87648-77fb-4b76-9559-cd411667580d}')!
+WADelegation guid: (GUID fromString: '{ceed0eb3-2288-4840-b3b2-0d7a00a956f2}')!
 
 WADelegation comment: 'I work as a container to delegate the rendering to another object.'!
 
-!WADelegation categoriesForClass!Base! !
+!WADelegation categoriesForClass!Seaside-Component-Base! !
 
 !WADelegation methodsFor!
 

@@ -6,11 +6,11 @@ WAContextTest subclass: #WARequestHandlerTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WARequestHandlerTest guid: (GUID fromString: '{5c7751d5-de59-4ddb-8075-61c060553d40}')!
+WARequestHandlerTest guid: (GUID fromString: '{741bcde2-fc04-4a03-9d34-812c04b02740}')!
 
 WARequestHandlerTest comment: ''!
 
-!WARequestHandlerTest categoriesForClass!RequestHandling! !
+!WARequestHandlerTest categoriesForClass!Seaside-Tests-Core-RequestHandling! !
 
 !WARequestHandlerTest methodsFor!
 

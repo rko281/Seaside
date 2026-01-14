@@ -6,11 +6,11 @@ WAFileLibrary subclass: #WAToolFiles
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAToolFiles guid: (GUID fromString: '{2ace7172-b643-4a2f-bb96-17048e065e87}')!
+WAToolFiles guid: (GUID fromString: '{800835bf-2ed1-4deb-acb3-f7742d6408b2}')!
 
 WAToolFiles comment: ''!
 
-!WAToolFiles categoriesForClass!Unclassified! !
+!WAToolFiles categoriesForClass!Seaside-Tools-Web! !
 
 !WAToolFiles methodsFor!
 

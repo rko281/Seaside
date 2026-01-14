@@ -6,11 +6,11 @@ WARequestFilter subclass: #WAAuthenticationFilter
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAAuthenticationFilter guid: (GUID fromString: '{dad24733-6d42-468b-b6c9-0d9bc35b890d}')!
+WAAuthenticationFilter guid: (GUID fromString: '{58ffc67d-9d1f-4f3d-b56a-9d6115d75570}')!
 
 WAAuthenticationFilter comment: 'WAAuthenticationFilter protects a request handler with username and password using the standard HTTP basic authentication. This passes username and password in clear-text, unless used over an encripted HTTPS connection. You should set the authenticator, and object that is able to validate usernames and passwords by implementing #verifyPassword:forUser:.'!
 
-!WAAuthenticationFilter categoriesForClass!Filter! !
+!WAAuthenticationFilter categoriesForClass!Seaside-Core-Filter! !
 
 !WAAuthenticationFilter methodsFor!
 

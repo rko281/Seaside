@@ -6,11 +6,11 @@ WADispatcherSubPage subclass: #WADispatcherCopyPage
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WADispatcherCopyPage guid: (GUID fromString: '{e171f98b-9116-4f06-aca2-3e5e10d15360}')!
+WADispatcherCopyPage guid: (GUID fromString: '{0306151c-7976-48c4-83a1-26a30643df0d}')!
 
 WADispatcherCopyPage comment: ''!
 
-!WADispatcherCopyPage categoriesForClass!Unclassified! !
+!WADispatcherCopyPage categoriesForClass!Seaside-Tools-Web! !
 
 !WADispatcherCopyPage methodsFor!
 

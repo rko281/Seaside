@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WATool subclass: #WABrowser
 	instanceVariableNames: 'contents model message findClassName'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WABrowser guid: (GUID fromString: '{d4609dd8-c5eb-426b-a1aa-df32888c272d}')!
+
 WABrowser comment: ''!
+
 !WABrowser categoriesForClass!Unclassified! !
+
 !WABrowser methodsFor!
 
 accept
@@ -202,36 +206,39 @@ updateUrl: aUrl
 			ifTrue: [ aUrl addField: 'meta' ] ].
 	self model selectedMessageName isNil 
 		ifFalse: [ aUrl addField: 'method' value: self model selectedMessageName ]! !
-!WABrowser categoriesFor: #accept!actions!public! !
-!WABrowser categoriesFor: #columns!accessing!public! !
-!WABrowser categoriesFor: #contents!accessing!public! !
-!WABrowser categoriesFor: #contents:!accessing!public! !
-!WABrowser categoriesFor: #findClass!public! !
-!WABrowser categoriesFor: #findClassName!accessing!private! !
-!WABrowser categoriesFor: #findClassName:!accessing!private! !
-!WABrowser categoriesFor: #initialize!initialization!public! !
-!WABrowser categoriesFor: #initialRequest:!processing!public! !
-!WABrowser categoriesFor: #model!accessing!public! !
-!WABrowser categoriesFor: #model:!accessing!public! !
-!WABrowser categoriesFor: #notify:at:in:!notifying!public! !
-!WABrowser categoriesFor: #renderChooserOn:!public!rendering! !
-!WABrowser categoriesFor: #renderColumnsOn:!public!rendering! !
-!WABrowser categoriesFor: #renderContentOn:!public!rendering! !
-!WABrowser categoriesFor: #renderContentPaneOn:!public!rendering! !
-!WABrowser categoriesFor: #renderMessageOn:!public!rendering! !
-!WABrowser categoriesFor: #renderModeButtonsOn:!public!rendering! !
-!WABrowser categoriesFor: #select!notifying!public! !
-!WABrowser categoriesFor: #selectFrom:to:!actions!public! !
-!WABrowser categoriesFor: #selectionInterval!accessing!public! !
-!WABrowser categoriesFor: #showClass!actions!public! !
-!WABrowser categoriesFor: #showHelp!actions!public! !
-!WABrowser categoriesFor: #showInstance!actions!public! !
-!WABrowser categoriesFor: #states!accessing!public! !
-!WABrowser categoriesFor: #style!public!rendering! !
-!WABrowser categoriesFor: #text!accessing!public! !
-!WABrowser categoriesFor: #update:!notifying!public! !
-!WABrowser categoriesFor: #updateRoot:!public! !
-!WABrowser categoriesFor: #updateUrl:!processing!public! !
+
+!WABrowser categoriesForMethods!
+accept!actions!public! !
+columns!accessing!public! !
+contents!accessing!public! !
+contents:!accessing!public! !
+findClass!public! !
+findClassName!accessing!private! !
+findClassName:!accessing!private! !
+initialize!initialization!public! !
+initialRequest:!processing!public! !
+model!accessing!public! !
+model:!accessing!public! !
+notify:at:in:!notifying!public! !
+renderChooserOn:!public!rendering! !
+renderColumnsOn:!public!rendering! !
+renderContentOn:!public!rendering! !
+renderContentPaneOn:!public!rendering! !
+renderMessageOn:!public!rendering! !
+renderModeButtonsOn:!public!rendering! !
+select!notifying!public! !
+selectFrom:to:!actions!public! !
+selectionInterval!accessing!public! !
+showClass!actions!public! !
+showHelp!actions!public! !
+showInstance!actions!public! !
+states!accessing!public! !
+style!public!rendering! !
+text!accessing!public! !
+update:!notifying!public! !
+updateRoot:!public! !
+updateUrl:!processing!public! !
+!
 
 !WABrowser class methodsFor!
 
@@ -253,10 +260,13 @@ fullOnClass: aClass selector: aSelector
 
 initialize
 	WAAdmin register: self asApplicationAt: self applicationName! !
-!WABrowser class categoriesFor: #applicationName!accessing!public! !
-!WABrowser class categoriesFor: #canBeRoot!accessing!public! !
-!WABrowser class categoriesFor: #description!accessing!public! !
-!WABrowser class categoriesFor: #fullOnClass:!instance creation!public! !
-!WABrowser class categoriesFor: #fullOnClass:selector:!instance creation!public! !
-!WABrowser class categoriesFor: #initialize!initialization!public! !
+
+!WABrowser class categoriesForMethods!
+applicationName!accessing!public! !
+canBeRoot!accessing!public! !
+description!accessing!public! !
+fullOnClass:!instance creation!public! !
+fullOnClass:selector:!instance creation!public! !
+initialize!initialization!public! !
+!
 

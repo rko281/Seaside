@@ -6,11 +6,11 @@ WAObject subclass: #WALocale
 	poolDictionaries: ''
 	classInstanceVariableNames: 'iso2Languages iso3Languages iso2Countries iso3Countries'!
 
-WALocale guid: (GUID fromString: '{91c9b31e-da80-4a88-9a18-7c93a0345a81}')!
+WALocale guid: (GUID fromString: '{1a499b3e-f467-477b-becf-4286cb71b840}')!
 
 WALocale comment: 'A WALocale defines a users langauge and country.Instance Variables	country:		<String>	language:		<String>country	- either an ISO 2 or ISO 3 country codelanguage	- either an ISO 2 or ISO 3 language code'!
 
-!WALocale categoriesForClass!HTTP! !
+!WALocale categoriesForClass!Seaside-Core-HTTP! !
 
 !WALocale methodsFor!
 
@@ -20,7 +20,7 @@ country: aString	country := aString!
 
 countryName	"answers the country name in english and all capitals"	^ self country ifNotNil: [ 		self country size = 2			ifTrue: [ self class iso2Countries at: self country ]			ifFalse: [ self class iso3Countries at: self country ] ]!
 
-greaseString	^ country isNil		ifTrue: [			"optimization, no need for allocation at all"			language ]		ifFalse: [			| string stream |			"allocate with correct size, avoid copy"			string := String new: language size + 1 + country size.			stream := WriteStream on: string.			stream				nextPutAll: language;				nextPut: $-;				nextPutAll: country.			"no need for #contents because we allocated with the correct size"			^ string ]!
+greaseString	^ country isNil		ifTrue: [			"optimization, no need for allocation at all"			language ]		ifFalse: [			| string stream |			"allocate with correct size, avoid copy"			string := String new: language size + 1 + country size.			stream := WriteStream on: string.			stream				nextPutAll: language;				nextPut: $-;				nextPutAll: country.			^ stream contents ]!
 
 language	^ language!
 

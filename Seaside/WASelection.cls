@@ -6,11 +6,11 @@ WACanvasWidget subclass: #WASelection
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WASelection guid: (GUID fromString: '{0dceff15-5dec-4e3b-93cf-b0e9d2e991ab}')!
+WASelection guid: (GUID fromString: '{81c81afd-1661-4751-8a9d-6cac299f44c6}')!
 
 WASelection comment: 'WASelection creates a selectable list. Items can be any object. If optional labelBlock is not given the string versions of the items are displayed to user, otherwise labelBlock is used to generate the text to display for each item. Returns the item selected by user, (not the index nor the text shown the user). 	| selection |	selection := WASelection new.	selection items: #(1 ''cat'' ''rat'').	selection 		labelBlock: [:item | item = 1 ifTrue: [''First''] ifFalse: [item asUppercase]].	result := self call: selection.	self inform: result printStringInstance Variables:	items	<Array of Objects> 		labelBlock	<One arg Block>	'!
 
-!WASelection categoriesForClass!Components! !
+!WASelection categoriesForClass!Seaside-Widgets-Components! !
 
 !WASelection methodsFor!
 

@@ -6,11 +6,11 @@ WAHtmlElement subclass: #WAContentElement
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAContentElement guid: (GUID fromString: '{f585e120-cd3e-4213-993a-75d56cfa8281}')!
+WAContentElement guid: (GUID fromString: '{d4cc23ba-d920-4f29-901c-2f4cc560a787}')!
 
 WAContentElement comment: 'Common superclass of all elements inside a <head> that can have content. Either between the start and end tag or a (mime) document pointed to by an URL.'!
 
-!WAContentElement categoriesForClass!Document-Elements! !
+!WAContentElement categoriesForClass!Seaside-Core-Document-Elements! !
 
 !WAContentElement methodsFor!
 

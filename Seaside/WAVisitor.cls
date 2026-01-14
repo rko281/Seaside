@@ -6,11 +6,11 @@ WAObject subclass: #WAVisitor
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAVisitor guid: (GUID fromString: '{6495fd48-dd35-4932-b51c-72cd0fd1ba60}')!
+WAVisitor guid: (GUID fromString: '{8b31c293-946c-452a-9b67-def0e269c34d}')!
 
 WAVisitor comment: 'Common superclass for all visitors (visitor pattern)'!
 
-!WAVisitor categoriesForClass!Utilities! !
+!WAVisitor categoriesForClass!Seaside-Core-Utilities! !
 
 !WAVisitor methodsFor!
 

@@ -6,11 +6,11 @@ WAAbstractCanvasBrushTest subclass: #WACanvasBrushTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WACanvasBrushTest guid: (GUID fromString: '{0fdde26e-6957-43c1-abf0-2d4ea31d6f74}')!
+WACanvasBrushTest guid: (GUID fromString: '{a36dfe3c-30a4-4b97-b754-d68a65e1003a}')!
 
 WACanvasBrushTest comment: ''!
 
-!WACanvasBrushTest categoriesForClass!Brushes! !
+!WACanvasBrushTest categoriesForClass!Seaside-Tests-Canvas-Brushes! !
 
 !WACanvasBrushTest methodsFor!
 

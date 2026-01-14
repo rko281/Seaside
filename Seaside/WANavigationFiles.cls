@@ -6,11 +6,11 @@ WAFileLibrary subclass: #WANavigationFiles
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WANavigationFiles guid: (GUID fromString: '{d0448c33-3d1f-406b-8de8-0422f14dee8e}')!
+WANavigationFiles guid: (GUID fromString: '{8c0b90b3-4646-40a3-bbbc-783b6a34c2b8}')!
 
 WANavigationFiles comment: 'Provides CSS to render WANavigation using tabs.'!
 
-!WANavigationFiles categoriesForClass!Components! !
+!WANavigationFiles categoriesForClass!Seaside-Widgets-Components! !
 
 !WANavigationFiles methodsFor!
 

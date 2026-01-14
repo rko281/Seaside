@@ -6,11 +6,11 @@ GRError subclass: #WAError
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAError guid: (GUID fromString: '{fb5cd4ac-3387-4ef5-9df6-823dfc50ab2c}')!
+WAError guid: (GUID fromString: '{fa963798-4569-41ce-b95e-6360f2f2abf2}')!
 
 WAError comment: 'Common superclass for Seaside errors'!
 
-!WAError categoriesForClass!Exceptions! !
+!WAError categoriesForClass!Seaside-Core-Exceptions! !
 
 !WAError class methodsFor!
 

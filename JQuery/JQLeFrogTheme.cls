@@ -6,11 +6,11 @@ JQBaseTheme subclass: #JQLeFrogTheme
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQLeFrogTheme guid: (GUID fromString: '{6164413f-868f-41bb-b313-b6301e840686}')!
+JQLeFrogTheme guid: (GUID fromString: '{fd71c6cc-2f17-484f-a10f-35a9802888a6}')!
 
 JQLeFrogTheme comment: ''!
 
-!JQLeFrogTheme categoriesForClass!Libraries! !
+!JQLeFrogTheme categoriesForClass!JQuery-UI-Libraries! !
 
 !JQLeFrogTheme methodsFor!
 

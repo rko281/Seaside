@@ -6,11 +6,11 @@ JQBaseTheme subclass: #JQStartTheme
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQStartTheme guid: (GUID fromString: '{22baf995-8856-44fe-b093-d4d08d2aae1a}')!
+JQStartTheme guid: (GUID fromString: '{34888c52-f8a0-4861-a380-2457aed255ee}')!
 
 JQStartTheme comment: ''!
 
-!JQStartTheme categoriesForClass!Libraries! !
+!JQStartTheme categoriesForClass!JQuery-UI-Libraries! !
 
 !JQStartTheme methodsFor!
 

@@ -6,11 +6,11 @@ WARoot subclass: #WAHtmlRoot
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAHtmlRoot guid: (GUID fromString: '{46616d90-46e5-459e-a905-0754692b6384}')!
+WAHtmlRoot guid: (GUID fromString: '{b999c657-2e9f-4b3d-b61f-0b18d2d49dda}')!
 
 WAHtmlRoot comment: 'A WAHtmlRoot is the root element of an HTML Document (<html>).Instance Variables	bodyAttrs:		<WAHtmlAttributes>	context:			<WARenderContext>	docType:		<String>	headAttrs:		<WAHtmlAttributes>	headElements:	<OrderedCollection<WAHtmlElement>>	htmlAttrs:		<WAHtmlAttributes>	scripts:			<Set<String>>	styles:			<Set<String>>	title:			<String>bodyAttrs	- the attributes of the <body> elementcontext	- the context used to render the contents of the <body> elementdocType	- the document typeheadAttrs	- the attributes of the <head> elementheadElements	- the elements inside the <head> sectionhtmlAttrs	- the attributes of the <html> elementscripts	- contains the strings returned by WAPresenter >> #scriptstyles	- contains the strings returned by WAPresenter >> #styletitle	- the title of the HTML document, the contents of the <title> element'!
 
-!WAHtmlRoot categoriesForClass!Document! !
+!WAHtmlRoot categoriesForClass!Seaside-Core-Document! !
 
 !WAHtmlRoot methodsFor!
 

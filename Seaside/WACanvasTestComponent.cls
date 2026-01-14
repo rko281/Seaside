@@ -6,11 +6,11 @@ WAComponent subclass: #WACanvasTestComponent
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WACanvasTestComponent guid: (GUID fromString: '{aeb8cfa1-8c5f-4f5f-83d7-d8490ef330b4}')!
+WACanvasTestComponent guid: (GUID fromString: '{5ced54e6-1e9e-46b3-af74-a3c689e5764e}')!
 
 WACanvasTestComponent comment: ''!
 
-!WACanvasTestComponent categoriesForClass!Unclassified! !
+!WACanvasTestComponent categoriesForClass!Seaside-Tests-RenderLoop! !
 
 !WACanvasTestComponent methodsFor!
 

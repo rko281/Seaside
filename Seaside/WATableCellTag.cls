@@ -6,11 +6,11 @@ WATagBrush subclass: #WATableCellTag
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WATableCellTag guid: (GUID fromString: '{5544d395-ad7c-424d-8811-4b12e5e61f41}')!
+WATableCellTag guid: (GUID fromString: '{bad9d11e-003f-4827-ab0a-08e0330a70ce}')!
 
 WATableCellTag comment: 'Common superclass for table cells'!
 
-!WATableCellTag categoriesForClass!Tags! !
+!WATableCellTag categoriesForClass!Seaside-Canvas-Tags! !
 
 !WATableCellTag methodsFor!
 

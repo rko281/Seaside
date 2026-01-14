@@ -6,11 +6,11 @@ WAComponent subclass: #WAUserConfigurationEditor
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAUserConfigurationEditor guid: (GUID fromString: '{c968736e-6372-44c4-8aac-f6aae31eb251}')!
+WAUserConfigurationEditor guid: (GUID fromString: '{b6e97282-bc90-44fb-ad5d-6747921b9ac2}')!
 
 WAUserConfigurationEditor comment: ''!
 
-!WAUserConfigurationEditor categoriesForClass!Unclassified! !
+!WAUserConfigurationEditor categoriesForClass!Seaside-Tools-Web! !
 
 !WAUserConfigurationEditor methodsFor!
 

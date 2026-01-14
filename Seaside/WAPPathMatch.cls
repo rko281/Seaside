@@ -6,11 +6,11 @@ WAMatch subclass: #WAPPathMatch
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAPPathMatch guid: (GUID fromString: '{efccfcbb-4272-40f7-9342-ebca93bdd224}')!
+WAPPathMatch guid: (GUID fromString: '{623fc4b8-3e2f-4ad5-9c79-8ddfb6a14542}')!
 
 WAPPathMatch comment: ''!
 
-!WAPPathMatch categoriesForClass!Route! !
+!WAPPathMatch categoriesForClass!Seaside-REST-Core-Route! !
 
 !WAPPathMatch methodsFor!
 

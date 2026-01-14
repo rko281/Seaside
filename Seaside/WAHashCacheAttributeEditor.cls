@@ -6,11 +6,11 @@ WAExpiringCacheAttributeEditor subclass: #WAHashCacheAttributeEditor
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAHashCacheAttributeEditor guid: (GUID fromString: '{81d43f7e-5ff2-49ae-a2a0-05b87cfa1823}')!
+WAHashCacheAttributeEditor guid: (GUID fromString: '{25f4f843-4cc6-43ff-8228-cd40722fb695}')!
 
 WAHashCacheAttributeEditor comment: ''!
 
-!WAHashCacheAttributeEditor categoriesForClass!Unclassified! !
+!WAHashCacheAttributeEditor categoriesForClass!Seaside-Tools-Web! !
 
 !WAHashCacheAttributeEditor methodsFor!
 

@@ -6,11 +6,11 @@ WAAttributeExpression subclass: #WAAddRemoveExpression
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAAddRemoveExpression guid: (GUID fromString: '{3a4742d4-b025-4862-ba17-9e3ab8e13aef}')!
+WAAddRemoveExpression guid: (GUID fromString: '{3e8dea70-7222-420f-bcfa-f2dc854cc1ec}')!
 
 WAAddRemoveExpression comment: ''!
 
-!WAAddRemoveExpression categoriesForClass!Configuration! !
+!WAAddRemoveExpression categoriesForClass!Seaside-Core-Configuration! !
 
 !WAAddRemoveExpression methodsFor!
 

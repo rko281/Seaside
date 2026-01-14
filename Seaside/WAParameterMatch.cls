@@ -6,11 +6,11 @@ WAMatch subclass: #WAParameterMatch
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAParameterMatch guid: (GUID fromString: '{55b049bf-4d26-45f5-9c19-1017506430b0}')!
+WAParameterMatch guid: (GUID fromString: '{7eb79f09-c520-4a06-952f-9623f6630120}')!
 
 WAParameterMatch comment: ''!
 
-!WAParameterMatch categoriesForClass!Route! !
+!WAParameterMatch categoriesForClass!Seaside-REST-Core-Route! !
 
 !WAParameterMatch methodsFor!
 

@@ -6,11 +6,11 @@ WAObject subclass: #WAConfigurationDescription
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAConfigurationDescription guid: (GUID fromString: '{40ea3147-7d7d-43a4-b9f2-51ce484120c0}')!
+WAConfigurationDescription guid: (GUID fromString: '{d0894728-bc36-4167-a38a-34d4cc8b8f4c}')!
 
 WAConfigurationDescription comment: 'I hold a collection of attributes and present methods to construct new methods, providing an interface a bit like WACanvas and #renderContentOn: to WASystemConfiguration>>addAttributes:.I can use any kind of collection class and handle setting the #configuration: parameter of the attribute appropriately on addition. If my collection is a Dictionary, I will store the attributes by their keys.'!
 
-!WAConfigurationDescription categoriesForClass!Configuration! !
+!WAConfigurationDescription categoriesForClass!Seaside-Core-Configuration! !
 
 !WAConfigurationDescription methodsFor!
 

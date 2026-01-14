@@ -6,11 +6,11 @@ WAToolPlugin subclass: #WAToggleHalosToolPlugin
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAToggleHalosToolPlugin guid: (GUID fromString: '{3a7c55a4-e4f3-44cb-b38d-61491dbe1690}')!
+WAToggleHalosToolPlugin guid: (GUID fromString: '{68856b3d-2d52-4358-a8d5-bb2c25013dce}')!
 
 WAToggleHalosToolPlugin comment: 'I toggle halos on and off.'!
 
-!WAToggleHalosToolPlugin categoriesForClass!Plugins! !
+!WAToggleHalosToolPlugin categoriesForClass!Seaside-Development-Plugins! !
 
 !WAToggleHalosToolPlugin methodsFor!
 

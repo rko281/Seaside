@@ -6,11 +6,11 @@ WAFileLibrary subclass: #WAAjaxifierLibrary
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAAjaxifierLibrary guid: (GUID fromString: '{165aa5e3-e5a1-491c-9057-d000b7466d16}')!
+WAAjaxifierLibrary guid: (GUID fromString: '{2504a38b-7b33-400f-a070-5dfe91af9853}')!
 
 WAAjaxifierLibrary comment: 'I ajaxify a web application by turning full page requests into background AJAX requests.'!
 
-!WAAjaxifierLibrary categoriesForClass!Unclassified! !
+!WAAjaxifierLibrary categoriesForClass!Seaside-Ajaxifier-Core! !
 
 !WAAjaxifierLibrary methodsFor!
 

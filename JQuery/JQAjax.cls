@@ -6,11 +6,11 @@ JQAjaxSetup subclass: #JQAjax
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQAjax guid: (GUID fromString: '{b1e91465-1fc3-4330-aa62-4a1f48c0cde3}')!
+JQAjax guid: (GUID fromString: '{a28b6e40-5528-445c-a2e8-ef75649acb5a}')!
 
 JQAjax comment: 'Load a remote page using an HTTP request.'!
 
-!JQAjax categoriesForClass!Objects! !
+!JQAjax categoriesForClass!JQuery-Core-Objects! !
 
 !JQAjax methodsFor!
 
@@ -18,19 +18,19 @@ addParameter: anObject	"Add the request parameter anObject, a single value or a
 
 addParameters: aCollection	"Add multiple request parameters from aCollection."	self parameters addAll: aCollection associations!
 
-callback: aBlock	"Register aBlock as a primary callback of the receiver. It is only possible to have a single primary callback registered per instance. The primary callback must generate a response."	self enableCallbacks.	callback := aBlock!
+callback: aBlock	"Register aBlock as a primary callback of the receiver. It is only possible to have a single primary callback registered per instance. The primary callback must generate a response."	self enableCallbacks.	callback := JQAjaxInternalCallback block: aBlock!
 
 callback: aBlock value: anObject	"Register aBlock as a secondary callback. anObject is a reference to a Javascript object on the client-side. The object will be sent back to the server as a string and passed into aBlock. Multiple secondary callbacks can be defined with one receiver.Note: anObject should be a single literal Javascript object (String, Number, Boolean). The object is transfered from client to server as the print-string of the object and passed into the callback block as a Smalltalk String."	self enableCallbacks.	self addParameter: (self renderContext callbacks		store: (WAValueCallback on: aBlock)) 			-> anObject!
 
 data	^ self options at: 'data' ifAbsentPut: [ JSJoin new ]!
 
-enableCallbacks	self hasCallback ifTrue: [ ^ self ].	self url: self renderContext actionUrl withoutQuery withoutFragment.	self addParameters: self renderContext actionUrl queryFields.	self addParameter: (callbackId := self renderContext callbacks		store: (JSAjaxCallback on: [ self processCallback ]))!
+enableCallbacks	self hasCallback ifTrue: [ ^ self ].	self url: self renderContext actionUrl withoutQuery withoutFragment.	self addParameters: self renderContext actionUrl queryFields.	self addParameter: (callbackId := self renderContext callbacks		store: (JQAjaxCallback ajax: self))!
 
 fullUrl	"Answer a Seaside URL object that is composed with the parameters of the receiver. This method excludes dynamic Javascript objects that might be part of the parameters."		| url |	url := self url copy.	self parameters do: [ :each | 		(each isString)			ifTrue: [ url addField: each ].		((each isKindOf: Association) and: [ each value isJavascript not ])			ifTrue: [ url addField: each key value: each value ] ].	^ url!
 
 hasCallback	^ callbackId notNil!
 
-html: aRenderable	"Defines a html rendering callback."	self dataType: 'html'.	self respond: [ :response |		response			doNotCache;			contentType: self application contentType.		self render: aRenderable on: response stream ]!
+html: aRenderable	"Defines a html rendering callback."	self dataType: 'html'.	self enableCallbacks.	callback := JQAjaxInternalCallbackRespondHTML ajax: self renderable: aRenderable!
 
 isSupportedOption: aString	^ true!
 
@@ -42,11 +42,11 @@ optionAt: aKey put: aValue	^ (self isSupportedOption: aKey) 		ifTrue: [ super 
 
 parameters	"Answer the request parameters of the reciever."		^ self data collection!
 
-processCallback	callback isNil		ifFalse: [ callback value ]!
+processCallback	callback isNil		ifFalse: [ callback process ]!
 
-respond: aBlock	"Defines a response callback."	self callback: [ self requestContext respond: aBlock ]!
+respond: aBlock	"Defines a response callback."	self enableCallbacks.	callback := JQAjaxInternalCallbackRespond block: aBlock!
 
-script: aBlock	"Defines a script rendering callback."	self dataType: 'script'.	self respond: [ :response |		response			doNotCache; 			contentType: (WAMimeType textJavascript				charset: self requestContext handler charSet).		self script: aBlock on: response stream ]!
+script: aBlock	"Defines a script rendering callback."	self dataType: 'script'.	self enableCallbacks.	callback := JQAjaxInternalCallbackRespondScript ajax: self block: aBlock!
 
 serialize: aQuery	"Serializes a set of input elements matching aQuery and trigger the associated Seaside callbacks."	self enableCallbacks.	self addParameter: aQuery serialize!
 
@@ -66,7 +66,7 @@ serializeThisWithHidden	"Serialize the receiving form element and a following h
 
 serializeWithHidden: aQuery	"Serialize the receiving form element and a following hidden form element. This is required in case of a check-box or multi-select list."		self serialize: (aQuery		next: 'input:hidden';		addBack)!
 
-text: aBlock	"Defines a text rendering callback."	self dataType: 'text'.	self respond: [ :response |		response			doNotCache;			contentType: (WAMimeType textPlain 				charset: self requestContext handler charSet).		aBlock value: response stream ]!
+text: aBlock	"Defines a text rendering callback."	self dataType: 'text'.	self enableCallbacks.	callback := JQAjaxInternalCallbackRespondText block: aBlock!
 
 url	^ self options at: 'url' ifAbsentPut: [ WAUrl new ]! !
 

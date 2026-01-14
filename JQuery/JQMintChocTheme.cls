@@ -6,11 +6,11 @@ JQBaseTheme subclass: #JQMintChocTheme
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQMintChocTheme guid: (GUID fromString: '{a33427b5-9155-4b6b-ab12-53775a33e532}')!
+JQMintChocTheme guid: (GUID fromString: '{6282596f-dd5f-41a5-9faa-c417c0385456}')!
 
 JQMintChocTheme comment: ''!
 
-!JQMintChocTheme categoriesForClass!Libraries! !
+!JQMintChocTheme categoriesForClass!JQuery-UI-Libraries! !
 
 !JQMintChocTheme methodsFor!
 

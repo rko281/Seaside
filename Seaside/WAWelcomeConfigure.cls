@@ -6,11 +6,11 @@ WAComponent subclass: #WAWelcomeConfigure
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAWelcomeConfigure guid: (GUID fromString: '{65f7d592-8471-4113-91e5-be294ee712d4}')!
+WAWelcomeConfigure guid: (GUID fromString: '{73252657-da24-4164-8067-ee008d1d7c33}')!
 
 WAWelcomeConfigure comment: ''!
 
-!WAWelcomeConfigure categoriesForClass!Base! !
+!WAWelcomeConfigure categoriesForClass!Seaside-Welcome-Base! !
 
 !WAWelcomeConfigure methodsFor!
 

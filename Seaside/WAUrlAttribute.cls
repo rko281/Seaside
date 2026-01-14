@@ -6,11 +6,11 @@ WAAttribute subclass: #WAUrlAttribute
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAUrlAttribute guid: (GUID fromString: '{fc41170e-db4c-4e66-bd24-8a8ba1a29125}')!
+WAUrlAttribute guid: (GUID fromString: '{5e36b0f8-7b1b-4072-8f9b-71fbca94f9f4}')!
 
 WAUrlAttribute comment: 'WAUrlAttribute represents a URL attribute. It converts between text entered on the configuration page and WAUrl instances.'!
 
-!WAUrlAttribute categoriesForClass!Configuration! !
+!WAUrlAttribute categoriesForClass!Seaside-Core-Configuration! !
 
 !WAUrlAttribute methodsFor!
 

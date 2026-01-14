@@ -6,11 +6,11 @@ WAFunctionalTest subclass: #WAUrlDecodingFunctionalTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAUrlDecodingFunctionalTest guid: (GUID fromString: '{f6ccf938-6016-461c-b619-a4088a544b15}')!
+WAUrlDecodingFunctionalTest guid: (GUID fromString: '{87dfcad4-f082-4572-bb8d-214d74021686}')!
 
 WAUrlDecodingFunctionalTest comment: ''!
 
-!WAUrlDecodingFunctionalTest categoriesForClass!Unclassified! !
+!WAUrlDecodingFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
 
 !WAUrlDecodingFunctionalTest methodsFor!
 

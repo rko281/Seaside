@@ -6,11 +6,11 @@ WAComponent subclass: #WAHandlerEditor
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAHandlerEditor guid: (GUID fromString: '{f3118e6b-02d5-494c-8701-68d9967f23f2}')!
+WAHandlerEditor guid: (GUID fromString: '{46dac773-b118-4d76-9efb-32509ac95abc}')!
 
 WAHandlerEditor comment: ''!
 
-!WAHandlerEditor categoriesForClass!Unclassified! !
+!WAHandlerEditor categoriesForClass!Seaside-Tools-Web! !
 
 !WAHandlerEditor methodsFor!
 

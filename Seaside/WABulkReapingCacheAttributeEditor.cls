@@ -6,11 +6,11 @@ WAExpiringCacheAttributeEditor subclass: #WABulkReapingCacheAttributeEditor
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WABulkReapingCacheAttributeEditor guid: (GUID fromString: '{92fe1cd7-47f0-445d-8c24-69093741457c}')!
+WABulkReapingCacheAttributeEditor guid: (GUID fromString: '{7bdad9d3-20ee-40e2-b754-3df8d85074d0}')!
 
 WABulkReapingCacheAttributeEditor comment: ''!
 
-!WABulkReapingCacheAttributeEditor categoriesForClass!Unclassified! !
+!WABulkReapingCacheAttributeEditor categoriesForClass!Seaside-Tools-Web! !
 
 !WABulkReapingCacheAttributeEditor methodsFor!
 

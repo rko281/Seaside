@@ -6,11 +6,11 @@ WAComponent subclass: #WAValidationTestComponent
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAValidationTestComponent guid: (GUID fromString: '{5094ca1f-635e-41ed-aef3-5ba1b0cba0bc}')!
+WAValidationTestComponent guid: (GUID fromString: '{e7be03e7-00b7-4fd2-bba0-c45449a35515}')!
 
 WAValidationTestComponent comment: ''!
 
-!WAValidationTestComponent categoriesForClass!Unclassified! !
+!WAValidationTestComponent categoriesForClass!Seaside-Tests-Functional! !
 
 !WAValidationTestComponent methodsFor!
 

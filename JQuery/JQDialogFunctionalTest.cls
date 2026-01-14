@@ -6,11 +6,11 @@ JQUiFunctionalTest subclass: #JQDialogFunctionalTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQDialogFunctionalTest guid: (GUID fromString: '{640a7578-d92c-43bd-a5b8-5360a71133b5}')!
+JQDialogFunctionalTest guid: (GUID fromString: '{b95a3134-a206-4f54-b989-c63c6165161f}')!
 
 JQDialogFunctionalTest comment: ''!
 
-!JQDialogFunctionalTest categoriesForClass!Functional! !
+!JQDialogFunctionalTest categoriesForClass!JQuery-Tests-UI-Functional! !
 
 !JQDialogFunctionalTest methodsFor!
 

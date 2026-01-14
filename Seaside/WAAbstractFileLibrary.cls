@@ -6,11 +6,11 @@ WAObject subclass: #WAAbstractFileLibrary
 	poolDictionaries: ''
 	classInstanceVariableNames: 'default'!
 
-WAAbstractFileLibrary guid: (GUID fromString: '{a29a0d6b-9bf4-4539-b7ea-1b7068f6819a}')!
+WAAbstractFileLibrary guid: (GUID fromString: '{fbee51d9-75fe-4214-a487-5e94741c6866}')!
 
 WAAbstractFileLibrary comment: 'Abstract superclass for Seaside file libraries'!
 
-!WAAbstractFileLibrary categoriesForClass!Libraries! !
+!WAAbstractFileLibrary categoriesForClass!Seaside-Core-Libraries! !
 
 !WAAbstractFileLibrary methodsFor!
 
@@ -98,7 +98,7 @@ addFileAt: aPath contents: aByteArrayOrString 	self 		addFileNamed: (GRPlatfor
 
 addFileNamed: aFilename contents: aByteArrayOrString	self subclassResponsibility!
 
-asSelector: aFilename	| mainPart extension |	mainPart := (aFilename copyUpToLast: $.)		select: [ :each | each isAlphaNumeric ].	[ mainPart isEmpty not and: [ mainPart first isDigit ] ]		whileTrue: [ mainPart := mainPart allButFirst ].		mainPart isEmpty ifTrue: [ ^ nil ].			extension := ((aFilename copyAfterLast: $.)		select: [ :each | each isAlphaNumeric ]) asLowercase capitalized.	^ (mainPart, extension) asSymbol!
+asSelector: aFilename	| mainPart extension |	mainPart := (aFilename copyUpToLast: $.)		select: [ :each | each isAlphaNumeric ].				mainPart isEmpty ifTrue: [ ^ nil ].		mainPart first isDigit ifTrue: [mainPart := '_' , mainPart].			extension := ((aFilename copyAfterLast: $.)		select: [ :each | each isAlphaNumeric ]) asLowercase capitalized.	^ (mainPart, extension) asSymbol!
 
 compileBinary: aByteArrayOrString selector: aSymbol 	"compiles aByteArrayOrString into a method named aSymbol that returns aByteArrayOrString as a byte array"	| code |	code := GRPlatform current 		asMethodReturningByteArray: aByteArrayOrString		named: aSymbol.	GRPlatform current 		compile: code		into: self		classified: self methodCategory!
 

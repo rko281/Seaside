@@ -6,11 +6,11 @@ WAComponent subclass: #WATool
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WATool guid: (GUID fromString: '{9b6f21e1-f7ea-464a-8929-bae9edfd54b3}')!
+WATool guid: (GUID fromString: '{0bee145d-8efb-41f9-b28b-db3f0ccd8cb0}')!
 
 WATool comment: 'A WATool is the common base class for tools called from the development tool bar. Is doesn''t do anything but including WADevelopmentFiles.'!
 
-!WATool categoriesForClass!Core! !
+!WATool categoriesForClass!Seaside-Development-Core! !
 
 !WATool methodsFor!
 

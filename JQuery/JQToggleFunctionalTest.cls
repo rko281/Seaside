@@ -6,11 +6,11 @@ JQUiFunctionalTest subclass: #JQToggleFunctionalTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQToggleFunctionalTest guid: (GUID fromString: '{8a55ef66-e318-4ad6-a495-497f359aaa44}')!
+JQToggleFunctionalTest guid: (GUID fromString: '{9ed9c80a-6863-44d1-8031-6d7f45d20cfc}')!
 
 JQToggleFunctionalTest comment: ''!
 
-!JQToggleFunctionalTest categoriesForClass!Functional! !
+!JQToggleFunctionalTest categoriesForClass!JQuery-Tests-UI-Functional! !
 
 !JQToggleFunctionalTest methodsFor!
 

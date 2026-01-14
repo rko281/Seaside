@@ -6,11 +6,11 @@ WARequestFilter subclass: #WATrailingSlashFilter
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WATrailingSlashFilter guid: (GUID fromString: '{7e3a132c-bbcf-42a9-b1f4-2b540a237b1b}')!
+WATrailingSlashFilter guid: (GUID fromString: '{e5806443-a980-4b58-a28d-21352a563df7}')!
 
 WATrailingSlashFilter comment: 'Enforces a trailing slash on the wrapped request handler.'!
 
-!WATrailingSlashFilter categoriesForClass!Filter! !
+!WATrailingSlashFilter categoriesForClass!Seaside-Core-Filter! !
 
 !WATrailingSlashFilter methodsFor!
 

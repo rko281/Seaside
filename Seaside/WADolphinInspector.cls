@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAInspector subclass: #WADolphinInspector
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WADolphinInspector guid: (GUID fromString: '{cd12d45e-f5b3-4a16-adc3-31b59b7feb08}')!
+
 WADolphinInspector comment: 'Previous implementation of WASqueakInspector'!
+
 !WADolphinInspector categoriesForClass!Unclassified! !
+
 !WADolphinInspector methodsFor!
 
 doIt
@@ -41,10 +45,13 @@ nativeInspectorOn: anObject
 	^(BasicInspector new)
 		model: anObject asValue;
 		yourself! !
-!WADolphinInspector categoriesFor: #doIt!actions!public! !
-!WADolphinInspector categoriesFor: #evaluate!actions!public! !
-!WADolphinInspector categoriesFor: #fieldsFor:!private! !
-!WADolphinInspector categoriesFor: #nativeInspectorOn:!public! !
+
+!WADolphinInspector categoriesForMethods!
+doIt!actions!public! !
+evaluate!actions!public! !
+fieldsFor:!private! !
+nativeInspectorOn:!public! !
+!
 
 !WADolphinInspector class methodsFor!
 
@@ -56,7 +63,10 @@ openNativeInspectorOn: anObject
 
 unload
 	self unselect! !
-!WADolphinInspector class categoriesFor: #initialize!class initialization!public! !
-!WADolphinInspector class categoriesFor: #openNativeInspectorOn:!inspecting!public! !
-!WADolphinInspector class categoriesFor: #unload!class initialization!public! !
+
+!WADolphinInspector class categoriesForMethods!
+initialize!class initialization!public! !
+openNativeInspectorOn:!inspecting!public! !
+unload!class initialization!public! !
+!
 

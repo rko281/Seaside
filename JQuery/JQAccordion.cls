@@ -6,11 +6,11 @@ JQWidget subclass: #JQAccordion
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQAccordion guid: (GUID fromString: '{d72355cf-7ecb-4ada-9210-adb38e90438d}')!
+JQAccordion guid: (GUID fromString: '{cdee17f0-9619-4562-ad61-2171f5c0cf3a}')!
 
 JQAccordion comment: 'An expandable/collapsible content pane. Applicable when content must be displayed within limited space.'!
 
-!JQAccordion categoriesForClass!Widgets! !
+!JQAccordion categoriesForClass!JQuery-UI-Widgets! !
 
 !JQAccordion methodsFor!
 

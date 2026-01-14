@@ -6,11 +6,11 @@ WAObject subclass: #WAResponse
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAResponse guid: (GUID fromString: '{a52387ce-528f-4d8f-872e-b29bc9205ba5}')!
+WAResponse guid: (GUID fromString: '{e01842ce-39da-47e8-8595-fd11f5996341}')!
 
 WAResponse comment: 'A WAResponse is an abstract HTTP response objects. It is independent of the used server adapter.Instance Variables	status:		<Integer> The HTTP status code.	message:	<String> The HTTP status message.	headers:	<WAHeaderFields> A dictionary with the header fields.	cookies:	<OrderedCollection> A collection of cookies.'!
 
-!WAResponse categoriesForClass!HTTP! !
+!WAResponse categoriesForClass!Seaside-Core-HTTP! !
 
 !WAResponse methodsFor!
 
@@ -128,6 +128,10 @@ resetIfPossible	"Try to reset the receiver, answer whether it was successful.	
 
 respond	WAResponseNotification signal!
 
+seeOther	"Indicate that the resource reside temporarily under a different URI."		self status: WAResponse statusSeeOther!
+
+seeOtherTo: aUrlOrString	self location: aUrlOrString.	self seeOther!
+
 status	"Answer the status code associated with this response."	^ status!
 
 status: aNumber	"Set the status to aNumber and associate the default message."	self status: aNumber message: (self class messageForStatus: aNumber)!
@@ -208,6 +212,8 @@ refreshAfter:location:!convenience/status!public! !
 removeHeaderAt:!accessing/headers!public! !
 resetIfPossible!convenience!public! !
 respond!convenience!public! !
+seeOther!public!status! !
+seeOtherTo:!convenience/status!public! !
 status!accessing!public! !
 status:!accessing/status!public! !
 status:message:!accessing/status!public! !

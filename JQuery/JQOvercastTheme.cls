@@ -6,11 +6,11 @@ JQBaseTheme subclass: #JQOvercastTheme
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQOvercastTheme guid: (GUID fromString: '{7966118b-e40a-4d06-b829-a5dca628eb20}')!
+JQOvercastTheme guid: (GUID fromString: '{d53c4bc8-b82e-4557-ab34-56972112ea19}')!
 
 JQOvercastTheme comment: ''!
 
-!JQOvercastTheme categoriesForClass!Libraries! !
+!JQOvercastTheme categoriesForClass!JQuery-UI-Libraries! !
 
 !JQOvercastTheme methodsFor!
 

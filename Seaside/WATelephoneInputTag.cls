@@ -6,11 +6,11 @@ WAAbstractTextAreaTag subclass: #WATelephoneInputTag
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WATelephoneInputTag guid: (GUID fromString: '{2b377293-ee51-4c00-8731-b60cdd8d553b}')!
+WATelephoneInputTag guid: (GUID fromString: '{93951ea4-945b-4b13-86e0-5cab596e1e9a}')!
 
 WATelephoneInputTag comment: 'Used to let the user enter and edit a telephone number'!
 
-!WATelephoneInputTag categoriesForClass!Tags! !
+!WATelephoneInputTag categoriesForClass!Seaside-Canvas-Tags! !
 
 !WATelephoneInputTag methodsFor!
 

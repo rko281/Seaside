@@ -6,11 +6,11 @@ TestCase subclass: #WABlockMimeDocumentTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WABlockMimeDocumentTest guid: (GUID fromString: '{813b9906-6310-4270-82d6-47b052e2257a}')!
+WABlockMimeDocumentTest guid: (GUID fromString: '{f856994e-c8f7-4915-8701-182214258286}')!
 
 WABlockMimeDocumentTest comment: ''!
 
-!WABlockMimeDocumentTest categoriesForClass!HTTP! !
+!WABlockMimeDocumentTest categoriesForClass!Seaside-Tests-Core-HTTP! !
 
 !WABlockMimeDocumentTest methodsFor!
 

@@ -6,11 +6,11 @@ WAObject subclass: #WABuilder
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WABuilder guid: (GUID fromString: '{0af61882-d49b-4169-84ba-5ebc175084c8}')!
+WABuilder guid: (GUID fromString: '{36222387-92b1-41c0-abe0-5fd6e48e01ad}')!
 
 WABuilder comment: 'This is a convenience class which provides a result of a rendering operation as a string. It is expected to be used like this:WAHtmlCanvas builder render: [ :html |	html anchor		url: ''htttp://www.seaside.st'';		with: ''Seaside Homepage'' ]See WABuilderCanvasTest for more examples.'!
 
-!WABuilder categoriesForClass!Rendering! !
+!WABuilder categoriesForClass!Seaside-Core-Rendering! !
 
 !WABuilder methodsFor!
 

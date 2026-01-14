@@ -6,11 +6,11 @@ TestCase subclass: #WARegistryKeyHandlingTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WARegistryKeyHandlingTest guid: (GUID fromString: '{97d5bd74-e1a9-4e62-ac19-2ffbae0612fc}')!
+WARegistryKeyHandlingTest guid: (GUID fromString: '{2114c176-023d-4acf-9342-ca8e7ce86dd1}')!
 
 WARegistryKeyHandlingTest comment: ''!
 
-!WARegistryKeyHandlingTest categoriesForClass!RequestHandling! !
+!WARegistryKeyHandlingTest categoriesForClass!Seaside-Tests-Core-RequestHandling! !
 
 !WARegistryKeyHandlingTest methodsFor!
 

@@ -6,11 +6,11 @@ WAComponent subclass: #WAPluggablePresenter
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAPluggablePresenter guid: (GUID fromString: '{d857c7fd-9d0d-47be-924a-29c17681c358}')!
+WAPluggablePresenter guid: (GUID fromString: '{c86ac7e9-a94d-45a5-aa13-261cfb2e9436}')!
 
 WAPluggablePresenter comment: ''!
 
-!WAPluggablePresenter categoriesForClass!Base! !
+!WAPluggablePresenter categoriesForClass!Seaside-Component-Base! !
 
 !WAPluggablePresenter methodsFor!
 

@@ -6,11 +6,11 @@ WATool subclass: #WADeprecation
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WADeprecation guid: (GUID fromString: '{b9c256e7-9a99-4ac2-904c-a493bf4618a9}')!
+WADeprecation guid: (GUID fromString: '{c21e5811-f35e-491e-9aa0-b725e14674e9}')!
 
 WADeprecation comment: ''!
 
-!WADeprecation categoriesForClass!Core! !
+!WADeprecation categoriesForClass!Seaside-Development-Core! !
 
 !WADeprecation methodsFor!
 

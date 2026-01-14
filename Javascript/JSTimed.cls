@@ -6,11 +6,11 @@ JSDecoration subclass: #JSTimed
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JSTimed guid: (GUID fromString: '{9b179408-532e-40fe-97e9-77f99d2b2afc}')!
+JSTimed guid: (GUID fromString: '{37c8eb11-fdc0-40fc-be78-d04cfb47b2f7}')!
 
 JSTimed comment: ''!
 
-!JSTimed categoriesForClass!Decorations! !
+!JSTimed categoriesForClass!Javascript-Core-Decorations! !
 
 !JSTimed methodsFor!
 

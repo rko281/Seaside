@@ -6,11 +6,11 @@ WAAttributeEditor subclass: #WAAncestryAttributeEditor
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAAncestryAttributeEditor guid: (GUID fromString: '{42489f1e-1055-4879-aee6-87e86810c22e}')!
+WAAncestryAttributeEditor guid: (GUID fromString: '{7c67c52a-b2e9-4dc8-a2a2-f6a3b27d3f8b}')!
 
 WAAncestryAttributeEditor comment: ''!
 
-!WAAncestryAttributeEditor categoriesForClass!Unclassified! !
+!WAAncestryAttributeEditor categoriesForClass!Seaside-Tools-Web! !
 
 !WAAncestryAttributeEditor methodsFor!
 

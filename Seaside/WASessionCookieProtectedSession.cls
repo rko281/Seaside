@@ -6,11 +6,11 @@ WASession subclass: #WASessionCookieProtectedSession
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WASessionCookieProtectedSession guid: (GUID fromString: '{dd85fff6-3094-420d-9897-a3deefa3103b}')!
+WASessionCookieProtectedSession guid: (GUID fromString: '{cca8b81e-f400-4178-936e-6e8f253becae}')!
 
 WASessionCookieProtectedSession comment: 'I am a session with a WASessionCookieProtectionFilter.'!
 
-!WASessionCookieProtectedSession categoriesForClass!Sessions! !
+!WASessionCookieProtectedSession categoriesForClass!Seaside-Examples-Sessions! !
 
 !WASessionCookieProtectedSession methodsFor!
 

@@ -6,11 +6,11 @@ WAFunctionalTest subclass: #WATableReportFunctionalTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WATableReportFunctionalTest guid: (GUID fromString: '{beb937f5-49cd-4650-b375-b0948c3ba7fe}')!
+WATableReportFunctionalTest guid: (GUID fromString: '{d2aee417-5dd5-4345-8798-5bccb2d18e81}')!
 
 WATableReportFunctionalTest comment: ''!
 
-!WATableReportFunctionalTest categoriesForClass!Unclassified! !
+!WATableReportFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
 
 !WATableReportFunctionalTest methodsFor!
 

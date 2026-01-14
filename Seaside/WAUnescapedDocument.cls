@@ -6,11 +6,11 @@ WAXmlDocument subclass: #WAUnescapedDocument
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAUnescapedDocument guid: (GUID fromString: '{aa75a92c-b365-4886-9494-399161f29db2}')!
+WAUnescapedDocument guid: (GUID fromString: '{94cbe3ec-f92e-4666-8d41-5c1ea70eaebf}')!
 
 WAUnescapedDocument comment: 'A WAUnescapedDocument does not do any escaping.'!
 
-!WAUnescapedDocument categoriesForClass!Document! !
+!WAUnescapedDocument categoriesForClass!Seaside-Core-Document! !
 
 !WAUnescapedDocument methodsFor!
 

@@ -1,14 +1,13 @@
 ﻿| package |
 package := Package name: 'Seaside-Dolphin-Welcome'.
 package paxVersion: 1;
-	basicComment: 'Seaside 3.4 for Dolphin Smalltalk.
-Core packages ported from github.com/SeasideSt 21st April 2020
+	basicComment: 'Seaside 3.6.0 for Dolphin Smalltalk.
+Core packages ported from github.com/SeasideSt 14th January 2026
 Dolphin Seaside and Grease packages adapted from www.infoil.com.ar/seaside/ with thanks and acknowledgement.
 
 "Launch the Welcome server"
 (WAHttpServerAdaptor port: 8080) start.
 ShellLibrary default shellOpen: ''http://localhost:8080/seaside/'''.
-
 
 package methodNames
 	add: #GRDolphinPlatform -> #seasideIsAuthorNameSet;
@@ -21,15 +20,13 @@ package binaryGlobalNames: (Set new
 package globalAliases: (Set new
 	yourself).
 
-"Manually added so Seaside Http Server Adaptor can be located:"
-Smalltalk at: #GitHubPackageInstaller ifPresent: [ :gh | gh default include: 'fxgallego'].
-
 package setPrerequisites: #(
 	'..\..\Grease\Grease-Dolphin-Core'
 	'..\..\Grease\Grease-Tests-Core'
 	'..\..\Grease\Grease-Tests-Dolphin-Core'
 	'..\Javascript\Javascript-Dolphin-Core'
 	'..\Javascript\Javascript-Tests-Core'
+	'..\Javascript\Javascript-Tests-Dolphin-Core'
 	'..\JQuery\JQuery-Tests-Core'
 	'..\JQuery\JQuery-Tests-UI'
 	'..\..\DolphinHttpServer\SeasideHTTPServerAdaptor\Seaside Http Server Adaptor'
@@ -44,15 +41,19 @@ package setPrerequisites: #(
 	'Seaside-Tests-Canvas'
 	'Seaside-Tests-Component'
 	'Seaside-Tests-Core'
+	'Seaside-Tests-Dolphin-Canvas'
 	'Seaside-Tests-Dolphin-Continuation'
 	'Seaside-Tests-Dolphin-Core'
 	'Seaside-Tests-Dolphin-Functional'
+	'Seaside-Tests-Email'
 	'Seaside-Tests-Environment'
 	'Seaside-Tests-Flow'
 	'Seaside-Tests-Functional'
+	'Seaside-Tests-JSON'
 	'Seaside-Tests-RenderLoop'
 	'Seaside-Tests-REST-Core'
 	'Seaside-Tests-Session'
+	'Seaside-Tests-UTF8'
 	'Seaside-Tests-Welcome'
 	'Seaside-Welcome').
 
@@ -62,6 +63,7 @@ package setManualPrerequisites: #(
 	'Grease-Tests-Dolphin-Core'
 	'Javascript-Dolphin-Core'
 	'Javascript-Tests-Core'
+	'Javascript-Tests-Dolphin-Core'
 	'JQuery-Tests-Core'
 	'JQuery-Tests-UI'
 	'Seaside Http Server Adaptor'
@@ -76,25 +78,23 @@ package setManualPrerequisites: #(
 	'Seaside-Tests-Canvas'
 	'Seaside-Tests-Component'
 	'Seaside-Tests-Core'
+	'Seaside-Tests-Dolphin-Canvas'
 	'Seaside-Tests-Dolphin-Continuation'
 	'Seaside-Tests-Dolphin-Core'
 	'Seaside-Tests-Dolphin-Functional'
+	'Seaside-Tests-Email'
 	'Seaside-Tests-Environment'
 	'Seaside-Tests-Flow'
 	'Seaside-Tests-Functional'
+	'Seaside-Tests-JSON'
 	'Seaside-Tests-RenderLoop'
 	'Seaside-Tests-REST-Core'
 	'Seaside-Tests-Session'
+	'Seaside-Tests-UTF8'
 	'Seaside-Tests-Welcome'
 	'Seaside-Welcome').
 
 package!
-
-"Class Definitions"!
-
-
-"Global Aliases"!
-
 
 "Loose Methods"!
 
@@ -109,8 +109,11 @@ seasideIsAuthorNameSet
 seasideSetAuthorName: anAuthorName
 	
 	"We don't do anything with this"! !
-!GRDolphinPlatform categoriesFor: #seasideIsAuthorNameSet!public! !
-!GRDolphinPlatform categoriesFor: #seasideSetAuthorName:!public! !
+
+!GRDolphinPlatform categoriesForMethods!
+seasideIsAuthorNameSet!public! !
+seasideSetAuthorName:!public! !
+!
 
 "End of package definition"!
 

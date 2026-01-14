@@ -6,11 +6,11 @@ WAComponent subclass: #WAExampleComponent
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAExampleComponent guid: (GUID fromString: '{345bc8f7-ef5f-4e7e-afab-78d4c72a6b9c}')!
+WAExampleComponent guid: (GUID fromString: '{89907a64-af59-499c-b338-c4fa660082c2}')!
 
 WAExampleComponent comment: 'Superclass for example components'!
 
-!WAExampleComponent categoriesForClass!Misc! !
+!WAExampleComponent categoriesForClass!Seaside-Examples-Misc! !
 
 !WAExampleComponent methodsFor!
 

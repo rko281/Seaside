@@ -6,11 +6,11 @@ WATool subclass: #WAPluggableTool
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAPluggableTool guid: (GUID fromString: '{3e938868-998f-4c5c-b993-3f12ce6f65a4}')!
+WAPluggableTool guid: (GUID fromString: '{d8d915e1-c7b7-4486-98d0-75f04525cf8a}')!
 
 WAPluggableTool comment: 'A WAPluggableTool is a wrapper component around tools that can''t be made subclasses of WATool. WATool is only really needed to provide the icon image.Instance Variables	component:		<WAComponent>component	- the component to render'!
 
-!WAPluggableTool categoriesForClass!Core! !
+!WAPluggableTool categoriesForClass!Seaside-Development-Core! !
 
 !WAPluggableTool methodsFor!
 

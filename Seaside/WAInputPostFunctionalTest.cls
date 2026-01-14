@@ -6,11 +6,11 @@ WAFunctionalTest subclass: #WAInputPostFunctionalTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAInputPostFunctionalTest guid: (GUID fromString: '{93c54860-fca1-45e4-a49c-f36618c6a2ca}')!
+WAInputPostFunctionalTest guid: (GUID fromString: '{4cb80958-28e7-470a-adb4-21dc015d7473}')!
 
 WAInputPostFunctionalTest comment: ''!
 
-!WAInputPostFunctionalTest categoriesForClass!Unclassified! !
+!WAInputPostFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
 
 !WAInputPostFunctionalTest methodsFor!
 

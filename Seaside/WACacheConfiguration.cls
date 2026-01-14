@@ -6,11 +6,11 @@ WASystemConfiguration subclass: #WACacheConfiguration
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WACacheConfiguration guid: (GUID fromString: '{17dc54dc-0b50-457a-a7db-a4bc7b099017}')!
+WACacheConfiguration guid: (GUID fromString: '{9d0bd6eb-f62b-4f93-afa2-fb08c3fbee2c}')!
 
 WACacheConfiguration comment: 'I am the configuration of WAHashCache.'!
 
-!WACacheConfiguration categoriesForClass!Cache! !
+!WACacheConfiguration categoriesForClass!Seaside-Core-Cache! !
 
 !WACacheConfiguration methodsFor!
 

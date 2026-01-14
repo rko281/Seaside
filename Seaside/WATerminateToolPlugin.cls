@@ -6,11 +6,11 @@ WAToolPlugin subclass: #WATerminateToolPlugin
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WATerminateToolPlugin guid: (GUID fromString: '{b9525d43-daf7-4c6a-80e8-db5b2aa741ad}')!
+WATerminateToolPlugin guid: (GUID fromString: '{9865fb6a-061c-4142-a072-2c92af910930}')!
 
 WATerminateToolPlugin comment: 'I try to terminate the process handling this session. This can work of you''re at 100% CPU.'!
 
-!WATerminateToolPlugin categoriesForClass!Plugins! !
+!WATerminateToolPlugin categoriesForClass!Seaside-Development-Plugins! !
 
 !WATerminateToolPlugin methodsFor!
 

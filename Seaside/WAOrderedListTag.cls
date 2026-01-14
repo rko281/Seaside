@@ -6,11 +6,11 @@ WAListTag subclass: #WAOrderedListTag
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAOrderedListTag guid: (GUID fromString: '{dc5ff1af-02f0-4fbc-8dee-9849fdeb8d2f}')!
+WAOrderedListTag guid: (GUID fromString: '{24193caf-153d-4998-a5c3-6774b4f20a54}')!
 
 WAOrderedListTag comment: 'See superclass comment.'!
 
-!WAOrderedListTag categoriesForClass!Tags! !
+!WAOrderedListTag categoriesForClass!Seaside-Canvas-Tags! !
 
 !WAOrderedListTag methodsFor!
 

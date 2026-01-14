@@ -6,11 +6,11 @@ WAPPathMatch subclass: #WAOrPathMatch
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAOrPathMatch guid: (GUID fromString: '{df9e7a30-961f-4c8e-84ff-2b73804bf2e7}')!
+WAOrPathMatch guid: (GUID fromString: '{2b1cc5cc-0bbf-4ede-a422-c994831c6443}')!
 
 WAOrPathMatch comment: ''!
 
-!WAOrPathMatch categoriesForClass!Route! !
+!WAOrPathMatch categoriesForClass!Seaside-REST-Core-Route! !
 
 !WAOrPathMatch methodsFor!
 

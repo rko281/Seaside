@@ -6,11 +6,11 @@ WADocument subclass: #WAXmlDocument
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAXmlDocument guid: (GUID fromString: '{10f79ed7-7d9a-45af-97a9-b22f2932b77c}')!
+WAXmlDocument guid: (GUID fromString: '{4dd50ec5-142e-41bc-8cd8-d133d09a541b}')!
 
 WAXmlDocument comment: 'A WAXmlDocument is adds the possibility to generate XML tags and knows encoders for XML text and URLs.'!
 
-!WAXmlDocument categoriesForClass!Document! !
+!WAXmlDocument categoriesForClass!Seaside-Core-Document! !
 
 !WAXmlDocument methodsFor!
 

@@ -6,11 +6,11 @@ WAFileLibrary subclass: #JQBaseTheme
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQBaseTheme guid: (GUID fromString: '{4bc8ddc2-3414-4bb7-bf8c-6e7d6b688f51}')!
+JQBaseTheme guid: (GUID fromString: '{9d289546-9bad-46e5-9c76-a0ef868d3d1d}')!
 
 JQBaseTheme comment: ''!
 
-!JQBaseTheme categoriesForClass!Libraries! !
+!JQBaseTheme categoriesForClass!JQuery-UI-Libraries! !
 
 !JQBaseTheme methodsFor!
 

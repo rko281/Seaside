@@ -6,11 +6,11 @@ WARestfulFilter subclass: #WARestfulComponentFilter
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WARestfulComponentFilter guid: (GUID fromString: '{7dbcba3c-51f9-4844-865a-52cc6c615dad}')!
+WARestfulComponentFilter guid: (GUID fromString: '{744dc36c-fcfb-4f6b-8ffe-083642f7f021}')!
 
 WARestfulComponentFilter comment: 'I allow mixing stateless and stateful Seaside application. I am intended for cases where there are a couple of stateless "browse" pages before sateful application pages that require a session. If a request comes in and has a session it gets dispatched to the application, otherwise it''s treated as a normal REST request.At any time session can be started from an initialized component by sending #startSessionWithRoot:.To use me:- subclass me- add me to your application- implement the methods for the URL patterns you need- send #startSessionWithRoot: in your methodsI am the fault of Norbert.'!
 
-!WARestfulComponentFilter categoriesForClass!Handler! !
+!WARestfulComponentFilter categoriesForClass!Seaside-REST-Core-Handler! !
 
 !WARestfulComponentFilter methodsFor!
 

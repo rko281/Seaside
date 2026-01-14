@@ -6,15 +6,15 @@ JSMember subclass: #JSAccess
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JSAccess guid: (GUID fromString: '{1d6412a8-b0eb-465d-80f5-dfd4d62a7bb4}')!
+JSAccess guid: (GUID fromString: '{cacf24c1-4af0-48fb-b470-61008a7cbe97}')!
 
 JSAccess comment: 'I access a member of the decorated object.'!
 
-!JSAccess categoriesForClass!Decorations! !
+!JSAccess categoriesForClass!Javascript-Core-Decorations! !
 
 !JSAccess methodsFor!
 
-javascriptContentOn: aStream	super javascriptContentOn: aStream.	aStream		nextPut: $.;		nextPutAll: self name! !
+javascriptContentOn: aRenderer	super javascriptContentOn: aRenderer.	aRenderer document dotProperty: self name! !
 
 !JSAccess categoriesForMethods!
 javascriptContentOn:!printing!public! !

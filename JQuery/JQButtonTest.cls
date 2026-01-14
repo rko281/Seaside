@@ -6,11 +6,11 @@ JQueryUiTest subclass: #JQButtonTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQButtonTest guid: (GUID fromString: '{ceed10fa-5f4a-4a80-8afd-0542a27c630d}')!
+JQButtonTest guid: (GUID fromString: '{b2105626-4296-484e-84d5-31e5aed23fa0}')!
 
 JQButtonTest comment: ''!
 
-!JQButtonTest categoriesForClass!Unit! !
+!JQButtonTest categoriesForClass!JQuery-Tests-UI-Unit! !
 
 !JQButtonTest methodsFor!
 

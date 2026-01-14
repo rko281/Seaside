@@ -6,11 +6,11 @@ TestCase subclass: #WAConfigurationTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAConfigurationTest guid: (GUID fromString: '{88095bdd-7674-4cf5-83f0-3275e1f6e363}')!
+WAConfigurationTest guid: (GUID fromString: '{72e6505a-237e-4a71-8dbf-65374575d5ef}')!
 
 WAConfigurationTest comment: ''!
 
-!WAConfigurationTest categoriesForClass!Configuration! !
+!WAConfigurationTest categoriesForClass!Seaside-Tests-Core-Configuration! !
 
 !WAConfigurationTest methodsFor!
 

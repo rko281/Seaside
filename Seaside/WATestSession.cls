@@ -6,11 +6,11 @@ WASession subclass: #WATestSession
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WATestSession guid: (GUID fromString: '{a5a850a7-4f6a-4cd2-b94c-db5067979880}')!
+WATestSession guid: (GUID fromString: '{b3f1cb5e-bbe5-4854-b5ab-b94fbc6ee149}')!
 
 WATestSession comment: ''!
 
-!WATestSession categoriesForClass!Unclassified! !
+!WATestSession categoriesForClass!Seaside-Tests-Session! !
 
 !WATestSession methodsFor!
 

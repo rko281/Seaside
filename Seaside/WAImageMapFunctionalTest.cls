@@ -6,11 +6,11 @@ WAFunctionalTest subclass: #WAImageMapFunctionalTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAImageMapFunctionalTest guid: (GUID fromString: '{068ab037-c535-4c66-a75c-57d5f371d943}')!
+WAImageMapFunctionalTest guid: (GUID fromString: '{c15e3b13-b81e-4372-85eb-27f4b49727db}')!
 
 WAImageMapFunctionalTest comment: ''!
 
-!WAImageMapFunctionalTest categoriesForClass!Unclassified! !
+!WAImageMapFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
 
 !WAImageMapFunctionalTest methodsFor!
 

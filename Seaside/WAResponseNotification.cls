@@ -6,11 +6,11 @@ WANotification subclass: #WAResponseNotification
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAResponseNotification guid: (GUID fromString: '{460ddcfb-83ad-40dd-883c-13782b08cbe3}')!
+WAResponseNotification guid: (GUID fromString: '{a896edc8-84c5-468d-9678-30719667abdc}')!
 
 WAResponseNotification comment: 'A WAResponseNotification is signaled whenever the application server wants to return a response back to the client.'!
 
-!WAResponseNotification categoriesForClass!Exceptions! !
+!WAResponseNotification categoriesForClass!Seaside-Core-Exceptions! !
 
 !WAResponseNotification methodsFor!
 

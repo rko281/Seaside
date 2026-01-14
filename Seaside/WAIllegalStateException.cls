@@ -6,9 +6,9 @@ WAError subclass: #WAIllegalStateException
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAIllegalStateException guid: (GUID fromString: '{92f98f49-3e63-4b30-92f8-f6fb929b0e5d}')!
+WAIllegalStateException guid: (GUID fromString: '{1cbdbfcf-cc16-4f29-945e-f2bb2544dec5}')!
 
 WAIllegalStateException comment: ''!
 
-!WAIllegalStateException categoriesForClass!HTTP! !
+!WAIllegalStateException categoriesForClass!Seaside-Core-HTTP! !
 

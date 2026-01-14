@@ -6,11 +6,11 @@ WARequestCookie subclass: #WACookie
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WACookie guid: (GUID fromString: '{3d8c3e97-3003-4c16-8e7e-6e44cf222d3f}')!
+WACookie guid: (GUID fromString: '{e3720e00-8775-4fe2-a350-661c8eaac3c0}')!
 
 WACookie comment: 'I represent a cookie, a piece of information that is stored on the client and read and writable by the server. I am basically a key/value pair of strings.You can never trust information in a cookie, the client is free to edit it.I model only a part of the full cookie specification.Browser support:http://www.mnot.net/blog/2006/10/27/cookie_funNetscape spechttp://cgi.netscape.com/newsref/std/cookie_spec.htmlCookie spechttp://tools.ietf.org/html/rfc2109Cookie 2 spechttps://tools.ietf.org/html/rfc6265HttpOnlyhttp://msdn2.microsoft.com/en-us/library/ms533046.aspxhttps://bugzilla.mozilla.org/show_bug.cgi?id=178993Compared to WARequestCookie I represent the information that is sent to the user agent.'!
 
-!WACookie categoriesForClass!HTTP! !
+!WACookie categoriesForClass!Seaside-Core-HTTP! !
 
 !WACookie methodsFor!
 
@@ -47,11 +47,6 @@ initialize	super initialize.	self secure: false.	self discard: false.	self h
 maxAge	^ maxAge!
 
 maxAge: anInteger	"Optional.  The Max-Age attribute defines the lifetime of the	cookie, in seconds.  The delta-seconds value is a decimal non-	negative integer.  After delta-seconds seconds elapse, the client	should discard the cookie.  A value of zero means the cookie	should be discarded immediately."	maxAge := anInteger!
-
-oldNetscapeString
-	"Backwards compatibility for Dolphin HTTP Server"
-
-	^self rfc6265String!
 
 rfc6265String	"Serializes the receiver according to RFC 6265.	See class comment for a link to the spec."	^ String streamContents: [ :stream |		| useQuotes |		"the spec allows us to quote but we don't know how good browser support is"		useQuotes := false.		self writeKeyValueQuoted: useQuotes on: stream.		self writeExpiresOn: stream.		self writeMaxAgeQuoted: useQuotes on: stream.		self writeDomainQuoted: useQuotes on: stream.		self writePathQuoted: useQuotes on: stream.		self writeSecureOn: stream.		self writeHttpOnlyOn: stream.		self writeSameSiteOn: stream ]!
 
@@ -113,7 +108,6 @@ httpOnly:!accessing!public! !
 initialize!initialization!public! !
 maxAge!accessing!public! !
 maxAge:!accessing!public! !
-oldNetscapeString!accessing!public! !
 rfc6265String!public!writing! !
 sameSite!accessing!public! !
 sameSite:!accessing!public! !

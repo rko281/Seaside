@@ -6,11 +6,11 @@ WAResponse subclass: #WABufferedResponse
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WABufferedResponse guid: (GUID fromString: '{9a0272fe-63ef-4294-a069-cd192d6c95ca}')!
+WABufferedResponse guid: (GUID fromString: '{bf769865-c79a-4cb0-a1a5-942218bac0f1}')!
 
 WABufferedResponse comment: 'A WABufferedResponse is a concrete implementation of a HTTP response. Its contentsStream is used to represent the body of the message.Instance Variables	contentsStream:		<WriteStream> The contents of this message.'!
 
-!WABufferedResponse categoriesForClass!HTTP! !
+!WABufferedResponse categoriesForClass!Seaside-Core-HTTP! !
 
 !WABufferedResponse methodsFor!
 

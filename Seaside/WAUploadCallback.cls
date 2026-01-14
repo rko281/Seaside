@@ -6,11 +6,11 @@ WAValueCallback subclass: #WAUploadCallback
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAUploadCallback guid: (GUID fromString: '{292b4cf6-e375-40a6-9cb3-1b0684a3d00a}')!
+WAUploadCallback guid: (GUID fromString: '{304ed110-6352-4366-90d5-d3ea39440b22}')!
 
 WAUploadCallback comment: ''!
 
-!WAUploadCallback categoriesForClass!Callbacks! !
+!WAUploadCallback categoriesForClass!Seaside-Core-Callbacks! !
 
 !WAUploadCallback methodsFor!
 

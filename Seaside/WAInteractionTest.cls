@@ -6,11 +6,11 @@ WAContextTest subclass: #WAInteractionTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAInteractionTest guid: (GUID fromString: '{03bfce3f-3bfd-4931-af99-a71d7efeb057}')!
+WAInteractionTest guid: (GUID fromString: '{0ef60fee-9c76-46b7-8496-ede53f539d6d}')!
 
 WAInteractionTest comment: 'The purpose of WAInteractionTest is to provide a fully initialized WARequestContext all the necessary objects are are normally there in a Seaside application like request, response, dispatcher application, session and so forth.'!
 
-!WAInteractionTest categoriesForClass!Unclassified! !
+!WAInteractionTest categoriesForClass!Seaside-Tests-Session! !
 
 !WAInteractionTest methodsFor!
 

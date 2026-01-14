@@ -6,11 +6,11 @@ JQWidget subclass: #JQAutocomplete
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQAutocomplete guid: (GUID fromString: '{2b7f2c24-0e2b-4d97-807f-56567e8e1e8a}')!
+JQAutocomplete guid: (GUID fromString: '{7e5c08c1-0589-48a0-beaa-2daf195f53b1}')!
 
 JQAutocomplete comment: 'Autocomplete, added to an input field, enables users to quickly find and select from a pre-populated list of values as they type, leveraging searching and filtering.'!
 
-!JQAutocomplete categoriesForClass!Widgets! !
+!JQAutocomplete categoriesForClass!JQuery-UI-Widgets! !
 
 !JQAutocomplete methodsFor!
 

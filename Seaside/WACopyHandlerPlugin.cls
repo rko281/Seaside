@@ -6,11 +6,11 @@ WAConfigurationToolPlugin subclass: #WACopyHandlerPlugin
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WACopyHandlerPlugin guid: (GUID fromString: '{2f72db9b-4182-45a1-ac65-bc3d35b87931}')!
+WACopyHandlerPlugin guid: (GUID fromString: '{6729b6b0-820d-40f0-b7e0-5d74ea754120}')!
 
 WACopyHandlerPlugin comment: 'I make a copy of an application.'!
 
-!WACopyHandlerPlugin categoriesForClass!Unclassified! !
+!WACopyHandlerPlugin categoriesForClass!Seaside-Tools-Web! !
 
 !WACopyHandlerPlugin methodsFor!
 

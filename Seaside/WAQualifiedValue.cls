@@ -6,11 +6,11 @@ WAObject subclass: #WAQualifiedValue
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAQualifiedValue guid: (GUID fromString: '{d1124e51-c084-4fa4-a317-d82b6fec8950}')!
+WAQualifiedValue guid: (GUID fromString: '{0b24f91f-8f33-4640-b117-d6aa9af21c76}')!
 
 WAQualifiedValue comment: 'A WAQualifiedValue is an Object with an assigned quality value.Instance Variables	quality:		<Float>	value:		<Object>quality	- between 0.0 and 1.0 or Float infinity if no value is givenvalue	- the qualified object'!
 
-!WAQualifiedValue categoriesForClass!HTTP! !
+!WAQualifiedValue categoriesForClass!Seaside-Core-HTTP! !
 
 !WAQualifiedValue methodsFor!
 

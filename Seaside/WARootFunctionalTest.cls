@@ -6,11 +6,11 @@ WAFunctionalTest subclass: #WARootFunctionalTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WARootFunctionalTest guid: (GUID fromString: '{9617b545-570d-438b-a730-55102171f82e}')!
+WARootFunctionalTest guid: (GUID fromString: '{8508c074-a1b8-41d3-81bf-b637f90f19fb}')!
 
 WARootFunctionalTest comment: ''!
 
-!WARootFunctionalTest categoriesForClass!Unclassified! !
+!WARootFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
 
 !WARootFunctionalTest methodsFor!
 

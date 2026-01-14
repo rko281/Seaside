@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 TestCase subclass: #WAContinuationTest
 	instanceVariableNames: 'tmp tmp2'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAContinuationTest guid: (GUID fromString: '{3806e8a1-a230-420d-952a-be767827487f}')!
+
 WAContinuationTest comment: ''!
+
 !WAContinuationTest categoriesForClass!Seaside-Tests-Pharo-Continuation! !
+
 !WAContinuationTest methodsFor!
 
 callcc: aBlock	^ WAContinuation currentDo: aBlock!
@@ -29,14 +33,17 @@ testSimpleCallCC	| x continuation |	x := self callcc: [ :cc | continuation := 
 testSimpleCallCCWithPossibleArgument	| x continuation |	x := self callcc: [ :cc | continuation := cc. false ].	x ifFalse: [ continuation valueWithPossibleArguments: (Array with:  true) ].	self assert: x!
 
 testSimplestCallCC	| x |	x := self callcc: [ :cc | cc value: true ].	self assert: x! !
-!WAContinuationTest categoriesFor: #callcc:!public!utilities! !
-!WAContinuationTest categoriesFor: #testBlockEscape!public!tests! !
-!WAContinuationTest categoriesFor: #testBlockTemps!public!tests! !
-!WAContinuationTest categoriesFor: #testBlockVars!public!tests! !
-!WAContinuationTest categoriesFor: #testComprehension!public!tests! !
-!WAContinuationTest categoriesFor: #testMethodTemps!public!tests! !
-!WAContinuationTest categoriesFor: #testReentrant!public!tests! !
-!WAContinuationTest categoriesFor: #testSimpleCallCC!public!tests! !
-!WAContinuationTest categoriesFor: #testSimpleCallCCWithPossibleArgument!public!tests! !
-!WAContinuationTest categoriesFor: #testSimplestCallCC!public!tests! !
+
+!WAContinuationTest categoriesForMethods!
+callcc:!public!utilities! !
+testBlockEscape!public!tests! !
+testBlockTemps!public!tests! !
+testBlockVars!public!tests! !
+testComprehension!public!tests! !
+testMethodTemps!public!tests! !
+testReentrant!public!tests! !
+testSimpleCallCC!public!tests! !
+testSimpleCallCCWithPossibleArgument!public!tests! !
+testSimplestCallCC!public!tests! !
+!
 

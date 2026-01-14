@@ -6,15 +6,15 @@ JSStatement subclass: #JSBinary
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JSBinary guid: (GUID fromString: '{328b5d0b-be31-4ae5-b96e-41d59954407a}')!
+JSBinary guid: (GUID fromString: '{7eee8a92-b318-4ecc-9ec6-26e24328fdae}')!
 
 JSBinary comment: 'I join the decorated object with a binary operator.'!
 
-!JSBinary categoriesForClass!Decorations! !
+!JSBinary categoriesForClass!Javascript-Core-Decorations! !
 
 !JSBinary methodsFor!
 
-javascriptContentOn: aStream	super javascriptContentOn: aStream.	aStream		nextPutAll: self operator;		javascript: self statement!
+javascriptContentOn: aRenderer	super javascriptContentOn: aRenderer.	(aRenderer operator: self operator)		with: self statement!
 
 operator	^ operator!
 

@@ -6,11 +6,11 @@ WAObject subclass: #WAAdmin
 	poolDictionaries: ''
 	classInstanceVariableNames: 'configuredApplicationDefaults configuredExceptionHandlingDefaults'!
 
-WAAdmin guid: (GUID fromString: '{a1a59433-0614-487f-a1fd-c15afef785a6}')!
+WAAdmin guid: (GUID fromString: '{55e42897-cb96-434f-ba28-b2b1abd211fe}')!
 
 WAAdmin comment: ''!
 
-!WAAdmin categoriesForClass!Unclassified! !
+!WAAdmin categoriesForClass!Seaside-Tools-Core! !
 
 !WAAdmin class methodsFor!
 

@@ -6,11 +6,11 @@ WACallback subclass: #JSPassenger
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JSPassenger guid: (GUID fromString: '{b3108648-bbee-4527-8cc0-ec409677284e}')!
+JSPassenger guid: (GUID fromString: '{f8151305-13b2-499c-bdd8-c270825e3cd1}')!
 
 JSPassenger comment: ''!
 
-!JSPassenger categoriesForClass!Base! !
+!JSPassenger categoriesForClass!Javascript-Core-Base! !
 
 !JSPassenger methodsFor!
 

@@ -6,11 +6,11 @@ WAObject subclass: #WABulkReapingCacheEntry
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WABulkReapingCacheEntry guid: (GUID fromString: '{33a7c64d-bfdb-4ca0-a721-b41e411f78fa}')!
+WABulkReapingCacheEntry guid: (GUID fromString: '{3d944335-663c-4f94-af27-cbb4b7586a6d}')!
 
 WABulkReapingCacheEntry comment: 'I am a value in a WABulkReapingCache. It''s important that my values are not concurrently updated in order to avoid commit conflicts on GemStone/S.accessTime:		only set by reapercreationTime:	immutable, set only oncevalue:			immutable, set only oncelastCount:		only set by reapercount:			updated concurrently but this is not an issue since we use a WAReducedConflictCounter    Instance Variables	count:			<WAReducedConflictCounter>	lastCount:		<Integer>	creationTime:	<Integer>	accessTime:		<Integer>	value:			<Object>'!
 
-!WABulkReapingCacheEntry categoriesForClass!Cache! !
+!WABulkReapingCacheEntry categoriesForClass!Seaside-Core-Cache! !
 
 !WABulkReapingCacheEntry methodsFor!
 

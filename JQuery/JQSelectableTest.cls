@@ -6,11 +6,11 @@ JQueryUiTest subclass: #JQSelectableTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQSelectableTest guid: (GUID fromString: '{5afabf12-5c79-47cb-9810-b21db23a92ee}')!
+JQSelectableTest guid: (GUID fromString: '{ddaf19b7-74de-4b26-ac12-6b2cf47f2601}')!
 
 JQSelectableTest comment: ''!
 
-!JQSelectableTest categoriesForClass!Unit! !
+!JQSelectableTest categoriesForClass!JQuery-Tests-UI-Unit! !
 
 !JQSelectableTest methodsFor!
 

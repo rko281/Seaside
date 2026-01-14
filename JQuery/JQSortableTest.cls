@@ -6,11 +6,11 @@ JQueryUiTest subclass: #JQSortableTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQSortableTest guid: (GUID fromString: '{e12cc404-a824-4bcb-9695-35a7cc51a324}')!
+JQSortableTest guid: (GUID fromString: '{75e8a6ef-cf2c-4969-a251-d82acdd0c355}')!
 
 JQSortableTest comment: ''!
 
-!JQSortableTest categoriesForClass!Unit! !
+!JQSortableTest categoriesForClass!JQuery-Tests-UI-Unit! !
 
 !JQSortableTest methodsFor!
 

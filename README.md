@@ -1,7 +1,7 @@
 # Seaside
-[Seaside 3.5.9](https://github.com/SeasideSt) for [Dolphin Smalltalk 7.2](https://github.com/dolphinsmalltalk/Dolphin)
+[Seaside 3.6.0](https://github.com/SeasideSt) for [Dolphin Smalltalk 7.2](https://github.com/dolphinsmalltalk/Dolphin)
 
-Core packages ported from [Seaside](https://github.com/SeasideSt/Seaside) 17th April 2025
+Core packages ported from [Seaside](https://github.com/SeasideSt/Seaside) 14th January 2026
 
 Dolphin Seaside and Grease packages adapted from [Infoil](http://www.infoil.com.ar/seaside)'s D6 versions with thanks and acknowledgement.
 

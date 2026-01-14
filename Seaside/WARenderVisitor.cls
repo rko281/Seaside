@@ -6,11 +6,11 @@ WAPainterVisitor subclass: #WARenderVisitor
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WARenderVisitor guid: (GUID fromString: '{7160b4ac-ec9b-48bc-bb02-b271b22f7723}')!
+WARenderVisitor guid: (GUID fromString: '{f925c573-c038-4adf-b3dd-d871d8922999}')!
 
 WARenderVisitor comment: 'A visitor that renders Painters. It creates an instance of the #rendererClass specified by each Painter it visits and passes it to the Painter with #renderContentOn:.'!
 
-!WARenderVisitor categoriesForClass!Rendering! !
+!WARenderVisitor categoriesForClass!Seaside-Core-Rendering! !
 
 !WARenderVisitor methodsFor!
 

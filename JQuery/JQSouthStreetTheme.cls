@@ -6,11 +6,11 @@ JQBaseTheme subclass: #JQSouthStreetTheme
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQSouthStreetTheme guid: (GUID fromString: '{27abe289-c8ab-4d1d-9fc7-ae561af25d92}')!
+JQSouthStreetTheme guid: (GUID fromString: '{49f4c984-edfc-46f9-a8df-8f7a87a6ac6b}')!
 
 JQSouthStreetTheme comment: ''!
 
-!JQSouthStreetTheme categoriesForClass!Libraries! !
+!JQSouthStreetTheme categoriesForClass!JQuery-UI-Libraries! !
 
 !JQSouthStreetTheme methodsFor!
 

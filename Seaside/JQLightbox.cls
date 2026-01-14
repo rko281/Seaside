@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WADecoration subclass: #JQLightbox
 	instanceVariableNames: 'delegate'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 JQLightbox guid: (GUID fromString: '{927835a4-c193-46e3-9fbd-0af8c8ecafbc}')!
+
 JQLightbox comment: ''!
+
 !JQLightbox categoriesForClass!Unclassified! !
+
 !JQLightbox methodsFor!
 
 children
@@ -42,10 +46,13 @@ style
 	^'.ui-dialog-titlebar-close{
     display: none;
 }'! !
-!JQLightbox categoriesFor: #children!accessing!public! !
-!JQLightbox categoriesFor: #delegate!accessing!public! !
-!JQLightbox categoriesFor: #delegate:!accessing!public! !
-!JQLightbox categoriesFor: #isDelegation!public! !
-!JQLightbox categoriesFor: #renderContentOn:!public! !
-!JQLightbox categoriesFor: #style!accessing-scripts!public! !
+
+!JQLightbox categoriesForMethods!
+children!accessing!public! !
+delegate!accessing!public! !
+delegate:!accessing!public! !
+isDelegation!public! !
+renderContentOn:!public! !
+style!accessing-scripts!public! !
+!
 

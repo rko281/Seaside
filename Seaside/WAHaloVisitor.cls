@@ -6,11 +6,11 @@ WAPainterVisitor subclass: #WAHaloVisitor
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAHaloVisitor guid: (GUID fromString: '{ae792879-7385-4525-b14f-e19b238fdb3d}')!
+WAHaloVisitor guid: (GUID fromString: '{fa186c2b-18c2-4c8b-9548-18251f58e4f6}')!
 
 WAHaloVisitor comment: ''!
 
-!WAHaloVisitor categoriesForClass!Core! !
+!WAHaloVisitor categoriesForClass!Seaside-Development-Core! !
 
 !WAHaloVisitor methodsFor!
 

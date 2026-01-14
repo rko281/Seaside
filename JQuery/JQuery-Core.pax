@@ -5,6 +5,13 @@ package paxVersion: 1;
 
 package classNames
 	add: #JQAjax;
+	add: #JQAjaxAbstractInternalCallback;
+	add: #JQAjaxCallback;
+	add: #JQAjaxInternalCallback;
+	add: #JQAjaxInternalCallbackRespond;
+	add: #JQAjaxInternalCallbackRespondHTML;
+	add: #JQAjaxInternalCallbackRespondScript;
+	add: #JQAjaxInternalCallbackRespondText;
 	add: #JQAjaxSetup;
 	add: #JQAnimate;
 	add: #JQDeploymentLibrary;
@@ -41,12 +48,47 @@ package setPrerequisites: #(
 	'..\..\Grease\Grease-Core'
 	'..\Javascript\Javascript-Core'
 	'..\..\Portishead\Portishead-Pragmas'
-	'..\Seaside\Seaside-Core'
-	'..\Seaside\Seaside-JSON-Core').
+	'..\Seaside\Seaside-Core').
 
 package!
 
 "Class Definitions"!
+
+WAObject subclass: #JQAjaxAbstractInternalCallback
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+JQAjaxAbstractInternalCallback subclass: #JQAjaxInternalCallback
+	instanceVariableNames: 'block'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+JQAjaxAbstractInternalCallback subclass: #JQAjaxInternalCallbackRespond
+	instanceVariableNames: 'block'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+JQAjaxAbstractInternalCallback subclass: #JQAjaxInternalCallbackRespondHTML
+	instanceVariableNames: 'ajax renderable'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+JQAjaxAbstractInternalCallback subclass: #JQAjaxInternalCallbackRespondScript
+	instanceVariableNames: 'ajax block'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+JQAjaxAbstractInternalCallback subclass: #JQAjaxInternalCallbackRespondText
+	instanceVariableNames: 'block'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
 
 JSObject subclass: #JQEvent
 	instanceVariableNames: 'owner'
@@ -140,6 +182,12 @@ WAFileLibrary subclass: #JQDevelopmentLibrary
 
 WAFileLibrary subclass: #JQGoogleLibrary
 	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+WACallback subclass: #JQAjaxCallback
+	instanceVariableNames: 'ajax'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!

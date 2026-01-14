@@ -6,11 +6,11 @@ WATask subclass: #WAWelcomeComponentCreator
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAWelcomeComponentCreator guid: (GUID fromString: '{bc24ae3d-e632-49c6-b02b-a349d4956479}')!
+WAWelcomeComponentCreator guid: (GUID fromString: '{cd985d6c-c3a2-4a19-bc5b-3d09a4c0651b}')!
 
 WAWelcomeComponentCreator comment: ''!
 
-!WAWelcomeComponentCreator categoriesForClass!Base! !
+!WAWelcomeComponentCreator categoriesForClass!Seaside-Welcome-Base! !
 
 !WAWelcomeComponentCreator methodsFor!
 

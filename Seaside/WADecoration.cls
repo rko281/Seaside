@@ -6,11 +6,11 @@ WAPresenter subclass: #WADecoration
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WADecoration guid: (GUID fromString: '{acbc12bf-1062-40ad-9baf-3d6b7030c06d}')!
+WADecoration guid: (GUID fromString: '{1b8377a1-1cba-42f4-8aa1-27b478f86845}')!
 
 WADecoration comment: 'I am an abstract decoration around instances of WAComponent. I can be added to aComponent by calling #addDecoration: and I change the basic behaviour or look of a component. There are several methods that can be overriden to archive this:- #renderContentOn: to emit xhtml around the decorated component. Call #renderOwnerOn: to let the owner emit its output.- #handleAnswer: to intercept the answer processing.'!
 
-!WADecoration categoriesForClass!Base! !
+!WADecoration categoriesForClass!Seaside-Component-Base! !
 
 !WADecoration methodsFor!
 

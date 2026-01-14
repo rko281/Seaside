@@ -6,15 +6,15 @@ WAContextTest subclass: #WAScriptGeneratorTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAScriptGeneratorTest guid: (GUID fromString: '{0b3c3abf-f57e-429f-9319-164a9874484c}')!
+WAScriptGeneratorTest guid: (GUID fromString: '{08240947-48ed-4e7d-84fc-760430e37075}')!
 
 WAScriptGeneratorTest comment: 'Abstract base class for all script generator tests.'!
 
-!WAScriptGeneratorTest categoriesForClass!Base! !
+!WAScriptGeneratorTest categoriesForClass!Seaside-Tests-Canvas-Base! !
 
 !WAScriptGeneratorTest methodsFor!
 
-assert: aBlock gives: aString	| html |	html := WAHtmlCanvas builder		fullDocument: true;		scriptGeneratorClass: self scriptGeneratorClass;		render: aBlock.	self assert: aString equals: html!
+assert: aBlock gives: aString	| html |	html := WAHtmlCanvas builder		fullDocument: true;		scriptGeneratorClass: self scriptGeneratorClass;		render: aBlock.	self assert: html equals: aString!
 
 scriptGeneratorClass	self subclassResponsibility! !
 

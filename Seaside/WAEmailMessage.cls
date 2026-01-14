@@ -6,11 +6,11 @@ WAObject subclass: #WAEmailMessage
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAEmailMessage guid: (GUID fromString: '{53dba15a-dbb3-4860-86f9-ee34bca6c069}')!
+WAEmailMessage guid: (GUID fromString: '{b1244d43-1572-475d-a557-48ce48edb172}')!
 
 WAEmailMessage comment: 'I am a  general email message (single part).'!
 
-!WAEmailMessage categoriesForClass!Base! !
+!WAEmailMessage categoriesForClass!Seaside-Email-Base! !
 
 !WAEmailMessage methodsFor!
 

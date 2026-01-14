@@ -6,11 +6,11 @@ WACanvasWidget subclass: #WABatchedList
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WABatchedList guid: (GUID fromString: '{75040b44-43b7-4b0b-995c-03d8f70302bf}')!
+WABatchedList guid: (GUID fromString: '{4cab2104-a311-40c3-88cf-29cb33b089dd}')!
 
 WABatchedList comment: 'WABatchedList helps display a collection of items across multiple pages. WABatchedList organizes a collection into pages (or batches) of batchSize items each and renders navigation links for a user to moved between pages. WABatchedList>>batch returns the items to display in the current page or batch. Your code has to display the items.See WABatchSelection for example of usage.Instance Variables:	batchSize	<Integer>	number of items to display on a single page	currentPage	<Integer>	 index of current page, starts a 1	items	<SequenceableCollection of Objects>	objects organized into pages for display'!
 
-!WABatchedList categoriesForClass!Components! !
+!WABatchedList categoriesForClass!Seaside-Widgets-Components! !
 
 !WABatchedList methodsFor!
 

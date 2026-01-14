@@ -6,11 +6,11 @@ JQUiFunctionalTest subclass: #JQButtonFunctionalTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQButtonFunctionalTest guid: (GUID fromString: '{afca53df-f730-441e-a94f-874f62cc463b}')!
+JQButtonFunctionalTest guid: (GUID fromString: '{a334bfd9-b623-4032-a63e-8fa0f53c92e0}')!
 
 JQButtonFunctionalTest comment: ''!
 
-!JQButtonFunctionalTest categoriesForClass!Functional! !
+!JQButtonFunctionalTest categoriesForClass!JQuery-Tests-UI-Functional! !
 
 !JQButtonFunctionalTest methodsFor!
 

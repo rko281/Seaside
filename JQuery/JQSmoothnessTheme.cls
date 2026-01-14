@@ -6,11 +6,11 @@ JQBaseTheme subclass: #JQSmoothnessTheme
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQSmoothnessTheme guid: (GUID fromString: '{571777ad-a58a-4194-85a3-062485f064e5}')!
+JQSmoothnessTheme guid: (GUID fromString: '{9bee35ef-4d29-4d4b-853b-c33717d7c3be}')!
 
 JQSmoothnessTheme comment: ''!
 
-!JQSmoothnessTheme categoriesForClass!Libraries! !
+!JQSmoothnessTheme categoriesForClass!JQuery-UI-Libraries! !
 
 !JQSmoothnessTheme methodsFor!
 

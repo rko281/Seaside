@@ -6,11 +6,11 @@ WAPPathMatch subclass: #WAExactPathMatch
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAExactPathMatch guid: (GUID fromString: '{5e7c2210-9e35-423d-85a9-34b7dec42481}')!
+WAExactPathMatch guid: (GUID fromString: '{cdc666c6-9924-43d3-a34e-a7c13847c454}')!
 
 WAExactPathMatch comment: ''!
 
-!WAExactPathMatch categoriesForClass!Route! !
+!WAExactPathMatch categoriesForClass!Seaside-REST-Core-Route! !
 
 !WAExactPathMatch methodsFor!
 

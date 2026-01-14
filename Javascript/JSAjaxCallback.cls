@@ -6,11 +6,11 @@ WACallback subclass: #JSAjaxCallback
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JSAjaxCallback guid: (GUID fromString: '{ea9dfb69-0448-41eb-ad53-a978753e57f5}')!
+JSAjaxCallback guid: (GUID fromString: '{1f5cbba2-2c2d-49d2-ad6d-a3fc21d989dc}')!
 
 JSAjaxCallback comment: ''!
 
-!JSAjaxCallback categoriesForClass!Base! !
+!JSAjaxCallback categoriesForClass!Javascript-Core-Base! !
 
 !JSAjaxCallback methodsFor!
 

@@ -6,11 +6,11 @@ WAConfigurationElement subclass: #WAAttributeExpression
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAAttributeExpression guid: (GUID fromString: '{690f5a73-d2cd-45e8-91ec-f424e3faafa7}')!
+WAAttributeExpression guid: (GUID fromString: '{227e08ea-d429-474a-9c14-f8f8c582a6d4}')!
 
 WAAttributeExpression comment: ''!
 
-!WAAttributeExpression categoriesForClass!Configuration! !
+!WAAttributeExpression categoriesForClass!Seaside-Core-Configuration! !
 
 !WAAttributeExpression methodsFor!
 

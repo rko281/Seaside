@@ -6,11 +6,11 @@ JQFunctionalTest subclass: #JQRepeatingFunctionalTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQRepeatingFunctionalTest guid: (GUID fromString: '{bcbdad33-8400-4a68-81ad-5672f0762f03}')!
+JQRepeatingFunctionalTest guid: (GUID fromString: '{ea833c51-30e2-435c-948f-2732d5fd1157}')!
 
 JQRepeatingFunctionalTest comment: ''!
 
-!JQRepeatingFunctionalTest categoriesForClass!Functional! !
+!JQRepeatingFunctionalTest categoriesForClass!JQuery-Tests-Core-Functional! !
 
 !JQRepeatingFunctionalTest methodsFor!
 

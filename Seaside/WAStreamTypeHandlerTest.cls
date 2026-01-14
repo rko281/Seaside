@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAContextTest subclass: #WAStreamTypeHandlerTest
 	instanceVariableNames: 'handler'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAStreamTypeHandlerTest guid: (GUID fromString: '{1bf9ce7c-5776-4bea-8470-c90974783396}')!
+
+WAStreamTypeHandlerTest guid: (GUID fromString: '{eebc8d87-9877-43e3-9060-c1448fdca43c}')!
+
 WAStreamTypeHandlerTest comment: ''!
+
 !WAStreamTypeHandlerTest categoriesForClass!Seaside-Tests-REST-Core! !
+
 !WAStreamTypeHandlerTest methodsFor!
 
 assertPerformGetTo: aCollectionOfStrings equals: aCollection contentType: aMimeType	| requestUrl request response context |	requestUrl := WAUrl new		addAllToPath: aCollectionOfStrings;		yourself.	request := WARequest		method: 'GET'		uri: requestUrl.	response := WABufferedResponse new.			context := WARequestContext request: request response: response.	[ handler handle: context ]		on: WAResponseNotification		do: [ :n | ].		self assert: response contents = aCollection.	aMimeType isNil ifFalse: [		self assert: response contentType = aMimeType.		self assert: response contentType greaseString = aMimeType greaseString ]!
@@ -21,10 +25,13 @@ testIndex	self assertPerformGetTo: #('index') equals: handler index contentType
 testRobotsTxt	self assertPerformGetTo: #('robots.txt') equals: handler robotsTxt contentType: (WAMimeType fromString: 'text/plain;charset=utf-8')!
 
 testStarGif	self assertPerformGetTo: #('star.gif') equals: handler starGif contentType: (WAMimeType fromString: 'image/gif')! !
-!WAStreamTypeHandlerTest categoriesFor: #assertPerformGetTo:equals:contentType:!private! !
-!WAStreamTypeHandlerTest categoriesFor: #setUp!public!running! !
-!WAStreamTypeHandlerTest categoriesFor: #testFaviconIco!public!tests! !
-!WAStreamTypeHandlerTest categoriesFor: #testIndex!public!tests! !
-!WAStreamTypeHandlerTest categoriesFor: #testRobotsTxt!public!tests! !
-!WAStreamTypeHandlerTest categoriesFor: #testStarGif!public!tests! !
+
+!WAStreamTypeHandlerTest categoriesForMethods!
+assertPerformGetTo:equals:contentType:!private! !
+setUp!public!running! !
+testFaviconIco!public!tests! !
+testIndex!public!tests! !
+testRobotsTxt!public!tests! !
+testStarGif!public!tests! !
+!
 

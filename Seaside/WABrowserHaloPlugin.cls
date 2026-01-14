@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAHaloPlugin subclass: #WABrowserHaloPlugin
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WABrowserHaloPlugin guid: (GUID fromString: '{a3bd6c92-be3a-4297-91bb-98b737dd00e7}')!
+
 WABrowserHaloPlugin comment: 'I open a browser on the component class.'!
+
 !WABrowserHaloPlugin categoriesForClass!Unclassified! !
+
 !WABrowserHaloPlugin methodsFor!
 
 execute
@@ -21,8 +25,11 @@ priority
 
 tooltip
 	^ 'Class Browser'! !
-!WABrowserHaloPlugin categoriesFor: #execute!actions!public! !
-!WABrowserHaloPlugin categoriesFor: #label!accessing!public! !
-!WABrowserHaloPlugin categoriesFor: #priority!accessing!public! !
-!WABrowserHaloPlugin categoriesFor: #tooltip!accessing!public! !
+
+!WABrowserHaloPlugin categoriesForMethods!
+execute!actions!public! !
+label!accessing!public! !
+priority!accessing!public! !
+tooltip!accessing!public! !
+!
 

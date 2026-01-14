@@ -6,11 +6,11 @@ WADecoration subclass: #WAWidgetDecoration
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAWidgetDecoration guid: (GUID fromString: '{0f0d952c-08c9-42d8-8168-5d6487255c39}')!
+WAWidgetDecoration guid: (GUID fromString: '{55f5d385-ae5b-4846-a8bf-3b5da891e311}')!
 
 WAWidgetDecoration comment: 'An abstract widget decoration'!
 
-!WAWidgetDecoration categoriesForClass!Decorations! !
+!WAWidgetDecoration categoriesForClass!Seaside-Widgets-Decorations! !
 
 !WAWidgetDecoration methodsFor!
 

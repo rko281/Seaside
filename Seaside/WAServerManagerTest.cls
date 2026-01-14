@@ -6,11 +6,11 @@ TestCase subclass: #WAServerManagerTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAServerManagerTest guid: (GUID fromString: '{6f66abc2-943b-4e89-bcbd-70958365fe3b}')!
+WAServerManagerTest guid: (GUID fromString: '{307a00a4-e2d4-478e-ad69-09246d2d330d}')!
 
 WAServerManagerTest comment: ''!
 
-!WAServerManagerTest categoriesForClass!Server! !
+!WAServerManagerTest categoriesForClass!Seaside-Tests-Core-Server! !
 
 !WAServerManagerTest methodsFor!
 

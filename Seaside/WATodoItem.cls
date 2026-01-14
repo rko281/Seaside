@@ -6,11 +6,11 @@ WAComponent subclass: #WATodoItem
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WATodoItem guid: (GUID fromString: '{c49cb0aa-6f80-4a4d-b626-18db4594b654}')!
+WATodoItem guid: (GUID fromString: '{461a5f16-b8cc-4c4c-aadb-4ced8e252f87}')!
 
 WATodoItem comment: 'I am the component that represents a single TODO line in the TODO application example'!
 
-!WATodoItem categoriesForClass!Misc! !
+!WATodoItem categoriesForClass!Seaside-Examples-Misc! !
 
 !WATodoItem methodsFor!
 

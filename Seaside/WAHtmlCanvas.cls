@@ -6,11 +6,11 @@ WATagCanvas subclass: #WAHtmlCanvas
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAHtmlCanvas guid: (GUID fromString: '{d544817d-b641-4bcb-9f79-4dc5a399663f}')!
+WAHtmlCanvas guid: (GUID fromString: '{7cf4cff7-817d-46f4-8434-5ecd69699a48}')!
 
 WAHtmlCanvas comment: 'I''m a canvas for building HTML.'!
 
-!WAHtmlCanvas categoriesForClass!Canvas! !
+!WAHtmlCanvas categoriesForClass!Seaside-Canvas-Canvas! !
 
 !WAHtmlCanvas methodsFor!
 
@@ -166,7 +166,7 @@ form	^ self brush: WAFormTag new!
 
 form: aBlock	self form with: aBlock!
 
-formatText: aString with: collection	| stream previousText |	stream := aString readStream.	previousText := WriteStream on: String new.	[ stream atEnd ] whileFalse: [ | currentChar | 			(currentChar := stream next) == ${				ifTrue: [ 					| expression index | 					expression := stream upTo: $}.					index := Integer readFrom: expression ifFail: [ expression ].					self text: previousText contents.					previousText := WriteStream on: String new.					self render: (collection at: index) ]				ifFalse: [					currentChar == $\						ifTrue: [ stream atEnd ifFalse: [ previousText nextPut: stream next ] ]						ifFalse: [ previousText nextPut: currentChar ] ] ].	self text: previousText contents.!
+formatText: aString with: collection	| stream previousText |	stream := aString readStream.	previousText := WriteStream on: String new.	[ stream atEnd ] whileFalse: [ | currentChar | 			(currentChar := stream next) = ${				ifTrue: [ 					| expression index | 					expression := stream upTo: $}.					index := Integer readFrom: expression ifFail: [ expression ].					self text: previousText contents.					previousText := WriteStream on: String new.					self render: (collection at: index) ]				ifFalse: [					currentChar = $\						ifTrue: [ stream atEnd ifFalse: [ previousText nextPut: stream next ] ]						ifFalse: [ previousText nextPut: currentChar ] ] ].	self text: previousText contents.!
 
 header	"The header element represents the header of a section. Headers may contain more than just the section's heading \u2014 for example it would be reasonable for the header to include version history information.	header elements must not contain any header elements, footer elements, or any sectioning elements (such as section) as descendants.	header elements must have at least one h1, h2, h3, h4, h5, or h6 element as a descendant. "	^ self tag: 'header'!
 
@@ -203,8 +203,6 @@ inserted: aBlock	self inserted with: aBlock!
 keyboard	"Defines keyboard text."	^ self tag: 'kbd'!
 
 keyboard: aBlock	self keyboard with: aBlock!
-
-keyGenerator	^ self brush: WAKeyGeneratorTag new!
 
 label	"Defines a label for a form control."	^ self brush: WALabelTag new!
 
@@ -566,7 +564,6 @@ inserted!public!tags/block! !
 inserted:!public!tags/block! !
 keyboard!public!tags/output! !
 keyboard:!public!tags/output! !
-keyGenerator!public!tags! !
 label!public!tags/input! !
 label:!public!tags/input! !
 legend!public!tags/input! !

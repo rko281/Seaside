@@ -6,11 +6,11 @@ JQueryUiTest subclass: #JQResizableTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQResizableTest guid: (GUID fromString: '{9cc96dc0-e9cb-43a7-acd5-8aa2e778de4a}')!
+JQResizableTest guid: (GUID fromString: '{17fccdb3-0d71-40d6-9811-dec7e12b87ce}')!
 
 JQResizableTest comment: ''!
 
-!JQResizableTest categoriesForClass!Unit! !
+!JQResizableTest categoriesForClass!JQuery-Tests-UI-Unit! !
 
 !JQResizableTest methodsFor!
 

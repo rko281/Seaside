@@ -6,11 +6,11 @@ WAJsonBrush subclass: #WAJsonArrayBrush
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAJsonArrayBrush guid: (GUID fromString: '{bb30f2cc-8157-4939-ad83-9ae1b528dc55}')!
+WAJsonArrayBrush guid: (GUID fromString: '{ae60cd26-d1d4-4ce9-8657-81335b7dfc58}')!
 
 WAJsonArrayBrush comment: 'Brush for a JSON array'!
 
-!WAJsonArrayBrush categoriesForClass!Brushes! !
+!WAJsonArrayBrush categoriesForClass!Seaside-JSON-Core-Brushes! !
 
 !WAJsonArrayBrush methodsFor!
 

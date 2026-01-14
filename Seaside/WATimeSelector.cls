@@ -6,11 +6,11 @@ WACanvasWidget subclass: #WATimeSelector
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WATimeSelector guid: (GUID fromString: '{14455196-eb5d-46ab-8af1-49b33d2e5627}')!
+WATimeSelector guid: (GUID fromString: '{87159c41-f45c-424c-84e9-b676ed837feb}')!
 
 WATimeSelector comment: 'WATimeSelector displays dropdown menus (html select) allowing a user to delect a time within a range. "startHour" and "endHour" define the range of selectable times. Time is displayed in 24 hour format. WATimeSelector>>time returns time user selected as a Time object.See WADateSelectorFunctionalTest for sample of usage.Select "Date Selector" tab of the Functional Seaside Test Suite to run an example  (http://127.0.0.1:xxxx/seaside/tests/alltests)Instance Variables:	endHour	<Integer 0-23>	end of time interval for selectable times	hour	<Integer 0-23>	selected hour	minute	<Integer 0-59>	selected minute	second	<Integer 0-59>	selected second	startHour	<Integer 0-23>	start of time interval for selectable times'!
 
-!WATimeSelector categoriesForClass!Components! !
+!WATimeSelector categoriesForClass!Seaside-Widgets-Components! !
 
 !WATimeSelector methodsFor!
 

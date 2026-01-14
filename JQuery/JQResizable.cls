@@ -6,11 +6,11 @@ JQWidget subclass: #JQResizable
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQResizable guid: (GUID fromString: '{1416d07f-a6af-47ce-870e-eac4092e4031}')!
+JQResizable guid: (GUID fromString: '{dc954e24-febe-4b2b-becb-487d89967cd6}')!
 
 JQResizable comment: 'Creates new resizables on the nodeset supplied by the query.'!
 
-!JQResizable categoriesForClass!Interaction! !
+!JQResizable categoriesForClass!JQuery-UI-Interaction! !
 
 !JQResizable methodsFor!
 

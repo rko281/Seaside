@@ -6,11 +6,11 @@ JQuery subclass: #JQueryClass
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQueryClass guid: (GUID fromString: '{f74565e5-d92b-4f38-9db8-f6a0c54561cc}')!
+JQueryClass guid: (GUID fromString: '{3f269292-231f-4d71-8fb5-3032c9605871}')!
 
 JQueryClass comment: ''!
 
-!JQueryClass categoriesForClass!Objects! !
+!JQueryClass categoriesForClass!JQuery-Core-Objects! !
 
 !JQueryClass methodsFor!
 

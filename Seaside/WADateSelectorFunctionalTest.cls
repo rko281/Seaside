@@ -6,11 +6,11 @@ WAFunctionalTest subclass: #WADateSelectorFunctionalTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WADateSelectorFunctionalTest guid: (GUID fromString: '{0667de99-fa1c-4529-88a0-49b904133dc6}')!
+WADateSelectorFunctionalTest guid: (GUID fromString: '{b43b82fd-e3b1-4fb6-a99b-bc061a200f8a}')!
 
 WADateSelectorFunctionalTest comment: ''!
 
-!WADateSelectorFunctionalTest categoriesForClass!Unclassified! !
+!WADateSelectorFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
 
 !WADateSelectorFunctionalTest methodsFor!
 

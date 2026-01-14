@@ -6,11 +6,11 @@ WACallback subclass: #WAActionCallback
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAActionCallback guid: (GUID fromString: '{4c705280-0e52-4126-baac-bee4ffb20c68}')!
+WAActionCallback guid: (GUID fromString: '{9eb86266-f753-41f5-a929-057809bfaff1}')!
 
 WAActionCallback comment: ''!
 
-!WAActionCallback categoriesForClass!Callbacks! !
+!WAActionCallback categoriesForClass!Seaside-Core-Callbacks! !
 
 !WAActionCallback methodsFor!
 

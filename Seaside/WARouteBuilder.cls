@@ -6,11 +6,11 @@ WAObject subclass: #WARouteBuilder
 	poolDictionaries: ''
 	classInstanceVariableNames: 'configuration'!
 
-WARouteBuilder guid: (GUID fromString: '{8c9893a7-8e20-46d4-8fb9-297331e86047}')!
+WARouteBuilder guid: (GUID fromString: '{8bc640d0-372e-43b0-ab88-76418bd42b2c}')!
 
 WARouteBuilder comment: 'I am a builder for building WARoute instances from a CompiledMethod.Instance Variables:	compiled	<CompiledMethod>	method		<String>	path		<String>	produces	<WAWildcardMimeTypeMatch|WAMimeTypeMatch>	consumes	<Collection<WAWildcardMimeTypeMatch|WAMimeTypeMatch>>Class Instance Variables:	configuration	<Collection>'!
 
-!WARouteBuilder categoriesForClass!Route! !
+!WARouteBuilder categoriesForClass!Seaside-REST-Core-Route! !
 
 !WARouteBuilder methodsFor!
 

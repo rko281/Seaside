@@ -6,15 +6,15 @@ JQPlugin subclass: #JQAnimate
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQAnimate guid: (GUID fromString: '{100b3e30-1b8d-4f79-ab99-4e67e8d98538}')!
+JQAnimate guid: (GUID fromString: '{54921601-6e4d-41ae-b979-b10983371eb3}')!
 
 JQAnimate comment: ''!
 
-!JQAnimate categoriesForClass!Objects! !
+!JQAnimate categoriesForClass!JQuery-Core-Objects! !
 
 !JQAnimate methodsFor!
 
-arguments	^ Array with: self parameters with: self options!
+argumentsDo: aBlock	aBlock value: self parameters.	aBlock value: self options!
 
 doesNotUnderstand: aMessage	"A nasty trick to allow to define the animation properties more easily."	^ aMessage selector numArgs = 1		ifFalse: [ super doesNotUnderstand: aMessage ]		ifTrue: [ self parameterAt: aMessage selector allButLast put: aMessage arguments first ]!
 
@@ -37,7 +37,7 @@ parameters: aDictionary	"A set of style attributes that you wish to animate, an
 queue: aBoolean	"Setting this to false will make the animation skip the queue and begin running immediately."		self optionAt: 'queue' put: aBoolean! !
 
 !JQAnimate categoriesForMethods!
-arguments!accessing!public! !
+argumentsDo:!accessing!public! !
 doesNotUnderstand:!private! !
 duration:!options!public! !
 easing:!options!public! !

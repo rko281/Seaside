@@ -6,11 +6,11 @@ WAFunctionalTest subclass: #WAMiniCalendarFunctionalTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAMiniCalendarFunctionalTest guid: (GUID fromString: '{bb3cae51-fb2a-4007-8f4d-ed602661a4ae}')!
+WAMiniCalendarFunctionalTest guid: (GUID fromString: '{b333b83f-a7cd-45cc-b50b-93ae0b62bfdb}')!
 
 WAMiniCalendarFunctionalTest comment: ''!
 
-!WAMiniCalendarFunctionalTest categoriesForClass!Unclassified! !
+!WAMiniCalendarFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
 
 !WAMiniCalendarFunctionalTest methodsFor!
 

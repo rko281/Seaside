@@ -6,11 +6,11 @@ WAFormInputTag subclass: #WAAbstractTextAreaTag
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAAbstractTextAreaTag guid: (GUID fromString: '{dba4e16e-3983-4dac-ad79-12e8091d0b8c}')!
+WAAbstractTextAreaTag guid: (GUID fromString: '{4d0183a8-9094-45d3-b8df-0d3aa0ad4dd5}')!
 
 WAAbstractTextAreaTag comment: 'An abstract class to describe the HTML elements that allow the user to enter text.'!
 
-!WAAbstractTextAreaTag categoriesForClass!Tags! !
+!WAAbstractTextAreaTag categoriesForClass!Seaside-Canvas-Tags! !
 
 !WAAbstractTextAreaTag methodsFor!
 

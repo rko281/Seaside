@@ -6,11 +6,11 @@ WAFileLibrary subclass: #JQUiDeploymentLibrary
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQUiDeploymentLibrary guid: (GUID fromString: '{8b66edc7-2455-4e39-aa52-5b74b2b44ea6}')!
+JQUiDeploymentLibrary guid: (GUID fromString: '{e1c19b34-a3f3-430b-b3d2-b0b3cf3a3ae6}')!
 
 JQUiDeploymentLibrary comment: ''!
 
-!JQUiDeploymentLibrary categoriesForClass!Libraries! !
+!JQUiDeploymentLibrary categoriesForClass!JQuery-UI-Libraries! !
 
 !JQUiDeploymentLibrary methodsFor!
 

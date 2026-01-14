@@ -6,11 +6,11 @@ WAAbstractTextAreaTag subclass: #WASearchInputTag
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WASearchInputTag guid: (GUID fromString: '{6a7a6680-7ea9-47c8-9d5e-cb72ce8c3a30}')!
+WASearchInputTag guid: (GUID fromString: '{06699c54-3c5f-47b2-97c4-98ab1ac553ee}')!
 
 WASearchInputTag comment: 'supported on:- Safari 1.3 and 2.0not (yet) part of HTML5graceful degeneration to text inputhttp://weblogs.mozillazine.org/hyatt/archives/2004_07.html#005890'!
 
-!WASearchInputTag categoriesForClass!Tags! !
+!WASearchInputTag categoriesForClass!Seaside-Canvas-Tags! !
 
 !WASearchInputTag methodsFor!
 

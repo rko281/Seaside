@@ -6,11 +6,11 @@ WAActionCallback subclass: #WAImageCallback
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAImageCallback guid: (GUID fromString: '{5acf4c78-3fcc-496e-9fca-9fca55a00b15}')!
+WAImageCallback guid: (GUID fromString: '{fb7c9806-7c8f-4a2c-9f9d-f2f7fe1661bb}')!
 
 WAImageCallback comment: ''!
 
-!WAImageCallback categoriesForClass!Callbacks! !
+!WAImageCallback categoriesForClass!Seaside-Core-Callbacks! !
 
 !WAImageCallback methodsFor!
 

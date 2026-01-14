@@ -6,11 +6,11 @@ WAWidgetDecoration subclass: #WAWindowDecoration
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAWindowDecoration guid: (GUID fromString: '{44fe4f62-bcc5-4d52-8c1a-b6f1f8f6d251}')!
+WAWindowDecoration guid: (GUID fromString: '{4dd55592-6bb6-4311-ab04-2e6f78469251}')!
 
 WAWindowDecoration comment: 'WAWindowDecoration adds a simple title and close button in a bordered area at the top of the page. When closed button is selected nil is "answer"ed. Useful for a quick & dirty dialog window. Used by WAPlugin and SCTestRunner.Instance Variables:	cssClass	<String>	String added to "window-title " to generate cssClass for the title	title	<String>	title of page'!
 
-!WAWindowDecoration categoriesForClass!Decorations! !
+!WAWindowDecoration categoriesForClass!Seaside-Widgets-Decorations! !
 
 !WAWindowDecoration methodsFor!
 

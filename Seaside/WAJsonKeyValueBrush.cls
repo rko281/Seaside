@@ -6,11 +6,11 @@ WAJsonElementBrush subclass: #WAJsonKeyValueBrush
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAJsonKeyValueBrush guid: (GUID fromString: '{9728a559-c937-4c68-9c93-047150afcd1a}')!
+WAJsonKeyValueBrush guid: (GUID fromString: '{b770db70-a6a5-410b-892f-ae3ef6477867}')!
 
 WAJsonKeyValueBrush comment: 'A JSON key value'!
 
-!WAJsonKeyValueBrush categoriesForClass!Brushes! !
+!WAJsonKeyValueBrush categoriesForClass!Seaside-JSON-Core-Brushes! !
 
 !WAJsonKeyValueBrush methodsFor!
 
@@ -27,7 +27,7 @@ openBrush!private! !
 
 key: aString	^ self basicNew initializeWithKey: aString!
 
-stringKeysOnly	^ StringKeysOnly ifNil: [ false ]!
+stringKeysOnly	^ StringKeysOnly ifNil: [ true ]!
 
 stringKeysOnly: aBoolean	StringKeysOnly := aBoolean! !
 

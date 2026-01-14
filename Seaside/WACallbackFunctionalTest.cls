@@ -6,11 +6,11 @@ WAFunctionalTest subclass: #WACallbackFunctionalTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WACallbackFunctionalTest guid: (GUID fromString: '{b28bd9c0-1e6d-43e0-aa8d-e7e9b98f44a1}')!
+WACallbackFunctionalTest guid: (GUID fromString: '{7b8dde8d-74c2-4da4-a11f-ea6a16ccbe31}')!
 
 WACallbackFunctionalTest comment: ''!
 
-!WACallbackFunctionalTest categoriesForClass!Unclassified! !
+!WACallbackFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
 
 !WACallbackFunctionalTest methodsFor!
 

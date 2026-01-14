@@ -6,11 +6,11 @@ WAObject subclass: #WAHtmlElement
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAHtmlElement guid: (GUID fromString: '{82b6fd1c-6ee2-4426-9022-f6e0b802b57b}')!
+WAHtmlElement guid: (GUID fromString: '{b2ed8db4-76c9-4e71-9aff-a67dfc4172de}')!
 
 WAHtmlElement comment: 'Root class of all elements inside a <head> section.'!
 
-!WAHtmlElement categoriesForClass!Document-Elements! !
+!WAHtmlElement categoriesForClass!Seaside-Core-Document-Elements! !
 
 !WAHtmlElement methodsFor!
 

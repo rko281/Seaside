@@ -6,11 +6,11 @@ WAObject subclass: #WARequestHandler
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WARequestHandler guid: (GUID fromString: '{0fb18280-eefc-475e-8f72-349f237ea609}')!
+WARequestHandler guid: (GUID fromString: '{d9bb0baf-cfa7-4011-a83a-2e7bdd999d82}')!
 
 WARequestHandler comment: 'WARequestHandler is an abstract class whose subclasses handle http requests. Most of the methods are either empty or return a default value. Subclasses must implement the following messages:	handleFiltered:	process the request'!
 
-!WARequestHandler categoriesForClass!RequestHandling! !
+!WARequestHandler categoriesForClass!Seaside-Core-RequestHandling! !
 
 !WARequestHandler methodsFor!
 
@@ -46,7 +46,7 @@ filters	"Answer an ordered collection of all filters active in the receiver."	
 
 handle: aRequestContext	"Handle a request described by aRequestContext. Do not override this method; instead subclass #handleFiltered: to allow filters to process the request first."	aRequestContext push: self during: [ self filter handleFiltered: aRequestContext ]!
 
-handleFiltered: aRequestContext 	"Handle aRequestContext by either dispatching to a different request handler of by producing a response and singalling the result."	self subclassResponsibility!
+handleFiltered: aRequestContext 	"Handle aRequestContext by either dispatching to a different request handler of by producing a response and signalling the result."	self subclassResponsibility!
 
 handler	^ self!
 

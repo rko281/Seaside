@@ -6,11 +6,11 @@ WATagBrush subclass: #WAHorizontalRuleTag
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAHorizontalRuleTag guid: (GUID fromString: '{358b2034-6810-4df9-a327-4d6f835c77d5}')!
+WAHorizontalRuleTag guid: (GUID fromString: '{91756427-d692-430f-a455-99c8307861f7}')!
 
 WAHorizontalRuleTag comment: 'The HR element causes a horizontal rule to be rendered by visual user agents.The amount of vertical space inserted between a rule and the content that surrounds it depends on the user agent.'!
 
-!WAHorizontalRuleTag categoriesForClass!Tags! !
+!WAHorizontalRuleTag categoriesForClass!Seaside-Canvas-Tags! !
 
 !WAHorizontalRuleTag methodsFor!
 

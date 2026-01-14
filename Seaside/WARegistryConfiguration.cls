@@ -6,11 +6,11 @@ WASystemConfiguration subclass: #WARegistryConfiguration
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WARegistryConfiguration guid: (GUID fromString: '{43a621ab-ed0c-406e-a8da-2e3bda666288}')!
+WARegistryConfiguration guid: (GUID fromString: '{753a0a8a-0d30-49e7-b644-ae0b7e50bc61}')!
 
 WARegistryConfiguration comment: ''!
 
-!WARegistryConfiguration categoriesForClass!RequestHandling! !
+!WARegistryConfiguration categoriesForClass!Seaside-Core-RequestHandling! !
 
 !WARegistryConfiguration methodsFor!
 

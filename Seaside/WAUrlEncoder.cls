@@ -6,11 +6,11 @@ WATableBasedEncoder subclass: #WAUrlEncoder
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAUrlEncoder guid: (GUID fromString: '{817e96aa-9725-46bf-a6d3-096a3ce916ad}')!
+WAUrlEncoder guid: (GUID fromString: '{53dd07d8-c8f9-495d-88ba-392aef84ad05}')!
 
 WAUrlEncoder comment: 'I do percent-encoding of parts (e.g. path segments and arguments) of a URI.Additionally, a Codec is given the chance to encode the characters into bytes before being percent-encoded (see http://tools.ietf.org/html/rfc3986#section-2.5). This allows extended characters to be represented in URIs in, for example, UTF-8.'!
 
-!WAUrlEncoder categoriesForClass!Document! !
+!WAUrlEncoder categoriesForClass!Seaside-Core-Document! !
 
 !WAUrlEncoder methodsFor!
 

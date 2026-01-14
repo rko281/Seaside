@@ -6,11 +6,11 @@ WATagBrush subclass: #WAMediaElementTag
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAMediaElementTag guid: (GUID fromString: '{02378a8a-5a04-4c25-82a3-d05b64604fcf}')!
+WAMediaElementTag guid: (GUID fromString: '{e8913445-c769-461c-abde-e9b562657a5b}')!
 
 WAMediaElementTag comment: 'WAMediaElementTag is an abstract class for all the media elements providing common media attributes.See: http://www.w3.org/TR/html5/video.html#media-element'!
 
-!WAMediaElementTag categoriesForClass!Tags! !
+!WAMediaElementTag categoriesForClass!Seaside-Canvas-Tags! !
 
 !WAMediaElementTag methodsFor!
 

@@ -6,11 +6,11 @@ WAHaloPlugin subclass: #WAStylesHaloPlugin
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAStylesHaloPlugin guid: (GUID fromString: '{9f26ddf9-5b28-400e-96e9-ac3031c12ea7}')!
+WAStylesHaloPlugin guid: (GUID fromString: '{77e4c42d-770e-483a-a5ca-86481f317cca}')!
 
 WAStylesHaloPlugin comment: 'I open the style editor on the component class.'!
 
-!WAStylesHaloPlugin categoriesForClass!Plugins! !
+!WAStylesHaloPlugin categoriesForClass!Seaside-Development-Plugins! !
 
 !WAStylesHaloPlugin methodsFor!
 

@@ -6,11 +6,11 @@ WAErrorHandler subclass: #WASignalingErrorHandler
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WASignalingErrorHandler guid: (GUID fromString: '{6faa5fdd-447e-47f4-8e17-96639fb87f2e}')!
+WASignalingErrorHandler guid: (GUID fromString: '{e2841226-4ca0-49fa-8b41-06f202635c3f}')!
 
 WASignalingErrorHandler comment: ''!
 
-!WASignalingErrorHandler categoriesForClass!Unclassified! !
+!WASignalingErrorHandler categoriesForClass!Seaside-Tests-RenderLoop! !
 
 !WASignalingErrorHandler methodsFor!
 

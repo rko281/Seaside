@@ -6,11 +6,11 @@ WAFormInputTag subclass: #WASubmitButtonTag
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WASubmitButtonTag guid: (GUID fromString: '{97fcfbe2-0556-4a4b-986e-a3152d9189a4}')!
+WASubmitButtonTag guid: (GUID fromString: '{56ea48a6-f2fa-4ed8-99ee-77a9be5a914a}')!
 
 WASubmitButtonTag comment: 'The submit type creates a button. When a submit button is pressed it automatically submits the form.'!
 
-!WASubmitButtonTag categoriesForClass!Tags! !
+!WASubmitButtonTag categoriesForClass!Seaside-Canvas-Tags! !
 
 !WASubmitButtonTag methodsFor!
 

@@ -6,11 +6,11 @@ WATagBrush subclass: #WASlotTag
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WASlotTag guid: (GUID fromString: '{1ac6e170-8b43-459f-9557-dfbab815d864}')!
+WASlotTag guid: (GUID fromString: '{440e38cd-71a7-4b2d-8c49-a53a0abe12fd}')!
 
 WASlotTag comment: 'The slot HTML element—part of the Web Components technology suite—is a placeholder inside a web component that you can fill with your own markup, which lets you create separate DOM trees and present them together.'!
 
-!WASlotTag categoriesForClass!Tags! !
+!WASlotTag categoriesForClass!Seaside-Canvas-Tags! !
 
 !WASlotTag methodsFor!
 

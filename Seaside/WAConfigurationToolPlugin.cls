@@ -6,11 +6,11 @@ WAPlugin subclass: #WAConfigurationToolPlugin
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAConfigurationToolPlugin guid: (GUID fromString: '{aded05dd-2969-4231-965d-335bf087be5e}')!
+WAConfigurationToolPlugin guid: (GUID fromString: '{4c205c8e-7a1d-48c7-92d3-0ad054b4641d}')!
 
 WAConfigurationToolPlugin comment: 'Abstract root class for all plugins that add an action for an application to the dispatcher editor.'!
 
-!WAConfigurationToolPlugin categoriesForClass!Unclassified! !
+!WAConfigurationToolPlugin categoriesForClass!Seaside-Tools-Web! !
 
 !WAConfigurationToolPlugin methodsFor!
 

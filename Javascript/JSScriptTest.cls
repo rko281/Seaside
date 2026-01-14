@@ -6,11 +6,11 @@ JSObjectTest subclass: #JSScriptTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JSScriptTest guid: (GUID fromString: '{8a83c67f-bc56-4f10-ad50-55dafb1f18d8}')!
+JSScriptTest guid: (GUID fromString: '{71f0ce2f-9278-477f-aaa8-b1c04cb01b68}')!
 
 JSScriptTest comment: ''!
 
-!JSScriptTest categoriesForClass!Unclassified! !
+!JSScriptTest categoriesForClass!Javascript-Tests-Core! !
 
 !JSScriptTest methodsFor!
 

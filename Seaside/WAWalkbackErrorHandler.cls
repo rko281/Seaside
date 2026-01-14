@@ -6,11 +6,11 @@ WADebugErrorHandler subclass: #WAWalkbackErrorHandler
 	poolDictionaries: ''
 	classInstanceVariableNames: 'configuredExceptionHandlingDefaults'!
 
-WAWalkbackErrorHandler guid: (GUID fromString: '{a54f4978-622b-48d8-9936-cf8ce42ba520}')!
+WAWalkbackErrorHandler guid: (GUID fromString: '{935f8a2e-44e8-44c6-b0f4-03cfc1d5ca4e}')!
 
 WAWalkbackErrorHandler comment: 'I am the default development error handler that displays the stack frames and adds the option to display a debugger.I delegate the rendering to WAWalkback.This handler uses Components and depends on having a valid Session. If an error occurs outside of the Session scope it will simply use the superclass behaviour, which should be to open a debugger.'!
 
-!WAWalkbackErrorHandler categoriesForClass!Core! !
+!WAWalkbackErrorHandler categoriesForClass!Seaside-Development-Core! !
 
 !WAWalkbackErrorHandler methodsFor!
 

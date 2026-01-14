@@ -6,11 +6,11 @@ WACanvasWidget subclass: #WAInputDialog
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAInputDialog guid: (GUID fromString: '{17847734-b189-40b3-a50c-35329033aba3}')!
+WAInputDialog guid: (GUID fromString: '{65c87c78-472a-4a8b-aec9-10b0942f0d63}')!
 
 WAInputDialog comment: 'WAInputDialog generates a simple form with a text input field and a submit button. The instance variable "value" is used for initial value of the text field and hold the text entered by user. WAInputDialog answers with text entered by user (value of "value"). See WAComponent>>request:label:default: for sample use and easy way to use WAInputDialog.Instance Variables:	label	<String>	label of submit button	value	<Object | String>	'!
 
-!WAInputDialog categoriesForClass!Components! !
+!WAInputDialog categoriesForClass!Seaside-Widgets-Components! !
 
 !WAInputDialog methodsFor!
 

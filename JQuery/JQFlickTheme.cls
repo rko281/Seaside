@@ -6,11 +6,11 @@ JQBaseTheme subclass: #JQFlickTheme
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQFlickTheme guid: (GUID fromString: '{7735f317-ebed-4e60-bf67-af00a7e92952}')!
+JQFlickTheme guid: (GUID fromString: '{ec37daa0-2b87-4fc6-bd5f-392cdd940820}')!
 
 JQFlickTheme comment: ''!
 
-!JQFlickTheme categoriesForClass!Libraries! !
+!JQFlickTheme categoriesForClass!JQuery-UI-Libraries! !
 
 !JQFlickTheme methodsFor!
 

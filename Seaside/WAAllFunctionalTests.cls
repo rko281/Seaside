@@ -6,11 +6,11 @@ WAComponent subclass: #WAAllFunctionalTests
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAAllFunctionalTests guid: (GUID fromString: '{7b86d46b-c3c9-4cb5-8ab0-d87f577a20a4}')!
+WAAllFunctionalTests guid: (GUID fromString: '{200219fc-7b11-4646-a803-0b3aed2e53e2}')!
 
 WAAllFunctionalTests comment: 'If you want to see these examples:/config app:- add a new application named "tests"- choose WAAllFunctionalTests as the root component'!
 
-!WAAllFunctionalTests categoriesForClass!Unclassified! !
+!WAAllFunctionalTests categoriesForClass!Seaside-Tests-Functional! !
 
 !WAAllFunctionalTests methodsFor!
 

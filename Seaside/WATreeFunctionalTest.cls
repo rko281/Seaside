@@ -6,11 +6,11 @@ WAFunctionalTest subclass: #WATreeFunctionalTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WATreeFunctionalTest guid: (GUID fromString: '{dea4fd8b-f39b-4d05-a7d3-2f5623296ce6}')!
+WATreeFunctionalTest guid: (GUID fromString: '{ffd220ac-0b76-4b48-ab9c-35ae31d57e62}')!
 
 WATreeFunctionalTest comment: ''!
 
-!WATreeFunctionalTest categoriesForClass!Unclassified! !
+!WATreeFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
 
 !WATreeFunctionalTest methodsFor!
 

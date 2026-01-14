@@ -6,11 +6,11 @@ WAFunctionalTest subclass: #WAValidationDecorationFunctionalTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAValidationDecorationFunctionalTest guid: (GUID fromString: '{e6b5f0e3-ddfb-40c9-8492-599ad87e3396}')!
+WAValidationDecorationFunctionalTest guid: (GUID fromString: '{67f7a34a-54ae-49b7-abe3-09d5ff8d1963}')!
 
 WAValidationDecorationFunctionalTest comment: ''!
 
-!WAValidationDecorationFunctionalTest categoriesForClass!Unclassified! !
+!WAValidationDecorationFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
 
 !WAValidationDecorationFunctionalTest methodsFor!
 

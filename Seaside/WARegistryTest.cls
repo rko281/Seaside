@@ -6,11 +6,11 @@ WARequestHandlerTest subclass: #WARegistryTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WARegistryTest guid: (GUID fromString: '{a02cc568-207b-41e1-91ae-2f20248e3f88}')!
+WARegistryTest guid: (GUID fromString: '{969096e7-1b5b-4fce-b115-bc4576293229}')!
 
 WARegistryTest comment: ''!
 
-!WARegistryTest categoriesForClass!RequestHandling! !
+!WARegistryTest categoriesForClass!Seaside-Tests-Core-RequestHandling! !
 
 !WARegistryTest methodsFor!
 

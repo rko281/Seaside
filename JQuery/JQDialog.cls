@@ -6,11 +6,11 @@ JQWidget subclass: #JQDialog
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQDialog guid: (GUID fromString: '{141d51e6-d22b-487f-810f-40d64bdedd29}')!
+JQDialog guid: (GUID fromString: '{2fa9fe18-8e2b-4023-bd66-69a38f55eb11}')!
 
 JQDialog comment: 'Make the selected elements Dialog boxes.'!
 
-!JQDialog categoriesForClass!Widgets! !
+!JQDialog categoriesForClass!JQuery-UI-Widgets! !
 
 !JQDialog methodsFor!
 

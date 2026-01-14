@@ -6,11 +6,11 @@ WAResponseGenerator subclass: #WAHtmlResponseGenerator
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAHtmlResponseGenerator guid: (GUID fromString: '{2b914cd6-a290-4a60-b6aa-04af7dd6a71d}')!
+WAHtmlResponseGenerator guid: (GUID fromString: '{334cc82a-1eee-465e-9e15-b5257aa49c81}')!
 
 WAHtmlResponseGenerator comment: 'This subclass overrides certain generation methods to create prettier HTML responses, instead of plain text.'!
 
-!WAHtmlResponseGenerator categoriesForClass!Unclassified! !
+!WAHtmlResponseGenerator categoriesForClass!Seaside-Environment! !
 
 !WAHtmlResponseGenerator methodsFor!
 

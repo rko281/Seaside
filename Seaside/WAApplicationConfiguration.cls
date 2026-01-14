@@ -6,11 +6,11 @@ WASystemConfiguration subclass: #WAApplicationConfiguration
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAApplicationConfiguration guid: (GUID fromString: '{70e2ed9d-5050-4bf8-bbaa-cac46b792c8a}')!
+WAApplicationConfiguration guid: (GUID fromString: '{e72b8594-caff-4519-a86f-faceb84cab7f}')!
 
 WAApplicationConfiguration comment: 'WAApplicationConfiguration defines attributes required by WAApplication. All applications should include this configuration (this is done by default for new applications).See #addAttributes: for details on provided attributes.'!
 
-!WAApplicationConfiguration categoriesForClass!Base! !
+!WAApplicationConfiguration categoriesForClass!Seaside-Session-Base! !
 
 !WAApplicationConfiguration methodsFor!
 

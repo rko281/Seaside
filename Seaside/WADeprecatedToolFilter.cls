@@ -6,11 +6,11 @@ WARequestFilter subclass: #WADeprecatedToolFilter
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WADeprecatedToolFilter guid: (GUID fromString: '{d080adb1-1e23-4464-b492-7eb1ab0f3d06}')!
+WADeprecatedToolFilter guid: (GUID fromString: '{ebfcc739-f1cd-48d7-9c4c-ce0a8be9f0d6}')!
 
 WADeprecatedToolFilter comment: ''!
 
-!WADeprecatedToolFilter categoriesForClass!Filter! !
+!WADeprecatedToolFilter categoriesForClass!Seaside-Development-Filter! !
 
 !WADeprecatedToolFilter methodsFor!
 

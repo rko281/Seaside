@@ -6,9 +6,9 @@ GRError subclass: #WATestError
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WATestError guid: (GUID fromString: '{7563185a-207a-4472-b491-43db1f551adc}')!
+WATestError guid: (GUID fromString: '{ddd30e5a-f340-4a49-a05e-3c2998e8eaff}')!
 
 WATestError comment: 'I am a  test error used to test WAExceptionHandler.'!
 
-!WATestError categoriesForClass!Base! !
+!WATestError categoriesForClass!Seaside-Tests-Core-Base! !
 

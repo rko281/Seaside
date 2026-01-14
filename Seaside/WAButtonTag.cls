@@ -6,11 +6,11 @@ WAFormInputTag subclass: #WAButtonTag
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAButtonTag guid: (GUID fromString: '{dd191139-13c5-4271-bf70-f5bf07b531a3}')!
+WAButtonTag guid: (GUID fromString: '{376e758a-24ef-4ad1-ad52-04f666c71eb0}')!
 
 WAButtonTag comment: 'Buttons created with the BUTTON element function just like buttons created with the INPUT element, but they offer richer rendering possibilities: the BUTTON element may have content. For example, a BUTTON element that contains an image functions like and may resemble an INPUT element whose type is set to "image", but the BUTTON element type allows content.'!
 
-!WAButtonTag categoriesForClass!Tags! !
+!WAButtonTag categoriesForClass!Seaside-Canvas-Tags! !
 
 !WAButtonTag methodsFor!
 

@@ -6,11 +6,11 @@ WARestfulHandler subclass: #WACORSResourceExample
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WACORSResourceExample guid: (GUID fromString: '{3283b0be-8d26-447d-90a0-bf4b1a6cf8ec}')!
+WACORSResourceExample guid: (GUID fromString: '{1084c4a5-f407-4f98-acb9-160b5329e569}')!
 
 WACORSResourceExample comment: ''!
 
-!WACORSResourceExample categoriesForClass!Unclassified! !
+!WACORSResourceExample categoriesForClass!Seaside-Tests-Functional! !
 
 !WACORSResourceExample methodsFor!
 

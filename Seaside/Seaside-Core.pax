@@ -1148,7 +1148,7 @@ WARequestFilter subclass: #WAConfiguredRequestFilter
 	classInstanceVariableNames: ''!
 
 WARequestFilter subclass: #WACORSFilter
-	instanceVariableNames: 'allowedOrigins allowedMethods allowedHeaders exposedHeaders allowsCredentials'
+	instanceVariableNames: 'allowedMethods allowedHeaders exposedHeaders allowsCredentials maxAge allowedOrigin'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
@@ -1335,7 +1335,7 @@ newReducedConflictCounter	"GemStone/S should answer an RcCounter here"	^ WARed
 
 newTransientValueHolder	"GemStone/S should answer a TransientValue here"	^ WAValueHolder new!
 
-seasideVersion	"Answer the Seaside version"	^ (GRVersion major: 3 minor: 5 revision: 9)		yourself!
+seasideVersion	"Answer the Seaside version"	^ (GRVersion major: 3 minor: 6 revision: 0)		yourself!
 
 urlEncoderOn: aStream	"Answer an URL encoder that works on aStream.	Platforms may provide optimized implementations."	^ WAUrlEncoder on: aStream!
 

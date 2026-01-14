@@ -6,11 +6,11 @@ WAContentElement subclass: #WALinkElement
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WALinkElement guid: (GUID fromString: '{e6ab0903-3c0c-4c20-8494-6f5b8e183a12}')!
+WALinkElement guid: (GUID fromString: '{d60edc00-fe25-4db5-876c-cd34c79d8aa0}')!
 
 WALinkElement comment: 'Defines either a link or style sheet rules. If it has children then it defines style sheet rules, else it defines a link.= if link =This element defines a link. Unlike A, it may only appear in the HEAD section of a document, although it may appear any number of times. Although LINK has no content, it conveys relationship information that may be rendered by user agents in a variety of ways (e.g., a tool-bar with a drop-down menu of links).= style sheet rules =The STYLE element allows authors to put style sheet rules in the head of the document. HTML permits any number of STYLE elements in the HEAD section of a document.User agents that don''t support style sheets, or don''t support the specific style sheet language used by a STYLE element, must hide the contents of the STYLE element. It is an error to render the content as part of the document''s text. Some style sheet languages support syntax for hiding the content from non-conforming user agents.'!
 
-!WALinkElement categoriesForClass!Document-Elements! !
+!WALinkElement categoriesForClass!Seaside-Core-Document-Elements! !
 
 !WALinkElement methodsFor!
 

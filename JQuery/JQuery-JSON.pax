@@ -3,11 +3,13 @@ package := Package name: 'JQuery-JSON'.
 package paxVersion: 1;
 	basicComment: ''.
 
+package classNames
+	add: #JQAjaxInternalCallbackRespondJSON;
+	yourself.
 
 package methodNames
 	add: #JQAjax -> #callback:json:;
 	add: #JQAjax -> #json:;
-	add: 'GRPackage class' -> #jQueryJson;
 	yourself.
 
 package binaryGlobalNames: (Set new
@@ -27,24 +29,24 @@ package!
 
 "Class Definitions"!
 
-
-"Global Aliases"!
-
+JQAjaxAbstractInternalCallback subclass: #JQAjaxInternalCallbackRespondJSON
+	instanceVariableNames: 'renderable'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
 
 "Loose Methods"!
 
-!GRPackage class methodsFor!
-
-jQueryJson	^ self new		name: 'JQuery-JSON';		description: 'JSON convience functionality for the jQuery integration for Seaside.';		addDependency: 'JQuery-Core';		addDependency: 'Seaside-JSON-Core';		url: #seasideUrl;		yourself! !
-!GRPackage class categoriesFor: #jQueryJson!*jquery/json!public! !
-
 !JQAjax methodsFor!
 
-callback: aBlock json: anObject	"Register aBlock as a secondary callback. anObject is a reference to a Javascript object on the client-side. anObject will be serialized to a JSON string, sent back to the server, deserialized from JSON to nested Smalltalk objects, and result passed into aBlock."	self		callback: [ :value | aBlock value: (WAJsonParser parse: value) ] 		value: (JSJson new stringify: anObject)!
+callback: aBlock json: anObject	"Register aBlock as a secondary callback. anObject is a reference to a Javascript object on the client-side. anObject will be serialized to a JSON string, sent back to the server, deserialized from JSON to nested Smalltalk objects, and result passed into aBlock."	self		callback: [ :value | aBlock value: (GRPlatform current jsonParserClass parse: value) ] 		value: (JSJson new stringify: anObject)!
 
-json: aRenderable	"Defines a json rendering callback."	self dataType: 'json'.	self respond: [ :response |		response			doNotCache;			contentType: WAMimeType applicationJson;			nextPutAll: (WAJsonCanvas builder render: aRenderable) ]! !
-!JQAjax categoriesFor: #callback:json:!*jquery/json!public! !
-!JQAjax categoriesFor: #json:!*jquery/json!public! !
+json: aRenderable	"Defines a json rendering callback."	self dataType: 'json'.	self enableCallbacks.	callback := JQAjaxInternalCallbackRespondJSON renderable: aRenderable! !
+
+!JQAjax categoriesForMethods!
+callback:json:!*jquery/json!public! !
+json:!*jquery/json!public! !
+!
 
 "End of package definition"!
 

@@ -6,11 +6,11 @@ WAHandlerEditor subclass: #WARegistryEditor
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WARegistryEditor guid: (GUID fromString: '{11823390-6db1-4300-afd2-f78beac012a6}')!
+WARegistryEditor guid: (GUID fromString: '{b1e7eaa5-27eb-45df-8c31-cef426ea9e56}')!
 
 WARegistryEditor comment: ''!
 
-!WARegistryEditor categoriesForClass!Unclassified! !
+!WARegistryEditor categoriesForClass!Seaside-Tools-Web! !
 
 !WARegistryEditor methodsFor!
 

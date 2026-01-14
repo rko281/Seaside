@@ -6,11 +6,11 @@ JQWidget subclass: #JQButton
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQButton guid: (GUID fromString: '{e0657975-5b16-4ced-973b-35b0fe087b14}')!
+JQButton guid: (GUID fromString: '{f7a99117-c7d1-4cbb-bee8-0fe17bb9c583}')!
 
 JQButton comment: 'Button enhances standard form elements like button, input of type submit or reset or anchors to themable buttons with appropiate mouseover and active styles.In addition to basic push buttons, radio buttons and checkboxes (inputs of type radio and checkbox) can be converted to buttons: Their associated label is styled to appear as the button, while the underlying input is updated on click.Buttons can be grouped using the buttonSet method, which should be always applied for radio buttons.'!
 
-!JQButton categoriesForClass!Widgets! !
+!JQButton categoriesForClass!JQuery-UI-Widgets! !
 
 !JQButton methodsFor!
 

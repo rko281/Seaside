@@ -6,11 +6,11 @@ GROrderedMultiMap2Test subclass: #WAHeaderFieldsTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAHeaderFieldsTest guid: (GUID fromString: '{967ef344-0416-4f88-835e-10d6bf74dc21}')!
+WAHeaderFieldsTest guid: (GUID fromString: '{95905be1-94c8-441e-8693-3768a80cf5bb}')!
 
 WAHeaderFieldsTest comment: ''!
 
-!WAHeaderFieldsTest categoriesForClass!HTTP! !
+!WAHeaderFieldsTest categoriesForClass!Seaside-Tests-Core-HTTP! !
 
 !WAHeaderFieldsTest methodsFor!
 

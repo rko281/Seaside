@@ -6,11 +6,11 @@ JQFunctionalTest subclass: #JQAnimateFunctionalTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQAnimateFunctionalTest guid: (GUID fromString: '{f5311227-758b-42d7-a702-f0d87e33f145}')!
+JQAnimateFunctionalTest guid: (GUID fromString: '{b08e8eca-adf7-4603-b7a3-e68e770ecc94}')!
 
 JQAnimateFunctionalTest comment: ''!
 
-!JQAnimateFunctionalTest categoriesForClass!Functional! !
+!JQAnimateFunctionalTest categoriesForClass!JQuery-Tests-Core-Functional! !
 
 !JQAnimateFunctionalTest methodsFor!
 

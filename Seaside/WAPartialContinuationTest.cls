@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 TestCase subclass: #WAPartialContinuationTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAPartialContinuationTest guid: (GUID fromString: '{9aad2752-5de7-406d-a20f-0cced563db57}')!
+
 WAPartialContinuationTest comment: ''!
+
 !WAPartialContinuationTest categoriesForClass!Seaside-Tests-Pharo-Continuation! !
+
 !WAPartialContinuationTest methodsFor!
 
 callcc: aBlock
@@ -40,14 +44,17 @@ testNoMarkerOnValue	| kk captured seen |	captured := false.	seen := false.	s
 testReentrant	| kk |	self assert: (self mark: [ 		2 * (self callcc: [ :cc | 			kk := cc. 2 ]) ]) 				= 4.		self assert: (self mark: [		kk value: 3 ]) 			= 6.	self assert: (self mark: [		kk value: 4 ]) 			= 8.	self assert: (self mark: [		kk value: 5 ]) 			= 10!
 
 testSimple	self assert: (self mark: [ self callcc: [ :cc | cc value: true ] ])! !
-!WAPartialContinuationTest categoriesFor: #callcc:!private! !
-!WAPartialContinuationTest categoriesFor: #mark:!private! !
-!WAPartialContinuationTest categoriesFor: #markDiscardingResultOf:!private! !
-!WAPartialContinuationTest categoriesFor: #testEnsure!public!tests! !
-!WAPartialContinuationTest categoriesFor: #testMarkerOnValue!public!tests! !
-!WAPartialContinuationTest categoriesFor: #testNestedEvaluation!public!tests! !
-!WAPartialContinuationTest categoriesFor: #testNoMarkerOnCall!public!tests! !
-!WAPartialContinuationTest categoriesFor: #testNoMarkerOnValue!public!tests! !
-!WAPartialContinuationTest categoriesFor: #testReentrant!public!tests! !
-!WAPartialContinuationTest categoriesFor: #testSimple!public!tests! !
+
+!WAPartialContinuationTest categoriesForMethods!
+callcc:!private! !
+mark:!private! !
+markDiscardingResultOf:!private! !
+testEnsure!public!tests! !
+testMarkerOnValue!public!tests! !
+testNestedEvaluation!public!tests! !
+testNoMarkerOnCall!public!tests! !
+testNoMarkerOnValue!public!tests! !
+testReentrant!public!tests! !
+testSimple!public!tests! !
+!
 

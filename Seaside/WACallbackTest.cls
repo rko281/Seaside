@@ -6,11 +6,11 @@ TestCase subclass: #WACallbackTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WACallbackTest guid: (GUID fromString: '{e45aa7f1-157e-489d-8864-1566bd83686c}')!
+WACallbackTest guid: (GUID fromString: '{ef37f2d7-e870-4fec-9b87-354f13c29bb7}')!
 
 WACallbackTest comment: ''!
 
-!WACallbackTest categoriesForClass!Callbacks! !
+!WACallbackTest categoriesForClass!Seaside-Tests-Core-Callbacks! !
 
 !WACallbackTest methodsFor!
 

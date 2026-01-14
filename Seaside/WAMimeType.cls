@@ -6,11 +6,11 @@ WAObject subclass: #WAMimeType
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAMimeType guid: (GUID fromString: '{318f92a0-9a6d-4c37-9b58-7f7fbff9ee78}')!
+WAMimeType guid: (GUID fromString: '{af7420ed-1fa0-484c-976f-f97a986728b1}')!
 
 WAMimeType comment: 'A WAMimeType abstracts a Internet media type, it is a two-part identifier for file formats on the Internet.Instance Variables	main:			<String>	parameters:	<GRSmallDictionary>	sub:			<String>main	- the main typeparameters	- a lazily initialized dictionary of optional parameterssub	- the subtype'!
 
-!WAMimeType categoriesForClass!HTTP! !
+!WAMimeType categoriesForClass!Seaside-Core-HTTP! !
 
 !WAMimeType methodsFor!
 
@@ -20,7 +20,7 @@ charSet	^ self parameters at: 'charset' ifAbsent: [ nil ]!
 
 charset: aString	self parameters at: 'charset' put: aString!
 
-greaseString	| stringSize string stream |	stringSize := main size + 1 + sub size.	parameters isNil ifFalse: [		parameters keysAndValuesDo: [ :key :value |			stringSize := stringSize + 1 + key size + 1 + value size ] ].	"allocate with correct size, avoid copy"	string := String new: stringSize.	stream := WriteStream on: string.	stream		nextPutAll: main;		nextPut: $/;		nextPutAll: sub.	parameters isNil ifFalse: [		parameters keysAndValuesDo: [ :key :value | 			stream				nextPut: $;;				nextPutAll: key;				nextPut: $=;				nextPutAll: value ] ].	"no need for #contents because we allocated with the correct size"	^ string!
+greaseString	| stringSize string stream |	stringSize := main size + 1 + sub size.	parameters isNil ifFalse: [		parameters keysAndValuesDo: [ :key :value |			stringSize := stringSize + 1 + key size + 1 + value size ] ].	"allocate with correct size, avoid copy"	string := String new: stringSize.	stream := WriteStream on: string.	stream		nextPutAll: main;		nextPut: $/;		nextPutAll: sub.	parameters isNil ifFalse: [		parameters keysAndValuesDo: [ :key :value | 			stream				nextPut: $;;				nextPutAll: key;				nextPut: $=;				nextPutAll: value ] ].	^ stream contents!
 
 hash	^ self main hash bitXor: self sub hash!
 
@@ -91,6 +91,8 @@ imageJpeg	^ self main: 'image' sub: 'jpeg'!
 
 imagePng	^ self main: 'image' sub: 'png'!
 
+imageXIcon	^ self main: 'image' sub: 'x-icon'!
+
 main: aMainString sub: aSubString	^ self new		main: aMainString;		sub: aSubString;		yourself!
 
 main: aMainString sub: aSubString parameters: aDictionary	^ (self main: aMainString sub: aSubString)		parameters: aDictionary;		yourself!
@@ -113,6 +115,7 @@ fromString:!instance creation!public! !
 imageGif!convenience!public! !
 imageJpeg!convenience!public! !
 imagePng!convenience!public! !
+imageXIcon!convenience!public! !
 main:sub:!instance creation!public! !
 main:sub:parameters:!instance creation!public! !
 textCss!convenience!public! !

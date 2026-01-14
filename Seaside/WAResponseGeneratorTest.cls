@@ -6,11 +6,11 @@ WAContextTest subclass: #WAResponseGeneratorTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAResponseGeneratorTest guid: (GUID fromString: '{633b9930-728f-41ba-9007-081ff0955572}')!
+WAResponseGeneratorTest guid: (GUID fromString: '{aec6d14c-dce8-46de-b860-048babf7aedf}')!
 
 WAResponseGeneratorTest comment: ''!
 
-!WAResponseGeneratorTest categoriesForClass!RequestHandling! !
+!WAResponseGeneratorTest categoriesForClass!Seaside-Tests-Core-RequestHandling! !
 
 !WAResponseGeneratorTest methodsFor!
 

@@ -6,11 +6,11 @@ TestCase subclass: #WAMergedRequestFieldsTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAMergedRequestFieldsTest guid: (GUID fromString: '{b8421c02-4c70-4c8c-860e-71866a0f706d}')!
+WAMergedRequestFieldsTest guid: (GUID fromString: '{2af744fb-1787-49ac-bb1b-dd787efea9cd}')!
 
 WAMergedRequestFieldsTest comment: ''!
 
-!WAMergedRequestFieldsTest categoriesForClass!HTTP! !
+!WAMergedRequestFieldsTest categoriesForClass!Seaside-Tests-Core-HTTP! !
 
 !WAMergedRequestFieldsTest methodsFor!
 

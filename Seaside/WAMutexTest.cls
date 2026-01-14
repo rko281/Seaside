@@ -6,11 +6,11 @@ TestCase subclass: #WAMutexTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAMutexTest guid: (GUID fromString: '{6a3088f9-d8d2-4b3f-874c-2ce2ba57899c}')!
+WAMutexTest guid: (GUID fromString: '{525f6310-5a07-4c0b-85b2-f9e701878b12}')!
 
 WAMutexTest comment: ''!
 
-!WAMutexTest categoriesForClass!Utilities! !
+!WAMutexTest categoriesForClass!Seaside-Tests-Core-Utilities! !
 
 !WAMutexTest methodsFor!
 

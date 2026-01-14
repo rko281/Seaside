@@ -6,11 +6,11 @@ WAComponent subclass: #WAStatus
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAStatus guid: (GUID fromString: '{d403789b-ec8a-4533-96e8-570f498a8e72}')!
+WAStatus guid: (GUID fromString: '{c2fc3f0a-11aa-4765-a158-2f7821787f81}')!
 
 WAStatus comment: 'A WAStatus displays various information about state of this system.'!
 
-!WAStatus categoriesForClass!Unclassified! !
+!WAStatus categoriesForClass!Seaside-Tools-Web! !
 
 !WAStatus methodsFor!
 

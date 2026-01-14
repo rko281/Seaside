@@ -6,11 +6,11 @@ WAFunctionalTest subclass: #WAHtml5MultipleFileUploadTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAHtml5MultipleFileUploadTest guid: (GUID fromString: '{c29ab4dd-f674-48de-9942-26a15a056dce}')!
+WAHtml5MultipleFileUploadTest guid: (GUID fromString: '{b4678b76-4610-4bc5-a476-834cad5f515d}')!
 
 WAHtml5MultipleFileUploadTest comment: ''!
 
-!WAHtml5MultipleFileUploadTest categoriesForClass!Unclassified! !
+!WAHtml5MultipleFileUploadTest categoriesForClass!Seaside-Tests-Functional! !
 
 !WAHtml5MultipleFileUploadTest methodsFor!
 

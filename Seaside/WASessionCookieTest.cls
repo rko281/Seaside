@@ -6,11 +6,11 @@ WARegistryTest subclass: #WASessionCookieTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WASessionCookieTest guid: (GUID fromString: '{2c111feb-bbc0-4af5-bef9-8c99dd7eb583}')!
+WASessionCookieTest guid: (GUID fromString: '{4b34ae4c-5a86-4358-86e1-6641bf0412c4}')!
 
 WASessionCookieTest comment: ''!
 
-!WASessionCookieTest categoriesForClass!Unclassified! !
+!WASessionCookieTest categoriesForClass!Seaside-Tests-Session! !
 
 !WASessionCookieTest methodsFor!
 

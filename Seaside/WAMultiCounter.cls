@@ -6,11 +6,11 @@ WAExampleComponent subclass: #WAMultiCounter
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAMultiCounter guid: (GUID fromString: '{97294f91-9637-4b23-9943-32d8cd522437}')!
+WAMultiCounter guid: (GUID fromString: '{663d0d0f-6e58-45cf-84bc-4fc611f916cb}')!
 
 WAMultiCounter comment: 'A WAMultiCounter is a component that consists of several instances of WACounter. Be sure to understand WACounter.The lesson to learn here is how Seaside components can be composed of other components.Instance Variables	counters:		<Collection<WACounter>>counters	- a Collection of components (instances of WACounter) '!
 
-!WAMultiCounter categoriesForClass!Misc! !
+!WAMultiCounter categoriesForClass!Seaside-Examples-Misc! !
 
 !WAMultiCounter methodsFor!
 

@@ -6,11 +6,11 @@ WAFunctionalTest subclass: #WAFlowClosureFunctionalTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAFlowClosureFunctionalTest guid: (GUID fromString: '{704b109d-8dcc-4448-b2b0-1709eefa6bb5}')!
+WAFlowClosureFunctionalTest guid: (GUID fromString: '{2f41827f-d374-46cc-b21a-417364776642}')!
 
 WAFlowClosureFunctionalTest comment: ''!
 
-!WAFlowClosureFunctionalTest categoriesForClass!Functional! !
+!WAFlowClosureFunctionalTest categoriesForClass!Seaside-Tests-Flow-Functional! !
 
 !WAFlowClosureFunctionalTest methodsFor!
 

@@ -6,11 +6,11 @@ WAContextTest subclass: #WABuilderCanvasTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WABuilderCanvasTest guid: (GUID fromString: '{fb3e6310-2972-493b-8fb0-60424ec2bf49}')!
+WABuilderCanvasTest guid: (GUID fromString: '{01905aa6-ebe7-4a9b-bcc7-45ae87adeed7}')!
 
 WABuilderCanvasTest comment: ''!
 
-!WABuilderCanvasTest categoriesForClass!Base! !
+!WABuilderCanvasTest categoriesForClass!Seaside-Tests-Canvas-Base! !
 
 !WABuilderCanvasTest methodsFor!
 

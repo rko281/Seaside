@@ -6,11 +6,11 @@ WAScriptGenerator subclass: #WADefaultScriptGenerator
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WADefaultScriptGenerator guid: (GUID fromString: '{cc9dbf12-00ad-4540-8bb7-2188c3bf62a5}')!
+WADefaultScriptGenerator guid: (GUID fromString: '{3157b99a-8285-402a-8bde-a451e0e5fceb}')!
 
 WADefaultScriptGenerator comment: 'A WADefaultScriptGenerator uses the onLoad event on the body to trigger the load scripts. Events handlers are directly inlined with the respective elements. Both techniques are considered outdated and should be avoided if possible.'!
 
-!WADefaultScriptGenerator categoriesForClass!Document! !
+!WADefaultScriptGenerator categoriesForClass!Seaside-Core-Document! !
 
 !WADefaultScriptGenerator methodsFor!
 

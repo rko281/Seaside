@@ -6,11 +6,11 @@ WAFileLibrary subclass: #JQUiGoogleLibrary
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQUiGoogleLibrary guid: (GUID fromString: '{5aa1af58-d853-4c31-b0dc-c15f8eab05d5}')!
+JQUiGoogleLibrary guid: (GUID fromString: '{fe24745b-1f8a-415b-90cb-c74ca11b3743}')!
 
 JQUiGoogleLibrary comment: ''!
 
-!JQUiGoogleLibrary categoriesForClass!Libraries! !
+!JQUiGoogleLibrary categoriesForClass!JQuery-UI-Libraries! !
 
 !JQUiGoogleLibrary methodsFor!
 

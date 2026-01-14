@@ -6,11 +6,11 @@ TestCase subclass: #WAEmailAddressTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAEmailAddressTest guid: (GUID fromString: '{b967706f-7ee4-4a90-b95e-799b7e2052c7}')!
+WAEmailAddressTest guid: (GUID fromString: '{1f964e2d-9297-4653-83e3-c0d24bc1892a}')!
 
 WAEmailAddressTest comment: ''!
 
-!WAEmailAddressTest categoriesForClass!Base! !
+!WAEmailAddressTest categoriesForClass!Seaside-Tests-Canvas-Base! !
 
 !WAEmailAddressTest methodsFor!
 

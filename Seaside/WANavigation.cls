@@ -6,11 +6,11 @@ WACanvasWidget subclass: #WANavigation
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WANavigation guid: (GUID fromString: '{98a0158d-49db-440c-a1b3-f73bbd67156c}')!
+WANavigation guid: (GUID fromString: '{bfdf3823-6ac7-4677-8f27-2106ec205715}')!
 
 WANavigation comment: ''!
 
-!WANavigation categoriesForClass!Components! !
+!WANavigation categoriesForClass!Seaside-Widgets-Components! !
 
 !WANavigation methodsFor!
 

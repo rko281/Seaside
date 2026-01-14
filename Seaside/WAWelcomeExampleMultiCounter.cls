@@ -6,11 +6,11 @@ WAWelcomeExample subclass: #WAWelcomeExampleMultiCounter
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAWelcomeExampleMultiCounter guid: (GUID fromString: '{2cf11ec2-ab36-4794-ba37-80c104359000}')!
+WAWelcomeExampleMultiCounter guid: (GUID fromString: '{96efd15b-ba87-4a38-8d1b-dbbf35d87b1d}')!
 
 WAWelcomeExampleMultiCounter comment: ''!
 
-!WAWelcomeExampleMultiCounter categoriesForClass!Examples! !
+!WAWelcomeExampleMultiCounter categoriesForClass!Seaside-Welcome-Examples! !
 
 !WAWelcomeExampleMultiCounter methodsFor!
 

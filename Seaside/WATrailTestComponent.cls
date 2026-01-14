@@ -6,11 +6,11 @@ WAComponent subclass: #WATrailTestComponent
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WATrailTestComponent guid: (GUID fromString: '{cacd9e0e-d87e-4923-81f0-9f54bc260ea6}')!
+WATrailTestComponent guid: (GUID fromString: '{883fe032-4a3b-4f87-9ce9-99781a16b04a}')!
 
 WATrailTestComponent comment: ''!
 
-!WATrailTestComponent categoriesForClass!Unclassified! !
+!WATrailTestComponent categoriesForClass!Seaside-Tests-Functional! !
 
 !WATrailTestComponent methodsFor!
 

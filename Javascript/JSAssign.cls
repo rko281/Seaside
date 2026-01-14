@@ -6,15 +6,15 @@ JSMember subclass: #JSAssign
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JSAssign guid: (GUID fromString: '{f3e07048-764a-48cf-afb6-5bdf44339c33}')!
+JSAssign guid: (GUID fromString: '{47e710f2-d3e0-4f17-ad33-6360e49e7ff4}')!
 
 JSAssign comment: 'I assign the decorated object to a global variable.'!
 
-!JSAssign categoriesForClass!Decorations! !
+!JSAssign categoriesForClass!Javascript-Core-Decorations! !
 
 !JSAssign methodsFor!
 
-javascriptContentOn: aStream	aStream		nextPutAll: self name;		nextPut: $=.	super javascriptContentOn: aStream! !
+javascriptContentOn: aRenderer	aRenderer document identifier: self name.	aRenderer assignment: [		super javascriptContentOn: aRenderer ]! !
 
 !JSAssign categoriesForMethods!
 javascriptContentOn:!printing!public! !

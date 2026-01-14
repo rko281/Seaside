@@ -6,11 +6,11 @@ WAAbstractCanvasBrushTest subclass: #WAAnchorTagTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAAnchorTagTest guid: (GUID fromString: '{0e52c0a4-651e-4387-b7cf-61bfc5214b19}')!
+WAAnchorTagTest guid: (GUID fromString: '{af340d6b-c1fa-4be9-87c9-5bf4cdf4101e}')!
 
 WAAnchorTagTest comment: ''!
 
-!WAAnchorTagTest categoriesForClass!Brushes! !
+!WAAnchorTagTest categoriesForClass!Seaside-Tests-Canvas-Brushes! !
 
 !WAAnchorTagTest methodsFor!
 

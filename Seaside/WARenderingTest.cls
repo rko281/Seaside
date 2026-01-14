@@ -6,11 +6,11 @@ WAContextTest subclass: #WARenderingTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WARenderingTest guid: (GUID fromString: '{84b29047-5ac9-4a79-be14-32b23ebb0a45}')!
+WARenderingTest guid: (GUID fromString: '{ef17f2e1-eed3-4b8d-95ce-46c0b72a7590}')!
 
 WARenderingTest comment: ''!
 
-!WARenderingTest categoriesForClass!Base! !
+!WARenderingTest categoriesForClass!Seaside-Tests-Canvas-Base! !
 
 !WARenderingTest methodsFor!
 

@@ -6,11 +6,11 @@ WACanvas subclass: #WAJsonCanvas
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAJsonCanvas guid: (GUID fromString: '{939aea6a-14aa-4292-8bd1-79998e659eb8}')!
+WAJsonCanvas guid: (GUID fromString: '{af387abe-6ac1-4bf7-a78f-fe3dd7f69ad9}')!
 
 WAJsonCanvas comment: 'I am a  specific canvas to render JSON output.'!
 
-!WAJsonCanvas categoriesForClass!Base! !
+!WAJsonCanvas categoriesForClass!Seaside-JSON-Core-Base! !
 
 !WAJsonCanvas methodsFor!
 
@@ -18,7 +18,7 @@ array: aBlock	^ (self brush: WAJsonArrayBrush new) with: aBlock!
 
 boolean: aBoolean	self document stream nextPutAll: (aBoolean ifTrue: [ 'true' ] ifFalse: [ 'false' ])!
 
-dateAndTime: aDateAndTime	" Note: date and time is not standard json. So we use the ISO 8601 standard here. We convert to string to make it valid json "	self document stream nextPut: $".	aDateAndTime printOn: self document stream.	self document stream nextPut: $"!
+dateAndTime: aDateAndTime	" Note: date and time is not standard json. So we use the ISO 8601 standard here. We convert to string to make it valid json "	self document stream nextPut: $".	aDateAndTime printOn: self document stream withLeadingSpace: false. "Dolphin modified"	self document stream nextPut: $"!
 
 initializeWithContext: aRenderContext	super initializeWithContext: aRenderContext.	first := true!
 
@@ -47,7 +47,7 @@ writeIfNotFirst: aString	first ifFalse: [		self document nextPutAll: aString ]
 !WAJsonCanvas categoriesForMethods!
 array:!public! !
 boolean:!double/dispatch!public! !
-dateAndTime:!double/dispatch!public! !
+dateAndTime:!dolphin seaside patches!double/dispatch!public! !
 initializeWithContext:!initialization!public! !
 key:value:!public! !
 nest:!private! !

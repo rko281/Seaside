@@ -6,11 +6,11 @@ WASession subclass: #WAExpirySession
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAExpirySession guid: (GUID fromString: '{b5cdd68e-30e2-40e7-9d15-d8b9bb9cc51d}')!
+WAExpirySession guid: (GUID fromString: '{0ebefc07-23ed-40da-91c0-5cc55aa74179}')!
 
 WAExpirySession comment: ''!
 
-!WAExpirySession categoriesForClass!Unclassified! !
+!WAExpirySession categoriesForClass!Seaside-Tests-Functional! !
 
 !WAExpirySession methodsFor!
 

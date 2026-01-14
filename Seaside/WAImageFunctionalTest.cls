@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WAFunctionalTest subclass: #WAImageFunctionalTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAImageFunctionalTest guid: (GUID fromString: '{5657c742-0bbb-4c1e-b6cb-9a667b70380f}')!
+
 WAImageFunctionalTest comment: ''!
+
 !WAImageFunctionalTest categoriesForClass!Unclassified! !
+
 !WAImageFunctionalTest methodsFor!
 
 formClass
@@ -66,13 +70,16 @@ renderImagesOn: html
 
 renderNotSupportedOn: html
 	html heading: 'Your image doesn''t have the Form class'! !
-!WAImageFunctionalTest categoriesFor: #formClass!accessing!public! !
-!WAImageFunctionalTest categoriesFor: #haloDebugForm!accessing!public! !
-!WAImageFunctionalTest categoriesFor: #haloPaintForm!accessing!public! !
-!WAImageFunctionalTest categoriesFor: #haloViewForm!accessing!public! !
-!WAImageFunctionalTest categoriesFor: #isSupported!public!testing! !
-!WAImageFunctionalTest categoriesFor: #label!accessing!public! !
-!WAImageFunctionalTest categoriesFor: #renderContentOn:!public!rendering! !
-!WAImageFunctionalTest categoriesFor: #renderImagesOn:!public!rendering! !
-!WAImageFunctionalTest categoriesFor: #renderNotSupportedOn:!public!rendering! !
+
+!WAImageFunctionalTest categoriesForMethods!
+formClass!accessing!public! !
+haloDebugForm!accessing!public! !
+haloPaintForm!accessing!public! !
+haloViewForm!accessing!public! !
+isSupported!public!testing! !
+label!accessing!public! !
+renderContentOn:!public!rendering! !
+renderImagesOn:!public!rendering! !
+renderNotSupportedOn:!public!rendering! !
+!
 

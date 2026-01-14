@@ -6,11 +6,11 @@ WACacheTest subclass: #WAUnidirectionalCacheTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAUnidirectionalCacheTest guid: (GUID fromString: '{5b2147f3-8641-4fcf-baeb-a4d6f856de18}')!
+WAUnidirectionalCacheTest guid: (GUID fromString: '{d3463142-46f0-41b2-b0af-67b91e14a21a}')!
 
 WAUnidirectionalCacheTest comment: ''!
 
-!WAUnidirectionalCacheTest categoriesForClass!Cache! !
+!WAUnidirectionalCacheTest categoriesForClass!Seaside-Tests-Core-Cache! !
 
 !WAUnidirectionalCacheTest methodsFor!
 

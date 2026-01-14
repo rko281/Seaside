@@ -6,11 +6,11 @@ WAComponent subclass: #WAWelcomeComponentNamePrompter
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAWelcomeComponentNamePrompter guid: (GUID fromString: '{a20012ad-0566-4779-80b3-f9ea4f425b83}')!
+WAWelcomeComponentNamePrompter guid: (GUID fromString: '{c11defa0-f25e-4439-9ce4-9a5e86bd90b5}')!
 
 WAWelcomeComponentNamePrompter comment: ''!
 
-!WAWelcomeComponentNamePrompter categoriesForClass!Base! !
+!WAWelcomeComponentNamePrompter categoriesForClass!Seaside-Welcome-Base! !
 
 !WAWelcomeComponentNamePrompter methodsFor!
 

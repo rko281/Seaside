@@ -6,11 +6,11 @@ WAFunctionalTest subclass: #WALotsaLinksFunctionalTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WALotsaLinksFunctionalTest guid: (GUID fromString: '{d4bf66df-fd42-4085-a666-c15401c2d2c6}')!
+WALotsaLinksFunctionalTest guid: (GUID fromString: '{45feaeed-52ef-41b4-8444-a45369eb8e55}')!
 
 WALotsaLinksFunctionalTest comment: ''!
 
-!WALotsaLinksFunctionalTest categoriesForClass!Unclassified! !
+!WALotsaLinksFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
 
 !WALotsaLinksFunctionalTest methodsFor!
 

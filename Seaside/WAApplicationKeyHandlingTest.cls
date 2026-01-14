@@ -6,11 +6,11 @@ WARegistryKeyHandlingTest subclass: #WAApplicationKeyHandlingTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAApplicationKeyHandlingTest guid: (GUID fromString: '{dc62b526-72da-46ed-95b9-b7a0ff2e80ff}')!
+WAApplicationKeyHandlingTest guid: (GUID fromString: '{2746d81d-b245-4c54-b9dc-f8c0739fe140}')!
 
 WAApplicationKeyHandlingTest comment: ''!
 
-!WAApplicationKeyHandlingTest categoriesForClass!Unclassified! !
+!WAApplicationKeyHandlingTest categoriesForClass!Seaside-Tests-Session! !
 
 !WAApplicationKeyHandlingTest methodsFor!
 

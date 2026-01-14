@@ -6,11 +6,11 @@ WACallback subclass: #WAValueCallback
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAValueCallback guid: (GUID fromString: '{c55fcd6c-7fd2-4cd6-b526-910a5f9d4b59}')!
+WAValueCallback guid: (GUID fromString: '{9e6d74dd-e3ee-41da-876b-369bc43336fd}')!
 
 WAValueCallback comment: ''!
 
-!WAValueCallback categoriesForClass!Callbacks! !
+!WAValueCallback categoriesForClass!Seaside-Core-Callbacks! !
 
 !WAValueCallback methodsFor!
 

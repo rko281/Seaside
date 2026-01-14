@@ -6,11 +6,11 @@ WAComponent subclass: #WAWelcomeComponentConfirmation
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAWelcomeComponentConfirmation guid: (GUID fromString: '{447811d5-09ea-4e02-857b-acfc78f2022d}')!
+WAWelcomeComponentConfirmation guid: (GUID fromString: '{32f59ecc-d752-41ca-8436-72eb95f041b5}')!
 
 WAWelcomeComponentConfirmation comment: ''!
 
-!WAWelcomeComponentConfirmation categoriesForClass!Base! !
+!WAWelcomeComponentConfirmation categoriesForClass!Seaside-Welcome-Base! !
 
 !WAWelcomeComponentConfirmation methodsFor!
 

@@ -6,11 +6,11 @@ JQBaseTheme subclass: #JQEggplantTheme
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQEggplantTheme guid: (GUID fromString: '{24065628-5086-4e35-906c-7b022a3623a5}')!
+JQEggplantTheme guid: (GUID fromString: '{e6db8f7c-933f-4ae3-b5f8-197d1eb91d26}')!
 
 JQEggplantTheme comment: ''!
 
-!JQEggplantTheme categoriesForClass!Libraries! !
+!JQEggplantTheme categoriesForClass!JQuery-UI-Libraries! !
 
 !JQEggplantTheme methodsFor!
 

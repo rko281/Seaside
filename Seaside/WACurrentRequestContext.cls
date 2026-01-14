@@ -6,11 +6,11 @@ WADynamicVariable subclass: #WACurrentRequestContext
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WACurrentRequestContext guid: (GUID fromString: '{9f888369-f777-4c0e-8b04-dd007222bf03}')!
+WACurrentRequestContext guid: (GUID fromString: '{b6709f4d-f26e-4070-80cc-4b2521a0a698}')!
 
 WACurrentRequestContext comment: 'A WACurrentRequestContext is a thread local variable that points to the current WARequestContext.'!
 
-!WACurrentRequestContext categoriesForClass!RequestHandling! !
+!WACurrentRequestContext categoriesForClass!Seaside-Core-RequestHandling! !
 
 !WACurrentRequestContext class methodsFor!
 

@@ -6,11 +6,11 @@ WASystemConfiguration subclass: #WADevelopmentConfiguration
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WADevelopmentConfiguration guid: (GUID fromString: '{4d02696c-1d1e-49da-a0b8-9f45aee1a464}')!
+WADevelopmentConfiguration guid: (GUID fromString: '{5cda4a84-a884-48bb-9f91-eed4190656af}')!
 
 WADevelopmentConfiguration comment: ''!
 
-!WADevelopmentConfiguration categoriesForClass!Core! !
+!WADevelopmentConfiguration categoriesForClass!Seaside-Development-Core! !
 
 !WADevelopmentConfiguration methodsFor!
 

@@ -6,11 +6,11 @@ WAExpiringCache subclass: #WABulkReapingCache
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WABulkReapingCache guid: (GUID fromString: '{8be2f38c-54cc-4f3a-84bb-642be4484f26}')!
+WABulkReapingCache guid: (GUID fromString: '{2e874993-7712-4bf1-a5c7-5306c1fc2d9c}')!
 
 WABulkReapingCache comment: 'I am a cache that reaps all elements at once instead of incrementally.I am intended to be used in GemStone/S instead of WAHashCache. A background process should send #reap to me.    Instance Variables	dictionary:		<Dictionary>'!
 
-!WABulkReapingCache categoriesForClass!Cache! !
+!WABulkReapingCache categoriesForClass!Seaside-Core-Cache! !
 
 !WABulkReapingCache methodsFor!
 

@@ -8,11 +8,14 @@ package classNames
 	add: #JSAjaxCallback;
 	add: #JSAlias;
 	add: #JSApply;
+	add: #JSArgument;
+	add: #JSArguments;
 	add: #JSAssign;
 	add: #JSAssignLocal;
 	add: #JSAssignment;
 	add: #JSBinary;
 	add: #JSCall;
+	add: #JSCode;
 	add: #JSConcatenation;
 	add: #JSCondition;
 	add: #JSConditionElse;
@@ -21,6 +24,23 @@ package classNames
 	add: #JSFunction;
 	add: #JSIfThenElse;
 	add: #JSInterval;
+	add: #JSJavasciptObjectBrush;
+	add: #JSJavascriptArrayBrush;
+	add: #JSJavascriptAssignmentBrush;
+	add: #JSJavascriptBrush;
+	add: #JSJavascriptCanvas;
+	add: #JSJavascriptConstructorCallBrush;
+	add: #JSJavascriptDocument;
+	add: #JSJavascriptElementBrush;
+	add: #JSJavascriptFunctionArgumentBrush;
+	add: #JSJavascriptFunctionArgumentsBrush;
+	add: #JSJavascriptFunctionCallBrush;
+	add: #JSJavascriptFunctionDefinitionBrush;
+	add: #JSJavascriptKeyValueBrush;
+	add: #JSJavascriptOperatorBrush;
+	add: #JSJavascriptReturnBrush;
+	add: #JSJavascriptStringEncoder;
+	add: #JSJavascriptValueBrush;
 	add: #JSJoin;
 	add: #JSJson;
 	add: #JSLogger;
@@ -32,12 +52,13 @@ package classNames
 	add: #JSScript;
 	add: #JSStatement;
 	add: #JSStream;
+	add: #JSString;
 	add: #JSTimed;
 	add: #JSTimeout;
-	add: #ManifestJavascriptCore;
 	yourself.
 
 package methodNames
+	add: #Boolean -> #javascriptOn:;
 	add: #Character -> #javascriptOn:;
 	add: #Collection -> #javascriptOn:;
 	add: #Date -> #javascriptMonthIndex;
@@ -47,12 +68,14 @@ package methodNames
 	add: #Dictionary -> #javascriptOn:;
 	add: #Duration -> #javascriptOn:;
 	add: #GRDelegatingStream -> #javascript:;
+	add: #GRPlatform -> #javascriptStringEncoderOn:;
 	add: #GRSmallDictionary -> #javascriptOn:;
 	add: #GRSmallDictionary2 -> #javascriptOn:;
 	add: #GRSmallOrderedSet -> #javascriptOn:;
 	add: #Object -> #asFunction;
 	add: #Object -> #asFunction:;
 	add: #Object -> #asJavascript;
+	add: #Object -> #asJavascriptOn:;
 	add: #Object -> #isJavascript;
 	add: #Object -> #javascriptOn:;
 	add: #Stream -> #javascript:;
@@ -81,14 +104,30 @@ package setPrerequisites: #(
 	'..\..\Core\Object Arts\Dolphin\Base\Dolphin'
 	'..\..\Core\Object Arts\Dolphin\Base\Dolphin Legacy Date & Time'
 	'..\..\Grease\Grease-Core'
-	'..\..\Portishead\Portishead-Core'
-	'..\..\Portishead\Portishead-Pragmas'
 	'..\Seaside\Seaside-Canvas'
 	'..\Seaside\Seaside-Core').
 
 package!
 
 "Class Definitions"!
+
+WAObject subclass: #JSArgument
+	instanceVariableNames: 'argument'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+WAObject subclass: #JSArguments
+	instanceVariableNames: 'arguments'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+WAObject subclass: #JSCode
+	instanceVariableNames: 'code'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
 
 WAObject subclass: #JSDecoration
 	instanceVariableNames: 'owner'
@@ -247,13 +286,103 @@ JSObject subclass: #JSScript
 	classInstanceVariableNames: ''!
 
 JSObject subclass: #JSStream
-	instanceVariableNames: 'stream'
-	classVariableNames: 'Arguments JavascriptCharacters This'
+	instanceVariableNames: 'fragments'
+	classVariableNames: 'Arguments This'
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+JSObject subclass: #JSString
+	instanceVariableNames: 'renderable'
+	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
 JSScript subclass: #JSFunction
 	instanceVariableNames: 'return arguments'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+WABrush subclass: #JSJavascriptBrush
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+JSJavascriptBrush subclass: #JSJavasciptObjectBrush
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+JSJavascriptBrush subclass: #JSJavascriptArrayBrush
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+JSJavascriptBrush subclass: #JSJavascriptAssignmentBrush
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+JSJavascriptBrush subclass: #JSJavascriptConstructorCallBrush
+	instanceVariableNames: 'name'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+JSJavascriptBrush subclass: #JSJavascriptElementBrush
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+JSJavascriptBrush subclass: #JSJavascriptFunctionArgumentBrush
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+JSJavascriptBrush subclass: #JSJavascriptFunctionArgumentsBrush
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+JSJavascriptBrush subclass: #JSJavascriptFunctionCallBrush
+	instanceVariableNames: 'name'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+JSJavascriptBrush subclass: #JSJavascriptFunctionDefinitionBrush
+	instanceVariableNames: 'arguments'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+JSJavascriptBrush subclass: #JSJavascriptOperatorBrush
+	instanceVariableNames: 'operator'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+JSJavascriptBrush subclass: #JSJavascriptReturnBrush
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+JSJavascriptElementBrush subclass: #JSJavascriptKeyValueBrush
+	instanceVariableNames: 'key'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+JSJavascriptElementBrush subclass: #JSJavascriptValueBrush
+	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
@@ -270,17 +399,37 @@ WACallback subclass: #JSPassenger
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-PackageManifest subclass: #ManifestJavascriptCore
-	instanceVariableNames: ''
+WADocument subclass: #JSJavascriptDocument
+	instanceVariableNames: 'urlEncoder javascriptStringEncoder'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+WATableBasedEncoder subclass: #JSJavascriptStringEncoder
+	instanceVariableNames: 'buffer offset'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+WACanvas subclass: #JSJavascriptCanvas
+	instanceVariableNames: 'first'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
 "Loose Methods"!
 
+!Boolean methodsFor!
+
+javascriptOn: aRenderer	aRenderer boolean: self! !
+
+!Boolean categoriesForMethods!
+javascriptOn:!*Javascript/Core!public! !
+!
+
 !Character methodsFor!
 
-javascriptOn: aStream	(String with: self) javascriptOn: aStream! !
+javascriptOn: aRenderer	aRenderer string: (String with: self)! !
 
 !Character categoriesForMethods!
 javascriptOn:!*javascript/core!public! !
@@ -288,7 +437,7 @@ javascriptOn:!*javascript/core!public! !
 
 !Collection methodsFor!
 
-javascriptOn: aStream	JSStream encodeCollection: self on: aStream! !
+javascriptOn: aRenderer	aRenderer array: [		self do: [ :each |			 aRenderer value: each ] ]! !
 
 !Collection categoriesForMethods!
 javascriptOn:!*javascript/core!public! !
@@ -298,7 +447,7 @@ javascriptOn:!*javascript/core!public! !
 
 javascriptMonthIndex	^ self monthIndex - 1!
 
-javascriptOn: aStream	aStream nextPutAll: 'new Date('.	#( year javascriptMonthIndex dayOfMonth )		do: [ :each | aStream javascript: (self perform: each) ]		separatedBy: [ aStream nextPut: $, ].	aStream nextPut: $)! !
+javascriptOn: aRenderer	(aRenderer new: 'Date')		with: [ 			aRenderer argument: self year.			aRenderer argument: self javascriptMonthIndex.			aRenderer argument: self dayOfMonth ]! !
 
 !Date categoriesForMethods!
 javascriptMonthIndex!*javascript/core!public! !
@@ -309,7 +458,7 @@ javascriptOn:!*javascript/core!public! !
 
 javascriptMonthIndex	^ self monthIndex - 1!
 
-javascriptOn: aStream	aStream nextPutAll: 'new Date('.	#( year javascriptMonthIndex dayOfMonth hour minute second )		do: [ :each | aStream javascript: (self perform: each) ]		separatedBy: [ aStream nextPut: $, ].	aStream nextPut: $)! !
+javascriptOn: aRenderer	(aRenderer new: 'Date')		with: [			aRenderer 				argument: self year;				argument: self javascriptMonthIndex;				argument: self dayOfMonth;				argument: self hour;				argument: self minute;				argument: self second ]! !
 
 !DateAndTime categoriesForMethods!
 javascriptMonthIndex!*javascript/core!public! !
@@ -318,7 +467,7 @@ javascriptOn:!*javascript/core!public! !
 
 !Dictionary methodsFor!
 
-javascriptOn: aStream	JSStream encodeDictionary: self on: aStream! !
+javascriptOn: aRenderer	aRenderer object: [		self keysAndValuesDo: [ :key :value |			 aRenderer key: key value: value ] ]! !
 
 !Dictionary categoriesForMethods!
 javascriptOn:!*javascript/core!public! !
@@ -326,7 +475,7 @@ javascriptOn:!*javascript/core!public! !
 
 !Duration methodsFor!
 
-javascriptOn: aStream	aStream javascript: self asMilliseconds! !
+javascriptOn: aRenderer	aRenderer render: self asMilliseconds! !
 
 !Duration categoriesForMethods!
 javascriptOn:!*javascript/core!public! !
@@ -334,15 +483,23 @@ javascriptOn:!*javascript/core!public! !
 
 !GRDelegatingStream methodsFor!
 
-javascript: anObject	anObject javascriptOn: self! !
+javascript: anObject	| document context canvas |	document := JSJavascriptDocument on: self.	context := WARenderContext new		actionUrl: WAUrl new;		document: document;		yourself.	canvas := JSJavascriptCanvas context: context.	canvas render: anObject.	document close! !
 
 !GRDelegatingStream categoriesForMethods!
 javascript:!*javascript/core!public! !
 !
 
+!GRPlatform methodsFor!
+
+javascriptStringEncoderOn: aStream	"Answer an Javascript encoder that works on aStream.	Platforms may provide optimized implementations."	^ JSJavascriptStringEncoder on: aStream! !
+
+!GRPlatform categoriesForMethods!
+javascriptStringEncoderOn:!*Javascript/Core!public! !
+!
+
 !GRSmallDictionary methodsFor!
 
-javascriptOn: aStream	JSStream encodeDictionary: self on: aStream! !
+javascriptOn: aRenderer	aRenderer object: [		self keysAndValuesDo: [ :key :value |			aRenderer key: key value: value ] ]! !
 
 !GRSmallDictionary categoriesForMethods!
 javascriptOn:!*javascript/core!public! !
@@ -350,7 +507,7 @@ javascriptOn:!*javascript/core!public! !
 
 !GRSmallDictionary2 methodsFor!
 
-javascriptOn: aStream	JSStream encodeDictionary: self on: aStream! !
+javascriptOn: aRenderer	aRenderer object: [		self keysAndValuesDo: [ :key :value |			aRenderer key: key value: value ] ]! !
 
 !GRSmallDictionary2 categoriesForMethods!
 javascriptOn:!*javascript/core!public! !
@@ -358,7 +515,7 @@ javascriptOn:!*javascript/core!public! !
 
 !GRSmallOrderedSet methodsFor!
 
-javascriptOn: aStream	JSStream encodeCollection: self on: aStream! !
+javascriptOn: aRenderer	aRenderer array: [		self do: [ :each |			aRenderer value: each ] ]! !
 
 !GRSmallOrderedSet categoriesForMethods!
 javascriptOn:!*javascript/core!public! !
@@ -370,23 +527,26 @@ asFunction	^ self asFunction: #()!
 
 asFunction: aCollection	^ JSFunction new add: self; arguments: aCollection!
 
-asJavascript	^ String streamContents: [ :stream | self javascriptOn: stream ]!
+asJavascript	^ JSJavascriptCanvas builder render: [ :javascript |		  self javascriptOn: javascript ]!
+
+asJavascriptOn: aStream	^ JSJavascriptCanvas builder		  render: [ :javascript | self javascriptOn: javascript ]		  on: aStream!
 
 isJavascript	^ false!
 
-javascriptOn: aStream	self printOn: aStream! !
+javascriptOn: aRenderer	self printOn: aRenderer document stream! !
 
 !Object categoriesForMethods!
 asFunction!*javascript/core!public! !
 asFunction:!*javascript/core!public! !
 asJavascript!*javascript/core!public! !
+asJavascriptOn:!*javascript/core!public! !
 isJavascript!*javascript/core!public! !
 javascriptOn:!*javascript/core!public! !
 !
 
 !Stream methodsFor!
 
-javascript: anObject	anObject javascriptOn: self! !
+javascript: anObject	JSJavascriptCanvas builder		render: anObject		on: self! !
 
 !Stream categoriesForMethods!
 javascript:!*javascript/core!public! !
@@ -396,7 +556,7 @@ javascript:!*javascript/core!public! !
 
 asFunction: aCollection	^ (JSStream on: self) asFunction: aCollection!
 
-javascriptOn: aStream	JSStream encodeString: self on: aStream! !
+javascriptOn: aRenderer	aRenderer string: self! !
 
 !String categoriesForMethods!
 asFunction:!*javascript/core!public! !
@@ -405,7 +565,7 @@ javascriptOn:!*javascript/core!public! !
 
 !UndefinedObject methodsFor!
 
-javascriptOn: aStream	aStream nextPutAll: 'null'! !
+javascriptOn: aRenderer	aRenderer document null! !
 
 !UndefinedObject categoriesForMethods!
 javascriptOn:!*javascript/core!public! !
@@ -437,7 +597,7 @@ registerPassenger:named:!*javascript/core!public! !
 
 javascript	^ (JSScript context: self context)		rendererClass: self species;		yourself!
 
-javascript: aString	^ JSStream on: aString!
+javascript: aString	"Create a piece of Javascript from a String"	^ JSStream on: aString!
 
 logger	^ (JSLogger context: self context)		rendererClass: self species;		yourself! !
 
@@ -460,7 +620,7 @@ script:!*javascript/core!public! !
 
 !WAUrl methodsFor!
 
-javascriptOn: aStream 	aStream javascript: self printString! !
+javascriptOn: aRenderer	aRenderer string: self printString! !
 
 !WAUrl categoriesForMethods!
 javascriptOn:!*javascript/core!public! !

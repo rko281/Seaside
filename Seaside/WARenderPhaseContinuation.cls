@@ -6,11 +6,11 @@ WARenderLoopContinuation subclass: #WARenderPhaseContinuation
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WARenderPhaseContinuation guid: (GUID fromString: '{7bbf8883-bf55-4809-80a5-a6ce19b1698f}')!
+WARenderPhaseContinuation guid: (GUID fromString: '{a4b57270-6199-4068-8c5b-bb1b8e98f927}')!
 
 WARenderPhaseContinuation comment: ''!
 
-!WARenderPhaseContinuation categoriesForClass!Continuations! !
+!WARenderPhaseContinuation categoriesForClass!Seaside-RenderLoop-Continuations! !
 
 !WARenderPhaseContinuation methodsFor!
 

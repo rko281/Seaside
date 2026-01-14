@@ -6,11 +6,11 @@ JQBaseTheme subclass: #JQSwankyPurseTheme
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQSwankyPurseTheme guid: (GUID fromString: '{110ec827-cf17-4ce5-b5c8-200610810083}')!
+JQSwankyPurseTheme guid: (GUID fromString: '{4c5d88d2-bba7-441d-affd-19b8a7431b7f}')!
 
 JQSwankyPurseTheme comment: ''!
 
-!JQSwankyPurseTheme categoriesForClass!Libraries! !
+!JQSwankyPurseTheme categoriesForClass!JQuery-UI-Libraries! !
 
 !JQSwankyPurseTheme methodsFor!
 

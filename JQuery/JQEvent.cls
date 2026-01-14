@@ -6,11 +6,11 @@ JSObject subclass: #JQEvent
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQEvent guid: (GUID fromString: '{86b276b7-3d07-4c53-ae19-dbd00c6ad543}')!
+JQEvent guid: (GUID fromString: '{141c6269-73df-49ad-ab98-14277be42865}')!
 
 JQEvent comment: ''!
 
-!JQEvent categoriesForClass!Objects! !
+!JQEvent categoriesForClass!JQuery-Core-Objects! !
 
 !JQEvent methodsFor!
 
@@ -26,7 +26,7 @@ isImmediatePropagationStopped	"Returns whether event.stopImmediatePropagation()
 
 isPropagationStopped	"Returns whether event.stopPropagation() was ever called on this event object."		self call: 'isPropagationStopped'!
 
-javascriptContentOn: aStream	aStream javascript: owner!
+javascriptContentOn: aRenderer	aRenderer render: owner!
 
 namespace	"This attribute contains the namespace specified when the event was triggered."		self access: 'namespace'!
 

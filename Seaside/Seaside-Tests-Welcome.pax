@@ -3,7 +3,6 @@ package := Package name: 'Seaside-Tests-Welcome'.
 package paxVersion: 1;
 	basicComment: ''.
 
-
 package classNames
 	add: #WAWelcomeTest;
 	yourself.
@@ -35,15 +34,15 @@ TestCase subclass: #WAWelcomeTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-"Global Aliases"!
-
-
 "Loose Methods"!
 
 !GRPackage class methodsFor!
 
 seasideTestsWelcome	^ self new		name: 'Seaside-Tests-Welcome';		description: 'Unit tests for the welcome screen.';		addDependency: 'Seaside-Welcome';		url: #seasideUrl;		yourself! !
-!GRPackage class categoriesFor: #seasideTestsWelcome!*seaside/tests/welcome!public! !
+
+!GRPackage class categoriesForMethods!
+seasideTestsWelcome!*seaside/tests/welcome!public! !
+!
 
 "End of package definition"!
 

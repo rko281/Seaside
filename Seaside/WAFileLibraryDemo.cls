@@ -6,11 +6,11 @@ WAFileLibrary subclass: #WAFileLibraryDemo
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAFileLibraryDemo guid: (GUID fromString: '{40c5ce54-7d68-450f-ae61-15e450164c15}')!
+WAFileLibraryDemo guid: (GUID fromString: '{5a508cd2-315e-487d-aec4-5b68e5a4451c}')!
 
 WAFileLibraryDemo comment: ''!
 
-!WAFileLibraryDemo categoriesForClass!Misc! !
+!WAFileLibraryDemo categoriesForClass!Seaside-Examples-Misc! !
 
 !WAFileLibraryDemo methodsFor!
 

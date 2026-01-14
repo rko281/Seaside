@@ -6,11 +6,11 @@ WARenderLoopContinuation subclass: #WAActionPhaseContinuation
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAActionPhaseContinuation guid: (GUID fromString: '{b3a43c0f-8087-4403-939e-ae7089c797d9}')!
+WAActionPhaseContinuation guid: (GUID fromString: '{82799780-a2d6-4fb0-9e23-a016bbbefd58}')!
 
 WAActionPhaseContinuation comment: ''!
 
-!WAActionPhaseContinuation categoriesForClass!Continuations! !
+!WAActionPhaseContinuation categoriesForClass!Seaside-RenderLoop-Continuations! !
 
 !WAActionPhaseContinuation methodsFor!
 

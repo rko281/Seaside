@@ -3,7 +3,6 @@ package := Package name: 'Seaside-Dolphin-Continuation'.
 package paxVersion: 1;
 	basicComment: ''.
 
-
 package classNames
 	add: #WAContinuation;
 	add: #WAMarkerNotFound;
@@ -32,26 +31,24 @@ Continuation subclass: #WAContinuation
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 GRError subclass: #WAMarkerNotFound
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 GRNotification subclass: #WAMarkerRequest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 PartialContinuation subclass: #WAPartialContinuation
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-
-"Global Aliases"!
-
-
-"Loose Methods"!
 
 "End of package definition"!
 

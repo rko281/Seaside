@@ -6,11 +6,11 @@ WAFunctionalTest subclass: #WACookieFunctionalTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WACookieFunctionalTest guid: (GUID fromString: '{0058a636-9a35-48c2-b010-cd32041decfa}')!
+WACookieFunctionalTest guid: (GUID fromString: '{a9c8e8d8-9a0f-4d54-8f9b-6d1111bc738e}')!
 
 WACookieFunctionalTest comment: ''!
 
-!WACookieFunctionalTest categoriesForClass!Unclassified! !
+!WACookieFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
 
 !WACookieFunctionalTest methodsFor!
 

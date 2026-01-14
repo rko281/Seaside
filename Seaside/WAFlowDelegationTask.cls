@@ -6,11 +6,11 @@ WADelegationTask subclass: #WAFlowDelegationTask
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAFlowDelegationTask guid: (GUID fromString: '{84b69024-3661-440b-a362-f82b0961b44f}')!
+WAFlowDelegationTask guid: (GUID fromString: '{00ef33c5-715d-4fae-845a-81fc48b4391b}')!
 
 WAFlowDelegationTask comment: ''!
 
-!WAFlowDelegationTask categoriesForClass!Functional! !
+!WAFlowDelegationTask categoriesForClass!Seaside-Tests-Flow-Functional! !
 
 !WAFlowDelegationTask methodsFor!
 

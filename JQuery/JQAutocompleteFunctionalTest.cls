@@ -6,11 +6,11 @@ JQUiFunctionalTest subclass: #JQAutocompleteFunctionalTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQAutocompleteFunctionalTest guid: (GUID fromString: '{ddceb03c-fda7-40d0-840e-27934b895d75}')!
+JQAutocompleteFunctionalTest guid: (GUID fromString: '{4d5a23f2-042f-464f-a85a-894c1d54deac}')!
 
 JQAutocompleteFunctionalTest comment: ''!
 
-!JQAutocompleteFunctionalTest categoriesForClass!Functional! !
+!JQAutocompleteFunctionalTest categoriesForClass!JQuery-Tests-UI-Functional! !
 
 !JQAutocompleteFunctionalTest methodsFor!
 

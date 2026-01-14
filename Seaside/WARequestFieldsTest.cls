@@ -6,11 +6,11 @@ GROrderedMultiMapTest subclass: #WARequestFieldsTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WARequestFieldsTest guid: (GUID fromString: '{23e08c77-605d-4e98-af04-5d6c4a0bf6c8}')!
+WARequestFieldsTest guid: (GUID fromString: '{be3fa1df-afb8-4238-a54a-102770de2f8b}')!
 
 WARequestFieldsTest comment: ''!
 
-!WARequestFieldsTest categoriesForClass!HTTP! !
+!WARequestFieldsTest categoriesForClass!Seaside-Tests-Core-HTTP! !
 
 !WARequestFieldsTest methodsFor!
 

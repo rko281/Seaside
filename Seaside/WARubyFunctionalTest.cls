@@ -6,11 +6,11 @@ WAFunctionalTest subclass: #WARubyFunctionalTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WARubyFunctionalTest guid: (GUID fromString: '{497006a5-566a-4297-b160-e6383afa46ca}')!
+WARubyFunctionalTest guid: (GUID fromString: '{3b1f6af7-96f2-4a5a-9046-d67984d92210}')!
 
 WARubyFunctionalTest comment: 'Examples taken directly from spec:http://www.w3.org/TR/2001/REC-ruby-20010531/'!
 
-!WARubyFunctionalTest categoriesForClass!Unclassified! !
+!WARubyFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
 
 !WARubyFunctionalTest methodsFor!
 

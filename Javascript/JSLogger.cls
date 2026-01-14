@@ -6,11 +6,11 @@ JSObject subclass: #JSLogger
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JSLogger guid: (GUID fromString: '{4c942ccf-7953-43f1-8747-ba59b388deac}')!
+JSLogger guid: (GUID fromString: '{a60fbd87-47c2-4560-848b-67f78b5bd89d}')!
 
 JSLogger comment: 'I am a logger class to be used together with FireBug. I have nothing to do with Scriptaculous directly, but I nicely fit in here as everybody should be using FireBug for Script debugging anyway.'!
 
-!JSLogger categoriesForClass!Base! !
+!JSLogger categoriesForClass!Javascript-Core-Base! !
 
 !JSLogger methodsFor!
 
@@ -46,7 +46,7 @@ error: anObject 	self 		call: 'error'		with: anObject!
 
 info: anObject 	self 		call: 'info'		with: anObject!
 
-javascriptContentOn: aStream	aStream nextPutAll: 'console'!
+javascriptContentOn: aRenderer	aRenderer document identifier: 'console'!
 
 log: anObject 	self 		call: 'log'		with: anObject!
 

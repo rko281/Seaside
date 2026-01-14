@@ -6,11 +6,11 @@ WANavigation subclass: #WASimpleNavigation
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WASimpleNavigation guid: (GUID fromString: '{7e5c49cc-4e8c-4983-9f67-2f47a4c777b8}')!
+WASimpleNavigation guid: (GUID fromString: '{91bda6fd-911a-4e2c-ad8b-c3abca649d8b}')!
 
 WASimpleNavigation comment: 'I''m a simple tab panel, that can be styled with stylesheets. New tabs can be added using #add:label:You may want to add the WANavigationFiles library to your application for some default CSS styling.'!
 
-!WASimpleNavigation categoriesForClass!Components! !
+!WASimpleNavigation categoriesForClass!Seaside-Widgets-Components! !
 
 !WASimpleNavigation methodsFor!
 

@@ -6,11 +6,11 @@ WAVisitor subclass: #WAAttributeVisitor
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAAttributeVisitor guid: (GUID fromString: '{e73e8fa3-971e-4a8f-a88b-9c41d6c266ba}')!
+WAAttributeVisitor guid: (GUID fromString: '{19755537-b85b-48ff-9e9a-e8b618d6d8c9}')!
 
 WAAttributeVisitor comment: 'A visitor of attributes'!
 
-!WAAttributeVisitor categoriesForClass!Configuration! !
+!WAAttributeVisitor categoriesForClass!Seaside-Core-Configuration! !
 
 !WAAttributeVisitor methodsFor!
 

@@ -6,11 +6,11 @@ WACompound subclass: #WATimeInput
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WATimeInput guid: (GUID fromString: '{8583d0b6-5c2d-4487-a44c-2e9378ee1513}')!
+WATimeInput guid: (GUID fromString: '{ff714775-d552-4863-a1ac-3d65619aee17}')!
 
 WATimeInput comment: 'I am a composition of three input fields that allows the user to select hour, minute and optionally second.#withSeconds and #withoutSeconds can be used to toggle seconds.The argument for my callback blocks is an instance of Time.See WADateTimeTest >> #renderDateTimeOn:'!
 
-!WATimeInput categoriesForClass!Tags! !
+!WATimeInput categoriesForClass!Seaside-Canvas-Tags! !
 
 !WATimeInput methodsFor!
 

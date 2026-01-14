@@ -6,11 +6,11 @@ WAAbstractCanvasBrushTest subclass: #WAFormCharEncodingFromCodecTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAFormCharEncodingFromCodecTest guid: (GUID fromString: '{5d083e84-4ea3-4512-b33e-658e35cf6d6c}')!
+WAFormCharEncodingFromCodecTest guid: (GUID fromString: '{84cea881-f8a9-46c2-bbc5-1d0b0a18f9b9}')!
 
 WAFormCharEncodingFromCodecTest comment: 'I test that the encoding of the codec on the request context overwrites the encoding on the application.'!
 
-!WAFormCharEncodingFromCodecTest categoriesForClass!Brushes! !
+!WAFormCharEncodingFromCodecTest categoriesForClass!Seaside-Tests-Canvas-Brushes! !
 
 !WAFormCharEncodingFromCodecTest methodsFor!
 

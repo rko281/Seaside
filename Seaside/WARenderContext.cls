@@ -6,11 +6,11 @@ WAObject subclass: #WARenderContext
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WARenderContext guid: (GUID fromString: '{bda569f3-fe41-47ef-b3cb-d6aa8a76f60e}')!
+WARenderContext guid: (GUID fromString: '{abe5174f-8cf2-4982-9fb4-4ec359cfa64c}')!
 
 WARenderContext comment: 'A WARenderContext provides all the state needed by a Renderer to do its work.It is a decoupling device between whatever is initiating rendering and the Renderer itself.'!
 
-!WARenderContext categoriesForClass!Rendering! !
+!WARenderContext categoriesForClass!Seaside-Core-Rendering! !
 
 !WARenderContext methodsFor!
 

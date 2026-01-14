@@ -6,15 +6,15 @@ JSMember subclass: #JSAlias
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JSAlias guid: (GUID fromString: '{70618c69-9e89-4a76-bfc6-e56cfa4a56f2}')!
+JSAlias guid: (GUID fromString: '{4c930356-4e3e-470f-89d7-220f1a67aec1}')!
 
 JSAlias comment: 'I alias the decorated object with a name.'!
 
-!JSAlias categoriesForClass!Decorations! !
+!JSAlias categoriesForClass!Javascript-Core-Decorations! !
 
 !JSAlias methodsFor!
 
-javascriptContentOn: aStream	aStream nextPutAll: self name! !
+javascriptContentOn: aRenderer	aRenderer document identifier: self name! !
 
 !JSAlias categoriesForMethods!
 javascriptContentOn:!printing!public! !

@@ -6,11 +6,11 @@ TestCase subclass: #WAFlowPlatformTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAFlowPlatformTest guid: (GUID fromString: '{0645f84f-2afe-47a3-8829-10f130ae7aa9}')!
+WAFlowPlatformTest guid: (GUID fromString: '{3150d0fe-562f-4357-9ce2-93f29e2a421a}')!
 
 WAFlowPlatformTest comment: ''!
 
-!WAFlowPlatformTest categoriesForClass!Unit! !
+!WAFlowPlatformTest categoriesForClass!Seaside-Tests-Flow-Unit! !
 
 !WAFlowPlatformTest methodsFor!
 

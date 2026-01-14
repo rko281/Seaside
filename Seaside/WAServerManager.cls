@@ -6,11 +6,11 @@ WAObject subclass: #WAServerManager
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAServerManager guid: (GUID fromString: '{4b4eddf0-a103-4437-adbb-7453ffb8743a}')!
+WAServerManager guid: (GUID fromString: '{87219098-e123-4c6f-9399-0fe99d9f7ef0}')!
 
 WAServerManager comment: 'A server manager cares on the available Seaside server adopters'!
 
-!WAServerManager categoriesForClass!Server! !
+!WAServerManager categoriesForClass!Seaside-Core-Server! !
 
 !WAServerManager methodsFor!
 

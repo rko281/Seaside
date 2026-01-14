@@ -6,11 +6,11 @@ WARoute subclass: #WASimpleRoute
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WASimpleRoute guid: (GUID fromString: '{114a1431-4ee9-432e-8391-eb227705af0b}')!
+WASimpleRoute guid: (GUID fromString: '{974e7adc-f38c-4c8c-8ae0-980acf364e56}')!
 
-WASimpleRoute comment: 'I match only on an exact number of path elements and no URL parameters. The path elements are turned into message arguments.Instance Variables:	count	<Integer>		count	- The exact number of path elements that have to be present.'!
+WASimpleRoute comment: 'I match only on an exact number of path elements and no URL parameters. The path elements are turned into message arguments.Instance Variables:	count	<Integer>: The exact number of path elements that have to be present.'!
 
-!WASimpleRoute categoriesForClass!Route! !
+!WASimpleRoute categoriesForClass!Seaside-REST-Core-Route! !
 
 !WASimpleRoute methodsFor!
 

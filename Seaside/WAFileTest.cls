@@ -6,11 +6,11 @@ TestCase subclass: #WAFileTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAFileTest guid: (GUID fromString: '{73740498-5b45-44c1-bf41-1b3f60a3fa4d}')!
+WAFileTest guid: (GUID fromString: '{34725e91-362c-402c-8676-ace9428ddcb4}')!
 
 WAFileTest comment: ''!
 
-!WAFileTest categoriesForClass!HTTP! !
+!WAFileTest categoriesForClass!Seaside-Tests-Core-HTTP! !
 
 !WAFileTest methodsFor!
 

@@ -6,11 +6,11 @@ WASessionContinuation subclass: #WARenderLoopContinuation
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WARenderLoopContinuation guid: (GUID fromString: '{6db1e54d-8d3c-4ac2-8bd7-63c15b73d5f0}')!
+WARenderLoopContinuation guid: (GUID fromString: '{d8c347b9-b5ab-43b7-9411-d47f8835ae8b}')!
 
 WARenderLoopContinuation comment: ''!
 
-!WARenderLoopContinuation categoriesForClass!Continuations! !
+!WARenderLoopContinuation categoriesForClass!Seaside-RenderLoop-Continuations! !
 
 !WARenderLoopContinuation methodsFor!
 

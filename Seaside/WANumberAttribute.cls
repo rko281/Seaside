@@ -6,11 +6,11 @@ WAAttribute subclass: #WANumberAttribute
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WANumberAttribute guid: (GUID fromString: '{b8e600da-2c15-4f10-9001-515631a7aac0}')!
+WANumberAttribute guid: (GUID fromString: '{40af8d14-4830-4a95-b29a-4dcc9666300c}')!
 
 WANumberAttribute comment: 'WANumberAttribute represents a number attribute. It converts between text entered on the configuration page and numbers.'!
 
-!WANumberAttribute categoriesForClass!Configuration! !
+!WANumberAttribute categoriesForClass!Seaside-Core-Configuration! !
 
 !WANumberAttribute methodsFor!
 

@@ -6,11 +6,11 @@ WAComponent subclass: #WATodoItemEditor
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WATodoItemEditor guid: (GUID fromString: '{c0434139-048d-48c0-93bc-2da60db1e647}')!
+WATodoItemEditor guid: (GUID fromString: '{0f56345f-e7ab-4332-8ea7-4a0aa9b83ece}')!
 
 WATodoItemEditor comment: 'I am the component that represents an editable TODO line in the TODO application example'!
 
-!WATodoItemEditor categoriesForClass!Misc! !
+!WATodoItemEditor categoriesForClass!Seaside-Examples-Misc! !
 
 !WATodoItemEditor methodsFor!
 

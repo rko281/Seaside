@@ -6,21 +6,23 @@ JSObjectTest subclass: #JSConversionTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JSConversionTest guid: (GUID fromString: '{fd75b8fd-18e6-4521-a473-649e379efc50}')!
+JSConversionTest guid: (GUID fromString: '{2686606e-b174-49c2-84c9-9a4e6f300f48}')!
 
 JSConversionTest comment: ''!
 
-!JSConversionTest categoriesForClass!Unclassified! !
+!JSConversionTest categoriesForClass!Javascript-Tests-Core! !
 
 !JSConversionTest methodsFor!
 
 testArray	self assert: #(1 2 3) equals: '[1,2,3]'.	self assert: (GRSmallOrderedSet withAll: #(1 2 3)) equals: '[1,2,3]'!
 
+testArrayWithStringsEscaping	self assert: #('<script>' '<scri' 'pt>') equals: '["\x3Cscript>","<scri","pt>"]'.	self assert: #('<' '<=') equals: '["<","<="]'!
+
 testCharacter	self assert: (Character codePoint: 0) equals: '"\0"'.	self assert: Character lf equals: '"\n"'.	self assert: $a equals: '"a"'!
 
 testDateAndTime	self assert: (DateAndTime year: 1980 month: 6 day: 11 hour: 12 minute: 45 second: 23) equals: 'new Date(1980,5,11,12,45,23)'.	self assert: (Date year: 1980 month: 6 day: 11) equals: 'new Date(1980,5,11)'!
 
-testDictionary	self 		assert: (GRSmallDictionary2 new				at: 'foo'					put: 1;				at: 'bar'					put: 2;				at: 'zork'					put: 3;				yourself)		equals: '{"foo":1,"bar":2,"zork":3}'.	self 		assert: (GRSmallDictionary2 new				at: ''					put: 'empty';				yourself)		equals: '{"":"empty"}'.	self 		assert: (Dictionary new				at: 1					put: 'not-a-string';				yourself)		equals: '{"1":"not-a-string"}'.	self 		assert: (Dictionary new				at: '1abc'					put: 'not-an-id';				yourself)		equals: '{"1abc":"not-an-id"}'.	self 		assert: (Dictionary new				at: 'abc1'					put: 'totally sexy';				yourself)		equals: '{"abc1":"totally sexy"}'!
+testDictionary	self 		assert: (GRSmallDictionary2 new				at: 'foo'					put: 1;				at: 'bar'					put: 2;				at: 'zork'					put: 3;				yourself)		equals: '{"foo":1,"bar":2,"zork":3}'.	self 		assert: (GRSmallDictionary2 new				at: ''					put: 'empty';				yourself)		equals: '{"":"empty"}'.	"Javascript allows number keys	https://tc39.es/ecma262/multipage/ecmascript-language-expressions.html#sec-object-initializer"	self 		assert: (Dictionary new				at: 1					put: 'not-a-string';				yourself)		equals: '{1:"not-a-string"}'.	self 		assert: (Dictionary new				at: '1abc'					put: 'not-an-id';				yourself)		equals: '{"1abc":"not-an-id"}'.	self 		assert: (Dictionary new				at: 'abc1'					put: 'totally sexy';				yourself)		equals: '{"abc1":"totally sexy"}'!
 
 testDuration	self assert: (Duration seconds: 1) equals: '1000'.	self assert: (Duration milliseconds: 1200) equals: '1200'!
 
@@ -40,7 +42,7 @@ testNumber	self assert: 123 equals: '123'.	self assert: Float nan equals: 'NaN
 
 testStringBasic	self assert: 'abc' equals: '"abc"'.	self assert: '123' equals: '"123"'!
 
-testStringEscaping	self assert: '''' equals: '"''"'.	self assert: '"' equals: '"\""'.	self assert: '\' equals: '"\\"'!
+testStringEscaping	self assert: '''' equals: '"''"'.	self assert: '"' equals: '"\""'.	self assert: '\' equals: '"\\"'.	self assert: '<' equals: '"<"'.	self assert: '<script></script>' equals: '"\x3Cscript>\x3C/script>"'.	self assert: '<!!--' equals: '"\x3C!!--"'.!
 
 testStringSpecial	self assert: (String with: Character cr) equals: '"\r"'.	self assert: (String with: Character lf) equals: '"\n"'.	self assert: (String with: Character tab) equals: '"\t"'.	self assert: (String with: (Character codePoint: 0)) equals: '"\0"'.	self assert: (String with: (Character codePoint: 1)) equals: '"\x01"'.	self assert: (String with: (Character codePoint: 31)) equals: '"\x1f"'!
 
@@ -50,6 +52,7 @@ testUrl	self		assert: (WAUrl absolute: 'http://www.seaside.st/?1=a&2=b')		equ
 
 !JSConversionTest categoriesForMethods!
 testArray!public!tests! !
+testArrayWithStringsEscaping!public!tests! !
 testCharacter!public!tests! !
 testDateAndTime!public!tests! !
 testDictionary!public!tests! !

@@ -6,11 +6,11 @@ WARegistry subclass: #WARedirectingRegistry
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WARedirectingRegistry guid: (GUID fromString: '{fd2655a0-a591-4b61-b43f-3dda96d96ffd}')!
+WARedirectingRegistry guid: (GUID fromString: '{497b1ddc-ed40-4099-95db-2d08c52a9311}')!
 
 WARedirectingRegistry comment: 'I revert to the old < 3.3.0 behavior which is easier for tests.'!
 
-!WARedirectingRegistry categoriesForClass!RequestHandling! !
+!WARedirectingRegistry categoriesForClass!Seaside-Tests-Core-RequestHandling! !
 
 !WARedirectingRegistry methodsFor!
 

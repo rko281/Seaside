@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 TestCase subclass: #WAAcceptsMatchTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAAcceptsMatchTest guid: (GUID fromString: '{a7829340-0d0e-4a22-9844-dec5ca9afaae}')!
+
+WAAcceptsMatchTest guid: (GUID fromString: '{fbc8c2ce-b9b8-41f3-a1f7-1ac0e6fa8360}')!
+
 WAAcceptsMatchTest comment: ''!
+
 !WAAcceptsMatchTest categoriesForClass!Seaside-Tests-REST-Core! !
+
 !WAAcceptsMatchTest methodsFor!
 
 testAcceptsConflict	| pathElement routeXml routeJson acceptTextJS acceptAppJson acceptAll accepts routeContainer matchedRoute |	pathElement := 'dontcare'.	routeXml := WAComplexRoute		method: 'GET'		selector: #dontCare		url: (WAUrl absolute: pathElement)		arguments: #()		produces: (WAFullMimeTypeMatch main: 'text' sub: 'xml')		consumes: WAWildcardMimeTypeMatch new.			routeJson := WAComplexRoute		method: 'GET'		selector: #dontCare		url: (WAUrl absolute: pathElement)		arguments: #()		produces: (WAFullMimeTypeMatch main: 'application' sub: 'json')		consumes: WAWildcardMimeTypeMatch new.		acceptTextJS := WAAccept value: (WAMimeType main: 'text' sub: 'xml') quality: 0.5.	acceptAppJson := WAAccept value: WAMimeType applicationJson quality: 0.5.	acceptAll := WAAccept value: (WAMimeType main: '*' sub: '*') quality: 0.01.	"this will sort:  acceptTextJS, acceptAppJson, acceptAll"		accepts := Array with: acceptAll with: acceptAppJson with: acceptTextJS.	routeContainer := WARouteContainer routes: (Array with: routeXml with: routeJson).		matchedRoute := routeContainer		routeForElements: (Array with: pathElement)		parameters: WARequestFields new		contentType: nil		accept: accepts		ifAbsent: [ nil ].		self assert: matchedRoute isNil								!
@@ -15,7 +19,10 @@ testAcceptsConflict	| pathElement routeXml routeJson acceptTextJS acceptAppJson
 testAcceptsMatch	| pathElement routeXml routeJson acceptTextJS acceptAppJson acceptAll accepts routeContainer matchedRoute |	pathElement := 'dontcare'.	routeXml := WAComplexRoute		method: 'GET'		selector: #dontCare		url: (WAUrl absolute: pathElement)		arguments: #()		produces: (WASubMimeTypeMatch sub: 'xml')		consumes: WAWildcardMimeTypeMatch new.			routeJson := WAComplexRoute		method: 'GET'		selector: #dontCare		url: (WAUrl absolute: pathElement)		arguments: #()		produces: (WAFullMimeTypeMatch main: 'application' sub: 'json')		consumes: WAWildcardMimeTypeMatch new.		acceptTextJS := WAAccept value: WAMimeType textJavascript quality: 1.0.	acceptAppJson := WAAccept value: WAMimeType applicationJson quality: 1.0.	acceptAll := WAAccept value: (WAMimeType main: '*' sub: '*') quality: 0.01.	"this will sort:  acceptTextJS, acceptAppJson, acceptAll"		accepts := Array with: acceptAll with: acceptAppJson with: acceptTextJS.	routeContainer := WARouteContainer routes: (Array with: routeXml with: routeJson).		matchedRoute := routeContainer		routeForElements: (Array with: pathElement)		parameters: WARequestFields new		contentType: nil		accept: accepts		ifAbsent: [ nil ].		self assert: matchedRoute = routeJson								!
 
 testAcceptsQuality	| pathElement routeXml routeJson acceptTextJS acceptAppJson acceptAll accepts routeContainer matchedRoute |	pathElement := 'dontcare'.	routeXml := WAComplexRoute		method: 'GET'		selector: #dontCare		url: (WAUrl absolute: pathElement)		arguments: #()		produces: (WASubMimeTypeMatch sub: 'xml')		consumes: WAWildcardMimeTypeMatch new.			routeJson := WAComplexRoute		method: 'GET'		selector: #dontCare		url: (WAUrl absolute: pathElement)		arguments: #()		produces: (WAFullMimeTypeMatch main: 'application' sub: 'json')		consumes: WAWildcardMimeTypeMatch new.		acceptTextJS := WAAccept value: (WAMimeType main: 'text' sub: 'xml') quality: 1.0.	acceptAppJson := WAAccept value: WAMimeType applicationJson quality: 0.5.	acceptAll := WAAccept value: (WAMimeType main: '*' sub: '*') quality: 0.01.	"this will sort:  acceptTextJS, acceptAppJson, acceptAll"		accepts := Array with: acceptAll with: acceptAppJson with: acceptTextJS.	routeContainer := WARouteContainer routes: (Array with: routeXml with: routeJson).		matchedRoute := routeContainer		routeForElements: (Array with: pathElement)		parameters: WARequestFields new		contentType: nil		accept: accepts		ifAbsent: [ nil ].		self assert: matchedRoute = routeXml								! !
-!WAAcceptsMatchTest categoriesFor: #testAcceptsConflict!public!tests! !
-!WAAcceptsMatchTest categoriesFor: #testAcceptsMatch!public!tests! !
-!WAAcceptsMatchTest categoriesFor: #testAcceptsQuality!public!tests! !
+
+!WAAcceptsMatchTest categoriesForMethods!
+testAcceptsConflict!public!tests! !
+testAcceptsMatch!public!tests! !
+testAcceptsQuality!public!tests! !
+!
 

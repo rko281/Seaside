@@ -1,0 +1,55 @@
+﻿| package |
+package := Package name: 'Seaside-Tests-Email'.
+package paxVersion: 1;
+	basicComment: ''.
+
+package classNames
+	add: #WAEmailMessageTest;
+	add: #WAHtmlEmailBodyTest;
+	add: #WAMultiPartEmailMessageTest;
+	add: #WAStringEmailBodyTest;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: #(
+	'..\..\Core\Object Arts\Dolphin\Base\Dolphin'
+	'..\..\Grease\Grease-Core'
+	'Seaside-Core'
+	'Seaside-Email'
+	'..\..\Core\Contributions\Camp Smalltalk\SUnit\SUnit').
+
+package!
+
+"Class Definitions"!
+
+TestCase subclass: #WAEmailMessageTest
+	instanceVariableNames: 'message'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+TestCase subclass: #WAHtmlEmailBodyTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+TestCase subclass: #WAStringEmailBodyTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+WAEmailMessageTest subclass: #WAMultiPartEmailMessageTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+"End of package definition"!
+

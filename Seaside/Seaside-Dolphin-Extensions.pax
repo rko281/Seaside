@@ -3,7 +3,6 @@ package := Package name: 'Seaside-Dolphin-Extensions'.
 package paxVersion: 1;
 	basicComment: ''.
 
-
 package classNames
 	add: #JQLightbox;
 	yourself.
@@ -32,9 +31,6 @@ WADecoration subclass: #JQLightbox
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-"Global Aliases"!
-
-
 "Loose Methods"!
 
 !WAComponent methodsFor!
@@ -55,8 +51,11 @@ jQueryLightbox: aComponent onAnswer: aMonadicValuable
 		delegation: ((JQLightbox new)
 				delegate: aComponent;
 				yourself)! !
-!WAComponent categoriesFor: #jQueryLightbox:!*scriptaculous-components-call/answer!public! !
-!WAComponent categoriesFor: #jQueryLightbox:onAnswer:!public! !
+
+!WAComponent categoriesForMethods!
+jQueryLightbox:!*scriptaculous-components-call/answer!public! !
+jQueryLightbox:onAnswer:!public! !
+!
 
 "End of package definition"!
 

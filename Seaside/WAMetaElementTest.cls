@@ -6,11 +6,11 @@ WAAbstractHtmlElementTest subclass: #WAMetaElementTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAMetaElementTest guid: (GUID fromString: '{3d5d1227-c18c-49e6-b01b-b490cb1c02a0}')!
+WAMetaElementTest guid: (GUID fromString: '{66c91ff9-c292-4b86-b53d-f4f2463ac537}')!
 
 WAMetaElementTest comment: ''!
 
-!WAMetaElementTest categoriesForClass!Document! !
+!WAMetaElementTest categoriesForClass!Seaside-Tests-Core-Document! !
 
 !WAMetaElementTest methodsFor!
 

@@ -26,6 +26,7 @@ package methodNames
 	add: #Float -> #jsonOn:;
 	add: #GRDelegatingStream -> #json:;
 	add: #GRPlatform -> #jsonEncoderOn:;
+	add: #GRPlatform -> #jsonParserClass;
 	add: #GRSmallDictionary -> #jsonOn:;
 	add: #GRSmallDictionary2 -> #jsonOn:;
 	add: #GRSmallOrderedSet -> #jsonOn:;
@@ -183,10 +184,13 @@ json:!*seaside/json/core!public! !
 
 !GRPlatform methodsFor!
 
-jsonEncoderOn: aStream	"Answer an JSON encoder that works on aStream.	Platforms may provide optimized implementations."	^ WAJsonEncoder on: aStream! !
+jsonEncoderOn: aStream	"Answer an JSON encoder that works on aStream.	Platforms may provide optimized implementations."	^ WAJsonEncoder on: aStream!
+
+jsonParserClass	"Give platforms the ability to answer a specific WAJsonParser subclass."	^ WAJsonParser ! !
 
 !GRPlatform categoriesForMethods!
 jsonEncoderOn:!*seaside/json/core!public! !
+jsonParserClass!*Seaside/JSON/Core!public! !
 !
 
 !GRSmallDictionary methodsFor!
@@ -225,7 +229,7 @@ jsonOn:!*seaside/json/core!public! !
 
 asJson	^ WAJsonCanvas builder render: [ :json |		self jsonOn: json ]!
 
-jsonKeyOn: aRenderer	self error: 'Only Strings can be used as keys in JSON objects.'!
+jsonKeyOn: aRenderer	WAJsonSyntaxError signal: 'Only Strings can be used as keys in JSON objects.'!
 
 jsonOn: aRenderer	self error: 'Override #jsonOn: to make the receiver serializeable as JSON'! !
 

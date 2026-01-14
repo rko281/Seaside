@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WARestfulHandler subclass: #WAPragmaStubHandler
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAPragmaStubHandler guid: (GUID fromString: '{4c6d8284-4ae6-4384-944e-399dd27df555}')!
+
+WAPragmaStubHandler guid: (GUID fromString: '{4e363cbc-b7c8-456a-bc24-08d488f2a919}')!
+
 WAPragmaStubHandler comment: ''!
+
 !WAPragmaStubHandler categoriesForClass!Seaside-Tests-REST-Core! !
+
 !WAPragmaStubHandler methodsFor!
 
 compactDatabase: databaseName	##(Pragma post).	##(Pragma path: '/{databaseName}/_compact').	!
@@ -49,24 +53,27 @@ queryDatabase: databaseName	##(Pragma post).	##(Pragma path: '/{databaseName}/
 replicate	##(Pragma post).	##(Pragma path: '/_replicate').	!
 
 updateDocument: documentId inDatabase: databaseName	##(Pragma patch).	##(Pragma path: '/{databaseName}/{documentId}').	! !
-!WAPragmaStubHandler categoriesFor: #compactDatabase:!public!public/database! !
-!WAPragmaStubHandler categoriesFor: #createBulkDocumentsInDatabase:!public!public/documents! !
-!WAPragmaStubHandler categoriesFor: #createDatabase:!public!public/database! !
-!WAPragmaStubHandler categoriesFor: #createNewDocumentInDatabase:!public!public/documents! !
-!WAPragmaStubHandler categoriesFor: #createOrUpdateDocument:inDatabase:!public!public/documents! !
-!WAPragmaStubHandler categoriesFor: #deleteDatabase:!public!public/database! !
-!WAPragmaStubHandler categoriesFor: #deleteDocument:inDatabase:!public!public/documents! !
-!WAPragmaStubHandler categoriesFor: #getAllDatabases!public!public/meta! !
-!WAPragmaStubHandler categoriesFor: #getAllDocuments:!public!public/documents! !
-!WAPragmaStubHandler categoriesFor: #getConfig!public!public/meta! !
-!WAPragmaStubHandler categoriesFor: #getDatabase:!public!public/database! !
-!WAPragmaStubHandler categoriesFor: #getDocument:ofDatabase:!public!public/documents! !
-!WAPragmaStubHandler categoriesFor: #getInfo!public!public/meta! !
-!WAPragmaStubHandler categoriesFor: #getStats!public!public/meta! !
-!WAPragmaStubHandler categoriesFor: #getUuids:!public!public/meta! !
-!WAPragmaStubHandler categoriesFor: #getView:inDesign:inDatabase:!public!public/documents! !
-!WAPragmaStubHandler categoriesFor: #options!public!public/database! !
-!WAPragmaStubHandler categoriesFor: #queryDatabase:!public!public/documents! !
-!WAPragmaStubHandler categoriesFor: #replicate!public!public/meta! !
-!WAPragmaStubHandler categoriesFor: #updateDocument:inDatabase:!public!public/documents! !
+
+!WAPragmaStubHandler categoriesForMethods!
+compactDatabase:!public!public/database! !
+createBulkDocumentsInDatabase:!public!public/documents! !
+createDatabase:!public!public/database! !
+createNewDocumentInDatabase:!public!public/documents! !
+createOrUpdateDocument:inDatabase:!public!public/documents! !
+deleteDatabase:!public!public/database! !
+deleteDocument:inDatabase:!public!public/documents! !
+getAllDatabases!public!public/meta! !
+getAllDocuments:!public!public/documents! !
+getConfig!public!public/meta! !
+getDatabase:!public!public/database! !
+getDocument:ofDatabase:!public!public/documents! !
+getInfo!public!public/meta! !
+getStats!public!public/meta! !
+getUuids:!public!public/meta! !
+getView:inDesign:inDatabase:!public!public/documents! !
+options!public!public/database! !
+queryDatabase:!public!public/documents! !
+replicate!public!public/meta! !
+updateDocument:inDatabase:!public!public/documents! !
+!
 

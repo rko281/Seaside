@@ -6,11 +6,11 @@ WATagBrush subclass: #WAScriptTag
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAScriptTag guid: (GUID fromString: '{28230a29-5fe0-4d0f-bb6c-8af7b9b914a8}')!
+WAScriptTag guid: (GUID fromString: '{1ae6cac7-df3b-4a36-ae0b-d13e30690a2a}')!
 
 WAScriptTag comment: 'Defines a script, such as a JavaScript.'!
 
-!WAScriptTag categoriesForClass!Tags! !
+!WAScriptTag categoriesForClass!Seaside-Canvas-Tags! !
 
 !WAScriptTag methodsFor!
 
@@ -26,7 +26,7 @@ type: aString	self attributeAt: 'type' put: aString!
 
 url: aString	self attributes at: 'src' put: aString!
 
-with: aStringOrJSObject	self attributes		at: 'type'		ifAbsentPut: [ 'text/javascript' ].	super with: [		aStringOrJSObject ifNotNil: [			aStringOrJSObject isJavascript				ifTrue: [					self document stream javascript: aStringOrJSObject ]				ifFalse: [					"we want to render a String directly and avoid escaping "" and '"					self document nextPutAll: aStringOrJSObject greaseString ] ] ]! !
+with: aStringOrJSObject	self attributes		at: 'type'		ifAbsentPut: [ 'text/javascript' ].	super with: [		aStringOrJSObject ifNotNil: [			aStringOrJSObject isJavascript				ifTrue: [					aStringOrJSObject asJavascriptOn: self document stream ]				ifFalse: [					"we want to render a String directly and avoid escaping "" and '"					self document nextPutAll: aStringOrJSObject greaseString ] ] ]! !
 
 !WAScriptTag categoriesForMethods!
 async!attributes!public! !

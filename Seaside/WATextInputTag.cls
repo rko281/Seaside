@@ -6,11 +6,11 @@ WAAbstractTextAreaTag subclass: #WATextInputTag
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WATextInputTag guid: (GUID fromString: '{1fc5ca66-5fc3-4893-bae3-472fa9b47cf8}')!
+WATextInputTag guid: (GUID fromString: '{0a51e06f-7c54-4f47-9158-fa26d50b7972}')!
 
 WATextInputTag comment: 'I am a single line text input widget. See WAInputTest >> #renderTextInputWithExampleOn: for examples.'!
 
-!WATextInputTag categoriesForClass!Tags! !
+!WATextInputTag categoriesForClass!Seaside-Canvas-Tags! !
 
 !WATextInputTag methodsFor!
 

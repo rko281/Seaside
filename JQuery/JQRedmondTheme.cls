@@ -6,11 +6,11 @@ JQBaseTheme subclass: #JQRedmondTheme
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQRedmondTheme guid: (GUID fromString: '{79059e21-a6d8-437d-89c5-3c2b33444857}')!
+JQRedmondTheme guid: (GUID fromString: '{17a9741d-36d5-401d-b227-e18e88bc2983}')!
 
 JQRedmondTheme comment: ''!
 
-!JQRedmondTheme categoriesForClass!Libraries! !
+!JQRedmondTheme categoriesForClass!JQuery-UI-Libraries! !
 
 !JQRedmondTheme methodsFor!
 

@@ -6,11 +6,11 @@ WAErrorHandler subclass: #WAHtmlErrorHandler
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAHtmlErrorHandler guid: (GUID fromString: '{c6ff59b3-0a6a-4c43-b60f-97b0be5ab7e7}')!
+WAHtmlErrorHandler guid: (GUID fromString: '{4273c1d8-c80b-4ef0-b684-47bac4997ae5}')!
 
 WAHtmlErrorHandler comment: 'This exception handler returns a simple HTML error message response for Warnings and Errors.It provides two methods to allow the easy creation of custom error responses:#titleForException:  - can be used to override the text displayed in the title#renderContentForException:  - can be used to fully customize the HTML output'!
 
-!WAHtmlErrorHandler categoriesForClass!Unclassified! !
+!WAHtmlErrorHandler categoriesForClass!Seaside-Environment! !
 
 !WAHtmlErrorHandler methodsFor!
 

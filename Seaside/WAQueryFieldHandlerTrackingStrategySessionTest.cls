@@ -6,11 +6,11 @@ WASessionTrackingStrategyTest subclass: #WAQueryFieldHandlerTrackingStrategySess
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAQueryFieldHandlerTrackingStrategySessionTest guid: (GUID fromString: '{08f01931-341c-4f64-8bc8-8259a23569ca}')!
+WAQueryFieldHandlerTrackingStrategySessionTest guid: (GUID fromString: '{b39708ca-5d24-4c53-b7e0-ae641f9a60b8}')!
 
 WAQueryFieldHandlerTrackingStrategySessionTest comment: 'I test all the session related behavior of WAQueryFieldHandlerTrackingStrategy that can''t be tested in WAQueryFieldHandlerTrackingStrategyTest for dependency reasons.'!
 
-!WAQueryFieldHandlerTrackingStrategySessionTest categoriesForClass!Unclassified! !
+!WAQueryFieldHandlerTrackingStrategySessionTest categoriesForClass!Seaside-Tests-Session! !
 
 !WAQueryFieldHandlerTrackingStrategySessionTest methodsFor!
 

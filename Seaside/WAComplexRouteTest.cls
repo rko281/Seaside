@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 TestCase subclass: #WAComplexRouteTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAComplexRouteTest guid: (GUID fromString: '{9d150b8f-5ed5-464c-832b-4c5bd494073a}')!
+
+WAComplexRouteTest guid: (GUID fromString: '{55313863-a901-4d32-87df-1901b16eff1d}')!
+
 WAComplexRouteTest comment: ''!
+
 !WAComplexRouteTest categoriesForClass!Seaside-Tests-REST-Core! !
+
 !WAComplexRouteTest methodsFor!
 
 testComplexMatching	| route arguments |	route := WAComplexRoute		method: 'GET'		selector: #zork		pattern: '/{first}/prefix{second}/{third}postfix/[methods.mcz|classes.mcz]'		arguments: #('first' 'second' 'third')		produces: nil		consumes: nil.	self assert: (route matchesPath: #('first' 'prefixO' 'zzpostfix' 'methods.mcz')).	arguments := Array new: 3.	route		mapArgumentsWithElements: #('first' 'prefixO' 'zzpostfix' 'methods.mcz')		parameters: Dictionary new		into: arguments.	self assert: arguments = #('first' 'O' 'zz')!
@@ -21,10 +25,13 @@ testParameterMatchingMixedParameters	| route parameters |	route := WARoute get
 testParameterMatchingNoParameters	| route parameters |	route := WARoute get: '/{1}/_all_docs' selector: #a:.	self assert: (route matchesParameters: Dictionary new).	parameters := Dictionary new at: 'key' put: 'value'; yourself.	self deny: (route matchesParameters: parameters)!
 
 testPathMatching	| route |	route := WARoute get: '/{1}/_all_docs' selector: #a:.	self deny: (route matchesPath: #('something')).	self assert: (route matchesPath: #('something' '_all_docs')).	self deny: (route matchesPath: #('something' 'else')).	self deny: (route matchesPath: #('something' '_all_docs' 'more')).	self assert: (route priority = 5)! !
-!WAComplexRouteTest categoriesFor: #testComplexMatching!public!tests! !
-!WAComplexRouteTest categoriesFor: #testInstantiation!public!tests! !
-!WAComplexRouteTest categoriesFor: #testOverlyComplexMatching!public!tests! !
-!WAComplexRouteTest categoriesFor: #testParameterMatchingMixedParameters!public!tests! !
-!WAComplexRouteTest categoriesFor: #testParameterMatchingNoParameters!public!tests! !
-!WAComplexRouteTest categoriesFor: #testPathMatching!public!tests! !
+
+!WAComplexRouteTest categoriesForMethods!
+testComplexMatching!public!tests! !
+testInstantiation!public!tests! !
+testOverlyComplexMatching!public!tests! !
+testParameterMatchingMixedParameters!public!tests! !
+testParameterMatchingNoParameters!public!tests! !
+testPathMatching!public!tests! !
+!
 

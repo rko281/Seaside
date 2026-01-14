@@ -5,7 +5,6 @@ package paxVersion: 1;
 
 package basicPackageVersion: '12'.
 
-
 package classNames
 	add: #WAImageFunctionalTest;
 	add: #WAPharoFunctionalTestsDefaultHandlersTest;
@@ -40,14 +39,12 @@ WAFunctionalTest subclass: #WAImageFunctionalTest
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+
 WAEnvironmentDefaultHandlersTest subclass: #WAPharoFunctionalTestsDefaultHandlersTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-
-"Global Aliases"!
-
 
 "Loose Methods"!
 
@@ -55,7 +52,10 @@ WAEnvironmentDefaultHandlersTest subclass: #WAPharoFunctionalTestsDefaultHandler
 
 seasideGarbageCollect
 	MemoryManager current collectGarbage! !
-!GRDolphinPlatform categoriesFor: #seasideGarbageCollect!public! !
+
+!GRDolphinPlatform categoriesForMethods!
+seasideGarbageCollect!public! !
+!
 
 !GRPackage class methodsFor!
 
@@ -68,7 +68,10 @@ seasideTestsDolphinFunctional
 		addDependency: 'Seaside-Dolphin-Environment';
 		url: #seasideUrl;
 		yourself! !
-!GRPackage class categoriesFor: #seasideTestsDolphinFunctional!*seaside-tests-pharo-functional!public! !
+
+!GRPackage class categoriesForMethods!
+seasideTestsDolphinFunctional!*seaside-tests-pharo-functional!public! !
+!
 
 "End of package definition"!
 

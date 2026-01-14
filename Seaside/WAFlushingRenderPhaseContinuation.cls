@@ -6,11 +6,11 @@ WARenderPhaseContinuation subclass: #WAFlushingRenderPhaseContinuation
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAFlushingRenderPhaseContinuation guid: (GUID fromString: '{55a0dfd9-006a-459d-ba30-2774ecaf22a7}')!
+WAFlushingRenderPhaseContinuation guid: (GUID fromString: '{b01c615d-d650-4d97-a1fa-f4676591d1ab}')!
 
 WAFlushingRenderPhaseContinuation comment: 'I send #flush to the HTTP response (WAResponse) after HTML <head> element has been fully rendered and closed and the HTML <body> has been opened. This results in this part of the the HTML document being sent to the browser. This allows the browser to prefetch the resources (styles, scripts, ...) possibly resulting in faster page loads.This only works with a streaming server adapter, for example one using WAComboResponse.'!
 
-!WAFlushingRenderPhaseContinuation categoriesForClass!Continuations! !
+!WAFlushingRenderPhaseContinuation categoriesForClass!Seaside-RenderLoop-Continuations! !
 
 !WAFlushingRenderPhaseContinuation methodsFor!
 

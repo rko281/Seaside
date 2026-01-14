@@ -6,11 +6,11 @@ WAWelcomeExample subclass: #WAWelcomeExampleFlow
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAWelcomeExampleFlow guid: (GUID fromString: '{0c6aa325-9751-4e7c-bb1f-1494ab526fa5}')!
+WAWelcomeExampleFlow guid: (GUID fromString: '{dfb58828-e329-496f-9e55-b359573bb4e3}')!
 
 WAWelcomeExampleFlow comment: ''!
 
-!WAWelcomeExampleFlow categoriesForClass!Examples! !
+!WAWelcomeExampleFlow categoriesForClass!Seaside-Welcome-Examples! !
 
 !WAWelcomeExampleFlow methodsFor!
 

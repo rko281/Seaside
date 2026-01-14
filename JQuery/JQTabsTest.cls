@@ -6,11 +6,11 @@ JQueryUiTest subclass: #JQTabsTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQTabsTest guid: (GUID fromString: '{3392547a-4fb0-410a-ab11-a210953466e5}')!
+JQTabsTest guid: (GUID fromString: '{0f6ebc9e-e67a-4b98-92f9-59f83ce84025}')!
 
 JQTabsTest comment: ''!
 
-!JQTabsTest categoriesForClass!Unit! !
+!JQTabsTest categoriesForClass!JQuery-Tests-UI-Unit! !
 
 !JQTabsTest methodsFor!
 

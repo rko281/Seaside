@@ -6,11 +6,11 @@ WAPainterVisitor subclass: #WAUpdateStatesVisitor
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAUpdateStatesVisitor guid: (GUID fromString: '{e03f270b-f196-45ae-bcb9-923a3b6d90c1}')!
+WAUpdateStatesVisitor guid: (GUID fromString: '{1a66ac03-a421-4065-8c4f-76ef80082e17}')!
 
 WAUpdateStatesVisitor comment: ''!
 
-!WAUpdateStatesVisitor categoriesForClass!Visitors! !
+!WAUpdateStatesVisitor categoriesForClass!Seaside-Component-Visitors! !
 
 !WAUpdateStatesVisitor methodsFor!
 

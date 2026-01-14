@@ -6,11 +6,11 @@ WAEmailMessage subclass: #WAMultiPartEmailMessage
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAMultiPartEmailMessage guid: (GUID fromString: '{f35c6fbf-e012-4e08-8125-8e4edcd1d0ba}')!
+WAMultiPartEmailMessage guid: (GUID fromString: '{15cb5c7f-8b00-4efe-b5e2-48c26d5f4614}')!
 
 WAMultiPartEmailMessage comment: 'I am a  multi part email message.'!
 
-!WAMultiPartEmailMessage categoriesForClass!Base! !
+!WAMultiPartEmailMessage categoriesForClass!Seaside-Email-Base! !
 
 !WAMultiPartEmailMessage methodsFor!
 

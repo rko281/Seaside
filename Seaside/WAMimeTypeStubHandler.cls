@@ -1,13 +1,17 @@
-﻿"Filed out from Dolphin Smalltalk 7"!
+﻿"Filed out from Dolphin Smalltalk"!
 
 WARestfulHandler subclass: #WAMimeTypeStubHandler
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-WAMimeTypeStubHandler guid: (GUID fromString: '{2dd40f39-57fd-48de-ac1a-9a0b1aa242a5}')!
+
+WAMimeTypeStubHandler guid: (GUID fromString: '{780c1753-b165-4fb3-ba41-824be98ff532}')!
+
 WAMimeTypeStubHandler comment: ''!
+
 !WAMimeTypeStubHandler categoriesForClass!Seaside-Tests-REST-Core! !
+
 !WAMimeTypeStubHandler methodsFor!
 
 processApplicationXml	##(Pragma get).	##(Pragma path: 'index').	##(Pragma consumes: 'application/xml').	!
@@ -19,9 +23,12 @@ processXml	##(Pragma get).	##(Pragma path: 'index').	##(Pragma consumes: '*/x
 produceJpeg	##(Pragma get).	##(Pragma path: 'index').	##(Pragma produces: 'image/jpeg').	!
 
 producePng	##(Pragma get).	##(Pragma path: 'index').	##(Pragma produces: 'image/png').	! !
-!WAMimeTypeStubHandler categoriesFor: #processApplicationXml!public!request/handling! !
-!WAMimeTypeStubHandler categoriesFor: #processTwo!public!request/handling! !
-!WAMimeTypeStubHandler categoriesFor: #processXml!public!request/handling! !
-!WAMimeTypeStubHandler categoriesFor: #produceJpeg!public!request/handling! !
-!WAMimeTypeStubHandler categoriesFor: #producePng!public!request/handling! !
+
+!WAMimeTypeStubHandler categoriesForMethods!
+processApplicationXml!public!request/handling! !
+processTwo!public!request/handling! !
+processXml!public!request/handling! !
+produceJpeg!public!request/handling! !
+producePng!public!request/handling! !
+!
 

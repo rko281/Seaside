@@ -6,11 +6,11 @@ WAExampleComponent subclass: #WACounter
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WACounter guid: (GUID fromString: '{7d4dd2c4-5d1c-4d05-949d-8ec57ff33ec7}')!
+WACounter guid: (GUID fromString: '{ef506f58-d2f4-4cff-a022-66f0e10188e3}')!
 
 WACounter comment: 'A WACounter is component that displays a number. Additionally it has two links that allow the user to increase or decrease this number by 1. The lesson to learn here is how the Seaside callback mechanism is used, how anchors can be used to trigger actions.Instance Variables	count:		<Integer>count	- the number to display, default 0'!
 
-!WACounter categoriesForClass!Misc! !
+!WACounter categoriesForClass!Seaside-Examples-Misc! !
 
 !WACounter methodsFor!
 

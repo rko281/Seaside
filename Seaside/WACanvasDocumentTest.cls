@@ -6,11 +6,11 @@ WAAbstractCanvasBrushTest subclass: #WACanvasDocumentTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WACanvasDocumentTest guid: (GUID fromString: '{592c3ba6-e734-46f7-97f5-1ac9fdc5190e}')!
+WACanvasDocumentTest guid: (GUID fromString: '{742af9ee-94ab-4c43-be9b-59a198cd4710}')!
 
 WACanvasDocumentTest comment: ''!
 
-!WACanvasDocumentTest categoriesForClass!Unclassified! !
+!WACanvasDocumentTest categoriesForClass!Seaside-Tests-Session! !
 
 !WACanvasDocumentTest methodsFor!
 

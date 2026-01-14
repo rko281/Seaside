@@ -1,9 +1,13 @@
 ﻿| package |
 package := Package name: 'Seaside'.
 package paxVersion: 1;
-	basicComment: 'Seaside 3.5.9 for Dolphin Smalltalk.
-Core packages ported from github.com/SeasideSt 17th April 2025
-Dolphin Seaside, Grease, Swazoo and Sport packages adapted from www.infoil.com.ar/seaside/ with thanks and acknowledgement.'.
+	basicComment: 'Seaside 3.6.0 for Dolphin Smalltalk.
+Core packages ported from github.com/SeasideSt 14th January 2026
+Dolphin Seaside and Grease packages adapted from www.infoil.com.ar/seaside/ with thanks and acknowledgement.
+
+"Launch the Welcome server"
+(WAHttpServerAdaptor port: 8080) start.
+ShellLibrary default shellOpen: ''http://localhost:8080/seaside/'''.
 
 package basicScriptAt: #postinstall put: '"Launch the Welcome server"
 (WAHttpServerAdaptor port: 8080) start.

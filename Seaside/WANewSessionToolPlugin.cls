@@ -6,11 +6,11 @@ WAToolPlugin subclass: #WANewSessionToolPlugin
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WANewSessionToolPlugin guid: (GUID fromString: '{7afc326d-eac3-4287-9bf8-3c2ecbd957e3}')!
+WANewSessionToolPlugin guid: (GUID fromString: '{7439b0ff-9b06-480d-89c9-5df772baa51b}')!
 
 WANewSessionToolPlugin comment: 'I create a new session.'!
 
-!WANewSessionToolPlugin categoriesForClass!Plugins! !
+!WANewSessionToolPlugin categoriesForClass!Seaside-Development-Plugins! !
 
 !WANewSessionToolPlugin methodsFor!
 

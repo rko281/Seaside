@@ -6,11 +6,11 @@ JSObject subclass: #JSScript
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JSScript guid: (GUID fromString: '{80533016-23f7-4faf-aa9a-3932adfd8dfb}')!
+JSScript guid: (GUID fromString: '{926d9214-6166-463c-9b6a-aff73b3e292c}')!
 
 JSScript comment: 'I represent a sequence of JavaScript statements.'!
 
-!JSScript categoriesForClass!Base! !
+!JSScript categoriesForClass!Javascript-Core-Base! !
 
 !JSScript methodsFor!
 
@@ -32,7 +32,7 @@ initialize	super initialize.	statements := OrderedCollection new!
 
 javascript	^ (JSScript context: self renderContext)		rendererClass: self rendererClass;		yourself!
 
-javascriptContentOn: aStream	statements do: [ :each | aStream javascript: each ] separatedBy: [ aStream nextPut: $; ]!
+javascriptContentOn: aRenderer	statements		do: [ :each | aRenderer render: each ]		separatedBy: [ aRenderer document separator ]!
 
 logger	^ self add: ((JSLogger context: self renderContext)		rendererClass: self rendererClass;		yourself)!
 

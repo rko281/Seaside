@@ -3,7 +3,6 @@ package := Package name: 'Seaside-Dolphin-JSON-Core'.
 package paxVersion: 1;
 	basicComment: ''.
 
-
 package methodNames
 	add: #BlockClosure -> #jsonOn:;
 	add: 'GRPackage class' -> #seasideDolphinContinuation;
@@ -26,12 +25,6 @@ package setManualPrerequisites: #(
 
 package!
 
-"Class Definitions"!
-
-
-"Global Aliases"!
-
-
 "Loose Methods"!
 
 !BlockClosure methodsFor!
@@ -40,15 +33,21 @@ jsonOn: aRenderer
 	self numArgs = 0
 		ifTrue: [ self value ]
 		ifFalse: [ self value: aRenderer ]! !
-!BlockClosure categoriesFor: #jsonOn:!converting!public! !
+
+!BlockClosure categoriesForMethods!
+jsonOn:!converting!public! !
+!
 
 !GRPackage class methodsFor!
 
 seasideDolphinContinuation	^ self new		name: 'Seaside-Dolphin-Continuation';		description: 'Dolphin implementation of full and partial first-class continuations.';		addDependency: 'Grease-Dolphin-Core';		url: #seasideUrl;		yourself!
 
 seasideTestsDolphinContinuation	^ self new		name: 'Seaside-Tests-Dolphin-Continuation';		description: 'Tests of Dolphin continuation implementation.';		addDependency: 'Seaside-Dolphin-Continuation';		addDependency: 'Grease-Tests-Core';		url: #seasideUrl;		yourself! !
-!GRPackage class categoriesFor: #seasideDolphinContinuation!*Seaside/Pharo40/Continuation!public! !
-!GRPackage class categoriesFor: #seasideTestsDolphinContinuation!*seaside/tests/pharo/continuation!public! !
+
+!GRPackage class categoriesForMethods!
+seasideDolphinContinuation!*Seaside/Pharo40/Continuation!public! !
+seasideTestsDolphinContinuation!*seaside/tests/pharo/continuation!public! !
+!
 
 "End of package definition"!
 

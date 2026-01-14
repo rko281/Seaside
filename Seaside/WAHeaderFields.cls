@@ -6,11 +6,11 @@ GROrderedMultiMap subclass: #WAHeaderFields
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAHeaderFields guid: (GUID fromString: '{60000d8d-e41e-46ec-9a38-8369345fc2d9}')!
+WAHeaderFields guid: (GUID fromString: '{e4e9ce3b-2d95-4bcd-b30e-2ab0ab42d4d4}')!
 
 WAHeaderFields comment: 'I am the headers dictionary of an HTTP request or response.'!
 
-!WAHeaderFields categoriesForClass!HTTP! !
+!WAHeaderFields categoriesForClass!Seaside-Core-HTTP! !
 
 !WAHeaderFields methodsFor!
 

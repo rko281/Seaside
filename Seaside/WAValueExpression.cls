@@ -6,11 +6,11 @@ WAAttributeExpression subclass: #WAValueExpression
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAValueExpression guid: (GUID fromString: '{1974edd8-9b84-4c09-b0a5-be861dbf6279}')!
+WAValueExpression guid: (GUID fromString: '{965fcbee-856d-4e36-b3b2-65651074a352}')!
 
 WAValueExpression comment: ''!
 
-!WAValueExpression categoriesForClass!Configuration! !
+!WAValueExpression categoriesForClass!Seaside-Core-Configuration! !
 
 !WAValueExpression methodsFor!
 

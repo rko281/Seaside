@@ -6,19 +6,21 @@ JSObject subclass: #JQPlugin
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQPlugin guid: (GUID fromString: '{31f137a2-6c7f-42b0-8b92-425c7f2774d6}')!
+JQPlugin guid: (GUID fromString: '{5cfa0546-bbc5-4afd-9d84-60a5b41b35ee}')!
 
 JQPlugin comment: ''!
 
-!JQPlugin categoriesForClass!Objects! !
+!JQPlugin categoriesForClass!JQuery-Core-Objects! !
 
 !JQPlugin methodsFor!
 
-arguments	^ options isNil		ifTrue: [ Array new ]		ifFalse: [ Array with: options ]!
+arguments	^ Array streamContents: [ :stream |		self argumentsDo: [ :each |			stream nextPut: each ] ]!
+
+argumentsDo: aBlock	options isNil ifFalse: [ 		aBlock value: options ]!
 
 id: aString	self owner id: aString!
 
-javascriptContentOn: aStream	aStream		javascript: self owner;		nextPut: $.;		nextPutAll: self method.	JSStream encodeArguments: self arguments on: aStream!
+javascriptContentOn: aRenderer	aRenderer render: self owner.	aRenderer document dotProperty: self method.	aRenderer arguments: [		self argumentsDo: [ :each |			 aRenderer argument: each ] ]!
 
 jQuery	^ (JQueryClass context: self renderContext)		rendererClass: self rendererClass;		yourself!
 
@@ -34,6 +36,7 @@ setOwner: aQuery	owner := aQuery! !
 
 !JQPlugin categoriesForMethods!
 arguments!accessing!public! !
+argumentsDo:!accessing!public! !
 id:!private! !
 javascriptContentOn:!printing!public! !
 jQuery!private! !

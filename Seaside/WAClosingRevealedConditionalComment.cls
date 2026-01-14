@@ -6,11 +6,11 @@ WAObject subclass: #WAClosingRevealedConditionalComment
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAClosingRevealedConditionalComment guid: (GUID fromString: '{62580055-713d-4a5e-994d-3255d3354dd3}')!
+WAClosingRevealedConditionalComment guid: (GUID fromString: '{961e4b9b-f3f7-4338-aeef-9d7f851fce0a}')!
 
 WAClosingRevealedConditionalComment comment: 'Closes a WARevealedConditionalComment.'!
 
-!WAClosingRevealedConditionalComment categoriesForClass!Document-Elements! !
+!WAClosingRevealedConditionalComment categoriesForClass!Seaside-Core-Document-Elements! !
 
 !WAClosingRevealedConditionalComment methodsFor!
 

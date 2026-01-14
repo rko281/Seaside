@@ -1,0 +1,48 @@
+﻿| package |
+package := Package name: 'Seaside-Tests-JSON'.
+package paxVersion: 1;
+	basicComment: ''.
+
+package classNames
+	add: #WAJsonParserTest;
+	add: #WAJsonRenderingTest;
+	add: #WAJsonStreamTest;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: #(
+	'..\..\Core\Object Arts\Dolphin\Base\Dolphin'
+	'..\..\Grease\Grease-Core'
+	'Seaside-Core'
+	'Seaside-JSON-Core'
+	'..\..\Core\Contributions\Camp Smalltalk\SUnit\SUnit').
+
+package!
+
+"Class Definitions"!
+
+TestCase subclass: #WAJsonParserTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+TestCase subclass: #WAJsonRenderingTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+TestCase subclass: #WAJsonStreamTest
+	instanceVariableNames: 'printer'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+"End of package definition"!
+

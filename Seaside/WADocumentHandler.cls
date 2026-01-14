@@ -6,11 +6,11 @@ WARequestHandler subclass: #WADocumentHandler
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WADocumentHandler guid: (GUID fromString: '{88f66de2-6a70-4463-a301-7988a4c7e3ea}')!
+WADocumentHandler guid: (GUID fromString: '{6594f74a-5c9d-4b21-92f2-aabf6938c13f}')!
 
 WADocumentHandler comment: 'WADocumentHandler handles requests for images, text documents and binary files (byte arrays). This class is not normally used directly. A number of WA*Tag classes implement document:mimeType:fileName: which use WADocumentHandler. Given a document, #document:mimeType:fileName: creates a WADocumentHandler for the document, registers the handler with a Registry, and adds the correct url in the tag for the document.Instance Variables:	document	<WAMimeDocument>	MIMEDocument object representing this document and mimeType, generates stream used to write document for the response.'!
 
-!WADocumentHandler categoriesForClass!RequestHandling! !
+!WADocumentHandler categoriesForClass!Seaside-Core-RequestHandling! !
 
 !WADocumentHandler methodsFor!
 

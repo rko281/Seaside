@@ -6,11 +6,11 @@ WAAbstractTextAreaTag subclass: #WAColorInputTag
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAColorInputTag guid: (GUID fromString: '{fe6188f9-5eb3-48da-9c64-b53d79e29d91}')!
+WAColorInputTag guid: (GUID fromString: '{a3052247-8571-4a9f-a290-dfb97717bd09}')!
 
 WAColorInputTag comment: 'Provide a user interface element that lets a user specify a color'!
 
-!WAColorInputTag categoriesForClass!Tags! !
+!WAColorInputTag categoriesForClass!Seaside-Canvas-Tags! !
 
 !WAColorInputTag methodsFor!
 

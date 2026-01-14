@@ -6,11 +6,11 @@ WAMimeTypeMatch subclass: #WAWildcardMimeTypeMatch
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAWildcardMimeTypeMatch guid: (GUID fromString: '{45580104-aa05-4fb0-a3b2-2bb84bd67b60}')!
+WAWildcardMimeTypeMatch guid: (GUID fromString: '{94b16081-b9e7-45d9-9d53-651f55071c20}')!
 
 WAWildcardMimeTypeMatch comment: ''!
 
-!WAWildcardMimeTypeMatch categoriesForClass!Route! !
+!WAWildcardMimeTypeMatch categoriesForClass!Seaside-REST-Core-Route! !
 
 !WAWildcardMimeTypeMatch methodsFor!
 

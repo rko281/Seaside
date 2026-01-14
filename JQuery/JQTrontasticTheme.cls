@@ -6,11 +6,11 @@ JQBaseTheme subclass: #JQTrontasticTheme
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQTrontasticTheme guid: (GUID fromString: '{18355fcb-12a2-4402-92ef-a6b4d4a86487}')!
+JQTrontasticTheme guid: (GUID fromString: '{fe01bb26-6c20-41c5-8fe9-0843d9dd86a0}')!
 
 JQTrontasticTheme comment: ''!
 
-!JQTrontasticTheme categoriesForClass!Libraries! !
+!JQTrontasticTheme categoriesForClass!JQuery-UI-Libraries! !
 
 !JQTrontasticTheme methodsFor!
 

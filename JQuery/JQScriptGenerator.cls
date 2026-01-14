@@ -6,11 +6,11 @@ WAScriptGenerator subclass: #JQScriptGenerator
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQScriptGenerator guid: (GUID fromString: '{bb0ed9bd-af6d-4ac8-9ce7-f20ba04cd71c}')!
+JQScriptGenerator guid: (GUID fromString: '{f74292ca-7cdd-430d-8da2-3d6430ffb122}')!
 
 JQScriptGenerator comment: ''!
 
-!JQScriptGenerator categoriesForClass!Objects! !
+!JQScriptGenerator categoriesForClass!JQuery-Core-Objects! !
 
 !JQScriptGenerator methodsFor!
 

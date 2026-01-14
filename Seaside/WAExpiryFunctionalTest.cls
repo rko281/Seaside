@@ -6,11 +6,11 @@ WAFunctionalTest subclass: #WAExpiryFunctionalTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAExpiryFunctionalTest guid: (GUID fromString: '{eb3dbcd8-f500-43b1-b8f4-4ac0852ed4ef}')!
+WAExpiryFunctionalTest guid: (GUID fromString: '{891388ad-17f9-4d86-b96a-3e92fdf3a0a9}')!
 
 WAExpiryFunctionalTest comment: ''!
 
-!WAExpiryFunctionalTest categoriesForClass!Unclassified! !
+!WAExpiryFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
 
 !WAExpiryFunctionalTest methodsFor!
 

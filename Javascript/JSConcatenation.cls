@@ -6,15 +6,15 @@ JSStatement subclass: #JSConcatenation
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JSConcatenation guid: (GUID fromString: '{3b88336c-4f3b-41d2-ab20-b3bc726b00a8}')!
+JSConcatenation guid: (GUID fromString: '{06e75350-3fa1-4df4-8b27-f046f41a6e33}')!
 
 JSConcatenation comment: 'I represent a sequence (or concatenation) of a decorated object and another object.'!
 
-!JSConcatenation categoriesForClass!Decorations! !
+!JSConcatenation categoriesForClass!Javascript-Core-Decorations! !
 
 !JSConcatenation methodsFor!
 
-javascriptContentOn: aStream	super javascriptContentOn: aStream.	aStream		nextPut: $;;		javascript: self statement! !
+javascriptContentOn: aRenderer	super javascriptContentOn: aRenderer.	aRenderer document separator.	aRenderer render: self statement! !
 
 !JSConcatenation categoriesForMethods!
 javascriptContentOn:!printing!public! !

@@ -6,11 +6,11 @@ JSScript subclass: #JSFunction
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JSFunction guid: (GUID fromString: '{766c4cce-1487-43c5-981c-a00ca2116fe0}')!
+JSFunction guid: (GUID fromString: '{d772580a-666e-4744-9266-e3a550d14dfc}')!
 
 JSFunction comment: 'I represent an anonymous JavaScript function.'!
 
-!JSFunction categoriesForClass!Base! !
+!JSFunction categoriesForClass!Javascript-Core-Base! !
 
 !JSFunction methodsFor!
 
@@ -20,13 +20,15 @@ arguments	^ arguments!
 
 arguments: aCollection	arguments := aCollection!
 
+argumentsDo: aBlock	self arguments do: aBlock!
+
 asFunction	^ self!
 
 asFunction: aCollection	self arguments: aCollection!
 
 initialize	super initialize.	arguments := #()!
 
-javascriptContentOn: aStream	aStream nextPutAll: 'function('.	self arguments do: [ :each | aStream nextPutAll: each ] separatedBy: [ aStream nextPut: $, ].	aStream nextPutAll: '){'.	statements isEmpty ifFalse:			[ statements allButLast do:					[ :each | 					aStream						javascript: each;						nextPut: $; ].			self return ifTrue: [ aStream nextPutAll: 'return ' ].			aStream javascript: statements last ].	aStream nextPut: $}!
+javascriptContentOn: aRenderer	aRenderer defineFunction		arguments: self arguments;		with: [ 			statements isEmpty ifFalse: [				self return					ifTrue: [						1 to: statements size - 1 do: [:index | 							aRenderer render: (statements at: index).							aRenderer document separator ].						aRenderer return: statements last ]					ifFalse: [						statements							do: [ :each | aRenderer render: each ]							separatedBy: [ aRenderer document separator ] ] ] ]!
 
 return	^ return ifNil: [ false ]!
 
@@ -36,6 +38,7 @@ return: aBoolean	return := aBoolean! !
 argument!accessing!public! !
 arguments!accessing!public! !
 arguments:!accessing!public! !
+argumentsDo:!accessing!public! !
 asFunction!converting!public! !
 asFunction:!converting!public! !
 initialize!initialization!public! !

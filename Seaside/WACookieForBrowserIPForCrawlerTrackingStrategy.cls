@@ -6,11 +6,11 @@ WASessionTrackingStrategy subclass: #WACookieForBrowserIPForCrawlerTrackingStrat
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WACookieForBrowserIPForCrawlerTrackingStrategy guid: (GUID fromString: '{7c46f013-7006-416d-a8d0-97a47119374c}')!
+WACookieForBrowserIPForCrawlerTrackingStrategy guid: (GUID fromString: '{5f7045a3-cc65-4bed-8aff-ff5b9550a31c}')!
 
 WACookieForBrowserIPForCrawlerTrackingStrategy comment: 'WACookieForBrowserIPForCrawlerTrackingStrategy uses cookie based session tracking for browsers and IPs for crawlers (they don''t support cookies). This way there is never a session key in any URL.This is inspired by:http://www.tomcatexpert.com/blog/2011/05/18/crawler-session-manager-valve'!
 
-!WACookieForBrowserIPForCrawlerTrackingStrategy categoriesForClass!Tracking! !
+!WACookieForBrowserIPForCrawlerTrackingStrategy categoriesForClass!Seaside-Session-Tracking! !
 
 !WACookieForBrowserIPForCrawlerTrackingStrategy methodsFor!
 

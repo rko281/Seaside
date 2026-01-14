@@ -6,11 +6,11 @@ WAServerAdaptor subclass: #WATestServerAdaptor
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WATestServerAdaptor guid: (GUID fromString: '{71814e51-d28a-4b66-81f7-0fdfb94542cb}')!
+WATestServerAdaptor guid: (GUID fromString: '{9f5c4e87-2dbb-40d6-9157-6a4826eb998e}')!
 
 WATestServerAdaptor comment: 'A WATestServerAdaptor is a stub of a server adaptor. It doesn''t start an adaptor, it just pretends to allow testing of the server manager'!
 
-!WATestServerAdaptor categoriesForClass!Server! !
+!WATestServerAdaptor categoriesForClass!Seaside-Tests-Core-Server! !
 
 !WATestServerAdaptor methodsFor!
 

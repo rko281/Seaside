@@ -6,11 +6,11 @@ WASystemConfiguration subclass: #WARequestHandlingConfiguration
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WARequestHandlingConfiguration guid: (GUID fromString: '{a0ff3d3f-8e27-4be1-8667-0340361725ab}')!
+WARequestHandlingConfiguration guid: (GUID fromString: '{8badc83e-8752-4fc5-ae02-8126e8884ee1}')!
 
 WARequestHandlingConfiguration comment: 'This configuration class holds attributes needed by classes in the Request Handling layer.'!
 
-!WARequestHandlingConfiguration categoriesForClass!RequestHandling! !
+!WARequestHandlingConfiguration categoriesForClass!Seaside-Core-RequestHandling! !
 
 !WARequestHandlingConfiguration methodsFor!
 

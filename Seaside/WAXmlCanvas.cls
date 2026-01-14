@@ -6,11 +6,11 @@ WATagCanvas subclass: #WAXmlCanvas
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAXmlCanvas guid: (GUID fromString: '{83cb1ac2-61ba-44ce-a445-240ab7621a6b}')!
+WAXmlCanvas guid: (GUID fromString: '{aa60bdc6-20c4-4098-a7ec-6455c9715a39}')!
 
 WAXmlCanvas comment: 'I''m an abstract canvas base class for building canvas for custom XML dialects.'!
 
-!WAXmlCanvas categoriesForClass!Canvas! !
+!WAXmlCanvas categoriesForClass!Seaside-Canvas-Canvas! !
 
 !WAXmlCanvas methodsFor!
 

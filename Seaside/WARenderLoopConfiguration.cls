@@ -6,11 +6,11 @@ WASystemConfiguration subclass: #WARenderLoopConfiguration
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WARenderLoopConfiguration guid: (GUID fromString: '{6ff4f047-f561-45c0-9770-d0e4dd23b6a3}')!
+WARenderLoopConfiguration guid: (GUID fromString: '{deb0c078-7489-40e3-843a-56dc5facf0d6}')!
 
 WARenderLoopConfiguration comment: 'WARenderLoopConfiguration defines attributes required by the Render Loop classes (see the Seaside-Core-RenderLoop category). Any application using these classes should include this configuration (this is done by default for new applications).See #addAttributes: for details on provided attributes.'!
 
-!WARenderLoopConfiguration categoriesForClass!Base! !
+!WARenderLoopConfiguration categoriesForClass!Seaside-RenderLoop-Base! !
 
 !WARenderLoopConfiguration methodsFor!
 

@@ -6,11 +6,11 @@ WAObject subclass: #WAResponseGenerator
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAResponseGenerator guid: (GUID fromString: '{d32c6a39-a0df-4bcc-9e5b-6dc1fa7fca6f}')!
+WAResponseGenerator guid: (GUID fromString: '{f076fd32-2129-4be8-9143-3b5683fbe2a5}')!
 
 WAResponseGenerator comment: 'The response generator configures the response of the provided request context according to the called generation method. This class can be subclassed to provide custom response templates.'!
 
-!WAResponseGenerator categoriesForClass!RequestHandling! !
+!WAResponseGenerator categoriesForClass!Seaside-Core-RequestHandling! !
 
 !WAResponseGenerator methodsFor!
 

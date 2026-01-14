@@ -6,11 +6,11 @@ WAObject subclass: #WAHttpVersion
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAHttpVersion guid: (GUID fromString: '{1a729f5f-5dca-4b4c-bebf-3f4e665fb2ff}')!
+WAHttpVersion guid: (GUID fromString: '{383e449a-67be-4bed-a9bf-7ce151350518}')!
 
 WAHttpVersion comment: ''!
 
-!WAHttpVersion categoriesForClass!HTTP! !
+!WAHttpVersion categoriesForClass!Seaside-Core-HTTP! !
 
 !WAHttpVersion methodsFor!
 

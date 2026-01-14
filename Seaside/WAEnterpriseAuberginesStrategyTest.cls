@@ -6,11 +6,11 @@ WACookieSessionTrackingStrategyTest subclass: #WAEnterpriseAuberginesStrategyTes
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAEnterpriseAuberginesStrategyTest guid: (GUID fromString: '{c87cb30f-ed1b-4fa5-8f06-511876f05a97}')!
+WAEnterpriseAuberginesStrategyTest guid: (GUID fromString: '{9cb10342-6209-4e52-94dc-08aff5178d02}')!
 
 WAEnterpriseAuberginesStrategyTest comment: ''!
 
-!WAEnterpriseAuberginesStrategyTest categoriesForClass!Unclassified! !
+!WAEnterpriseAuberginesStrategyTest categoriesForClass!Seaside-Tests-Session! !
 
 !WAEnterpriseAuberginesStrategyTest methodsFor!
 

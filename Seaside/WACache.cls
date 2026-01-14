@@ -6,11 +6,11 @@ WAObject subclass: #WACache
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WACache guid: (GUID fromString: '{aa234fe5-38fe-43d1-837b-83cb8fb70062}')!
+WACache guid: (GUID fromString: '{3bd97df8-248d-4fdb-9a6f-19904846916c}')!
 
 WACache comment: 'WACacheis the abstract base class for session and continuation stores in Seaside. The default implementation is WAHashCache.'!
 
-!WACache categoriesForClass!Cache! !
+!WACache categoriesForClass!Seaside-Core-Cache! !
 
 !WACache methodsFor!
 

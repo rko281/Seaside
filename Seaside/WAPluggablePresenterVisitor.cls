@@ -6,11 +6,11 @@ WAPainterVisitor subclass: #WAPluggablePresenterVisitor
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAPluggablePresenterVisitor guid: (GUID fromString: '{e93b03d5-94f0-417f-9bad-9c868774c058}')!
+WAPluggablePresenterVisitor guid: (GUID fromString: '{4e092a2c-e677-4ba7-ad9b-86d4ae66e0d1}')!
 
 WAPluggablePresenterVisitor comment: ''!
 
-!WAPluggablePresenterVisitor categoriesForClass!Visitors! !
+!WAPluggablePresenterVisitor categoriesForClass!Seaside-Component-Visitors! !
 
 !WAPluggablePresenterVisitor methodsFor!
 

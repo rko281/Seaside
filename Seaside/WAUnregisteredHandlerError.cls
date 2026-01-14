@@ -6,11 +6,11 @@ WAError subclass: #WAUnregisteredHandlerError
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAUnregisteredHandlerError guid: (GUID fromString: '{98ffcf4d-69c4-4548-ab4a-9edb574dfa57}')!
+WAUnregisteredHandlerError guid: (GUID fromString: '{8d9bcaac-58ae-470c-8e2f-540e6f4261ab}')!
 
 WAUnregisteredHandlerError comment: 'This error is signaled by WARegistry whenever an attempt is made to find the key or URL for a handler that is not registered in its cache.'!
 
-!WAUnregisteredHandlerError categoriesForClass!Exceptions! !
+!WAUnregisteredHandlerError categoriesForClass!Seaside-Core-Exceptions! !
 
 !WAUnregisteredHandlerError methodsFor!
 

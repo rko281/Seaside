@@ -6,11 +6,11 @@ WATableColumnGroupTag subclass: #WATableColumnTag
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WATableColumnTag guid: (GUID fromString: '{706c9836-301c-4310-82a8-a9bbfa1bc542}')!
+WATableColumnTag guid: (GUID fromString: '{11ee4f1e-ed25-45bb-8e1e-72d70ab1e967}')!
 
 WATableColumnTag comment: 'WATableColumnTag elements define the alignment properties for cells in one or more columns.'!
 
-!WATableColumnTag categoriesForClass!Tags! !
+!WATableColumnTag categoriesForClass!Seaside-Canvas-Tags! !
 
 !WATableColumnTag methodsFor!
 

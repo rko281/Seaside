@@ -6,11 +6,11 @@ WAObject subclass: #WASortedAccepts
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WASortedAccepts guid: (GUID fromString: '{86d4845f-f544-48e8-8e63-a51c243ae89e}')!
+WASortedAccepts guid: (GUID fromString: '{05ca714b-c679-462c-8ca8-bf8ca56cb970}')!
 
 WASortedAccepts comment: ''!
 
-!WASortedAccepts categoriesForClass!Route! !
+!WASortedAccepts categoriesForClass!Seaside-REST-Core-Route! !
 
 !WASortedAccepts methodsFor!
 

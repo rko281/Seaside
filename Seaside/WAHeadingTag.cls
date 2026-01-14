@@ -6,11 +6,11 @@ WATagBrush subclass: #WAHeadingTag
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAHeadingTag guid: (GUID fromString: '{9c22206e-6844-4a63-b2cb-a2b6af8d3c92}')!
+WAHeadingTag guid: (GUID fromString: '{ed00c4c1-b6d9-465c-9e1d-4e0d9ad83fdf}')!
 
 WAHeadingTag comment: 'A heading element briefly describes the topic of the section it introduces. Heading information may be used by user agents, for example, to construct a table of contents for a document automatically.There are six levels of headings in HTML with H1 as the most important and H6 as the least. Visual browsers usually render more important headings in larger fonts than less important ones.'!
 
-!WAHeadingTag categoriesForClass!Tags! !
+!WAHeadingTag categoriesForClass!Seaside-Canvas-Tags! !
 
 !WAHeadingTag methodsFor!
 

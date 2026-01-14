@@ -6,11 +6,11 @@ WAFunctionalTest subclass: #WAIframeFunctionalTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAIframeFunctionalTest guid: (GUID fromString: '{10a5b1da-0bf9-4814-801a-193720e53324}')!
+WAIframeFunctionalTest guid: (GUID fromString: '{7a100c64-25f4-497d-9858-a715a1787d93}')!
 
 WAIframeFunctionalTest comment: ''!
 
-!WAIframeFunctionalTest categoriesForClass!Unclassified! !
+!WAIframeFunctionalTest categoriesForClass!Seaside-Tests-Functional! !
 
 !WAIframeFunctionalTest methodsFor!
 

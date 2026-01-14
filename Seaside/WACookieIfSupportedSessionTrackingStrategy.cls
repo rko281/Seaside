@@ -6,11 +6,11 @@ WACookieSessionTrackingStrategy subclass: #WACookieIfSupportedSessionTrackingStr
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WACookieIfSupportedSessionTrackingStrategy guid: (GUID fromString: '{654a3b1d-f2c5-4a77-a9f7-d49132242664}')!
+WACookieIfSupportedSessionTrackingStrategy guid: (GUID fromString: '{f20682a4-0e82-449e-80a8-ec597a1bd935}')!
 
 WACookieIfSupportedSessionTrackingStrategy comment: 'I use cookies to track sessions if the browser supports it and use query fields (?_s=key) otherwise. I keep adding the session cookie and the session query field until the session cookie shows up in the request. Then I stop adding the query field.'!
 
-!WACookieIfSupportedSessionTrackingStrategy categoriesForClass!Tracking! !
+!WACookieIfSupportedSessionTrackingStrategy categoriesForClass!Seaside-Session-Tracking! !
 
 !WACookieIfSupportedSessionTrackingStrategy methodsFor!
 

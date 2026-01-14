@@ -6,11 +6,11 @@ TestCase subclass: #WAPathConsumerTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAPathConsumerTest guid: (GUID fromString: '{2665254b-bb49-4b5d-a0b6-c7f69ee89e60}')!
+WAPathConsumerTest guid: (GUID fromString: '{124c3c24-2cac-43dd-94c2-554f607dc913}')!
 
 WAPathConsumerTest comment: ''!
 
-!WAPathConsumerTest categoriesForClass!RequestHandling! !
+!WAPathConsumerTest categoriesForClass!Seaside-Tests-Core-RequestHandling! !
 
 !WAPathConsumerTest methodsFor!
 

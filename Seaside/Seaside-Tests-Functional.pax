@@ -43,7 +43,6 @@ package classNames
 	add: #WAInputGetFunctionalTest;
 	add: #WAInputPostFunctionalTest;
 	add: #WAInputPostMultipartFunctionalTest;
-	add: #WAKeyGeneratorFunctionalTest;
 	add: #WALotsaLinksFunctionalTest;
 	add: #WAManyTasksFunctionalTest;
 	add: #WAMiniCalendarFunctionalTest;
@@ -324,12 +323,6 @@ WAFunctionalTest subclass: #WAInputPostFunctionalTest
 
 WAFunctionalTest subclass: #WAInputPostMultipartFunctionalTest
 	instanceVariableNames: 'inputElements hasBody ran'
-	classVariableNames: ''
-	poolDictionaries: ''
-	classInstanceVariableNames: ''!
-
-WAFunctionalTest subclass: #WAKeyGeneratorFunctionalTest
-	instanceVariableNames: 'key'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!

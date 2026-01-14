@@ -6,11 +6,11 @@ WAListAttribute subclass: #WACollectionAttribute
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WACollectionAttribute guid: (GUID fromString: '{e4240c0f-824e-4e51-96b2-fdb0c342f2a8}')!
+WACollectionAttribute guid: (GUID fromString: '{a3fb45c2-5d0a-4250-ab7c-01e1ed90a0c4}')!
 
 WACollectionAttribute comment: ''!
 
-!WACollectionAttribute categoriesForClass!Configuration! !
+!WACollectionAttribute categoriesForClass!Seaside-Core-Configuration! !
 
 !WACollectionAttribute methodsFor!
 

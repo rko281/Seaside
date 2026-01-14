@@ -6,11 +6,11 @@ TestCase subclass: #WAAcceptTest
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-WAAcceptTest guid: (GUID fromString: '{8ef564a3-41e3-4489-9e3e-e2f3ae3de79a}')!
+WAAcceptTest guid: (GUID fromString: '{319ec163-28e7-47d8-8969-b549ffab1581}')!
 
 WAAcceptTest comment: ''!
 
-!WAAcceptTest categoriesForClass!HTTP! !
+!WAAcceptTest categoriesForClass!Seaside-Tests-Core-HTTP! !
 
 !WAAcceptTest methodsFor!
 

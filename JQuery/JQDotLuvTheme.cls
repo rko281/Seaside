@@ -6,11 +6,11 @@ JQBaseTheme subclass: #JQDotLuvTheme
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 
-JQDotLuvTheme guid: (GUID fromString: '{4c42dda2-1295-49c3-a24a-c68642b72415}')!
+JQDotLuvTheme guid: (GUID fromString: '{a55a820d-778f-4b2f-8a6e-c65c0abf0811}')!
 
 JQDotLuvTheme comment: ''!
 
-!JQDotLuvTheme categoriesForClass!Libraries! !
+!JQDotLuvTheme categoriesForClass!JQuery-UI-Libraries! !
 
 !JQDotLuvTheme methodsFor!
 
